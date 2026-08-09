@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-type Evidence = { type: string; label: string; strength: string; source?: string };
+type Evidence = { type: string; label: string; strength: string; source?: string; marker?: string };
 type ScanResult = {
   ok: boolean;
   error?: string;
@@ -82,7 +82,7 @@ export default function Home() {
           <article>
             <p className="card-number">02 / Builder evidence</p>
             <h3>Direkte Artefakte</h3>
-            {result.directEvidence?.length ? <div className="chips direct-chips">{result.directEvidence.map((item) => <span key={item.label}>{item.label}<small>{item.source === "same-origin-asset" ? "asset" : "direct"}</small></span>)}</div> : <p className="empty-state">Keine direkten Builder-Marker in HTML, Headern oder geprüften Assets gefunden.</p>}
+            {result.directEvidence?.length ? <div className="chips direct-chips">{result.directEvidence.map((item) => <span key={item.label}>{item.label}<small>{item.source === "same-origin-asset" ? "asset" : "page"}{item.marker ? ` · ${item.marker}` : ""}</small></span>)}</div> : <p className="empty-state">Keine direkten Builder-Marker in HTML, Headern oder geprüften Assets gefunden.</p>}
           </article>
           <article>
             <p className="card-number">03 / Context</p>

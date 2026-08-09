@@ -42,6 +42,10 @@ der direkte Vorher-/Nachher-Vergleich in
 Die nachfolgende getrennte Header- und Manifest-Kontextschicht ist in
 [`outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md`](outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md)
 dokumentiert.
+Der vollständige Browser-Capture aller 52 historisch erfolgreichen URLs steht in
+[`outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md).
+Die kohorten- und builderweise Einordnung der Kontextsignale steht in
+[`outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md`](outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md).
 
 Direkt gegen die Produktions-API ausführen:
 
@@ -52,7 +56,9 @@ npm run eval:production
 Ein bereits erfasstes Ergebnis reproduzierbar neu auswerten:
 
 ```bash
-VIBEBENCH_RESULTS_FILE=outputs/vibebench_production_browser_capture_2026-08-09.json npm run eval:production
+VIBEBENCH_OUTPUT_TAG=full_header_manifest \
+VIBEBENCH_RESULTS_FILE=outputs/vibebench_production_browser_capture_full_2026-08-09.json \
+npm run eval:production
 ```
 
 ## Einzelne URL untersuchen
@@ -107,8 +113,14 @@ Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Nächste To-dos
 
-1. Fehlende direkte Evidenz für Bolt- und Replit-Agent-Seiten untersuchen.
-2. Header-, Manifest-, JS-/CSS-Asset- und Source-Map-Signale ergänzen.
-3. Den Test auf alle aktuell erreichbaren gelabelten URLs ausweiten.
+1. Die False-Positive-Härtung deployen und den 52-URL-Capture wiederholen.
+2. Fehlende direkte Evidenz builderweise untersuchen, besonders Bolt und Replit Agent.
+3. Weitere Marker nur als benannte, öffentlich sichtbare Artefakte mit Tests ergänzen.
 4. Einen zeitlich späteren Blind-Holdout einfrieren und Kalibrierung messen.
 5. Erst danach einen modellbasierten Wahrscheinlichkeitswert ergänzen.
+
+## Empfohlener nächster Schritt
+
+Nach dem nächsten Deployment zuerst den früheren Human-Hinweisfall `HUM-0014`
+und die fünf AI-Hinweisfälle erneut scannen. So lässt sich die Härtung gezielt
+bestätigen, bevor die Builder-Abdeckung erweitert wird.

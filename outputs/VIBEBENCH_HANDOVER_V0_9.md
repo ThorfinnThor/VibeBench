@@ -1,6 +1,6 @@
 # VibeBench URL Detector v0.9 – Arbeitsstand und Übergabe
 
-Stand: 2026-08-09, ergänzt um den ersten realen URL-/Snapshot-/Modelllauf
+Stand: 2026-08-09, ergänzt um Web-App, Produktions-Captures und Kontextanalyse
 
 Dieses Verzeichnis bündelt den aktuell bereitgestellten v0.9-Stand von VibeBench. Ziel ist ein nachvollziehbarer Benchmark für die Frage, ob sich **AI- bzw. Vibe-Coding-Entwicklung aus öffentlich sichtbaren Deployment-Artefakten probabilistisch erkennen lässt**. Das System soll keine Autorenschaft „beweisen“. Es trennt deshalb direkte Builder-Artefakte von allgemeinen Framework-, Hosting-, DOM-, Asset- und UI-Signalen.
 
@@ -28,6 +28,33 @@ Die elf fehlgeschlagenen Live-URLs wurden am selben Tag erneut geprüft. Keine w
 Die wichtigste Korrektur während des Laufs betraf `HIS-0024`: dieselbe Website war als Live-Zeile und Historical-Snapshot vorhanden. Der Merge bevorzugt jetzt den eingefrorenen Snapshot, sodass keine doppelte Sample-ID mit unterschiedlichen Gruppenkennungen über Train/Test-Grenzen lecken kann.
 
 Über 50 gruppierte Splits erreicht der kombinierte Strukturmodus im Mittel 89,2 % Accuracy (5.–95. Perzentil 76,2–100,0 %) und 0,942 ROC-AUC. Live-only liegt der Strukturmodus im Mittel bei 85,8 % Accuracy; das 5. Perzentil fällt auf 66,7 %. Diese Spannweite ist die angemessenere Aussage als ein einzelner günstiger Split.
+
+## Web-App und Produktionsprüfung
+
+Die erste VibeBench-Web-App ist im privaten Repository `ThorfinnThor/VibeBench`
+versioniert und über Vercel unter `https://vibe-bench-cyan.vercel.app` erreichbar.
+Sie scannt eine öffentliche URL und trennt direkte Builder-Artefakte, Stack- und
+Hosting-Kontext, Header/Manifest sowie Struktur- und Assetmetriken.
+
+Sicherheitsgrenzen umfassen öffentliche HTTP(S)-Ziele, DNS-/Redirect-Prüfung,
+Download-Limits, höchstens vier Same-Origin-JS- und zwei Same-Origin-CSS-Assets
+sowie ein verlinktes Same-Origin-Manifest. Header und Manifest bleiben Kontext
+und verändern allein kein Verdict.
+
+Der aktuelle vollständige Produktions-Capture enthält alle 52 historisch
+erfolgreichen Live-URLs: 51 waren erneut erreichbar, eine antwortete mit HTTP
+403. Bei 36 AI-Samples ergaben sich 13 direkte, 5 indikative, 17 unbestimmte
+und 1 technische Fehlerzeile; bei 16 Human-Samples 0 direkte, 1 indikative und
+15 unbestimmte Ergebnisse. Der einzelne Human-Hinweisfall führte zu einer lokal
+implementierten Härtung: `indicative` verlangt nun neben zwei Strukturhinweisen
+auch mindestens zwei erkannte Stack-Signale. Alle fünf AI-Hinweisfälle bleiben
+damit erhalten, der Human-Fall wird unbestimmt.
+
+Die vollständigen Einzelergebnisse und Kontextanalyse liegen in:
+
+- `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md`
+- `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md`
+- `outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md`
 
 ## Was bisher gemacht wurde
 
@@ -86,6 +113,10 @@ Der öffentliche Chat [KI-Website Erkennung Tipps](https://chatgpt.com/share/6a7
 | `run_historical_snapshot_freeze.sh` | sicherer Runner für Static-Historical-Snapshots | aktualisiert; Static-only als Host-Default |
 | `outputs/VIBEBENCH_RUN_REPORT_2026-08-09.md` | Bericht des ersten realen Laufs | vorhanden |
 | `outputs/VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md` | Audit des Retries der 11 Live-Ausfälle | 0/11 wieder scanbar |
+| `app/`, `lib/` | Next.js Evidence-Scanner mit sicherer URL-, Asset- und Manifest-Prüfung | auf Vercel veröffentlicht; Härtung lokal geprüft |
+| `scripts/evaluate-production.mjs` | reproduzierbare Produktionsauswertung für feste und importierte Captures | 20er Smoke und 52er Vollerfassung unterstützt |
+| `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md` | vollständiger 52-URL-Produktionsreport | 51/52 technisch erfolgreich |
+| `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md` | Header-/Manifest-Analyse nach Label und Builder | vorhanden; kein Blind-Holdout |
 | `outputs/VIBEBENCH_ISOLATED_RUNNER_README.md` | Sicherheits- und Bedienhinweise für dynamische Historical-Builds | vorbereitet; Docker-Daemon aus |
 | `outputs/vibebench_live_features_v0_9.csv` | vollständige Live-Scan-Ausgabe | 63 Zeilen, 52 erfolgreich |
 | `outputs/vibebench_url_training_features_v0_9.csv` | deduplizierter Trainings-Merge | 92 Zeilen, 81 trainierbar |

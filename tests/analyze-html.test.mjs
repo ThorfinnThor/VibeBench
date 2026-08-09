@@ -6,6 +6,7 @@ test("separates direct builder evidence from hosting context", () => {
   const result = analyzeHtml({ html: '<html><body data-lov-id="hero"></body></html>', url: "https://demo.lovable.app/", headers: {} });
   assert.equal(result.verdict.level, "direct");
   assert.deepEqual(result.directEvidence.map((item) => item.label), ["Lovable"]);
+  assert.deepEqual(result.directEvidence.map((item) => item.marker), ["data-lov-id"]);
   assert.deepEqual(result.contextEvidence.map((item) => item.label), ["Lovable hosting"]);
 });
 
@@ -33,7 +34,7 @@ test("finds a direct Bolt marker in a same-origin asset", () => {
     headers: {}
   });
   assert.equal(result.verdict.level, "direct");
-  assert.deepEqual(result.directEvidence.map((item) => [item.label, item.source]), [["Bolt", "same-origin-asset"]]);
+  assert.deepEqual(result.directEvidence.map((item) => [item.label, item.source, item.marker]), [["Bolt", "same-origin-asset", "made with Bolt"]]);
 });
 
 test("keeps Replit and StackBlitz runtime traces as context", () => {
@@ -82,4 +83,12 @@ test("treats a valid manifest as context only", () => {
   ]);
   assert.deepEqual(analyzeManifest("<html>not json</html>"), { evidence: [], validJson: false });
   assert.deepEqual(analyzeManifest("null"), { evidence: [], validJson: false });
+});
+
+test("does not call generic structure hints indicative without stack support", () => {
+  const html = `<html>${'<script src="/legacy.js"></script>'.repeat(16)}<div>${'<i data-test="x"></i>'.repeat(30)}</div></html>`;
+  const result = analyzeHtml({ html, url: "https://human.example/", headers: {} });
+  assert.ok(result.structuralHints.length >= 2);
+  assert.equal(result.stackSignals.length, 0);
+  assert.equal(result.verdict.level, "indeterminate");
 });

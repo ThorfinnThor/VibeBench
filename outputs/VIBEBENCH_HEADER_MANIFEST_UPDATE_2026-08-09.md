@@ -1,7 +1,7 @@
 # VibeBench header and manifest context update
 
 Stand: 2026-08-09  
-Status: lokal implementiert und geprüft; Deployment nach Push
+Status: in Produktion auf Commit `4fa3f38` geprüft
 
 ## Ziel
 
@@ -58,19 +58,39 @@ kleinen Ansichten bleiben sie einspaltig.
 - Ungültiges JSON und `null` werden nicht als Manifest akzeptiert.
 - Nur verlinkte Same-Origin-Manifeste werden extrahiert.
 - Fremde Manifest-URLs bleiben blockiert.
-- Insgesamt 10/10 Unit-Tests erfolgreich.
+- Insgesamt 11/11 Unit-Tests erfolgreich (einschließlich False-Positive-Regression).
 - ESLint, Next.js-Produktionsbuild, Bundle-Verifikation und Diff-Prüfung erfolgreich.
+
+## Produktionsergebnis
+
+Der Kern-Smoke-Test mit 10 AI- und 10 Human-Seiten lief nach dem Deployment
+20/20 technisch erfolgreich. Die Verdict-Verteilung blieb gegenüber dem Stand
+vor Header/Manifest unverändert. Damit verbessern die neuen Signale die
+Erklärung, ohne selbst direkte oder indikative Treffer auszulösen.
+
+Die anschließend auf alle 52 historisch scanbaren URLs ausgeweitete Erfassung
+lieferte 51 erfolgreiche Scans und einen HTTP-403-Ausfall. 37/52 Seiten hatten
+bekannte Infrastruktur-Header; 8/52 hatten ein gültiges verlinktes Manifest.
+
+| Gruppe | Header | Manifest |
+|---|---:|---:|
+| AI (36) | 32 | 3 |
+| Human (16) | 5 | 5 |
+
+Manifeste kommen in dieser Stichprobe bei Human-Seiten mindestens ebenso häufig
+vor wie bei AI-Seiten. Das bestätigt die Entscheidung, sie ausschließlich als
+technischen Kontext zu behandeln.
 
 ## Nächste To-dos
 
-1. Commit über GitHub Desktop pushen und Vercel-Deployment abwarten.
-2. Bekannte Lovable-, Bolt-, Replit-, v0- und Human-Seiten erneut scannen.
-3. Header-/Manifest-Kontext zwischen AI- und Human-Kontrollen vergleichen.
-4. Sicherstellen, dass die zusätzliche Anzeige keine neuen direkten Treffer erzeugt.
-5. Danach die URL-Evaluation auf alle aktuell erreichbaren Samples ausweiten.
+1. Die gehärtete indicative-Regel und transparenten Marker-Namen deployen.
+2. Die 52-URL-Erfassung nach dem Deployment wiederholen.
+3. Fehlende AI-Treffer builderweise auf weitere öffentliche Artefakte untersuchen.
+4. Einen separaten Blind-Holdout definieren, der nicht zur Regelentwicklung diente.
+5. Erst danach Precision/Recall und eine mögliche Kalibrierung berichten.
 
 ## Empfohlener nächster Schritt
 
-Nach dem Deployment denselben 20-URL-Smoke-Test erneut ausführen. Header und
-Manifest sollen die Erklärung verbessern; die direkten Urteile müssen stabil
-bleiben, solange keine neuen Builder-Artefakte sichtbar sind.
+Die gehärtete indicative-Regel deployen und zuerst `HUM-0014` sowie die fünf
+AI-indicative-Fälle erneut prüfen. Erwartung: `HUM-0014` wird unbestimmt; die
+fünf AI-Fälle bleiben indikativ, weil sie zusätzlich mehrere Stack-Signale haben.
