@@ -12,7 +12,8 @@
     "lint": "eslint . --ignore-pattern .next",
     "test": "node --test tests/*.test.mjs",
     "eval:production": "node scripts/evaluate-production.mjs",
-    "eval:compare": "node scripts/compare-production-captures.mjs"
+    "eval:compare": "node scripts/compare-production-captures.mjs",
+    "holdout:validate": "node scripts/validate-holdout.mjs"
   },
   "dependencies": {
     "next": "^16.2.11",

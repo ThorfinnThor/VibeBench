@@ -50,10 +50,28 @@ Der bestätigte Produktionslauf nach der False-Positive-Härtung steht in
 [`outputs/VIBEBENCH_PRODUCTION_SMOKE_POST_HARDENING_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_POST_HARDENING_2026-08-09.md),
 der reproduzierbare Vorher-/Nachher-Vergleich in
 [`outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md).
+Die sichtbare Erklärung der generischen Strukturmuster wurde anschließend in
+Produktion bestätigt: Der erneute Scan von `cardshows.io` zeigte unter
+„Erkannte Strukturmuster“ die Hinweise `Dense modern stack` und
+`High data-attribute density`.
 Das eingefrorene Development-Regelwerk steht in
 [`outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md`](outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md),
-der vorgeschlagene nächste Evaluationsschritt in
+der freigegebene nächste Evaluationsschritt in
 [`outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md`](outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md).
+
+Der 100er-Blind-Holdout ist als kontrollierter Arbeitsbereich vorbereitet:
+
+- 50 AI-positive und 50 gematchte Human-Slots,
+- zehn Slots pro Builder- bzw. Kontrollgruppe,
+- XLSX-Arbeitsmappe und CSV-Manifest aus derselben Vorlage,
+- automatische Struktur-, Leakage- und Freeze-Prüfung,
+- getrenntes Akquisitionslog für verworfene und zurückgestellte Kandidaten.
+
+Arbeitsprüfung ohne Ergebnisöffnung:
+
+```bash
+npm run holdout:validate
+```
 
 Direkt gegen die Produktions-API ausführen:
 
@@ -127,14 +145,14 @@ Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Nächste To-dos
 
-1. Die neue sichtbare Erklärung der Strukturhinweise deployen.
-2. Fehlende direkte Evidenz builderweise untersuchen, besonders Bolt und Replit Agent.
-3. Weitere Marker nur als benannte, öffentlich sichtbare Artefakte mit Tests ergänzen.
-4. Einen zeitlich späteren Blind-Holdout einfrieren und Kalibrierung messen.
-5. Erst danach einen modellbasierten Wahrscheinlichkeitswert ergänzen.
+1. Den freigegebenen 100er-Holdout mit unabhängigen Provenienzquellen befüllen.
+2. Passende Human-Kontrollen parallel zu jedem AI-Paket aufnehmen.
+3. Duplikate und Development-/Domain-/Projekt-Leakage vollständig entfernen.
+4. Bei 100 READY-Zeilen Manifest und Scanner-Commit einfrieren.
+5. Erst danach den Blindlauf und eine mögliche Kalibrierung durchführen.
 
 ## Empfohlener nächster Schritt
 
-Die sichtbare Erklärung der drei generischen Strukturmuster deployen. Danach
-keine weitere Schwellenänderung am Entwicklungsset vornehmen, sondern zuerst
-einen neuen Blind-Holdout definieren.
+Die ersten fünf Lovable-Deployments zusammen mit fünf gematchten Human-SaaS-
+Kontrollen provenance-seitig fertigstellen. Bis zum Freeze keine weitere
+Schwellenänderung am Development-Set vornehmen.

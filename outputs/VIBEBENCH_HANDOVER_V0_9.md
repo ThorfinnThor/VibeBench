@@ -50,6 +50,11 @@ Strukturhinweisen auch mindestens zwei erkannte Stack-Signale. Der vollständige
 Produktions-Retest bestätigte, dass alle fünf AI-Hinweisfälle erhalten bleiben
 und ausschließlich `HUM-0014` von indikativ auf unbestimmt wechselt.
 
+Nach dem Deployment wurde auch die neue sichtbare Struktur-Erklärung in der
+Produktionsoberfläche bestätigt. Ein erneuter Scan von `cardshows.io` zeigte
+unter „Erkannte Strukturmuster“ die generischen Hinweise `Dense modern stack`
+und `High data-attribute density`; das zuvor fehlende UI-Element ist damit live.
+
 Die vollständigen Einzelergebnisse und Kontextanalyse liegen in:
 
 - `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md`
@@ -122,7 +127,10 @@ Der öffentliche Chat [KI-Website Erkennung Tipps](https://chatgpt.com/share/6a7
 | `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md` | vollständiger 52-URL-Produktionsreport | 51/52 technisch erfolgreich |
 | `outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md` | reproduzierbarer Vorher-/Nachher-Vergleich | genau ein beabsichtigter Verdict-Wechsel |
 | `outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md` | eingefrorene Direct-/Indicative-/Indeterminate-Regeln | Development-Regelwerk v0.1 |
-| `outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md` | Auswahl-, Freeze- und Auswertungsplan für neue URLs | Vorschlag: 100 URLs |
+| `outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md` | Auswahl-, Freeze- und Auswertungsplan für neue URLs | 100 URLs freigegeben |
+| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.xlsx` | Visuelle Akquisitions- und Review-Arbeitsmappe | 100 Slots vorbereitet; 2 READY |
+| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv` | Maschinenlesbares Holdout-Manifest | 100 Slots; 2 vollständig geprüfte AI-Kandidaten |
+| `scripts/validate-holdout.mjs` | Struktur-, Leakage-, Readiness- und Freeze-Validator | Arbeitsprüfung aktiv; Freeze blockiert bis 100 READY |
 | `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md` | Header-/Manifest-Analyse nach Label und Builder | vorhanden; kein Blind-Holdout |
 | `outputs/VIBEBENCH_ISOLATED_RUNNER_README.md` | Sicherheits- und Bedienhinweise für dynamische Historical-Builds | vorbereitet; Docker-Daemon aus |
 | `outputs/vibebench_live_features_v0_9.csv` | vollständige Live-Scan-Ausgabe | 63 Zeilen, 52 erfolgreich |

@@ -1,7 +1,7 @@
 # VibeBench blind holdout plan v0.1
 
 Stand: 2026-08-09  
-Status: Vorschlag zur Freigabe; noch keine URLs ausgewählt
+Status: 100er-Plan freigegeben; Akquisitionsschema und Freeze-Gate vorbereitet
 
 ## Ziel
 
@@ -39,7 +39,8 @@ allein wären kein angemessener Gegenpol zu modernen AI-Webapps.
 - projektbezogene Provenienz für AI-Builder oder agentische Erstellung,
 - Provenienzquelle getrennt von der zu scannenden Website,
 - keine Verwendung im bisherigen 52-URL-Development-Set,
-- erfolgreicher sicherer Scan vor dem Freeze.
+- erfolgreiche unabhängige Erreichbarkeitsprüfung vor dem Freeze; noch kein
+  VibeBench-Scannerlauf und kein Verdict-Blick.
 
 ### Human-Kontrolle
 
@@ -88,14 +89,35 @@ und benötigt später einen neuen Holdout.
 
 ## Nächste To-dos
 
-1. Umfang und Verteilung freigeben.
-2. Provenienz-Schema und Manifestspalten festlegen.
-3. 100 Kandidaten beschaffen und technische Erreichbarkeit vor dem Freeze prüfen.
-4. Duplikate und Domain-/Projekt-Leakage entfernen.
-5. Manifest hashen, Scanner-Commit fixieren und erst dann auswerten.
+1. Je Zielgruppe zehn unabhängige, provenance-belegte Kandidaten beschaffen.
+2. Technische Erreichbarkeit sowie Development-, Domain- und Projekt-Overlap prüfen.
+3. Nur vollständig geprüfte Zeilen auf `READY` setzen.
+4. Bei 100 READY-Zeilen Manifest hashen und Scanner-Commit fixieren.
+5. Erst danach den einmaligen Blindlauf starten und auswerten.
 
 ## Empfohlener nächster Schritt
 
-Den 100-URL-Plan freigeben. Falls die Beschaffung zu aufwendig ist, wäre ein
-60-URL-Holdout (30 AI/30 Human) die minimale Lean-Variante; belastbarer ist der
-100-URL-Plan.
+Mit der kontrollierten Akquisition der ersten Lovable- und Human-SaaS-Paare
+beginnen. Noch keine Holdout-URL durch den Scanner laufen lassen; vor dem Freeze
+ist nur eine unabhängige Erreichbarkeitsprüfung zulässig.
+
+## Freigabe und Arbeitsdateien
+
+Der 100-URL-Plan wurde am 2026-08-09 freigegeben. Die Akquisition erfolgt in:
+
+- `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.xlsx`
+- `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv`
+
+Die CSV wird im Arbeitsmodus mit `npm run holdout:validate` geprüft. Der finale
+Freeze erfolgt erst bei 100 READY-Zeilen mit einem vollständigen Scanner-Commit:
+
+```bash
+node scripts/validate-holdout.mjs \
+  outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv \
+  --freeze --scanner-commit FULL_40_CHARACTER_GIT_SHA
+```
+
+Verworfene, zurückgestellte und akzeptierte Quellen werden getrennt im
+Akquisitionslog dokumentiert:
+
+- `outputs/holdout_v0_1/VIBEBENCH_HOLDOUT_ACQUISITION_LOG_2026-08-09.md`
