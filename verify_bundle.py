@@ -84,6 +84,17 @@ assert production_smoke["summary"]["human"]["direct"] == 0
 asset_update = root / "outputs" / "VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md"
 assert asset_update.is_file()
 assert "Same-Origin" in asset_update.read_text(encoding="utf-8")
+asset_smoke = json.loads((root / "outputs" / "vibebench_production_smoke_asset_v1_2026-08-09.json").read_text())
+assert asset_smoke["summary"]["apiSuccessful"] == 20
+assert asset_smoke["summary"]["assetScan"] == {
+    "fetched": 68,
+    "bytes": 5_969_859,
+    "errors": 0,
+    "truncated": 8,
+}
+asset_comparison = root / "outputs" / "VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md"
+assert asset_comparison.is_file()
+assert "Human: direkt oder indikativ | 0 / 10" in asset_comparison.read_text(encoding="utf-8")
 
 retry_report = root / "outputs" / "VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md"
 isolated_readme = root / "outputs" / "VIBEBENCH_ISOLATED_RUNNER_README.md"

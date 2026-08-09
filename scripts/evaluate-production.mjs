@@ -6,9 +6,14 @@ const apiUrl = process.env.VIBEBENCH_API_URL || "https://vibe-bench-cyan.vercel.
 const importedResultsPath = process.env.VIBEBENCH_RESULTS_FILE
   ? path.resolve(process.env.VIBEBENCH_RESULTS_FILE)
   : null;
+const outputTag = String(process.env.VIBEBENCH_OUTPUT_TAG || "")
+  .toLowerCase()
+  .replace(/[^a-z0-9_-]+/g, "-")
+  .replace(/^-+|-+$/g, "");
+const outputSuffix = outputTag ? `_${outputTag}` : "";
 const outputDir = path.resolve("outputs");
-const jsonPath = path.join(outputDir, "vibebench_production_smoke_2026-08-09.json");
-const reportPath = path.join(outputDir, "VIBEBENCH_PRODUCTION_SMOKE_2026-08-09.md");
+const jsonPath = path.join(outputDir, `vibebench_production_smoke${outputSuffix}_2026-08-09.json`);
+const reportPath = path.join(outputDir, `VIBEBENCH_PRODUCTION_SMOKE${outputSuffix.toUpperCase()}_2026-08-09.md`);
 
 const samples = [
   { sampleId: "AIN-0001", label: "AI", builder: "Lovable", url: "https://challengebrew.com" },
@@ -100,6 +105,7 @@ if (importedResultsPath) {
 }
 
 const count = (rows, predicate) => rows.filter(predicate).length;
+const parseMetric = (value) => Number(String(value ?? "0").replaceAll(".", "").replace(",", ".")) || 0;
 const ai = results.filter((row) => row.label === "AI");
 const human = results.filter((row) => row.label === "HUMAN");
 const summary = {
@@ -119,6 +125,12 @@ const summary = {
     indicative: count(human, (row) => row.verdict === "indicative"),
     indeterminate: count(human, (row) => row.verdict === "indeterminate"),
     errors: count(human, (row) => row.verdict === "error")
+  },
+  assetScan: {
+    fetched: results.reduce((total, row) => total + parseMetric(row.assetMetrics?.["Assets scanned"]), 0),
+    bytes: results.reduce((total, row) => total + parseMetric(row.assetMetrics?.["Asset bytes"]), 0),
+    errors: results.reduce((total, row) => total + parseMetric(row.assetMetrics?.["Asset errors"]), 0),
+    truncated: results.reduce((total, row) => total + parseMetric(row.assetMetrics?.["Assets truncated"]), 0)
   }
 };
 
@@ -137,7 +149,7 @@ const cell = (value) => String(value ?? "").replaceAll("|", "\\|").replaceAll("\
 const percentage = (numerator, denominator) => denominator ? `${(100 * numerator / denominator).toFixed(1)} %` : "n/a";
 const table = results.map((row) => {
   const technicalContext = [...row.stackSignals, ...row.contextEvidence];
-  return `| ${row.sampleId} | ${row.label} | ${cell(row.builder || "—")} | ${row.apiOk ? row.verdict : "error"} | ${cell(row.directEvidence.join(", ") || "—")} | ${cell(technicalContext.join(", ") || "—")} | ${row.durationMs} |`;
+  return `| ${row.sampleId} | ${row.label} | ${cell(row.builder || "—")} | ${row.apiOk ? row.verdict : "error"} | ${cell(row.directEvidence.join(", ") || "—")} | ${cell(technicalContext.join(", ") || "—")} | ${cell(row.assetMetrics?.["Assets scanned"] || "—")} | ${cell(row.assetMetrics?.["Asset bytes"] || "—")} | ${row.durationMs} |`;
 }).join("\n");
 
 const report = `# VibeBench production smoke evaluation
@@ -171,11 +183,15 @@ direkte Builder-Artefakte, allgemeine Hinweise und unbestimmte Ergebnisse.
 | Human: indikative Evidenz | ${summary.human.indicative} / ${summary.human.total} |
 | Human: unbestimmt | ${summary.human.indeterminate} / ${summary.human.total} |
 | Scanfehler | ${summary.apiErrors} |
+| Assets geprüft | ${summary.assetScan.fetched} |
+| Asset-Bytes geprüft | ${summary.assetScan.bytes.toLocaleString("de-DE")} |
+| Asset-Fehler | ${summary.assetScan.errors} |
+| Gekürzte Assets | ${summary.assetScan.truncated} |
 
 ## Einzelergebnisse
 
-| Sample | Label | Builder | Verdict | Direkte Evidenz | Technischer Kontext | ms |
-|---|---|---|---|---|---|---:|
+| Sample | Label | Builder | Verdict | Direkte Evidenz | Technischer Kontext | Assets | Asset-Bytes | ms |
+|---|---|---|---|---|---|---:|---:|---:|
 ${table}
 
 ## Interpretation

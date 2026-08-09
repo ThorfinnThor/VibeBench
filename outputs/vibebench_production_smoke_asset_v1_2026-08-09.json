@@ -1,0 +1,564 @@
+{
+  "generatedAt": "2026-08-09T17:00:05.570Z",
+  "apiUrl": "https://vibe-bench-cyan.vercel.app/api/scan",
+  "collectionMode": "browser-captured production UI",
+  "importedResultsPath": "outputs/vibebench_production_browser_capture_asset_v1_2026-08-09.json",
+  "purpose": "Small production smoke evaluation; not a model accuracy claim.",
+  "selection": "10 previously scanable provenance-labelled AI samples and 10 previously scanable Human controls from v0.9.",
+  "summary": {
+    "total": 20,
+    "apiSuccessful": 20,
+    "apiErrors": 0,
+    "ai": {
+      "total": 10,
+      "direct": 5,
+      "indicative": 1,
+      "indeterminate": 4,
+      "errors": 0
+    },
+    "human": {
+      "total": 10,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 10,
+      "errors": 0
+    },
+    "assetScan": {
+      "fetched": 68,
+      "bytes": 5969859,
+      "errors": 0,
+      "truncated": 8
+    }
+  },
+  "results": [
+    {
+      "sampleId": "AIN-0001",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://challengebrew.com",
+      "apiOk": true,
+      "durationMs": 1765,
+      "resolvedUrl": "https://challengebrew.com/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "3",
+        "Asset bytes": "484.403",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0005",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://product-vision-log.lovable.app",
+      "apiOk": true,
+      "durationMs": 1763,
+      "resolvedUrl": "https://product-vision-log.lovable.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Radix UI",
+        "Lucide",
+        "Lovable hosting"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "3",
+        "Asset bytes": "394.636",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0019",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://healthsync-360.lovable.app/",
+      "apiOk": true,
+      "durationMs": 1744,
+      "resolvedUrl": "https://healthsync-360.lovable.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Radix UI",
+        "Lucide",
+        "Lovable hosting"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "3",
+        "Asset bytes": "379.160",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0008",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://prilo.ai",
+      "apiOk": true,
+      "durationMs": 689,
+      "resolvedUrl": "https://www.prilo.ai/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Lucide"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "444.382",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0025",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://zingy-cannoli-9cacce.netlify.app/",
+      "apiOk": true,
+      "durationMs": 975,
+      "resolvedUrl": "https://zingy-cannoli-9cacce.netlify.app/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Lucide",
+        "Netlify"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "323.578",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0029",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://promptbuilder.cloud",
+      "apiOk": true,
+      "durationMs": 1489,
+      "resolvedUrl": "https://promptbuilder.cloud/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Tailwind CSS",
+        "Lucide",
+        "Supabase"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "399.816",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0039",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "url": "https://reaction-master-devthedev01.replit.app/",
+      "apiOk": true,
+      "durationMs": 696,
+      "resolvedUrl": "https://reaction-master-devthedev01.replit.app/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Radix UI",
+        "Lucide",
+        "Replit hosting",
+        "Replit runtime"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "420.634",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0042",
+      "label": "AI",
+      "builder": "v0",
+      "url": "https://v0-shopify-game-template-4501.vercel.app/",
+      "apiOk": true,
+      "durationMs": 702,
+      "resolvedUrl": "https://v0-shopify-game-template-4501.vercel.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "v0"
+      ],
+      "contextEvidence": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Lucide",
+        "Vercel"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "5",
+        "Asset bytes": "513.167",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0044",
+      "label": "AI",
+      "builder": "v0",
+      "url": "https://v0-compute-11.vercel.app/",
+      "apiOk": true,
+      "durationMs": 708,
+      "resolvedUrl": "https://v0-compute-11.vercel.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "v0"
+      ],
+      "contextEvidence": [
+        "Next.js",
+        "React",
+        "Tailwind CSS",
+        "Lucide",
+        "Vercel"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "6",
+        "Asset bytes": "589.294",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "AIA-0023",
+      "label": "AI",
+      "builder": "Claude Code",
+      "url": "https://cardshows.io",
+      "apiOk": true,
+      "durationMs": 6286,
+      "resolvedUrl": "https://cardshows.io/",
+      "httpStatus": 200,
+      "verdict": "indicative",
+      "verdictTitle": "VIBE-CODING-ÄHNLICHE MUSTER",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Next.js",
+        "Tailwind CSS",
+        "Radix UI",
+        "Lucide",
+        "Supabase"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "6",
+        "Asset bytes": "415.315",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0001",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://blog.markvincze.com/",
+      "apiOk": true,
+      "durationMs": 710,
+      "resolvedUrl": "https://blog.markvincze.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "5",
+        "Asset bytes": "284.495",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0002",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://declare-ai.org/",
+      "apiOk": true,
+      "durationMs": 688,
+      "resolvedUrl": "https://declare-ai.org/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "200.527",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0003",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://www.jeremyheminger.com/",
+      "apiOk": true,
+      "durationMs": 699,
+      "resolvedUrl": "https://www.jeremyheminger.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "4",
+        "Asset bytes": "223.573",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0004",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://alexburton.com/",
+      "apiOk": true,
+      "durationMs": 705,
+      "resolvedUrl": "https://alexburton.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "6",
+        "Asset bytes": "148.068",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0005",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://danabyerly.com/",
+      "apiOk": true,
+      "durationMs": 700,
+      "resolvedUrl": "https://danabyerly.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "1",
+        "Asset bytes": "3.101",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0006",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://nathanupchurch.com/",
+      "apiOk": true,
+      "durationMs": 708,
+      "resolvedUrl": "https://nathanupchurch.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "4",
+        "Asset bytes": "329.688",
+        "Asset errors": "0",
+        "Assets truncated": "1"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0007",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://sustainable-rails.com/",
+      "apiOk": true,
+      "durationMs": 935,
+      "resolvedUrl": "https://sustainable-rails.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "205.183",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0008",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://baillehachepascal.dev/",
+      "apiOk": true,
+      "durationMs": 1471,
+      "resolvedUrl": "https://baillehachepascal.dev/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "4.645",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0009",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://liam.nwmr.ch/",
+      "apiOk": true,
+      "durationMs": 964,
+      "resolvedUrl": "https://liam.nwmr.ch/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "2",
+        "Asset bytes": "5.207",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0010",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://ultreia.me/",
+      "apiOk": true,
+      "durationMs": 1482,
+      "resolvedUrl": "https://ultreia.me/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "assetMetrics": {
+        "Assets scanned": "6",
+        "Asset bytes": "200.987",
+        "Asset errors": "0",
+        "Assets truncated": "0"
+      },
+      "error": null
+    }
+  ]
+}

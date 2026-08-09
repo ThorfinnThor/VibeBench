@@ -35,6 +35,10 @@ AI-Seiten und 10 Human-Kontrollen. Der Report und die Einzelergebnisse stehen in
 Die anschließende Untersuchung und Implementierung des begrenzten Asset-Scans
 ist in [`outputs/VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md`](outputs/VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md)
 dokumentiert.
+Der erneute Produktionslauf steht in
+[`outputs/VIBEBENCH_PRODUCTION_SMOKE_ASSET_V1_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_ASSET_V1_2026-08-09.md),
+der direkte Vorher-/Nachher-Vergleich in
+[`outputs/VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md).
 
 Direkt gegen die Produktions-API ausführen:
 
