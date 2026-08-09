@@ -81,6 +81,9 @@ assert production_smoke["summary"]["total"] == 20
 assert production_smoke["summary"]["apiSuccessful"] == 20
 assert production_smoke["summary"]["ai"]["direct"] == 5
 assert production_smoke["summary"]["human"]["direct"] == 0
+asset_update = root / "outputs" / "VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md"
+assert asset_update.is_file()
+assert "Same-Origin" in asset_update.read_text(encoding="utf-8")
 
 retry_report = root / "outputs" / "VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md"
 isolated_readme = root / "outputs" / "VIBEBENCH_ISOLATED_RUNNER_README.md"

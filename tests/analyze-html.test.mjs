@@ -25,3 +25,29 @@ test("reports multi-signal structural hints without claiming direct attribution"
   assert.equal(result.verdict.level, "indicative");
 });
 
+test("finds a direct Bolt marker in a same-origin asset", () => {
+  const result = analyzeHtml({
+    html: '<html><script src="/assets/index.js"></script></html>',
+    assetText: 'const builder = "made with Bolt";',
+    url: "https://example.com/",
+    headers: {}
+  });
+  assert.equal(result.verdict.level, "direct");
+  assert.deepEqual(result.directEvidence.map((item) => [item.label, item.source]), [["Bolt", "same-origin-asset"]]);
+});
+
+test("keeps Replit and StackBlitz runtime traces as context", () => {
+  const result = analyzeHtml({
+    html: '<html><script src="https://replit-cdn.com/widget.js"></script></html>',
+    assetText: "webcontainer runtime",
+    url: "https://demo.replit.app/",
+    headers: {}
+  });
+  assert.equal(result.verdict.level, "indeterminate");
+  assert.equal(result.directEvidence.length, 0);
+  assert.deepEqual(result.contextEvidence.map((item) => item.label), [
+    "Replit hosting",
+    "Replit runtime",
+    "StackBlitz/WebContainer"
+  ]);
+});

@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 
-type Evidence = { type: string; label: string; strength: string };
+type Evidence = { type: string; label: string; strength: string; source?: string };
 type ScanResult = {
   ok: boolean;
   error?: string;
@@ -20,7 +20,9 @@ type ScanResult = {
 
 const metricLabels: Record<string, string> = {
   htmlBytes: "HTML bytes", scriptTags: "Scripts", stylesheetLinks: "Stylesheets", inlineStyles: "Inline styles",
-  dataAttributes: "Data attributes", forms: "Forms", headings: "Headings", images: "Images"
+  dataAttributes: "Data attributes", forms: "Forms", headings: "Headings", images: "Images",
+  sameOriginAssets: "Assets scanned", assetBytes: "Asset bytes", assetFetchErrors: "Asset errors",
+  truncatedAssets: "Assets truncated"
 };
 
 export default function Home() {
@@ -61,7 +63,7 @@ export default function Home() {
           <input id="url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="example.com" autoComplete="url" required />
           <button disabled={loading}>{loading ? "Analysiere …" : "Website prüfen →"}</button>
         </div>
-        <p>Nur öffentliche HTTP(S)-Seiten · private Netzwerke werden blockiert · max. 1,5 MB HTML</p>
+        <p>Nur öffentliche HTTP(S)-Seiten · private Netzwerke werden blockiert · begrenzter HTML- und Same-Origin-Asset-Scan</p>
       </form>
     </section>
 
@@ -77,7 +79,7 @@ export default function Home() {
           <article>
             <p className="card-number">02 / Builder evidence</p>
             <h3>Direkte Artefakte</h3>
-            {result.directEvidence?.length ? <div className="chips direct-chips">{result.directEvidence.map((item) => <span key={item.label}>{item.label}<small>direct</small></span>)}</div> : <p className="empty-state">Keine direkten Builder-Marker im initialen HTML gefunden.</p>}
+            {result.directEvidence?.length ? <div className="chips direct-chips">{result.directEvidence.map((item) => <span key={item.label}>{item.label}<small>{item.source === "same-origin-asset" ? "asset" : "direct"}</small></span>)}</div> : <p className="empty-state">Keine direkten Builder-Marker in HTML, Headern oder geprüften Assets gefunden.</p>}
           </article>
           <article>
             <p className="card-number">03 / Context</p>
@@ -116,4 +118,3 @@ export default function Home() {
     <footer><strong>VibeBench</strong><p>Research preview · Pilot diagnostics only</p><a href="https://github.com/ThorfinnThor/VibeBench">GitHub ↗</a></footer>
   </main>;
 }
-

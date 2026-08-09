@@ -32,6 +32,9 @@ stehen in [`outputs/VIBEBENCH_HANDOVER_V0_9.md`](outputs/VIBEBENCH_HANDOVER_V0_9
 Der versionierte Testlauf gegen die veröffentlichte App umfasst 10 gelabelte
 AI-Seiten und 10 Human-Kontrollen. Der Report und die Einzelergebnisse stehen in
 [`outputs/VIBEBENCH_PRODUCTION_SMOKE_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_2026-08-09.md).
+Die anschließende Untersuchung und Implementierung des begrenzten Asset-Scans
+ist in [`outputs/VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md`](outputs/VIBEBENCH_ASSET_EVIDENCE_UPDATE_2026-08-09.md)
+dokumentiert.
 
 Direkt gegen die Produktions-API ausführen:
 
@@ -56,7 +59,9 @@ npm run dev
 
 Anschließend `http://localhost:3000` öffnen. Die App scannt nur öffentlich
 auflösbare HTTP(S)-Seiten, validiert auch Weiterleitungsziele und begrenzt den
-HTML-Download auf 1,5 MB.
+HTML-Download auf 1,5 MB. Zusätzlich prüft sie höchstens vier Same-Origin-JS-
+und zwei Same-Origin-CSS-Dateien mit jeweils maximal 300 KB. Fremde Assets und
+Cross-Origin-Weiterleitungen werden nicht geladen.
 
 CLI-Extractor:
 
