@@ -44,17 +44,21 @@ und verändern allein kein Verdict.
 Der aktuelle vollständige Produktions-Capture enthält alle 52 historisch
 erfolgreichen Live-URLs: 51 waren erneut erreichbar, eine antwortete mit HTTP
 403. Bei 36 AI-Samples ergaben sich 13 direkte, 5 indikative, 17 unbestimmte
-und 1 technische Fehlerzeile; bei 16 Human-Samples 0 direkte, 1 indikative und
-15 unbestimmte Ergebnisse. Der einzelne Human-Hinweisfall führte zu einer lokal
-implementierten Härtung: `indicative` verlangt nun neben zwei Strukturhinweisen
-auch mindestens zwei erkannte Stack-Signale. Alle fünf AI-Hinweisfälle bleiben
-damit erhalten, der Human-Fall wird unbestimmt.
+und 1 technische Fehlerzeile; bei 16 Human-Samples nach der Härtung 0 direkte,
+0 indikative und 16 unbestimmte Ergebnisse. `Indicative` verlangt nun neben zwei
+Strukturhinweisen auch mindestens zwei erkannte Stack-Signale. Der vollständige
+Produktions-Retest bestätigte, dass alle fünf AI-Hinweisfälle erhalten bleiben
+und ausschließlich `HUM-0014` von indikativ auf unbestimmt wechselt.
 
 Die vollständigen Einzelergebnisse und Kontextanalyse liegen in:
 
 - `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md`
 - `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md`
 - `outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md`
+- `outputs/VIBEBENCH_PRODUCTION_SMOKE_POST_HARDENING_2026-08-09.md`
+- `outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md`
+- `outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md`
+- `outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md`
 
 ## Was bisher gemacht wurde
 
@@ -113,9 +117,12 @@ Der öffentliche Chat [KI-Website Erkennung Tipps](https://chatgpt.com/share/6a7
 | `run_historical_snapshot_freeze.sh` | sicherer Runner für Static-Historical-Snapshots | aktualisiert; Static-only als Host-Default |
 | `outputs/VIBEBENCH_RUN_REPORT_2026-08-09.md` | Bericht des ersten realen Laufs | vorhanden |
 | `outputs/VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md` | Audit des Retries der 11 Live-Ausfälle | 0/11 wieder scanbar |
-| `app/`, `lib/` | Next.js Evidence-Scanner mit sicherer URL-, Asset- und Manifest-Prüfung | auf Vercel veröffentlicht; Härtung lokal geprüft |
+| `app/`, `lib/` | Next.js Evidence-Scanner mit sicherer URL-, Asset- und Manifest-Prüfung | auf Vercel veröffentlicht; Härtung in Produktion bestätigt |
 | `scripts/evaluate-production.mjs` | reproduzierbare Produktionsauswertung für feste und importierte Captures | 20er Smoke und 52er Vollerfassung unterstützt |
 | `outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md` | vollständiger 52-URL-Produktionsreport | 51/52 technisch erfolgreich |
+| `outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md` | reproduzierbarer Vorher-/Nachher-Vergleich | genau ein beabsichtigter Verdict-Wechsel |
+| `outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md` | eingefrorene Direct-/Indicative-/Indeterminate-Regeln | Development-Regelwerk v0.1 |
+| `outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md` | Auswahl-, Freeze- und Auswertungsplan für neue URLs | Vorschlag: 100 URLs |
 | `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md` | Header-/Manifest-Analyse nach Label und Builder | vorhanden; kein Blind-Holdout |
 | `outputs/VIBEBENCH_ISOLATED_RUNNER_README.md` | Sicherheits- und Bedienhinweise für dynamische Historical-Builds | vorbereitet; Docker-Daemon aus |
 | `outputs/vibebench_live_features_v0_9.csv` | vollständige Live-Scan-Ausgabe | 63 Zeilen, 52 erfolgreich |

@@ -28,6 +28,12 @@ const metricLabels: Record<string, string> = {
   truncatedAssets: "Assets truncated"
 };
 
+const structuralHintLabels: Record<string, string> = {
+  "dense-modern-stack": "Dense modern stack",
+  "high-data-attribute-density": "High data-attribute density",
+  "script-heavy-static-shell": "Script-heavy static shell"
+};
+
 export default function Home() {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -102,6 +108,12 @@ export default function Home() {
             <p className="card-number">05 / Surface metrics</p>
             <h3>Struktur des HTML</h3>
             <dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{value.toLocaleString("de-DE")}</dd></div>)}</dl>
+            <div className="hint-block">
+              <p>Erkannte Strukturmuster</p>
+              {result.structuralHints?.length
+                ? <div className="chips">{result.structuralHints.map((hint) => <span key={hint}>{structuralHintLabels[hint] || hint}<small>generic hint</small></span>)}</div>
+                : <p className="empty-state">Keine Kombination allgemeiner Strukturmuster erkannt.</p>}
+            </div>
           </article>
         </div>
 

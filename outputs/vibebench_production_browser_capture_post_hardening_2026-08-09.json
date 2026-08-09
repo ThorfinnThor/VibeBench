@@ -1,0 +1,1990 @@
+[
+  {
+    "sampleId": "AIN-0001",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://challengebrew.com",
+    "apiOk": true,
+    "durationMs": 2297,
+    "resolvedUrl": "https://challengebrew.com/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "484.403",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "2",
+      "Forms": "0",
+      "HTML bytes": "13.939",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "7",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0005",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://product-vision-log.lovable.app",
+    "apiOk": true,
+    "durationMs": 1664,
+    "resolvedUrl": "https://product-vision-log.lovable.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Lovable hosting"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "394.636",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "11.081",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0019",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://healthsync-360.lovable.app/",
+    "apiOk": true,
+    "durationMs": 1422,
+    "resolvedUrl": "https://healthsync-360.lovable.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Lovable hosting"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "379.160",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "10.130",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0008",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://prilo.ai",
+    "apiOk": true,
+    "durationMs": 989,
+    "resolvedUrl": "https://www.prilo.ai/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "444.382",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "5.789",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "11",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0025",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://zingy-cannoli-9cacce.netlify.app/",
+    "apiOk": true,
+    "durationMs": 1232,
+    "resolvedUrl": "https://zingy-cannoli-9cacce.netlify.app/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide",
+      "Netlify"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "323.578",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "742",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0029",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://promptbuilder.cloud",
+    "apiOk": true,
+    "durationMs": 1368,
+    "resolvedUrl": "https://promptbuilder.cloud/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Tailwind CSS",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "399.816",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "3.368",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0039",
+    "label": "AI",
+    "builder": "Replit Agent",
+    "url": "https://reaction-master-devthedev01.replit.app/",
+    "apiOk": true,
+    "durationMs": 668,
+    "resolvedUrl": "https://reaction-master-devthedev01.replit.app/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Replit hosting",
+      "Replit runtime"
+    ],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "420.634",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "959",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "2",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0042",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-shopify-game-template-4501.vercel.app/",
+    "apiOk": true,
+    "durationMs": 585,
+    "resolvedUrl": "https://v0-shopify-game-template-4501.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "v0"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · v0.app",
+        "label": "v0"
+      }
+    ],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response",
+      "Next.js response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "513.167",
+      "Asset errors": "0",
+      "Assets scanned": "5",
+      "Assets truncated": "0",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "40.217",
+      "Headings": "2",
+      "Images": "0",
+      "Inline styles": "5",
+      "Scripts": "17",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0044",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-compute-11.vercel.app/",
+    "apiOk": true,
+    "durationMs": 362,
+    "resolvedUrl": "https://v0-compute-11.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "v0"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · v0.app",
+        "label": "v0"
+      }
+    ],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "589.294",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "8",
+      "Forms": "0",
+      "HTML bytes": "114.846",
+      "Headings": "30",
+      "Images": "13",
+      "Inline styles": "116",
+      "Scripts": "15",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIA-0023",
+    "label": "AI",
+    "builder": "Claude Code",
+    "url": "https://cardshows.io",
+    "apiOk": true,
+    "durationMs": 520,
+    "resolvedUrl": "https://cardshows.io/",
+    "httpStatus": 200,
+    "verdict": "indicative",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Vercel response",
+      "Next.js response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "415.315",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "456",
+      "Forms": "2",
+      "HTML bytes": "628.215",
+      "Headings": "61",
+      "Images": "1",
+      "Inline styles": "49",
+      "Scripts": "162",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0001",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://blog.markvincze.com/",
+    "apiOk": true,
+    "durationMs": 493,
+    "resolvedUrl": "https://blog.markvincze.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Installable display mode",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "284.495",
+      "Asset errors": "0",
+      "Assets scanned": "5",
+      "Assets truncated": "0",
+      "Data attributes": "4",
+      "Forms": "0",
+      "HTML bytes": "6.686",
+      "Headings": "2",
+      "Images": "0",
+      "Inline styles": "5",
+      "Scripts": "8",
+      "Stylesheets": "3"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0002",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://declare-ai.org/",
+    "apiOk": true,
+    "durationMs": 499,
+    "resolvedUrl": "https://declare-ai.org/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "200.527",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "7.862",
+      "Headings": "7",
+      "Images": "0",
+      "Inline styles": "2",
+      "Scripts": "2",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0003",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://www.jeremyheminger.com/",
+    "apiOk": true,
+    "durationMs": 588,
+    "resolvedUrl": "https://www.jeremyheminger.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "223.573",
+      "Asset errors": "0",
+      "Assets scanned": "4",
+      "Assets truncated": "0",
+      "Data attributes": "20",
+      "Forms": "1",
+      "HTML bytes": "35.346",
+      "Headings": "29",
+      "Images": "46",
+      "Inline styles": "2",
+      "Scripts": "7",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0004",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://alexburton.com/",
+    "apiOk": true,
+    "durationMs": 507,
+    "resolvedUrl": "https://alexburton.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "148.068",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "14.663",
+      "Headings": "10",
+      "Images": "1",
+      "Inline styles": "10",
+      "Scripts": "8",
+      "Stylesheets": "4"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0005",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://danabyerly.com/",
+    "apiOk": true,
+    "durationMs": 586,
+    "resolvedUrl": "https://danabyerly.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "3.101",
+      "Asset errors": "0",
+      "Assets scanned": "1",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "29.949",
+      "Headings": "8",
+      "Images": "3",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "0"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0006",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://nathanupchurch.com/",
+    "apiOk": true,
+    "durationMs": 488,
+    "resolvedUrl": "https://nathanupchurch.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "329.688",
+      "Asset errors": "0",
+      "Assets scanned": "4",
+      "Assets truncated": "1",
+      "Data attributes": "3",
+      "Forms": "3",
+      "HTML bytes": "30.269",
+      "Headings": "3",
+      "Images": "0",
+      "Inline styles": "23",
+      "Scripts": "9",
+      "Stylesheets": "5"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0007",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://sustainable-rails.com/",
+    "apiOk": true,
+    "durationMs": 819,
+    "resolvedUrl": "https://sustainable-rails.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "205.183",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "25.213",
+      "Headings": "7",
+      "Images": "4",
+      "Inline styles": "7",
+      "Scripts": "1",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0008",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://baillehachepascal.dev/",
+    "apiOk": true,
+    "durationMs": 1246,
+    "resolvedUrl": "https://baillehachepascal.dev/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "4.645",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "9.535",
+      "Headings": "0",
+      "Images": "11",
+      "Inline styles": "17",
+      "Scripts": "2",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0009",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://liam.nwmr.ch/",
+    "apiOk": true,
+    "durationMs": 1044,
+    "resolvedUrl": "https://liam.nwmr.ch/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "5.207",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "1.797",
+      "Headings": "1",
+      "Images": "1",
+      "Inline styles": "0",
+      "Scripts": "2",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0010",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://ultreia.me/",
+    "apiOk": true,
+    "durationMs": 1242,
+    "resolvedUrl": "https://ultreia.me/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Installable display mode",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "200.987",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "12",
+      "Forms": "0",
+      "HTML bytes": "22.058",
+      "Headings": "3",
+      "Images": "4",
+      "Inline styles": "10",
+      "Scripts": "13",
+      "Stylesheets": "10"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0002",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://evebcn.com",
+    "apiOk": true,
+    "durationMs": 812,
+    "resolvedUrl": "https://evebcn.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "411.666",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "2",
+      "Forms": "0",
+      "HTML bytes": "49.779",
+      "Headings": "17",
+      "Images": "13",
+      "Inline styles": "11",
+      "Scripts": "7",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0003",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://podprime.ai",
+    "apiOk": true,
+    "durationMs": 1135,
+    "resolvedUrl": "https://podprime.ai/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.app",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "390.884",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "2.771",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "4",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0004",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://kraflio.com",
+    "apiOk": false,
+    "durationMs": 2327,
+    "verdict": "error",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {},
+    "error": "SCAN NICHT ABGESCHLOSSEN\nWebsite antwortet mit HTTP 403."
+  },
+  {
+    "sampleId": "AIN-0006",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://creativable-de.lovable.app",
+    "apiOk": true,
+    "durationMs": 1447,
+    "resolvedUrl": "https://creativable.de/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "asset · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Installable display mode",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "566.108",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "5.241",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "2",
+      "Stylesheets": "3"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0007",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://thestoryline.lovable.app",
+    "apiOk": true,
+    "durationMs": 1458,
+    "resolvedUrl": "https://thestoryline.lovable.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Lovable hosting"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "392.066",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "11.776",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0010",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://siamferry.com",
+    "apiOk": true,
+    "durationMs": 698,
+    "resolvedUrl": "https://siamferry.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "355.315",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "2.527",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "2",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0011",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://getnodecast.com",
+    "apiOk": true,
+    "durationMs": 1147,
+    "resolvedUrl": "https://getnodecast.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "157.261",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "1",
+      "HTML bytes": "690",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0012",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://openmark.co",
+    "apiOk": true,
+    "durationMs": 1287,
+    "resolvedUrl": "https://www.openmark.co/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "518.320",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "3.391",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "4",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0013",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://grepjob.com",
+    "apiOk": true,
+    "durationMs": 1368,
+    "resolvedUrl": "https://grepjob.com/",
+    "httpStatus": 200,
+    "verdict": "indicative",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Vite",
+      "Tailwind CSS",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "29.370",
+      "Asset errors": "0",
+      "Assets scanned": "1",
+      "Assets truncated": "0",
+      "Data attributes": "779",
+      "Forms": "0",
+      "HTML bytes": "690.119",
+      "Headings": "22",
+      "Images": "10",
+      "Inline styles": "2",
+      "Scripts": "5",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIA-0026",
+    "label": "AI",
+    "builder": "Claude Code",
+    "url": "https://explorer.nc.md",
+    "apiOk": true,
+    "durationMs": 709,
+    "resolvedUrl": "https://explorer.nc.md/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "105.524",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "18",
+      "Forms": "0",
+      "HTML bytes": "22.803",
+      "Headings": "15",
+      "Images": "1",
+      "Inline styles": "1",
+      "Scripts": "5",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0012",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://lesplanner.tudelft.nl/",
+    "apiOk": true,
+    "durationMs": 1232,
+    "resolvedUrl": "https://lesplanner.tudelft.nl/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "290.023",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "23.379",
+      "Headings": "12",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "12",
+      "Stylesheets": "6"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0013",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://analopezmurillo.github.io/",
+    "apiOk": true,
+    "durationMs": 2420,
+    "resolvedUrl": "https://analopezmurillo.github.io/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "19.342",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "23.773",
+      "Headings": "29",
+      "Images": "42",
+      "Inline styles": "7",
+      "Scripts": "4",
+      "Stylesheets": "3"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0014",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://munportal.co/",
+    "apiOk": true,
+    "durationMs": 1581,
+    "resolvedUrl": "https://munportal.co/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "202.444",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "60",
+      "Forms": "0",
+      "HTML bytes": "56.009",
+      "Headings": "15",
+      "Images": "2",
+      "Inline styles": "13",
+      "Scripts": "16",
+      "Stylesheets": "3"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0015",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://floridadatacenters.org/",
+    "apiOk": true,
+    "durationMs": 691,
+    "resolvedUrl": "https://floridadatacenters.org/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "70.631",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "1",
+      "HTML bytes": "132.534",
+      "Headings": "8",
+      "Images": "5",
+      "Inline styles": "140",
+      "Scripts": "10",
+      "Stylesheets": "3"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HUM-0016",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://cherryhillwebdev.com/",
+    "apiOk": true,
+    "durationMs": 662,
+    "resolvedUrl": "https://cherryhillwebdev.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "49.997",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "0",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "49.423",
+      "Headings": "27",
+      "Images": "38",
+      "Inline styles": "37",
+      "Scripts": "6",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "HIS-0024",
+    "label": "HUMAN",
+    "builder": "",
+    "url": "https://website-templates.github.io/",
+    "apiOk": true,
+    "durationMs": 2391,
+    "resolvedUrl": "https://website-templates.github.io/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "8.923",
+      "Asset errors": "0",
+      "Assets scanned": "1",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "11.580",
+      "Headings": "10",
+      "Images": "9",
+      "Inline styles": "0",
+      "Scripts": "0",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0017",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://www.plinq.com.br/",
+    "apiOk": true,
+    "durationMs": 1578,
+    "resolvedUrl": "https://www.plinq.com.br/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "397.229",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "2",
+      "Forms": "0",
+      "HTML bytes": "4.924",
+      "Headings": "0",
+      "Images": "1",
+      "Inline styles": "1",
+      "Scripts": "11",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0018",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://printpigeon.co.uk/",
+    "apiOk": true,
+    "durationMs": 697,
+    "resolvedUrl": "https://printpigeon.co.uk/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide"
+    ],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "417.717",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "7",
+      "Forms": "1",
+      "HTML bytes": "160.341",
+      "Headings": "50",
+      "Images": "2",
+      "Inline styles": "47",
+      "Scripts": "36",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0020",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://www.elora-health.com/",
+    "apiOk": true,
+    "durationMs": 2217,
+    "resolvedUrl": "https://www.elora-health.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "414.858",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "1.713",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "5",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0021",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://the-backchannel.lovable.app/",
+    "apiOk": true,
+    "durationMs": 1002,
+    "resolvedUrl": "https://the-backchannel.lovable.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.app",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lovable hosting"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "522.983",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "5.392",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "6",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0022",
+    "label": "AI",
+    "builder": "Lovable",
+    "url": "https://fire-fairness-pilot.lovable.app/",
+    "apiOk": true,
+    "durationMs": 1971,
+    "resolvedUrl": "https://fire-fairness-pilot.lovable.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Lovable"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · lovable.dev",
+        "label": "Lovable"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide",
+      "Lovable hosting"
+    ],
+    "headerEvidence": [
+      "Cloudflare edge"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "387.297",
+      "Asset errors": "0",
+      "Assets scanned": "3",
+      "Assets truncated": "1",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "11.028",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "3",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0026",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://www.dachly.com",
+    "apiOk": true,
+    "durationMs": 1445,
+    "resolvedUrl": "https://dachly.com/",
+    "httpStatus": 200,
+    "verdict": "indicative",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Radix UI",
+      "Lucide"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "586.914",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "66",
+      "Forms": "2",
+      "HTML bytes": "68.501",
+      "Headings": "1",
+      "Images": "8",
+      "Inline styles": "49",
+      "Scripts": "30",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0027",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://sell-me-this-pen.netlify.app/",
+    "apiOk": true,
+    "durationMs": 1140,
+    "resolvedUrl": "https://sell-me-this-pen.netlify.app/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide",
+      "Netlify"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "320.972",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "996",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0028",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://singletenantsoftware.com",
+    "apiOk": true,
+    "durationMs": 1223,
+    "resolvedUrl": "https://singletenantsoftware.com/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "Bolt"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "asset · bolt.new",
+        "label": "Bolt"
+      }
+    ],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "371.304",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "2.147",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0030",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://coupleshub.io",
+    "apiOk": true,
+    "durationMs": 1015,
+    "resolvedUrl": "https://coupleshub.io/",
+    "httpStatus": 200,
+    "verdict": "indicative",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Installable display mode",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "447.097",
+      "Asset errors": "0",
+      "Assets scanned": "5",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "87.384",
+      "Headings": "26",
+      "Images": "8",
+      "Inline styles": "39",
+      "Scripts": "28",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0033",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://www.kidtime.club",
+    "apiOk": true,
+    "durationMs": 1399,
+    "resolvedUrl": "https://www.kidtime.club/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Vite",
+      "Tailwind CSS"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "321.855",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "584",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0035",
+    "label": "AI",
+    "builder": "Bolt",
+    "url": "https://tetdle.com",
+    "apiOk": true,
+    "durationMs": 1225,
+    "resolvedUrl": "https://tetdle.com/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Vite",
+      "Tailwind CSS",
+      "Lucide",
+      "Supabase"
+    ],
+    "headerEvidence": [
+      "Netlify response"
+    ],
+    "manifestEvidence": [
+      "Web app manifest",
+      "Installable display mode",
+      "Manifest icons"
+    ],
+    "assetMetrics": {
+      "Asset bytes": "284.918",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "0",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "4.252",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "2",
+      "Stylesheets": "1"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0040",
+    "label": "AI",
+    "builder": "Replit Agent",
+    "url": "https://formula1-pitlane-racing.replit.app/",
+    "apiOk": true,
+    "durationMs": 811,
+    "resolvedUrl": "https://formula1-pitlane-racing.replit.app/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Replit hosting"
+    ],
+    "headerEvidence": [],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "340.832",
+      "Asset errors": "0",
+      "Assets scanned": "2",
+      "Assets truncated": "1",
+      "Data attributes": "0",
+      "Forms": "0",
+      "HTML bytes": "818",
+      "Headings": "0",
+      "Images": "0",
+      "Inline styles": "0",
+      "Scripts": "1",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0043",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-artemis-ii-v0.vercel.app/",
+    "apiOk": true,
+    "durationMs": 472,
+    "resolvedUrl": "https://v0-artemis-ii-v0.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "indeterminate",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "560.357",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "3",
+      "Forms": "0",
+      "HTML bytes": "28.365",
+      "Headings": "7",
+      "Images": "0",
+      "Inline styles": "3",
+      "Scripts": "18",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0045",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-kudo-board-86.vercel.app/",
+    "apiOk": true,
+    "durationMs": 497,
+    "resolvedUrl": "https://v0-kudo-board-86.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "v0"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · v0.app",
+        "label": "v0"
+      }
+    ],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "535.874",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "9",
+      "Forms": "0",
+      "HTML bytes": "14.940",
+      "Headings": "5",
+      "Images": "3",
+      "Inline styles": "3",
+      "Scripts": "16",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0046",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-saas-landing-page-three-topaz-50.vercel.app/",
+    "apiOk": true,
+    "durationMs": 686,
+    "resolvedUrl": "https://v0-saas-landing-page-three-topaz-50.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "direct",
+    "directEvidence": [
+      "v0"
+    ],
+    "directEvidenceDetails": [
+      {
+        "detail": "page · v0.app",
+        "label": "v0"
+      }
+    ],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "570.549",
+      "Asset errors": "0",
+      "Assets scanned": "6",
+      "Assets truncated": "0",
+      "Data attributes": "8",
+      "Forms": "0",
+      "HTML bytes": "135.299",
+      "Headings": "12",
+      "Images": "5",
+      "Inline styles": "105",
+      "Scripts": "42",
+      "Stylesheets": "2"
+    },
+    "error": null
+  },
+  {
+    "sampleId": "AIN-0047",
+    "label": "AI",
+    "builder": "v0",
+    "url": "https://v0-calendar-app-iota-eight-11.vercel.app/",
+    "apiOk": true,
+    "durationMs": 2459,
+    "resolvedUrl": "https://v0-calendar-app-iota-eight-11.vercel.app/",
+    "httpStatus": 200,
+    "verdict": "indicative",
+    "directEvidence": [],
+    "directEvidenceDetails": [],
+    "contextEvidence": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Vercel"
+    ],
+    "headerEvidence": [
+      "Vercel response"
+    ],
+    "manifestEvidence": [],
+    "assetMetrics": {
+      "Asset bytes": "460.646",
+      "Asset errors": "0",
+      "Assets scanned": "5",
+      "Assets truncated": "0",
+      "Data attributes": "1",
+      "Forms": "0",
+      "HTML bytes": "42.904",
+      "Headings": "6",
+      "Images": "0",
+      "Inline styles": "63",
+      "Scripts": "18",
+      "Stylesheets": "1"
+    },
+    "error": null
+  }
+]
+

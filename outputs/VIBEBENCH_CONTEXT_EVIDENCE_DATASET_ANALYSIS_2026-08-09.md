@@ -2,7 +2,7 @@
 
 Stand: 2026-08-09  
 Quelle: `outputs/vibebench_live_features_v0_9.csv` und vollständiger Produktions-Capture  
-Status: Entwicklungsanalyse, kein Blind-Holdout
+Status: Härtung in Produktion bestätigt; weiterhin kein Blind-Holdout
 
 ## Fragestellung
 
@@ -73,18 +73,20 @@ keinen erkannten Stack. Die neue Regel verlangt deshalb gleichzeitig:
 - mindestens zwei Stack-Signale.
 
 Alle fünf bisherigen AI-indicative-Fälle erfüllen diese zusätzliche Bedingung;
-`HUM-0014` nicht. Ein Regressionstest schützt diese Trennung.
+`HUM-0014` nicht. Ein Regressionstest schützt diese Trennung. Der vollständige
+Produktions-Retest bestätigte exakt dieses Ergebnis: `HUM-0014` wechselte von
+`indicative` zu `indeterminate`; alle 18 direkten oder indikativen AI-Ergebnisse
+blieben erhalten.
 
 ## Nächste To-dos
 
-1. Härtung deployen und den vollständigen Capture erneut ausführen.
-2. Direkte Treffer nach Marker und Fundort (`page`/`asset`) auswerten.
-3. Fehlende Lovable-, Bolt-, Replit- und v0-Treffer auf weitere stabile,
+1. Direkte Treffer nach Marker und Fundort (`page`/`asset`) weiter auswerten.
+2. Fehlende Lovable-, Bolt-, Replit- und v0-Treffer auf weitere stabile,
    öffentlich sichtbare Builder-Artefakte prüfen.
+3. Strukturhinweise in der Oberfläche explizit erklären.
 4. Einen unangetasteten Blind-Holdout für belastbare Gütemaße anlegen.
 
 ## Empfohlener nächster Schritt
 
-Nach dem Deployment zuerst `HUM-0014`, `AIN-0013`, `AIN-0026`, `AIN-0030`,
-`AIN-0047` und `AIA-0023` erneut scannen. So wird die gezielte Härtung geprüft,
-bevor ein weiterer Marker ergänzt wird.
+Keine weitere Schwellenanpassung anhand derselben 52 Entwicklungsfälle
+vornehmen. Als Nächstes einen neuen Blind-Holdout definieren und einfrieren.

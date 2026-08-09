@@ -46,11 +46,25 @@ Der vollständige Browser-Capture aller 52 historisch erfolgreichen URLs steht i
 [`outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_FULL_HEADER_MANIFEST_2026-08-09.md).
 Die kohorten- und builderweise Einordnung der Kontextsignale steht in
 [`outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md`](outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md).
+Der bestätigte Produktionslauf nach der False-Positive-Härtung steht in
+[`outputs/VIBEBENCH_PRODUCTION_SMOKE_POST_HARDENING_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_POST_HARDENING_2026-08-09.md),
+der reproduzierbare Vorher-/Nachher-Vergleich in
+[`outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md).
+Das eingefrorene Development-Regelwerk steht in
+[`outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md`](outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md),
+der vorgeschlagene nächste Evaluationsschritt in
+[`outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md`](outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md).
 
 Direkt gegen die Produktions-API ausführen:
 
 ```bash
 npm run eval:production
+```
+
+Zwei gespeicherte Captures vergleichen:
+
+```bash
+npm run eval:compare -- BEFORE.json AFTER.json REPORT.md
 ```
 
 Ein bereits erfasstes Ergebnis reproduzierbar neu auswerten:
@@ -113,7 +127,7 @@ Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Nächste To-dos
 
-1. Die False-Positive-Härtung deployen und den 52-URL-Capture wiederholen.
+1. Die neue sichtbare Erklärung der Strukturhinweise deployen.
 2. Fehlende direkte Evidenz builderweise untersuchen, besonders Bolt und Replit Agent.
 3. Weitere Marker nur als benannte, öffentlich sichtbare Artefakte mit Tests ergänzen.
 4. Einen zeitlich späteren Blind-Holdout einfrieren und Kalibrierung messen.
@@ -121,6 +135,6 @@ Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Empfohlener nächster Schritt
 
-Nach dem nächsten Deployment zuerst den früheren Human-Hinweisfall `HUM-0014`
-und die fünf AI-Hinweisfälle erneut scannen. So lässt sich die Härtung gezielt
-bestätigen, bevor die Builder-Abdeckung erweitert wird.
+Die sichtbare Erklärung der drei generischen Strukturmuster deployen. Danach
+keine weitere Schwellenänderung am Entwicklungsset vornehmen, sondern zuerst
+einen neuen Blind-Holdout definieren.

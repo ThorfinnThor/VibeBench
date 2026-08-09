@@ -1,7 +1,7 @@
 # VibeBench asset evidence update
 
 Stand: 2026-08-09  
-Status: lokal implementiert und geprüft; Deployment nach Push
+Status: in Produktion geprüft; vollständige 52-URL-Auswertung abgeschlossen
 
 ## Ziel
 
@@ -47,22 +47,23 @@ erfordert weiterhin einen Builder-spezifischen Marker wie `made with Bolt`,
 
 ## Erwartete Wirkung
 
-Die vier untersuchten Bolt-/Replit-Samples bleiben nach aktuellem Kenntnisstand
-voraussichtlich unbestimmt. Das ist kein Fehler: Ihre öffentlich sichtbaren
+Die vier zunächst untersuchten Bolt-/Replit-Samples blieben wie erwartet
+unbestimmt. In der späteren vollständigen Stichprobe wurde jedoch `AIN-0028`
+über `asset · bolt.new` als direkter Bolt-Treffer erkannt. Das bestätigt den
+Nutzen des begrenzten Asset-Scans, ohne die übrigen Fälle künstlich hochzustufen.
+Ihre öffentlich sichtbaren
 Deployments enthalten derzeit keine belastbare direkte Builder-Evidenz. Andere
 Seiten können nun jedoch erkannt werden, wenn Builder-Marker nur im
 Same-Origin-Bundle und nicht im initialen HTML stehen.
 
 ## Nächste To-dos
 
-1. Änderung pushen und über Vercel deployen.
-2. Den 20-URL-Smoke-Test gegen die neue Produktion erneut ausführen.
-3. Vorher-/Nachher-Ergebnisse vergleichen; neue direkte Treffer einzeln prüfen.
-4. HTTP-Header- und Manifest-Kontext transparent in der Oberfläche ausgeben.
-5. Einen größeren, builderbalancierten Holdout aufbauen.
+1. Niedrige Direct-Abdeckung von Bolt und Replit Agent transparent berichten.
+2. Neue Marker nur nach Prüfung auf Human-Kontrollen ergänzen.
+3. Einen größeren, builderbalancierten Blind-Holdout aufbauen.
+4. Asset-Limits und Kürzungen weiterhin separat auditieren.
 
 ## Empfohlener nächster Schritt
 
-Nach dem Push den Produktions-Smoke-Test erneut erfassen. Erst dessen Ergebnisse
-entscheiden, ob weitere Marker ergänzt oder die betroffenen Seiten bewusst als
-`indeterminate` dokumentiert werden.
+Keine generischen Replit-CDN-, Netlify- oder Vite-Signale zu direkten Markern
+hochziehen. Zuerst neue Ground Truth für einen Blind-Holdout beschaffen.

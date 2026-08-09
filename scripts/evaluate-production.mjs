@@ -238,8 +238,8 @@ ${table}
 
 ## Nächste To-dos
 
-1. Die gehärtete indicative-Regel deployen und denselben Capture erneut auswerten.
-2. Fehlende AI-Treffer nach Builder gruppieren und die zugehörigen JS-/CSS-Artefakte untersuchen.
+1. Strukturhinweise in der Oberfläche explizit und verständlich benennen.
+2. Niedrige Direct-Abdeckung bei Bolt und Replit Agent als bekannte Lücke führen.
 3. Einen noch nie zur Regelentwicklung verwendeten Blind-Holdout definieren.
 4. Scan-Ausfälle getrennt von Klassifikationsfehlern berichten.
 5. Erst nach Blind-Holdout und Kalibrierung einen Wahrscheinlichkeitswert ergänzen.
