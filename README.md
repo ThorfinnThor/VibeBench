@@ -39,6 +39,9 @@ Der erneute Produktionslauf steht in
 [`outputs/VIBEBENCH_PRODUCTION_SMOKE_ASSET_V1_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_ASSET_V1_2026-08-09.md),
 der direkte Vorher-/Nachher-Vergleich in
 [`outputs/VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md).
+Die nachfolgende getrennte Header- und Manifest-Kontextschicht ist in
+[`outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md`](outputs/VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md)
+dokumentiert.
 
 Direkt gegen die Produktions-API ausführen:
 
@@ -65,7 +68,9 @@ Anschließend `http://localhost:3000` öffnen. Die App scannt nur öffentlich
 auflösbare HTTP(S)-Seiten, validiert auch Weiterleitungsziele und begrenzt den
 HTML-Download auf 1,5 MB. Zusätzlich prüft sie höchstens vier Same-Origin-JS-
 und zwei Same-Origin-CSS-Dateien mit jeweils maximal 300 KB. Fremde Assets und
-Cross-Origin-Weiterleitungen werden nicht geladen.
+Cross-Origin-Weiterleitungen werden nicht geladen. Ein im HTML verlinktes
+Same-Origin-Web-Manifest wird mit maximal 100 KB als separate Kontextquelle
+geprüft; bekannte öffentliche Response-Header werden ebenfalls separat angezeigt.
 
 CLI-Extractor:
 

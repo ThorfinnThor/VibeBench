@@ -95,6 +95,11 @@ assert asset_smoke["summary"]["assetScan"] == {
 asset_comparison = root / "outputs" / "VIBEBENCH_PRODUCTION_COMPARISON_ASSET_V1_2026-08-09.md"
 assert asset_comparison.is_file()
 assert "Human: direkt oder indikativ | 0 / 10" in asset_comparison.read_text(encoding="utf-8")
+header_manifest_update = root / "outputs" / "VIBEBENCH_HEADER_MANIFEST_UPDATE_2026-08-09.md"
+assert header_manifest_update.is_file()
+header_manifest_text = header_manifest_update.read_text(encoding="utf-8")
+assert "Response-Header" in header_manifest_text
+assert "Same-Origin" in header_manifest_text
 
 retry_report = root / "outputs" / "VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md"
 isolated_readme = root / "outputs" / "VIBEBENCH_ISOLATED_RUNNER_README.md"

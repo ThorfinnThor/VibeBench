@@ -36,7 +36,7 @@ h1 em { color:var(--blue); font-family:Georgia, serif; font-weight:400; text-tra
 .status-orbit::before { content:""; position:absolute; inset:10px; border:1px dashed var(--ink); border-radius:50%; animation:spin 12s linear infinite; }
 .status-orbit span { font-family:"Courier New", monospace; font-size:10px; text-transform:uppercase; }
 @keyframes spin { to { transform:rotate(360deg); } }
-.result-grid { display:grid; grid-template-columns:repeat(3,1fr); border-left:1px solid var(--ink); }
+.result-grid { display:grid; grid-template-columns:repeat(2,1fr); border-left:1px solid var(--ink); }
 .result-grid article { min-height:330px; padding:28px; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); }
 .result-grid h3 { margin:56px 0 22px; font-size:30px; line-height:.95; letter-spacing:-.04em; text-transform:uppercase; }
 .chips { display:flex; flex-wrap:wrap; gap:7px; }
@@ -92,4 +92,3 @@ footer p, footer a { font-family:"Courier New", monospace; font-size:9px; }
   footer { padding:25px 20px; grid-template-columns:1fr; gap:8px; }
 }
 @media (prefers-reduced-motion:reduce) { *, *::before { animation:none !important; scroll-behavior:auto !important; } }
-

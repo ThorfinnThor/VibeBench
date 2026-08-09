@@ -12,9 +12,12 @@ type ScanResult = {
   verdict?: { level: "direct" | "indicative" | "indeterminate"; title: string; summary: string };
   directEvidence?: Evidence[];
   contextEvidence?: Evidence[];
+  headerEvidence?: Evidence[];
+  manifestEvidence?: Evidence[];
   stackSignals?: string[];
   structuralHints?: string[];
   metrics?: Record<string, number>;
+  manifestScan?: { linked: boolean; fetched: boolean; validJson: boolean; bytes: number; truncated: boolean };
   warning?: string;
 };
 
@@ -87,8 +90,16 @@ export default function Home() {
             <div className="chips">{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label)].map((label) => <span key={label}>{label}</span>)}</div>
             {!result.stackSignals?.length && !result.contextEvidence?.length && <p className="empty-state">Kein bekannter Stack-Kontext sichtbar.</p>}
           </article>
+          <article>
+            <p className="card-number">04 / Response context</p>
+            <h3>Header & Manifest</h3>
+            <div className="chips">{[...(result.headerEvidence || []), ...(result.manifestEvidence || [])].map((item) => <span key={`${item.type}-${item.label}`}>{item.label}<small>context</small></span>)}</div>
+            {!result.headerEvidence?.length && !result.manifestEvidence?.length && <p className="empty-state">Keine bekannten Hosting-Header und kein gültiges Same-Origin-Manifest gefunden.</p>}
+            {result.manifestScan?.linked && !result.manifestScan.validJson && <p className="empty-state">Ein Manifest ist verlinkt, konnte aber nicht als gültiges JSON ausgewertet werden.</p>}
+            {result.manifestScan?.validJson && <p className="empty-state">Manifest: {result.manifestScan.bytes.toLocaleString("de-DE")} Bytes{result.manifestScan.truncated ? " · gekürzt" : ""}</p>}
+          </article>
           <article className="metrics-card">
-            <p className="card-number">04 / Surface metrics</p>
+            <p className="card-number">05 / Surface metrics</p>
             <h3>Struktur des HTML</h3>
             <dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{value.toLocaleString("de-DE")}</dd></div>)}</dl>
           </article>

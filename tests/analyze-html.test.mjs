@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { analyzeHtml } from "../lib/analyze-html.mjs";
+import { analyzeHeaders, analyzeHtml, analyzeManifest } from "../lib/analyze-html.mjs";
 
 test("separates direct builder evidence from hosting context", () => {
   const result = analyzeHtml({ html: '<html><body data-lov-id="hero"></body></html>', url: "https://demo.lovable.app/", headers: {} });
@@ -50,4 +50,36 @@ test("keeps Replit and StackBlitz runtime traces as context", () => {
     "Replit runtime",
     "StackBlitz/WebContainer"
   ]);
+});
+
+test("reports known response headers as context without changing the verdict", () => {
+  const headers = {
+    server: "cloudflare",
+    "x-vercel-id": "fra1::example",
+    "x-powered-by": "Next.js"
+  };
+  assert.deepEqual(analyzeHeaders(headers).map((item) => item.label), [
+    "Vercel response",
+    "Cloudflare edge",
+    "Next.js response"
+  ]);
+  const result = analyzeHtml({ html: "<html></html>", url: "https://example.com/", headers });
+  assert.equal(result.verdict.level, "indeterminate");
+  assert.ok(result.stackSignals.includes("Next.js"));
+});
+
+test("treats a valid manifest as context only", () => {
+  const analysis = analyzeManifest(JSON.stringify({
+    name: "Example",
+    display: "standalone",
+    icons: [{ src: "/icon.png", sizes: "192x192" }]
+  }));
+  assert.equal(analysis.validJson, true);
+  assert.deepEqual(analysis.evidence.map((item) => item.label), [
+    "Web app manifest",
+    "Installable display mode",
+    "Manifest icons"
+  ]);
+  assert.deepEqual(analyzeManifest("<html>not json</html>"), { evidence: [], validJson: false });
+  assert.deepEqual(analyzeManifest("null"), { evidence: [], validJson: false });
 });

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { extractSameOriginAssets } from "../lib/extract-assets.mjs";
+import { extractSameOriginAssets, extractSameOriginManifest } from "../lib/extract-assets.mjs";
 
 test("extracts capped same-origin scripts and stylesheets", () => {
   const html = `
@@ -29,4 +29,20 @@ test("rejects credentials, non-http URLs, and duplicate assets", () => {
   assert.deepEqual(extractSameOriginAssets({ html, baseUrl: "https://example.com/" }), [
     { kind: "script", url: "https://example.com/app.js" }
   ]);
+});
+
+test("extracts only a linked same-origin manifest", () => {
+  const html = `
+    <link rel="icon" href="/icon.png">
+    <link rel="manifest alternate" href="/app.webmanifest?build=1&amp;lang=de">
+    <link rel="manifest" href="https://cdn.example/other.webmanifest">
+  `;
+  assert.equal(
+    extractSameOriginManifest({ html, baseUrl: "https://example.com/path" }),
+    "https://example.com/app.webmanifest?build=1&lang=de"
+  );
+  assert.equal(
+    extractSameOriginManifest({ html: '<link rel="manifest" href="https://cdn.example/app.json">', baseUrl: "https://example.com/" }),
+    null
+  );
 });
