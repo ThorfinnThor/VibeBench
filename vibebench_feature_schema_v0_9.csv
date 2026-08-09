@@ -1,0 +1,79 @@
+﻿feature,category,evidence_strength,description,model_role
+scan_ok,scan,quality,Successful scan flag,not_model_feature
+status_code,http,neutral,HTTP status code,context
+redirect_count,http,weak,Redirect count,context
+response_ms,http,weak,Homepage response time,context
+html_bytes,html,weak,Fetched HTML byte size,context
+meta_generator,metadata,strong_when_specific,Generator meta tag value,categorical_evidence
+canonical_count,seo,weak,Canonical link count,context
+jsonld_count,seo,weak,JSON-LD script count,context
+og_tag_count,seo,weak,OpenGraph tag count,context
+script_tag_count,assets,weak,External script tag count,context
+stylesheet_count,assets,weak,Stylesheet count,context
+manifest_link_count,pwa,weak,Manifest link count,context
+inline_script_bytes,assets,weak,Inline script bytes,context
+inline_style_bytes,assets,weak,Inline style bytes,context
+html_comment_count,html,weak,HTML comment count,context
+element_count,dom,weak,DOM element count,context
+h1_count,dom,weak,H1 count,context
+button_count,dom,weak,Button count,context
+form_count,dom,weak,Form count,context
+class_token_count,dom,weak,Total CSS class tokens,context
+unique_class_token_count,dom,weak,Unique CSS class tokens,context
+data_attr_count,dom,weak,Number of data-* attributes,context
+unique_data_attr_count,dom,weak,Unique data-* attribute names,context
+data_component_id_count,builder,strong,Lovable-style data-component-id occurrences,direct_or_near_direct
+data_slot_count,ui,medium,data-slot occurrences; common in modern component systems,heuristic
+utility_class_count,css,weak,Utility-style class token count,heuristic
+utility_class_ratio,css,weak,Utility-style class token ratio,heuristic
+rounded_class_count,ui,very_weak,Rounded utility count,heuristic
+gradient_class_count,ui,very_weak,Gradient utility count,heuristic
+shadow_class_count,ui,very_weak,Shadow utility count,heuristic
+arbitrary_value_class_count,css,weak,Bracket/arbitrary utility token count,heuristic
+same_origin_js_fetched,assets,neutral,Number of same-origin JS bundles scanned,quality
+same_origin_css_fetched,assets,neutral,Number of same-origin CSS bundles scanned,quality
+js_bytes_scanned,assets,neutral,JS bytes inspected,quality
+css_bytes_scanned,assets,neutral,CSS bytes inspected,quality
+js_sourcemap_markers,assets,medium,Source map markers in JS,context
+hashed_asset_name_count,assets,weak,Hashed asset filename count,context
+builder_lovable_flag,builder,direct,Lovable-specific token detected,direct
+builder_bolt_flag,builder,direct,Bolt/StackBlitz/WebContainer-specific token detected,direct
+builder_v0_flag,builder,direct,v0-specific token/badge detected,direct
+builder_replit_flag,builder,direct,Explicit Replit Agent-specific token; generic .replit.app hosting excluded,direct
+builder_base44_flag,builder,direct,Base44-specific token detected,direct
+tech_nextjs_flag,framework,neutral,Next.js fingerprint,stack
+tech_nuxt_flag,framework,neutral,Nuxt fingerprint,stack
+tech_astro_flag,framework,neutral,Astro fingerprint,stack
+tech_svelte_flag,framework,neutral,Svelte fingerprint,stack
+tech_angular_flag,framework,neutral,Angular fingerprint,stack
+tech_vue_flag,framework,neutral,Vue fingerprint,stack
+tech_react_flag,framework,neutral,React fingerprint,stack
+tech_vite_flag,framework,neutral,Vite fingerprint,stack
+tech_tailwind_flag,framework,neutral,Tailwind fingerprint,stack
+tech_radix_flag,ui,weak,Radix UI fingerprint,stack
+tech_lucide_flag,ui,weak,Lucide fingerprint,stack
+tech_framer_motion_flag,ui,weak,Framer Motion fingerprint,stack
+tech_supabase_flag,backend,weak,Supabase fingerprint,stack
+tech_firebase_flag,backend,weak,Firebase fingerprint,stack
+tech_clerk_flag,auth,weak,Clerk fingerprint,stack
+tech_shadcn_compound_flag,ui,weak,Compound Tailwind + Radix/data-slot signature,heuristic
+tech_wordpress_flag,cms,neutral,WordPress fingerprint,stack
+tech_webflow_flag,builder,direct_for_builder_not_ai,Webflow fingerprint,builder_only
+tech_framer_site_flag,builder,direct_for_builder_not_ai,Framer Site fingerprint,builder_only
+tech_wix_flag,builder,direct_for_builder_not_ai,Wix fingerprint,builder_only
+tech_squarespace_flag,builder,direct_for_builder_not_ai,Squarespace fingerprint,builder_only
+header_x_vercel_id_flag,hosting,neutral,Vercel response header,hosting
+header_x_nf_request_id_flag,hosting,neutral,Netlify response header,hosting
+header_cf_ray_flag,hosting,neutral,Cloudflare response header,hosting
+robots_status,seo,weak,robots.txt HTTP status,context
+robots_has_sitemap,seo,weak,robots.txt contains Sitemap directive,context
+sitemap_status,seo,weak,sitemap.xml status,context
+manifest_status,pwa,weak,manifest status,context
+resolved_ip_count,network,neutral,Resolved IP count,context
+has_ipv6,network,neutral,IPv6 resolution flag,context
+rule_score,baseline,not_probability,Transparent smoke-test heuristic score,exclude_from_ml
+tech_tanstack_start_flag,framework,neutral,TanStack Start/router fingerprint; relevant to newer Lovable projects but not AI evidence by itself,stack
+hosting_replit_app_flag,hosting,neutral,"Hostname ends in .replit.app; hosting only, never direct Replit Agent evidence",hosting
+hosting_lovable_app_flag,hosting,strong_when_specific,Hostname ends in .lovable.app; Lovable-native deployment context,direct_or_hosting
+hosting_vercel_app_flag,hosting,neutral,"Hostname ends in .vercel.app; hosting only, not v0 evidence",hosting
+hosting_netlify_app_flag,hosting,neutral,Hostname ends in .netlify.app; hosting context only,hosting

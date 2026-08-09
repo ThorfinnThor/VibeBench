@@ -1,0 +1,34 @@
+FROM python:3.12-bookworm
+
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        build-essential \
+        ca-certificates \
+        git \
+        hugo \
+        nodejs \
+        npm \
+        php-cli \
+        ruby-dev \
+        ruby-full \
+    && gem install bundler jekyll --no-document \
+    && npm config set fund false --global \
+    && npm config set update-notifier false --global \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /tmp/vibebench-home \
+    && chmod 1777 /tmp/vibebench-home
+
+ENV HOME=/tmp/vibebench-home \
+    BUNDLE_SILENCE_ROOT_WARNING=1 \
+    NPM_CONFIG_AUDIT=false \
+    NPM_CONFIG_FUND=false \
+    NPM_CONFIG_UPDATE_NOTIFIER=false \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /workspace
+
+ENTRYPOINT ["python3", "/workspace/vibebench_snapshot_builder.py"]

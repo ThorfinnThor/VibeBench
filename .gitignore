@@ -1,0 +1,26 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Temporary analysis and smoke-test artifacts
+work/
+
+# Historical clones and rendered snapshots are reproducible but too large for Git.
+vibebench_historical_snapshots/repos/
+vibebench_historical_snapshots/snapshots/
+vibebench_historical_snapshots/logs/
+vibebench_historical_snapshots/locks/
+
+# Local or generated archives
+*.zip
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+

@@ -1,0 +1,136 @@
+{
+  "n_successful_labeled": 52,
+  "class_counts": {
+    "ai": 36,
+    "human": 16
+  },
+  "split": {
+    "type": "GroupShuffleSplit",
+    "seed": 42,
+    "test_size": 0.3,
+    "n_train": 39,
+    "n_test": 13
+  },
+  "feature_count": 110,
+  "metrics": {
+    "accuracy": 0.9230769230769231,
+    "precision_ai": 1.0,
+    "recall_ai": 0.8333333333333334,
+    "f1_ai": 0.9090909090909091,
+    "roc_auc": 0.9761904761904763,
+    "brier": 0.07060685848938619,
+    "confusion_matrix": [
+      [
+        7,
+        0
+      ],
+      [
+        1,
+        5
+      ]
+    ]
+  },
+  "top_coefficients": {
+    "most_human": [
+      {
+        "feature": "same_origin_css_fetched",
+        "coef": -0.17972492540675233
+      },
+      {
+        "feature": "stylesheet_count",
+        "coef": -0.17573232696949367
+      },
+      {
+        "feature": "h1_count",
+        "coef": -0.16197798796150012
+      },
+      {
+        "feature": "js_sourcemap_markers",
+        "coef": -0.1575574280596244
+      },
+      {
+        "feature": "inline_style_bytes",
+        "coef": -0.15192919769422317
+      },
+      {
+        "feature": "tech_svelte_hits",
+        "coef": -0.11692441598314031
+      },
+      {
+        "feature": "tech_svelte_flag",
+        "coef": -0.11692441598314031
+      },
+      {
+        "feature": "robots_bytes",
+        "coef": -0.09734000561281216
+      },
+      {
+        "feature": "css_bytes_scanned",
+        "coef": -0.08985358515874654
+      },
+      {
+        "feature": "manifest_link_count",
+        "coef": -0.08405928762985908
+      },
+      {
+        "feature": "form_count",
+        "coef": -0.07805256239619789
+      },
+      {
+        "feature": "id_count",
+        "coef": -0.051795617615896426
+      }
+    ],
+    "most_ai": [
+      {
+        "feature": "tech_vite_flag",
+        "coef": 0.5127557531089394
+      },
+      {
+        "feature": "tech_tailwind_flag",
+        "coef": 0.4892467971935428
+      },
+      {
+        "feature": "tech_react_flag",
+        "coef": 0.35511242024335243
+      },
+      {
+        "feature": "js_bytes_scanned",
+        "coef": 0.34639954286724334
+      },
+      {
+        "feature": "tech_react_hits",
+        "coef": 0.3401184514495298
+      },
+      {
+        "feature": "tech_lucide_flag",
+        "coef": 0.3071954247074762
+      },
+      {
+        "feature": "tech_vite_hits",
+        "coef": 0.27015210527308936
+      },
+      {
+        "feature": "tech_tailwind_hits",
+        "coef": 0.22221159637099144
+      },
+      {
+        "feature": "tech_supabase_flag",
+        "coef": 0.17214070756755234
+      },
+      {
+        "feature": "tech_shadcn_compound_flag",
+        "coef": 0.16489981358744274
+      },
+      {
+        "feature": "tech_radix_flag",
+        "coef": 0.16489981358744274
+      },
+      {
+        "feature": "header_x_nf_request_id_flag",
+        "coef": 0.1495840000041893
+      }
+    ]
+  },
+  "warning": "Pilot diagnostics only; not a calibrated AI probability or production accuracy claim."
+}

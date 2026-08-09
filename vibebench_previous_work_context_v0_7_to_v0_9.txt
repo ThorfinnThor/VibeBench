@@ -1,0 +1,185 @@
+Was ich dabei am interessantesten finde
+
+Wenn wir nach Seiten suchen, die möglicherweise aus demselben „Vibe-Coding-/Micro-SaaS-Playbook“ entstanden sind, würde ich aktuell diese drei genauer untersuchen:
+
+1. PlainTrial.com ← sehr interessant
+2. PatientMatch.health ← interessant
+3. TrialSign / intelligencetrials.com ← interessant
+
+Vor allem PlainTrial würde ich genauer mit ClinicalTrialFailures vergleichen.
+
+Es gibt nämlich schon ohne Reddit eine ungewöhnliche Kombination:
+
+gleiche Datenquelle + gleiche Branche + ähnlich junge Website + Sponsor-Hubs + Rankings + Guides + Methodology + Trust-Abschnitte + aggregierte Statistiken + tausende programmatisch erzeugbare Seiten.
+
+Das ist wesentlich auffälliger als bloß „beide benutzen Tailwind“.
+
+Wenn du willst, kann ich als Nächstes PlainTrial.com gegen ClinicalTrialFailures.com technisch 1:1 vergleichen und schauen, ob wir dort Hinweise auf denselben Code/Entwickler finden. Das wäre wahrscheinlich der spannendste Vergleich.
+
+Ne meinte geberell diensucj vibecoded sind?
+14s nachgedacht
+
+Ja — und wenn man nur Seiten nimmt, bei denen es öffentliche Hinweise vom Maker/Repo gibt und nicht bloß „sieht nach KI aus“, findet man inzwischen ziemlich viele.
+
+Ein paar konkrete Beispiele:
+
+chatview.app – wird als mit Claude Code gebautes Projekt geführt. One’s Vibe verifiziert solche Angaben anhand von Launch-Posts oder Repositories und sagt ausdrücklich, die Tool-Zuordnung werde nicht geraten.
+mentionleads.com – SaaS zum Finden potenzieller Kunden; ebenfalls als Claude-Code-Projekt gelistet.
+companyenrich.com – Daten/API-Produkt, bei dessen Entwicklung Claude Code öffentlich genannt wird.
+surfacescope.ai – Security-Webapp, laut Entwickler hauptsächlich mit Anthropic-Modellen sowie Claude Code/Cursor entwickelt.
+drawyourfont.com – Webtool, das Handschrift in Fonts umwandelt; Open Source und mit Claude-Code-Bezug.
+mindobix.com – besonders gutes Beispiel: Der Betreiber schreibt ausdrücklich, dass die dortigen Apps von einer Person mit Claude-Code-AI-Agents gebaut und gepflegt werden.
+whichaibuilder.xyz – ironischerweise selbst ein AI-Builder-Projekt; es versucht zu erkennen, ob eine Website mit v0, Lovable, Bolt usw. erstellt wurde. Es wird in einem Verzeichnis als mit Bolt gebaut geführt.
+
+Und bei Lovable gibt es gleich einen ganzen Katalog. Lovable bezeichnet seine Community-Templates ausdrücklich als „App Templates Built with AI“ und listet dort SaaS, Websites, Portfolios, interne Tools usw.
+
+Interessant ist dabei: Wenn du chatview.app, mentionleads.com oder einige dieser anderen Seiten einfach ohne Hintergrundwissen öffnest, würdest du nicht zuverlässig erkennen, dass Claude Code beteiligt war. Genau das bestätigt eigentlich unsere vorherige Diskussion: Vibe Coding hinterlässt keinen universellen sichtbaren Fingerabdruck.
+
+Es gibt allerdings wiederkehrende Muster, die ich bei solchen Projekten ziemlich oft sehe: Next/React/Vite + Tailwind/Shadcn-artige UI, große Hero-Headline, abgerundete Cards, Lucide-Icons, Gradient-/Glow-Effekte, sehr saubere Responsive-Komponenten, Supabase, viele kleine Feature-Sektionen und relativ ähnliche Microcopy. Das ist aber nur probabilistisch — ein normaler Entwickler kann exakt dasselbe bauen.
+
+Besonders ergiebig ist aktuell One’s Vibe: Dort sind allein 146 live erreichbare Projekte mit Claude Code katalogisiert, wobei nach eigener Aussage die verwendeten Tools aus Maker-Posts oder Repositories stammen und nicht anhand des Aussehens geraten werden.
+
+Wenn du möchtest, kann ich dir auch 10–20 wirklich gute, produktive Vibe-Coded-Websites heraussuchen, die wie „echte Startups“ aussehen — also keine Demo-/Portfolio-Projekte — und dann schauen, welche gemeinsamen technischen Merkmale sie haben.
+
+5m 58s nachgedacht
+
+Erledigt. VibeBench URL Pilot v0.7 ist jetzt als ausführbarer erster Prototyp fertig.
+
+Der wichtigste methodische Befund: Für das URL-Modell haben wir aktuell 31 direkte strict Live-URLs: 15 AI vs. 16 Human. Die 223 strict AI-Agent-Fälle sind dagegen überwiegend Repo-Provenienz; nur 2 davon haben eine direkte Live-URL. Die 50 historischen Human-Webprojekte müssen erst als eingefrorene Website-Snapshots gebaut werden. Diese Klassen werden jetzt sauber getrennt.
+
+Der neue Extractor analysiert unter anderem HTTP-Header, HTML/DOM, JS/CSS-Bundles, Asset-Namen, Source Maps, robots.txt, Sitemap, Manifest, TLS/DNS sowie Frameworks und Signale für Next.js, Tailwind, Radix, Lucide, Supabase etc. Direkte Lovable-/Bolt-/v0-/Replit-/Base44-Artefakte werden separat erkannt. Der eingebaute rule_score ist ausdrücklich nur ein transparenter Smoke-Test und keine AI-Prozentwahrscheinlichkeit.
+
+Ich habe ihn lokal gegen eine kontrollierte Testseite getestet. Dort erkannte er korrekt Lovable-Artefakte, Tailwind, Radix, Lucide, Supabase, data-component-id, Sitemap und Manifest.
+
+Dateien
+
+Komplettes URL-Pilot-Paket v0.7
+
+Feature Extractor – Python
+
+Baseline-Training – Python
+
+Die 31 strict Pilot-URLs
+
+Eligibility-Audit aller 2.000 Samples
+
+Feature-Schema
+
+Audit-Workbook
+
+README mit Ausführungsschritten
+
+Der reale 31-URL-Lauf konnte in dieser Runtime nicht ausgeführt werden, weil Python hier keinen normalen ausgehenden DNS-/Webzugriff hat. Der Scanner selbst ist aber ausführbar und getestet. Auf einer Maschine mit Internet ist der komplette Pilot nur:
+
+python vibebench_forensics_extractor.py \
+  --input-csv vibebench_url_pilot_31.csv \
+  --output-csv vibebench_url_pilot_features.csv
+
+python vibebench_train_baseline.py \
+  vibebench_url_pilot_features.csv \
+  --output-json vibebench_url_pilot_metrics.json
+
+Der nächste wirklich wichtige Schritt ist anschließend nicht sofort mehr AI-Daten zu sammeln, sondern die 50 historischen Human-Repos als reproduzierbare Website-Snapshots zu bauen. Damit kämen wir von 16 auf 66 Human-URL-Kontrollen, was den ersten Vergleich erheblich aussagekräftiger macht. 
+
+vibebench_forensics_extractor.py
+Code
+vibebench_train_baseline.py
+Code
+vibebench_url_pilot_31.csv
+Spreadsheet
+4 more
+Today 1:47 PM
+ok mach damit weiter
+Worked for 3m 27s
+
+Weitergemacht. Wir haben jetzt nicht nur Dataset und Extractor, sondern eine durchgehende Trainingspipeline.
+
+Neu ist vor allem die historische Human-Seite: Für alle 50 historischen strict Web-Repositories gibt es jetzt konkrete Build-Rezepte. Die Verteilung ist 35 statische Sites, 4 Node/React/Pug-Builds, 3 Jekyll, 2 Hugo, 1 Hexo und 4 PHP-Runtime-Sites. Der Snapshot-Builder friert beim ersten Lauf den exakten Git-SHA ein, prüft den Pre-AI-Cutoff, baut bzw. kopiert die Site, berechnet Source- und Build-SHA256 und scannt das Ergebnis anschließend lokal mit unserem Forensics-Extractor.
+
+Ich habe die komplette Kette lokal mit einem künstlichen Git-Repo mit Commit-Datum 15. Juni 2019 getestet. Der Test durchläuft erfolgreich: Commit-Lock → Datumsprüfung → Snapshot → Hashing → lokaler HTTP-Server → Feature Extraction → valides JSON → Merge in eine Human-Trainingszeile.
+
+Außerdem konnte ich den Live-Pilot von 31 auf 32 strict URLs erhöhen. website-templates.github.io ist weiterhin live und zeigt seine historischen Website-Templates samt Demo- und Source-Code-Verweisen; die Seite schreibt bei den Templates auch explizit, wer sie designed/coded hat. Drei weitere historische Template-Demos sowie Material Portfolio habe ich als Mapping-Kandidaten hinterlegt, aber bewusst noch nicht als strict Live-URLs freigegeben.
+
+Wichtigste Dateien
+
+Komplette End-to-End URL-Training-Pipeline v0.8.1
+
+Historical Snapshot Pack v0.8
+
+Snapshot Builder
+
+Manifest für alle 50 Historical Builds
+
+Snapshot Pipeline Workbook
+
+URL Pilot – jetzt 32 strict URLs
+
+Historical Live-Mapping-Kandidaten
+
+Feature-Merger
+
+End-to-End Runner
+
+Auf einem normalen Rechner mit GitHub-/Webzugriff genügt dann im Prinzip:
+
+./run_vibebench_url_training_pipeline.sh
+
+Das macht automatisch:
+
+32 Live URLs scannen
+        +
+50 historische Repos einfrieren
+        ↓
+Sites bauen
+        ↓
+lokal scannen
+        ↓
+Features zusammenführen
+        ↓
+Baseline trainieren
+        ↓
+Precision / Recall / F1 / ROC-AUC / Brier Score
+
+Wenn alle 50 Historical Builds durchlaufen, hätten wir für den ersten echten URL-Versuch 82 Ground-Truth-Samples: 15 AI vs. 67 Human.
+
+Der nächste Engpass ist damit klar: mehr echte AI-positive Live-Websites. Wir sollten jetzt gezielt Lovable/Bolt/v0/Replit sowie öffentlich bestätigte Claude/Cursor-Projekte suchen, bei denen sowohl AI-Provenienz als auch die konkrete Deployment-URL nachweisbar sind. Das bringt für unser URL-Modell wesentlich mehr als noch weitere Repo-only Claude-Code-PRs. 
+
+vibebench_snapshot_builder.py
+Code
+vibebench_historical_snapshot_manifest_v0_8.csv
+Spreadsheet
+vibebench_historical_snapshot_pipeline_v0_8.xlsx
+Spreadsheet
+4 more
+Today 3:37 PM
+okay mach weiter bitte
+Worked for 13m 57s
+
+Weitergemacht. VibeBench v0.9 ist jetzt ein deutlich stärkerer Stand für den eigentlichen URL-Detektor.
+
+Ich habe 31 neue AI-positive Live-URL-Kandidaten mit Provenienz aufgenommen: 6 Lovable, 13 Bolt, 6 Replit Agent und 6 v0. Bei Lovable stammen die Labels aus offiziellen Lovable-Stories wie Plinq, PrintPigeon, Elora Health und Backchannel. Bei Replit habe ich bewusst nur Fälle aufgenommen, bei denen der Maker explizit Replit Agent nennt; beispielsweise NutriPath/PITLANE, Toxicity Scanner, SilentSignal und Reaction Sports. Die v0-Fälle stammen aus offiziellen v0-Template-Seiten, die jeweils die konkrete Deployment-Preview angeben.
+
+Bei Bolt bin ich absichtlich etwas konservativer: Made with Bolt ist kein StackBlitz/Bolt-eigenes Verzeichnis. Allerdings sagt dessen Einreichungsseite ausdrücklich, dass nur mit Bolt gebaute Projekte akzeptiert werden. Deshalb sind diese Fälle AI_GOLD_1_DIRECTORY_STRICT und nicht auf derselben Evidenzstufe wie offizielle Lovable/v0-Quellen oder direkte Maker-Aussagen.
+
+Damit stehen wir jetzt bei 44/500 AI-native strict, gegenüber zuvor 13. Der gesamte 2.000er Benchmark steht nun bei 333 strict, 374 relaxed und 376 aufgelösten URL/Repo-Samples. Die URL-Scan-Queue wächst von 32 auf 63 URLs: 46 AI vs. 17 Human. Wichtig: Diese 63 sind eine Scan-Queue, keine automatisch freigegebenen Trainingszeilen. Eine URL kommt nur ins Modell, wenn sowohl die Provenienz stimmt als auch der aktuelle Extractor scan_ok=1 liefert.
+
+Ich habe außerdem einen Fehler in unserem Detektor korrigiert: .replit.app zählt ab jetzt nicht mehr als AI-Beweis. Das Hosting wird nur noch neutral als hosting_replit_app_flag erfasst. Nur explizite Replit-Agent-Artefakte dürfen den direkten Builder-Score erhöhen. Dasselbe Prinzip gilt für Vercel: .vercel.app allein beweist niemals v0.
+
+Außerdem erkennt der Extractor jetzt TanStack Start. Das ist wichtig, weil Lovable offiziell angibt, dass neue Apps seit 13. Mai 2026 standardmäßig TanStack Start mit SSR verwenden; ältere Apps basieren typischerweise auf React + Vite. Damit verhindern wir, dass unser Detektor versehentlich nur die „alte Lovable-Generation“ lernt.
+
+Noch wichtiger: Ich habe eine neue Generalization-Evaluation gebaut. Wir messen jetzt drei verschiedene Modelle: full mit Builder-Fingerprints, portable ohne Builder/Hosting/Header-Marker und structure, das sogar Framework-Flags entfernt. Zusätzlich gibt es einen Leave-One-Builder-Out-Test: beispielsweise sämtliche Lovable-Seiten aus dem Training entfernen und anschließend testen, ob das Modell Lovable trotzdem von Human-Seiten unterscheiden kann. Damit merken wir sofort, wenn unser späteres „90 % Accuracy“ in Wahrheit nur bedeutet: „Das Modell erkennt lovable.app“.
+
+Die wichtigsten Dateien sind:
+
+Komplettes VibeBench v0.9 Paket
+Master-Dataset – 2.000 Samples v0.9
+AI-native 500 v0.9
+63-URL Scan Queue
+Audit der 31 neuen AI-URLs
+Forensics Extractor v0.9
+Generalization-/Builder-Holdout-Evaluator
+Evaluationsmethodik
+Feature Schema v0.9
+End-to-End Runner v0.9
+
+Der nächste große Hebel ist jetzt nicht mehr Dataset-Struktur, sondern die AI-Live-URL-Klasse weiter auf etwa 70–100 wirklich scanbare AI-Seiten zu bringen. Dann wären wir zusammen mit den 17 modernen Human-URLs und bis zu 50 eingefrorenen historischen Human-Snapshots ungefähr ausgeglichen und könnten den ersten ernstzunehmenden URL-Benchmark fahren. 

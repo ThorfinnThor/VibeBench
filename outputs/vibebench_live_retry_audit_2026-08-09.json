@@ -1,0 +1,158 @@
+{
+  "run_date": "2026-08-09",
+  "timezone": "Europe/Berlin",
+  "method": {
+    "probe": "HTTP HEAD with redirects, 20-second timeout, strict TLS verification",
+    "user_agent": "VibeBench-Forensics/0.9 (+research; public-web technical fingerprinting)",
+    "canonical_variants": "Apex/www and HTTP-to-HTTPS variants checked only where technically plausible",
+    "replacement_policy": "Do not substitute a URL unless the existing provenance source documents the replacement deployment"
+  },
+  "summary": {
+    "retried": 11,
+    "recovered": 0,
+    "still_failed": 11,
+    "ai_failed": 10,
+    "human_failed": 1,
+    "dns_unresolved": 3,
+    "tls_failure": 1,
+    "http_404": 4,
+    "http_429": 2,
+    "http_521_or_522": 1,
+    "training_dataset_changed": false
+  },
+  "entries": [
+    {
+      "sample_id": "AIN-0009",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://eden.pm",
+      "retry_result": "DNS_UNRESOLVED",
+      "http_code": 0,
+      "canonical_variants_checked": ["https://www.eden.pm/"],
+      "usable_for_training": false,
+      "next_action": "Locate a provenance-backed replacement deployment or retain as unavailable"
+    },
+    {
+      "sample_id": "HUM-0011",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://byxavier.dev/",
+      "retry_result": "HTTP_521_APEX_HTTP_522_WWW",
+      "http_code": 521,
+      "canonical_variants_checked": ["https://www.byxavier.dev/"],
+      "usable_for_training": false,
+      "next_action": "Retry in a later dated run; do not treat the Cloudflare origin error as a successful scan"
+    },
+    {
+      "sample_id": "AIN-0023",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://www.clean-url.com",
+      "retry_result": "TLS_CERTIFICATE_VERIFY_FAILED",
+      "http_code": 0,
+      "canonical_variants_checked": ["https://clean-url.com/", "http://www.clean-url.com/"],
+      "evidence_url": "https://madewithbolt.com/projects/clean-url",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Keep strict TLS verification; wait for certificate repair or a provenance-backed replacement"
+    },
+    {
+      "sample_id": "AIN-0024",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://banvibecoders.com",
+      "retry_result": "DNS_UNRESOLVED",
+      "http_code": 0,
+      "canonical_variants_checked": ["https://www.banvibecoders.com/"],
+      "evidence_url": "https://madewithbolt.com/projects/banvibecoders",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Locate a provenance-backed replacement deployment or retain as unavailable"
+    },
+    {
+      "sample_id": "AIN-0031",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://bright-fairy-d9ba10.netlify.app/",
+      "retry_result": "HTTP_429_NETLIFY",
+      "http_code": 429,
+      "evidence_url": "https://madewithbolt.com/projects/love-letter",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Retry in a later low-frequency run; do not bypass the provider rate limit"
+    },
+    {
+      "sample_id": "AIN-0032",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://www.playfunkidgames.com",
+      "retry_result": "DNS_UNRESOLVED",
+      "http_code": 0,
+      "canonical_variants_checked": ["https://playfunkidgames.com/", "http://playfunkidgames.com/"],
+      "evidence_url": "https://madewithbolt.com/projects/playfunkidgames",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Locate a provenance-backed replacement deployment or retain as unavailable"
+    },
+    {
+      "sample_id": "AIN-0034",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://glittery-blini-4413ef.netlify.app/",
+      "retry_result": "HTTP_429_NETLIFY",
+      "http_code": 429,
+      "evidence_url": "https://madewithbolt.com/projects/thank-you-very-much",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Retry in a later low-frequency run; do not bypass the provider rate limit"
+    },
+    {
+      "sample_id": "AIN-0036",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://toxicity-scanner--bdfrepresent.replit.app/",
+      "retry_result": "HTTP_404",
+      "http_code": 404,
+      "evidence_url": "https://www.linkedin.com/posts/repl-it_countdown-to-free-agent-for-24-hours-buildathon-activity-7456198738072707072-snIV",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Search the maker/Replit project record for a documented republish URL"
+    },
+    {
+      "sample_id": "AIN-0037",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://nutri-path--vennavlogs8.replit.app",
+      "retry_result": "HTTP_404",
+      "http_code": 404,
+      "evidence_url": "https://www.linkedin.com/posts/repl-it_free-agent-day-buildathon-office-hours-activity-7456451904013799424-fMcR",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Search the maker/Replit project record for a documented republish URL"
+    },
+    {
+      "sample_id": "AIN-0038",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://silent-signal-dashboard--lvjr3383.replit.app/",
+      "retry_result": "HTTP_404",
+      "http_code": 404,
+      "evidence_url": "https://medium.com/@lvjanakiram/silentsignal-what-happens-when-you-give-ai-a-disaster-to-solve-a7b60812dba2",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Search the maker/Replit project record for a documented republish URL"
+    },
+    {
+      "sample_id": "AIN-0041",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://seo-visualizer--prachi1singh2.replit.app",
+      "retry_result": "HTTP_404",
+      "http_code": 404,
+      "evidence_url": "https://in.linkedin.com/in/prachi-singh1996",
+      "evidence_still_lists_target": true,
+      "usable_for_training": false,
+      "next_action": "Search the maker/Replit project record for a documented republish URL"
+    }
+  ]
+}
