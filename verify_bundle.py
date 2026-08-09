@@ -73,7 +73,14 @@ for marker in ("Was bisher gemacht wurde", "Wiederherstellung aus dem Share-Chat
     assert marker in text
 readme = (root / "README.md").read_text(encoding="utf-8")
 assert "öffentlich erreichbare Website" in readme
-assert "probabilistische" in readme
+assert "Evidenz-Einschätzung" in readme
+assert "noch keine kalibrierte Wahrscheinlichkeit" in readme
+
+production_smoke = json.loads((root / "outputs" / "vibebench_production_smoke_2026-08-09.json").read_text())
+assert production_smoke["summary"]["total"] == 20
+assert production_smoke["summary"]["apiSuccessful"] == 20
+assert production_smoke["summary"]["ai"]["direct"] == 5
+assert production_smoke["summary"]["human"]["direct"] == 0
 
 retry_report = root / "outputs" / "VIBEBENCH_LIVE_RETRY_REPORT_2026-08-09.md"
 isolated_readme = root / "outputs" / "VIBEBENCH_ISOLATED_RUNNER_README.md"

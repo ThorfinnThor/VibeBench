@@ -1,0 +1,410 @@
+{
+  "generatedAt": "2026-08-09T16:16:19.190Z",
+  "apiUrl": "https://vibe-bench-cyan.vercel.app/api/scan",
+  "collectionMode": "browser-captured production UI",
+  "importedResultsPath": "outputs/vibebench_production_browser_capture_2026-08-09.json",
+  "purpose": "Small production smoke evaluation; not a model accuracy claim.",
+  "selection": "10 previously scanable provenance-labelled AI samples and 10 previously scanable Human controls from v0.9.",
+  "summary": {
+    "total": 20,
+    "apiSuccessful": 20,
+    "apiErrors": 0,
+    "ai": {
+      "total": 10,
+      "direct": 5,
+      "indicative": 1,
+      "indeterminate": 4,
+      "errors": 0
+    },
+    "human": {
+      "total": 10,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 10,
+      "errors": 0
+    }
+  },
+  "results": [
+    {
+      "sampleId": "AIN-0001",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://challengebrew.com",
+      "apiOk": true,
+      "durationMs": 1888,
+      "resolvedUrl": "https://challengebrew.com/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "Vite"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0005",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://product-vision-log.lovable.app",
+      "apiOk": true,
+      "durationMs": 1171,
+      "resolvedUrl": "https://product-vision-log.lovable.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "Vite",
+        "Lovable hosting"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0019",
+      "label": "AI",
+      "builder": "Lovable",
+      "url": "https://healthsync-360.lovable.app/",
+      "apiOk": true,
+      "durationMs": 1115,
+      "resolvedUrl": "https://healthsync-360.lovable.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "Lovable"
+      ],
+      "contextEvidence": [
+        "Vite",
+        "Lovable hosting"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0008",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://prilo.ai",
+      "apiOk": true,
+      "durationMs": 573,
+      "resolvedUrl": "https://www.prilo.ai/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Vite"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0025",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://zingy-cannoli-9cacce.netlify.app/",
+      "apiOk": true,
+      "durationMs": 869,
+      "resolvedUrl": "https://zingy-cannoli-9cacce.netlify.app/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Vite",
+        "Netlify"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0029",
+      "label": "AI",
+      "builder": "Bolt",
+      "url": "https://promptbuilder.cloud",
+      "apiOk": true,
+      "durationMs": 1104,
+      "resolvedUrl": "https://promptbuilder.cloud/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Supabase"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0039",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "url": "https://reaction-master-devthedev01.replit.app/",
+      "apiOk": true,
+      "durationMs": 3771,
+      "resolvedUrl": "https://reaction-master-devthedev01.replit.app/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Vite",
+        "Replit hosting"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0042",
+      "label": "AI",
+      "builder": "v0",
+      "url": "https://v0-shopify-game-template-4501.vercel.app/",
+      "apiOk": true,
+      "durationMs": 594,
+      "resolvedUrl": "https://v0-shopify-game-template-4501.vercel.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "v0"
+      ],
+      "contextEvidence": [
+        "Next.js",
+        "Lucide",
+        "Vercel"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIN-0044",
+      "label": "AI",
+      "builder": "v0",
+      "url": "https://v0-compute-11.vercel.app/",
+      "apiOk": true,
+      "durationMs": 604,
+      "resolvedUrl": "https://v0-compute-11.vercel.app/",
+      "httpStatus": 200,
+      "verdict": "direct",
+      "verdictTitle": "DIREKTE BUILDER-ARTEFAKTE GEFUNDEN",
+      "directEvidence": [
+        "v0"
+      ],
+      "contextEvidence": [
+        "Next.js",
+        "Lucide",
+        "Vercel"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "AIA-0023",
+      "label": "AI",
+      "builder": "Claude Code",
+      "url": "https://cardshows.io",
+      "apiOk": true,
+      "durationMs": 646,
+      "resolvedUrl": "https://cardshows.io/",
+      "httpStatus": 200,
+      "verdict": "indicative",
+      "verdictTitle": "VIBE-CODING-ÄHNLICHE MUSTER",
+      "directEvidence": [],
+      "contextEvidence": [
+        "Next.js",
+        "Radix UI",
+        "Lucide",
+        "Supabase"
+      ],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0001",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://blog.markvincze.com/",
+      "apiOk": true,
+      "durationMs": 582,
+      "resolvedUrl": "https://blog.markvincze.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0002",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://declare-ai.org/",
+      "apiOk": true,
+      "durationMs": 569,
+      "resolvedUrl": "https://declare-ai.org/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0003",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://www.jeremyheminger.com/",
+      "apiOk": true,
+      "durationMs": 624,
+      "resolvedUrl": "https://www.jeremyheminger.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0004",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://alexburton.com/",
+      "apiOk": true,
+      "durationMs": 574,
+      "resolvedUrl": "https://alexburton.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0005",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://danabyerly.com/",
+      "apiOk": true,
+      "durationMs": 839,
+      "resolvedUrl": "https://danabyerly.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0006",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://nathanupchurch.com/",
+      "apiOk": true,
+      "durationMs": 559,
+      "resolvedUrl": "https://nathanupchurch.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0007",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://sustainable-rails.com/",
+      "apiOk": true,
+      "durationMs": 594,
+      "resolvedUrl": "https://sustainable-rails.com/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0008",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://baillehachepascal.dev/",
+      "apiOk": true,
+      "durationMs": 840,
+      "resolvedUrl": "https://baillehachepascal.dev/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0009",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://liam.nwmr.ch/",
+      "apiOk": true,
+      "durationMs": 579,
+      "resolvedUrl": "https://liam.nwmr.ch/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    },
+    {
+      "sampleId": "HUM-0010",
+      "label": "HUMAN",
+      "builder": "",
+      "url": "https://ultreia.me/",
+      "apiOk": true,
+      "durationMs": 578,
+      "resolvedUrl": "https://ultreia.me/",
+      "httpStatus": 200,
+      "verdict": "indeterminate",
+      "verdictTitle": "KEINE BELASTBARE ZUORDNUNG",
+      "directEvidence": [],
+      "contextEvidence": [],
+      "stackSignals": [],
+      "structuralHints": [],
+      "error": null
+    }
+  ]
+}

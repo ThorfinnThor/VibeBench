@@ -1,9 +1,9 @@
 # VibeBench
 
-VibeBench untersucht, ob eine öffentlich erreichbare Website wahrscheinlich mit
-AI-gestütztem Vibe-Coding erstellt wurde. Das Ergebnis ist eine probabilistische
-Einschätzung auf Basis sichtbarer Deployment-Artefakte und struktureller
-Merkmale – kein Beweis für Autorenschaft.
+VibeBench untersucht, ob eine öffentlich erreichbare Website Hinweise auf
+AI-gestütztes Vibe-Coding enthält. Das aktuelle Ergebnis ist eine transparente
+Evidenz-Einschätzung auf Basis sichtbarer Deployment-Artefakte und struktureller
+Merkmale – kein Beweis für Autorenschaft und noch keine kalibrierte Wahrscheinlichkeit.
 
 ## Was VibeBench unterscheidet
 
@@ -26,6 +26,24 @@ Merkmale – kein Beweis für Autorenschaft.
 
 Der vollständige Stand, Einschränkungen und die nächsten Forschungsaufgaben
 stehen in [`outputs/VIBEBENCH_HANDOVER_V0_9.md`](outputs/VIBEBENCH_HANDOVER_V0_9.md).
+
+## Produktions-Smoke-Test
+
+Der versionierte Testlauf gegen die veröffentlichte App umfasst 10 gelabelte
+AI-Seiten und 10 Human-Kontrollen. Der Report und die Einzelergebnisse stehen in
+[`outputs/VIBEBENCH_PRODUCTION_SMOKE_2026-08-09.md`](outputs/VIBEBENCH_PRODUCTION_SMOKE_2026-08-09.md).
+
+Direkt gegen die Produktions-API ausführen:
+
+```bash
+npm run eval:production
+```
+
+Ein bereits erfasstes Ergebnis reproduzierbar neu auswerten:
+
+```bash
+VIBEBENCH_RESULTS_FILE=outputs/vibebench_production_browser_capture_2026-08-09.json npm run eval:production
+```
 
 ## Einzelne URL untersuchen
 
@@ -65,7 +83,7 @@ in den isolierten Container-Runner. Details:
 Die erste Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
 
 1. direkte Builder-Indikatoren,
-2. allgemeine AI-/Vibe-Coding-Wahrscheinlichkeit,
+2. allgemeine strukturelle und technische Hinweise,
 3. Unsicherheit und Datenqualität,
 4. die wichtigsten beobachteten technischen Signale.
 
@@ -75,8 +93,8 @@ Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Nächste To-dos
 
-1. Eigenständiges Repository `ThorfinnThor/VibeBench` veröffentlichen.
-2. Web-App über das neue Repository auf Vercel deployen.
-3. Live-Scanner mit bekannten AI-, Human- und nicht erreichbaren URLs testen.
+1. Fehlende direkte Evidenz für Bolt- und Replit-Agent-Seiten untersuchen.
+2. Header-, Manifest-, JS-/CSS-Asset- und Source-Map-Signale ergänzen.
+3. Den Test auf alle aktuell erreichbaren gelabelten URLs ausweiten.
 4. Einen zeitlich späteren Blind-Holdout einfrieren und Kalibrierung messen.
 5. Erst danach einen modellbasierten Wahrscheinlichkeitswert ergänzen.
