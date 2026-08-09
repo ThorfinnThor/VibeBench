@@ -29,6 +29,19 @@ stehen in [`outputs/VIBEBENCH_HANDOVER_V0_9.md`](outputs/VIBEBENCH_HANDOVER_V0_9
 
 ## Einzelne URL untersuchen
 
+Web-App lokal starten:
+
+```bash
+npm install
+npm run dev
+```
+
+Anschließend `http://localhost:3000` öffnen. Die App scannt nur öffentlich
+auflösbare HTTP(S)-Seiten, validiert auch Weiterleitungsziele und begrenzt den
+HTML-Download auf 1,5 MB.
+
+CLI-Extractor:
+
 ```bash
 python3 vibebench_forensics_extractor_v0_9.py https://example.com
 ```
@@ -49,21 +62,21 @@ in den isolierten Container-Runner. Details:
 
 ## Produkt-Richtung
 
-Die geplante Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
+Die erste Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
 
 1. direkte Builder-Indikatoren,
 2. allgemeine AI-/Vibe-Coding-Wahrscheinlichkeit,
 3. Unsicherheit und Datenqualität,
 4. die wichtigsten beobachteten technischen Signale.
 
-Vor einem öffentlichen Wahrscheinlichkeitswert fehlen noch ein eingefrorener
-Blind-Holdout, belastbare Kalibrierung und mehr builderunabhängige Ground Truth.
+Sie zeigt bewusst noch keinen Prozentwert. Vor einem öffentlichen
+Wahrscheinlichkeitswert fehlen ein eingefrorener Blind-Holdout, belastbare
+Kalibrierung und mehr builderunabhängige Ground Truth.
 
 ## Nächste To-dos
 
 1. Eigenständiges Repository `ThorfinnThor/VibeBench` veröffentlichen.
-2. Detector-API mit sicherer URL-Validierung und Scan-Timeouts entwickeln.
-3. Ergebnis-UI für Evidenz, Struktur-Signale und Unsicherheit erstellen.
+2. Web-App über das neue Repository auf Vercel deployen.
+3. Live-Scanner mit bekannten AI-, Human- und nicht erreichbaren URLs testen.
 4. Einen zeitlich späteren Blind-Holdout einfrieren und Kalibrierung messen.
-5. Erst danach Vercel-Deployment und öffentliche URL-Tests aktivieren.
-
+5. Erst danach einen modellbasierten Wahrscheinlichkeitswert ergänzen.

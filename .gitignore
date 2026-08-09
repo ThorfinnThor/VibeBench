@@ -4,6 +4,10 @@ __pycache__/
 .pytest_cache/
 .venv/
 venv/
+node_modules/
+.next/
+out/
+npm-debug.log*
 
 # Temporary analysis and smoke-test artifacts
 work/
