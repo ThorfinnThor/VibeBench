@@ -1,0 +1,36 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { classifyScanError, getVerdictPresentation } from "../lib/result-presentation.mjs";
+
+test("presents indicative output as non-attributive context", () => {
+  const presentation = getVerdictPresentation("indicative");
+  assert.equal(presentation.title, "Allgemeine Strukturmuster");
+  assert.match(presentation.summary, /menschlich entwickelten Websites/);
+  assert.match(presentation.boundary, /nicht als AI- oder Vibe-Coding-Zuordnung/);
+});
+
+test("keeps indeterminate distinct from a Human classification", () => {
+  const presentation = getVerdictPresentation("indeterminate");
+  assert.match(presentation.boundary, /nicht.*menschlich erstellt/);
+});
+
+test("maps blocked targets to a technical non-result", () => {
+  const outcome = classifyScanError(new Error("Website antwortet mit HTTP 403."));
+  assert.equal(outcome.code, "access_blocked");
+  assert.equal(outcome.retryable, false);
+  assert.match(outcome.summary, /kein Klassifikationsergebnis/);
+});
+
+test("maps size limits and timeouts separately", () => {
+  const tooLarge = classifyScanError("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
+  const timeout = classifyScanError("The operation was aborted due to timeout");
+  assert.equal(tooLarge.code, "html_too_large");
+  assert.equal(tooLarge.retryable, false);
+  assert.equal(timeout.code, "target_timeout");
+  assert.equal(timeout.retryable, true);
+});
+
+test("maps invalid and private URLs to actionable input outcomes", () => {
+  assert.equal(classifyScanError("Bitte eine gültige öffentliche URL eingeben.").code, "invalid_url");
+  assert.equal(classifyScanError("Lokale und private Adressen werden nicht gescannt.").code, "private_address");
+});

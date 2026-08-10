@@ -2,6 +2,7 @@ import { lookup } from "node:dns/promises";
 import net from "node:net";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { extractSameOriginAssets, extractSameOriginManifest } from "../../../lib/extract-assets.mjs";
+import { classifyScanError } from "../../../lib/result-presentation.mjs";
 
 export const runtime = "nodejs";
 export const maxDuration = 20;
@@ -192,6 +193,7 @@ export async function POST(request) {
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Der Scan ist fehlgeschlagen.";
-    return Response.json({ ok: false, error: message }, { status: 400 });
+    const technicalOutcome = classifyScanError(error);
+    return Response.json({ ok: false, error: message, technicalOutcome }, { status: technicalOutcome.responseStatus });
   }
 }

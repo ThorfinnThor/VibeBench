@@ -79,32 +79,33 @@ verweigert bei vorhandenem finalen Rohdatenartefakt absichtlich einen zweiten
 Lauf. Eine Unterbrechung wäre nur über das persistierte Checkpoint fortgesetzt
 worden; der Lauf ist bereits abgeschlossen.
 
-## Produktentscheidung für den nächsten Sprint
+## Umgesetzte Produktentscheidung · v0.1.1
 
 Die aktuelle Primärregel ist als Forschungsbaseline eingefroren. Für die
-Produktoberfläche sollte `direct` die einzige hochkonfidente Builder-Evidenz
-bleiben. `Indicative` sollte als allgemeines Strukturmuster erklärt oder visuell
-herabgestuft werden, weil moderne Human-SaaS-Seiten dieselben Next.js-, React-,
+Produktoberfläche bleibt `direct` die einzige hochkonfidente Builder-Evidenz.
+`Indicative` wird als allgemeines Strukturmuster ohne Attribution erklärt und
+visuell herabgestuft, weil moderne Human-SaaS-Seiten dieselben Next.js-, React-,
 Tailwind-, Radix-, Lucide- und DOM-Dichte-Signale besitzen.
 
-Das ist zunächst eine Änderung der Produktsprache und Ergebnishierarchie, nicht
-das nachträgliche Umschreiben der v0.1-Metriken.
+Technische Fehler sind ein eigener vierter Ausgang. Die API liefert strukturierte
+Fehlercodes und Handlungsoptionen; `indeterminate` bleibt erfolgreichen Scans
+ohne direkte Evidenz vorbehalten. Implementierung und Browser-QA stehen in
+`outputs/VIBEBENCH_PRODUCT_SEMANTICS_UPDATE_2026-08-10.md`.
+
+Das ist eine Änderung der Produktsprache und Ergebnishierarchie, nicht das
+nachträgliche Umschreiben der v0.1-Metriken oder Scanner-Schwellen.
 
 ## Nächste To-dos
 
-1. UI-Texte und visuelle Hierarchie für `direct`, `indicative`, `indeterminate`
-   und technische Fehler neu ordnen.
-2. Technische Fehler als eigenen sichtbaren Zustand mit Ursache darstellen.
-3. Replit-Agent-Signale und Human-SaaS-False-Positives nur auf neuen
+1. v0.1.1 pushen, auf Vercel deployen und alle vier Ausgänge in Produktion prüfen.
+2. Replit-Agent-Signale und Human-SaaS-False-Positives nur auf neuen
    Development-Samples untersuchen.
-4. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln.
-5. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und einfrieren.
-6. Erst nach v0.2-Bestätigung Kalibrierung und Prozentwert prüfen.
+3. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln.
+4. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und einfrieren.
+5. Erst nach v0.2-Bestätigung Kalibrierung und Prozentwert prüfen.
 
 ## Empfohlener nächster Schritt
 
-Im nächsten Coding-Sprint die Web-App semantisch umbauen: `direct` als
-„sichtbares Builder-Artefakt“, `indicative` als „allgemeines Strukturmuster ohne
-Attribution“, `indeterminate` als „keine ausreichende sichtbare Evidenz“ und
-technische Fehler als separaten vierten Zustand. Danach Development-only an
-v0.2 arbeiten; der 100er-Holdout bleibt unangetastet.
+v0.1.1 über GitHub Desktop pushen und den Vercel-Deploy mit Direct-, Indicative-,
+Indeterminate- und Fehlerbeispiel prüfen. Danach Development-only an v0.2
+arbeiten; der 100er-Holdout bleibt unangetastet.

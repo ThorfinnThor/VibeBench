@@ -76,6 +76,23 @@ Der 100er-Blind-Holdout wurde am 2026-08-10 kontrolliert ausgeführt:
 Der Bericht steht in
 [`outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/VIBEBENCH_BLIND_HOLDOUT_EVALUATION_V0_1.md`](outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/VIBEBENCH_BLIND_HOLDOUT_EVALUATION_V0_1.md).
 
+## Produktsemantik v0.1.1
+
+Die App setzt die wichtigste Holdout-Erkenntnis um, ohne die eingefrorene
+Scannerregel nachträglich zu verändern:
+
+- `direct`: sichtbares Builder-Artefakt; konkrete technische Evidenz, aber kein
+  Beweis für Autorenschaft oder AI-Anteil,
+- `indicative`: allgemeine Stack-/DOM-Muster; ausdrücklich keine AI- oder
+  Vibe-Coding-Attribution,
+- `indeterminate`: keine ausreichende sichtbare Evidenz; weder AI- noch
+  Human-Zuordnung,
+- technischer Fehler: eigener Zustand für Blockierung, Timeout, Größenlimit,
+  Redirect-, DNS-, Eingabe- oder Content-Type-Probleme.
+
+Die Umsetzung und lokale Browserprüfung stehen in
+[`outputs/VIBEBENCH_PRODUCT_SEMANTICS_UPDATE_2026-08-10.md`](outputs/VIBEBENCH_PRODUCT_SEMANTICS_UPDATE_2026-08-10.md).
+
 Arbeitsprüfung ohne Ergebnisöffnung:
 
 ```bash
@@ -147,12 +164,13 @@ in den isolierten Container-Runner. Details:
 
 ## Produkt-Richtung
 
-Die erste Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
+Die Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
 
 1. direkte Builder-Indikatoren,
 2. allgemeine strukturelle und technische Hinweise,
-3. Unsicherheit und Datenqualität,
-4. die wichtigsten beobachteten technischen Signale.
+3. ein offenes Ergebnis bei fehlender direkter Evidenz,
+4. technische Fehler ohne Klassifikationsaussage,
+5. die wichtigsten beobachteten technischen Signale.
 
 Sie zeigt bewusst noch keinen Prozentwert. Der erste Blind-Holdout ist jetzt
 abgeschlossen, zeigt aber builderabhängige Abdeckung und eine zu hohe
@@ -162,19 +180,19 @@ separate Kalibrierungsdaten und ein frischer Bestätigungs-Holdout.
 
 ## Nächste To-dos
 
-1. In der Produktoberfläche `direct` klar als Builder-Evidenz und `indicative`
-   nur als nicht-attributives Strukturmuster erklären.
-2. Technische Fehler (`blocked`, Größenlimit, Timeout) als eigenen Ergebniszustand
-   von `indeterminate` getrennt halten.
-3. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln;
+1. v0.1.1 pushen, über Vercel deployen und die vier Ergebniszustände in
+   Produktion prüfen.
+2. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln;
    diese 100 Holdout-Labels nicht zum Tuning verwenden.
-4. Replit-Agent-Abdeckung und die Human-SaaS-False-Positives gezielt auf neuen
+3. Replit-Agent-Abdeckung und die Human-SaaS-False-Positives gezielt auf neuen
    Development-Samples untersuchen.
+4. Builder-unabhängige Signale in einer separaten Research-Spur untersuchen,
+   ohne sie vorzeitig als Attribution zu verwenden.
 5. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
    danach über Kalibrierung oder einen Prozentwert entscheiden.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes die UI-Semantik ändern, ohne die eingefrorenen v0.1-Metriken
-umzudeuten: `direct` bleibt die einzige hochkonfidente Attribution;
-`indicative` wird als allgemeines, nicht-attributives Strukturmuster dargestellt.
+Als Nächstes v0.1.1 pushen und in Vercel deployen. Danach beginnt die
+Development-only-Analyse für v0.2; der abgeschlossene 100er-Holdout bleibt
+unangetastet.

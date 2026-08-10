@@ -1,4 +1,4 @@
-:root { --bg:#f2f0e9; --ink:#11120f; --muted:#686b62; --line:#cbc9bf; --acid:#b8ff33; --blue:#315cff; --orange:#ff6038; --panel:#e7e4da; }
+:root { --bg:#f2f0e9; --ink:#11120f; --muted:#686b62; --line:#cbc9bf; --acid:#b8ff33; --blue:#315cff; --orange:#ff6038; --yellow:#ffe59a; --panel:#e7e4da; --danger:#ffd6cc; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--bg); color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
@@ -17,16 +17,21 @@ h1 em { color:var(--blue); font-family:Georgia, serif; font-weight:400; text-tra
 .scan-panel { align-self:end; border:1px solid var(--ink); background:var(--ink); color:white; padding:22px; box-shadow:12px 12px 0 var(--blue); }
 .scan-panel > label { display:block; margin-bottom:14px; color:var(--acid); font-family:"Courier New", monospace; font-size:10px; text-transform:uppercase; letter-spacing:.12em; }
 .scan-input { display:grid; grid-template-columns:auto 1fr; border:1px solid #555; background:#20211e; }
-.scan-input > span { padding:18px 0 18px 18px; color:#777; font-family:"Courier New", monospace; }
-.scan-input input { width:100%; padding:18px 12px 18px 3px; border:0; outline:0; background:transparent; color:white; font-family:"Courier New", monospace; }
+.scan-input > span { align-self:center; padding:7px 10px; margin-left:10px; border:1px solid #555; color:#aaa; font-family:"Courier New", monospace; font-size:9px; text-transform:uppercase; }
+.scan-input input { width:100%; padding:18px 12px; border:0; outline:0; background:transparent; color:white; font-family:"Courier New", monospace; }
 .scan-input button { grid-column:1/-1; min-height:58px; border:0; border-top:1px solid #555; background:var(--acid); color:var(--ink); font-weight:900; cursor:pointer; text-transform:uppercase; }
 .scan-input button:hover { background:white; }
 .scan-input button:disabled { opacity:.65; cursor:wait; }
 .scan-panel > p { margin:14px 0 0; color:#999; font-size:9px; line-height:1.5; }
+.evidence-disclosure { min-height:118px; padding:25px 3.5vw; display:grid; grid-template-columns:150px minmax(240px,.75fr) minmax(320px,1.25fr); gap:34px; align-items:center; border-bottom:1px solid var(--ink); background:var(--yellow); }
+.evidence-disclosure > span { font-family:"Courier New", monospace; font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
+.evidence-disclosure > strong { font-size:clamp(20px,2.2vw,34px); line-height:.95; letter-spacing:-.04em; text-transform:uppercase; }
+.evidence-disclosure > p { max-width:780px; margin:0; font-size:13px; line-height:1.5; }
 .results { padding:0 3.5vw 70px; border-bottom:1px solid var(--ink); }
+.results:focus { outline:none; }
 .verdict { margin:0 -3.5vw; padding:42px 3.5vw; display:grid; grid-template-columns:80px 1fr 150px; gap:24px; align-items:center; border-bottom:1px solid var(--ink); }
 .verdict-direct { background:var(--acid); }
-.verdict-indicative { background:#ffd43b; }
+.verdict-indicative { background:var(--yellow); }
 .verdict-indeterminate { background:var(--panel); }
 .verdict-index, .card-number { font-family:"Courier New", monospace; font-size:10px; text-transform:uppercase; }
 .verdict h2 { margin:0 0 8px; font-size:clamp(34px,5vw,70px); line-height:.9; letter-spacing:-.055em; text-transform:uppercase; }
@@ -34,14 +39,23 @@ h1 em { color:var(--blue); font-family:Georgia, serif; font-weight:400; text-tra
 .verdict .eyebrow { margin-bottom:14px; }
 .status-orbit { width:120px; height:120px; justify-self:end; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; background:var(--bg); position:relative; }
 .status-orbit::before { content:""; position:absolute; inset:10px; border:1px dashed var(--ink); border-radius:50%; animation:spin 12s linear infinite; }
-.status-orbit span { font-family:"Courier New", monospace; font-size:10px; text-transform:uppercase; }
+.status-orbit span { max-width:80px; font-family:"Courier New", monospace; font-size:9px; line-height:1.25; text-align:center; text-transform:uppercase; }
 @keyframes spin { to { transform:rotate(360deg); } }
+.claim-boundary { max-width:900px; margin-top:24px; display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--ink); background:rgba(242,240,233,.72); }
+.claim-boundary div { padding:14px 16px; }
+.claim-boundary div + div { border-left:1px solid var(--ink); }
+.claim-boundary span { display:block; margin-bottom:7px; font-family:"Courier New", monospace; font-size:8px; letter-spacing:.1em; text-transform:uppercase; }
+.claim-boundary strong { display:block; font-size:12px; line-height:1.45; }
 .result-grid { display:grid; grid-template-columns:repeat(2,1fr); border-left:1px solid var(--ink); }
 .result-grid article { min-height:330px; padding:28px; border-right:1px solid var(--ink); border-bottom:1px solid var(--ink); }
 .result-grid h3 { margin:56px 0 22px; font-size:30px; line-height:.95; letter-spacing:-.04em; text-transform:uppercase; }
+.result-grid article:has(.context-label) h3 { margin-top:18px; }
+.context-label { display:inline-block; margin-top:22px; padding:6px 8px; border:1px solid var(--ink); background:var(--yellow); font-family:"Courier New", monospace; font-size:8px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
 .chips { display:flex; flex-wrap:wrap; gap:7px; }
 .chips span { padding:8px 10px; border:1px solid var(--ink); background:var(--bg); font-family:"Courier New", monospace; font-size:10px; }
 .direct-chips span { background:var(--acid); font-weight:700; }
+.context-chips span { background:#fffaf0; }
+.hint-chips span { background:var(--yellow); }
 .chips small { display:block; margin-top:5px; opacity:.55; text-transform:uppercase; }
 .empty-state { color:var(--muted); font-size:13px; line-height:1.5; }
 .metrics-card dl { margin:0; }
@@ -56,9 +70,17 @@ h1 em { color:var(--blue); font-family:Georgia, serif; font-weight:400; text-tra
 .scan-meta span { display:block; margin-bottom:9px; color:var(--muted); font-family:"Courier New", monospace; font-size:9px; text-transform:uppercase; }
 .scan-meta a, .scan-meta strong { font-size:12px; white-space:nowrap; }
 .warning { margin:20px 0 0; padding-left:15px; border-left:4px solid var(--orange); color:var(--muted); font-size:11px; }
-.error-card { margin-top:50px; padding:36px; border:1px solid var(--ink); background:#ffd6cc; }
-.error-card span { display:block; margin-bottom:12px; font-family:"Courier New", monospace; font-size:10px; text-transform:uppercase; }
-.error-card strong { font-size:24px; }
+.error-card { margin:0 -3.5vw; padding:48px 3.5vw; display:grid; grid-template-columns:220px minmax(0,850px); gap:50px; border-bottom:1px solid var(--ink); background:var(--danger); }
+.error-code { align-self:start; padding:18px; border:1px solid var(--ink); background:var(--bg); }
+.error-code span { display:block; margin-bottom:10px; font-family:"Courier New", monospace; font-size:8px; letter-spacing:.1em; text-transform:uppercase; }
+.error-code strong { font-family:"Courier New", monospace; font-size:11px; text-transform:uppercase; }
+.error-card h2 { margin:0 0 12px; font-size:clamp(34px,5vw,64px); line-height:.9; letter-spacing:-.055em; text-transform:uppercase; }
+.error-card > div:last-child > p:not(.eyebrow) { max-width:750px; font-size:15px; line-height:1.5; }
+.error-action { margin-top:24px; padding-top:18px; border-top:1px solid var(--ink); }
+.error-action strong { font-size:inherit; }
+.error-card details { margin-top:22px; color:var(--muted); }
+.error-card summary { cursor:pointer; font-family:"Courier New", monospace; font-size:9px; text-transform:uppercase; }
+.error-card code { display:block; margin-top:10px; font-size:10px; white-space:normal; }
 .method { padding:90px 3.5vw; background:var(--ink); color:white; }
 .method .eyebrow span { border-color:white; }
 .method-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:12vw; }
@@ -73,10 +95,14 @@ footer p, footer a { font-family:"Courier New", monospace; font-size:9px; }
 @media (max-width:900px) {
   .hero { grid-template-columns:1fr; gap:70px; }
   .scan-panel { max-width:680px; }
+  .evidence-disclosure { grid-template-columns:130px 1fr; }
+  .evidence-disclosure > p { grid-column:2; }
   .result-grid { grid-template-columns:1fr; }
   .result-grid article { min-height:0; }
   .verdict { grid-template-columns:50px 1fr; }
   .status-orbit { display:none; }
+  .error-card { grid-template-columns:1fr; gap:28px; }
+  .error-code { width:max-content; max-width:100%; }
   .method-grid { grid-template-columns:1fr; gap:60px; }
   .scan-meta { grid-template-columns:1fr; }
   .scan-meta div { border-right:0; border-bottom:1px solid var(--ink); }
@@ -87,9 +113,14 @@ footer p, footer a { font-family:"Courier New", monospace; font-size:9px; }
   .hero { min-height:0; padding:55px 20px 45px; }
   h1 { font-size:60px; }
   .scan-panel { margin-right:8px; }
+  .evidence-disclosure { padding:24px 20px; grid-template-columns:1fr; gap:12px; }
+  .evidence-disclosure > p { grid-column:auto; }
   .verdict { margin:0 -20px; padding:32px 20px; grid-template-columns:1fr; }
   .verdict-index { display:none; }
+  .claim-boundary { grid-template-columns:1fr; }
+  .claim-boundary div + div { border-left:0; border-top:1px solid var(--ink); }
   .results { padding:0 20px 50px; }
+  .error-card { margin:0 -20px; padding:36px 20px; }
   .method { padding:70px 20px; }
   footer { padding:25px 20px; grid-template-columns:1fr; gap:8px; }
 }
