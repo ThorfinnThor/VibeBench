@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "v0.2-readiness",
+  "generatedAt": "2026-08-10",
+  "purpose": "Development-only dataset readiness diagnosis; not a validation result and not a v0.2 rule selection.",
+  "source": "outputs/vibebench_production_browser_capture_post_hardening_2026-08-09.json",
+  "sourceSha256": "461ca5ee88fd3f336bcf6e9ed2c0f6f365bd4505dde48e8bc4f71c10895f64b6",
+  "rows": 52,
+  "labels": {
+    "AI": {
+      "total": 36,
+      "successful": 35,
+      "errors": 1,
+      "direct": 13,
+      "indicative": 5,
+      "indeterminate": 17,
+      "positive": 18,
+      "primaryPositiveRate": 0.5142857142857142,
+      "directRate": 0.37142857142857144
+    },
+    "HUMAN": {
+      "total": 16,
+      "successful": 16,
+      "errors": 0,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 16,
+      "positive": 0,
+      "primaryPositiveRate": 0,
+      "directRate": 0
+    }
+  },
+  "builders": {
+    "Lovable": {
+      "total": 13,
+      "successful": 12,
+      "errors": 1,
+      "direct": 8,
+      "indicative": 0,
+      "indeterminate": 4,
+      "positive": 8,
+      "primaryPositiveRate": 0.6666666666666666,
+      "directRate": 0.6666666666666666
+    },
+    "Bolt": {
+      "total": 13,
+      "successful": 13,
+      "errors": 0,
+      "direct": 1,
+      "indicative": 3,
+      "indeterminate": 9,
+      "positive": 4,
+      "primaryPositiveRate": 0.3076923076923077,
+      "directRate": 0.07692307692307693
+    },
+    "Replit Agent": {
+      "total": 2,
+      "successful": 2,
+      "errors": 0,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 2,
+      "positive": 0,
+      "primaryPositiveRate": 0,
+      "directRate": 0
+    },
+    "v0": {
+      "total": 6,
+      "successful": 6,
+      "errors": 0,
+      "direct": 4,
+      "indicative": 1,
+      "indeterminate": 1,
+      "positive": 5,
+      "primaryPositiveRate": 0.8333333333333334,
+      "directRate": 0.6666666666666666
+    },
+    "Claude Code": {
+      "total": 2,
+      "successful": 2,
+      "errors": 0,
+      "direct": 0,
+      "indicative": 1,
+      "indeterminate": 1,
+      "positive": 1,
+      "primaryPositiveRate": 0.5,
+      "directRate": 0
+    }
+  },
+  "stackRepresentation": {
+    "AI": {
+      "successful": 35,
+      "withAnyRecognizedStack": 34,
+      "withAtLeastTwoRecognizedStacks": 34,
+      "withAtLeastFourRecognizedStacks": 29,
+      "medianRecognizedStackCount": 4
+    },
+    "HUMAN": {
+      "successful": 16,
+      "withAnyRecognizedStack": 0,
+      "withAtLeastTwoRecognizedStacks": 0,
+      "withAtLeastFourRecognizedStacks": 0,
+      "medianRecognizedStackCount": 0
+    }
+  },
+  "signalPrevalence": {
+    "Next.js": {
+      "AI": 10,
+      "HUMAN": 0
+    },
+    "React": {
+      "AI": 28,
+      "HUMAN": 0
+    },
+    "Vite": {
+      "AI": 22,
+      "HUMAN": 0
+    },
+    "Tailwind CSS": {
+      "AI": 34,
+      "HUMAN": 0
+    },
+    "Framer Motion": {
+      "AI": 1,
+      "HUMAN": 0
+    },
+    "Radix UI": {
+      "AI": 13,
+      "HUMAN": 0
+    },
+    "Lucide": {
+      "AI": 28,
+      "HUMAN": 0
+    },
+    "Supabase": {
+      "AI": 8,
+      "HUMAN": 0
+    },
+    "Firebase": {
+      "AI": 0,
+      "HUMAN": 0
+    }
+  },
+  "directMarkers": {
+    "Lovable · page · lovable.dev": 5,
+    "v0 · page · v0.app": 4,
+    "Lovable · page · lovable.app": 2,
+    "Lovable · asset · lovable.dev": 1,
+    "Bolt · asset · bolt.new": 1
+  },
+  "acquisitionProgress": {
+    "ready": 30,
+    "groups": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 10,
+      "HUMAN_MODERN_SAAS_NEW": 10,
+      "HUMAN_MODERN_APP_NEW": 10
+    },
+    "humanBaseline": {
+      "total": 20,
+      "indicative": 7,
+      "indeterminate": 13,
+      "withAtLeastTwoRecognizedStacks": 16
+    },
+    "boltBaseline": {
+      "total": 10,
+      "direct": 1,
+      "indicative": 0,
+      "indeterminate": 9,
+      "withAtLeastTwoRecognizedStacks": 7
+    }
+  },
+  "primaryDiagnostic": {
+    "tp": 18,
+    "fp": 0,
+    "tn": 16,
+    "fn": 17,
+    "accuracy": 0.6666666666666666,
+    "precision": 1,
+    "recall": 0.5142857142857142,
+    "specificity": 1,
+    "f1": 0.6792452830188679
+  },
+  "strictDiagnostic": {
+    "tp": 13,
+    "fp": 0,
+    "tn": 16,
+    "fn": 22,
+    "accuracy": 0.5686274509803921,
+    "precision": 1,
+    "recall": 0.37142857142857144,
+    "specificity": 1,
+    "f1": 0.5416666666666666
+  },
+  "blockers": [
+    "All 16 successful Human Development controls have fewer than two recognized modern stack signals; broad structural specificity is therefore not tested.",
+    "Replit Agent has only two Development samples and neither exposes direct or indicative evidence.",
+    "Bolt has thirteen Development samples but only one direct marker hit.",
+    "The Development set is label-imbalanced (36 AI / 16 Human) and its negative class is not representative of modern SaaS/application stacks.",
+    "The 100-site holdout is open and must not be recycled as Development data or used for v0.2 threshold selection."
+  ],
+  "recommendedExtension": {
+    "total": 40,
+    "strata": {
+      "AI_REPLIT_AGENT_NEW": 10,
+      "AI_BOLT_NEW": 10,
+      "HUMAN_MODERN_SAAS_NEW": 10,
+      "HUMAN_MODERN_APP_NEW": 10
+    },
+    "rule": "All targets and provenance must be new, absent from both the existing 52-row Development capture and the completed 100-site holdout."
+  }
+}

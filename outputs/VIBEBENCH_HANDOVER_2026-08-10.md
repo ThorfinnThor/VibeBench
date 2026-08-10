@@ -95,17 +95,57 @@ ohne direkte Evidenz vorbehalten. Implementierung und Browser-QA stehen in
 Das ist eine Änderung der Produktsprache und Ergebnishierarchie, nicht das
 nachträgliche Umschreiben der v0.1-Metriken oder Scanner-Schwellen.
 
+## Development-readiness v0.2
+
+Die neue reproduzierbare Diagnose des festen 52-Site-Development-Captures
+bestätigt, dass vor einer Regeländerung zusätzliche Daten nötig sind:
+
+- 34/35 erfolgreiche AI-Sites haben mindestens zwei erkannte moderne
+  Stack-Signale, aber 0/16 Human-Kontrollen.
+- Replit Agent ist nur mit zwei Development-Sites vertreten; beide sind
+  `indeterminate`.
+- Bolt hat dreizehn Development-Sites, aber nur einen Direct-Treffer.
+- Die bisherigen Human-Kontrollen testen die Spezifität eines breiteren
+  modernen Stack-/Struktur-Ansatzes daher nicht.
+
+Die vollständige Diagnose steht in
+`outputs/VIBEBENCH_DEVELOPMENT_V0_2_READINESS_2026-08-10.md`. Für die nächste
+Phase sind 40 überprüfte Development-Slots vorbereitet: je zehn Replit Agent,
+Bolt, Human Modern SaaS und Human Modern App. Build und Validator blockieren
+Überschneidungen mit bestehenden Development- und Holdout-Hosts. Das Protokoll
+steht in `outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md`.
+Die 20 Human-Slots sind bereits READY. Sie verwenden offizielle öffentliche
+Source-Repositories, deren Projektgeschichte vor dem 30. November 2022 beginnt;
+dies ist ein transparentes operatives Kontrolllabel, kein Beweis gegen jede
+spätere AI-Unterstützung. Replit Agent steht bei 0/10 und Bolt bei 10/10.
+16/20 Human-Kontrollen haben mindestens zwei erkannte moderne Stack-Signale;
+7/20 lösen unter der alten v0.1-Baseline bereits `indicative` aus.
+Zehn neue Bolt-Custom-Domain-Deployments sind ebenfalls READY. Ihre
+builder-spezifische Provenienz stammt aus unabhängigen Devpost-Submissions;
+unter der v0.1-Baseline ist eines `direct` und neun bleiben `indeterminate`.
+Aufgenommene und wegen Leakage oder technischer Fehler abgelehnte Kandidaten
+sind in `outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md`
+dokumentiert.
+
+```bash
+npm run research:v0.2-readiness
+npm run development:v0.2-build
+npm run development:v0.2-validate
+```
+
 ## Nächste To-dos
 
-1. v0.1.1 pushen, auf Vercel deployen und alle vier Ausgänge in Produktion prüfen.
-2. Replit-Agent-Signale und Human-SaaS-False-Positives nur auf neuen
-   Development-Samples untersuchen.
-3. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln.
-4. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und einfrieren.
-5. Erst nach v0.2-Bestätigung Kalibrierung und Prozentwert prüfen.
+1. Die aktuellen Commits pushen, auf Vercel deployen und alle vier Ausgänge in
+   Produktion prüfen.
+2. Zehn neue Replit-Agent-Samples mit exakter Deployment-Provenienz ergänzen.
+3. Danach 40/40 Slots validieren.
+4. Eine Scanner-v0.2-Regel ausschließlich auf dem erweiterten
+   Development-Datensatz entwickeln.
+5. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und erst danach
+   Kalibrierung oder Prozentwert prüfen.
 
 ## Empfohlener nächster Schritt
 
-v0.1.1 über GitHub Desktop pushen und den Vercel-Deploy mit Direct-, Indicative-,
-Indeterminate- und Fehlerbeispiel prüfen. Danach Development-only an v0.2
-arbeiten; der 100er-Holdout bleibt unangetastet.
+Die aktuellen Commits über GitHub Desktop pushen und den Vercel-Deploy mit
+Direct-, Indicative-, Indeterminate- und Fehlerbeispiel prüfen. Danach zuerst
+die zehn Replit-Agent-Slots füllen; der 100er-Holdout bleibt unangetastet.

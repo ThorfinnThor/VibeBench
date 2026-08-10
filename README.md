@@ -93,6 +93,38 @@ Scannerregel nachträglich zu verändern:
 Die Umsetzung und lokale Browserprüfung stehen in
 [`outputs/VIBEBENCH_PRODUCT_SEMANTICS_UPDATE_2026-08-10.md`](outputs/VIBEBENCH_PRODUCT_SEMANTICS_UPDATE_2026-08-10.md).
 
+## Development-Vorbereitung v0.2
+
+Die reproduzierbare Diagnose des festen 52-Site-Development-Captures zeigt
+eine entscheidende Datenlücke: 34/35 erfolgreiche AI-Sites, aber keine der 16
+Human-Kontrollen haben mindestens zwei erkannte moderne Stack-Signale. Diese
+Human-Kontrollen reichen daher nicht aus, um breitere Strukturregeln gegen
+moderne React-/Next-/SaaS-Seiten abzusichern.
+
+Diagnose und Akquisitionsprotokoll:
+
+- [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_READINESS_2026-08-10.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_READINESS_2026-08-10.md)
+- [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md)
+- [`outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md`](outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md)
+
+Die vorbereitete Erweiterung enthält 40 Development-Slots: je zehn neue
+Replit-Agent-, Bolt-, Human-Modern-SaaS- und Human-Modern-App-Sites. Sie wird
+automatisch gegen bestehende Development- und Holdout-URLs sowie Hosts geprüft.
+Die 20 Human-Slots sind mit vor dem 30. November 2022 begonnenen öffentlichen
+Source-Projekten gefüllt und validiert; Replit Agent steht bei 0/10 und Bolt
+bei 10/10.
+16/20 dieser Kontrollen haben mindestens zwei erkannte moderne Stack-Signale,
+und 7/20 lösen unter der v0.1-Baseline bereits `indicative` aus.
+Zusätzlich sind zehn neue, über unabhängige Hackathon-Submissions dokumentierte
+Bolt-Custom-Domain-Deployments READY. Unter v0.1 ist eines `direct` und neun
+sind `indeterminate`.
+
+```bash
+npm run research:v0.2-readiness
+npm run development:v0.2-build
+npm run development:v0.2-validate
+```
+
 Arbeitsprüfung ohne Ergebnisöffnung:
 
 ```bash
@@ -180,19 +212,17 @@ separate Kalibrierungsdaten und ein frischer Bestätigungs-Holdout.
 
 ## Nächste To-dos
 
-1. v0.1.1 pushen, über Vercel deployen und die vier Ergebniszustände in
-   Produktion prüfen.
-2. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln;
-   diese 100 Holdout-Labels nicht zum Tuning verwenden.
-3. Replit-Agent-Abdeckung und die Human-SaaS-False-Positives gezielt auf neuen
-   Development-Samples untersuchen.
-4. Builder-unabhängige Signale in einer separaten Research-Spur untersuchen,
-   ohne sie vorzeitig als Attribution zu verwenden.
+1. Die aktuellen Commits pushen, über Vercel deployen und die vier
+   Ergebniszustände in Produktion prüfen.
+2. Zehn neue Replit-Agent-Samples mit exakter Deployment-Provenienz ergänzen.
+3. Alle 40 Slots müssen den Development-/Holdout-Overlap-Validator bestehen.
+4. Eine Scanner-v0.2-Regel erst auf dem erweiterten Development-Datensatz
+   entwickeln; den abgeschlossenen 100er-Holdout nicht zum Tuning verwenden.
 5. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
    danach über Kalibrierung oder einen Prozentwert entscheiden.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes v0.1.1 pushen und in Vercel deployen. Danach beginnt die
-Development-only-Analyse für v0.2; der abgeschlossene 100er-Holdout bleibt
-unangetastet.
+Die aktuellen Commits pushen und in Vercel deployen. Danach die zehn neuen
+Replit-Agent-Samples akquirieren; diese Builder-Gruppe ist derzeit die größte
+positive Abdeckungslücke.
