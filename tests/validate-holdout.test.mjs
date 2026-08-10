@@ -46,7 +46,7 @@ test("partially populated 100-slot manifest is structurally valid", () => {
   assert.equal(summary.rows, 100);
   assert.equal(summary.ai, 50);
   assert.equal(summary.human, 50);
-  assert.equal(summary.ready, 2);
+  assert.equal(summary.ready, 11);
   assert.deepEqual(summary.errors, []);
 });
 
@@ -54,7 +54,7 @@ test("freeze is blocked until all 100 rows are ready", () => {
   const result = runValidator([manifestPath, "--freeze", "--scanner-commit", "a".repeat(40)]);
   assert.equal(result.status, 1);
   const summary = JSON.parse(result.stdout);
-  assert.ok(summary.errors.includes("Freeze requires 100 ready rows, found 2"));
+  assert.ok(summary.errors.includes("Freeze requires 100 ready rows, found 11"));
 });
 
 test("development overlap catches apex and www variants", async () => {
@@ -69,4 +69,44 @@ test("development overlap catches apex and www variants", async () => {
   assert.equal(result.status, 1);
   const summary = JSON.parse(result.stdout);
   assert.ok(summary.errors.some((error) => error.includes("target_url overlaps the Development set")));
+});
+
+test("development overlap catches a different path on an existing host", async () => {
+  const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "vibebench-holdout-test-"));
+  const temporaryManifest = path.join(temporaryDirectory, "holdout.csv");
+  const lines = (await readFile(manifestPath, "utf8")).trimEnd().split("\n");
+  lines[1] = replaceCsvCell(lines[1], 5, "https://elora-health.com/private-preview");
+  await writeFile(temporaryManifest, `${lines.join("\n")}\n`, "utf8");
+
+  const result = runValidator([temporaryManifest]);
+  assert.equal(result.status, 1);
+  const summary = JSON.parse(result.stdout);
+  assert.ok(summary.errors.some((error) => error.includes("target host overlaps the Development set")));
+});
+
+test("provenance must be hosted independently from the target", async () => {
+  const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "vibebench-holdout-test-"));
+  const temporaryManifest = path.join(temporaryDirectory, "holdout.csv");
+  const lines = (await readFile(manifestPath, "utf8")).trimEnd().split("\n");
+  lines[1] = replaceCsvCell(lines[1], 5, "https://audit-example.test/app");
+  lines[1] = replaceCsvCell(lines[1], 6, "https://audit-example.test/evidence");
+  await writeFile(temporaryManifest, `${lines.join("\n")}\n`, "utf8");
+
+  const result = runValidator([temporaryManifest]);
+  assert.equal(result.status, 1);
+  const summary = JSON.parse(result.stdout);
+  assert.ok(summary.errors.some((error) => error.includes("target_url and provenance_url must use different hosts")));
+});
+
+test("freeze_status cannot drift from the computed gate", async () => {
+  const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "vibebench-holdout-test-"));
+  const temporaryManifest = path.join(temporaryDirectory, "holdout.csv");
+  const lines = (await readFile(manifestPath, "utf8")).trimEnd().split("\n");
+  lines[1] = replaceCsvCell(lines[1], 19, "PENDING");
+  await writeFile(temporaryManifest, `${lines.join("\n")}\n`, "utf8");
+
+  const result = runValidator([temporaryManifest]);
+  assert.equal(result.status, 1);
+  const summary = JSON.parse(result.stdout);
+  assert.ok(summary.errors.some((error) => error.includes("freeze_status must be READY")));
 });

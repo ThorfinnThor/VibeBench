@@ -64,6 +64,33 @@ function normalizedUrl(value) {
   }
 }
 
+function normalizedHostname(value) {
+  if (!value) return "";
+  try {
+    const url = new URL(value.includes("://") ? value : `https://${value}`);
+    return url.hostname.toLowerCase().replace(/^www\./, "").replace(/\.$/, "");
+  } catch {
+    return "INVALID";
+  }
+}
+
+function normalizedDomainGroup(value) {
+  if (!value) return "";
+  const host = normalizedHostname(value);
+  return host === "INVALID" ? value.trim().toLowerCase().replace(/^www\./, "").replace(/\.$/, "") : host;
+}
+
+const sharedHostingGroups = new Set([
+  "lovable.app", "vercel.app", "netlify.app", "replit.app", "pages.dev", "github.io",
+  "web.app", "firebaseapp.com", "bolt.host"
+]);
+
+function isIsoDate(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const date = new Date(`${value}T00:00:00Z`);
+  return !Number.isNaN(date.valueOf()) && date.toISOString().slice(0, 10) === value;
+}
+
 function duplicates(rows, key, normalize = (value) => value.trim().toLowerCase()) {
   const groups = new Map();
   for (const row of rows) {
@@ -113,6 +140,12 @@ for (const row of rows) {
   if (row.target_url && normalizedUrl(row.target_url) === normalizedUrl(row.provenance_url)) {
     errors.push(`${row.sample_id}: target_url and provenance_url must be independent`);
   }
+  if (row.target_url && row.provenance_url && normalizedHostname(row.target_url) === normalizedHostname(row.provenance_url)) {
+    errors.push(`${row.sample_id}: target_url and provenance_url must use different hosts`);
+  }
+  for (const key of ["source_published_at", "collected_at", "deployment_verified_at"]) {
+    if (row[key] && !isIsoDate(row[key])) errors.push(`${row.sample_id}: ${key} must be a valid YYYY-MM-DD date`);
+  }
 }
 
 for (const [key, normalize] of [["target_url", normalizedUrl], ["domain_group", undefined], ["project_group", undefined]]) {
@@ -121,24 +154,68 @@ for (const [key, normalize] of [["target_url", normalizedUrl], ["domain_group", 
 for (const [value, ids] of duplicates(rows, "organization_group")) {
   warnings.push(`Repeated organization_group ${value}: ${ids.join(", ")}`);
 }
+for (const [value, ids] of duplicates(rows, "provenance_url", normalizedUrl)) {
+  warnings.push(`Repeated provenance_url ${value}: ${ids.join(", ")}`);
+}
+
+const targetUrls = new Map(rows.filter((row) => row.target_url).map((row) => [normalizedUrl(row.target_url), row.sample_id]));
+for (const row of rows) {
+  const targetOwner = targetUrls.get(normalizedUrl(row.provenance_url));
+  if (targetOwner && targetOwner !== row.sample_id) {
+    errors.push(`${row.sample_id}: provenance_url is another holdout target (${targetOwner})`);
+  }
+}
 
 const developmentPath = path.resolve("vibebench_url_scan_queue_63_v0_9.csv");
 const developmentRows = parseCsv(await readFile(developmentPath, "utf8"));
-const developmentUrls = new Set(developmentRows.flatMap((row) => [row.target_url, row.url, row.requested_url, row.final_url]).map(normalizedUrl).filter((value) => value && value !== "INVALID"));
+const developmentRawUrls = developmentRows.flatMap((row) => [row.target_url, row.url, row.requested_url, row.final_url]);
+const developmentUrls = new Set(developmentRawUrls.map(normalizedUrl).filter((value) => value && value !== "INVALID"));
+const developmentHosts = new Set(developmentRawUrls.map(normalizedHostname).filter((value) => value && value !== "INVALID"));
+const developmentDomainGroups = new Set(developmentRows.map((row) => normalizedDomainGroup(row.url_group))
+  .filter((value) => value && !sharedHostingGroups.has(value)));
 for (const row of rows) {
   const target = normalizedUrl(row.target_url);
   if (target && developmentUrls.has(target)) errors.push(`${row.sample_id}: target_url overlaps the Development set`);
+  const targetHost = normalizedHostname(row.target_url);
+  if (targetHost && developmentHosts.has(targetHost) && !developmentUrls.has(target)) {
+    errors.push(`${row.sample_id}: target host overlaps the Development set`);
+  }
+  const domainGroup = normalizedDomainGroup(row.domain_group);
+  if (domainGroup && developmentDomainGroups.has(domainGroup)) {
+    errors.push(`${row.sample_id}: domain_group overlaps the Development set`);
+  }
 }
 
 const requiredForReady = [
   "website_type", "target_url", "provenance_url", "provenance_type", "provenance_summary", "collected_at",
   "deployment_verified_at", "domain_group", "project_group"
 ];
-const readyRows = rows.filter((row) => requiredForReady.every((key) => row[key])
+function isReady(row) {
+  return requiredForReady.every((key) => row[key])
   && row.reachability_status === "REACHABLE"
   && row.development_overlap_check === "PASS"
   && row.domain_overlap_check === "PASS"
-  && row.provenance_review === "PASS");
+  && row.provenance_review === "PASS";
+}
+
+const readyRows = rows.filter(isReady);
+const provenanceTypes = new Set(["official_builder_story", "maker_statement", "repository_deployment_mapping", "archived_pre_ai_snapshot", "independent_project_record", "other_reviewed"]);
+const reachabilityStatuses = new Set(["PENDING", "REACHABLE", "FAILED", "RETRY"]);
+const reviewStatuses = new Set(["PENDING", "PASS", "FAIL"]);
+for (const row of rows) {
+  if (row.provenance_type && !provenanceTypes.has(row.provenance_type)) errors.push(`${row.sample_id}: unsupported provenance_type`);
+  if (!reachabilityStatuses.has(row.reachability_status)) errors.push(`${row.sample_id}: unsupported reachability_status`);
+  for (const key of ["development_overlap_check", "domain_overlap_check", "provenance_review"]) {
+    if (!reviewStatuses.has(row[key])) errors.push(`${row.sample_id}: unsupported ${key}`);
+  }
+  const expectedFreezeStatus = isReady(row) ? "READY" : "PENDING";
+  if (row.freeze_status !== expectedFreezeStatus) {
+    errors.push(`${row.sample_id}: freeze_status must be ${expectedFreezeStatus}`);
+  }
+  if (isReady(row) && row.provenance_summary.trim().length < 60) {
+    errors.push(`${row.sample_id}: READY provenance_summary is too short for audit`);
+  }
+}
 
 if (freeze) {
   if (!/^[0-9a-f]{40}$/i.test(scannerCommit)) errors.push("--scanner-commit must be a full 40-character Git SHA when freezing");

@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { SpreadsheetFile, Workbook } from "@oai/artifact-tool";
+import { FileBlob, SpreadsheetFile, Workbook } from "@oai/artifact-tool";
 
 const outputDir = path.resolve("outputs/holdout_v0_1");
 const previewDir = process.env.VIBEBENCH_PREVIEW_DIR || "/private/tmp/vibebench-holdout-preview";
@@ -89,6 +89,172 @@ const seededSamples = new Map([
     provenance_review: "PASS",
     freeze_status: "READY",
     notes: "Public deployment opened independently; no Development-set match found."
+  }],
+  ["HO-AI-LOVABLE-02", {
+    website_type: "Community safety map",
+    target_url: "https://safety-sentinel-guard.lovable.app/",
+    provenance_url: "https://lovable.dev/blog/2025-01-17-mysafe-x-lovable-hackathon-canada-winner",
+    provenance_type: "official_builder_story",
+    provenance_summary: "Lovable's official MySafe story names the four-person team, describes the Lovable build process, and links this exact public deployment.",
+    source_published_at: "2025-01-17",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "safety-sentinel-guard.lovable.app",
+    project_group: "mysafe-safety-scouts",
+    organization_group: "mysafe-hackathon-team",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Independent web retrieval returned the intended Safety Scouts deployment; no Development-set target, host, or tenant match found."
+  }],
+  ["HO-AI-LOVABLE-03", {
+    website_type: "AI canvas / creative workspace",
+    target_url: "https://magican.lovable.app/",
+    provenance_url: "https://lovable.dev/blog/zohar-vanunu-magican-ai-maker",
+    provenance_type: "official_builder_story",
+    provenance_summary: "Lovable's official profile says Zohar created MagiCan through 1,500 prompts, identifies it as a Lovable project, and links this deployment.",
+    source_published_at: "2025-04-06",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "magican.lovable.app",
+    project_group: "magican",
+    organization_group: "zohar-vanunu-magican",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Independent web retrieval returned the intended MagiCan deployment; no Development-set target, host, or tenant match found."
+  }],
+  ["HO-AI-LOVABLE-04", {
+    website_type: "Interactive 3D experience",
+    target_url: "https://kaleidoscope-visionary.lovable.app/",
+    provenance_url: "https://lovable.dev/blog/2025-01-20-how-a-developer-advocate-built-stunning-3d-projects-with-lovable-dev-and-won-big",
+    provenance_type: "official_builder_story",
+    provenance_summary: "Lovable's official maker interview describes Konstantin building the Kaleidoscope 3D environment with Lovable and links this exact deployment.",
+    source_published_at: "2025-01-20",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "kaleidoscope-visionary.lovable.app",
+    project_group: "kaleidoscope-visionary",
+    organization_group: "konstantin-zolozhkov-khvostikk",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Independent web retrieval returned the intended 3D deployment; no Development-set target, host, or tenant match found."
+  }],
+  ["HO-AI-LOVABLE-05", {
+    website_type: "Photo-to-video creator",
+    target_url: "https://cherishable.lovable.app/",
+    provenance_url: "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+    provenance_type: "official_builder_story",
+    provenance_summary: "Lovable's official Christmas Hackathon report identifies Cherishable as a Lovable submission, names its maker, and links this deployment.",
+    source_published_at: "2024-12-24",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "cherishable.lovable.app",
+    project_group: "cherishable",
+    organization_group: "tristanbob-cherishable",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Independent web retrieval returned the intended Cherishable deployment; no Development-set target, host, or tenant match found."
+  }],
+  ["HO-HUM-MODERN-APP-01", {
+    website_type: "Collaborative whiteboard",
+    target_url: "https://excalidraw.com/",
+    provenance_url: "https://github.com/excalidraw/excalidraw",
+    provenance_type: "repository_deployment_mapping",
+    provenance_summary: "The official open-source repository explicitly maps its in-repository app source to excalidraw.com and exposes a multi-year, multi-contributor commit history.",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "excalidraw.com",
+    project_group: "excalidraw",
+    organization_group: "excalidraw-community",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
+  }],
+  ["HO-HUM-MODERN-APP-02", {
+    website_type: "Diagram editor",
+    target_url: "https://mermaid.live/",
+    provenance_url: "https://github.com/mermaid-js/mermaid-live-editor",
+    provenance_type: "repository_deployment_mapping",
+    provenance_summary: "The official Mermaid Live Editor repository links mermaid.live as its live version and documents thousands of public commits and contributors.",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "mermaid.live",
+    project_group: "mermaid-live-editor",
+    organization_group: "mermaid-js",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
+  }],
+  ["HO-HUM-MODERN-APP-03", {
+    website_type: "Diagram / whiteboard app",
+    target_url: "https://app.diagrams.net/",
+    provenance_url: "https://github.com/jgraph/drawio",
+    provenance_type: "repository_deployment_mapping",
+    provenance_summary: "The official draw.io repository identifies app.diagrams.net as the production deployment and contains the long-running client-side editor source.",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "diagrams.net",
+    project_group: "drawio-diagrams-net",
+    organization_group: "jgraph-drawio",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
+  }],
+  ["HO-HUM-MODERN-APP-04", {
+    website_type: "API development web app",
+    target_url: "https://hoppscotch.io/",
+    provenance_url: "https://github.com/hoppscotch/hoppscotch",
+    provenance_type: "repository_deployment_mapping",
+    provenance_summary: "Hoppscotch's official open-source monorepo identifies hoppscotch.io as its web demo and documents the maintained web, desktop, and CLI project.",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "hoppscotch.io",
+    project_group: "hoppscotch",
+    organization_group: "hoppscotch",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
+  }],
+  ["HO-HUM-MODERN-APP-05", {
+    website_type: "Collaborative design tool",
+    target_url: "https://design.penpot.app/",
+    provenance_url: "https://github.com/penpot/penpot",
+    provenance_type: "repository_deployment_mapping",
+    provenance_summary: "Penpot's official open-source repository documents the maintained collaborative design platform whose public SaaS deployment is served at design.penpot.app.",
+    collected_at: "2026-08-10",
+    deployment_verified_at: "2026-08-10",
+    reachability_status: "REACHABLE",
+    domain_group: "penpot.app",
+    project_group: "penpot",
+    organization_group: "kaleidos-penpot",
+    development_overlap_check: "PASS",
+    domain_overlap_check: "PASS",
+    provenance_review: "PASS",
+    freeze_status: "READY",
+    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
   }]
 ]);
 
@@ -271,6 +437,8 @@ const overviewPreview = await workbook.render({ sheetName: "Overview", range: "A
 await fs.writeFile(path.join(previewDir, "overview.png"), new Uint8Array(await overviewPreview.arrayBuffer()));
 const samplesPreview = await workbook.render({ sheetName: "Samples", range: "A1:U12", scale: 1, format: "png" });
 await fs.writeFile(path.join(previewDir, "samples.png"), new Uint8Array(await samplesPreview.arrayBuffer()));
+const humanSamplesPreview = await workbook.render({ sheetName: "Samples", range: "A51:U57", scale: 1, format: "png" });
+await fs.writeFile(path.join(previewDir, "human-samples.png"), new Uint8Array(await humanSamplesPreview.arrayBuffer()));
 const protocolPreview = await workbook.render({ sheetName: "Protocol", range: "A1:D34", scale: 1.25, format: "png" });
 await fs.writeFile(path.join(previewDir, "protocol.png"), new Uint8Array(await protocolPreview.arrayBuffer()));
 const listsPreview = await workbook.render({ sheetName: "Lists", range: "A1:D8", scale: 1.5, format: "png" });
@@ -283,5 +451,16 @@ const overviewCheck = await workbook.inspect({ kind: "table", range: "Overview!A
 const sampleCheck = await workbook.inspect({ kind: "table", range: "Samples!A1:U6", include: "values,formulas", tableMaxRows: 6, tableMaxCols: 21, maxChars: 12000 });
 const errors = await workbook.inspect({ kind: "match", searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A", options: { useRegex: true, maxResults: 100 }, summary: "formula error scan", maxChars: 4000 });
 
-process.stdout.write(`${overviewCheck.ndjson}\n${sampleCheck.ndjson}\n${errors.ndjson}\n`);
+const exportedInput = await FileBlob.load(workbookPath);
+const exportedWorkbook = await SpreadsheetFile.importXlsx(exportedInput);
+const exportedOverviewCheck = await exportedWorkbook.inspect({ kind: "table", range: "Overview!A4:D25", include: "values,formulas", tableMaxRows: 22, tableMaxCols: 4, maxChars: 8000 });
+const exportedHumanCheck = await exportedWorkbook.inspect({ kind: "table", range: "Samples!A52:U56", include: "values,formulas", tableMaxRows: 5, tableMaxCols: 21, maxChars: 10000 });
+const exportedErrors = await exportedWorkbook.inspect({ kind: "match", searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A", options: { useRegex: true, maxResults: 100 }, summary: "exported formula error scan", maxChars: 4000 });
+const exportedOverviewPreview = await exportedWorkbook.render({ sheetName: "Overview", range: "A1:F31", scale: 1.5, format: "png" });
+await fs.writeFile(path.join(previewDir, "exported-overview.png"), new Uint8Array(await exportedOverviewPreview.arrayBuffer()));
+const exportedHumanPreview = await exportedWorkbook.render({ sheetName: "Samples", range: "A51:U57", scale: 1, format: "png" });
+await fs.writeFile(path.join(previewDir, "exported-human-samples.png"), new Uint8Array(await exportedHumanPreview.arrayBuffer()));
+
+process.stdout.write(`${overviewCheck.ndjson}\n${sampleCheck.ndjson}\n${errors.ndjson}\n${exportedOverviewCheck.ndjson}\n${exportedHumanCheck.ndjson}\n${exportedErrors.ndjson}\n`);
 process.stdout.write(`Wrote ${workbookPath}\nWrote ${csvPath}\n`);
+await fs.rm(`${workbookPath}.inspect.ndjson`, { force: true });

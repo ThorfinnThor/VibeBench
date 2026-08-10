@@ -1,6 +1,6 @@
 # VibeBench URL Detector v0.9 – Arbeitsstand und Übergabe
 
-Stand: 2026-08-09, ergänzt um Web-App, Produktions-Captures und Kontextanalyse
+Stand: 2026-08-10, ergänzt um Web-App, Produktions-Captures, Kontextanalyse und Blind-Holdout-Akquisition
 
 Dieses Verzeichnis bündelt den aktuell bereitgestellten v0.9-Stand von VibeBench. Ziel ist ein nachvollziehbarer Benchmark für die Frage, ob sich **AI- bzw. Vibe-Coding-Entwicklung aus öffentlich sichtbaren Deployment-Artefakten probabilistisch erkennen lässt**. Das System soll keine Autorenschaft „beweisen“. Es trennt deshalb direkte Builder-Artefakte von allgemeinen Framework-, Hosting-, DOM-, Asset- und UI-Signalen.
 
@@ -18,6 +18,31 @@ Dieses Verzeichnis bündelt den aktuell bereitgestellten v0.9-Stand von VibeBenc
 - Von 35 sicheren `static_auto`-Repos wurden 30 vor dem Cutoff eingefroren, gehasht und lokal gescannt. Fremder Build-/Runtime-Code wurde nicht auf dem Host ausgeführt.
 - Der deduplizierte Merge enthält 92 eindeutige Zeilen, davon 81 trainierbar (36 AI, 45 Human).
 - Zusätzlich zum Seed-42-Split liegen 50 wiederholte gruppierte Splits und eine Live-only-Kontrolle vor.
+- Der unangetastete 100er-Blind-Holdout ist strukturell angelegt. 11/100 Zeilen sind READY: 5 Lovable, 1 Bolt und 5 Human-Modern-App-Kontrollen. Es wurden noch keine Holdout-Verdicts erzeugt oder geöffnet.
+
+## Blind-Holdout-Stand vom 2026-08-10
+
+Das erste Akquisitionspaket ist abgeschlossen. Fünf voneinander unabhängige
+Lovable-Projekte besitzen eine offizielle, deployment-spezifische Builder-
+Provenienz und waren beim getrennten Reachability-Check erreichbar. Fünf
+Human-Modern-App-Kontrollen werden durch offizielle Open-Source-Repositories,
+mehrjährige öffentliche Entwicklungshistorien und konkrete Deployment-
+Zuordnungen gestützt. Zusammen mit dem bereits geprüften Bolt-Projekt stehen
+damit 11/100 Slots auf READY.
+
+Der Validator prüft jetzt zusätzlich Host- und nicht nur URL-Overlap zum
+Development-Set, getrennte Hosts für Ziel und Provenienz, Querverweise auf
+andere Holdout-Ziele, gültige Datumswerte, kontrollierte Statuswerte, minimale
+Audit-Tiefe und die Konsistenz des berechneten Freeze-Status. 17 automatisierte
+Tests laufen erfolgreich; der aktuelle Holdout hat null Warnungen und null
+Fehler. Der Freeze bleibt erwartungsgemäß bis 100/100 READY blockiert.
+
+Mehrere scheinbar attraktive Kandidaten wurden bewusst ausgeschlossen:
+PrintPigeon und Backchannel sind bereits Teil des Development-Sets; Tribbai
+leitet inzwischen auf sachfremden Casino-Content weiter; weitere nicht
+zuverlässig erreichbare Deployments bleiben RETRY statt READY. Die vollständige
+Akquisitionsakte liegt unter
+`outputs/holdout_v0_1/VIBEBENCH_HOLDOUT_ACQUISITION_LOG_2026-08-09.md`.
 
 ## Realer Lauf vom 2026-08-09
 
@@ -128,9 +153,9 @@ Der öffentliche Chat [KI-Website Erkennung Tipps](https://chatgpt.com/share/6a7
 | `outputs/VIBEBENCH_PRODUCTION_COMPARISON_POST_HARDENING_2026-08-09.md` | reproduzierbarer Vorher-/Nachher-Vergleich | genau ein beabsichtigter Verdict-Wechsel |
 | `outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md` | eingefrorene Direct-/Indicative-/Indeterminate-Regeln | Development-Regelwerk v0.1 |
 | `outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md` | Auswahl-, Freeze- und Auswertungsplan für neue URLs | 100 URLs freigegeben |
-| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.xlsx` | Visuelle Akquisitions- und Review-Arbeitsmappe | 100 Slots vorbereitet; 2 READY |
-| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv` | Maschinenlesbares Holdout-Manifest | 100 Slots; 2 vollständig geprüfte AI-Kandidaten |
-| `scripts/validate-holdout.mjs` | Struktur-, Leakage-, Readiness- und Freeze-Validator | Arbeitsprüfung aktiv; Freeze blockiert bis 100 READY |
+| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.xlsx` | Visuelle Akquisitions- und Review-Arbeitsmappe | 100 Slots vorbereitet; 11 READY |
+| `outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv` | Maschinenlesbares Holdout-Manifest | 100 Slots; 6 geprüfte AI- und 5 geprüfte Human-Kandidaten |
+| `scripts/validate-holdout.mjs` | Struktur-, Host-/URL-Leakage-, Readiness- und Freeze-Validator | 11 READY, 0 Warnungen, 0 Fehler; Freeze blockiert bis 100 READY |
 | `outputs/VIBEBENCH_CONTEXT_EVIDENCE_DATASET_ANALYSIS_2026-08-09.md` | Header-/Manifest-Analyse nach Label und Builder | vorhanden; kein Blind-Holdout |
 | `outputs/VIBEBENCH_ISOLATED_RUNNER_README.md` | Sicherheits- und Bedienhinweise für dynamische Historical-Builds | vorbereitet; Docker-Daemon aus |
 | `outputs/vibebench_live_features_v0_9.csv` | vollständige Live-Scan-Ausgabe | 63 Zeilen, 52 erfolgreich |
@@ -249,7 +274,14 @@ Der kombinierte Datensatz ist trotz guter Pilotwerte anfällig für Zeit-/Runtim
 
 ## Empfohlene Fortsetzung
 
-### P0 – isolierten Build-Runner ergänzen
+### P0 – Blind-Holdout vervollständigen
+
+1. Das Lovable-Stratum von 5 auf 10 READY vervollständigen, ohne Maker-, Projekt- oder Development-Wiederverwendung.
+2. Danach jeweils kleine 5+5-Pakete für Bolt/Human-SaaS, Replit/Human-Portfolio, v0/Human-Content und Other-Agentic/Pre-AI-Snapshot akquirieren.
+3. RETRY-Kandidaten nur nach einem zweiten, zeitlich getrennten Erreichbarkeitstest hochstufen.
+4. Erst bei 100/100 READY Manifest-Hash und vollständigen Scanner-Commit festschreiben; vor diesem Freeze keine Scanner-Verdicts auf Holdout-Zielen erzeugen.
+
+### P1 – isolierten Build-Runner ergänzen
 
 1. Container-Images bzw. klar getrennte Images für Node, Jekyll, Hugo, Hexo und PHP definieren.
 2. Read-only Source-Input, temporären Output, deaktivierte Secrets/SSH-Sockets, Ressourcenlimits und ein minimales Netzwerkprofil erzwingen.
