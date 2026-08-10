@@ -16,7 +16,11 @@
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",
-    "holdout:scan": "node scripts/run-blind-holdout.mjs"
+    "holdout:scan": "node scripts/run-blind-holdout.mjs",
+    "holdout:evaluate": "node scripts/evaluate-blind-holdout.mjs",
+    "holdout:evaluation-workbook": "node scripts/build-holdout-evaluation-workbook.mjs",
+    "holdout:results-manifest": "node scripts/hash-holdout-results.mjs",
+    "holdout:verify": "node scripts/verify-blind-holdout-results.mjs"
   },
   "dependencies": {
     "next": "^16.2.11",

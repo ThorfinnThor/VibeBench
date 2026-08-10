@@ -1,0 +1,294 @@
+{
+  "schemaVersion": "v0.1",
+  "generatedAt": "2026-08-10T10:20:17.691Z",
+  "runId": "blind_run_v0_1_2026-08-10",
+  "rawResults": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_raw_results_v0_1.json",
+  "rawResultsSha256": "cae6e1c2df000d7e982d4c9676814abf87756eaa95b0df45f8bc356489e257b6",
+  "endpoint": "https://vibe-bench-cyan.vercel.app/api/scan",
+  "manifestSha256": "5c2a5b34305a2b7ae85b7b21f56f10bf0ba91a371b1b89c3d231cbb28a082de3",
+  "scannerCommit": "6338a3a377ab58eb3f49b8cae4df45f4eb60abc0",
+  "runnerCommit": "934b355418d99f4e06eeba69318e13ffa2a0d0cd",
+  "runStartedAt": "2026-08-10T10:18:43.240Z",
+  "runCompletedAt": "2026-08-10T10:20:17.691Z",
+  "bootstrap": {
+    "method": "stratified percentile",
+    "replicates": 10000,
+    "seed": 20260810,
+    "confidenceLevel": 0.95
+  },
+  "technical": {
+    "total": 100,
+    "success": 98,
+    "errors": 2,
+    "retries": 2,
+    "successRate": 0.98,
+    "aiSuccess": 49,
+    "aiErrors": 1,
+    "aiSuccessRate": 0.98,
+    "humanSuccess": 49,
+    "humanErrors": 1,
+    "humanSuccessRate": 0.98,
+    "medianTotalDurationMs": 433,
+    "p95TotalDurationMs": 1534.8999999999999
+  },
+  "technicalIntervals": {
+    "overall": {
+      "lower": 0.95,
+      "upper": 1
+    },
+    "ai": {
+      "lower": 0.94,
+      "upper": 1
+    },
+    "human": {
+      "lower": 0.94,
+      "upper": 1
+    }
+  },
+  "verdicts": {
+    "ai": {
+      "total": 50,
+      "technicalSuccess": 49,
+      "technicalErrors": 1,
+      "direct": 28,
+      "indicative": 2,
+      "indeterminate": 19,
+      "positive": 30,
+      "positiveRate": 0.6122448979591837
+    },
+    "human": {
+      "total": 50,
+      "technicalSuccess": 49,
+      "technicalErrors": 1,
+      "direct": 0,
+      "indicative": 9,
+      "indeterminate": 40,
+      "positive": 9,
+      "positiveRate": 0.1836734693877551
+    }
+  },
+  "primaryDefinition": "direct or indicative = positive; indeterminate = negative; technical errors excluded",
+  "primary": {
+    "tp": 30,
+    "fp": 9,
+    "tn": 40,
+    "fn": 19,
+    "accuracy": 0.7142857142857143,
+    "precision": 0.7692307692307693,
+    "recall": 0.6122448979591837,
+    "specificity": 0.8163265306122449,
+    "falsePositiveRate": 0.1836734693877551,
+    "f1": 0.6818181818181818
+  },
+  "primaryIntervals": {
+    "accuracy": {
+      "lower": 0.6224489795918368,
+      "upper": 0.7959183673469388
+    },
+    "precision": {
+      "lower": 0.6571428571428571,
+      "upper": 0.8837432915921285
+    },
+    "recall": {
+      "lower": 0.46938775510204084,
+      "upper": 0.7551020408163265
+    },
+    "specificity": {
+      "lower": 0.6938775510204082,
+      "upper": 0.9183673469387755
+    },
+    "falsePositiveRate": {
+      "lower": 0.08163265306122448,
+      "upper": 0.30612244897959184
+    },
+    "f1": {
+      "lower": 0.5647058823529412,
+      "upper": 0.782608695652174
+    },
+    "aiDirectRate": {
+      "lower": 0.42857142857142855,
+      "upper": 0.7142857142857143
+    }
+  },
+  "exploratoryDefinition": "direct only = positive; indicative or indeterminate = negative; post-hoc diagnostic",
+  "strictDirectOnly": {
+    "tp": 28,
+    "fp": 0,
+    "tn": 49,
+    "fn": 21,
+    "accuracy": 0.7857142857142857,
+    "precision": 1,
+    "recall": 0.5714285714285714,
+    "specificity": 1,
+    "falsePositiveRate": 0,
+    "f1": 0.7272727272727273
+  },
+  "strictIntervals": {
+    "accuracy": {
+      "lower": 0.7142857142857143,
+      "upper": 0.8571428571428571
+    },
+    "precision": {
+      "lower": 1,
+      "upper": 1
+    },
+    "recall": {
+      "lower": 0.42857142857142855,
+      "upper": 0.7142857142857143
+    },
+    "specificity": {
+      "lower": 1,
+      "upper": 1
+    },
+    "falsePositiveRate": {
+      "lower": 0,
+      "upper": 0
+    },
+    "f1": {
+      "lower": 0.6,
+      "upper": 0.8333333333333333
+    },
+    "aiDirectRate": {
+      "lower": 0.42857142857142855,
+      "upper": 0.7142857142857143
+    }
+  },
+  "groups": {
+    "AI_LOVABLE": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 8,
+      "indicative": 0,
+      "indeterminate": 2,
+      "positive": 8,
+      "positiveRate": 0.8
+    },
+    "AI_BOLT": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 3,
+      "indicative": 1,
+      "indeterminate": 6,
+      "positive": 4,
+      "positiveRate": 0.4
+    },
+    "AI_REPLIT_AGENT": {
+      "total": 10,
+      "technicalSuccess": 9,
+      "technicalErrors": 1,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 9,
+      "positive": 0,
+      "positiveRate": 0
+    },
+    "AI_V0": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 7,
+      "indicative": 1,
+      "indeterminate": 2,
+      "positive": 8,
+      "positiveRate": 0.8
+    },
+    "AI_OTHER_AGENTIC": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 10,
+      "indicative": 0,
+      "indeterminate": 0,
+      "positive": 10,
+      "positiveRate": 1
+    },
+    "HUMAN_MODERN_APP": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 0,
+      "indicative": 1,
+      "indeterminate": 9,
+      "positive": 1,
+      "positiveRate": 0.1
+    },
+    "HUMAN_SAAS": {
+      "total": 10,
+      "technicalSuccess": 9,
+      "technicalErrors": 1,
+      "direct": 0,
+      "indicative": 6,
+      "indeterminate": 3,
+      "positive": 6,
+      "positiveRate": 0.6666666666666666
+    },
+    "HUMAN_PORTFOLIO_AGENCY": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 0,
+      "indicative": 1,
+      "indeterminate": 9,
+      "positive": 1,
+      "positiveRate": 0.1
+    },
+    "HUMAN_CONTENT_DOCS": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 0,
+      "indicative": 1,
+      "indeterminate": 9,
+      "positive": 1,
+      "positiveRate": 0.1
+    },
+    "HUMAN_PRE_AI_SNAPSHOT": {
+      "total": 10,
+      "technicalSuccess": 10,
+      "technicalErrors": 0,
+      "direct": 0,
+      "indicative": 0,
+      "indeterminate": 10,
+      "positive": 0,
+      "positiveRate": 0
+    }
+  },
+  "falsePositiveSampleIds": [
+    "HO-HUM-MODERN-APP-07",
+    "HO-HUM-SAAS-03",
+    "HO-HUM-SAAS-05",
+    "HO-HUM-SAAS-07",
+    "HO-HUM-SAAS-08",
+    "HO-HUM-SAAS-09",
+    "HO-HUM-SAAS-10",
+    "HO-HUM-PORTFOLIO-AGENCY-04",
+    "HO-HUM-CONTENT-DOCS-07"
+  ],
+  "falseNegativeSampleIds": [
+    "HO-AI-LOVABLE-06",
+    "HO-AI-LOVABLE-07",
+    "HO-AI-BOLT-02",
+    "HO-AI-BOLT-04",
+    "HO-AI-BOLT-06",
+    "HO-AI-BOLT-07",
+    "HO-AI-BOLT-09",
+    "HO-AI-BOLT-10",
+    "HO-AI-REPLIT-AGENT-01",
+    "HO-AI-REPLIT-AGENT-02",
+    "HO-AI-REPLIT-AGENT-03",
+    "HO-AI-REPLIT-AGENT-04",
+    "HO-AI-REPLIT-AGENT-05",
+    "HO-AI-REPLIT-AGENT-07",
+    "HO-AI-REPLIT-AGENT-08",
+    "HO-AI-REPLIT-AGENT-09",
+    "HO-AI-REPLIT-AGENT-10",
+    "HO-AI-V0-07",
+    "HO-AI-V0-10"
+  ],
+  "technicalErrorSampleIds": [
+    "HO-AI-REPLIT-AGENT-06",
+    "HO-HUM-SAAS-01"
+  ]
+}

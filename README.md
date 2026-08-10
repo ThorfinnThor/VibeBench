@@ -22,10 +22,15 @@ Merkmale – kein Beweis für Autorenschaft und noch keine kalibrierte Wahrschei
 - URL-Scan-Queue: 63 Websites, davon 52 erfolgreich gescannt.
 - Trainings-Merge: 81 eindeutige, erfolgreiche und gelabelte Samples.
 - Evaluation: Full, Portable, Structure und Leave-one-builder-out.
-- Alle veröffentlichten Kennzahlen sind explorative Pilotdiagnostik.
+- Blind-Holdout v0.1: 100 eingefrorene Sites, 98 technisch erfolgreich ausgewertet.
+- Primärregel im Holdout: 71,4 % Accuracy, 76,9 % Precision, 61,2 % Recall,
+  81,6 % Specificity und 68,2 % F1.
+- Direkte Builder-Evidenz: 28/49 erfolgreiche AI-Sites und 0/49 Human-Kontrollen;
+  der Direct-only-Vergleich ist post-hoc und noch nicht unabhängig validiert.
 
 Der vollständige Stand, Einschränkungen und die nächsten Forschungsaufgaben
-stehen in [`outputs/VIBEBENCH_HANDOVER_V0_9.md`](outputs/VIBEBENCH_HANDOVER_V0_9.md).
+stehen im aktuellen
+[`outputs/VIBEBENCH_HANDOVER_2026-08-10.md`](outputs/VIBEBENCH_HANDOVER_2026-08-10.md).
 
 ## Produktions-Smoke-Test
 
@@ -59,18 +64,28 @@ Das eingefrorene Development-Regelwerk steht in
 der freigegebene nächste Evaluationsschritt in
 [`outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md`](outputs/VIBEBENCH_BLIND_HOLDOUT_PLAN_V0_1.md).
 
-Der 100er-Blind-Holdout ist als kontrollierter Arbeitsbereich vorbereitet:
+Der 100er-Blind-Holdout wurde am 2026-08-10 kontrolliert ausgeführt:
 
-- 50 AI-positive und 50 gematchte Human-Slots,
+- 50 AI-positive und 50 gematchte Human-Sites,
 - zehn Slots pro Builder- bzw. Kontrollgruppe,
-- XLSX-Arbeitsmappe und CSV-Manifest aus derselben Vorlage,
-- automatische Struktur-, Leakage- und Freeze-Prüfung,
-- getrenntes Akquisitionslog für verworfene und zurückgestellte Kandidaten.
+- vorregistriertes Scan-/Retry-Protokoll und eingefrorener Scanner-Commit,
+- 98 technische Erfolge, zwei Fehler nach genau einem Retry,
+- vollständige Rohdaten, Bootstrap-Metriken, Bericht und Ergebnis-Workbook,
+- SHA-256-Manifest und reproduzierbare Paketprüfung.
+
+Der Bericht steht in
+[`outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/VIBEBENCH_BLIND_HOLDOUT_EVALUATION_V0_1.md`](outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/VIBEBENCH_BLIND_HOLDOUT_EVALUATION_V0_1.md).
 
 Arbeitsprüfung ohne Ergebnisöffnung:
 
 ```bash
 npm run holdout:validate
+```
+
+Gespeichertes Ergebnis-Paket prüfen, ohne erneut zu scannen:
+
+```bash
+npm run holdout:verify
 ```
 
 Direkt gegen die Produktions-API ausführen:
@@ -139,20 +154,27 @@ Die erste Web-App nimmt eine öffentliche URL entgegen und zeigt getrennt:
 3. Unsicherheit und Datenqualität,
 4. die wichtigsten beobachteten technischen Signale.
 
-Sie zeigt bewusst noch keinen Prozentwert. Vor einem öffentlichen
-Wahrscheinlichkeitswert fehlen ein eingefrorener Blind-Holdout, belastbare
-Kalibrierung und mehr builderunabhängige Ground Truth.
+Sie zeigt bewusst noch keinen Prozentwert. Der erste Blind-Holdout ist jetzt
+abgeschlossen, zeigt aber builderabhängige Abdeckung und eine zu hohe
+False-Positive-Rate des allgemeinen `indicative`-Pfads. Vor einem öffentlichen
+Wahrscheinlichkeitswert fehlen deshalb eine neue Development-only-Regel,
+separate Kalibrierungsdaten und ein frischer Bestätigungs-Holdout.
 
 ## Nächste To-dos
 
-1. Den freigegebenen 100er-Holdout mit unabhängigen Provenienzquellen befüllen.
-2. Passende Human-Kontrollen parallel zu jedem AI-Paket aufnehmen.
-3. Duplikate und Development-/Domain-/Projekt-Leakage vollständig entfernen.
-4. Bei 100 READY-Zeilen Manifest und Scanner-Commit einfrieren.
-5. Erst danach den Blindlauf und eine mögliche Kalibrierung durchführen.
+1. In der Produktoberfläche `direct` klar als Builder-Evidenz und `indicative`
+   nur als nicht-attributives Strukturmuster erklären.
+2. Technische Fehler (`blocked`, Größenlimit, Timeout) als eigenen Ergebniszustand
+   von `indeterminate` getrennt halten.
+3. Eine Scanner-v0.2-Regel ausschließlich auf Development-Daten entwickeln;
+   diese 100 Holdout-Labels nicht zum Tuning verwenden.
+4. Replit-Agent-Abdeckung und die Human-SaaS-False-Positives gezielt auf neuen
+   Development-Samples untersuchen.
+5. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
+   danach über Kalibrierung oder einen Prozentwert entscheiden.
 
 ## Empfohlener nächster Schritt
 
-Die ersten fünf Lovable-Deployments zusammen mit fünf gematchten Human-SaaS-
-Kontrollen provenance-seitig fertigstellen. Bis zum Freeze keine weitere
-Schwellenänderung am Development-Set vornehmen.
+Als Nächstes die UI-Semantik ändern, ohne die eingefrorenen v0.1-Metriken
+umzudeuten: `direct` bleibt die einzige hochkonfidente Attribution;
+`indicative` wird als allgemeines, nicht-attributives Strukturmuster dargestellt.

@@ -1,7 +1,7 @@
 # VibeBench blind holdout plan v0.1
 
 Stand: 2026-08-10
-Status: Akquisition abgeschlossen; 100/100 READY; Holdout eingefroren
+Status: abgeschlossen; 100/100 eingefroren, einmalig gescannt und ausgewertet
 
 ## Ziel
 
@@ -89,16 +89,17 @@ und benötigt später einen neuen Holdout.
 
 ## Nächste To-dos
 
-1. Das Scanzeitfenster und die Retry-Regel unmittelbar vor dem Blindlauf protokollieren.
-2. Den Holdout genau einmal mit dem eingefrorenen Scanner ausführen.
-3. Technische Fehler zuerst separat ausweisen; danach die vorab definierten Metriken berechnen.
-4. Konfidenzintervalle und Builder-Coverage zusammen mit der Human-FPR berichten.
-5. Keine Scannerregel anhand dieser 100 Ergebnisse nachjustieren; Änderungen benötigen einen neuen Holdout.
+1. Die v0.1-Ergebnisse unverändert als eingefrorene Baseline behandeln.
+2. Direkte Builder-Evidenz und allgemeine Strukturhinweise in der UI semantisch klarer trennen.
+3. Eine v0.2-Regel nur auf Development-Daten entwickeln.
+4. Für v0.2 einen neuen unabhängigen Bestätigungs-Holdout anlegen.
+5. Erst nach neuer Bestätigung eine Kalibrierung oder einen Prozentwert prüfen.
 
 ## Empfohlener nächster Schritt
 
-Das Scanzeitfenster und die einmalige Retry-Regel protokollieren und anschließend
-den Blindlauf gegen den im Lockfile fixierten Scanner-Commit starten.
+Die Produktoberfläche so präzisieren, dass ausschließlich `direct` als
+hochkonfidente Builder-Evidenz erscheint und `indicative` ausdrücklich keine
+Attribution behauptet. Die Klassifikationsregel selbst bleibt v0.1-gefroren.
 
 ## Freigabe und Arbeitsdateien
 

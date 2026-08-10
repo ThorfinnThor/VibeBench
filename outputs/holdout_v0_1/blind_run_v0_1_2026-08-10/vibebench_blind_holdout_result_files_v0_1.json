@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "v0.1",
+  "generatedAt": "2026-08-10T10:20:17.691Z",
+  "runId": "blind_run_v0_1_2026-08-10",
+  "scannerCommit": "6338a3a377ab58eb3f49b8cae4df45f4eb60abc0",
+  "manifestSha256": "5c2a5b34305a2b7ae85b7b21f56f10bf0ba91a371b1b89c3d231cbb28a082de3",
+  "artifacts": [
+    {
+      "path": "outputs/holdout_v0_1/VIBEBENCH_BLIND_RUN_PROTOCOL_V0_1.md",
+      "bytes": 3651,
+      "sha256": "46012c904a705bbb127ca49dbd27d83976c6349e00d9f69f7affe81a88dc8e11"
+    },
+    {
+      "path": "outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv.freeze.json",
+      "bytes": 1316,
+      "sha256": "eebe40ccd58280f2ee5dc7fe57e79533a4fe9e4cac9b6266b7725bf8274e1214"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/schema-smoke-development-sample.json",
+      "bytes": 892,
+      "sha256": "092012f8e1602389dd5bf389cdc376c2be972d12e8895067b03bf1a69f2d0447"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/blind-run-checkpoint.json",
+      "bytes": 368171,
+      "sha256": "9522f0716b657a4527c1ca51f3ed661f070a3850ffe4e682260db8ad2109a4ef"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_raw_results_v0_1.json",
+      "bytes": 534895,
+      "sha256": "cae6e1c2df000d7e982d4c9676814abf87756eaa95b0df45f8bc356489e257b6"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_raw_results_v0_1.csv",
+      "bytes": 86789,
+      "sha256": "9c9094c43d806ea792b2aecfa7c3212586f6b8c022a60b270e00db015a00350f"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_metrics_v0_1.json",
+      "bytes": 7009,
+      "sha256": "d3e34d0eb47074b2c8c2569f7508c657f3dea3c42d4407ffcf3ef0878d943e76"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/VIBEBENCH_BLIND_HOLDOUT_EVALUATION_V0_1.md",
+      "bytes": 6479,
+      "sha256": "82e99432453e2b9af219cc6587adcb77170334dfbaeaff8bc4954889d808fd0b"
+    },
+    {
+      "path": "outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_evaluation_v0_1.xlsx",
+      "bytes": 25677,
+      "sha256": "7182c6c4c9a5cdd82526332fc63fe32d7b60760da1f55314e8edf4695b6e8595"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "purpose": "Pre-holdout production schema smoke using a Development-set URL; excluded from holdout metrics.",
+  "endpoint": "https://vibe-bench-cyan.vercel.app/api/scan",
+  "sampleId": "AIN-0001",
+  "targetUrl": "https://challengebrew.com",
+  "analyzedAt": "2026-08-10T10:18:31.609Z",
+  "responseStatus": 200,
+  "schemaChecks": {
+    "ok": true,
+    "requestedUrl": true,
+    "resolvedUrl": true,
+    "httpStatus": true,
+    "analyzedAt": true,
+    "assetScan": true,
+    "manifestScan": true,
+    "verdict": true,
+    "directEvidence": true,
+    "contextEvidence": true,
+    "headerEvidence": true,
+    "stackSignals": true,
+    "structuralHints": true,
+    "metrics": true
+  },
+  "observedVerdict": "direct",
+  "note": "This request verified endpoint availability and response shape only. It was made before the first holdout request and was not included in the 100-site result set."
+}
