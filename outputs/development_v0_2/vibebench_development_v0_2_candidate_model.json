@@ -1,0 +1,214 @@
+{
+  "schema_version": "v0.2-development-logistic-candidate",
+  "feature_names": [
+    "stack:Next.js",
+    "stack:React",
+    "stack:Vite",
+    "stack:Tailwind CSS",
+    "stack:Framer Motion",
+    "stack:Radix UI",
+    "stack:Lucide",
+    "stack:Supabase",
+    "stack:Firebase",
+    "metric:script_tags",
+    "metric:module_scripts",
+    "metric:stylesheet_links",
+    "metric:preload_links",
+    "metric:inline_styles",
+    "metric:inline_script_bytes",
+    "metric:data_attributes",
+    "metric:aria_attributes",
+    "metric:class_attributes",
+    "metric:class_tokens",
+    "metric:unique_class_tokens",
+    "metric:dom_tags",
+    "metric:forms",
+    "metric:inputs",
+    "metric:buttons",
+    "metric:headings",
+    "metric:images",
+    "metric:svgs",
+    "metric:same_origin_scripts_requested",
+    "metric:same_origin_styles_requested",
+    "metric:same_origin_scripts_fetched",
+    "metric:same_origin_styles_fetched",
+    "metric:asset_bytes_fetched"
+  ],
+  "training": {
+    "l2": 10,
+    "learning_rate": 0.04,
+    "iterations": 4000,
+    "threshold": 0.5
+  },
+  "intercept": -0.03921396462340384,
+  "coefficients": {
+    "stack:Next.js": -0.06615790394144298,
+    "stack:React": 0.16452113336709978,
+    "stack:Vite": 0.0574634502078613,
+    "stack:Tailwind CSS": 0.20417808013386465,
+    "stack:Framer Motion": 0.13210407942792357,
+    "stack:Radix UI": -0.02702932591245035,
+    "stack:Lucide": 0.2236969574268974,
+    "stack:Supabase": 0.10244005401551563,
+    "stack:Firebase": 0,
+    "metric:script_tags": 0.0036848240374492205,
+    "metric:module_scripts": -0.062284971417047634,
+    "metric:stylesheet_links": -0.018252918700675833,
+    "metric:preload_links": -0.34000864777775336,
+    "metric:inline_styles": -0.1584221148505997,
+    "metric:inline_script_bytes": 0.2003406073602048,
+    "metric:data_attributes": -0.3151092197379325,
+    "metric:aria_attributes": -0.1826401212708508,
+    "metric:class_attributes": -0.1387660911224296,
+    "metric:class_tokens": -0.10180638334613634,
+    "metric:unique_class_tokens": -0.12707185065731,
+    "metric:dom_tags": -0.12670967505224265,
+    "metric:forms": 0.10185812708485564,
+    "metric:inputs": 0.1343703008976973,
+    "metric:buttons": -0.0273970350937654,
+    "metric:headings": 0.012362341702078576,
+    "metric:images": -0.18641526754133095,
+    "metric:svgs": -0.17996346374036337,
+    "metric:same_origin_scripts_requested": -0.08439753101689451,
+    "metric:same_origin_styles_requested": -0.04942417818731857,
+    "metric:same_origin_scripts_fetched": -0.1499596963324014,
+    "metric:same_origin_styles_fetched": -0.06302077947208447,
+    "metric:asset_bytes_fetched": -0.10828290236110466
+  },
+  "standardization": {
+    "stack:Next.js": {
+      "mean": 0.375,
+      "standard_deviation": 0.4841229182759271
+    },
+    "stack:React": {
+      "mean": 0.7,
+      "standard_deviation": 0.4582575694955839
+    },
+    "stack:Vite": {
+      "mean": 0.425,
+      "standard_deviation": 0.4943429983321296
+    },
+    "stack:Tailwind CSS": {
+      "mean": 0.775,
+      "standard_deviation": 0.4175823272122517
+    },
+    "stack:Framer Motion": {
+      "mean": 0.05,
+      "standard_deviation": 0.2179449471770336
+    },
+    "stack:Radix UI": {
+      "mean": 0.275,
+      "standard_deviation": 0.4465142774872936
+    },
+    "stack:Lucide": {
+      "mean": 0.35,
+      "standard_deviation": 0.4769696007084727
+    },
+    "stack:Supabase": {
+      "mean": 0.225,
+      "standard_deviation": 0.41758232721225175
+    },
+    "stack:Firebase": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "metric:script_tags": {
+      "mean": 2.250307613932308,
+      "standard_deviation": 1.2915358049145471
+    },
+    "metric:module_scripts": {
+      "mean": 0.3740388974966754,
+      "standard_deviation": 0.36124110250480473
+    },
+    "metric:stylesheet_links": {
+      "mean": 1.1820493761756696,
+      "standard_deviation": 0.6433894387684806
+    },
+    "metric:preload_links": {
+      "mean": 1.3757667873531791,
+      "standard_deviation": 1.4340618172257618
+    },
+    "metric:inline_styles": {
+      "mean": 1.7130246606658457,
+      "standard_deviation": 2.148660779658851
+    },
+    "metric:inline_script_bytes": {
+      "mean": 6.872958586550299,
+      "standard_deviation": 4.405361944994401
+    },
+    "metric:data_attributes": {
+      "mean": 1.9863961497847096,
+      "standard_deviation": 2.014400246103806
+    },
+    "metric:aria_attributes": {
+      "mean": 1.768532889394957,
+      "standard_deviation": 1.9067265211434063
+    },
+    "metric:class_attributes": {
+      "mean": 3.360987849988881,
+      "standard_deviation": 2.8238915163247866
+    },
+    "metric:class_tokens": {
+      "mean": 4.065986997488291,
+      "standard_deviation": 3.428771983269082
+    },
+    "metric:unique_class_tokens": {
+      "mean": 3.1807129464528354,
+      "standard_deviation": 2.6132739007341725
+    },
+    "metric:dom_tags": {
+      "mean": 3.7353209783942214,
+      "standard_deviation": 2.505258660903284
+    },
+    "metric:forms": {
+      "mean": 0.2556827167900945,
+      "standard_deviation": 0.4281772698267281
+    },
+    "metric:inputs": {
+      "mean": 0.40483638526818677,
+      "standard_deviation": 0.5849624062926833
+    },
+    "metric:buttons": {
+      "mean": 1.2649828851550637,
+      "standard_deviation": 1.457538156280355
+    },
+    "metric:headings": {
+      "mean": 1.401472168396224,
+      "standard_deviation": 1.3821434351321467
+    },
+    "metric:images": {
+      "mean": 1.2801492495659863,
+      "standard_deviation": 1.6855036304906457
+    },
+    "metric:svgs": {
+      "mean": 1.5825365308563204,
+      "standard_deviation": 1.784157361219523
+    },
+    "metric:same_origin_scripts_requested": {
+      "mean": 1.0253166772815738,
+      "standard_deviation": 0.5069352634955567
+    },
+    "metric:same_origin_styles_requested": {
+      "mean": 0.7180066877196973,
+      "standard_deviation": 0.32349523793120954
+    },
+    "metric:same_origin_scripts_fetched": {
+      "mean": 0.9040159206835833,
+      "standard_deviation": 0.6379134641955475
+    },
+    "metric:same_origin_styles_fetched": {
+      "mean": 0.7006780082056986,
+      "standard_deviation": 0.3423766581461426
+    },
+    "metric:asset_bytes_fetched": {
+      "mean": 11.534010668801274,
+      "standard_deviation": 3.4555351406389874
+    }
+  },
+  "trained_at": "2026-08-10T14:17:46.474Z",
+  "status": "FROZEN_CANDIDATE_NOT_FOR_PRODUCTION",
+  "training_rows": 40,
+  "training_matrix_sha256": "ba1e6834e2b045997731579627439db2aec1003e5171bd7a03a9822935202cbf",
+  "holdout_used": false,
+  "production_rule_change_authorized": false
+}

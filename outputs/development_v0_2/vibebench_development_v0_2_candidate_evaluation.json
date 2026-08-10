@@ -1,0 +1,397 @@
+{
+  "schema_version": "v0.2-development-candidate-evaluation",
+  "generated_at": "2026-08-10T14:17:46.471Z",
+  "status": "DEVELOPMENT_GATE_PASSED",
+  "purpose": "Cross-validated Development-only candidate selection; not an independent holdout result or product claim.",
+  "holdout_used": false,
+  "production_rule_change_authorized": false,
+  "new_holdout_required": true,
+  "matrix": "outputs/development_v0_2/vibebench_development_v0_2_feature_matrix.json",
+  "matrix_sha256": "ba1e6834e2b045997731579627439db2aec1003e5171bd7a03a9822935202cbf",
+  "target": {
+    "precision": 0.8,
+    "recall": 0.8
+  },
+  "model_specification": {
+    "family": "L2-regularized logistic regression",
+    "feature_scope": "Portable stack flags and log1p page/asset structure metrics only",
+    "prohibited": [
+      "hostname",
+      "URL",
+      "project family",
+      "provenance",
+      "builder label",
+      "hosting header",
+      "direct builder marker"
+    ],
+    "l2": 10,
+    "learning_rate": 0.04,
+    "iterations": 4000,
+    "threshold": 0.5
+  },
+  "primary_protocol": "Deterministic leave-one-project-out cross-validation across all 40 independent project families.",
+  "primary_metrics": {
+    "tp": 17,
+    "fp": 3,
+    "tn": 17,
+    "fn": 3,
+    "accuracy": 0.85,
+    "precision": 0.85,
+    "recall": 0.85,
+    "specificity": 0.85,
+    "f1": 0.85
+  },
+  "primary_predictions": [
+    {
+      "sample_id": "DEV2-AI-REPLIT-01",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8515964830726079,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-02",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.9114514800057136,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-03",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.9032392386637543,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-04",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.19463616660616515,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-05",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.9010947237696386,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-06",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.6033880779519549,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-07",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.28198685756088393,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-08",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8719433957443552,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-09",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.15683160310632951,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-10",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.6959131624818731,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-01",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8589998751999641,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-02",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8550364268856364,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-03",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8894802554823144,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-04",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.7022407008734348,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-05",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.8416037212066345,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-06",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.77789444132873,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-07",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.7887639946054635,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-08",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.856466769977291,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-09",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.827262321380586,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-10",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "target": 1,
+      "probability": 0.9119866332193173,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-01",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.40894264179059536,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-02",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.09821403839224974,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-03",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.060728714977905204,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-04",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.06019465892742188,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-05",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.09612819037558125,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-06",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.3737776335020502,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-07",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.08551831559233343,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-08",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.09846563820902979,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-09",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.06475042776680733,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-10",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.07190591920302444,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-01",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.4368952370652029,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-02",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.8148262297102996,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-03",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.6159572964825386,
+      "predicted_positive": true
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-04",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.1478332335421306,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-05",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.19506577927395594,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-06",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.37355213090975575,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-07",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.4216002576562747,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-08",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.21340740485104912,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-09",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.23685464487323857,
+      "predicted_positive": false
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-10",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "target": 0,
+      "probability": 0.6776682159440108,
+      "predicted_positive": true
+    }
+  ],
+  "stability_protocol": "100 deterministic, target-group-stratified 5-fold assignments; fixed model and threshold, no fold-specific tuning.",
+  "stability": {
+    "assignments": 100,
+    "assignments_meeting_80_80": 93,
+    "precision": {
+      "minimum": 0.7727272727272727,
+      "p10": 0.8095238095238095,
+      "median": 0.85,
+      "p90": 0.85,
+      "maximum": 0.8947368421052632
+    },
+    "recall": {
+      "minimum": 0.75,
+      "p10": 0.8,
+      "median": 0.85,
+      "p90": 0.85,
+      "maximum": 0.85
+    },
+    "accuracy": {
+      "minimum": 0.8,
+      "p10": 0.825,
+      "median": 0.85,
+      "p90": 0.85,
+      "maximum": 0.875
+    }
+  },
+  "caveats": [
+    "The same 40-row Development corpus was used during feature research; cross-validation reduces but cannot eliminate selection optimism.",
+    "Mature Human controls are generally larger than the new AI deployments, so structure-size coefficients may drift on a new population.",
+    "Only a new untouched holdout can produce official v0.2 precision and recall."
+  ]
+}

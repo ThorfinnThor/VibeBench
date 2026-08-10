@@ -162,20 +162,43 @@ als Kontext, ohne den Verdict zu verändern. Die Details stehen in
 `outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md` und
 `outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md`.
 
+## Development-Kandidat v0.2
+
+Eine reproduzierbare Matrix mit 32 portablen Features wurde aus den 40
+eingefrorenen Projekten erstellt. Verwendet werden neun sichtbare Stack-Signale
+und 23 logarithmierte HTML-/Asset-Strukturmetriken. Ausgeschlossen sind
+Hostname, URL, Provenienz, Projektfamilie, Builder-Label, Hosting-Header und
+direkte Builder-Marker.
+
+Der fest spezifizierte L2-logistische Kandidat erreicht in deterministischer
+Leave-one-project-out-Cross-Validation:
+
+- Precision 85,0 %
+- Recall 85,0 %
+- Accuracy 85,0 %
+- Specificity 85,0 %
+- TP 17, FP 3, TN 17, FN 3
+
+Bei 100 festen stratifizierten 5-Fold-Zuordnungen bestanden 93 beide 80-%-
+Gates; Median Precision und Recall lagen jeweils bei 85,0 %. Die Minima von
+77,3 % Precision und 75,0 % Recall zeigen die verbleibende Unsicherheit der
+kleinen Stichprobe. Modell, Matrix, Ergebnis und Featurecode sind für die
+Bestätigung gehasht und weitere Development-Anpassung ist gesperrt.
+
+Das ist ein Development-CV-Ergebnis, keine unabhängige Produktkennzahl. Der
+Entwurf für einen neuen 200er-Holdout steht in
+`outputs/VIBEBENCH_V0_2_CONFIRMATION_HOLDOUT_PLAN.md`.
+
 ## Nächste To-dos
 
-1. Portable Feature-Kombinationen ausschließlich auf dem eingefrorenen
-   Development-v0.2-Datensatz untersuchen.
-2. Jeden Kandidaten gegen alle 20 modernen Human-Kontrollen prüfen und
-   Hosting-Proxys verwerfen.
-3. Eine Scanner-v0.2-Regel vorregistrieren, ohne den abgeschlossenen 100er-
-   Holdout als Quelle oder Tuninghilfe zu verwenden.
-4. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und erst danach
-   Kalibrierung oder Prozentwert prüfen.
+1. Einen neuen Bestätigungs-Holdout mit 200 unabhängigen Projektfamilien akquirieren.
+2. Provenienz, Matching und Overlap vor jeder Score-Sichtung prüfen.
+3. Manifest, Retry-Regel und Auswertung vor dem ersten Request einfrieren.
+4. Den Kandidaten genau einmal auswerten und die externen 80/80-Gates prüfen.
 
 ## Empfohlener nächster Schritt
 
-Eine kleine, erklärbare Feature-Matrix auf Development v0.2 aufbauen. Nur eine
-gegen moderne Human-Seiten abgesicherte, vorregistrierte Regel darf in einen
-neuen Bestätigungs-Holdout gehen; sonst bleibt `direct-only` die ehrliche
-Produktgrenze. Der alte 100er-Holdout bleibt unangetastet.
+Das Development-Gate ist mit 85/85 bestanden. Jetzt keine Gewichte mehr
+nachjustieren, sondern den 200er-Bestätigungs-Holdout akquirieren und den
+eingefrorenen Kandidaten genau einmal prüfen. Der alte 100er-Holdout bleibt
+unangetastet.

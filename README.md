@@ -137,6 +137,17 @@ aber keine Builder-Zuordnung. Bericht und Produktänderung:
 - [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md)
 - [`outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md`](outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md)
 
+Ein anschließender portabler v0.2-Kandidat verwendet ausschließlich
+Stack-Signale und logarithmierte HTML-/Asset-Strukturmetriken. Hostname, URL,
+Provenienz, Builder-Label, Hosting-Header und direkte Marker sind als
+Modellfeatures ausgeschlossen. In Leave-one-project-out-Cross-Validation auf
+Development v0.2 erreicht der Kandidat 85,0 % Precision und 85,0 % Recall
+(TP 17, FP 3, TN 17, FN 3). Das erfüllt das Development-Gate, ist aber noch
+keine unabhängige Produktkennzahl:
+
+- [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_CANDIDATE_80_80_2026-08-10.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_CANDIDATE_80_80_2026-08-10.md)
+- [`outputs/VIBEBENCH_V0_2_CONFIRMATION_HOLDOUT_PLAN.md`](outputs/VIBEBENCH_V0_2_CONFIRMATION_HOLDOUT_PLAN.md)
+
 ```bash
 npm run research:v0.2-readiness
 npm run development:v0.2-build
@@ -144,6 +155,9 @@ npm run development:v0.2-validate
 npm run development:v0.2-audit
 npm run development:v0.2-freeze
 npm run research:v0.2-artifacts
+npm run research:v0.2-features
+npm run research:v0.2-candidate
+npm run development:v0.2-candidate-freeze
 ```
 
 Arbeitsprüfung ohne Ergebnisöffnung:
@@ -233,17 +247,14 @@ separate Kalibrierungsdaten und ein frischer Bestätigungs-Holdout.
 
 ## Nächste To-dos
 
-1. Eine kleine Matrix portabler Feature-Kandidaten auf dem eingefrorenen
-   Development-v0.2-Datensatz erstellen.
-2. Jeden Kandidaten gegen alle 20 modernen Human-Kontrollen prüfen und
-   Hosting-Proxys ausschließen.
-3. Eine Scanner-v0.2-Kandidatenregel nur auf Development entwickeln; den abgeschlossenen
-   100er-Holdout nicht zum Tuning verwenden.
-4. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
-   danach über Kalibrierung oder einen Prozentwert entscheiden.
+1. Den vorgeschlagenen 200er-Bestätigungs-Holdout akquirieren.
+2. Alle Projektfamilien, Provenienzquellen und Overlaps vor dem Scan prüfen.
+3. Manifest, Retry-Regel, Modellhash und Auswertung vorregistrieren.
+4. Den eingefrorenen Kandidaten genau einmal auswerten und erst danach über
+   Produktion oder einen Prozentwert entscheiden.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes portable Feature-Kombinationen auf Development v0.2 prüfen. Wenn
-keine präzise, gegen moderne Human-Seiten abgesicherte Regel entsteht, bleibt
-`direct-only` die Produktgrenze; der alte Holdout wird nicht wiederverwendet.
+Das Development-Gate ist mit 85,0 % Precision und 85,0 % Recall bestanden.
+Als Nächstes den Kandidaten ohne weitere Anpassung auf einem neuen 200er-
+Bestätigungs-Holdout prüfen. Der alte Holdout wird nicht wiederverwendet.

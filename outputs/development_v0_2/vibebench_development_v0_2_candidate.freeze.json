@@ -1,0 +1,33 @@
+{
+  "schema_version": "v0.2-development-candidate-freeze",
+  "frozen_at": "2026-08-10T14:18:40.620Z",
+  "status": "FROZEN_FOR_CONFIRMATION",
+  "development_gate": {
+    "precision": 0.85,
+    "recall": 0.85,
+    "protocol": "Deterministic leave-one-project-out cross-validation across all 40 independent project families."
+  },
+  "constraints": {
+    "completed_holdout_used": false,
+    "further_development_tuning_allowed": false,
+    "production_rule_change_authorized": false,
+    "new_holdout_required": true
+  },
+  "files": {
+    "lib/development-v0_2-candidate.mjs": {
+      "sha256": "04d1f838657829fb52b10213776a9487baf302418297befbfcf9d79ae5885394"
+    },
+    "outputs/development_v0_2/vibebench_development_v0_2_feature_matrix.json": {
+      "sha256": "ba1e6834e2b045997731579627439db2aec1003e5171bd7a03a9822935202cbf"
+    },
+    "outputs/development_v0_2/vibebench_development_v0_2_candidate_evaluation.json": {
+      "sha256": "833fc6cc14622a330c8d268afe02080b210009196484a1978e19668fc56ed5d0"
+    },
+    "outputs/development_v0_2/vibebench_development_v0_2_candidate_model.json": {
+      "sha256": "b20171ebc0c95db0b5e28372388e2318275a3c447ebf3222aa1a93a3d388b4e4"
+    },
+    "outputs/VIBEBENCH_DEVELOPMENT_V0_2_CANDIDATE_80_80_2026-08-10.md": {
+      "sha256": "f9aa31651792612aef1ada3e87ed1e8beb73b5a37656d39c6df9f277520cad1a"
+    }
+  }
+}
