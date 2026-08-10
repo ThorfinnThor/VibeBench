@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "v0.1",
+  "frozenAt": "2026-08-10T09:36:17.323Z",
+  "manifest": "outputs/holdout_v0_1/vibebench_blind_holdout_100_v0_1.csv",
+  "manifestSha256": "5c2a5b34305a2b7ae85b7b21f56f10bf0ba91a371b1b89c3d231cbb28a082de3",
+  "scannerCommit": "6338a3a377ab58eb3f49b8cae4df45f4eb60abc0",
+  "sampleCount": 100,
+  "labelCounts": {
+    "AI": 50,
+    "HUMAN": 50
+  },
+  "developmentManifest": "vibebench_url_scan_queue_63_v0_9.csv",
+  "developmentManifestSha256": "77e11f790156a5cd947867d74b75bb698fdb05199022fa99885b4b48a22ac617",
+  "reachabilityAudit": "outputs/holdout_v0_1/vibebench_holdout_reachability_audit_2026-08-10.json",
+  "reachabilityAuditSha256": "976d3e4fe0f7a39d92245a31a8662d848814445917f4e357fe00e99853987420",
+  "warningsAtFreeze": [
+    "Repeated provenance_url https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects: HO-AI-LOVABLE-05, HO-AI-LOVABLE-07, HO-AI-LOVABLE-08, HO-AI-LOVABLE-09, HO-AI-LOVABLE-10",
+    "Repeated provenance_url https://replit.com/usecases/customers: HO-AI-REPLIT-AGENT-01, HO-AI-REPLIT-AGENT-02, HO-AI-REPLIT-AGENT-03, HO-AI-REPLIT-AGENT-04",
+    "Repeated provenance_url https://reddit.com/r/replit/comments/1jaqpch: HO-AI-REPLIT-AGENT-07, HO-AI-REPLIT-AGENT-08"
+  ],
+  "policy": "outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md"
+}

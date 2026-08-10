@@ -39,22 +39,42 @@ function replaceCsvCell(line, columnIndex, value) {
   return cells.map((entry) => `"${entry.replaceAll('"', '""')}"`).join(",");
 }
 
-test("partially populated 100-slot manifest is structurally valid", () => {
+test("completed 100-slot manifest is structurally valid", () => {
   const result = runValidator([manifestPath]);
   assert.equal(result.status, 0, result.stderr || result.stdout);
   const summary = JSON.parse(result.stdout);
   assert.equal(summary.rows, 100);
   assert.equal(summary.ai, 50);
   assert.equal(summary.human, 50);
-  assert.equal(summary.ready, 11);
+  assert.equal(summary.ready, 100);
   assert.deepEqual(summary.errors, []);
 });
 
-test("freeze is blocked until all 100 rows are ready", () => {
-  const result = runValidator([manifestPath, "--freeze", "--scanner-commit", "a".repeat(40)]);
+test("freeze succeeds only for the complete manifest and writes an auditable lock", async () => {
+  const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "vibebench-holdout-test-"));
+  const temporaryManifest = path.join(temporaryDirectory, "holdout.csv");
+  await writeFile(temporaryManifest, await readFile(manifestPath, "utf8"), "utf8");
+
+  const result = runValidator([temporaryManifest, "--freeze", "--scanner-commit", "a".repeat(40)]);
+  assert.equal(result.status, 0, result.stderr || result.stdout);
+  const lock = JSON.parse(await readFile(`${temporaryManifest}.freeze.json`, "utf8"));
+  assert.equal(lock.sampleCount, 100);
+  assert.equal(lock.scannerCommit, "a".repeat(40));
+  assert.match(lock.manifestSha256, /^[0-9a-f]{64}$/);
+});
+
+test("freeze is blocked when one of the 100 rows is no longer ready", async () => {
+  const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), "vibebench-holdout-test-"));
+  const temporaryManifest = path.join(temporaryDirectory, "holdout.csv");
+  const lines = (await readFile(manifestPath, "utf8")).trimEnd().split("\n");
+  lines[1] = replaceCsvCell(lines[1], 12, "FAILED");
+  lines[1] = replaceCsvCell(lines[1], 19, "PENDING");
+  await writeFile(temporaryManifest, `${lines.join("\n")}\n`, "utf8");
+
+  const result = runValidator([temporaryManifest, "--freeze", "--scanner-commit", "a".repeat(40)]);
   assert.equal(result.status, 1);
   const summary = JSON.parse(result.stdout);
-  assert.ok(summary.errors.includes("Freeze requires 100 ready rows, found 11"));
+  assert.ok(summary.errors.includes("Freeze requires 100 ready rows, found 99"));
 });
 
 test("development overlap catches apex and www variants", async () => {

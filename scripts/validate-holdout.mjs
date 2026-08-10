@@ -126,6 +126,8 @@ if (new Set(sampleIds).size !== sampleIds.length) errors.push("sample_id values 
 for (const [group, [label, builder]] of expectedGroups) {
   const groupRows = rows.filter((row) => row.target_group === group);
   if (groupRows.length !== 10) errors.push(`${group} must contain 10 rows, found ${groupRows.length}`);
+  const provenanceCount = new Set(groupRows.map((row) => normalizedUrl(row.provenance_url)).filter((value) => value && value !== "INVALID")).size;
+  if (provenanceCount < 6) errors.push(`${group} must use at least 6 distinct provenance sources, found ${provenanceCount}`);
   for (const row of groupRows) {
     if (row.label !== label) errors.push(`${row.sample_id}: expected label ${label}`);
     if (row.builder !== builder) errors.push(`${row.sample_id}: expected builder ${builder || "blank"}`);
@@ -143,8 +145,20 @@ for (const row of rows) {
   if (row.target_url && row.provenance_url && normalizedHostname(row.target_url) === normalizedHostname(row.provenance_url)) {
     errors.push(`${row.sample_id}: target_url and provenance_url must use different hosts`);
   }
+  const targetHost = normalizedHostname(row.target_url);
+  const domainGroup = normalizedDomainGroup(row.domain_group);
+  if (targetHost && domainGroup && targetHost !== "INVALID" && domainGroup !== "INVALID"
+      && targetHost !== domainGroup && !targetHost.endsWith(`.${domainGroup}`)) {
+    errors.push(`${row.sample_id}: domain_group must contain the target host`);
+  }
   for (const key of ["source_published_at", "collected_at", "deployment_verified_at"]) {
     if (row[key] && !isIsoDate(row[key])) errors.push(`${row.sample_id}: ${key} must be a valid YYYY-MM-DD date`);
+  }
+  if (isIsoDate(row.source_published_at) && isIsoDate(row.collected_at) && row.source_published_at > row.collected_at) {
+    errors.push(`${row.sample_id}: source_published_at cannot be after collected_at`);
+  }
+  if (isIsoDate(row.deployment_verified_at) && isIsoDate(row.collected_at) && row.deployment_verified_at > row.collected_at) {
+    errors.push(`${row.sample_id}: deployment_verified_at cannot be after collected_at`);
   }
 }
 
@@ -167,7 +181,8 @@ for (const row of rows) {
 }
 
 const developmentPath = path.resolve("vibebench_url_scan_queue_63_v0_9.csv");
-const developmentRows = parseCsv(await readFile(developmentPath, "utf8"));
+const developmentText = await readFile(developmentPath, "utf8");
+const developmentRows = parseCsv(developmentText);
 const developmentRawUrls = developmentRows.flatMap((row) => [row.target_url, row.url, row.requested_url, row.final_url]);
 const developmentUrls = new Set(developmentRawUrls.map(normalizedUrl).filter((value) => value && value !== "INVALID"));
 const developmentHosts = new Set(developmentRawUrls.map(normalizedHostname).filter((value) => value && value !== "INVALID"));
@@ -188,7 +203,7 @@ for (const row of rows) {
 
 const requiredForReady = [
   "website_type", "target_url", "provenance_url", "provenance_type", "provenance_summary", "collected_at",
-  "deployment_verified_at", "domain_group", "project_group"
+  "deployment_verified_at", "domain_group", "project_group", "organization_group", "notes"
 ];
 function isReady(row) {
   return requiredForReady.every((key) => row[key])
@@ -204,6 +219,12 @@ const reachabilityStatuses = new Set(["PENDING", "REACHABLE", "FAILED", "RETRY"]
 const reviewStatuses = new Set(["PENDING", "PASS", "FAIL"]);
 for (const row of rows) {
   if (row.provenance_type && !provenanceTypes.has(row.provenance_type)) errors.push(`${row.sample_id}: unsupported provenance_type`);
+  if (row.label === "AI" && row.provenance_type === "repository_deployment_mapping") {
+    errors.push(`${row.sample_id}: AI labels require explicit builder evidence, not repository mapping alone`);
+  }
+  if (row.label === "HUMAN" && !["repository_deployment_mapping", "archived_pre_ai_snapshot", "other_reviewed"].includes(row.provenance_type)) {
+    errors.push(`${row.sample_id}: HUMAN label uses an unsupported provenance class`);
+  }
   if (!reachabilityStatuses.has(row.reachability_status)) errors.push(`${row.sample_id}: unsupported reachability_status`);
   for (const key of ["development_overlap_check", "domain_overlap_check", "provenance_review"]) {
     if (!reviewStatuses.has(row[key])) errors.push(`${row.sample_id}: unsupported ${key}`);
@@ -215,11 +236,27 @@ for (const row of rows) {
   if (isReady(row) && row.provenance_summary.trim().length < 60) {
     errors.push(`${row.sample_id}: READY provenance_summary is too short for audit`);
   }
+  if (isReady(row) && row.notes.trim().length < 60) {
+    errors.push(`${row.sample_id}: READY notes are too short for audit`);
+  }
 }
 
+const reachabilityAuditPath = path.resolve("outputs/holdout_v0_1/vibebench_holdout_reachability_audit_2026-08-10.json");
+let reachabilityAuditText = "";
+let reachabilityAudit = null;
 if (freeze) {
   if (!/^[0-9a-f]{40}$/i.test(scannerCommit)) errors.push("--scanner-commit must be a full 40-character Git SHA when freezing");
   if (readyRows.length !== 100) errors.push(`Freeze requires 100 ready rows, found ${readyRows.length}`);
+  try {
+    reachabilityAuditText = await readFile(reachabilityAuditPath, "utf8");
+    reachabilityAudit = JSON.parse(reachabilityAuditText);
+    if (reachabilityAudit.samples !== 100 || reachabilityAudit.targetSuccesses !== 100
+        || reachabilityAudit.provenanceSuccesses !== 100 || reachabilityAudit.failures !== 0) {
+      errors.push("Freeze requires a successful 100-target and 100-provenance reachability audit");
+    }
+  } catch (error) {
+    errors.push(`Freeze requires a readable reachability audit: ${error.message}`);
+  }
 }
 
 const summary = {
@@ -247,6 +284,11 @@ if (freeze && errors.length === 0) {
     scannerCommit,
     sampleCount: rows.length,
     labelCounts: { AI: 50, HUMAN: 50 },
+    developmentManifest: path.relative(process.cwd(), developmentPath),
+    developmentManifestSha256: createHash("sha256").update(developmentText).digest("hex"),
+    reachabilityAudit: path.relative(process.cwd(), reachabilityAuditPath),
+    reachabilityAuditSha256: createHash("sha256").update(reachabilityAuditText).digest("hex"),
+    warningsAtFreeze: warnings,
     policy: "outputs/VIBEBENCH_WEB_SCANNER_DECISION_POLICY_V0_1.md"
   };
   const lockPath = `${manifestPath}.freeze.json`;

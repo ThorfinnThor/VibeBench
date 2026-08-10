@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { FileBlob, SpreadsheetFile, Workbook } from "@oai/artifact-tool";
+import { holdoutSamples } from "../data/holdout-samples-v0_1.mjs";
 
 const outputDir = path.resolve("outputs/holdout_v0_1");
 const previewDir = process.env.VIBEBENCH_PREVIEW_DIR || "/private/tmp/vibebench-holdout-preview";
@@ -51,212 +52,18 @@ for (const [group, websiteType] of humanGroups) {
   }
 }
 
-const seededSamples = new Map([
-  ["HO-AI-LOVABLE-01", {
-    website_type: "Consumer web app / astrology",
-    target_url: "https://starmate.love/",
-    provenance_url: "https://lovable.dev/blog/mike-burns-ai-filmmaking-studio-platform",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Lovable's official story quotes the maker saying he built the StarMate astrology app with Lovable and links this exact deployment.",
-    source_published_at: "2025-04-15",
-    collected_at: "2026-08-09",
-    deployment_verified_at: "2026-08-09",
-    reachability_status: "REACHABLE",
-    domain_group: "starmate.love",
-    project_group: "starmate",
-    organization_group: "mike-burns-starmate",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Public deployment opened independently; no Development-set match found."
-  }],
-  ["HO-AI-BOLT-01", {
-    website_type: "E-commerce / AI art",
-    target_url: "https://framemyhome.ai/",
-    provenance_url: "https://bolt.new/blog/how-ceo-built-two-businesses-with-bolt",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Bolt's official customer story identifies Frame My Home as a live product with Bolt as its primary build environment.",
-    source_published_at: "2025-12-15",
-    collected_at: "2026-08-09",
-    deployment_verified_at: "2026-08-09",
-    reachability_status: "REACHABLE",
-    domain_group: "framemyhome.ai",
-    project_group: "frame-my-home",
-    organization_group: "msh-studios-simon-berg",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Public deployment opened independently; no Development-set match found."
-  }],
-  ["HO-AI-LOVABLE-02", {
-    website_type: "Community safety map",
-    target_url: "https://safety-sentinel-guard.lovable.app/",
-    provenance_url: "https://lovable.dev/blog/2025-01-17-mysafe-x-lovable-hackathon-canada-winner",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Lovable's official MySafe story names the four-person team, describes the Lovable build process, and links this exact public deployment.",
-    source_published_at: "2025-01-17",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "safety-sentinel-guard.lovable.app",
-    project_group: "mysafe-safety-scouts",
-    organization_group: "mysafe-hackathon-team",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Independent web retrieval returned the intended Safety Scouts deployment; no Development-set target, host, or tenant match found."
-  }],
-  ["HO-AI-LOVABLE-03", {
-    website_type: "AI canvas / creative workspace",
-    target_url: "https://magican.lovable.app/",
-    provenance_url: "https://lovable.dev/blog/zohar-vanunu-magican-ai-maker",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Lovable's official profile says Zohar created MagiCan through 1,500 prompts, identifies it as a Lovable project, and links this deployment.",
-    source_published_at: "2025-04-06",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "magican.lovable.app",
-    project_group: "magican",
-    organization_group: "zohar-vanunu-magican",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Independent web retrieval returned the intended MagiCan deployment; no Development-set target, host, or tenant match found."
-  }],
-  ["HO-AI-LOVABLE-04", {
-    website_type: "Interactive 3D experience",
-    target_url: "https://kaleidoscope-visionary.lovable.app/",
-    provenance_url: "https://lovable.dev/blog/2025-01-20-how-a-developer-advocate-built-stunning-3d-projects-with-lovable-dev-and-won-big",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Lovable's official maker interview describes Konstantin building the Kaleidoscope 3D environment with Lovable and links this exact deployment.",
-    source_published_at: "2025-01-20",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "kaleidoscope-visionary.lovable.app",
-    project_group: "kaleidoscope-visionary",
-    organization_group: "konstantin-zolozhkov-khvostikk",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Independent web retrieval returned the intended 3D deployment; no Development-set target, host, or tenant match found."
-  }],
-  ["HO-AI-LOVABLE-05", {
-    website_type: "Photo-to-video creator",
-    target_url: "https://cherishable.lovable.app/",
-    provenance_url: "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
-    provenance_type: "official_builder_story",
-    provenance_summary: "Lovable's official Christmas Hackathon report identifies Cherishable as a Lovable submission, names its maker, and links this deployment.",
-    source_published_at: "2024-12-24",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "cherishable.lovable.app",
-    project_group: "cherishable",
-    organization_group: "tristanbob-cherishable",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Independent web retrieval returned the intended Cherishable deployment; no Development-set target, host, or tenant match found."
-  }],
-  ["HO-HUM-MODERN-APP-01", {
-    website_type: "Collaborative whiteboard",
-    target_url: "https://excalidraw.com/",
-    provenance_url: "https://github.com/excalidraw/excalidraw",
-    provenance_type: "repository_deployment_mapping",
-    provenance_summary: "The official open-source repository explicitly maps its in-repository app source to excalidraw.com and exposes a multi-year, multi-contributor commit history.",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "excalidraw.com",
-    project_group: "excalidraw",
-    organization_group: "excalidraw-community",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
-  }],
-  ["HO-HUM-MODERN-APP-02", {
-    website_type: "Diagram editor",
-    target_url: "https://mermaid.live/",
-    provenance_url: "https://github.com/mermaid-js/mermaid-live-editor",
-    provenance_type: "repository_deployment_mapping",
-    provenance_summary: "The official Mermaid Live Editor repository links mermaid.live as its live version and documents thousands of public commits and contributors.",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "mermaid.live",
-    project_group: "mermaid-live-editor",
-    organization_group: "mermaid-js",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
-  }],
-  ["HO-HUM-MODERN-APP-03", {
-    website_type: "Diagram / whiteboard app",
-    target_url: "https://app.diagrams.net/",
-    provenance_url: "https://github.com/jgraph/drawio",
-    provenance_type: "repository_deployment_mapping",
-    provenance_summary: "The official draw.io repository identifies app.diagrams.net as the production deployment and contains the long-running client-side editor source.",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "diagrams.net",
-    project_group: "drawio-diagrams-net",
-    organization_group: "jgraph-drawio",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
-  }],
-  ["HO-HUM-MODERN-APP-04", {
-    website_type: "API development web app",
-    target_url: "https://hoppscotch.io/",
-    provenance_url: "https://github.com/hoppscotch/hoppscotch",
-    provenance_type: "repository_deployment_mapping",
-    provenance_summary: "Hoppscotch's official open-source monorepo identifies hoppscotch.io as its web demo and documents the maintained web, desktop, and CLI project.",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "hoppscotch.io",
-    project_group: "hoppscotch",
-    organization_group: "hoppscotch",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
-  }],
-  ["HO-HUM-MODERN-APP-05", {
-    website_type: "Collaborative design tool",
-    target_url: "https://design.penpot.app/",
-    provenance_url: "https://github.com/penpot/penpot",
-    provenance_type: "repository_deployment_mapping",
-    provenance_summary: "Penpot's official open-source repository documents the maintained collaborative design platform whose public SaaS deployment is served at design.penpot.app.",
-    collected_at: "2026-08-10",
-    deployment_verified_at: "2026-08-10",
-    reachability_status: "REACHABLE",
-    domain_group: "penpot.app",
-    project_group: "penpot",
-    organization_group: "kaleidos-penpot",
-    development_overlap_check: "PASS",
-    domain_overlap_check: "PASS",
-    provenance_review: "PASS",
-    freeze_status: "READY",
-    notes: "Human control is grounded in auditable public source history and exact deployment mapping, not in the absence of AI-related product features."
-  }]
-]);
+const seededSamples = new Map();
+
+const groupOffsets = new Map();
+for (const sampleWithGroup of holdoutSamples) {
+  const { group, ...sample } = sampleWithGroup;
+  const offset = groupOffsets.get(group) || 0;
+  const groupRows = rows.filter((candidate) => candidate[2] === group);
+  const sampleId = groupRows[offset]?.[0];
+  if (!sampleId) throw new Error(`No manifest slot ${offset + 1} available for ${group}`);
+  seededSamples.set(sampleId, sample);
+  groupOffsets.set(group, offset + 1);
+}
 
 for (const row of rows) {
   const seed = seededSamples.get(row[0]);
@@ -315,7 +122,7 @@ overview.getRange("A29:F31").merge();
 overview.getRange("A29").values = [["Do not run the scanner on this holdout until all 100 rows are complete, leakage checks pass, provenance is reviewed, the manifest hash is written, and the scanner commit is fixed."]];
 
 samples.getRange("A1:U101").values = [columns, ...rows];
-samples.getRange("T2").formulas = [["=IF(AND(E2<>\"\",F2<>\"\",G2<>\"\",H2<>\"\",I2<>\"\",K2<>\"\",L2<>\"\",M2=\"REACHABLE\",N2<>\"\",O2<>\"\",Q2=\"PASS\",R2=\"PASS\",S2=\"PASS\"),\"READY\",\"PENDING\")"]];
+samples.getRange("T2").formulas = [["=IF(AND(E2<>\"\",F2<>\"\",G2<>\"\",H2<>\"\",I2<>\"\",K2<>\"\",L2<>\"\",M2=\"REACHABLE\",N2<>\"\",O2<>\"\",P2<>\"\",Q2=\"PASS\",R2=\"PASS\",S2=\"PASS\",U2<>\"\"),\"READY\",\"PENDING\")"]];
 samples.getRange("T2:T101").fillDown();
 samples.freezePanes.freezeRows(1);
 samples.freezePanes.freezeColumns(5);
@@ -335,7 +142,7 @@ protocol.getRange("A1:D1").merge();
 protocol.getRange("A1").values = [["Holdout protocol and field guide"]];
 protocol.getRange("A3:D10").values = [
   ["Rule", "Requirement", "Reason", "Gate"],
-  ["No development overlap", "Target URL and deployment must be absent from the existing 52-URL set", "Prevents tuning leakage", "development_overlap_check = PASS"],
+  ["No development overlap", "Target URL and deployment must be absent from the existing 63-URL Development set", "Prevents tuning leakage", "development_overlap_check = PASS"],
   ["No domain/project overlap", "No related domain, clone, project or organization across Development and Holdout", "Prevents family leakage", "domain_overlap_check = PASS"],
   ["Independent provenance", "Provenance URL must be separate from the scanned target URL", "Prevents label extraction from target", "provenance_review = PASS"],
   ["Concrete deployment mapping", "Evidence must refer to this exact website or project deployment", "Avoids directory-level proxy labels", "provenance_review = PASS"],
@@ -360,12 +167,12 @@ protocol.getRange("A13:C34").values = [
   ["reachability_status", "PENDING, REACHABLE, FAILED or RETRY", "yes"],
   ["domain_group", "eTLD+1; for multi-tenant hosting use the tenant hostname", "yes"],
   ["project_group", "Stable project/clone family", "yes"],
-  ["organization_group", "Maker/company/organization family", "recommended"],
+  ["organization_group", "Maker/company/organization family", "yes"],
   ["development_overlap_check", "PASS only after comparison with Development set", "yes"],
   ["domain_overlap_check", "PASS only after domain/project/org review", "yes"],
   ["provenance_review", "PASS only after evidence review", "yes"],
   ["freeze_status", "Formula-derived READY or PENDING", "yes"],
-  ["notes", "Compact exceptions and review notes", "optional"]
+  ["notes", "Compact exceptions and review notes", "yes"]
 ];
 
 lists.getRange("A1:D8").values = [

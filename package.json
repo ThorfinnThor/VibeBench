@@ -13,6 +13,8 @@
     "test": "node --test tests/*.test.mjs",
     "eval:production": "node scripts/evaluate-production.mjs",
     "eval:compare": "node scripts/compare-production-captures.mjs",
+    "holdout:build": "node scripts/build-holdout-workbook.mjs",
+    "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs"
   },
   "dependencies": {

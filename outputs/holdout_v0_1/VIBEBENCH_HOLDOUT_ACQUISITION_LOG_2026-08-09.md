@@ -2,7 +2,23 @@
 
 Stand: 2026-08-10
 Holdout: v0.1, 100 Slots (50 AI / 50 Human)
-Status: Akquisition läuft; 11/100 Kandidaten vollständig geprüft, noch nicht eingefroren
+Status: Akquisition abgeschlossen; 100/100 Kandidaten vollständig geprüft, READY und eingefroren
+
+## Abschlussstand
+
+- 50 AI-positive und 50 Human-Kontrollen sind vollständig belegt.
+- Alle zehn Strata enthalten exakt zehn unterschiedliche Zielprojekte.
+- 100 Ziel- und 100 Provenienz-URLs bestanden am 2026-08-10 eine unabhängige
+  HTTPS-Prüfung; der VibeBench-Scanner wurde dabei nicht aufgerufen.
+- Die Leakage-Prüfung gegen das 63-URL-Development-Manifest meldet null Fehler.
+- Drei bewusst dokumentierte Quellencluster bleiben sichtbar: fünf Lovable-
+  Hackathonprojekte, vier Replit-Showcaseprojekte und zwei Replit-Community-
+  Utilities. Jedes Stratum nutzt trotzdem mindestens sechs verschiedene
+  Provenienz-URLs und zehn verschiedene Ziel-, Domain- und Projektgruppen.
+- Der maschinenlesbare Prüfbeleg liegt in
+  `vibebench_holdout_reachability_audit_2026-08-10.json`.
+- Das Freeze-Lock bindet Manifest, Development-Manifest, Reachability-Audit und
+  Scanner-Commit `6338a3a377ab58eb3f49b8cae4df45f4eb60abc0`.
 
 ## Zweck
 
@@ -12,7 +28,7 @@ projektbezogene Provenienz, Erreichbarkeit und alle Leakage-Prüfungen eindeutig
 bestätigt sind. Verworfene Kandidaten bleiben sichtbar, damit sie nicht später
 versehentlich erneut aufgenommen werden.
 
-## Bisher geprüfte AI-Kandidaten
+## Erste dokumentierte AI-Tranche
 
 ### Akzeptiert
 
@@ -23,13 +39,13 @@ versehentlich erneut aufgenommen werden.
 | `HO-AI-LOVABLE-03` | `https://magican.lovable.app/` | Lovable | Offizielle Lovable-Story vom 2025-04-06 nennt MagiCan, dokumentiert den Prompt-basierten Build und verlinkt das Deployment. | READY |
 | `HO-AI-LOVABLE-04` | `https://kaleidoscope-visionary.lovable.app/` | Lovable | Offizielles Maker-Interview vom 2025-01-20 beschreibt die Lovable-Erstellung des 3D-Projekts und verlinkt es direkt. | READY |
 | `HO-AI-LOVABLE-05` | `https://cherishable.lovable.app/` | Lovable | Offizieller Lovable-Hackathonbericht vom 2024-12-24 nennt Projekt und Maker und verlinkt das Deployment. | READY |
-| `HO-AI-BOLT-01` | `https://framemyhome.ai/` | Bolt | Offizielle Bolt-Kundenstory vom 2025-12-15 bezeichnet Frame My Home als live und Bolt als primäre Build-Umgebung; öffentliche Zielseite bestätigt. | READY |
+| ehemaliger Bolt-Kandidat | `https://framemyhome.ai/` | Bolt | Offizielle Bolt-Kundenstory bezeichnete Frame My Home als live und Bolt als primäre Build-Umgebung. | REMOVED: späterer Pflichtabruf lieferte 404; durch erreichbares Bolt-Projekt ersetzt. |
 
-Alle sechs Zielprojekte waren nicht im Development-Manifest enthalten. Ziel- und
-Provenienz-URL sind getrennt; Domain-, Projekt- und Organisationsgruppen sind
-untereinander unabhängig.
+Die Tabelle dokumentiert die frühe Tranche. Der maßgebliche Abschlussstand ist
+das generierte CSV-/XLSX-Manifest; später ausgefallene Ziele wurden nicht
+still weitergeführt, sondern ersetzt.
 
-## Bisher geprüfte Human-Kontrollen
+## Erste dokumentierte Human-Tranche
 
 ### Akzeptiert
 
@@ -88,23 +104,20 @@ auditierbare Ursprung als klassisch entwickeltes Softwareprojekt.
   Deployment eindeutig zugeordnet werden kann.
 - `www`-, Apex-, Redirect- und Subdomain-Varianten desselben Projekts zählen als
   ein Domain-/Projektverbund.
-- Bereits im 52-URL-Development-Set vorhandene Projekte werden unabhängig vom
+- Bereits im 63-URL-Development-Set vorhandene Projekte werden unabhängig vom
   aktuellen Hostnamen ausgeschlossen.
 - Ein technischer Fehler führt zu `RETRY` oder `REJECT`, niemals zu `READY`.
 - Vor dem Freeze werden keine Scanner-Verdicts angesehen.
 
 ## Nächste To-dos
 
-1. Das Lovable-Stratum von 5 auf 10 READY auffüllen, mit maximal zwei Projekten
-   pro Sammelquelle und ohne Wiederverwendung eines Makers oder Projekts.
-2. Die fünf Human-Modern-App-Kontrollen typologisch gegen die fünf Lovable-
-   Beispiele prüfen und bei Bedarf durch enger gematchte Kontrollen ersetzen.
-3. Als nächstes fünf Bolt-Kandidaten plus fünf Human-SaaS-Gegenstücke beschaffen.
-4. RETRY-Kandidaten erst nach einem zweiten, zeitlich getrennten Abruf neu bewerten.
-5. Den Holdout erst bei 100/100 READY und festgeschriebenem Scanner-Commit einfrieren.
+1. Scanzeitfenster und Retry-Regel protokollieren.
+2. Den Blindlauf genau einmal starten und technische Fehler getrennt ausweisen.
+3. Die vorab definierten Coverage-, FPR-, Precision-, Recall- und F1-Metriken berechnen.
+4. Bootstrap-Konfidenzintervalle und builder-spezifische Coverage berichten.
+5. Scanneränderungen nach Ergebnisöffnung nur mit neuer Version und neuem Holdout bewerten.
 
 ## Empfohlener nächster Schritt
 
-Ein zweites unabhängiges 5+5-Paket für Bolt und Human-SaaS aufbauen. Dadurch
-wird der Akquisitionsprozess über einen zweiten Builder validiert, ohne
-Holdout-Ergebnisse zu öffnen oder Scannerregeln zu verändern.
+Scanzeitfenster und Retry-Regel festhalten und danach den einmaligen Blindlauf
+mit dem im Lockfile gebundenen Scanner-Commit ausführen.

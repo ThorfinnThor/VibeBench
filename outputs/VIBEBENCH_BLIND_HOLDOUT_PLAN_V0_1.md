@@ -1,7 +1,7 @@
 # VibeBench blind holdout plan v0.1
 
-Stand: 2026-08-09  
-Status: 100er-Plan freigegeben; Akquisitionsschema und Freeze-Gate vorbereitet
+Stand: 2026-08-10
+Status: Akquisition abgeschlossen; 100/100 READY; Holdout eingefroren
 
 ## Ziel
 
@@ -38,7 +38,7 @@ allein wären kein angemessener Gegenpol zu modernen AI-Webapps.
 - konkrete Deployment-URL,
 - projektbezogene Provenienz für AI-Builder oder agentische Erstellung,
 - Provenienzquelle getrennt von der zu scannenden Website,
-- keine Verwendung im bisherigen 52-URL-Development-Set,
+- keine Verwendung im bisherigen 63-URL-Development-Set,
 - erfolgreiche unabhängige Erreichbarkeitsprüfung vor dem Freeze; noch kein
   VibeBench-Scannerlauf und kein Verdict-Blick.
 
@@ -89,17 +89,16 @@ und benötigt später einen neuen Holdout.
 
 ## Nächste To-dos
 
-1. Je Zielgruppe zehn unabhängige, provenance-belegte Kandidaten beschaffen.
-2. Technische Erreichbarkeit sowie Development-, Domain- und Projekt-Overlap prüfen.
-3. Nur vollständig geprüfte Zeilen auf `READY` setzen.
-4. Bei 100 READY-Zeilen Manifest hashen und Scanner-Commit fixieren.
-5. Erst danach den einmaligen Blindlauf starten und auswerten.
+1. Das Scanzeitfenster und die Retry-Regel unmittelbar vor dem Blindlauf protokollieren.
+2. Den Holdout genau einmal mit dem eingefrorenen Scanner ausführen.
+3. Technische Fehler zuerst separat ausweisen; danach die vorab definierten Metriken berechnen.
+4. Konfidenzintervalle und Builder-Coverage zusammen mit der Human-FPR berichten.
+5. Keine Scannerregel anhand dieser 100 Ergebnisse nachjustieren; Änderungen benötigen einen neuen Holdout.
 
 ## Empfohlener nächster Schritt
 
-Mit der kontrollierten Akquisition der ersten Lovable- und Human-SaaS-Paare
-beginnen. Noch keine Holdout-URL durch den Scanner laufen lassen; vor dem Freeze
-ist nur eine unabhängige Erreichbarkeitsprüfung zulässig.
+Das Scanzeitfenster und die einmalige Retry-Regel protokollieren und anschließend
+den Blindlauf gegen den im Lockfile fixierten Scanner-Commit starten.
 
 ## Freigabe und Arbeitsdateien
 

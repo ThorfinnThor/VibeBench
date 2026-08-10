@@ -1,0 +1,1814 @@
+{
+  "schemaVersion": "v0.1",
+  "checkedAt": "2026-08-10T09:32:58.365Z",
+  "method": "Independent HTTPS retrieval only; the VibeBench scanner was not invoked.",
+  "timeoutMs": 15000,
+  "samples": 100,
+  "requests": 200,
+  "successfulRequests": 200,
+  "targetSuccesses": 100,
+  "provenanceSuccesses": 100,
+  "failures": 0,
+  "results": [
+    {
+      "sampleId": "HO-AI-BOLT-01",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/ai-os-ai-first-app-builder",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/ai-os-ai-first-app-builder"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-01",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://adorable-kashata-b4fde7.netlify.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://adorable-kashata-b4fde7.netlify.app/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-02",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/algo-agent-decentralized-ai-agent-launchpad",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/algo-agent-decentralized-ai-agent-launchpad"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-02",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://algoagent.netlify.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://algoagent.netlify.app/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-03",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://bolt.new/winners",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://bolt.new/winners"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-03",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://weight.coach/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://weight.coach/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-04",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/keyhaven",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/keyhaven"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-04",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://keyhaven.netlify.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://keyhaven.netlify.app/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-05",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/klinva-ultimate-crm-saas-for-commercial-cleaning-companies",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/klinva-ultimate-crm-saas-for-commercial-cleaning-companies"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-05",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://www.klinva.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://klinva.com/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-06",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/ecobolt",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/ecobolt"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-06",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://fanciful-otter-1e10b8.netlify.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://fanciful-otter-1e10b8.netlify.app/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-07",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/callvance",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/callvance"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-07",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://callvance.net/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://callvance.net/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-08",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/modelmash-find-the-perfect-llm",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/modelmash-find-the-perfect-llm"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-08",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://modelmash.site/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.peerlm.com/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-09",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/legion-ym9uef",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/legion-ym9uef"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-09",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://legion-co.netlify.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://legion-co.netlify.app/"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-10",
+      "group": "AI_BOLT",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/bored-opposite",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/bored-opposite"
+    },
+    {
+      "sampleId": "HO-AI-BOLT-10",
+      "group": "AI_BOLT",
+      "kind": "target",
+      "url": "https://boredoppo.site/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://boredoppo.site/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-01",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/mike-burns-ai-filmmaking-studio-platform",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/mike-burns-ai-filmmaking-studio-platform"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-01",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://starmate.love/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://starmate.love/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-02",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-17-mysafe-x-lovable-hackathon-canada-winner",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-17-mysafe-x-lovable-hackathon-canada-winner"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-02",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://safety-sentinel-guard.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://safety-sentinel-guard.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-03",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/zohar-vanunu-magican-ai-maker",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/zohar-vanunu-magican-ai-maker"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-03",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://magican.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://magican.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-04",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-20-how-a-developer-advocate-built-stunning-3d-projects-with-lovable-dev-and-won-big",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-20-how-a-developer-advocate-built-stunning-3d-projects-with-lovable-dev-and-won-big"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-04",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://kaleidoscope-visionary.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://kaleidoscope-visionary.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-05",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-05",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://cherishable.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cherishable.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-06",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/lumoo-ai-fashion-platform",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/lumoo-ai-fashion-platform"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-06",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://lumoo.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lumoo.com/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-07",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-07",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://75hard.live/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://75hard.live/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-08",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-08",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://habitflow.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://habitflow.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-09",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-09",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://santagenie.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://santagenie.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-10",
+      "group": "AI_LOVABLE",
+      "kind": "provenance",
+      "url": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lovable.dev/blog/2025-01-15-lovable-christmas-hackhaton-top-10-projects"
+    },
+    {
+      "sampleId": "HO-AI-LOVABLE-10",
+      "group": "AI_LOVABLE",
+      "kind": "target",
+      "url": "https://cheerful-card-crafter.lovable.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cheerful-card-crafter.lovable.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-01",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/newbase",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/newbase"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-01",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://new-base-ef46ca07.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://new-base-ef46ca07.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-02",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/loopy-9ev74g",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/loopy-9ev74g"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-02",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://reeled-in.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://reeled-in.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-03",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/vibemap-1m8a3s",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/vibemap-1m8a3s"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-03",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://vibe-map-9dc92c45.base44.app/Home",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://vibe-map-9dc92c45.base44.app/Home"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-04",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/productivity-ai",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/productivity-ai"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-04",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://productivity-ai-a417e2de.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://productivity-ai-a417e2de.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-05",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/edumate-qhblsj",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/edumate-qhblsj"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-05",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://edu-mate-3163b395.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://edu-mate-3163b395.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-06",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/careerlaunch-smart-portfolio-opportunity-tracker",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/careerlaunch-smart-portfolio-opportunity-tracker"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-06",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://career-launchpad-af0b9320.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://career-launchpad-af0b9320.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-07",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/cybercrime-support",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/cybercrime-support"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-07",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://cyber-guard-assist-bcda2879.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cyber-guard-assist-bcda2879.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-08",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/rent-it-jy7zti",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/rent-it-jy7zti"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-08",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://rentit-2025.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://rentit-2025.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-09",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/ecoguard-ai-efq32a",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/ecoguard-ai-efq32a"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-09",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://eco-guard-ai-e81f2588.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://eco-guard-ai-e81f2588.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-10",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/prompt-piolet",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/prompt-piolet"
+    },
+    {
+      "sampleId": "HO-AI-OTHER-AGENTIC-10",
+      "group": "AI_OTHER_AGENTIC",
+      "kind": "target",
+      "url": "https://prompt-pilot-ebbb9b7b.base44.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://prompt-pilot-ebbb9b7b.base44.app/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-01",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://replit.com/usecases/customers",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://replit.com/usecases/customers"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-01",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://podnudge.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://podnudge.com/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-02",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://replit.com/usecases/customers",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://replit.com/usecases/customers"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-02",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://lowcarbpdf.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lowcarbpdf.com/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-03",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://replit.com/usecases/customers",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://replit.com/usecases/customers"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-03",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://wordleap.co.uk/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://wordleap.co.uk/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-04",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://replit.com/usecases/customers",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://replit.com/usecases/customers"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-04",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://wiblet.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://wiblet.com/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-05",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://replit.discourse.group/t/introduce-yourself/41?page=30",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://replit.discourse.group/t/introduce-yourself/41?page=30"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-05",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://kitchen-intelligence.replit.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://kitchen-intelligence.replit.app/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-06",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://www.reddit.com/r/replit/comments/1lvn2j2/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.reddit.com/r/replit/comments/1lvn2j2/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-06",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://scorecastr.co/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://scorecastr.co/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-07",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://www.reddit.com/r/replit/comments/1jaqpch/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.reddit.com/r/replit/comments/1jaqpch/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-07",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://aiimageoptimize.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://aiimageoptimize.com/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-08",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://www.reddit.com/r/replit/comments/1jaqpch/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.reddit.com/r/replit/comments/1jaqpch/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-08",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://getiphelp.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://getiphelp.com/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-09",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://www.reddit.com/r/replit/comments/1o96i95/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.reddit.com/r/replit/comments/1o96i95/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-09",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://blogplanner.ai/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://blogplanner.ai/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-10",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "provenance",
+      "url": "https://www.reddit.com/r/replit/comments/1qpfcd1/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.reddit.com/r/replit/comments/1qpfcd1/"
+    },
+    {
+      "sampleId": "HO-AI-REPLIT-AGENT-10",
+      "group": "AI_REPLIT_AGENT",
+      "kind": "target",
+      "url": "https://cognimapmarketplace.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cognimapmarketplace.com/"
+    },
+    {
+      "sampleId": "HO-AI-V0-01",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/immi-ai",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/immi-ai"
+    },
+    {
+      "sampleId": "HO-AI-V0-01",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://v0-immigration-chatbot-ui.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://v0-immigration-chatbot-ui.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-02",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/carbonflow-intelligence-platform",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/carbonflow-intelligence-platform"
+    },
+    {
+      "sampleId": "HO-AI-V0-02",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://carbonflow-intelligence-git-main-musanka-s-projects.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Fcarbonflow-intelligence-git-main-musanka-s-projects.vercel.app%252F%26nonce%3D24426ea4166804ac9ccc28e8579ac1ad8fbdbace2edda58cbffc8fc941d28f2a"
+    },
+    {
+      "sampleId": "HO-AI-V0-03",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/funny-excuse-generator-8cwnz2",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/funny-excuse-generator-8cwnz2"
+    },
+    {
+      "sampleId": "HO-AI-V0-03",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://v0-funny-excuse-generator.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://v0-funny-excuse-generator.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-04",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/personal-website-and-portfolio-revamp",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/personal-website-and-portfolio-revamp"
+    },
+    {
+      "sampleId": "HO-AI-V0-04",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://salimdellali-personal-website-v2.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://salimdellali-personal-website-v2.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-05",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/onpost",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/onpost"
+    },
+    {
+      "sampleId": "HO-AI-V0-05",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://onpost.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://onpost.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-06",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/dermascan-be8ju5",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/dermascan-be8ju5"
+    },
+    {
+      "sampleId": "HO-AI-V0-06",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://dermascan-prod.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://dermascan-prod.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-07",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/birdy-smergp",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/birdy-smergp"
+    },
+    {
+      "sampleId": "HO-AI-V0-07",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://github-jb7azrmn-x32h.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github-jb7azrmn-x32h.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-08",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/trustedtenants-eth",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/trustedtenants-eth"
+    },
+    {
+      "sampleId": "HO-AI-V0-08",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://hackdavidson.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://hackdavidson.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-09",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/workbro",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/workbro"
+    },
+    {
+      "sampleId": "HO-AI-V0-09",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://v0-workbro-app-design.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://v0-workbro-app-design.vercel.app/"
+    },
+    {
+      "sampleId": "HO-AI-V0-10",
+      "group": "AI_V0",
+      "kind": "provenance",
+      "url": "https://devpost.com/software/foodfinder-xjtp6m",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://devpost.com/software/foodfinder-xjtp6m"
+    },
+    {
+      "sampleId": "HO-AI-V0-10",
+      "group": "AI_V0",
+      "kind": "target",
+      "url": "https://nutra-spec.vercel.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://nutra-spec.vercel.app/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-01",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/mdn/content",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/mdn/content"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-01",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://developer.mozilla.org/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://developer.mozilla.org/en-US/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-02",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/reactjs/react.dev",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/reactjs/react.dev"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-02",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://react.dev/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://react.dev/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-03",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/vuejs/docs",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/vuejs/docs"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-03",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://vuejs.org/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://vuejs.org/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-04",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/sveltejs/svelte.dev",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/sveltejs/svelte.dev"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-04",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://svelte.dev/docs",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://svelte.dev/docs"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-05",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/withastro/docs",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/withastro/docs"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-05",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://docs.astro.build/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://docs.astro.build/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-06",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/vitejs/vite",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/vitejs/vite"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-06",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://vite.dev/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://vite.dev/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-07",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/tailwindlabs/tailwindcss.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/tailwindlabs/tailwindcss.com"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-07",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://tailwindcss.com/docs",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://tailwindcss.com/docs/installation/using-vite"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-08",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/microsoft/TypeScript-Website",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/microsoft/TypeScript-Website"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-08",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://www.typescriptlang.org/docs/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.typescriptlang.org/docs/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-09",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/python/cpython",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/python/cpython"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-09",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://docs.python.org/3/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://docs.python.org/3/"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-10",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "provenance",
+      "url": "https://github.com/rust-lang/book",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/rust-lang/book"
+    },
+    {
+      "sampleId": "HO-HUM-CONTENT-DOCS-10",
+      "group": "HUMAN_CONTENT_DOCS",
+      "kind": "target",
+      "url": "https://doc.rust-lang.org/book/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://doc.rust-lang.org/book/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-01",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/excalidraw/excalidraw"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-01",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://excalidraw.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://excalidraw.com/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-02",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/mermaid-js/mermaid-live-editor",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/mermaid-js/mermaid-live-editor"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-02",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://mermaid.live/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://mermaid.live/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-03",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/jgraph/drawio",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/jgraph/drawio"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-03",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://app.diagrams.net/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://app.diagrams.net/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-04",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/hoppscotch/hoppscotch",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/hoppscotch/hoppscotch"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-04",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://hoppscotch.io/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://hoppscotch.io/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-05",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/penpot/penpot",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/penpot/penpot"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-05",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://design.penpot.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://design.penpot.app/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-06",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/tldraw/tldraw",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/tldraw/tldraw"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-06",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://www.tldraw.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.tldraw.com/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-07",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/AykutSarac/jsoncrack.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/AykutSarac/jsoncrack.com"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-07",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://jsoncrack.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://jsoncrack.com/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-08",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/gchq/CyberChef",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/gchq/CyberChef"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-08",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://gchq.github.io/CyberChef/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://gchq.github.io/CyberChef/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-09",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/GoogleChromeLabs/squoosh",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/GoogleChromeLabs/squoosh"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-09",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://squoosh.app/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://squoosh.app/"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-10",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "provenance",
+      "url": "https://github.com/jakearchibald/svgomg",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/jakearchibald/svgomg"
+    },
+    {
+      "sampleId": "HO-HUM-MODERN-APP-10",
+      "group": "HUMAN_MODERN_APP",
+      "kind": "target",
+      "url": "https://jakearchibald.github.io/svgomg/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://jakearchibald.github.io/svgomg/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-01",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/bchiang7/v4",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/bchiang7/v4"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-01",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://brittanychiang.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://brittanychiang.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-02",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/leerob/leerob.io",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/leerob/next-mdx-blog"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-02",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://leerob.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://leerob.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-03",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/kentcdodds/kentcdodds.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/kentcdodds/kentcdodds.com"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-03",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://kentcdodds.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://kentcdodds.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-04",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/pacocoursey/paco",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/pacocoursey/paco"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-04",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://paco.me/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://paco.me/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-05",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/taniarascia/taniarascia.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/taniarascia/taniarascia.com"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-05",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://www.taniarascia.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.taniarascia.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-06",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/antfu/antfu.me",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/antfu/antfu.me"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-06",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://antfu.me/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://antfu.me/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-07",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/gaearon/overreacted.io",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/gaearon/overreacted.io"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-07",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://overreacted.io/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://overreacted.io/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-08",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/LeaVerou/leaverou.github.io",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/LeaVerou/leaverou.github.io"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-08",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://lea.verou.me/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://lea.verou.me/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-09",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/wesbos/wesbos",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/wesbos/wesbos"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-09",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://wesbos.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://wesbos.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-10",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "provenance",
+      "url": "https://github.com/maxboeck/mxb",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/maxboeck/mxb"
+    },
+    {
+      "sampleId": "HO-HUM-PORTFOLIO-AGENCY-10",
+      "group": "HUMAN_PORTFOLIO_AGENCY",
+      "kind": "target",
+      "url": "https://mxb.dev/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://mxb.dev/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-01",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/twbs/bootstrap",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/twbs/bootstrap"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-01",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://getbootstrap.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://getbootstrap.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-02",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/jquery/jquery.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/jquery/jquery.com"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-02",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://jquery.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://jquery.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-03",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/d3/d3",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/d3/d3"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-03",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://d3js.org/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://d3js.org/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-04",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/mrdoob/three.js",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/mrdoob/three.js"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-04",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://threejs.org/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://threejs.org/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-05",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/Leaflet/Leaflet",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/Leaflet/Leaflet"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-05",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://leafletjs.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://leafletjs.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-06",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/chartjs/Chart.js",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/chartjs/Chart.js"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-06",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://www.chartjs.org/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.chartjs.org/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-07",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/gohugoio/hugo",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/gohugoio/hugo"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-07",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://gohugo.io/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://gohugo.io/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-08",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/jekyll/jekyll",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/jekyll/jekyll"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-08",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://jekyllrb.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://jekyllrb.com/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-09",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/11ty/eleventy",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/11ty/buildawesome"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-09",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://www.11ty.dev/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.11ty.dev/"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-10",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "provenance",
+      "url": "https://github.com/home-assistant/home-assistant.io",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/home-assistant/home-assistant.io"
+    },
+    {
+      "sampleId": "HO-HUM-PRE-AI-SNAPSHOT-10",
+      "group": "HUMAN_PRE_AI_SNAPSHOT",
+      "kind": "target",
+      "url": "https://www.home-assistant.io/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.home-assistant.io/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-01",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/calcom/cal.com",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/calcom/cal.diy"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-01",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://cal.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://cal.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-02",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/plausible/analytics",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/plausible/analytics"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-02",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://plausible.io/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://plausible.io/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-03",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/umami-software/umami",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/umami-software/umami"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-03",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://umami.is/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://umami.is/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-04",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/documenso/documenso",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/documenso/documenso"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-04",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://documenso.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://documenso.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-05",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/formbricks/formbricks",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/formbricks/formbricks"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-05",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://formbricks.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://formbricks.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-06",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/nocodb/nocodb",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/nocodb/nocodb"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-06",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://nocodb.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://nocodb.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-07",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/twentyhq/twenty",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/twentyhq/twenty"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-07",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://twenty.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://twenty.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-08",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/dubinc/dub",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/dubinc/dub"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-08",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://dub.co/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://dub.co/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-09",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/mfts/papermark",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/papermark/papermark"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-09",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://www.papermark.com/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://www.papermark.com/"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-10",
+      "group": "HUMAN_SAAS",
+      "kind": "provenance",
+      "url": "https://github.com/makeplane/plane",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://github.com/makeplane/plane"
+    },
+    {
+      "sampleId": "HO-HUM-SAAS-10",
+      "group": "HUMAN_SAAS",
+      "kind": "target",
+      "url": "https://plane.so/",
+      "ok": true,
+      "status": 200,
+      "finalUrl": "https://plane.so/"
+    }
+  ]
+}
