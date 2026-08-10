@@ -15,7 +15,8 @@
     "eval:compare": "node scripts/compare-production-captures.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
-    "holdout:validate": "node scripts/validate-holdout.mjs"
+    "holdout:validate": "node scripts/validate-holdout.mjs",
+    "holdout:scan": "node scripts/run-blind-holdout.mjs"
   },
   "dependencies": {
     "next": "^16.2.11",
