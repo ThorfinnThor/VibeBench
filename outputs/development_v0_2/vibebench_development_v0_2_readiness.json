@@ -148,9 +148,9 @@
     "Bolt · asset · bolt.new": 1
   },
   "acquisitionProgress": {
-    "ready": 30,
+    "ready": 40,
     "groups": {
-      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_REPLIT_AGENT_NEW": 10,
       "AI_BOLT_NEW": 10,
       "HUMAN_MODERN_SAAS_NEW": 10,
       "HUMAN_MODERN_APP_NEW": 10
@@ -166,7 +166,14 @@
       "direct": 1,
       "indicative": 0,
       "indeterminate": 9,
-      "withAtLeastTwoRecognizedStacks": 7
+      "withAtLeastTwoRecognizedStacks": 9
+    },
+    "replitBaseline": {
+      "total": 10,
+      "direct": 0,
+      "indicative": 1,
+      "indeterminate": 9,
+      "withAtLeastTwoRecognizedStacks": 8
     }
   },
   "primaryDiagnostic": {
@@ -192,10 +199,9 @@
     "f1": 0.5416666666666666
   },
   "blockers": [
-    "All 16 successful Human Development controls have fewer than two recognized modern stack signals; broad structural specificity is therefore not tested.",
-    "Replit Agent has only two Development samples and neither exposes direct or indicative evidence.",
-    "Bolt has thirteen Development samples but only one direct marker hit.",
-    "The Development set is label-imbalanced (36 AI / 16 Human) and its negative class is not representative of modern SaaS/application stacks.",
+    "None of the ten frozen Replit Agent controls exposes direct builder evidence under v0.1; nine remain indeterminate.",
+    "Only one of the ten new Bolt controls exposes direct builder evidence under v0.1.",
+    "Creator and directory provenance documents builder use but is not equivalent to an independent code audit; limitations remain attached per row.",
     "The 100-site holdout is open and must not be recycled as Development data or used for v0.2 threshold selection."
   ],
   "recommendedExtension": {

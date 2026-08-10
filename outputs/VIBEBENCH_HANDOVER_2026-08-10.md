@@ -109,43 +109,73 @@ bestätigt, dass vor einer Regeländerung zusätzliche Daten nötig sind:
   modernen Stack-/Struktur-Ansatzes daher nicht.
 
 Die vollständige Diagnose steht in
-`outputs/VIBEBENCH_DEVELOPMENT_V0_2_READINESS_2026-08-10.md`. Für die nächste
-Phase sind 40 überprüfte Development-Slots vorbereitet: je zehn Replit Agent,
-Bolt, Human Modern SaaS und Human Modern App. Build und Validator blockieren
-Überschneidungen mit bestehenden Development- und Holdout-Hosts. Das Protokoll
-steht in `outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md`.
-Die 20 Human-Slots sind bereits READY. Sie verwenden offizielle öffentliche
-Source-Repositories, deren Projektgeschichte vor dem 30. November 2022 beginnt;
-dies ist ein transparentes operatives Kontrolllabel, kein Beweis gegen jede
-spätere AI-Unterstützung. Replit Agent steht bei 0/10 und Bolt bei 10/10.
-16/20 Human-Kontrollen haben mindestens zwei erkannte moderne Stack-Signale;
-7/20 lösen unter der alten v0.1-Baseline bereits `indicative` aus.
-Zehn neue Bolt-Custom-Domain-Deployments sind ebenfalls READY. Ihre
-builder-spezifische Provenienz stammt aus unabhängigen Devpost-Submissions;
-unter der v0.1-Baseline ist eines `direct` und neun bleiben `indeterminate`.
-Aufgenommene und wegen Leakage oder technischer Fehler abgelehnte Kandidaten
-sind in `outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md`
-dokumentiert.
+`outputs/VIBEBENCH_DEVELOPMENT_V0_2_READINESS_2026-08-10.md`. Die Erweiterung
+ist jetzt mit je zehn Replit Agent, Bolt, Human Modern SaaS und Human Modern App
+vollständig: 40/40 READY. Build und Validator blockieren Überschneidungen mit
+bestehenden Development- und Holdout-Hosts, geteilte Deployment-Plattformen
+und doppelte `project_family_id`-Werte.
+
+Die 20 Human-Slots verwenden offizielle öffentliche Source-Repositories, deren
+Projektgeschichte vor dem 30. November 2022 beginnt; dies ist ein transparentes
+operatives Kontrolllabel, kein Beweis gegen jede spätere AI-Unterstützung.
+16/20 haben mindestens zwei erkannte moderne Stack-Signale und 7/20 lösen unter
+v0.1 bereits `indicative` aus.
+
+Neun Bolt-Custom-Domains sind über Devpost-Submissions und eine über einen
+geprüften Directory-Eintrag dokumentiert; eines ist `direct`, neun bleiben `indeterminate`. Die zehn
+Replit-Agent-Custom-Domains sind über Customer Stories, Creator-Berichte,
+einen kuratierten Builder-Showcase oder geprüfte Projektmetadaten zugeordnet;
+keines ist `direct`, eines ist generisch `indicative` und neun bleiben
+`indeterminate`.
+
+Der gemeinsame Freeze-Audit bestätigt 40/40 technische Erfolge, 40/40
+Verdict-Matches, 40/40 Stack-Matches und 40/40 inhaltlich zulässige Live-Seiten.
+Zwei technisch erreichbare Sedo-Parking-Domains wurden vor dem finalen Freeze
+durch `app.tabsquad.com` und `colorpalgen.com` ersetzt; der Audit blockiert
+Parking-Inhalte jetzt ausdrücklich. Quelle, 40er-Manifest und Audit sind
+SHA-256-gehasht. Der Bericht steht in
+`outputs/VIBEBENCH_DEVELOPMENT_V0_2_FREEZE_2026-08-10.md`; aufgenommene und
+abgelehnte Kandidaten in
+`outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md`.
 
 ```bash
 npm run research:v0.2-readiness
 npm run development:v0.2-build
 npm run development:v0.2-validate
+npm run development:v0.2-audit
+npm run development:v0.2-freeze
+npm run research:v0.2-artifacts
 ```
+
+## Artifact research und Kontextupdate v0.1.2
+
+Die direkte Markerforschung auf allen 40 eingefrorenen Development-Zielen ist
+abgeschlossen. Sie fand keine Replit-Agent-Phrase, genau einen bereits
+bekannten `bolt.new`-Treffer und keine entsprechende Direct-Evidenz bei den 20
+modernen Human-Kontrollen. 6/10 Replit-Ziele zeigten die generische Kombination
+`Server: Google Frontend` plus Google-`via`; 1/10 verlinkte eine
+`*.replit.app`-Ressource. Diese Spuren sind Infrastrukturkontext, keine
+Autorschaftsevidenz.
+
+v0.1.2 zeigt deshalb `Google Frontend response` und `Replit-hosted resource`
+als Kontext, ohne den Verdict zu verändern. Die Details stehen in
+`outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md` und
+`outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md`.
 
 ## Nächste To-dos
 
-1. Die aktuellen Commits pushen, auf Vercel deployen und alle vier Ausgänge in
-   Produktion prüfen.
-2. Zehn neue Replit-Agent-Samples mit exakter Deployment-Provenienz ergänzen.
-3. Danach 40/40 Slots validieren.
-4. Eine Scanner-v0.2-Regel ausschließlich auf dem erweiterten
-   Development-Datensatz entwickeln.
-5. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und erst danach
+1. Portable Feature-Kombinationen ausschließlich auf dem eingefrorenen
+   Development-v0.2-Datensatz untersuchen.
+2. Jeden Kandidaten gegen alle 20 modernen Human-Kontrollen prüfen und
+   Hosting-Proxys verwerfen.
+3. Eine Scanner-v0.2-Regel vorregistrieren, ohne den abgeschlossenen 100er-
+   Holdout als Quelle oder Tuninghilfe zu verwenden.
+4. Einen neuen Bestätigungs-Holdout für v0.2 akquirieren und erst danach
    Kalibrierung oder Prozentwert prüfen.
 
 ## Empfohlener nächster Schritt
 
-Die aktuellen Commits über GitHub Desktop pushen und den Vercel-Deploy mit
-Direct-, Indicative-, Indeterminate- und Fehlerbeispiel prüfen. Danach zuerst
-die zehn Replit-Agent-Slots füllen; der 100er-Holdout bleibt unangetastet.
+Eine kleine, erklärbare Feature-Matrix auf Development v0.2 aufbauen. Nur eine
+gegen moderne Human-Seiten abgesicherte, vorregistrierte Regel darf in einen
+neuen Bestätigungs-Holdout gehen; sonst bleibt `direct-only` die ehrliche
+Produktgrenze. Der alte 100er-Holdout bleibt unangetastet.

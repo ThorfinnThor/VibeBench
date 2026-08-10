@@ -1,0 +1,1428 @@
+{
+  "schema_version": "v0.2-development-freeze-audit",
+  "generated_at": "2026-08-10T13:27:03.719Z",
+  "purpose": "Freeze-time production reachability and baseline drift audit for Development-only data; not an evaluation result.",
+  "endpoint": "https://vibe-bench-cyan.vercel.app/api/scan",
+  "manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+  "manifest_sha256": "8da8b5c104a7087a0567445ceb870d92dd4e07a2ff3f73d03284bb524e369e5c",
+  "summary": {
+    "total": 40,
+    "api_ok": 40,
+    "technical_errors": 0,
+    "level_matches": 40,
+    "level_drifts": 0,
+    "stack_matches": 40,
+    "stack_drifts": 0,
+    "content_eligible": 40,
+    "content_disqualified": 0,
+    "groups": {
+      "AI_REPLIT_AGENT_NEW": {
+        "total": 10,
+        "api_ok": 10,
+        "direct": 0,
+        "indicative": 1,
+        "indeterminate": 9
+      },
+      "AI_BOLT_NEW": {
+        "total": 10,
+        "api_ok": 10,
+        "direct": 1,
+        "indicative": 0,
+        "indeterminate": 9
+      },
+      "HUMAN_MODERN_SAAS_NEW": {
+        "total": 10,
+        "api_ok": 10,
+        "direct": 0,
+        "indicative": 5,
+        "indeterminate": 5
+      },
+      "HUMAN_MODERN_APP_NEW": {
+        "total": 10,
+        "api_ok": 10,
+        "direct": 0,
+        "indicative": 2,
+        "indeterminate": 8
+      }
+    }
+  },
+  "freeze_ready": true,
+  "policy": {
+    "holdout_reuse": "PROHIBITED",
+    "tuning_scope": "Development rows only",
+    "stack_drift": "Recorded as diagnostic metadata; verdict-level drift blocks the freeze.",
+    "content_quality": "Parking pages and content-fetch failures block the freeze even when the scan endpoint returns successfully."
+  },
+  "results": [
+    {
+      "sample_id": "DEV2-AI-REPLIT-01",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://genaipi.org",
+      "started_at": "2026-08-10T13:26:56.956Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://genaipi.org/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://genaipi.org/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 31466,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-02",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://saastr.ai",
+      "started_at": "2026-08-10T13:26:56.999Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://saastr.ai/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://saastr.ai/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 8280,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-03",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://clearscribehq.com",
+      "started_at": "2026-08-10T13:26:57.000Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://clearscribehq.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://clearscribehq.com/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 2119,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-04",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://realvsai.com",
+      "started_at": "2026-08-10T13:26:57.001Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://realvsai.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [],
+      "baseline_stack_signals": [],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://realvsai.com/",
+        "server": "Apache",
+        "html_bytes_checked": 24264,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-05",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://podcast.thekamclub.com",
+      "started_at": "2026-08-10T13:26:57.466Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://podcast.thekamclub.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://podcast.thekamclub.com/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 3443,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-06",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://findmysauna.com",
+      "started_at": "2026-08-10T13:26:57.595Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://findmysauna.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://findmysauna.com/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 25123,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-07",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://aivideodubbing.net",
+      "started_at": "2026-08-10T13:26:57.925Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://aivideodubbing.net/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://aivideodubbing.net/",
+        "server": "cloudflare",
+        "html_bytes_checked": 152281,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-08",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://mygutgoddess.com",
+      "started_at": "2026-08-10T13:26:58.283Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://mygutgoddess.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://mygutgoddess.com/",
+        "server": "Google Frontend",
+        "html_bytes_checked": 1154,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-09",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://ankonai.com",
+      "started_at": "2026-08-10T13:26:58.324Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://ankonai.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://ankonai.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 75764,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-10",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "target_url": "https://www.designmakerai.co",
+      "started_at": "2026-08-10T13:26:58.756Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://www.designmakerai.co/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://www.designmakerai.co/",
+        "server": "Vercel",
+        "html_bytes_checked": 33976,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-01",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://toomuchforce.com",
+      "started_at": "2026-08-10T13:26:58.936Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://www.toomuchforce.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://www.toomuchforce.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 458,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-02",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://bolt-shop.com",
+      "started_at": "2026-08-10T13:26:59.051Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://bolt-shop.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://bolt-shop.com/",
+        "server": "Netlify",
+        "html_bytes_checked": 1258,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-03",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://zropi.com",
+      "started_at": "2026-08-10T13:26:59.578Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://zropi.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Framer Motion",
+        "Lucide",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Framer Motion",
+        "Lucide",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://zropi.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 17873,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-04",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://onceupon.fun",
+      "started_at": "2026-08-10T13:26:59.588Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://onceupon.fun/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [],
+      "baseline_stack_signals": [],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://onceupon.fun/",
+        "server": "cloudflare",
+        "html_bytes_checked": 115598,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-05",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://app.tabsquad.com",
+      "started_at": "2026-08-10T13:26:59.921Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://app.tabsquad.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://app.tabsquad.com/",
+        "server": "Netlify",
+        "html_bytes_checked": 3845,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-06",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://colorpalgen.com",
+      "started_at": "2026-08-10T13:27:00.049Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://colorpalgen.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Framer Motion",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Framer Motion",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://colorpalgen.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 6862,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-07",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://no-fila.com",
+      "started_at": "2026-08-10T13:27:00.211Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://no-fila.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://no-fila.com/",
+        "server": "Netlify",
+        "html_bytes_checked": 742,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-08",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://ketz.site",
+      "started_at": "2026-08-10T13:27:00.347Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://ketz.site/",
+      "observed_level": "direct",
+      "baseline_level": "direct",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://ketz.site/",
+        "server": "Netlify",
+        "html_bytes_checked": 953,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-09",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://justimagine.online",
+      "started_at": "2026-08-10T13:27:00.548Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://justimagine.online/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://justimagine.online/",
+        "server": "Netlify",
+        "html_bytes_checked": 2698,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-10",
+      "target_group": "AI_BOLT_NEW",
+      "target_url": "https://ellisai.org",
+      "started_at": "2026-08-10T13:27:00.550Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://ellisai.org/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "React",
+        "Supabase",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://ellisai.org/",
+        "server": "Netlify",
+        "html_bytes_checked": 1142,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-01",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://supabase.com",
+      "started_at": "2026-08-10T13:27:00.800Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://supabase.com/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "Radix UI",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "Radix UI",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://supabase.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 500000,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-02",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://posthog.com",
+      "started_at": "2026-08-10T13:27:00.814Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://posthog.com/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Radix UI",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Radix UI",
+        "Supabase",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://posthog.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 500000,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-03",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://appsmith.com",
+      "started_at": "2026-08-10T13:27:00.851Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://www.appsmith.com/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://www.appsmith.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 315802,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-04",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://novu.co",
+      "started_at": "2026-08-10T13:27:00.866Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://novu.co/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://novu.co/",
+        "server": "cloudflare",
+        "html_bytes_checked": 500000,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-05",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://strapi.io",
+      "started_at": "2026-08-10T13:27:01.091Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://strapi.io/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "Radix UI",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://strapi.io/",
+        "server": "Vercel",
+        "html_bytes_checked": 386639,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-06",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://www.getoutline.com",
+      "started_at": "2026-08-10T13:27:01.193Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://www.getoutline.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://www.getoutline.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 38794,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-07",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://www.tooljet.com",
+      "started_at": "2026-08-10T13:27:01.296Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://tooljet.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://tooljet.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 330729,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-08",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://medusajs.com",
+      "started_at": "2026-08-10T13:27:01.457Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://medusajs.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://medusajs.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 232710,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-09",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://payloadcms.com",
+      "started_at": "2026-08-10T13:27:01.530Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://payloadcms.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://payloadcms.com/",
+        "server": "Vercel",
+        "html_bytes_checked": 282345,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-10",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "target_url": "https://logto.io",
+      "started_at": "2026-08-10T13:27:01.618Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://logto.io/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Supabase",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Supabase",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://logto.io/",
+        "server": "cloudflare",
+        "html_bytes_checked": 500000,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-01",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://jsonhero.io",
+      "started_at": "2026-08-10T13:27:01.783Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://jsonhero.io/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://jsonhero.io/",
+        "server": "cloudflare",
+        "html_bytes_checked": 64765,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-02",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://it-tools.tech",
+      "started_at": "2026-08-10T13:27:01.823Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://it-tools.tech/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://it-tools.tech/",
+        "server": "cloudflare",
+        "html_bytes_checked": 2787,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-03",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://rxresu.me",
+      "started_at": "2026-08-10T13:27:01.933Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://rxresu.me/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://rxresu.me/",
+        "server": "cloudflare",
+        "html_bytes_checked": 14103,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-04",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://carbon.now.sh",
+      "started_at": "2026-08-10T13:27:01.955Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://carbon.now.sh/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://carbon.now.sh/",
+        "server": "Vercel",
+        "html_bytes_checked": 77888,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-05",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://responsively.app",
+      "started_at": "2026-08-10T13:27:02.067Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://responsively.app/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://responsively.app/",
+        "server": "cloudflare",
+        "html_bytes_checked": 64331,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-06",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://bundlephobia.com",
+      "started_at": "2026-08-10T13:27:02.131Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://bundlephobia.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://bundlephobia.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 17630,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-07",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://readme.so",
+      "started_at": "2026-08-10T13:27:02.193Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://readme.so/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Next.js",
+        "React",
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://readme.so/",
+        "server": "GitHub.com",
+        "html_bytes_checked": 7707,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-08",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://roadmap.sh",
+      "started_at": "2026-08-10T13:27:02.398Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://roadmap.sh/",
+      "observed_level": "indicative",
+      "baseline_level": "indicative",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "baseline_stack_signals": [
+        "Lucide",
+        "Radix UI",
+        "React",
+        "Tailwind CSS",
+        "Vite"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://roadmap.sh/",
+        "server": "nginx",
+        "html_bytes_checked": 500000,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-09",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://monkeytype.com",
+      "started_at": "2026-08-10T13:27:02.449Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://monkeytype.com/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://monkeytype.com/",
+        "server": "cloudflare",
+        "html_bytes_checked": 21079,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-10",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "target_url": "https://devdocs.io",
+      "started_at": "2026-08-10T13:27:02.530Z",
+      "response_status": 200,
+      "api_ok": true,
+      "resolved_url": "https://devdocs.io/",
+      "observed_level": "indeterminate",
+      "baseline_level": "indeterminate",
+      "level_match": true,
+      "observed_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "baseline_stack_signals": [
+        "Tailwind CSS"
+      ],
+      "stack_match": true,
+      "content_quality": {
+        "fetch_ok": true,
+        "response_status": 200,
+        "resolved_url": "https://devdocs.io/",
+        "server": "cloudflare",
+        "html_bytes_checked": 7827,
+        "eligible": true,
+        "disqualifying_signals": []
+      },
+      "technical_outcome": null,
+      "error": ""
+    }
+  ]
+}

@@ -107,22 +107,43 @@ Diagnose und Akquisitionsprotokoll:
 - [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_ACQUISITION_PROTOCOL.md)
 - [`outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md`](outputs/development_v0_2/VIBEBENCH_AI_ACQUISITION_LOG_2026-08-10.md)
 
-Die vorbereitete Erweiterung enthält 40 Development-Slots: je zehn neue
+Die eingefrorene Erweiterung enthält 40 Development-Slots: je zehn neue
 Replit-Agent-, Bolt-, Human-Modern-SaaS- und Human-Modern-App-Sites. Sie wird
 automatisch gegen bestehende Development- und Holdout-URLs sowie Hosts geprüft.
 Die 20 Human-Slots sind mit vor dem 30. November 2022 begonnenen öffentlichen
-Source-Projekten gefüllt und validiert; Replit Agent steht bei 0/10 und Bolt
-bei 10/10.
+Source-Projekten gefüllt und validiert; Replit Agent und Bolt stehen bei je
+10/10 READY.
 16/20 dieser Kontrollen haben mindestens zwei erkannte moderne Stack-Signale,
 und 7/20 lösen unter der v0.1-Baseline bereits `indicative` aus.
 Zusätzlich sind zehn neue, über unabhängige Hackathon-Submissions dokumentierte
 Bolt-Custom-Domain-Deployments READY. Unter v0.1 ist eines `direct` und neun
 sind `indeterminate`.
+Die zehn Replit-Agent-Custom-Domains sind exakt über Customer Stories,
+Creator-Berichte, einen kuratierten Builder-Showcase oder geprüfte
+Projektmetadaten zugeordnet. Unter v0.1 sind neun `indeterminate`, eine nur
+generisch `indicative` und keine `direct`.
+
+Der gemeinsame Freeze-Audit war vollständig stabil: 40/40 technische Erfolge,
+40/40 Verdict-Matches, 40/40 Stack-Matches und 40/40 inhaltlich zulässige
+Live-Seiten. Das SHA-256-Freeze-Manifest
+verhindert stilles Austauschen von Samples. Details:
+[`outputs/VIBEBENCH_DEVELOPMENT_V0_2_FREEZE_2026-08-10.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_FREEZE_2026-08-10.md).
+
+Die anschließende Markerforschung fand außer dem bestehenden `bolt.new`-
+Marker keine neue hochkonfidente Direct-Regel. Google-Frontend- und eingebettete
+`replit.app`-Spuren werden ab v0.1.2 transparent als Kontext gezeigt, ändern
+aber keine Builder-Zuordnung. Bericht und Produktänderung:
+
+- [`outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md`](outputs/VIBEBENCH_DEVELOPMENT_V0_2_ARTIFACT_RESEARCH_2026-08-10.md)
+- [`outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md`](outputs/VIBEBENCH_CONTEXT_EVIDENCE_V0_1_2_2026-08-10.md)
 
 ```bash
 npm run research:v0.2-readiness
 npm run development:v0.2-build
 npm run development:v0.2-validate
+npm run development:v0.2-audit
+npm run development:v0.2-freeze
+npm run research:v0.2-artifacts
 ```
 
 Arbeitsprüfung ohne Ergebnisöffnung:
@@ -212,17 +233,17 @@ separate Kalibrierungsdaten und ein frischer Bestätigungs-Holdout.
 
 ## Nächste To-dos
 
-1. Die aktuellen Commits pushen, über Vercel deployen und die vier
-   Ergebniszustände in Produktion prüfen.
-2. Zehn neue Replit-Agent-Samples mit exakter Deployment-Provenienz ergänzen.
-3. Alle 40 Slots müssen den Development-/Holdout-Overlap-Validator bestehen.
-4. Eine Scanner-v0.2-Regel erst auf dem erweiterten Development-Datensatz
-   entwickeln; den abgeschlossenen 100er-Holdout nicht zum Tuning verwenden.
-5. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
+1. Eine kleine Matrix portabler Feature-Kandidaten auf dem eingefrorenen
+   Development-v0.2-Datensatz erstellen.
+2. Jeden Kandidaten gegen alle 20 modernen Human-Kontrollen prüfen und
+   Hosting-Proxys ausschließen.
+3. Eine Scanner-v0.2-Kandidatenregel nur auf Development entwickeln; den abgeschlossenen
+   100er-Holdout nicht zum Tuning verwenden.
+4. Für v0.2 einen neuen, unabhängigen Bestätigungs-Holdout erstellen und erst
    danach über Kalibrierung oder einen Prozentwert entscheiden.
 
 ## Empfohlener nächster Schritt
 
-Die aktuellen Commits pushen und in Vercel deployen. Danach die zehn neuen
-Replit-Agent-Samples akquirieren; diese Builder-Gruppe ist derzeit die größte
-positive Abdeckungslücke.
+Als Nächstes portable Feature-Kombinationen auf Development v0.2 prüfen. Wenn
+keine präzise, gegen moderne Human-Seiten abgesicherte Regel entsteht, bleibt
+`direct-only` die Produktgrenze; der alte Holdout wird nicht wiederverwendet.

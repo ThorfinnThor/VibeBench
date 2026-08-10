@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0.2-development-frozen-manifest",
+  "frozen_at": "2026-08-10T13:27:09.872Z",
+  "status": "FROZEN",
+  "purpose": "Immutable Development-only corpus for v0.2 rule research; not an independent evaluation set.",
+  "rows": 40,
+  "groups": {
+    "AI_REPLIT_AGENT_NEW": 10,
+    "AI_BOLT_NEW": 10,
+    "HUMAN_MODERN_SAAS_NEW": 10,
+    "HUMAN_MODERN_APP_NEW": 10
+  },
+  "constraints": {
+    "completed_holdout_as_source": false,
+    "completed_holdout_for_tuning": false,
+    "production_rule_change_authorized": false,
+    "new_holdout_required_for_evaluation": true
+  },
+  "files": {
+    "data/development-samples-v0_2.mjs": {
+      "sha256": "2b42cba5e1ad5f4bd615fdfef2d206099925ce96fd5a461b9d55675315ee80eb"
+    },
+    "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json": {
+      "sha256": "8da8b5c104a7087a0567445ceb870d92dd4e07a2ff3f73d03284bb524e369e5c"
+    },
+    "outputs/development_v0_2/vibebench_development_v0_2_freeze_audit.json": {
+      "sha256": "c0890eb2f2495712c81493cb6a117d997885c5b8ab352d92537f14cd5e8d26b2"
+    }
+  }
+}

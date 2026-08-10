@@ -1,0 +1,2147 @@
+{
+  "schema_version": "v0.2-development-artifact-research",
+  "generated_at": "2026-08-10T13:29:09.117Z",
+  "purpose": "Development-only artifact discovery; candidate prevalence is not a production rule or evaluation result.",
+  "input": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+  "holdout_used": false,
+  "summary": {
+    "total": 40,
+    "successful": 40,
+    "errors": 0,
+    "groups": {
+      "AI_REPLIT_AGENT_NEW": 10,
+      "AI_BOLT_NEW": 10,
+      "HUMAN_MODERN_SAAS_NEW": 10,
+      "HUMAN_MODERN_APP_NEW": 10
+    }
+  },
+  "marker_prevalence": {
+    "replit-agent-phrase": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "generated-by-replit": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "built-with-replit": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "replit-cdn": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "replit-app-host": {
+      "AI_REPLIT_AGENT_NEW": 1,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "replit-dev-host": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "repl-co-host": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "replitusercontent": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "bolt-new": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 1,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "built-with-bolt": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "made-with-bolt": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "bolt-generated": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "stackblitz": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "webcontainer": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    }
+  },
+  "header_prevalence": {
+    "google-frontend": {
+      "AI_REPLIT_AGENT_NEW": 6,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "netlify-response": {
+      "AI_REPLIT_AGENT_NEW": 0,
+      "AI_BOLT_NEW": 6,
+      "HUMAN_MODERN_SAAS_NEW": 2,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "vercel-response": {
+      "AI_REPLIT_AGENT_NEW": 1,
+      "AI_BOLT_NEW": 1,
+      "HUMAN_MODERN_SAAS_NEW": 7,
+      "HUMAN_MODERN_APP_NEW": 2
+    },
+    "cloudflare-edge": {
+      "AI_REPLIT_AGENT_NEW": 2,
+      "AI_BOLT_NEW": 3,
+      "HUMAN_MODERN_SAAS_NEW": 4,
+      "HUMAN_MODERN_APP_NEW": 7
+    },
+    "express-response": {
+      "AI_REPLIT_AGENT_NEW": 3,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 0,
+      "HUMAN_MODERN_APP_NEW": 0
+    },
+    "nextjs-response": {
+      "AI_REPLIT_AGENT_NEW": 2,
+      "AI_BOLT_NEW": 0,
+      "HUMAN_MODERN_SAAS_NEW": 4,
+      "HUMAN_MODERN_APP_NEW": 1
+    }
+  },
+  "ai_only_external_host_candidates": [
+    {
+      "hostname": "accounts.google.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 2,
+      "human": 0
+    },
+    {
+      "hostname": "media.theresanaiforthat.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 2,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 2,
+      "human": 0
+    },
+    {
+      "hostname": "replit.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 2,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 2,
+      "human": 0
+    },
+    {
+      "hostname": "theresanaiforthat.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 2,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 2,
+      "human": 0
+    },
+    {
+      "hostname": "analytics.ahrefs.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "anchor.fm",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "apache.org",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "api.fontshare.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "api.genaipi.org",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "asset-manager-nagib37.replit.app",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "behance.net",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "bolt.new",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "capacitorjs.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "cdn.replit.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "cdn.tailwindcss.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "d36wg2tfcd9uq0.cloudfront.net",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "designmaker.ai",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "embed.delphi.ai",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "en.wikipedia.org",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "feross.org",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "firebaseinstallations.googleapis.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "gofund.me",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "googleapis.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "i.pravatar.cc",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "images.pexels.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "img1.wsimg.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "kemptongames.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "medium.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "mui.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "qlptqzzsfdxeitzanhds.supabase.co",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "quilljs.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "saastr.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 1,
+        "AI_BOLT_NEW": 0,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "shipybara.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "storytime.onceupon.fun",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "tejjnueulkrhctjclbkn.supabase.co",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "tumblr.com",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "wgmtdugvoszeuoucajer.supabase.co",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "wzpaiwbqzgulvdmnjjcf.supabase.co",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    },
+    {
+      "hostname": "your-project.supabase.co",
+      "counts": {
+        "AI_REPLIT_AGENT_NEW": 0,
+        "AI_BOLT_NEW": 1,
+        "HUMAN_MODERN_SAAS_NEW": 0,
+        "HUMAN_MODERN_APP_NEW": 0
+      },
+      "ai": 1,
+      "human": 0
+    }
+  ],
+  "results": [
+    {
+      "sample_id": "DEV2-AI-REPLIT-01",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://genaipi.org",
+      "resolved_url": "https://genaipi.org/",
+      "ok": true,
+      "html_bytes": 31466,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Google Frontend",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "api.genaipi.org",
+        "googletagmanager.com",
+        "linkedin.com",
+        "schema.org",
+        "twitter.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-02",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://saastr.ai",
+      "resolved_url": "https://saastr.ai/",
+      "ok": true,
+      "html_bytes": 8280,
+      "assets_requested": 2,
+      "assets_fetched": 0,
+      "asset_fetch_errors": 2,
+      "headers": {
+        "server": "Google Frontend",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "embed.delphi.ai",
+        "googletagmanager.com",
+        "linkedin.com",
+        "saastr.com",
+        "schema.org",
+        "twitter.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-03",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://clearscribehq.com",
+      "resolved_url": "https://clearscribehq.com/",
+      "ok": true,
+      "html_bytes": 2119,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Google Frontend",
+        "x-powered-by": "Express",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [
+        {
+          "id": "replit-app-host",
+          "classification": "hosting-context"
+        }
+      ],
+      "external_hosts": [
+        "asset-manager-nagib37.replit.app",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "schema.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-04",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://realvsai.com",
+      "resolved_url": "https://realvsai.com/",
+      "ok": true,
+      "html_bytes": 24264,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Apache"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "cdn.jsdelivr.net",
+        "cdn.replit.com",
+        "cdnjs.cloudflare.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googletagmanager.com",
+        "img1.wsimg.com",
+        "kemptongames.com",
+        "pagead2.googlesyndication.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-05",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://podcast.thekamclub.com",
+      "resolved_url": "https://podcast.thekamclub.com/",
+      "ok": true,
+      "html_bytes": 3443,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Google Frontend",
+        "x-powered-by": "Express",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "anchor.fm",
+        "googletagmanager.com",
+        "replit.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-06",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://findmysauna.com",
+      "resolved_url": "https://findmysauna.com/",
+      "ok": true,
+      "html_bytes": 25123,
+      "assets_requested": 1,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Google Frontend",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "analytics.ahrefs.com",
+        "cdn.tailwindcss.com",
+        "cdnjs.cloudflare.com",
+        "fonts.googleapis.com",
+        "schema.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-07",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://aivideodubbing.net",
+      "resolved_url": "https://aivideodubbing.net/",
+      "ok": true,
+      "html_bytes": 152281,
+      "assets_requested": 5,
+      "assets_fetched": 5,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-powered-by": "Next.js",
+        "cf-ray": "a28f58d88d7c71ec-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "clarity.ms",
+        "en.wikipedia.org",
+        "github.com",
+        "googletagmanager.com",
+        "nextjs.org",
+        "react.dev",
+        "schema.org",
+        "tailwindcss.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-08",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://mygutgoddess.com",
+      "resolved_url": "https://mygutgoddess.com/",
+      "ok": true,
+      "html_bytes": 1154,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Google Frontend",
+        "x-powered-by": "Express",
+        "via": "1.1 google"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "api.fontshare.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "replit.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-09",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://ankonai.com",
+      "resolved_url": "https://ankonai.com/",
+      "ok": true,
+      "html_bytes": 75764,
+      "assets_requested": 5,
+      "assets_fetched": 5,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-powered-by": "Next.js",
+        "cf-ray": "a28f58dacc4968c6-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "accounts.google.com",
+        "d36wg2tfcd9uq0.cloudfront.net",
+        "media.theresanaiforthat.com",
+        "nextjs.org",
+        "react.dev",
+        "schema.org",
+        "theresanaiforthat.com",
+        "w3.org",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-10",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "label": "AI",
+      "builder": "Replit Agent",
+      "target_url": "https://www.designmakerai.co",
+      "resolved_url": "https://www.designmakerai.co/",
+      "ok": true,
+      "html_bytes": 33976,
+      "assets_requested": 5,
+      "assets_fetched": 5,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::6mgq2-1786368542183-56315b455b80"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "app.posthog.com",
+        "designmaker.ai",
+        "github.com",
+        "linkedin.com",
+        "media.theresanaiforthat.com",
+        "nextjs.org",
+        "posthog.com",
+        "react.dev",
+        "schema.org",
+        "sentry.io",
+        "theresanaiforthat.com",
+        "twitter.com",
+        "us.i.posthog.com",
+        "us.posthog.com",
+        "w3.org",
+        "yandex.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-01",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://toomuchforce.com",
+      "resolved_url": "https://www.toomuchforce.com/",
+      "ok": true,
+      "html_bytes": 458,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::lkmhb-1786368542369-83715c0b3c0f"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fonts.googleapis.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-02",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://bolt-shop.com",
+      "resolved_url": "https://bolt-shop.com/",
+      "ok": true,
+      "html_bytes": 1258,
+      "assets_requested": 2,
+      "assets_fetched": 1,
+      "asset_fetch_errors": 1,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSHND2GKYAJP72E8EHXBC"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fonts.googleapis.com",
+        "quilljs.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-03",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://zropi.com",
+      "resolved_url": "https://zropi.com/",
+      "ok": true,
+      "html_bytes": 17873,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58dea8663840-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "apache.org",
+        "capacitorjs.com",
+        "firebaseinstallations.googleapis.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "reactjs.org",
+        "schema.org",
+        "socket.io",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-04",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://onceupon.fun",
+      "resolved_url": "https://onceupon.fun/",
+      "ok": true,
+      "html_bytes": 115598,
+      "assets_requested": 0,
+      "assets_fetched": 0,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58dedf7d3057-MUC"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fonts.googleapis.com",
+        "storytime.onceupon.fun",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-05",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://app.tabsquad.com",
+      "resolved_url": "https://app.tabsquad.com/",
+      "ok": true,
+      "html_bytes": 3845,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSHWK4GSQKBFWSRQBQDNT"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "accounts.google.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googleapis.com",
+        "googletagmanager.com",
+        "reactjs.org",
+        "w3.org",
+        "wgmtdugvoszeuoucajer.supabase.co",
+        "your-project.supabase.co"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-06",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://colorpalgen.com",
+      "resolved_url": "https://colorpalgen.com/",
+      "ok": true,
+      "html_bytes": 6862,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58e058e2134c-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "behance.net",
+        "facebook.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "googletagmanager.com",
+        "instagram.com",
+        "linkedin.com",
+        "medium.com",
+        "schema.org",
+        "shipybara.com",
+        "tiktok.com",
+        "tumblr.com",
+        "w3.org",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-07",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://no-fila.com",
+      "resolved_url": "https://no-fila.com/",
+      "ok": true,
+      "html_bytes": 742,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSJ9YZZHSGTBRHSWRVCE7"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "mui.com",
+        "reactjs.org",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-08",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://ketz.site",
+      "resolved_url": "https://ketz.site/",
+      "ok": true,
+      "html_bytes": 953,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSJB7HRXGKJMH7F84VZRN"
+      },
+      "generator_meta": [],
+      "markers": [
+        {
+          "id": "bolt-new",
+          "classification": "direct-candidate"
+        }
+      ],
+      "external_hosts": [
+        "bolt.new",
+        "feross.org",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "i.pravatar.cc",
+        "images.pexels.com",
+        "reactjs.org",
+        "tejjnueulkrhctjclbkn.supabase.co",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-09",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://justimagine.online",
+      "resolved_url": "https://justimagine.online/",
+      "ok": true,
+      "html_bytes": 2698,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSJFCNHJ0WB54PYJCJCKF"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "developer.mozilla.org",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "qlptqzzsfdxeitzanhds.supabase.co",
+        "reactjs.org",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-10",
+      "target_group": "AI_BOLT_NEW",
+      "label": "AI",
+      "builder": "Bolt",
+      "target_url": "https://ellisai.org",
+      "resolved_url": "https://ellisai.org/",
+      "ok": true,
+      "html_bytes": 1142,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Netlify",
+        "x-nf-request-id": "01KZNXSJG8A4CHX8J65WCZRFX6"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "developer.mozilla.org",
+        "fonts.googleapis.com",
+        "gofund.me",
+        "googletagmanager.com",
+        "reactjs.org",
+        "w3.org",
+        "wzpaiwbqzgulvdmnjjcf.supabase.co"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-01",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://supabase.com",
+      "resolved_url": "https://supabase.com/",
+      "ok": true,
+      "html_bytes": 1322774,
+      "assets_requested": 0,
+      "assets_fetched": 0,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::m7cxz-1786368543355-7571cd663c48"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "dev.to",
+        "discord.supabase.com",
+        "forms.supabase.com",
+        "frontend-assets.supabase.com",
+        "github.com",
+        "instagram.com",
+        "status.supabase.com",
+        "tiktok.com",
+        "twitter.com",
+        "w3.org",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-02",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://posthog.com",
+      "resolved_url": "https://posthog.com/",
+      "ok": true,
+      "html_bytes": 1417640,
+      "assets_requested": 4,
+      "assets_fetched": 4,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::9h47f-1786368543380-e112e37c249d"
+      },
+      "generator_meta": [
+        "Gatsby 4.25.9"
+      ],
+      "markers": [],
+      "external_hosts": [
+        "app.posthog.com",
+        "better-animal-d658c56969.strapiapp.com",
+        "developer.android.com",
+        "developer.apple.com",
+        "developer.mozilla.org",
+        "eu.i.posthog.com",
+        "github.com",
+        "internal-c.posthog.com",
+        "openrouter.ai",
+        "reactnative.dev",
+        "res.cloudin",
+        "res.cloudinary.com",
+        "tailwindcss.com",
+        "us-assets.i.posthog.com",
+        "us.i.posthog.com",
+        "us.posthog.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-03",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://appsmith.com",
+      "resolved_url": "https://www.appsmith.com/",
+      "ok": true,
+      "html_bytes": 315802,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-powered-by": "Next.js",
+        "x-vercel-id": "fra1::iad1::gfpqv-1786368543533-76d29dc7f544"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "aicpa.org",
+        "allianz.com",
+        "amyris.com",
+        "api-js.mixpanel.com",
+        "cdn.cr-relay.com",
+        "cdn.mxpnl.com",
+        "community.appsmith.com",
+        "discord.com",
+        "docs.appsmith.com",
+        "fox.com",
+        "github.com",
+        "greatwolf.com",
+        "gsk.com",
+        "happay.com",
+        "heyjobs.co",
+        "images.ctfassets.net",
+        "in.linkedin.com",
+        "kite.ai",
+        "linkedin.com",
+        "login.appsmith.com",
+        "mixpanel.com",
+        "nextjs.org",
+        "omron.com",
+        "react.dev",
+        "s3-us-west-2.amazonaws.com",
+        "schema.org",
+        "security.appsmith.com",
+        "static.hotjar.com",
+        "status.appsmith.com",
+        "tailwindcss.com",
+        "twilio.com",
+        "twitter.com",
+        "videos.ctfassets.net",
+        "w3.org",
+        "youtube.com",
+        "zuora.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-04",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://novu.co",
+      "resolved_url": "https://novu.co/",
+      "ok": true,
+      "html_bytes": 647111,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-vercel-id": "fra1::iad1::vz67f-1786368543795-e274d0c8f4ba",
+        "x-nf-request-id": "01KZNXSJSW40XGX63YMWVYAYCB",
+        "cf-ray": "a28f58e4df0337f5-FRA"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "ad.doubleclick.net",
+        "ade.googlesyndication.com",
+        "adservice.google.com",
+        "cct.google",
+        "cdn.segment.com",
+        "chat.cdn-plain.com",
+        "dashboard.novu.co",
+        "discord.gg",
+        "docs.novu.co",
+        "github.com",
+        "google.com",
+        "googleadservices.com",
+        "googletagmanager.com",
+        "handbook.novu.co",
+        "linkedin.com",
+        "nextjs.org",
+        "novustatus.com",
+        "p.typekit.net",
+        "pagead2.googlesyndication.com",
+        "plausible.io",
+        "react.dev",
+        "roadmap.novu.co",
+        "schema.org",
+        "snap.licdn.com",
+        "twitter.com",
+        "use.typekit.net",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-05",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://strapi.io",
+      "resolved_url": "https://strapi.io/",
+      "ok": true,
+      "html_bytes": 386639,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-powered-by": "Next.js",
+        "x-vercel-id": "fra1::iad1::ppqd2-1786368146717-6bc5ba4d5d8f",
+        "via": "1.1 3909cd34f904454f54cf78c975b2c198.cloudfront.net (CloudFront)"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "automatic-life-0194aa0342.media.strapiapp.com",
+        "bat.bing.com",
+        "cloud.strapi.io",
+        "community.strapi.io",
+        "community.strapi.iohttps",
+        "consent.cookiebot.com",
+        "consentcdn.cookiebot.com",
+        "delicate-dawn-ac25646e6d.media.strapiapp.com",
+        "discord.strapi.io",
+        "docs.strapi.io",
+        "facebook.com",
+        "feedback.strapi.io",
+        "github.com",
+        "google.com",
+        "googletagmanager.com",
+        "handbook.strapi.io",
+        "instagram.com",
+        "linkedin.com",
+        "market.strapi.io",
+        "nextjs.org",
+        "px.ads.linkedin.com",
+        "react.dev",
+        "schema.org",
+        "script.hotjar.com",
+        "shop.strapi.io",
+        "snap.licdn.com",
+        "static.hotjar.com",
+        "twitch.tv",
+        "vercel.live",
+        "w3.org",
+        "widget.kapa.ai",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-06",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://www.getoutline.com",
+      "resolved_url": "https://www.getoutline.com/",
+      "ok": true,
+      "html_bytes": 38794,
+      "assets_requested": 4,
+      "assets_fetched": 4,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58e6998e535c-LHR",
+        "via": "1.1 varnish"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "app.getoutline.com",
+        "docs.getoutline.com",
+        "github.com",
+        "nextjs.org",
+        "reactjs.org",
+        "status.getoutline.com",
+        "twitter.com",
+        "unpkg.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-07",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://www.tooljet.com",
+      "resolved_url": "https://tooljet.com/",
+      "ok": true,
+      "html_bytes": 330729,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-powered-by": "Next.js, Payload",
+        "x-nf-request-id": "01KZNXSK7ZHRDZZKBJ09WS367Q",
+        "cf-ray": "a28f58e7cfb600d0-CDG"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "blog.tooljet.ai",
+        "blog.tooljet.com",
+        "d3e54v103j8qbb.cloudfront.net",
+        "docs.tooljet.com",
+        "facebook.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "github.com",
+        "googletagmanager.com",
+        "join.slack.com",
+        "js.hs-scripts.com",
+        "linkedin.com",
+        "nextjs.org",
+        "react.dev",
+        "reddit.com",
+        "tooljet.slack.com",
+        "trust.tooljet.com",
+        "twitter.com",
+        "w3.org",
+        "wellfound.com",
+        "youtu.be",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-08",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://medusajs.com",
+      "resolved_url": "https://medusajs.com/",
+      "ok": true,
+      "html_bytes": 232710,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::6qq2r-1786368543888-901912af061a"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "app.posthog.com",
+        "cdn.sanity.io",
+        "cloud.medusajs.com",
+        "discord.com",
+        "discord.gg",
+        "docs.medusajs.com",
+        "eightsleep.com",
+        "eu.i.posthog.com",
+        "github.com",
+        "heineken.com",
+        "linkedin.com",
+        "mitsubishi-motors.com",
+        "nextjs.org",
+        "opensource.org",
+        "posthog.com",
+        "reactjs.org",
+        "schema.org",
+        "sentry.io",
+        "tailwindcss.com",
+        "twitter.com",
+        "us.i.posthog.com",
+        "us.posthog.com",
+        "vercel.live",
+        "w3.org",
+        "x.com",
+        "yandex.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-09",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://payloadcms.com",
+      "resolved_url": "https://payloadcms.com/",
+      "ok": true,
+      "html_bytes": 282345,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-powered-by": "Next.js, Payload",
+        "x-vercel-id": "fra1::zjkv4-1786368544192-36b7637c116b"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "api.github.com",
+        "asics.com",
+        "cdn.jsdelivr.net",
+        "cloud-api.payloadcms.com",
+        "clubforfuture.org",
+        "create.microsoft.com",
+        "demo.payloadcms.com",
+        "discord.com",
+        "figma.com",
+        "github.com",
+        "google-analytics.com",
+        "googletagmanager.com",
+        "instagram.com",
+        "l4wlsi8vxy8hre4v.public.blob.vercel-storage.com",
+        "nextjs.org",
+        "papertriangles.com",
+        "react.dev",
+        "twitter.com",
+        "w3.org",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-10",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://logto.io",
+      "resolved_url": "https://logto.io/",
+      "ok": true,
+      "html_bytes": 712737,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58e95e799386-FRA"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "auth-wiki.logto.io",
+        "blog.logto.io",
+        "cloud.logto.io",
+        "coolify.io",
+        "discord.com",
+        "docs.expo.dev",
+        "docs.logto.io",
+        "feedback.logto.io",
+        "figma.com",
+        "github.com",
+        "hasura.io",
+        "mcp-auth.dev",
+        "nuxt.com",
+        "openapi.logto.io",
+        "status.logto.io",
+        "tutorials.logto.io",
+        "uploads.strapi.logto.io",
+        "w3.org",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-01",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://jsonhero.io",
+      "resolved_url": "https://jsonhero.io/",
+      "ok": true,
+      "html_bytes": 64765,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58eaaca9e8fc-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "cdn.usefathom.com",
+        "discord.gg",
+        "fonts.googleapis.com",
+        "github.com",
+        "marketplace.visualstudio.com",
+        "media.giphy.com",
+        "trigger.dev",
+        "twitter.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-02",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://it-tools.tech",
+      "resolved_url": "https://it-tools.tech/",
+      "ok": true,
+      "html_bytes": 2787,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58eab8bcba87-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "analytics.thomasset.co",
+        "lodash.com",
+        "npms.io",
+        "openjsf.org",
+        "plausible.io",
+        "underscorejs.org",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-03",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://rxresu.me",
+      "resolved_url": "https://rxresu.me/",
+      "ok": true,
+      "html_bytes": 14103,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58eb3add68a5-FRA"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "opencollective.com",
+        "react.dev",
+        "tailwindcss.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-04",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://carbon.now.sh",
+      "resolved_url": "https://carbon.now.sh/",
+      "ok": true,
+      "html_bytes": 77888,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "Vercel",
+        "x-vercel-id": "fra1::rmx8j-1786368544684-c3d88ba5d29a"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "cdn.carbonads.com",
+        "cdn.jsdelivr.net",
+        "cdnjs.cloudflare.com",
+        "datocms-assets.com",
+        "fonts.gstatic.com",
+        "github.com",
+        "googletagmanager.com",
+        "reactjs.org",
+        "twitter.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-05",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://responsively.app",
+      "resolved_url": "https://responsively.app/",
+      "ok": true,
+      "html_bytes": 64331,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-vercel-id": "lhr1::frbcx-1786368544740-ddca3fda368d",
+        "cf-ray": "a28f58ec78b2a5eb-LHR"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "github.com",
+        "global.fun88.com",
+        "nextjs.org",
+        "reactjs.org",
+        "responsively-org.github.io",
+        "tailwindcss.com",
+        "testmuai.com",
+        "twitter.com",
+        "umami.responsively.app",
+        "use.typekit.net",
+        "vercel.live",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-06",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://bundlephobia.com",
+      "resolved_url": "https://bundlephobia.com/",
+      "ok": true,
+      "html_bytes": 17630,
+      "assets_requested": 6,
+      "assets_fetched": 6,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "x-powered-by": "Next.js",
+        "cf-ray": "a28f58edd903fcf1-CDG"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "badgen.net",
+        "browser.sentry-cdn.com",
+        "cloud.umami.is",
+        "digitalocean.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "github.com",
+        "nextjs.org",
+        "react.dev",
+        "twitter.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-07",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://readme.so",
+      "resolved_url": "https://readme.so/",
+      "ok": true,
+      "html_bytes": 7707,
+      "assets_requested": 5,
+      "assets_fetched": 5,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "GitHub.com",
+        "via": "1.1 varnish"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "fb.me",
+        "github.com",
+        "nextjs.org",
+        "reactjs.org",
+        "twitter.com",
+        "w3.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-08",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://roadmap.sh",
+      "resolved_url": "https://roadmap.sh/",
+      "ok": true,
+      "html_bytes": 554491,
+      "assets_requested": 2,
+      "assets_fetched": 2,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "nginx",
+        "via": "1.1 77aa8087323921dee0b130bc0589bda8.cloudfront.net (CloudFront)"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "assets.roadmap.sh",
+        "b174.roadmap.sh",
+        "bit.cloud",
+        "cdn-cookieyes.com",
+        "clarity.ms",
+        "discord.gg",
+        "github.com",
+        "googletagmanager.com",
+        "linkedin.com",
+        "roadmapsh.bsky.social",
+        "silo.team",
+        "thenewstack.io",
+        "twitter.com",
+        "updates.roadmap.sh",
+        "uploads.linear.app",
+        "w3.org",
+        "x.com",
+        "youtube.com"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-09",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://monkeytype.com",
+      "resolved_url": "https://monkeytype.com/",
+      "ok": true,
+      "html_bytes": 21079,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58eedfe0b843-CDG"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "api.enthusiastgaming.net",
+        "api.monkeytype.com",
+        "cdn.intergient.com",
+        "google.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "identitytoolkit.googleapis.com",
+        "poetrydb.org"
+      ]
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-10",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "label": "HUMAN",
+      "builder": "",
+      "target_url": "https://devdocs.io",
+      "resolved_url": "https://devdocs.io/",
+      "ok": true,
+      "html_bytes": 7827,
+      "assets_requested": 3,
+      "assets_fetched": 3,
+      "asset_fetch_errors": 0,
+      "headers": {
+        "server": "cloudflare",
+        "cf-ray": "a28f58ef9bfde911-LHR",
+        "via": "1.1 heroku-router"
+      },
+      "generator_meta": [],
+      "markers": [],
+      "external_hosts": [
+        "angular.dev",
+        "angular.io",
+        "ansible.com",
+        "api.jquery.com",
+        "atom.io",
+        "axios-http.com",
+        "babeljs.io",
+        "backbonejs.org",
+        "bit.ly",
+        "bluebirdjs.com",
+        "bottlepy.org",
+        "bower.io",
+        "brew.sh",
+        "cakephp.org",
+        "caolan.github.io",
+        "cfdocs.org",
+        "cgit.drupalcode.org",
+        "chaijs.com",
+        "chef.io",
+        "chrome.google.com",
+        "classic.yarnpkg.com",
+        "click.palletsprojects.com",
+        "clojure.org",
+        "cmake.org",
+        "code.qt.io",
+        "codecept.io",
+        "codeception.com",
+        "codegyre.com",
+        "codeigniter.com",
+        "coffeescript.org",
+        "cordova.apache.org",
+        "core.tcl-lang.org",
+        "couchdb.apache.org",
+        "creativecommons.org",
+        "crystal-lang.org",
+        "ctan.org",
+        "cycle.js.org",
+        "cypress.io",
+        "d3js.org",
+        "dart.dev",
+        "dartlang.org",
+        "date-fns.org",
+        "deno.com",
+        "deno.land",
+        "developer.mozilla.org",
+        "discord.gg",
+        "django-rest-framework.org",
+        "djangoproject.com",
+        "dlang.org",
+        "docker.com",
+        "docs.astro.build",
+        "docs.celeryq.dev",
+        "documents.devdocs.io",
+        "documentup.com",
+        "dojotoolkit.org",
+        "drupal.org",
+        "duckdb.org",
+        "duckduckgo.com",
+        "eigen.tuxfamily.org",
+        "electronjs.org",
+        "elixir-lang.org",
+        "emberjs.com",
+        "erlang.org",
+        "es-toolkit.slash.page",
+        "esbuild.github.io",
+        "eslint.org",
+        "expressjs.com",
+        "falconframework.org",
+        "fastapi.tiangolo.com",
+        "fishshell.com",
+        "flow.org",
+        "freecodecamp.org",
+        "gcc.gnu.org",
+        "get.gaug.es",
+        "getbootstrap.com",
+        "getcomposer.org",
+        "ghbtns.com",
+        "git-scm.com",
+        "git.php.net",
+        "git.postgresql.org",
+        "git.savannah.gnu.org",
+        "github.com",
+        "gitlab.com",
+        "gitlab.gnome.org",
+        "gitlab.kitware.com",
+        "gnu.org",
+        "gnucobol.sourceforge.io",
+        "gnuplot.info",
+        "go.googlesource.com",
+        "godotengine.org",
+        "golang.org",
+        "google.com",
+        "graphviz.org",
+        "groovy-lang.org",
+        "gruntjs.com",
+        "gtk.org",
+        "hammerspoon.org",
+        "handlebarsjs.com",
+        "hapi.dev",
+        "haproxy.org",
+        "haskell.org",
+        "haxe.org",
+        "heroku.com",
+        "hg.nginx.org",
+        "htmx.org",
+        "httpd.apache.org",
+        "i3wm.org",
+        "immutable-js.com",
+        "influxdata.com",
+        "jasmine.github.io",
+        "jekyllrb.com",
+        "jeremykratz.com",
+        "jestjs.io",
+        "joi.dev",
+        "jqlang.org",
+        "jquery.com",
+        "jsdoc.app",
+        "julialang.org",
+        "khronos.org",
+        "knockoutjs.com",
+        "koajs.com",
+        "kotlinlang.org",
+        "kubernetes.io",
+        "laravel.com",
+        "leafletjs.com",
+        "learn.microsoft.com",
+        "lesscss.org",
+        "lit.dev",
+        "lodash.com",
+        "love2d.org",
+        "lua.org",
+        "man7.org",
+        "maplibre.org",
+        "mariadb.com",
+        "marionettejs.com",
+        "marketplace.firefox.com",
+        "marketplace.visualstudio.com",
+        "matplotlib.org",
+        "medium.freecodecamp.org",
+        "meteor.com",
+        "minite.st",
+        "mochajs.org",
+        "momentjs.com",
+        "mongoosejs.com",
+        "mozilla.org",
+        "newrelic.com",
+        "nextjs.org",
+        "nginx.org",
+        "nim-lang.org",
+        "nixos.org",
+        "nodejs.org",
+        "npmjs.com",
+        "numpy.org",
+        "nushell.sh",
+        "ocaml.org",
+        "octave.org",
+        "odin-lang.org",
+        "ogp.me",
+        "openjdk.java.net",
+        "openlayers.org",
+        "opentofu.org",
+        "opentsdb.net",
+        "out.devdocs.io",
+        "padrinorb.com",
+        "palletsprojects.com",
+        "pandas.pydata.org",
+        "perl.org",
+        "phalconphp.com",
+        "phaser.io",
+        "phoenixframework.org",
+        "php.net",
+        "phpunit.de",
+        "pig.apache.org",
+        "playwright.dev",
+        "pointclouds.org",
+        "pola.rs",
+        "ponylang.io",
+        "postgresql.org",
+        "prettier.io",
+        "pugjs.org",
+        "pygame.org",
+        "python.org",
+        "pytorch.org",
+        "qt.io",
+        "qunitjs.com",
+        "r-project.org",
+        "rabbitmq.com",
+        "ramdajs.com",
+        "react-bootstrap.github.io",
+        "react.dev",
+        "reactivex.io",
+        "reactnative.dev",
+        "reactrouterdotcom.fly.dev",
+        "redis.io",
+        "redux.js.org",
+        "registry.khronos.org",
+        "relay.dev",
+        "requests.readthedocs.io",
+        "requirejs.org",
+        "rethinkdb.com",
+        "router.vuejs.org",
+        "ruby-lang.org",
+        "rubyonrails.org",
+        "rust-lang.org",
+        "rxjs.dev",
+        "saltproject.io",
+        "sanctuary.js.org",
+        "sass-lang.com",
+        "scala-lang.org",
+        "scikit-image.org",
+        "scikit-learn.org",
+        "sentry.io",
+        "sequelize.org",
+        "shopify.github.io",
+        "sinonjs.org",
+        "socket.io",
+        "sourceforge.net",
+        "spring.io",
+        "sqlite.org",
+        "stackoverflow.com",
+        "statsmodels.org",
+        "sublime.wbond.net",
+        "support.mozilla.org",
+        "svelte.dev",
+        "svn.r-project.org",
+        "symfony.com",
+        "tailwindcss.com",
+        "tcl-lang.org",
+        "tensorflow.org",
+        "terraform.io",
+        "thibaut.me",
+        "threejs.org",
+        "tokio.rs",
+        "trello.com",
+        "trio.readthedocs.io",
+        "twig.symfony.com",
+        "typescriptlang.org",
+        "underscorejs.org",
+        "v3.yarnpkg.com",
+        "vagrantup.com",
+        "varnish-cache.org",
+        "vertx.io",
+        "vite.dev",
+        "vitest.dev",
+        "vuejs.org",
+        "vueuse.org",
+        "vuex.vuejs.org",
+        "w3.org",
+        "wagtail.org",
+        "webpack.github.io",
+        "webpack.js.org",
+        "wordpress.org",
+        "yarnpkg.com",
+        "yiiframework.com",
+        "ziglang.org",
+        "zsh.sourceforge.io"
+      ]
+    }
+  ]
+}

@@ -113,6 +113,14 @@ const acquiredBoltBaseline = {
   indeterminate: acquiredBoltControls.filter((row) => row.baseline_scan.level === "indeterminate").length,
   withAtLeastTwoRecognizedStacks: acquiredBoltControls.filter((row) => row.baseline_scan.stack_signals.length >= 2).length
 };
+const acquiredReplitControls = developmentSamplesV02.filter((row) => row.group === "AI_REPLIT_AGENT_NEW" && row.status === "READY");
+const acquiredReplitBaseline = {
+  total: acquiredReplitControls.length,
+  direct: acquiredReplitControls.filter((row) => row.baseline_scan.level === "direct").length,
+  indicative: acquiredReplitControls.filter((row) => row.baseline_scan.level === "indicative").length,
+  indeterminate: acquiredReplitControls.filter((row) => row.baseline_scan.level === "indeterminate").length,
+  withAtLeastTwoRecognizedStacks: acquiredReplitControls.filter((row) => row.baseline_scan.stack_signals.length >= 2).length
+};
 
 const primaryDiagnostic = diagnosticConfusion(rows, new Set(["direct", "indicative"]));
 const strictDiagnostic = diagnosticConfusion(rows, new Set(["direct"]));
@@ -128,14 +136,13 @@ const readiness = {
   stackRepresentation,
   signalPrevalence,
   directMarkers,
-  acquisitionProgress: { ...acquisitionProgress, humanBaseline: acquiredHumanBaseline, boltBaseline: acquiredBoltBaseline },
+  acquisitionProgress: { ...acquisitionProgress, humanBaseline: acquiredHumanBaseline, boltBaseline: acquiredBoltBaseline, replitBaseline: acquiredReplitBaseline },
   primaryDiagnostic,
   strictDiagnostic,
   blockers: [
-    "All 16 successful Human Development controls have fewer than two recognized modern stack signals; broad structural specificity is therefore not tested.",
-    "Replit Agent has only two Development samples and neither exposes direct or indicative evidence.",
-    "Bolt has thirteen Development samples but only one direct marker hit.",
-    "The Development set is label-imbalanced (36 AI / 16 Human) and its negative class is not representative of modern SaaS/application stacks.",
+    "None of the ten frozen Replit Agent controls exposes direct builder evidence under v0.1; nine remain indeterminate.",
+    "Only one of the ten new Bolt controls exposes direct builder evidence under v0.1.",
+    "Creator and directory provenance documents builder use but is not equivalent to an independent code audit; limitations remain attached per row.",
     "The 100-site holdout is open and must not be recycled as Development data or used for v0.2 threshold selection."
   ],
   recommendedExtension: {
@@ -217,11 +224,11 @@ ${markerRows}
 
 ## Blocker vor einer v0.2-Regel
 
-1. Keine moderne negative Stack-Abdeckung im Development-Set.
-2. Nur zwei Replit-Agent-Fälle.
-3. Sehr geringe direkte Bolt-Abdeckung trotz dreizehn Fällen.
-4. Ungleiches Labelverhältnis 36 AI / 16 Human.
-5. Der geöffnete Holdout ist für jedes weitere Tuning gesperrt.
+1. 0/10 neue Replit-Agent- und nur 1/10 neue Bolt-Controls zeigen unter v0.1
+   direkte Builder-Evidenz.
+2. Creator- und Directory-Provenienz ist dokumentiert, aber kein Code-Audit;
+   die Einschränkung bleibt pro Zeile erhalten.
+3. Der geöffnete 100er-Holdout bleibt für jedes weitere Tuning gesperrt.
 
 ## Empfohlene Development-Erweiterung
 
@@ -255,6 +262,15 @@ v0.1. ${acquiredBoltBaseline.withAtLeastTwoRecognizedStacks}/10 haben mindestens
 zwei erkannte moderne Stack-Signale. Damit enthält Development v0.2 gezielt
 neue dokumentierte Bolt-False-Negatives und einen Direct-Positivfall.
 
+Die neue Replit-Agent-Gruppe ist ebenfalls vollständig:
+${acquiredReplitBaseline.total}/10 READY, davon ${acquiredReplitBaseline.direct}
+\`direct\`, ${acquiredReplitBaseline.indicative} \`indicative\` und
+${acquiredReplitBaseline.indeterminate} \`indeterminate\` unter v0.1.
+${acquiredReplitBaseline.withAtLeastTwoRecognizedStacks}/10 haben mindestens zwei
+erkannte moderne Stack-Signale. Alle Ziele liegen auf Custom Domains; kein
+\`replit.app\`-Tenant wurde wegen des bekannten Plattform-Leakage-Risikos
+zugelassen.
+
 Die Human-Seiten sollen bewusst Next.js, React, Tailwind, Radix, Lucide,
 Supabase und vergleichbare moderne Stacks enthalten. Sie sind keine leichten
 Gegenbeispiele, sondern der notwendige Test für generische Signale.
@@ -271,17 +287,16 @@ Gegenbeispiele, sondern der notwendige Test für generische Signale.
 
 ## Nächste To-dos
 
-1. Zehn neue Replit-Agent-Sites mit exakter Deployment-Provenienz sammeln.
-2. Die 30 READY-Ziele vor dem Development-Freeze erneut auf Erreichbarkeit prüfen.
-3. Erst bei vollständiger neuer Development-Erweiterung Marker- oder
-   Schwellenkandidaten testen.
-4. Vor einer Produktionsänderung eine explizite Precision/Recall-Priorität festlegen.
+1. Nur auf dem eingefrorenen Development-Set neue direkte Marker-Kandidaten untersuchen und
+   gegen die 20 modernen Human-Kontrollen prüfen.
+2. Kandidaten mit Owner-, Hosting- oder Stack-Leakage verwerfen.
+3. Erst danach eine v0.2-Regel vorregistrieren und auf einem neuen Holdout evaluieren.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes die Replit-Agent-Gruppe akquirieren. Sie ist mit nur zwei alten
-Development-Fällen und null positiven Treffern die größte Abdeckungslücke; der
-abgeschlossene Holdout bleibt vollständig vom Tuning ausgeschlossen.
+Als Nächstes die direkte Markerforschung auf dem eingefrorenen 40-Site-
+Development-Set beginnen, ohne den abgeschlossenen 100er-Holdout als Quelle
+oder Tuninghilfe zu verwenden.
 `;
 
 await mkdir(outputDir, { recursive: true });

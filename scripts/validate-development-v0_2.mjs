@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const manifestPath = path.resolve(process.argv[2] || "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json");
 const developmentPath = path.resolve("outputs/vibebench_production_browser_capture_post_hardening_2026-08-09.json");
 const holdoutPath = path.resolve("outputs/holdout_v0_1/blind_run_v0_1_2026-08-10/vibebench_blind_holdout_raw_results_v0_1.json");
-const requiredReadyFields = ["target_url", "provenance_url", "provenance_type", "provenance_summary", "collected_at", "notes"];
+const requiredReadyFields = ["target_url", "provenance_url", "provenance_type", "provenance_summary", "project_family_id", "collected_at", "notes"];
 const humanProjectCutoff = Date.parse("2022-11-30T00:00:00Z");
 const expectedGroups = {
   AI_REPLIT_AGENT_NEW: { label: "AI", builder: "Replit Agent" },
@@ -41,6 +41,7 @@ export function validateDevelopmentExtension({ manifest, existingDevelopment, ho
   const ids = new Set();
   const targetOwners = new Map();
   const provenanceOwners = new Map();
+  const projectFamilies = new Map();
   const existingUrls = new Set(existingDevelopment.map((row) => normalizedUrl(row.url)));
   const existingHosts = new Set(existingDevelopment.map((row) => leakageHost(row.url)));
   const holdoutUrls = new Set(holdout.map((row) => normalizedUrl(row.target_url)));
@@ -72,11 +73,15 @@ export function validateDevelopmentExtension({ manifest, existingDevelopment, ho
     if (target && targetOwners.has(target)) errors.push(`${row.sample_id}: duplicate target_url with ${targetOwners.get(target)}.`);
     const provenanceReference = provenance ? `${provenance}#${row.provenance_locator || ""}` : "";
     if (provenanceReference && provenanceOwners.has(provenanceReference)) warnings.push(`${row.sample_id}: provenance reference is also used by ${provenanceOwners.get(provenanceReference)}.`);
+    if (row.project_family_id && projectFamilies.has(row.project_family_id)) {
+      errors.push(`${row.sample_id}: project_family_id overlaps ${projectFamilies.get(row.project_family_id)}.`);
+    }
     if (target) targetOwners.set(target, row.sample_id);
     if (provenanceReference) provenanceOwners.set(provenanceReference, row.sample_id);
+    if (row.project_family_id) projectFamilies.set(row.project_family_id, row.sample_id);
 
     if (row.status === "READY") {
-      for (const field of ["development_overlap_check", "holdout_overlap_check", "provenance_review"]) {
+      for (const field of ["development_overlap_check", "holdout_overlap_check", "provenance_review", "independence_review"]) {
         if (row[field] !== "PASS") errors.push(`${row.sample_id}: ${field} must be PASS for READY.`);
       }
       if (row.label === "HUMAN") {
@@ -95,7 +100,7 @@ export function validateDevelopmentExtension({ manifest, existingDevelopment, ho
         }
       }
       if (row.label === "AI") {
-        if (!["official_builder_showcase", "official_builder_article", "independent_hackathon_submission"].includes(row.provenance_type)) {
+        if (!["official_builder_showcase", "official_builder_article", "official_builder_customer_story", "curated_builder_showcase", "independent_hackathon_submission", "independent_reviewed_directory", "public_creator_statement"].includes(row.provenance_type)) {
           errors.push(`${row.sample_id}: AI controls require reviewed builder-specific provenance.`);
         }
         if (!row.provenance_locator) errors.push(`${row.sample_id}: provenance_locator is required for an AI control.`);

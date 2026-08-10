@@ -77,11 +77,11 @@ auf diesem Datensatz würde denselben Repräsentationsfehler wiederholen.
 
 ## Blocker vor einer v0.2-Regel
 
-1. Keine moderne negative Stack-Abdeckung im Development-Set.
-2. Nur zwei Replit-Agent-Fälle.
-3. Sehr geringe direkte Bolt-Abdeckung trotz dreizehn Fällen.
-4. Ungleiches Labelverhältnis 36 AI / 16 Human.
-5. Der geöffnete Holdout ist für jedes weitere Tuning gesperrt.
+1. 0/10 neue Replit-Agent- und nur 1/10 neue Bolt-Controls zeigen unter v0.1
+   direkte Builder-Evidenz.
+2. Creator- und Directory-Provenienz ist dokumentiert, aber kein Code-Audit;
+   die Einschränkung bleibt pro Zeile erhalten.
+3. Der geöffnete 100er-Holdout bleibt für jedes weitere Tuning gesperrt.
 
 ## Empfohlene Development-Erweiterung
 
@@ -95,9 +95,9 @@ abgeschlossenen 100er-Holdout vorkommen:
 | Human Modern SaaS | 10 |
 | Human Modern App | 10 |
 
-Akquisitionsstand: **30/40 READY**. Die beiden
+Akquisitionsstand: **40/40 READY**. Die beiden
 Human-Gruppen sind mit je zehn öffentlich dokumentierten Projekten vollständig;
-Replit Agent steht bei 0/10 und
+Replit Agent steht bei 10/10 und
 Bolt bei 10/10. `HUMAN` ist hier ein operatives
 Development-Label für ein vor dem 30. November 2022 begonnenes öffentliches
 Source-Projekt und kein Beweis, dass später niemals AI-Unterstützung vorkam.
@@ -111,9 +111,18 @@ Baseline dient der Development-Diagnose und ist keine neue Validierung.
 Die neue Bolt-Gruppe ist vollständig: 10/10 READY,
 davon 1 `direct`, 0
 `indicative` und 9 `indeterminate` unter
-v0.1. 7/10 haben mindestens
+v0.1. 9/10 haben mindestens
 zwei erkannte moderne Stack-Signale. Damit enthält Development v0.2 gezielt
 neue dokumentierte Bolt-False-Negatives und einen Direct-Positivfall.
+
+Die neue Replit-Agent-Gruppe ist ebenfalls vollständig:
+10/10 READY, davon 0
+`direct`, 1 `indicative` und
+9 `indeterminate` unter v0.1.
+8/10 haben mindestens zwei
+erkannte moderne Stack-Signale. Alle Ziele liegen auf Custom Domains; kein
+`replit.app`-Tenant wurde wegen des bekannten Plattform-Leakage-Risikos
+zugelassen.
 
 Die Human-Seiten sollen bewusst Next.js, React, Tailwind, Radix, Lucide,
 Supabase und vergleichbare moderne Stacks enthalten. Sie sind keine leichten
@@ -121,8 +130,8 @@ Gegenbeispiele, sondern der notwendige Test für generische Signale.
 
 ## Sichere v0.2-Forschungsrichtungen
 
-1. **Direct layer:** neue stabile Builder-Artefakte in HTML und begrenzten
-   Same-Origin-Assets suchen; jede Regel gegen neue Human-Sites prüfen.
+1. **Portable layer:** kleine, erklärbare Feature-Kombinationen auf
+   Development v0.2 prüfen; direkte Markerforschung allein ergab keine neue Regel.
 2. **Context layer:** Stack-/DOM-Muster weiterhin ohne Attribution anzeigen.
 3. **Technical coverage:** Blockierung, Timeout und Größenlimit getrennt vom
    Klassifikator verbessern.
@@ -131,14 +140,13 @@ Gegenbeispiele, sondern der notwendige Test für generische Signale.
 
 ## Nächste To-dos
 
-1. Zehn neue Replit-Agent-Sites mit exakter Deployment-Provenienz sammeln.
-2. Die 30 READY-Ziele vor dem Development-Freeze erneut auf Erreichbarkeit prüfen.
-3. Erst bei vollständiger neuer Development-Erweiterung Marker- oder
-   Schwellenkandidaten testen.
-4. Vor einer Produktionsänderung eine explizite Precision/Recall-Priorität festlegen.
+1. Nur auf dem eingefrorenen Development-Set portable Feature-Kandidaten untersuchen und
+   gegen die 20 modernen Human-Kontrollen prüfen.
+2. Kandidaten mit Owner-, Hosting- oder Stack-Leakage verwerfen.
+3. Erst danach eine v0.2-Regel vorregistrieren und auf einem neuen Holdout evaluieren.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes die Replit-Agent-Gruppe akquirieren. Sie ist mit nur zwei alten
-Development-Fällen und null positiven Treffern die größte Abdeckungslücke; der
-abgeschlossene Holdout bleibt vollständig vom Tuning ausgeschlossen.
+Als Nächstes eine kleine portable Feature-Matrix auf dem eingefrorenen 40-Site-
+Development-Set erstellen, ohne den abgeschlossenen 100er-Holdout als Quelle
+oder Tuninghilfe zu verwenden. Die direkte Markerforschung ist abgeschlossen.

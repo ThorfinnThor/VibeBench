@@ -21,10 +21,12 @@ const slots = groups.flatMap((definition) => Array.from({ length: 10 }, (_, inde
   provenance_url: "",
   provenance_type: "",
   provenance_summary: "",
+  project_family_id: "",
   collected_at: "",
   development_overlap_check: "PENDING",
   holdout_overlap_check: "PENDING",
   provenance_review: "PENDING",
+  independence_review: "PENDING",
   status: "PENDING",
   notes: ""
 })));

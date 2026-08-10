@@ -1,6 +1,6 @@
 {
   "name": "vibebench",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -16,6 +16,9 @@
     "research:v0.2-readiness": "node scripts/analyze-development-v0_2-readiness.mjs",
     "development:v0.2-build": "node scripts/build-development-v0_2-manifest.mjs",
     "development:v0.2-validate": "node scripts/validate-development-v0_2.mjs",
+    "development:v0.2-audit": "node scripts/audit-development-v0_2-freeze.mjs",
+    "development:v0.2-freeze": "node scripts/freeze-development-v0_2.mjs",
+    "research:v0.2-artifacts": "node scripts/research-development-v0_2-artifacts.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",

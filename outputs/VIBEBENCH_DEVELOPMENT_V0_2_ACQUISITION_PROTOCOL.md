@@ -2,7 +2,7 @@
 
 Stand: 2026-08-10
 
-Status: 40 Slots vorbereitet; 30/40 READY
+Status: 40/40 READY · Reachability 40/40 · FROZEN
 
 ## Zweck
 
@@ -48,7 +48,9 @@ bevor passende moderne Gegenbeispiele vorhanden sind.
 ### AI-positiv
 
 - exakte öffentliche HTTPS-Deployment-URL,
-- unabhängige projektbezogene Provenienz für Bolt oder Replit Agent,
+- überprüfbare projektbezogene Provenienz für Bolt oder Replit Agent; bevorzugt
+  unabhängig, ansonsten als offizielle Builder- oder öffentliche Creator-Quelle
+  mit expliziter Einschränkung,
 - Provenienz verweist auf dieses Projekt oder Deployment,
 - Ziel weder im bestehenden Development-Capture noch im Holdout,
 - erfolgreiche öffentliche Erreichbarkeit,
@@ -76,10 +78,12 @@ pro Sample in `label_limitation` gespeichert.
 - `provenance_url`
 - `provenance_type`
 - `provenance_summary`
+- `project_family_id`
 - `collected_at`
 - `development_overlap_check`
 - `holdout_overlap_check`
 - `provenance_review`
+- `independence_review`
 - `status`
 - `notes`
 
@@ -88,8 +92,10 @@ Human-Kontrollen benötigen zusätzlich `project_started_at`, `label_definition`
 AI-Kontrollen benötigen zusätzlich `provenance_locator`, `label_definition`,
 `label_limitation` und einen gespeicherten `baseline_scan`.
 
-`READY` ist nur zulässig, wenn alle drei Review-Felder `PASS` sind. Ziel und
+`READY` ist nur zulässig, wenn alle vier Review-Felder `PASS` sind. Ziel und
 Provenienz müssen auf unterschiedlichen Hosts liegen.
+`project_family_id` muss innerhalb der Erweiterung eindeutig sein, damit
+verwandte Domains oder Schwesterprojekte nicht mehrfach gezählt werden.
 
 Der Slot-Status ist entweder `PENDING` oder `READY`. Verworfene Kandidaten
 werden nicht in einen der 40 Zielsamples geschrieben; sie bleiben in den
@@ -103,15 +109,21 @@ Recherche-Notizen, damit ein abgelehnter Kandidat keinen finalen Slot belegt.
 - `npm run development:v0.2-build` erzeugt das stabile 40-Slot-JSON.
 - `npm run development:v0.2-validate` prüft Struktur, Pflichtfelder,
   Development- und Holdout-Overlap sowie Provenienztrennung.
+- `npm run development:v0.2-audit` scannt alle 40 Ziele gemeinsam gegen die
+  Produktions-API und blockiert bei technischem Fehler, Verdict-Drift,
+  Content-Fetch-Fehler oder Parking-Inhalt.
+- `npm run development:v0.2-freeze` schreibt erst nach sauberem Audit das
+  SHA-256-Manifest.
 
 ## Nächste To-dos
 
-1. Zehn neue Replit-Agent-Kandidaten mit exakter Deployment-Provenienz sammeln.
-2. Provenienz und Overlap prüfen; erst danach auf READY setzen.
-3. Die 30 vorbereiteten Ziele auf fortbestehende Erreichbarkeit prüfen.
-4. Vor dem ersten v0.2-Regeltest 40/40 READY erreichen.
+1. Keine eingefrorenen Ziele ersetzen, ohne eine neue Version anzulegen.
+2. Portable Feature-Kandidaten ausschließlich auf Development v0.2 untersuchen.
+3. Kandidaten gegen alle 20 modernen Human-Kontrollen testen und Hosting-Proxys verwerfen.
+4. Eine fertige Regel nur mit einem neuen Holdout bestätigen.
 
 ## Empfohlener nächster Schritt
 
-Als Nächstes die Replit-Agent-Provenienzgruppe füllen. Sie ist mit bisher nur
-zwei Development-Fällen die größte positive Abdeckungslücke.
+Die direkte Markerforschung ergab keinen neuen Direct-Marker. Als Nächstes eine
+kleine portable Feature-Matrix auf Development v0.2 prüfen; das eingefrorene
+Set zeigt weiterhin 0/10 direkte Replit- und 1/10 direkte Bolt-Treffer.

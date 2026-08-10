@@ -53,6 +53,17 @@ test("keeps Replit and StackBlitz runtime traces as context", () => {
   ]);
 });
 
+test("keeps a linked Replit-hosted resource as non-attributive context", () => {
+  const result = analyzeHtml({
+    html: '<script src="https://asset-manager-example.replit.app/public/app.js"></script>',
+    url: "https://custom-domain.example/",
+    headers: {}
+  });
+  assert.equal(result.verdict.level, "indeterminate");
+  assert.equal(result.directEvidence.length, 0);
+  assert.deepEqual(result.contextEvidence.map((item) => item.label), ["Replit-hosted resource"]);
+});
+
 test("reports known response headers as context without changing the verdict", () => {
   const headers = {
     server: "cloudflare",
@@ -67,6 +78,12 @@ test("reports known response headers as context without changing the verdict", (
   const result = analyzeHtml({ html: "<html></html>", url: "https://example.com/", headers });
   assert.equal(result.verdict.level, "indeterminate");
   assert.ok(result.stackSignals.includes("Next.js"));
+});
+
+test("reports a Google Frontend proxy response as generic context", () => {
+  const headers = { server: "Google Frontend", via: "1.1 google" };
+  assert.deepEqual(analyzeHeaders(headers).map((item) => item.label), ["Google Frontend response"]);
+  assert.equal(analyzeHtml({ html: "<html></html>", url: "https://example.com/", headers }).verdict.level, "indeterminate");
 });
 
 test("treats a valid manifest as context only", () => {

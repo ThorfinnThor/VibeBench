@@ -10,10 +10,10 @@ const holdoutRaw = JSON.parse(await readFile("outputs/holdout_v0_1/blind_run_v0_
 test("preallocates a balanced 40-slot v0.2 Development extension", () => {
   const result = validateDevelopmentExtension({ manifest, existingDevelopment, holdout: holdoutRaw.flattenedResults });
   assert.equal(result.rows, 40);
-  assert.equal(result.ready, 30);
-  assert.equal(result.pending, 10);
+  assert.equal(result.ready, 40);
+  assert.equal(result.pending, 0);
   assert.deepEqual(result.groups, {
-    AI_REPLIT_AGENT_NEW: 0,
+    AI_REPLIT_AGENT_NEW: 10,
     AI_BOLT_NEW: 10,
     HUMAN_MODERN_SAAS_NEW: 10,
     HUMAN_MODERN_APP_NEW: 10
@@ -21,13 +21,31 @@ test("preallocates a balanced 40-slot v0.2 Development extension", () => {
   assert.deepEqual(result.errors, []);
 });
 
+test("new Replit Agent controls use custom domains, explicit provenance, and frozen baselines", () => {
+  const replit = manifest.samples.filter((row) => row.target_group === "AI_REPLIT_AGENT_NEW" && row.status === "READY");
+  assert.equal(replit.length, 10);
+  for (const row of replit) {
+    const targetHost = new URL(row.target_url).hostname.replace(/^www\./, "");
+    assert.ok(!targetHost.endsWith(".replit.app"));
+    assert.ok(!targetHost.endsWith(".repl.co"));
+    assert.notEqual(new URL(row.provenance_url).hostname.replace(/^www\./, ""), targetHost);
+    assert.equal(row.independence_review, "PASS");
+    assert.ok(row.project_family_id);
+    assert.match(row.label_limitation, /does not|not quantify|cannot attribute/i);
+    assert.ok(["indicative", "indeterminate"].includes(row.baseline_scan.level));
+  }
+  assert.equal(replit.filter((row) => row.baseline_scan.level === "indicative").length, 1);
+  assert.equal(replit.filter((row) => row.baseline_scan.level === "indeterminate").length, 9);
+});
+
 test("new Bolt controls have specific third-party provenance and disclose baseline outcomes", () => {
   const bolt = manifest.samples.filter((row) => row.target_group === "AI_BOLT_NEW" && row.status === "READY");
   assert.equal(bolt.length, 10);
   for (const row of bolt) {
-    assert.equal(row.provenance_type, "independent_hackathon_submission");
-    assert.equal(new URL(row.provenance_url).hostname, "devpost.com");
-    assert.match(row.label_limitation, /does not quantify/i);
+    assert.ok(["independent_hackathon_submission", "independent_reviewed_directory"].includes(row.provenance_type));
+    const expectedProvenanceHost = row.provenance_type === "independent_reviewed_directory" ? "hot100.ai" : "devpost.com";
+    assert.equal(new URL(row.provenance_url).hostname, expectedProvenanceHost);
+    assert.match(row.label_limitation, /does not (?:quantify|attribute)/i);
     assert.ok(["direct", "indeterminate"].includes(row.baseline_scan.level));
   }
   assert.equal(bolt.filter((row) => row.baseline_scan.level === "direct").length, 1);
@@ -108,4 +126,11 @@ test("treats separate tenants on a shared deployment platform as holdout overlap
   });
   const result = validateDevelopmentExtension({ manifest: candidate, existingDevelopment, holdout: holdoutRaw.flattenedResults });
   assert.ok(result.errors.some((error) => error.includes("target host overlaps the completed holdout")));
+});
+
+test("rejects two Development rows from the same reviewed project family", () => {
+  const candidate = structuredClone(manifest);
+  candidate.samples[1].project_family_id = candidate.samples[0].project_family_id;
+  const result = validateDevelopmentExtension({ manifest: candidate, existingDevelopment, holdout: holdoutRaw.flattenedResults });
+  assert.ok(result.errors.some((error) => error.includes("project_family_id overlaps")));
 });

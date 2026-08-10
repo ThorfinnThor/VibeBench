@@ -84,7 +84,7 @@ export default function Home() {
   return <main>
     <header className="topbar">
       <a className="brand" href="#top" aria-label="VibeBench Startseite"><span className="brand-mark">VB</span><strong>VibeBench</strong></a>
-      <span className="version">Evidence scanner · v0.1.1</span>
+      <span className="version">Evidence scanner · v0.1.2</span>
     </header>
 
     <section className="hero" id="top">
