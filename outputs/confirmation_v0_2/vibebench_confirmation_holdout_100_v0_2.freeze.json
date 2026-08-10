@@ -1,0 +1,46 @@
+{
+  "schema_version": "v0.2-confirmation-freeze",
+  "frozen_at": "2026-08-10T14:56:46.292Z",
+  "status": "FROZEN_UNOPENED",
+  "rows": 100,
+  "labels": {
+    "AI": 50,
+    "HUMAN": 50
+  },
+  "model_score_opened": false,
+  "rule": {
+    "threshold": 0.5,
+    "technical_retry_limit": 1,
+    "precision_gate": 0.8,
+    "recall_gate": 0.8
+  },
+  "files": {
+    "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.json": {
+      "sha256": "6484828d354c4c8f17841cc918db114a8c41036c4568a8296dcd008ce0e5d6c1"
+    },
+    "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.scan-queue.json": {
+      "sha256": "6f09b935ae9bb7ab4d1ea1cc57ef1512966b3701485a04c48294008655a9abd6"
+    },
+    "outputs/development_v0_2/vibebench_development_v0_2_candidate_model.json": {
+      "sha256": "b20171ebc0c95db0b5e28372388e2318275a3c447ebf3222aa1a93a3d388b4e4"
+    },
+    "lib/development-v0_2-candidate.mjs": {
+      "sha256": "04d1f838657829fb52b10213776a9487baf302418297befbfcf9d79ae5885394"
+    },
+    "lib/portable-page-metrics.mjs": {
+      "sha256": "2ebde988892507e766323918aff90a9d6d1a89db8a276219154e842c46cbc4e5"
+    },
+    "lib/analyze-html.mjs": {
+      "sha256": "ba916e02693465e8372750e9575baac1101c286dbd2e2863b7c247baba14f8f3"
+    },
+    "lib/extract-assets.mjs": {
+      "sha256": "19e6209d7a4bbcdad1733587ec6c73d143537e53909898a8d8d1c2cbc82d645e"
+    },
+    "scripts/run-confirmation-v0_2.mjs": {
+      "sha256": "2bd14d40fb165df505625beeb92e919ac696a096290d1a043e7eceb6e567f251"
+    },
+    "scripts/evaluate-confirmation-v0_2.mjs": {
+      "sha256": "9b8a3e7b386e7cf7e3af0d42a6070409f99df7eacc1f2ddebe73166458002d58"
+    }
+  }
+}

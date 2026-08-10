@@ -1,0 +1,1834 @@
+{
+  "schema_version": "v0.4-confirmation-holdout",
+  "generated_at": "2026-08-10T15:51:19.044Z",
+  "status": "READY_TO_FREEZE",
+  "independent_confirmation": true,
+  "model_scores_inspected_before_selection": false,
+  "previous_holdouts_used_for_tuning": false,
+  "selection_rule": "Round-robin reachable AI across six declared builder buckets; first 50 reachable Human controls by stars; no model scores.",
+  "summary": {
+    "total": 100,
+    "ai": 50,
+    "human": 50,
+    "strata": {
+      "CURSOR": 12,
+      "CLAUDE_CODE": 12,
+      "WINDSURF": 1,
+      "CODEX": 12,
+      "NATIVE_BUILDER": 11,
+      "COPILOT": 2,
+      "HUMAN_PRE_CUTOFF_REPO": 50
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "CONF4-001",
+      "label": "AI",
+      "target_url": "https://www.eurouter.ai/",
+      "project_family_id": "eurouter.ai",
+      "project_name": "EUrouter",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2401",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2401,
+        "submitted_at": "2026-08-09T01:48:29.82319+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-002",
+      "label": "AI",
+      "target_url": "https://app.contentiq.net/",
+      "project_family_id": "app.contentiq.net",
+      "project_name": "ContentIQ",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2409",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, OpenAI GPT-5.5, Claude Code, Vercel, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2409,
+        "submitted_at": "2026-08-10T13:49:51.043138+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-003",
+      "label": "AI",
+      "target_url": "https://freesoragenerator.com/",
+      "project_family_id": "freesoragenerator.com",
+      "project_name": "Grok Imagine Free generator - FSG AI",
+      "stratum": "WINDSURF",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2406",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, OpenAI GPT-5.5, GitHub Copilot, Windsurf, Vercel, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2406,
+        "submitted_at": "2026-08-10T02:32:36.995613+00:00",
+        "builder_evidence": [
+          "GitHub Copilot",
+          "Windsurf"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-004",
+      "label": "AI",
+      "target_url": "https://tripmaven.org/",
+      "project_family_id": "tripmaven.org",
+      "project_name": "TripMaven",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2334",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4, Codex, Other / Custom.",
+      "source_metadata": {
+        "project_id": 2334,
+        "submitted_at": "2026-07-28T09:30:49.652334+00:00",
+        "builder_evidence": [
+          "Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-005",
+      "label": "AI",
+      "target_url": "https://payzum.com/",
+      "project_family_id": "payzum.com",
+      "project_name": "Payzum",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2407",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Replit Agent, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2407,
+        "submitted_at": "2026-08-10T05:41:11.825139+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-006",
+      "label": "AI",
+      "target_url": "https://pixfinder.app/",
+      "project_family_id": "pixfinder.app",
+      "project_name": "PixFinder",
+      "stratum": "COPILOT",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2364",
+      "provenance_summary": "Public approved submission metadata lists: GitHub Copilot, Other / Custom.",
+      "source_metadata": {
+        "project_id": 2364,
+        "submitted_at": "2026-08-01T11:19:00.997812+00:00",
+        "builder_evidence": [
+          "GitHub Copilot"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-007",
+      "label": "AI",
+      "target_url": "https://unorouter.com/",
+      "project_family_id": "unorouter.com",
+      "project_name": "UnoRouter",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2400",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, OpenAI GPT-5.6, Claude Code, Cursor.",
+      "source_metadata": {
+        "project_id": 2400,
+        "submitted_at": "2026-08-08T20:48:43.883231+00:00",
+        "builder_evidence": [
+          "Claude Code",
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-008",
+      "label": "AI",
+      "target_url": "https://vibecodedit.com/",
+      "project_family_id": "vibecodedit.com",
+      "project_name": "Vibe Coded It",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2402",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2402,
+        "submitted_at": "2026-08-09T03:25:07.02577+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-009",
+      "label": "AI",
+      "target_url": "https://greatapps.net/",
+      "project_family_id": "greatapps.net",
+      "project_name": "GreatApps",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2332",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4, Codex, Other / Custom.",
+      "source_metadata": {
+        "project_id": 2332,
+        "submitted_at": "2026-07-28T07:05:16.284641+00:00",
+        "builder_evidence": [
+          "Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-010",
+      "label": "AI",
+      "target_url": "https://owni.chat/",
+      "project_family_id": "owni.chat",
+      "project_name": "Owni.chat",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2371",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Replit Agent, Vercel.",
+      "source_metadata": {
+        "project_id": 2371,
+        "submitted_at": "2026-08-03T14:44:22.759692+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-011",
+      "label": "AI",
+      "target_url": "https://kanjilens.com/",
+      "project_family_id": "kanjilens.com",
+      "project_name": "Kanji Lens: The Japanese Manga Translator & Learning Tool",
+      "stratum": "COPILOT",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2257",
+      "provenance_summary": "Public approved submission metadata lists: Google Gemini 3.1 Pro, GitHub Copilot, Railway.",
+      "source_metadata": {
+        "project_id": 2257,
+        "submitted_at": "2026-07-17T00:05:01.082666+00:00",
+        "builder_evidence": [
+          "GitHub Copilot"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-012",
+      "label": "AI",
+      "target_url": "https://www.raseedapp.com/",
+      "project_family_id": "raseedapp.com",
+      "project_name": "Raseed",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2391",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Replit Agent, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2391,
+        "submitted_at": "2026-08-07T05:44:54.887055+00:00",
+        "builder_evidence": [
+          "Cursor",
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-013",
+      "label": "AI",
+      "target_url": "https://payrollflow.io/",
+      "project_family_id": "payrollflow.io",
+      "project_name": "PayrollFlow",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2399",
+      "provenance_summary": "Public approved submission metadata lists: Replit Agent, Claude Code, Vercel, Supabase.",
+      "source_metadata": {
+        "project_id": 2399,
+        "submitted_at": "2026-08-08T15:49:39.681213+00:00",
+        "builder_evidence": [
+          "Replit Agent",
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-014",
+      "label": "AI",
+      "target_url": "https://xpenser.cleverbrush.com/",
+      "project_family_id": "xpenser.cleverbrush.com",
+      "project_name": "xpenser",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2331",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Codex, Other / Custom, Other / Custom.",
+      "source_metadata": {
+        "project_id": 2331,
+        "submitted_at": "2026-07-28T05:54:45.466582+00:00",
+        "builder_evidence": [
+          "Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-015",
+      "label": "AI",
+      "target_url": "https://www.digipay.guru/mobile-money-payment-solutions/",
+      "project_family_id": "digipay.guru",
+      "project_name": "Mobile Money Payment Solutions | White Label Mobile Money Platform for Banks & FinTechs",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2349",
+      "provenance_summary": "Public approved submission metadata lists: Lovable, Augment Code, Cloudflare, Vercel.",
+      "source_metadata": {
+        "project_id": 2349,
+        "submitted_at": "2026-07-30T12:38:53.53912+00:00",
+        "builder_evidence": [
+          "Lovable"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-016",
+      "label": "AI",
+      "target_url": "https://www.predictobets.com/",
+      "project_family_id": "predictobets.com",
+      "project_name": "PredictoBets",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2388",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2388,
+        "submitted_at": "2026-08-06T03:45:08.968433+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-017",
+      "label": "AI",
+      "target_url": "https://www.paintops.app/",
+      "project_family_id": "paintops.app",
+      "project_name": "PaintOps",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2390",
+      "provenance_summary": "Public approved submission metadata lists: Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2390,
+        "submitted_at": "2026-08-06T13:24:07.077714+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-018",
+      "label": "AI",
+      "target_url": "https://trushot.app/",
+      "project_family_id": "trushot.app",
+      "project_name": "Trushot AI",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2284",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Codex, Render.",
+      "source_metadata": {
+        "project_id": 2284,
+        "submitted_at": "2026-07-20T08:31:57.525796+00:00",
+        "builder_evidence": [
+          "Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-019",
+      "label": "AI",
+      "target_url": "https://www.trophyjar.com/",
+      "project_family_id": "trophyjar.com",
+      "project_name": "Trophy Jar",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2327",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Lovable, Vercel.",
+      "source_metadata": {
+        "project_id": 2327,
+        "submitted_at": "2026-07-26T19:55:25.258614+00:00",
+        "builder_evidence": [
+          "Lovable"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-020",
+      "label": "AI",
+      "target_url": "https://viston.tech/",
+      "project_family_id": "viston.tech",
+      "project_name": "Viston AI",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2383",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2383,
+        "submitted_at": "2026-08-05T09:27:15.677058+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-021",
+      "label": "AI",
+      "target_url": "https://cloutstack.net/",
+      "project_family_id": "cloutstack.net",
+      "project_name": "CloutStack",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2387",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Opus 4.8, Claude Code, Vercel, Supabase.",
+      "source_metadata": {
+        "project_id": 2387,
+        "submitted_at": "2026-08-06T02:51:21.414899+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-022",
+      "label": "AI",
+      "target_url": "https://betterdb.com/",
+      "project_family_id": "betterdb.com",
+      "project_name": "BetterDB",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2244",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, OpenAI Codex, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2244,
+        "submitted_at": "2026-07-14T16:14:19.338946+00:00",
+        "builder_evidence": [
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-023",
+      "label": "AI",
+      "target_url": "https://zensched.app/",
+      "project_family_id": "zensched.app",
+      "project_name": "ZenSched",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2273",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, Google Gemini 3.5 Flash, Lovable, Cloudflare, Supabase.",
+      "source_metadata": {
+        "project_id": 2273,
+        "submitted_at": "2026-07-19T14:18:24.791323+00:00",
+        "builder_evidence": [
+          "Lovable"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-024",
+      "label": "AI",
+      "target_url": "https://onboardhive.com/",
+      "project_family_id": "onboardhive.com",
+      "project_name": "OnboardHive",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2381",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2381,
+        "submitted_at": "2026-08-05T05:55:45.096608+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-025",
+      "label": "AI",
+      "target_url": "https://pixpunk.ai/",
+      "project_family_id": "pixpunk.ai",
+      "project_name": "PixPunk",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2386",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Opus 4.8, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2386,
+        "submitted_at": "2026-08-05T20:48:18.773423+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-026",
+      "label": "AI",
+      "target_url": "https://www.debateee.com/",
+      "project_family_id": "debateee.com",
+      "project_name": "Debate",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2226",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Gemini CLI, OpenAI Codex, Vercel, Supabase.",
+      "source_metadata": {
+        "project_id": 2226,
+        "submitted_at": "2026-07-13T06:51:45.504215+00:00",
+        "builder_evidence": [
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-027",
+      "label": "AI",
+      "target_url": "https://www.autohype.ai/",
+      "project_family_id": "autohype.ai",
+      "project_name": "Autohype",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2272",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Replit Agent, Vercel.",
+      "source_metadata": {
+        "project_id": 2272,
+        "submitted_at": "2026-07-19T11:19:28.597079+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-028",
+      "label": "AI",
+      "target_url": "https://totext.app/",
+      "project_family_id": "totext.app",
+      "project_name": "MP3 to Transcript",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2376",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4 mini, Cursor, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2376,
+        "submitted_at": "2026-08-04T07:19:56.791184+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-029",
+      "label": "AI",
+      "target_url": "https://thefancyfonts.com/",
+      "project_family_id": "thefancyfonts.com",
+      "project_name": "TheFancyFonts",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2379",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2379,
+        "submitted_at": "2026-08-04T16:57:49.097221+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-030",
+      "label": "AI",
+      "target_url": "https://pling.banegasn.dev/",
+      "project_family_id": "pling.banegasn.dev",
+      "project_name": "pling",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2223",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI Codex, OpenAI Codex, Railway.",
+      "source_metadata": {
+        "project_id": 2223,
+        "submitted_at": "2026-07-12T19:46:25.280717+00:00",
+        "builder_evidence": [
+          "OpenAI Codex",
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-031",
+      "label": "AI",
+      "target_url": "https://fintract.ai/",
+      "project_family_id": "fintract.ai",
+      "project_name": "FinTract",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2233",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4, Replit Agent, Supabase.",
+      "source_metadata": {
+        "project_id": 2233,
+        "submitted_at": "2026-07-13T15:03:37.457821+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-032",
+      "label": "AI",
+      "target_url": "https://namescombiner.us/couple-name-combiner/",
+      "project_family_id": "namescombiner.us",
+      "project_name": "Couple Name Combiner",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2373",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, OpenAI GPT-5.4, Cursor, Claude Code, Vercel, Neon.",
+      "source_metadata": {
+        "project_id": 2373,
+        "submitted_at": "2026-08-03T17:23:56.617693+00:00",
+        "builder_evidence": [
+          "Cursor",
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-033",
+      "label": "AI",
+      "target_url": "https://in.bio/",
+      "project_family_id": "in.bio",
+      "project_name": "InBio",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2361",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2361,
+        "submitted_at": "2026-08-01T08:53:43.503776+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-034",
+      "label": "AI",
+      "target_url": "https://www.vinthelper.app/",
+      "project_family_id": "vinthelper.app",
+      "project_name": "VintHelper.app",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2211",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI Codex, OpenAI GPT-5.5, OpenAI Codex, Cloudflare, Supabase.",
+      "source_metadata": {
+        "project_id": 2211,
+        "submitted_at": "2026-07-10T18:05:39.240431+00:00",
+        "builder_evidence": [
+          "OpenAI Codex",
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-035",
+      "label": "AI",
+      "target_url": "https://watchpolice.com/",
+      "project_family_id": "watchpolice.com",
+      "project_name": "WatchPolice",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2216",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Replit Agent, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2216,
+        "submitted_at": "2026-07-11T10:21:33.903126+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-036",
+      "label": "AI",
+      "target_url": "https://nicknamegenerator.us/",
+      "project_family_id": "nicknamegenerator.us",
+      "project_name": "Nickname Finder",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2372",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, OpenAI GPT-5.4 mini, Cursor, Claude Code, Vercel, Supabase.",
+      "source_metadata": {
+        "project_id": 2372,
+        "submitted_at": "2026-08-03T17:22:52.152802+00:00",
+        "builder_evidence": [
+          "Cursor",
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-037",
+      "label": "AI",
+      "target_url": "https://getstaffscheduling.ca/",
+      "project_family_id": "getstaffscheduling.ca",
+      "project_name": "Staff Scheduling – Employee Scheduling Software",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2337",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Sonnet 5, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2337,
+        "submitted_at": "2026-07-28T13:22:58.206648+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-038",
+      "label": "AI",
+      "target_url": "https://hitkeep.com/",
+      "project_family_id": "hitkeep.com",
+      "project_name": "HitKeep",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2191",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI Codex, OpenAI Codex, AWS Bedrock / SageMaker.",
+      "source_metadata": {
+        "project_id": 2191,
+        "submitted_at": "2026-07-08T16:21:51.606845+00:00",
+        "builder_evidence": [
+          "OpenAI Codex",
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-039",
+      "label": "AI",
+      "target_url": "https://www.deeplead.io/",
+      "project_family_id": "deeplead.io",
+      "project_name": "Deeplead",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2215",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Replit Agent, Vercel.",
+      "source_metadata": {
+        "project_id": 2215,
+        "submitted_at": "2026-07-11T08:40:55.943072+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-040",
+      "label": "AI",
+      "target_url": "https://www.simplepostgresql.com/",
+      "project_family_id": "simplepostgresql.com",
+      "project_name": "Simple PostgreSQL",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2366",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2366,
+        "submitted_at": "2026-08-02T15:05:55.39245+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-041",
+      "label": "AI",
+      "target_url": "https://pandaexpressnutritionfacts.us/",
+      "project_family_id": "pandaexpressnutritionfacts.us",
+      "project_name": "Panda Express Nutrition",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2321",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Anthropic Claude Sonnet 5, Claude Code, Gemini CLI, Cloudflare, Render.",
+      "source_metadata": {
+        "project_id": 2321,
+        "submitted_at": "2026-07-25T17:06:37.032626+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-042",
+      "label": "AI",
+      "target_url": "https://www.graffiti-generator.art/",
+      "project_family_id": "graffiti-generator.art",
+      "project_name": "AI Graffiti Generator",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2188",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, OpenAI Codex, Vercel, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2188,
+        "submitted_at": "2026-07-08T07:05:04.441282+00:00",
+        "builder_evidence": [
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-043",
+      "label": "AI",
+      "target_url": "https://merchantoria.com/",
+      "project_family_id": "merchantoria.com",
+      "project_name": "Merchantoria",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2190",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4 mini, Replit Agent, Vercel.",
+      "source_metadata": {
+        "project_id": 2190,
+        "submitted_at": "2026-07-08T15:30:06.481705+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-044",
+      "label": "AI",
+      "target_url": "https://www.lumisource.io/",
+      "project_family_id": "lumisource.io",
+      "project_name": "LumiSource",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2353",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2353,
+        "submitted_at": "2026-07-31T05:48:44.521951+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-045",
+      "label": "AI",
+      "target_url": "https://toolsnetwork.co/",
+      "project_family_id": "toolsnetwork.co",
+      "project_name": "Tools Network",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2316",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Opus 4.8, Claude Code, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2316,
+        "submitted_at": "2026-07-24T07:21:17.484422+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-046",
+      "label": "AI",
+      "target_url": "https://aigeneratoremail.com/",
+      "project_family_id": "aigeneratoremail.com",
+      "project_name": "Email Generator",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2186",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.4 mini, OpenAI Codex, Cloudflare.",
+      "source_metadata": {
+        "project_id": 2186,
+        "submitted_at": "2026-07-08T03:36:36.404806+00:00",
+        "builder_evidence": [
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-047",
+      "label": "AI",
+      "target_url": "https://growcreator.pro/",
+      "project_family_id": "growcreator.pro",
+      "project_name": "Grow Creator",
+      "stratum": "NATIVE_BUILDER",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2152",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, Replit Agent, Vercel.",
+      "source_metadata": {
+        "project_id": 2152,
+        "submitted_at": "2026-07-02T14:19:43.299232+00:00",
+        "builder_evidence": [
+          "Replit Agent"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-048",
+      "label": "AI",
+      "target_url": "https://biostackiq.com/",
+      "project_family_id": "biostackiq.com",
+      "project_name": "BioStackIQ",
+      "stratum": "CURSOR",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2352",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.6, Cursor, Vercel.",
+      "source_metadata": {
+        "project_id": 2352,
+        "submitted_at": "2026-07-31T04:34:30.589606+00:00",
+        "builder_evidence": [
+          "Cursor"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-049",
+      "label": "AI",
+      "target_url": "https://facesage.app/",
+      "project_family_id": "facesage.app",
+      "project_name": "FaceSage",
+      "stratum": "CLAUDE_CODE",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2314",
+      "provenance_summary": "Public approved submission metadata lists: Anthropic Claude Opus 4.8, Claude Code, Fly.io.",
+      "source_metadata": {
+        "project_id": 2314,
+        "submitted_at": "2026-07-24T00:18:04.338603+00:00",
+        "builder_evidence": [
+          "Claude Code"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-050",
+      "label": "AI",
+      "target_url": "https://themicrodose.ai/",
+      "project_family_id": "themicrodose.ai",
+      "project_name": "The Microdose AI",
+      "stratum": "CODEX",
+      "provenance_type": "independent_public_approved_submission",
+      "provenance_url": "https://hot100.ai/project/2175",
+      "provenance_summary": "Public approved submission metadata lists: OpenAI GPT-5.5, OpenAI Codex, Vercel.",
+      "source_metadata": {
+        "project_id": 2175,
+        "submitted_at": "2026-07-05T15:26:55.41767+00:00",
+        "builder_evidence": [
+          "OpenAI Codex"
+        ]
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-051",
+      "label": "HUMAN",
+      "target_url": "https://sparkleshare.org/",
+      "project_family_id": "sparkleshare.org",
+      "project_name": "SparkleShare",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/hbons/SparkleShare",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "hbons/SparkleShare",
+        "created_at": "2010-10-02T15:53:38Z",
+        "stars": 4972
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-052",
+      "label": "HUMAN",
+      "target_url": "https://fluidframework.com/",
+      "project_family_id": "fluidframework.com",
+      "project_name": "FluidFramework",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/microsoft/FluidFramework",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "microsoft/FluidFramework",
+        "created_at": "2019-08-22T17:37:57Z",
+        "stars": 4944
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-053",
+      "label": "HUMAN",
+      "target_url": "https://markwhen.com/",
+      "project_family_id": "markwhen.com",
+      "project_name": "markwhen",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/mark-when/markwhen",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "mark-when/markwhen",
+        "created_at": "2021-05-20T22:19:15Z",
+        "stars": 4865
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-054",
+      "label": "HUMAN",
+      "target_url": "https://liveblocks.io/",
+      "project_family_id": "liveblocks.io",
+      "project_name": "liveblocks",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/liveblocks/liveblocks",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "liveblocks/liveblocks",
+        "created_at": "2021-05-25T15:25:51Z",
+        "stars": 4687
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-055",
+      "label": "HUMAN",
+      "target_url": "https://portfoliooptimization.org/",
+      "project_family_id": "portfoliooptimization.org",
+      "project_name": "Riskfolio-Lib",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/dcajasn/Riskfolio-Lib",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "dcajasn/Riskfolio-Lib",
+        "created_at": "2020-03-02T19:49:06Z",
+        "stars": 4436
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-056",
+      "label": "HUMAN",
+      "target_url": "https://pypi.org/project/mplfinance/",
+      "project_family_id": "pypi.org",
+      "project_name": "mplfinance",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/matplotlib/mplfinance",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "matplotlib/mplfinance",
+        "created_at": "2019-12-05T16:32:32Z",
+        "stars": 4420
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-057",
+      "label": "HUMAN",
+      "target_url": "https://www.freeplane.org/",
+      "project_family_id": "freeplane.org",
+      "project_name": "freeplane",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/freeplane/freeplane",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "freeplane/freeplane",
+        "created_at": "2012-09-13T08:55:51Z",
+        "stars": 4287
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-058",
+      "label": "HUMAN",
+      "target_url": "https://docs.projectile.mx/",
+      "project_family_id": "docs.projectile.mx",
+      "project_name": "projectile",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/bbatsov/projectile",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "bbatsov/projectile",
+        "created_at": "2011-07-31T19:12:31Z",
+        "stars": 4229
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-059",
+      "label": "HUMAN",
+      "target_url": "https://wireflow.co/",
+      "project_family_id": "wireflow.co",
+      "project_name": "wireflow",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vanila-io/wireflow",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "vanila-io/wireflow",
+        "created_at": "2017-11-05T15:40:07Z",
+        "stars": 4160
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-060",
+      "label": "HUMAN",
+      "target_url": "https://klinecharts.com/",
+      "project_family_id": "klinecharts.com",
+      "project_name": "KLineChart",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/klinecharts/KLineChart",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "klinecharts/KLineChart",
+        "created_at": "2019-05-19T09:04:23Z",
+        "stars": 4041
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-061",
+      "label": "HUMAN",
+      "target_url": "http://hikyuu.org/",
+      "project_family_id": "hikyuu.org",
+      "project_name": "hikyuu",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/fasiondog/hikyuu",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "fasiondog/hikyuu",
+        "created_at": "2012-07-18T23:21:42Z",
+        "stars": 3426
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-062",
+      "label": "HUMAN",
+      "target_url": "https://terminusdb.org/",
+      "project_family_id": "terminusdb.org",
+      "project_name": "terminusdb",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/terminusdb/terminusdb",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "terminusdb/terminusdb",
+        "created_at": "2019-07-23T16:15:27Z",
+        "stars": 3377
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-063",
+      "label": "HUMAN",
+      "target_url": "https://www.espocrm.com/",
+      "project_family_id": "espocrm.com",
+      "project_name": "espocrm",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/espocrm/espocrm",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "espocrm/espocrm",
+        "created_at": "2014-09-25T13:38:46Z",
+        "stars": 3210
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-064",
+      "label": "HUMAN",
+      "target_url": "http://www.onlyoffice.com/",
+      "project_family_id": "onlyoffice.com",
+      "project_name": "CommunityServer",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ONLYOFFICE/CommunityServer",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "ONLYOFFICE/CommunityServer",
+        "created_at": "2014-07-05T17:57:33Z",
+        "stars": 3155
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-065",
+      "label": "HUMAN",
+      "target_url": "https://www.invoiceplane.com/",
+      "project_family_id": "invoiceplane.com",
+      "project_name": "InvoicePlane",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/InvoicePlane/InvoicePlane",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "InvoicePlane/InvoicePlane",
+        "created_at": "2014-05-21T12:52:29Z",
+        "stars": 3108
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-066",
+      "label": "HUMAN",
+      "target_url": "https://sfu.mirotalk.com/",
+      "project_family_id": "sfu.mirotalk.com",
+      "project_name": "mirotalksfu",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/miroslavpejic85/mirotalksfu",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "miroslavpejic85/mirotalksfu",
+        "created_at": "2021-08-17T09:24:08Z",
+        "stars": 3078
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-067",
+      "label": "HUMAN",
+      "target_url": "https://igniterealtime.org/projects/openfire/",
+      "project_family_id": "igniterealtime.org",
+      "project_name": "Openfire",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/igniterealtime/Openfire",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "igniterealtime/Openfire",
+        "created_at": "2014-04-07T09:12:33Z",
+        "stars": 3054
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-068",
+      "label": "HUMAN",
+      "target_url": "https://serversideup.net/open-source/financial-freedom/",
+      "project_family_id": "serversideup.net",
+      "project_name": "financial-freedom",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/serversideup/financial-freedom",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "serversideup/financial-freedom",
+        "created_at": "2021-03-12T00:56:03Z",
+        "stars": 2896
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-069",
+      "label": "HUMAN",
+      "target_url": "https://www.teleconsole.com/",
+      "project_family_id": "teleconsole.com",
+      "project_name": "teleconsole",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/gravitational/teleconsole",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "gravitational/teleconsole",
+        "created_at": "2016-08-28T22:17:20Z",
+        "stars": 2762
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-070",
+      "label": "HUMAN",
+      "target_url": "http://finmindtrade.com/",
+      "project_family_id": "finmindtrade.com",
+      "project_name": "FinMind",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/FinMind/FinMind",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "FinMind/FinMind",
+        "created_at": "2018-12-16T07:16:25Z",
+        "stars": 2750
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-071",
+      "label": "HUMAN",
+      "target_url": "https://xalpha.readthedocs.io/",
+      "project_family_id": "xalpha.readthedocs.io",
+      "project_name": "xalpha",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/refraction-ray/xalpha",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "refraction-ray/xalpha",
+        "created_at": "2018-08-02T11:12:10Z",
+        "stars": 2675
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-072",
+      "label": "HUMAN",
+      "target_url": "https://organice.200ok.ch/",
+      "project_family_id": "organice.200ok.ch",
+      "project_name": "organice",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/200ok-ch/organice",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "200ok-ch/organice",
+        "created_at": "2019-08-23T06:30:56Z",
+        "stars": 2659
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-073",
+      "label": "HUMAN",
+      "target_url": "https://www.tryquiet.org/",
+      "project_family_id": "tryquiet.org",
+      "project_name": "quiet",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/TryQuiet/quiet",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "TryQuiet/quiet",
+        "created_at": "2021-12-14T13:40:02Z",
+        "stars": 2632
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-074",
+      "label": "HUMAN",
+      "target_url": "https://www.5kcrm.com/",
+      "project_family_id": "5kcrm.com",
+      "project_name": "WukongCRM-11.0-JAVA",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/WuKongOpenSource/WukongCRM-11.0-JAVA",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "WuKongOpenSource/WukongCRM-11.0-JAVA",
+        "created_at": "2021-04-06T10:58:55Z",
+        "stars": 2440
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-075",
+      "label": "HUMAN",
+      "target_url": "https://www.documize.com/",
+      "project_family_id": "documize.com",
+      "project_name": "community",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/documize/community",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "documize/community",
+        "created_at": "2016-04-29T23:35:07Z",
+        "stars": 2415
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-076",
+      "label": "HUMAN",
+      "target_url": "http://metasfresh.com/en",
+      "project_family_id": "metasfresh.com",
+      "project_name": "metasfresh",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/metasfresh/metasfresh",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "metasfresh/metasfresh",
+        "created_at": "2015-10-06T15:38:11Z",
+        "stars": 2397
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-077",
+      "label": "HUMAN",
+      "target_url": "http://aka.ms/vsls",
+      "project_family_id": "aka.ms",
+      "project_name": "live-share",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/microsoft/live-share",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "microsoft/live-share",
+        "created_at": "2017-09-14T16:16:46Z",
+        "stars": 2382
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-078",
+      "label": "HUMAN",
+      "target_url": "https://bottlecrm.io/",
+      "project_family_id": "bottlecrm.io",
+      "project_name": "Django-CRM",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Django-CRM/Django-CRM",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "Django-CRM/Django-CRM",
+        "created_at": "2017-05-24T11:15:47Z",
+        "stars": 2380
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-079",
+      "label": "HUMAN",
+      "target_url": "https://fineract.apache.org/",
+      "project_family_id": "fineract.apache.org",
+      "project_name": "fineract",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/apache/fineract",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "apache/fineract",
+        "created_at": "2015-12-22T08:00:06Z",
+        "stars": 2366
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-080",
+      "label": "HUMAN",
+      "target_url": "http://bulbea.readthedocs.io/",
+      "project_family_id": "bulbea.readthedocs.io",
+      "project_name": "bulbea",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/achillesrasquinha/bulbea",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "achillesrasquinha/bulbea",
+        "created_at": "2017-03-09T06:11:06Z",
+        "stars": 2321
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-081",
+      "label": "HUMAN",
+      "target_url": "https://awesome-streamlit.org/",
+      "project_family_id": "awesome-streamlit.org",
+      "project_name": "awesome-streamlit",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/MarcSkovMadsen/awesome-streamlit",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "MarcSkovMadsen/awesome-streamlit",
+        "created_at": "2019-10-06T02:07:49Z",
+        "stars": 2279
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-082",
+      "label": "HUMAN",
+      "target_url": "http://moneymanagerex.org/",
+      "project_family_id": "moneymanagerex.org",
+      "project_name": "moneymanagerex",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/moneymanagerex/moneymanagerex",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "moneymanagerex/moneymanagerex",
+        "created_at": "2014-05-23T17:25:10Z",
+        "stars": 2247
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-083",
+      "label": "HUMAN",
+      "target_url": "http://matterwiki.com/",
+      "project_family_id": "matterwiki.com",
+      "project_name": "Matterwiki",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Matterwiki/Matterwiki",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "Matterwiki/Matterwiki",
+        "created_at": "2016-08-18T05:15:34Z",
+        "stars": 2095
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-084",
+      "label": "HUMAN",
+      "target_url": "https://twake.app/",
+      "project_family_id": "twake.app",
+      "project_name": "Twake",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/linagora/Twake",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "linagora/Twake",
+        "created_at": "2020-06-13T11:17:32Z",
+        "stars": 1923
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-085",
+      "label": "HUMAN",
+      "target_url": "https://ai4finance.org/",
+      "project_family_id": "ai4finance.org",
+      "project_name": "FinRL-Meta",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/AI4Finance-Foundation/FinRL-Meta",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "AI4Finance-Foundation/FinRL-Meta",
+        "created_at": "2021-02-16T11:30:17Z",
+        "stars": 1920
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-086",
+      "label": "HUMAN",
+      "target_url": "https://www.k8s9.com/",
+      "project_family_id": "k8s9.com",
+      "project_name": "oms-erp",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/FJ-OMS/oms-erp",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "FJ-OMS/oms-erp",
+        "created_at": "2022-05-27T05:36:23Z",
+        "stars": 1909
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-087",
+      "label": "HUMAN",
+      "target_url": "https://lumibot.lumiwealth.com/",
+      "project_family_id": "lumibot.lumiwealth.com",
+      "project_name": "lumibot",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Lumiwealth/lumibot",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "Lumiwealth/lumibot",
+        "created_at": "2020-09-10T10:00:16Z",
+        "stars": 1902
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-088",
+      "label": "HUMAN",
+      "target_url": "https://syncedstore.org/",
+      "project_family_id": "syncedstore.org",
+      "project_name": "SyncedStore",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/YousefED/SyncedStore",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "YousefED/SyncedStore",
+        "created_at": "2021-05-02T09:13:46Z",
+        "stars": 1864
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-089",
+      "label": "HUMAN",
+      "target_url": "https://avohq.io/",
+      "project_family_id": "avohq.io",
+      "project_name": "avo",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/avo-hq/avo",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "avo-hq/avo",
+        "created_at": "2020-04-26T09:31:53Z",
+        "stars": 1796
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-090",
+      "label": "HUMAN",
+      "target_url": "https://dephell.org/",
+      "project_family_id": "dephell.org",
+      "project_name": "dephell",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/dephell/dephell",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "dephell/dephell",
+        "created_at": "2018-08-31T17:39:18Z",
+        "stars": 1786
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-091",
+      "label": "HUMAN",
+      "target_url": "https://dj-stripe.dev/",
+      "project_family_id": "dj-stripe.dev",
+      "project_name": "dj-stripe",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/dj-stripe/dj-stripe",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "dj-stripe/dj-stripe",
+        "created_at": "2013-08-05T15:31:30Z",
+        "stars": 1786
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-092",
+      "label": "HUMAN",
+      "target_url": "https://nexustrade.io/",
+      "project_family_id": "nexustrade.io",
+      "project_name": "NextTrade",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/austin-starks/NextTrade",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "austin-starks/NextTrade",
+        "created_at": "2022-09-17T16:40:02Z",
+        "stars": 1777
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-093",
+      "label": "HUMAN",
+      "target_url": "https://rocket.chat/",
+      "project_family_id": "rocket.chat",
+      "project_name": "Rocket.Chat.Electron",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/RocketChat/Rocket.Chat.Electron",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "RocketChat/Rocket.Chat.Electron",
+        "created_at": "2015-07-08T16:56:41Z",
+        "stars": 1694
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-094",
+      "label": "HUMAN",
+      "target_url": "http://www.zentao.pm/",
+      "project_family_id": "zentao.pm",
+      "project_name": "zentaopms",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/easysoft/zentaopms",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "easysoft/zentaopms",
+        "created_at": "2011-01-30T11:33:01Z",
+        "stars": 1666
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-095",
+      "label": "HUMAN",
+      "target_url": "https://apiportal.koreainvestment.com/",
+      "project_family_id": "apiportal.koreainvestment.com",
+      "project_name": "open-trading-api",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/koreainvestment/open-trading-api",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "koreainvestment/open-trading-api",
+        "created_at": "2022-04-08T03:51:49Z",
+        "stars": 1553
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-096",
+      "label": "HUMAN",
+      "target_url": "http://twstock.readthedocs.io/",
+      "project_family_id": "twstock.readthedocs.io",
+      "project_name": "twstock",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/mlouielu/twstock",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "mlouielu/twstock",
+        "created_at": "2017-06-30T09:09:42Z",
+        "stars": 1503
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-097",
+      "label": "HUMAN",
+      "target_url": "https://alpaca.markets/sdks/python/getting_started.html",
+      "project_family_id": "alpaca.markets",
+      "project_name": "alpaca-py",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/alpacahq/alpaca-py",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "alpacahq/alpaca-py",
+        "created_at": "2022-02-19T23:10:34Z",
+        "stars": 1453
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-098",
+      "label": "HUMAN",
+      "target_url": "https://subethaedit.net/",
+      "project_family_id": "subethaedit.net",
+      "project_name": "SubEthaEdit",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/subethaedit/SubEthaEdit",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "subethaedit/SubEthaEdit",
+        "created_at": "2018-10-25T19:04:39Z",
+        "stars": 1430
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-099",
+      "label": "HUMAN",
+      "target_url": "https://www.miguelsanda.com/",
+      "project_family_id": "miguelsanda.com",
+      "project_name": "django-ledger",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/arrobalytics/django-ledger",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "arrobalytics/django-ledger",
+        "created_at": "2018-10-29T22:25:37Z",
+        "stars": 1373
+      },
+      "model_score_inspected_before_selection": false
+    },
+    {
+      "sample_id": "CONF4-100",
+      "label": "HUMAN",
+      "target_url": "https://neuronet.io/gantt-elastic/",
+      "project_family_id": "neuronet.io",
+      "project_name": "gantt-elastic",
+      "stratum": "HUMAN_PRE_CUTOFF_REPO",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/neuronetio/gantt-elastic",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_metadata": {
+        "repository": "neuronetio/gantt-elastic",
+        "created_at": "2018-06-23T11:36:30Z",
+        "stars": 1369
+      },
+      "model_score_inspected_before_selection": false
+    }
+  ]
+}

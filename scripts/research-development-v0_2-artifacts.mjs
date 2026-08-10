@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { extractSameOriginAssets } from "../lib/extract-assets.mjs";
+import { collectPortablePageMetrics } from "../lib/portable-page-metrics.mjs";
 
 const manifestPath = path.resolve("outputs/development_v0_2/vibebench_development_extension_40_v0_2.json");
 const frozenPath = path.resolve("outputs/development_v0_2/vibebench_development_v0_2_frozen_manifest.json");
@@ -126,42 +127,6 @@ function selectedHeaders(headers) {
   return selected;
 }
 
-function count(text, pattern) {
-  return (text.match(pattern) || []).length;
-}
-
-function pageMetrics(html, assets, fetchedAssets) {
-  const classValues = [...html.matchAll(/\sclass=["']([^"']*)["']/gi)].map((match) => match[1]);
-  const classTokens = classValues.flatMap((value) => value.trim().split(/\s+/).filter(Boolean));
-  const inlineScriptBytes = [...html.matchAll(/<script\b(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/gi)]
-    .reduce((total, match) => total + new TextEncoder().encode(match[1]).length, 0);
-  return {
-    script_tags: count(html, /<script\b/gi),
-    module_scripts: count(html, /<script\b[^>]*\btype=["']module["']/gi),
-    stylesheet_links: count(html, /<link\b[^>]*\brel=["'][^"']*stylesheet/gi),
-    preload_links: count(html, /<link\b[^>]*\brel=["'][^"']*(?:preload|modulepreload)/gi),
-    inline_styles: count(html, /\sstyle=["']/gi),
-    inline_script_bytes: inlineScriptBytes,
-    data_attributes: count(html, /\sdata-[\w-]+=/gi),
-    aria_attributes: count(html, /\saria-[\w-]+=/gi),
-    class_attributes: classValues.length,
-    class_tokens: classTokens.length,
-    unique_class_tokens: new Set(classTokens).size,
-    dom_tags: count(html, /<(?:main|section|article|aside|nav|header|footer|div|span|button|form|input|select|textarea|img|svg|h[1-6]|p|a)\b/gi),
-    forms: count(html, /<form\b/gi),
-    inputs: count(html, /<(?:input|select|textarea)\b/gi),
-    buttons: count(html, /<button\b/gi),
-    headings: count(html, /<h[1-6]\b/gi),
-    images: count(html, /<img\b/gi),
-    svgs: count(html, /<svg\b/gi),
-    same_origin_scripts_requested: assets.filter((asset) => asset.kind === "script").length,
-    same_origin_styles_requested: assets.filter((asset) => asset.kind === "stylesheet").length,
-    same_origin_scripts_fetched: fetchedAssets.filter((asset) => asset.kind === "script").length,
-    same_origin_styles_fetched: fetchedAssets.filter((asset) => asset.kind === "stylesheet").length,
-    asset_bytes_fetched: fetchedAssets.reduce((total, asset) => total + new TextEncoder().encode(asset.text).length, 0)
-  };
-}
-
 async function inspect(row) {
   try {
     const { response, html, resolvedUrl } = await fetchMain(row.target_url);
@@ -185,7 +150,7 @@ async function inspect(row) {
       assets_requested: assets.length,
       assets_fetched: assetTexts.length,
       asset_fetch_errors: settled.length - assetTexts.length,
-      page_metrics: pageMetrics(html, assets, fetchedAssets),
+      page_metrics: collectPortablePageMetrics({ html, assets, fetchedAssets }),
       headers: selectedHeaders(response.headers),
       generator_meta: generatorMeta,
       markers,

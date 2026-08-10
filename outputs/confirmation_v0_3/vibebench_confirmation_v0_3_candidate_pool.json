@@ -1,0 +1,4166 @@
+{
+  "schema_version": "v0.3-confirmation-candidate-pool",
+  "generated_at": "2026-08-10T15:33:23.703Z",
+  "purpose": "Independent confirmation acquisition before candidate scoring.",
+  "model_scores_inspected": false,
+  "previous_holdouts_used_for_tuning": false,
+  "sources": {
+    "ai": [
+      "2026-08-03",
+      "2026-07-27",
+      "2026-07-20",
+      "2026-07-13",
+      "2026-07-06",
+      "2026-06-29",
+      "2026-06-22",
+      "2026-06-15",
+      "2026-06-08",
+      "2026-06-01",
+      "2026-05-25",
+      "2026-05-18",
+      "2026-05-11",
+      "2026-05-04",
+      "2026-04-27",
+      "2026-04-20",
+      "2026-04-13",
+      "2026-04-06",
+      "2026-03-30",
+      "2026-03-23",
+      "2026-03-16",
+      "2026-03-09",
+      "2026-03-02",
+      "2026-02-23",
+      "2026-02-16",
+      "2026-02-09",
+      "2026-02-02",
+      "2026-01-26",
+      "2026-01-19",
+      "2026-01-12",
+      "2026-01-05",
+      "2025-12-29",
+      "2025-12-22",
+      "2025-12-15",
+      "2025-12-08",
+      "2025-12-01"
+    ],
+    "human": [
+      "topic:web-application created:<2022-11-30 stars:50..5000",
+      "topic:pwa created:<2022-11-30 stars:100..5000"
+    ]
+  },
+  "excluded_hosts": 468,
+  "summary": {
+    "inspected": 170,
+    "ready_ai": 79,
+    "ready_human": 71,
+    "selected_ai": 50,
+    "selected_human": 50
+  },
+  "candidates": [
+    {
+      "candidate_id": "CONF3-AI-001",
+      "label": "AI",
+      "target_url": "https://capyqr.com/",
+      "project_family_id": "capyqr.com",
+      "project_name": "CapyQr",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2301",
+      "provenance_summary": "Hot100 chart 2026-07-27 metadata lists: Anthropic Claude Opus 4.8, Claude Code, Cloudflare.",
+      "chart_week": "2026-07-27",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://capyqr.com/",
+        "resolved_host": "capyqr.com",
+        "html_bytes_checked": 104677,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-002",
+      "label": "AI",
+      "target_url": "https://soniqtools.com/",
+      "project_family_id": "soniqtools.com",
+      "project_name": "SoniqTools",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2302",
+      "provenance_summary": "Hot100 chart 2026-07-27 metadata lists: Anthropic Claude Opus 4.8, Claude Code, Cloudflare.",
+      "chart_week": "2026-07-27",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://soniqtools.com/",
+        "resolved_host": "soniqtools.com",
+        "html_bytes_checked": 67773,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-003",
+      "label": "AI",
+      "target_url": "https://gmcfix.com/",
+      "project_family_id": "gmcfix.com",
+      "project_name": "GMCFix.com",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2308",
+      "provenance_summary": "Hot100 chart 2026-07-27 metadata lists: OpenAI GPT-5.6, OpenAI GPT-5.5, Cursor, Vercel.",
+      "chart_week": "2026-07-27",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://gmcfix.com/",
+        "resolved_host": "gmcfix.com",
+        "html_bytes_checked": 99680,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-004",
+      "label": "AI",
+      "target_url": "https://getbantr.com/",
+      "project_family_id": "getbantr.com",
+      "project_name": "Bantr: Offline & Unlimited TTS for Mac",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1199",
+      "provenance_summary": "Hot100 chart 2026-07-13 metadata lists: Cursor.",
+      "chart_week": "2026-07-13",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://getbantr.com/",
+        "resolved_host": "getbantr.com",
+        "html_bytes_checked": 32208,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-005",
+      "label": "AI",
+      "target_url": "https://www.tryhooked.ai/",
+      "project_family_id": "tryhooked.ai",
+      "project_name": "Hooked AI",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/625",
+      "provenance_summary": "Hot100 chart 2026-07-13 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-07-13",
+      "source_rank": 100,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.hooked.so/",
+        "resolved_host": "hooked.so",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-006",
+      "label": "AI",
+      "target_url": "https://aidoctornotes.app/",
+      "project_family_id": "aidoctornotes.app",
+      "project_name": "AI DOctor Notes: Private doctor visit notes app for patients & caregivers",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1922",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.4, OpenAI GPT-5.4 mini, Cursor, Vercel, Next.js.",
+      "chart_week": "2026-07-06",
+      "source_rank": 100,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://aidoctornotes.app/",
+        "resolved_host": "aidoctornotes.app",
+        "html_bytes_checked": 43570,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-007",
+      "label": "AI",
+      "target_url": "https://donedone.run/",
+      "project_family_id": "donedone.run",
+      "project_name": "DoneDone ",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1842",
+      "provenance_summary": "Hot100 chart 2026-06-29 metadata lists: OpenAI GPT-5.4, Cursor, Supabase.",
+      "chart_week": "2026-06-29",
+      "source_rank": 90,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://donedone.run/",
+        "resolved_host": "donedone.run",
+        "html_bytes_checked": 1308,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-008",
+      "label": "AI",
+      "target_url": "https://lunokid.com/",
+      "project_family_id": "lunokid.com",
+      "project_name": "LunoKid",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1015",
+      "provenance_summary": "Hot100 chart 2026-06-29 metadata lists: Cursor.",
+      "chart_week": "2026-06-29",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://lunokid.com/",
+        "resolved_host": "lunokid.com",
+        "html_bytes_checked": 15036,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-009",
+      "label": "AI",
+      "target_url": "https://opticall.org/",
+      "project_family_id": "opticall.org",
+      "project_name": "Opticall Solutions",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Replit Agent"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2084",
+      "provenance_summary": "Hot100 chart 2026-06-29 metadata lists: OpenAI GPT-5.5, OpenAI GPT-5.4, Cursor, Replit Agent, Cloudflare, Google Vertex AI.",
+      "chart_week": "2026-06-29",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://opticall.org/",
+        "resolved_host": "opticall.org",
+        "html_bytes_checked": 111355,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-010",
+      "label": "AI",
+      "target_url": "https://www.adden.ai/",
+      "project_family_id": "adden.ai",
+      "project_name": "Adden",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/871",
+      "provenance_summary": "Hot100 chart 2026-06-29 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-29",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.spycraft.co/",
+        "resolved_host": "spycraft.co",
+        "html_bytes_checked": 230622,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-011",
+      "label": "AI",
+      "target_url": "https://sociavault.com/",
+      "project_family_id": "sociavault.com",
+      "project_name": "Sociavault",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/933",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-22",
+      "source_rank": 91,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://sociavault.com/",
+        "resolved_host": "sociavault.com",
+        "html_bytes_checked": 253412,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-012",
+      "label": "AI",
+      "target_url": "https://z-image.net/",
+      "project_family_id": "z-image.net",
+      "project_name": "Z Image",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/941",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-4.1 mini, Cursor, Next.js.",
+      "chart_week": "2026-06-22",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://z-image.net/",
+        "resolved_host": "z-image.net",
+        "html_bytes_checked": 389633,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-013",
+      "label": "AI",
+      "target_url": "https://privateclawd.com/",
+      "project_family_id": "privateclawd.com",
+      "project_name": "PrivateClawd",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1553",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-22",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://privateclawd.com/",
+        "resolved_host": "privateclawd.com",
+        "html_bytes_checked": 440025,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-014",
+      "label": "AI",
+      "target_url": "https://www.bonjournal.app/",
+      "project_family_id": "bonjournal.app",
+      "project_name": "Bonjournal",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1672",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5.4, Cursor, Next.js, Vercel.",
+      "chart_week": "2026-06-22",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.bonjournal.app/",
+        "resolved_host": "bonjournal.app",
+        "html_bytes_checked": 126628,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-015",
+      "label": "AI",
+      "target_url": "https://www.health3.app/",
+      "project_family_id": "health3.app",
+      "project_name": "Health3 AG",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/855",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: Cursor.",
+      "chart_week": "2026-06-22",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.health3.app/",
+        "resolved_host": "health3.app",
+        "html_bytes_checked": 45291,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-016",
+      "label": "AI",
+      "target_url": "https://pixelco.io/",
+      "project_family_id": "pixelco.io",
+      "project_name": "Pixelco",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1744",
+      "provenance_summary": "Hot100 chart 2026-06-15 metadata lists: OpenAI GPT-5.4, Cursor.",
+      "chart_week": "2026-06-15",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pixelco.io/",
+        "resolved_host": "pixelco.io",
+        "html_bytes_checked": 2939,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-017",
+      "label": "AI",
+      "target_url": "https://applighter.com/?utm_source=hot100&utm_medium=launch_directory&utm_campaign=launch",
+      "project_family_id": "applighter.com",
+      "project_name": "AppLighter",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1955",
+      "provenance_summary": "Hot100 chart 2026-06-15 metadata lists: Cursor, Claude Code, Supabase.",
+      "chart_week": "2026-06-15",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.applighter.com/?utm_source=hot100&utm_medium=launch_directory&utm_campaign=launch",
+        "resolved_host": "applighter.com",
+        "html_bytes_checked": 287028,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-018",
+      "label": "AI",
+      "target_url": "https://polytest.io/",
+      "project_family_id": "polytest.io",
+      "project_name": "PolyTest ",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1646",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-08",
+      "source_rank": 84,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.polytest.io/",
+        "resolved_host": "polytest.io",
+        "html_bytes_checked": 270827,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-019",
+      "label": "AI",
+      "target_url": "https://mentalnote.ai/",
+      "project_family_id": "mentalnote.ai",
+      "project_name": "Mental Note",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1656",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-4.1, OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-08",
+      "source_rank": 89,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://mentalnote.ai/",
+        "resolved_host": "mentalnote.ai",
+        "html_bytes_checked": 70618,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-020",
+      "label": "AI",
+      "target_url": "https://stitchdesk.com/",
+      "project_family_id": "stitchdesk.com",
+      "project_name": "StitchDesk",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1517",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Google Gemini 2.0 Flash-Lite, OpenAI GPT-5, Cursor, V0 by Vercel, Vercel.",
+      "chart_week": "2026-06-08",
+      "source_rank": 90,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://stitchdesk.com/",
+        "resolved_host": "stitchdesk.com",
+        "html_bytes_checked": 38588,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-021",
+      "label": "AI",
+      "target_url": "https://www.animateimg.org/",
+      "project_family_id": "animateimg.org",
+      "project_name": "AI Animate Image",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "OpenAI GPT-5.3-Codex",
+        "Windsurf",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1911",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5.4, OpenAI GPT-5.3-Codex, Windsurf, Cursor, Vercel, Supabase.",
+      "chart_week": "2026-06-08",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 402"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-022",
+      "label": "AI",
+      "target_url": "https://www.username.dev/",
+      "project_family_id": "username.dev",
+      "project_name": "username.dev",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1071",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Cursor, Vercel, Cloudflare.",
+      "chart_week": "2026-06-08",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-023",
+      "label": "AI",
+      "target_url": "https://semarize.com/",
+      "project_family_id": "semarize.com",
+      "project_name": "Semarize",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1956",
+      "provenance_summary": "Hot100 chart 2026-06-01 metadata lists: OpenAI GPT-5.4 mini, Claude Code, Vercel, Railway.",
+      "chart_week": "2026-06-01",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://semarize.com/",
+        "resolved_host": "semarize.com",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-024",
+      "label": "AI",
+      "target_url": "https://dopaloop.app/",
+      "project_family_id": "dopaloop.app",
+      "project_name": "DopaloopApp",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1566",
+      "provenance_summary": "Hot100 chart 2026-06-01 metadata lists: OpenAI GPT-4.1, Cursor, Vercel, Next.js.",
+      "chart_week": "2026-06-01",
+      "source_rank": 96,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://dopaloop.app/de",
+        "resolved_host": "dopaloop.app",
+        "html_bytes_checked": 407923,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-025",
+      "label": "AI",
+      "target_url": "https://www.datamagnet.co/",
+      "project_family_id": "datamagnet.co",
+      "project_name": "Datamagnet",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1637",
+      "provenance_summary": "Hot100 chart 2026-06-01 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-01",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.datamagnet.co/",
+        "resolved_host": "datamagnet.co",
+        "html_bytes_checked": 75601,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-026",
+      "label": "AI",
+      "target_url": "https://manusights.com/",
+      "project_family_id": "manusights.com",
+      "project_name": "Manusights",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1574",
+      "provenance_summary": "Hot100 chart 2026-06-01 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-06-01",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://manusights.com/",
+        "resolved_host": "manusights.com",
+        "html_bytes_checked": 228506,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-027",
+      "label": "AI",
+      "target_url": "https://pathoura.com/",
+      "project_family_id": "pathoura.com",
+      "project_name": "Pathoura",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/810",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: Cursor.",
+      "chart_week": "2026-05-25",
+      "source_rank": 91,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pathoura.com/",
+        "resolved_host": "pathoura.com",
+        "html_bytes_checked": 210042,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-028",
+      "label": "AI",
+      "target_url": "https://noone.io/",
+      "project_family_id": "noone.io",
+      "project_name": "Noone Web3 Wallet",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Windsurf",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/506",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: OpenAI Realtime, OpenAI GPT-4o, Cursor, Windsurf, Vercel, V0 by Vercel.",
+      "chart_week": "2026-05-25",
+      "source_rank": 92,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://noone.io/",
+        "resolved_host": "noone.io",
+        "html_bytes_checked": 137046,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-029",
+      "label": "AI",
+      "target_url": "https://3dsynth.app/",
+      "project_family_id": "3dsynth.app",
+      "project_name": "3dSynth.app",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1129",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-05-25",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://3dsynth.app/",
+        "resolved_host": "3dsynth.app",
+        "html_bytes_checked": 56402,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-030",
+      "label": "AI",
+      "target_url": "https://agentkit.ai/",
+      "project_family_id": "agentkit.ai",
+      "project_name": "Agentkit",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1894",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: OpenAI GPT-5.4, Cursor, Vercel.",
+      "chart_week": "2026-05-25",
+      "source_rank": 96,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://agentkit.ai/",
+        "resolved_host": "agentkit.ai",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-031",
+      "label": "AI",
+      "target_url": "https://www.usenovi.com/",
+      "project_family_id": "usenovi.com",
+      "project_name": "Novi",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Replit Agent",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/559",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: Anthropic Claude 3.5 Sonnet, Meta Llama 3, Replit Agent, Cursor, Vercel, Next.js.",
+      "chart_week": "2026-05-25",
+      "source_rank": 99,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.usenovi.com/",
+        "resolved_host": "usenovi.com",
+        "html_bytes_checked": 38815,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-032",
+      "label": "AI",
+      "target_url": "https://norteapp.io/",
+      "project_family_id": "norteapp.io",
+      "project_name": "Norte Wallet Intelligence",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1596",
+      "provenance_summary": "Hot100 chart 2026-05-18 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-05-18",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://norteapp.io/",
+        "resolved_host": "norteapp.io",
+        "html_bytes_checked": 7229,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-033",
+      "label": "AI",
+      "target_url": "https://laracopilot.com/",
+      "project_family_id": "laracopilot.com",
+      "project_name": "LaraCopilot – AI-Powered Laravel Development",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1843",
+      "provenance_summary": "Hot100 chart 2026-05-18 metadata lists: OpenAI GPT-5.4, Cursor, Claude Code.",
+      "chart_week": "2026-05-18",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://laracopilot.com/",
+        "resolved_host": "laracopilot.com",
+        "html_bytes_checked": 134302,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-034",
+      "label": "AI",
+      "target_url": "https://sochely.com/",
+      "project_family_id": "sochely.com",
+      "project_name": "Sochely inc",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Lovable",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1827",
+      "provenance_summary": "Hot100 chart 2026-05-18 metadata lists: Google Gemini 2.5 Flash, OpenAI GPT-5.4, Lovable, Claude Code, Supabase, Next.js.",
+      "chart_week": "2026-05-18",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://sochely.com/",
+        "resolved_host": "sochely.com",
+        "html_bytes_checked": 4372,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-035",
+      "label": "AI",
+      "target_url": "https://flagup.io/",
+      "project_family_id": "flagup.io",
+      "project_name": "Cut churn by acting on the feedback that matters.",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1522",
+      "provenance_summary": "Hot100 chart 2026-05-11 metadata lists: OpenAI GPT-4o, Anthropic Claude 4 Opus, Cursor, Claude Code, Cloudflare, Render.",
+      "chart_week": "2026-05-11",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://flagup.io/",
+        "resolved_host": "flagup.io",
+        "html_bytes_checked": 165313,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-036",
+      "label": "AI",
+      "target_url": "https://www.looktara.com/",
+      "project_family_id": "looktara.com",
+      "project_name": "Looktara - AI photographer",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/568",
+      "provenance_summary": "Hot100 chart 2026-05-11 metadata lists: OpenAI GPT-4.1, Cursor, Vercel.",
+      "chart_week": "2026-05-11",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.looktara.com/",
+        "resolved_host": "looktara.com",
+        "html_bytes_checked": 74351,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-037",
+      "label": "AI",
+      "target_url": "https://www.mybets.gg/",
+      "project_family_id": "mybets.gg",
+      "project_name": "Mybets",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1234",
+      "provenance_summary": "Hot100 chart 2026-05-11 metadata lists: Cursor.",
+      "chart_week": "2026-05-11",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.mybets.gg/",
+        "resolved_host": "mybets.gg",
+        "html_bytes_checked": 150711,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-038",
+      "label": "AI",
+      "target_url": "https://www.subclip.app/",
+      "project_family_id": "subclip.app",
+      "project_name": "Subclip AI VIDEO Editor",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1647",
+      "provenance_summary": "Hot100 chart 2026-05-04 metadata lists: OpenAI GPT-5, OpenAI GPT-4.1 mini, Cursor, Claude Code, Vercel, Next.js.",
+      "chart_week": "2026-05-04",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.subclip.app/",
+        "resolved_host": "subclip.app",
+        "html_bytes_checked": 267116,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-039",
+      "label": "AI",
+      "target_url": "https://reel25.com/",
+      "project_family_id": "reel25.com",
+      "project_name": "Reel25",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1594",
+      "provenance_summary": "Hot100 chart 2026-05-04 metadata lists: Anthropic Claude 4 Opus, Cursor, Vercel.",
+      "chart_week": "2026-05-04",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://reel25.com/",
+        "resolved_host": "reel25.com",
+        "html_bytes_checked": 107417,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-040",
+      "label": "AI",
+      "target_url": "https://stride-fuel.com/",
+      "project_family_id": "stride-fuel.com",
+      "project_name": "StrideFuel",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1360",
+      "provenance_summary": "Hot100 chart 2026-05-04 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-05-04",
+      "source_rank": 99,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://stride-fuel.com/",
+        "resolved_host": "stride-fuel.com",
+        "html_bytes_checked": 5571,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-041",
+      "label": "AI",
+      "target_url": "https://www.chatxos.com/",
+      "project_family_id": "chatxos.com",
+      "project_name": "ChatXOS",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1200",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: Cursor.",
+      "chart_week": "2026-04-27",
+      "source_rank": 86,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://heychappie.com/",
+        "resolved_host": "heychappie.com",
+        "html_bytes_checked": 109505,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-042",
+      "label": "AI",
+      "target_url": "https://www.talentsprout.ai/",
+      "project_family_id": "talentsprout.ai",
+      "project_name": "TalentSprout",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/611",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-04-27",
+      "source_rank": 90,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.talentsprout.ai/",
+        "resolved_host": "talentsprout.ai",
+        "html_bytes_checked": 226171,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-043",
+      "label": "AI",
+      "target_url": "https://www.buildables.app/",
+      "project_family_id": "buildables.app",
+      "project_name": "Buildables",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/569",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-4.1, OpenAI GPT-4o, Cursor, Vercel.",
+      "chart_week": "2026-04-27",
+      "source_rank": 91,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.buildables.app/",
+        "resolved_host": "buildables.app",
+        "html_bytes_checked": 103062,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-044",
+      "label": "AI",
+      "target_url": "https://extralt.com/",
+      "project_family_id": "extralt.com",
+      "project_name": "Extralt",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1651",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-04-27",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://extralt.com/",
+        "resolved_host": "extralt.com",
+        "html_bytes_checked": 62020,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-045",
+      "label": "AI",
+      "target_url": "https://reachinbox.ai/",
+      "project_family_id": "reachinbox.ai",
+      "project_name": " AI-powered outbound engine that runs your entire cold email workflow",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1060",
+      "provenance_summary": "Hot100 chart 2026-04-20 metadata lists: OpenAI GPT-4o, Cursor, Vercel.",
+      "chart_week": "2026-04-20",
+      "source_rank": 91,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://reachinbox.ai/",
+        "resolved_host": "reachinbox.ai",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-046",
+      "label": "AI",
+      "target_url": "https://auditflow.work/",
+      "project_family_id": "auditflow.work",
+      "project_name": "Auditflow",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/987",
+      "provenance_summary": "Hot100 chart 2026-04-20 metadata lists: Anthropic Claude 4 Opus, Google Gemini 2.0 Flash, Cursor, Vercel, V0 by Vercel.",
+      "chart_week": "2026-04-20",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.auditflow.work/",
+        "resolved_host": "auditflow.work",
+        "html_bytes_checked": 21292,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-047",
+      "label": "AI",
+      "target_url": "https://candidatefalcon.com/",
+      "project_family_id": "candidatefalcon.com",
+      "project_name": "Candidate Falcon",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1697",
+      "provenance_summary": "Hot100 chart 2026-04-20 metadata lists: OpenAI GPT-5.4, Anthropic Claude Sonnet 4.6, Claude Code, Supabase, Netlify.",
+      "chart_week": "2026-04-20",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://candidatefalcon.com/",
+        "resolved_host": "candidatefalcon.com",
+        "html_bytes_checked": 90726,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-048",
+      "label": "AI",
+      "target_url": "https://intellisessionai.com/",
+      "project_family_id": "intellisessionai.com",
+      "project_name": "IntelliSession AI",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/421",
+      "provenance_summary": "Hot100 chart 2026-04-20 metadata lists: Anthropic Claude 3.5 Sonnet, Cursor, Next.js.",
+      "chart_week": "2026-04-20",
+      "source_rank": 96,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://intellisessionai.com/",
+        "resolved_host": "intellisessionai.com",
+        "html_bytes_checked": 126582,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-049",
+      "label": "AI",
+      "target_url": "https://www.predictmybaby.com/",
+      "project_family_id": "predictmybaby.com",
+      "project_name": "PredictMyBaby",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1680",
+      "provenance_summary": "Hot100 chart 2026-04-20 metadata lists: Anthropic Claude Opus 4.6, Claude Code, Cloudflare.",
+      "chart_week": "2026-04-20",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.predictmybaby.com/",
+        "resolved_host": "predictmybaby.com",
+        "html_bytes_checked": 232439,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-050",
+      "label": "AI",
+      "target_url": "https://1app.energy/",
+      "project_family_id": "1app.energy",
+      "project_name": "1App Energy Ltd",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1634",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-04-13",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://1app.energy/",
+        "resolved_host": "1app.energy",
+        "html_bytes_checked": 245175,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-051",
+      "label": "AI",
+      "target_url": "https://creatives-takeover.com/",
+      "project_family_id": "creatives-takeover.com",
+      "project_name": "Creatives Takeover",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1116",
+      "provenance_summary": "Hot100 chart 2026-04-06 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-04-06",
+      "source_rank": 92,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://creatives-takeover.com/",
+        "resolved_host": "creatives-takeover.com",
+        "html_bytes_checked": 15716,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-052",
+      "label": "AI",
+      "target_url": "https://buildfloorplan.com/",
+      "project_family_id": "buildfloorplan.com",
+      "project_name": "ai floor plan",
+      "builder_bucket": "WINDSURF",
+      "builder_evidence": [
+        "Windsurf",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1631",
+      "provenance_summary": "Hot100 chart 2026-04-06 metadata lists: OpenAI GPT-5, Windsurf, V0 by Vercel.",
+      "chart_week": "2026-04-06",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://buildfloorplan.com/",
+        "resolved_host": "buildfloorplan.com",
+        "html_bytes_checked": 114688,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-053",
+      "label": "AI",
+      "target_url": "https://portfoliogenius.ai/",
+      "project_family_id": "portfoliogenius.ai",
+      "project_name": "Portfolio Genius",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/944",
+      "provenance_summary": "Hot100 chart 2026-04-06 metadata lists: Cursor.",
+      "chart_week": "2026-04-06",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://portfoliogenius.ai/",
+        "resolved_host": "portfoliogenius.ai",
+        "html_bytes_checked": 239539,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-054",
+      "label": "AI",
+      "target_url": "https://www.certfuel.com/",
+      "project_family_id": "certfuel.com",
+      "project_name": "CertFuel",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1543",
+      "provenance_summary": "Hot100 chart 2026-04-06 metadata lists: Anthropic Claude 4 Sonnet, Cursor.",
+      "chart_week": "2026-04-06",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.certfuel.com/",
+        "resolved_host": "certfuel.com",
+        "html_bytes_checked": 209409,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-055",
+      "label": "AI",
+      "target_url": "https://lander.rs/?lang=en",
+      "project_family_id": "lander.rs",
+      "project_name": "Lander - Generate a Lead Gen Landing Page in a Minute",
+      "builder_bucket": "CLAUDE_CODE",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1590",
+      "provenance_summary": "Hot100 chart 2026-04-06 metadata lists: Anthropic Claude 4 Sonnet, Claude Code.",
+      "chart_week": "2026-04-06",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://lander.rs/?lang=en",
+        "resolved_host": "lander.rs",
+        "html_bytes_checked": 142103,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-056",
+      "label": "AI",
+      "target_url": "https://speakoala.com/",
+      "project_family_id": "speakoala.com",
+      "project_name": "Your Web Reading Assistant",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1558",
+      "provenance_summary": "Hot100 chart 2026-03-30 metadata lists: OpenAI GPT-5, Cursor, Claude Code, Cloudflare.",
+      "chart_week": "2026-03-30",
+      "source_rank": 72,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://speakoala.com/",
+        "resolved_host": "speakoala.com",
+        "html_bytes_checked": 361778,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-057",
+      "label": "AI",
+      "target_url": "https://www.consistentcharacterai.org/",
+      "project_family_id": "consistentcharacterai.org",
+      "project_name": "Consistent Character AI",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1536",
+      "provenance_summary": "Hot100 chart 2026-03-30 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-03-30",
+      "source_rank": 73,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.consistentcharacterai.org/",
+        "resolved_host": "consistentcharacterai.org",
+        "html_bytes_checked": 265695,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-058",
+      "label": "AI",
+      "target_url": "https://consistent-character-ai.com/",
+      "project_family_id": "consistent-character-ai.com",
+      "project_name": "Consistent Character AI",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1526",
+      "provenance_summary": "Hot100 chart 2026-03-30 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-03-30",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.consistent-character-ai.com/",
+        "resolved_host": "consistent-character-ai.com",
+        "html_bytes_checked": 194227,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-059",
+      "label": "AI",
+      "target_url": "https://farrieriq.com/",
+      "project_family_id": "farrieriq.com",
+      "project_name": "farrieriq",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Bolt",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1503",
+      "provenance_summary": "Hot100 chart 2026-03-23 metadata lists: OpenAI GPT-5, OpenAI GPT-4.1, Bolt, Cursor, Cloudflare, Vercel.",
+      "chart_week": "2026-03-23",
+      "source_rank": 93,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://farrieriq.com/",
+        "resolved_host": "farrieriq.com",
+        "html_bytes_checked": 27914,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-060",
+      "label": "AI",
+      "target_url": "https://www.neanproject.com/",
+      "project_family_id": "neanproject.com",
+      "project_name": "Nean Project",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1488",
+      "provenance_summary": "Hot100 chart 2026-03-23 metadata lists: OpenAI GPT-5, Cursor, Next.js, AWS Lambda / SageMaker.",
+      "chart_week": "2026-03-23",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.neanproject.com/",
+        "resolved_host": "neanproject.com",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-061",
+      "label": "AI",
+      "target_url": "https://seven.radostit.com/",
+      "project_family_id": "seven.radostit.com",
+      "project_name": "Seven by Radost IT ",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1481",
+      "provenance_summary": "Hot100 chart 2026-03-23 metadata lists: OpenAI GPT-5, Cursor, Next.js.",
+      "chart_week": "2026-03-23",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://seven.radostit.com/",
+        "resolved_host": "seven.radostit.com",
+        "html_bytes_checked": 98117,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-062",
+      "label": "AI",
+      "target_url": "https://www.scrapx.io/",
+      "project_family_id": "scrapx.io",
+      "project_name": "s n",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1528",
+      "provenance_summary": "Hot100 chart 2026-03-23 metadata lists: OpenAI GPT-4.1, Cursor, V0 by Vercel.",
+      "chart_week": "2026-03-23",
+      "source_rank": 99,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.scrapx.io/",
+        "resolved_host": "scrapx.io",
+        "html_bytes_checked": 127137,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-063",
+      "label": "AI",
+      "target_url": "https://batchoffers.com/",
+      "project_family_id": "batchoffers.com",
+      "project_name": "BatchOffers",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1512",
+      "provenance_summary": "Hot100 chart 2026-03-23 metadata lists: OpenAI GPT-4.1, Cursor, Vercel, Next.js.",
+      "chart_week": "2026-03-23",
+      "source_rank": 100,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://batchoffers.com/",
+        "resolved_host": "batchoffers.com",
+        "html_bytes_checked": 4214,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-064",
+      "label": "AI",
+      "target_url": "https://useagentbase.dev/",
+      "project_family_id": "useagentbase.dev",
+      "project_name": "RefinelyAI",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/231",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: OpenAI GPT-4o, Cursor, Windsurf, Netlify, Supabase.",
+      "chart_week": "2026-03-16",
+      "source_rank": 12,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-065",
+      "label": "AI",
+      "target_url": "https://vibescoded.com/",
+      "project_family_id": "vibescoded.com",
+      "project_name": "VIBESxCODED (VxC)",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/123",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Cursor.",
+      "chart_week": "2026-03-16",
+      "source_rank": 25,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.vibescoded.com/",
+        "resolved_host": "vibescoded.com",
+        "html_bytes_checked": 12416,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-066",
+      "label": "AI",
+      "target_url": "https://www.podzy.io/",
+      "project_family_id": "podzy.io",
+      "project_name": "Podzy - Turn Newsletters into a Podcast to Go!",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/49",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Cursor, v0.",
+      "chart_week": "2026-03-16",
+      "source_rank": 32,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.podzy.io/",
+        "resolved_host": "podzy.io",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-067",
+      "label": "AI",
+      "target_url": "https://avina.io/",
+      "project_family_id": "avina.io",
+      "project_name": "Avina",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/714",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Cursor.",
+      "chart_week": "2026-03-16",
+      "source_rank": 49,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.avina.io/",
+        "resolved_host": "avina.io",
+        "html_bytes_checked": 268178,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-068",
+      "label": "AI",
+      "target_url": "https://klipzy.ai/",
+      "project_family_id": "klipzy.ai",
+      "project_name": "Klipzy",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1088",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Cursor.",
+      "chart_week": "2026-03-16",
+      "source_rank": 50,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://klipzy.ai/",
+        "resolved_host": "klipzy.ai",
+        "html_bytes_checked": 6210,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-069",
+      "label": "AI",
+      "target_url": "https://www.magicmockup.xyz/",
+      "project_family_id": "magicmockup.xyz",
+      "project_name": "MagicMockup.xyz",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/252",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Cursor, Claude Code, Vercel.",
+      "chart_week": "2026-03-16",
+      "source_rank": 88,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-070",
+      "label": "AI",
+      "target_url": "https://revenue-lens.vercel.app/",
+      "project_family_id": "revenue-lens.vercel.app",
+      "project_name": "RevenueLens - Find your biggest SaaS revenue funnel leaks.",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1082",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Anthropic Claude 4 Opus, Google Gemini 2.0 Flash, Cursor, Vercel, Next.js.",
+      "chart_week": "2026-03-16",
+      "source_rank": 90,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://revenue-lens.vercel.app/",
+        "resolved_host": "revenue-lens.vercel.app",
+        "html_bytes_checked": 36599,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-071",
+      "label": "AI",
+      "target_url": "https://banker.so/",
+      "project_family_id": "banker.so",
+      "project_name": "Banker",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Claude Code",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/650",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: OpenAI GPT-5, Anthropic Claude 4 Sonnet, Claude Code, Cursor, Render, Vercel.",
+      "chart_week": "2026-03-16",
+      "source_rank": 99,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.banker.so/",
+        "resolved_host": "banker.so",
+        "html_bytes_checked": 2670,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-072",
+      "label": "AI",
+      "target_url": "https://www.rolltherecord.com/",
+      "project_family_id": "rolltherecord.com",
+      "project_name": "Roll The Record",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/870",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: OpenAI GPT-5, Anthropic Claude 4 Sonnet, Cursor, Next.js, Vercel.",
+      "chart_week": "2026-03-02",
+      "source_rank": 38,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-073",
+      "label": "AI",
+      "target_url": "https://storybound.kids/",
+      "project_family_id": "storybound.kids",
+      "project_name": "Story Bound",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1203",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: OpenAI o1 (Reasoning), Cursor.",
+      "chart_week": "2026-03-02",
+      "source_rank": 94,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://storybound.kids/",
+        "resolved_host": "storybound.kids",
+        "html_bytes_checked": 101990,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-074",
+      "label": "AI",
+      "target_url": "https://calperks.app/",
+      "project_family_id": "calperks.app",
+      "project_name": "CalPerks",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/926",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Cursor.",
+      "chart_week": "2026-03-02",
+      "source_rank": 100,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-075",
+      "label": "AI",
+      "target_url": "https://textraflow.com/",
+      "project_family_id": "textraflow.com",
+      "project_name": "AI document analysis app for macOS/iOS, merging traditional OCR and ML for smart data extraction.",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/163",
+      "provenance_summary": "Hot100 chart 2026-02-23 metadata lists: Cursor.",
+      "chart_week": "2026-02-23",
+      "source_rank": 85,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://textraflow.com/",
+        "resolved_host": "textraflow.com",
+        "html_bytes_checked": 106546,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-076",
+      "label": "AI",
+      "target_url": "https://lurnloop.com/",
+      "project_family_id": "lurnloop.com",
+      "project_name": "LurnLoop",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/119",
+      "provenance_summary": "Hot100 chart 2026-02-02 metadata lists: Cursor, Google-gemini.",
+      "chart_week": "2026-02-02",
+      "source_rank": 28,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.lurnloop.com/",
+        "resolved_host": "lurnloop.com",
+        "html_bytes_checked": 44187,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-077",
+      "label": "AI",
+      "target_url": "https://batchr.ink/",
+      "project_family_id": "batchr.ink",
+      "project_name": "Batchr",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/673",
+      "provenance_summary": "Hot100 chart 2026-02-02 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "chart_week": "2026-02-02",
+      "source_rank": 98,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://batchr.ink/",
+        "resolved_host": "batchr.ink",
+        "html_bytes_checked": 91555,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-078",
+      "label": "AI",
+      "target_url": "https://www.wisdemic.com/",
+      "project_family_id": "wisdemic.com",
+      "project_name": "Wisdemic - A AI Quiz App",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/37",
+      "provenance_summary": "Hot100 chart 2026-01-26 metadata lists: Cursor.",
+      "chart_week": "2026-01-26",
+      "source_rank": 4,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.wisdemic.com/",
+        "resolved_host": "wisdemic.com",
+        "html_bytes_checked": 13333,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-079",
+      "label": "AI",
+      "target_url": "https://meetcosmos.com/",
+      "project_family_id": "meetcosmos.com",
+      "project_name": "Cosmos",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/106",
+      "provenance_summary": "Hot100 chart 2026-01-26 metadata lists: Cursor, Claude.",
+      "chart_week": "2026-01-26",
+      "source_rank": 18,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://meetcosmos.com/",
+        "resolved_host": "meetcosmos.com",
+        "html_bytes_checked": 48801,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-080",
+      "label": "AI",
+      "target_url": "https://www.rocksmith.ai/",
+      "project_family_id": "rocksmith.ai",
+      "project_name": "Rock Smith",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1175",
+      "provenance_summary": "Hot100 chart 2026-01-19 metadata lists: Cursor.",
+      "chart_week": "2026-01-19",
+      "source_rank": 95,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.rocksmith.ai/",
+        "resolved_host": "rocksmith.ai",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-081",
+      "label": "AI",
+      "target_url": "https://www.sourcicle.com/",
+      "project_family_id": "sourcicle.com",
+      "project_name": "Sourcicle",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1174",
+      "provenance_summary": "Hot100 chart 2026-01-19 metadata lists: Cursor.",
+      "chart_week": "2026-01-19",
+      "source_rank": 96,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.sourcicle.com/",
+        "resolved_host": "sourcicle.com",
+        "html_bytes_checked": 90484,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-082",
+      "label": "AI",
+      "target_url": "https://sonarly.dev/",
+      "project_family_id": "sonarly.dev",
+      "project_name": "Sonarly - AI Devtool",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/764",
+      "provenance_summary": "Hot100 chart 2026-01-19 metadata lists: Anthropic Claude 4 Sonnet, Cursor, Vercel.",
+      "chart_week": "2026-01-19",
+      "source_rank": 97,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://sonarly.com/",
+        "resolved_host": "sonarly.com",
+        "html_bytes_checked": 6260,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-083",
+      "label": "AI",
+      "target_url": "https://bibigpt.co/",
+      "project_family_id": "bibigpt.co",
+      "project_name": "BibiGPT",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/472",
+      "provenance_summary": "Hot100 chart 2026-01-05 metadata lists: OpenAI GPT-4.1, OpenAI GPT-4o, Cursor, Supabase, Cloudflare.",
+      "chart_week": "2026-01-05",
+      "source_rank": 96,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://bibigpt.co/",
+        "resolved_host": "bibigpt.co",
+        "html_bytes_checked": 95192,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-084",
+      "label": "AI",
+      "target_url": "https://hoopvia.com/",
+      "project_family_id": "hoopvia.com",
+      "project_name": "Hoopvia",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/923",
+      "provenance_summary": "Hot100 chart 2026-01-05 metadata lists: Google Gemini 2.0 Flash, OpenAI GPT-5, Cursor, Firebase.",
+      "chart_week": "2026-01-05",
+      "source_rank": 100,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://hoopvia.com/",
+        "resolved_host": "hoopvia.com",
+        "html_bytes_checked": 26298,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-AI-085",
+      "label": "AI",
+      "target_url": "https://trymultify.com/en",
+      "project_family_id": "trymultify.com",
+      "project_name": "Multify - Automatic Website Translation",
+      "builder_bucket": "CURSOR",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/584",
+      "provenance_summary": "Hot100 chart 2025-12-29 metadata lists: OpenAI GPT-4.1, Anthropic Claude 3.5 Sonnet, Cursor, Next.js, Netlify.",
+      "chart_week": "2025-12-29",
+      "source_rank": 99,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://gomultify.com/",
+        "resolved_host": "gomultify.com",
+        "html_bytes_checked": 378177,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-001",
+      "label": "HUMAN",
+      "target_url": "https://www.talater.com/upup/",
+      "project_family_id": "talater.com",
+      "project_name": "UpUp",
+      "repository": "TalAter/UpUp",
+      "repository_created_at": "2015-03-11T13:20:08Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/TalAter/UpUp",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 4919,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.talater.com/upup/",
+        "resolved_host": "talater.com",
+        "html_bytes_checked": 7936,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-002",
+      "label": "HUMAN",
+      "target_url": "https://hledger.org/",
+      "project_family_id": "hledger.org",
+      "project_name": "hledger",
+      "repository": "simonmichael/hledger",
+      "repository_created_at": "2013-04-08T16:41:47Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/simonmichael/hledger",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 4621,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://hledger.org/",
+        "resolved_host": "hledger.org",
+        "html_bytes_checked": 46558,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-003",
+      "label": "HUMAN",
+      "target_url": "http://assemble.io/",
+      "project_family_id": "assemble.io",
+      "project_name": "assemble",
+      "repository": "assemble/assemble",
+      "repository_created_at": "2012-09-22T20:50:23Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/assemble/assemble",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 4253,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://assemble.io/",
+        "resolved_host": "assemble.io",
+        "html_bytes_checked": 22978,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-004",
+      "label": "HUMAN",
+      "target_url": "https://vite-pwa-org.netlify.app/",
+      "project_family_id": "vite-pwa-org.netlify.app",
+      "project_name": "vite-plugin-pwa",
+      "repository": "vite-pwa/vite-plugin-pwa",
+      "repository_created_at": "2020-08-25T06:11:26Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vite-pwa/vite-plugin-pwa",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 4230,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://vite-pwa-org.netlify.app/",
+        "resolved_host": "vite-pwa-org.netlify.app",
+        "html_bytes_checked": 66701,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-005",
+      "label": "HUMAN",
+      "target_url": "http://www.arachni-scanner.com/",
+      "project_family_id": "arachni-scanner.com",
+      "project_name": "arachni",
+      "repository": "Arachni/arachni",
+      "repository_created_at": "2010-08-25T16:06:38Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Arachni/arachni",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 4039,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://ecsypno.com/pages/arachni-web-application-security-scanner-framework",
+        "resolved_host": "ecsypno.com",
+        "html_bytes_checked": 281834,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-006",
+      "label": "HUMAN",
+      "target_url": "https://piwigo.org/",
+      "project_family_id": "piwigo.org",
+      "project_name": "Piwigo",
+      "repository": "Piwigo/Piwigo",
+      "repository_created_at": "2015-07-25T11:32:24Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Piwigo/Piwigo",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3838,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://piwigo.org/",
+        "resolved_host": "piwigo.org",
+        "html_bytes_checked": 29417,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-007",
+      "label": "HUMAN",
+      "target_url": "https://docs.pwabuilder.com/",
+      "project_family_id": "docs.pwabuilder.com",
+      "project_name": "PWABuilder",
+      "repository": "pwa-builder/PWABuilder",
+      "repository_created_at": "2015-03-30T19:05:58Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/pwa-builder/PWABuilder",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3712,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://docs.pwabuilder.com/",
+        "resolved_host": "docs.pwabuilder.com",
+        "html_bytes_checked": 10141,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-008",
+      "label": "HUMAN",
+      "target_url": "https://webhint.io/",
+      "project_family_id": "webhint.io",
+      "project_name": "hint",
+      "repository": "webhintio/hint",
+      "repository_created_at": "2017-02-16T18:15:31Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/webhintio/hint",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3700,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://webhint.io/",
+        "resolved_host": "webhint.io",
+        "html_bytes_checked": 19397,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-009",
+      "label": "HUMAN",
+      "target_url": "https://www.commafeed.com/",
+      "project_family_id": "commafeed.com",
+      "project_name": "commafeed",
+      "repository": "Athou/commafeed",
+      "repository_created_at": "2013-03-20T19:32:09Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Athou/commafeed",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3580,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.commafeed.com/",
+        "resolved_host": "commafeed.com",
+        "html_bytes_checked": 883,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-010",
+      "label": "HUMAN",
+      "target_url": "https://www.alienzhou.com/projects/frontend-tech-list/",
+      "project_family_id": "alienzhou.com",
+      "project_name": "frontend-tech-list",
+      "repository": "alienzhou/frontend-tech-list",
+      "repository_created_at": "2018-11-02T15:41:38Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/alienzhou/frontend-tech-list",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3571,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-011",
+      "label": "HUMAN",
+      "target_url": "https://swarmpit.io/",
+      "project_family_id": "swarmpit.io",
+      "project_name": "swarmpit",
+      "repository": "swarmpit/swarmpit",
+      "repository_created_at": "2017-02-06T09:46:42Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/swarmpit/swarmpit",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3484,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://swarmpit.io/",
+        "resolved_host": "swarmpit.io",
+        "html_bytes_checked": 10859,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-012",
+      "label": "HUMAN",
+      "target_url": "https://www.nosqlclient.com/",
+      "project_family_id": "nosqlclient.com",
+      "project_name": "nosqlclient",
+      "repository": "nosqlclient/nosqlclient",
+      "repository_created_at": "2016-02-07T14:34:53Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nosqlclient/nosqlclient",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3469,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.coma-tech.com/archives/223",
+        "resolved_host": "coma-tech.com",
+        "html_bytes_checked": 484432,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-013",
+      "label": "HUMAN",
+      "target_url": "https://item.jd.com/12365091.html",
+      "project_family_id": "item.jd.com",
+      "project_name": "PWA-Book-CN",
+      "repository": "SangKa/PWA-Book-CN",
+      "repository_created_at": "2017-11-27T16:03:25Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/SangKa/PWA-Book-CN",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3431,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://item.jd.com/12365091.html",
+        "resolved_host": "item.jd.com",
+        "html_bytes_checked": 39438,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-014",
+      "label": "HUMAN",
+      "target_url": "https://omnidb.org/",
+      "project_family_id": "omnidb.org",
+      "project_name": "OmniDB",
+      "repository": "OmniDB/OmniDB",
+      "repository_created_at": "2016-04-12T13:12:03Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/OmniDB/OmniDB",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3289,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://omnidb.org/",
+        "resolved_host": "omnidb.org",
+        "html_bytes_checked": 472,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-015",
+      "label": "HUMAN",
+      "target_url": "https://pwasforfirefox.filips.si/",
+      "project_family_id": "pwasforfirefox.filips.si",
+      "project_name": "PWAsForFirefox",
+      "repository": "filips123/PWAsForFirefox",
+      "repository_created_at": "2021-06-11T20:15:16Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/filips123/PWAsForFirefox",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 3058,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pwasforfirefox.filips.si/",
+        "resolved_host": "pwasforfirefox.filips.si",
+        "html_bytes_checked": 37150,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-016",
+      "label": "HUMAN",
+      "target_url": "https://padloc.app/",
+      "project_family_id": "padloc.app",
+      "project_name": "padloc",
+      "repository": "padloc/padloc",
+      "repository_created_at": "2013-11-10T21:06:35Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/padloc/padloc",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2925,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://padloc.app/",
+        "resolved_host": "padloc.app",
+        "html_bytes_checked": 352588,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-017",
+      "label": "HUMAN",
+      "target_url": "https://vuesion.herokuapp.com/",
+      "project_family_id": "vuesion.herokuapp.com",
+      "project_name": "vuesion",
+      "repository": "vuesion/vuesion",
+      "repository_created_at": "2017-11-18T22:42:36Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vuesion/vuesion",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2871,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://vuesion.herokuapp.com/",
+        "resolved_host": "vuesion.herokuapp.com",
+        "html_bytes_checked": 161299,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-018",
+      "label": "HUMAN",
+      "target_url": "https://pgtune.leopard.in.ua/",
+      "project_family_id": "pgtune.leopard.in.ua",
+      "project_name": "pgtune",
+      "repository": "le0pard/pgtune",
+      "repository_created_at": "2014-03-21T13:29:14Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/le0pard/pgtune",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2734,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pgtune.leopard.in.ua/",
+        "resolved_host": "pgtune.leopard.in.ua",
+        "html_bytes_checked": 956,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-019",
+      "label": "HUMAN",
+      "target_url": "https://getmetastream.com/",
+      "project_family_id": "getmetastream.com",
+      "project_name": "metastream",
+      "repository": "samuelmaddock/metastream",
+      "repository_created_at": "2018-08-11T02:31:39Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/samuelmaddock/metastream",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2647,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://getmetastream.com/",
+        "resolved_host": "getmetastream.com",
+        "html_bytes_checked": 4867,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-020",
+      "label": "HUMAN",
+      "target_url": "https://marquez.co/statusfy",
+      "project_family_id": "marquez.co",
+      "project_name": "statusfy",
+      "repository": "juliomrqz/statusfy",
+      "repository_created_at": "2018-07-27T16:10:29Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/juliomrqz/statusfy",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2628,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://github.com/juliomrqz/statusfy?ref=juliomarquez.com",
+        "resolved_host": "github.com",
+        "html_bytes_checked": 345582,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-021",
+      "label": "HUMAN",
+      "target_url": "https://www.reactpwa.com/",
+      "project_family_id": "reactpwa.com",
+      "project_name": "react-pwa",
+      "repository": "Atyantik/react-pwa",
+      "repository_created_at": "2017-06-24T09:30:11Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Atyantik/react-pwa",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2558,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.reactpwa.com/",
+        "resolved_host": "reactpwa.com",
+        "html_bytes_checked": 12425,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-022",
+      "label": "HUMAN",
+      "target_url": "https://storefrontui.io/",
+      "project_family_id": "storefrontui.io",
+      "project_name": "storefront-ui",
+      "repository": "vuestorefront/storefront-ui",
+      "repository_created_at": "2019-01-24T18:35:15Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vuestorefront/storefront-ui",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2505,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://alokai.com/product/storefront-ui",
+        "resolved_host": "alokai.com",
+        "html_bytes_checked": 119488,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-023",
+      "label": "HUMAN",
+      "target_url": "https://www.react-most-wanted.com/",
+      "project_family_id": "react-most-wanted.com",
+      "project_name": "react-most-wanted",
+      "repository": "ecronix/react-most-wanted",
+      "repository_created_at": "2017-03-31T06:28:21Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ecronix/react-most-wanted",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2411,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.react-most-wanted.com/",
+        "resolved_host": "react-most-wanted.com",
+        "html_bytes_checked": 601,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-024",
+      "label": "HUMAN",
+      "target_url": "https://alexandrie-hub.fr/",
+      "project_family_id": "alexandrie-hub.fr",
+      "project_name": "Alexandrie",
+      "repository": "Smaug6739/Alexandrie",
+      "repository_created_at": "2022-08-21T06:11:39Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Smaug6739/Alexandrie",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2315,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://alexandrie-hub.fr/",
+        "resolved_host": "alexandrie-hub.fr",
+        "html_bytes_checked": 107814,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-025",
+      "label": "HUMAN",
+      "target_url": "https://privoce.voce.chat/",
+      "project_family_id": "privoce.voce.chat",
+      "project_name": "vocechat-web",
+      "repository": "Privoce/vocechat-web",
+      "repository_created_at": "2022-01-04T13:58:22Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Privoce/vocechat-web",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 2259,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://privoce.voce.chat/",
+        "resolved_host": "privoce.voce.chat",
+        "html_bytes_checked": 4383,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-026",
+      "label": "HUMAN",
+      "target_url": "https://www.projectsend.org/",
+      "project_family_id": "projectsend.org",
+      "project_name": "projectsend",
+      "repository": "projectsend/projectsend",
+      "repository_created_at": "2014-03-12T08:06:39Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/projectsend/projectsend",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1959,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.projectsend.org/",
+        "resolved_host": "projectsend.org",
+        "html_bytes_checked": 136698,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-027",
+      "label": "HUMAN",
+      "target_url": "https://www.reactivetrader.com/",
+      "project_family_id": "reactivetrader.com",
+      "project_name": "ReactiveTraderCloud",
+      "repository": "AdaptiveConsulting/ReactiveTraderCloud",
+      "repository_created_at": "2015-11-13T19:24:11Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/AdaptiveConsulting/ReactiveTraderCloud",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1857,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.reactivetrader.com/",
+        "resolved_host": "reactivetrader.com",
+        "html_bytes_checked": 2164,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-028",
+      "label": "HUMAN",
+      "target_url": "https://www.codenameone.com/",
+      "project_family_id": "codenameone.com",
+      "project_name": "CodenameOne",
+      "repository": "codenameone/CodenameOne",
+      "repository_created_at": "2015-03-27T07:37:42Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/codenameone/CodenameOne",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1856,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.codenameone.com/",
+        "resolved_host": "codenameone.com",
+        "html_bytes_checked": 22844,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-029",
+      "label": "HUMAN",
+      "target_url": "https://diskoverdata.com/",
+      "project_family_id": "diskoverdata.com",
+      "project_name": "diskover-community",
+      "repository": "diskoverdata/diskover-community",
+      "repository_created_at": "2017-04-19T11:17:12Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/diskoverdata/diskover-community",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1811,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://diskoverdata.com/",
+        "resolved_host": "diskoverdata.com",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-030",
+      "label": "HUMAN",
+      "target_url": "https://yetiforce.com/",
+      "project_family_id": "yetiforce.com",
+      "project_name": "YetiForceCRM",
+      "repository": "YetiForceCompany/YetiForceCRM",
+      "repository_created_at": "2014-12-15T22:55:47Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/YetiForceCompany/YetiForceCRM",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1793,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://yetiforce.com/pl/",
+        "resolved_host": "yetiforce.com",
+        "html_bytes_checked": 110947,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-031",
+      "label": "HUMAN",
+      "target_url": "https://react-rainbow.io/",
+      "project_family_id": "react-rainbow.io",
+      "project_name": "react-rainbow",
+      "repository": "nexxtway/react-rainbow",
+      "repository_created_at": "2018-08-28T05:34:53Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nexxtway/react-rainbow",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1792,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://react-rainbow.io/",
+        "resolved_host": "react-rainbow.io",
+        "html_bytes_checked": 1129,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-032",
+      "label": "HUMAN",
+      "target_url": "https://getmango.app/",
+      "project_family_id": "getmango.app",
+      "project_name": "Mango",
+      "repository": "getmango/Mango",
+      "repository_created_at": "2020-02-11T22:06:07Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/getmango/Mango",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1782,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://getmango.app/",
+        "resolved_host": "getmango.app",
+        "html_bytes_checked": 114,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-033",
+      "label": "HUMAN",
+      "target_url": "http://hackathon-starter-staging.herokuapp.com/",
+      "project_family_id": "hackathon-starter-staging.herokuapp.com",
+      "project_name": "laravel-hackathon-starter",
+      "repository": "unicodeveloper/laravel-hackathon-starter",
+      "repository_created_at": "2016-02-08T02:14:29Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/unicodeveloper/laravel-hackathon-starter",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1693,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-034",
+      "label": "HUMAN",
+      "target_url": "https://deckdeckgo.com/",
+      "project_family_id": "deckdeckgo.com",
+      "project_name": "deckdeckgo",
+      "repository": "deckgo/deckdeckgo",
+      "repository_created_at": "2018-11-03T14:39:29Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/deckgo/deckdeckgo",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1678,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://deckdeckgo.com/",
+        "resolved_host": "deckdeckgo.com",
+        "html_bytes_checked": 39305,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-035",
+      "label": "HUMAN",
+      "target_url": "https://generative.fm/",
+      "project_family_id": "generative.fm",
+      "project_name": "generative.fm",
+      "repository": "generativefm/generative.fm",
+      "repository_created_at": "2018-05-06T20:03:23Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/generativefm/generative.fm",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1588,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://generative.fm/",
+        "resolved_host": "generative.fm",
+        "html_bytes_checked": 17339,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-036",
+      "label": "HUMAN",
+      "target_url": "https://amaranth-demo.netlify.app/",
+      "project_family_id": "amaranth-demo.netlify.app",
+      "project_name": "gatsby-advanced-starter",
+      "repository": "Vagr9K/gatsby-advanced-starter",
+      "repository_created_at": "2017-07-18T20:18:32Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Vagr9K/gatsby-advanced-starter",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1559,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://amaranth-demo.netlify.app/",
+        "resolved_host": "amaranth-demo.netlify.app",
+        "html_bytes_checked": 67351,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-037",
+      "label": "HUMAN",
+      "target_url": "https://bento-starter.firebaseapp.com/",
+      "project_family_id": "bento-starter.firebaseapp.com",
+      "project_name": "bento-starter",
+      "repository": "kefranabg/bento-starter",
+      "repository_created_at": "2019-02-02T13:33:37Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/kefranabg/bento-starter",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1513,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://bento-starter.firebaseapp.com/",
+        "resolved_host": "bento-starter.firebaseapp.com",
+        "html_bytes_checked": 1885,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-038",
+      "label": "HUMAN",
+      "target_url": "https://hn.nuxt.dev/",
+      "project_family_id": "hn.nuxt.dev",
+      "project_name": "hackernews",
+      "repository": "nuxt/hackernews",
+      "repository_created_at": "2017-06-02T18:54:05Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nuxt/hackernews",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1435,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://hn.nuxt.dev/news/1",
+        "resolved_host": "hn.nuxt.dev",
+        "html_bytes_checked": 15841,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-039",
+      "label": "HUMAN",
+      "target_url": "https://pwa.nuxtjs.org/",
+      "project_family_id": "pwa.nuxtjs.org",
+      "project_name": "pwa-module",
+      "repository": "nuxt-community/pwa-module",
+      "repository_created_at": "2017-10-04T22:17:39Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nuxt-community/pwa-module",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1262,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pwa.nuxtjs.org/",
+        "resolved_host": "pwa.nuxtjs.org",
+        "html_bytes_checked": 65778,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-040",
+      "label": "HUMAN",
+      "target_url": "https://badaso.uatech.co.id/",
+      "project_family_id": "badaso.uatech.co.id",
+      "project_name": "badaso",
+      "repository": "uasoft-indonesia/badaso",
+      "repository_created_at": "2021-03-15T04:40:50Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/uasoft-indonesia/badaso",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1253,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 525"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-041",
+      "label": "HUMAN",
+      "target_url": "https://bangle.io/",
+      "project_family_id": "bangle.io",
+      "project_name": "bangle-io",
+      "repository": "bangle-io/bangle-io",
+      "repository_created_at": "2020-12-23T03:31:34Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/bangle-io/bangle-io",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1229,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://bangle.io/",
+        "resolved_host": "bangle.io",
+        "html_bytes_checked": 16498,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-042",
+      "label": "HUMAN",
+      "target_url": "https://www.vvveb.com/",
+      "project_family_id": "vvveb.com",
+      "project_name": "Vvveb",
+      "repository": "givanz/Vvveb",
+      "repository_created_at": "2018-05-29T11:33:24Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/givanz/Vvveb",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1163,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.vvveb.com/",
+        "resolved_host": "vvveb.com",
+        "html_bytes_checked": 53668,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-043",
+      "label": "HUMAN",
+      "target_url": "https://hoverboard-master.web.app/",
+      "project_family_id": "hoverboard-master.web.app",
+      "project_name": "hoverboard",
+      "repository": "gdg-x/hoverboard",
+      "repository_created_at": "2015-07-17T21:00:52Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/gdg-x/hoverboard",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1156,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://hoverboard-master.web.app/",
+        "resolved_host": "hoverboard-master.web.app",
+        "html_bytes_checked": 5286,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-044",
+      "label": "HUMAN",
+      "target_url": "https://beatbump.io/",
+      "project_family_id": "beatbump.io",
+      "project_name": "Beatbump",
+      "repository": "snuffyDev/Beatbump",
+      "repository_created_at": "2021-06-17T18:37:49Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/snuffyDev/Beatbump",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1135,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 403"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-045",
+      "label": "HUMAN",
+      "target_url": "https://fixit.lruihao.cn/",
+      "project_family_id": "fixit.lruihao.cn",
+      "project_name": "FixIt",
+      "repository": "hugo-fixit/FixIt",
+      "repository_created_at": "2021-12-16T03:35:27Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/hugo-fixit/FixIt",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1118,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://fixit.lruihao.cn/",
+        "resolved_host": "fixit.lruihao.cn",
+        "html_bytes_checked": 38140,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-046",
+      "label": "HUMAN",
+      "target_url": "https://www.angular-universal-pwa.maciejtreder.com/",
+      "project_family_id": "angular-universal-pwa.maciejtreder.com",
+      "project_name": "ng-toolkit",
+      "repository": "maciejtreder/ng-toolkit",
+      "repository_created_at": "2017-06-10T10:07:58Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/maciejtreder/ng-toolkit",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1111,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-047",
+      "label": "HUMAN",
+      "target_url": "https://developer.adobe.com/commerce/pwa-studio/",
+      "project_family_id": "developer.adobe.com",
+      "project_name": "pwa-studio",
+      "repository": "magento/pwa-studio",
+      "repository_created_at": "2018-06-13T17:35:05Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/magento/pwa-studio",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1083,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://developer.adobe.com/commerce/pwa-studio/",
+        "resolved_host": "developer.adobe.com",
+        "html_bytes_checked": 8773,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-048",
+      "label": "HUMAN",
+      "target_url": "https://hubing.online/",
+      "project_family_id": "hubing.online",
+      "project_name": "web-monitoring",
+      "repository": "kisslove/web-monitoring",
+      "repository_created_at": "2018-05-16T06:43:38Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/kisslove/web-monitoring",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1080,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-049",
+      "label": "HUMAN",
+      "target_url": "https://usebudget.com/",
+      "project_family_id": "usebudget.com",
+      "project_name": "budget",
+      "repository": "range-of-motion/budget",
+      "repository_created_at": "2017-07-20T16:53:54Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/range-of-motion/budget",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1068,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-050",
+      "label": "HUMAN",
+      "target_url": "https://io-oi.me/hugo-theme-meme",
+      "project_family_id": "io-oi.me",
+      "project_name": "hugo-theme-meme",
+      "repository": "reuixiy/hugo-theme-meme",
+      "repository_created_at": "2019-08-12T04:06:21Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/reuixiy/hugo-theme-meme",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1067,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://io-oi.me/hugo-theme-meme/",
+        "resolved_host": "io-oi.me",
+        "html_bytes_checked": 31136,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-051",
+      "label": "HUMAN",
+      "target_url": "https://qrcodescan.in/",
+      "project_family_id": "qrcodescan.in",
+      "project_name": "qr-code-scanner",
+      "repository": "code-kotis/qr-code-scanner",
+      "repository_created_at": "2016-03-15T09:48:59Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/code-kotis/qr-code-scanner",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1063,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://qrcodescan.in/",
+        "resolved_host": "qrcodescan.in",
+        "html_bytes_checked": 15191,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-052",
+      "label": "HUMAN",
+      "target_url": "https://ph7builder.com/",
+      "project_family_id": "ph7builder.com",
+      "project_name": "pH7-Social-Dating-CMS",
+      "repository": "pH7Software/pH7-Social-Dating-CMS",
+      "repository_created_at": "2013-03-02T00:26:00Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/pH7Software/pH7-Social-Dating-CMS",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1051,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://ph7builder.com/",
+        "resolved_host": "ph7builder.com",
+        "html_bytes_checked": 221423,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-053",
+      "label": "HUMAN",
+      "target_url": "https://pinafore.social/",
+      "project_family_id": "pinafore.social",
+      "project_name": "pinafore",
+      "repository": "nolanlawson/pinafore",
+      "repository_created_at": "2018-01-07T05:05:53Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nolanlawson/pinafore",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1034,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pinafore.social/",
+        "resolved_host": "pinafore.social",
+        "html_bytes_checked": 28543,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-054",
+      "label": "HUMAN",
+      "target_url": "https://twbp.tris.codes/",
+      "project_family_id": "twbp.tris.codes",
+      "project_name": "tris-webpack-boilerplate",
+      "repository": "tr1s/tris-webpack-boilerplate",
+      "repository_created_at": "2018-10-23T14:24:41Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/tr1s/tris-webpack-boilerplate",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1011,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-055",
+      "label": "HUMAN",
+      "target_url": "https://www.orocrm.com/",
+      "project_family_id": "orocrm.com",
+      "project_name": "crm-application",
+      "repository": "oroinc/crm-application",
+      "repository_created_at": "2013-06-03T09:02:57Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/oroinc/crm-application",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 1006,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 403"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-056",
+      "label": "HUMAN",
+      "target_url": "https://moneytracker.cc/",
+      "project_family_id": "moneytracker.cc",
+      "project_name": "money-tracker",
+      "repository": "ayastreb/money-tracker",
+      "repository_created_at": "2017-05-30T06:43:48Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ayastreb/money-tracker",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 982,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://moneytracker.cc/",
+        "resolved_host": "moneytracker.cc",
+        "html_bytes_checked": 6067,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-057",
+      "label": "HUMAN",
+      "target_url": "https://demopwa.surge.sh/",
+      "project_family_id": "demopwa.surge.sh",
+      "project_name": "demo-progressive-web-app",
+      "repository": "gokulkrishh/demo-progressive-web-app",
+      "repository_created_at": "2015-12-28T04:20:49Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/gokulkrishh/demo-progressive-web-app",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 968,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://demopwa.surge.sh/",
+        "resolved_host": "demopwa.surge.sh",
+        "html_bytes_checked": 5790,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-058",
+      "label": "HUMAN",
+      "target_url": "https://niceshare.site/",
+      "project_family_id": "niceshare.site",
+      "project_name": "nice-front-end-tutorial",
+      "repository": "nicejade/nice-front-end-tutorial",
+      "repository_created_at": "2017-09-04T12:38:08Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nicejade/nice-front-end-tutorial",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 968,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://niceshare.site/",
+        "resolved_host": "niceshare.site",
+        "html_bytes_checked": 414782,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-059",
+      "label": "HUMAN",
+      "target_url": "https://axelander.dev/",
+      "project_family_id": "axelander.dev",
+      "project_name": "OpenBudgeteer",
+      "repository": "TheAxelander/OpenBudgeteer",
+      "repository_created_at": "2021-11-05T11:13:09Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/TheAxelander/OpenBudgeteer",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 968,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://axelander.dev/",
+        "resolved_host": "axelander.dev",
+        "html_bytes_checked": 336,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-060",
+      "label": "HUMAN",
+      "target_url": "https://preact-boilerplate.surge.sh/",
+      "project_family_id": "preact-boilerplate.surge.sh",
+      "project_name": "preact-boilerplate",
+      "repository": "developit/preact-boilerplate",
+      "repository_created_at": "2016-01-20T01:27:33Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/developit/preact-boilerplate",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 962,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://preact-boilerplate.surge.sh/",
+        "resolved_host": "preact-boilerplate.surge.sh",
+        "html_bytes_checked": 1174,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-061",
+      "label": "HUMAN",
+      "target_url": "https://im.aermin.top/group_chat/ddbffd80-3663-11e9-a580-d119b23ef62e",
+      "project_family_id": "im.aermin.top",
+      "project_name": "ghChat",
+      "repository": "aermin/ghChat",
+      "repository_created_at": "2018-05-21T12:51:55Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/aermin/ghChat",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 929,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-062",
+      "label": "HUMAN",
+      "target_url": "https://qcadoo.com/",
+      "project_family_id": "qcadoo.com",
+      "project_name": "mes",
+      "repository": "qcadoo/mes",
+      "repository_created_at": "2010-11-16T13:01:36Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/qcadoo/mes",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 927,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.qcadoo.com/",
+        "resolved_host": "qcadoo.com",
+        "html_bytes_checked": 226944,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-063",
+      "label": "HUMAN",
+      "target_url": "http://mailtolink.me/",
+      "project_family_id": "mailtolink.me",
+      "project_name": "mailtolink",
+      "repository": "mckeever02/mailtolink",
+      "repository_created_at": "2018-12-20T19:30:32Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/mckeever02/mailtolink",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 920,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://mailtolink.me/",
+        "resolved_host": "mailtolink.me",
+        "html_bytes_checked": 8512,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-064",
+      "label": "HUMAN",
+      "target_url": "http://www.poweradmin.org/",
+      "project_family_id": "poweradmin.org",
+      "project_name": "poweradmin",
+      "repository": "poweradmin/poweradmin",
+      "repository_created_at": "2011-03-15T10:17:43Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/poweradmin/poweradmin",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 904,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.poweradmin.org/",
+        "resolved_host": "poweradmin.org",
+        "html_bytes_checked": 313697,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-065",
+      "label": "HUMAN",
+      "target_url": "https://khmyznikov.com/pwa-install/",
+      "project_family_id": "khmyznikov.com",
+      "project_name": "pwa-install",
+      "repository": "khmyznikov/pwa-install",
+      "repository_created_at": "2020-11-08T13:49:03Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/khmyznikov/pwa-install",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 899,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://khmyznikov.com/pwa-install/",
+        "resolved_host": "khmyznikov.com",
+        "html_bytes_checked": 8289,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-066",
+      "label": "HUMAN",
+      "target_url": "https://tg.pl/drab",
+      "project_family_id": "tg.pl",
+      "project_name": "drab",
+      "repository": "grych/drab",
+      "repository_created_at": "2016-11-01T14:46:22Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/grych/drab",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 878,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-067",
+      "label": "HUMAN",
+      "target_url": "https://www.awes.io/",
+      "project_family_id": "awes.io",
+      "project_name": "awes-io",
+      "repository": "awes-io/awes-io",
+      "repository_created_at": "2019-01-23T22:58:17Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/awes-io/awes-io",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 864,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://awes.io/",
+        "resolved_host": "awes.io",
+        "html_bytes_checked": 80611,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-068",
+      "label": "HUMAN",
+      "target_url": "https://my.liubai.cc/",
+      "project_family_id": "my.liubai.cc",
+      "project_name": "liubai",
+      "repository": "yenche123/liubai",
+      "repository_created_at": "2022-09-29T04:04:03Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/yenche123/liubai",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 864,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://my.liubai.cc/",
+        "resolved_host": "my.liubai.cc",
+        "html_bytes_checked": 5452,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-069",
+      "label": "HUMAN",
+      "target_url": "https://www.reactstorefront.io/",
+      "project_family_id": "reactstorefront.io",
+      "project_name": "react-storefront",
+      "repository": "storefront-foundation/react-storefront",
+      "repository_created_at": "2019-11-08T10:42:22Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/storefront-foundation/react-storefront",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 839,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-070",
+      "label": "HUMAN",
+      "target_url": "http://social2.mernbook.com/",
+      "project_family_id": "social2.mernbook.com",
+      "project_name": "mern-social",
+      "repository": "shamahoque/mern-social",
+      "repository_created_at": "2018-04-28T19:50:38Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/shamahoque/mern-social",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 835,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "http://social2.mernbook.com/",
+        "resolved_host": "social2.mernbook.com",
+        "html_bytes_checked": 31503,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-071",
+      "label": "HUMAN",
+      "target_url": "https://ionic-svelte.firebaseapp.com/",
+      "project_family_id": "ionic-svelte.firebaseapp.com",
+      "project_name": "core",
+      "repository": "ionic-svelte/core",
+      "repository_created_at": "2019-12-15T19:21:59Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ionic-svelte/core",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 828,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://ionic-svelte.firebaseapp.com/",
+        "resolved_host": "ionic-svelte.firebaseapp.com",
+        "html_bytes_checked": 2712,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-072",
+      "label": "HUMAN",
+      "target_url": "http://magjac.com/graphviz-visual-editor",
+      "project_family_id": "magjac.com",
+      "project_name": "graphviz-visual-editor",
+      "repository": "magjac/graphviz-visual-editor",
+      "repository_created_at": "2018-08-21T14:18:30Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/magjac/graphviz-visual-editor",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 811,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "http://magjac.com/graphviz-visual-editor/",
+        "resolved_host": "magjac.com",
+        "html_bytes_checked": 759,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-073",
+      "label": "HUMAN",
+      "target_url": "https://git.io/awesome-meta-and-manifest",
+      "project_family_id": "git.io",
+      "project_name": "awesome-meta-and-manifest",
+      "repository": "gokulkrishh/awesome-meta-and-manifest",
+      "repository_created_at": "2016-09-12T05:09:04Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/gokulkrishh/awesome-meta-and-manifest",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 795,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://github.com/gokulkrishh/awesome-meta-and-manifest?",
+        "resolved_host": "github.com",
+        "html_bytes_checked": 336083,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-074",
+      "label": "HUMAN",
+      "target_url": "https://adm.im/",
+      "project_family_id": "adm.im",
+      "project_name": "adamant-im",
+      "repository": "Adamant-im/adamant-im",
+      "repository_created_at": "2017-09-22T20:46:48Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Adamant-im/adamant-im",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 786,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://adm.im/",
+        "resolved_host": "adm.im",
+        "html_bytes_checked": 4220,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-075",
+      "label": "HUMAN",
+      "target_url": "https://rylo.com/sign/translate",
+      "project_family_id": "rylo.com",
+      "project_name": "translate",
+      "repository": "sign/translate",
+      "repository_created_at": "2021-02-22T19:30:21Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/sign/translate",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 784,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://rylo.com/sign/translate",
+        "resolved_host": "rylo.com",
+        "html_bytes_checked": 77860,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-076",
+      "label": "HUMAN",
+      "target_url": "https://demo.saleor.io/",
+      "project_family_id": "demo.saleor.io",
+      "project_name": "saleor-storefront",
+      "repository": "saleor/saleor-storefront",
+      "repository_created_at": "2018-08-01T10:16:33Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/saleor/saleor-storefront",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 774,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://demo.saleor.io/en/default",
+        "resolved_host": "demo.saleor.io",
+        "html_bytes_checked": 187227,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-077",
+      "label": "HUMAN",
+      "target_url": "https://prism-editor.netlify.com/",
+      "project_family_id": "prism-editor.netlify.com",
+      "project_name": "vue-prism-editor",
+      "repository": "koca/vue-prism-editor",
+      "repository_created_at": "2018-08-27T00:05:40Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/koca/vue-prism-editor",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 756,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-078",
+      "label": "HUMAN",
+      "target_url": "http://nglviewer.org/ngl/",
+      "project_family_id": "nglviewer.org",
+      "project_name": "ngl",
+      "repository": "nglviewer/ngl",
+      "repository_created_at": "2014-09-01T12:18:28Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nglviewer/ngl",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 729,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "http://nglviewer.org/ngl/",
+        "resolved_host": "nglviewer.org",
+        "html_bytes_checked": 2037,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-079",
+      "label": "HUMAN",
+      "target_url": "https://react-pwa.surenatoyan.com/",
+      "project_family_id": "react-pwa.surenatoyan.com",
+      "project_name": "react-pwa",
+      "repository": "suren-atoyan/react-pwa",
+      "repository_created_at": "2020-06-11T16:29:29Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/suren-atoyan/react-pwa",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 722,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://react-pwa.surenatoyan.com/",
+        "resolved_host": "react-pwa.surenatoyan.com",
+        "html_bytes_checked": 1950,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-080",
+      "label": "HUMAN",
+      "target_url": "http://blog.csxiaoyao.com/",
+      "project_family_id": "blog.csxiaoyao.com",
+      "project_name": "JavaScriptStudy",
+      "repository": "csxiaoyaojianxian/JavaScriptStudy",
+      "repository_created_at": "2017-02-02T20:21:56Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/csxiaoyaojianxian/JavaScriptStudy",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 714,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "http://blog.csxiaoyao.com/",
+        "resolved_host": "blog.csxiaoyao.com",
+        "html_bytes_checked": 82473,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-081",
+      "label": "HUMAN",
+      "target_url": "https://consulo.io/",
+      "project_family_id": "consulo.io",
+      "project_name": "consulo",
+      "repository": "consulo/consulo",
+      "repository_created_at": "2013-05-17T05:48:18Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/consulo/consulo",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 712,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://consulo.io/",
+        "resolved_host": "consulo.io",
+        "html_bytes_checked": 11538,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-082",
+      "label": "HUMAN",
+      "target_url": "https://pixiv.pictures/",
+      "project_family_id": "pixiv.pictures",
+      "project_name": "pixiv-viewer",
+      "repository": "asadahimeka/pixiv-viewer",
+      "repository_created_at": "2022-07-25T01:09:05Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/asadahimeka/pixiv-viewer",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 709,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pixiv.pictures/",
+        "resolved_host": "pixiv.pictures",
+        "html_bytes_checked": 6302,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-083",
+      "label": "HUMAN",
+      "target_url": "http://littleasp.net/book",
+      "project_family_id": "littleasp.net",
+      "project_name": "little-aspnetcore-book",
+      "repository": "nbarbettini/little-aspnetcore-book",
+      "repository_created_at": "2017-08-26T03:00:18Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nbarbettini/little-aspnetcore-book",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 703,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-084",
+      "label": "HUMAN",
+      "target_url": "https://www.fullstackweekly.com/",
+      "project_family_id": "fullstackweekly.com",
+      "project_name": "vue-wordpress-pwa",
+      "repository": "bstavroulakis/vue-wordpress-pwa",
+      "repository_created_at": "2017-03-05T12:15:06Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/bstavroulakis/vue-wordpress-pwa",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 699,
+      "source_query": "topic:pwa created:<2022-11-30 stars:100..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.fullstackweekly.com/",
+        "resolved_host": "fullstackweekly.com",
+        "html_bytes_checked": 114,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "CONF3-HUM-085",
+      "label": "HUMAN",
+      "target_url": "https://urlhum.com/",
+      "project_family_id": "urlhum.com",
+      "project_name": "UrlHum",
+      "repository": "urlhum/UrlHum",
+      "repository_created_at": "2019-04-18T17:08:34Z",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/urlhum/UrlHum",
+      "provenance_summary": "Official repository links the target and predates 2022-11-30T00:00:00Z.",
+      "source_stars": 689,
+      "source_query": "topic:web-application created:<2022-11-30 stars:50..5000",
+      "model_score_inspected_during_acquisition": false,
+      "label_limitation": "Operational Human control; later AI assistance cannot be excluded.",
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://github.com/urlhum/urlhum",
+        "resolved_host": "github.com",
+        "html_bytes_checked": 323083,
+        "disqualifying_signals": []
+      }
+    }
+  ]
+}

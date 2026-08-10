@@ -1,0 +1,626 @@
+{
+  "schema_version": "v0.3-development-logistic-candidate",
+  "feature_names": [
+    "stack:Next.js",
+    "stack:React",
+    "stack:Vite",
+    "stack:Tailwind CSS",
+    "stack:Framer Motion",
+    "stack:Radix UI",
+    "stack:Lucide",
+    "stack:Supabase",
+    "stack:Firebase",
+    "metric:script_tags",
+    "metric:module_scripts",
+    "metric:stylesheet_links",
+    "metric:preload_links",
+    "metric:inline_styles",
+    "metric:inline_script_bytes",
+    "metric:data_attributes",
+    "metric:aria_attributes",
+    "metric:class_attributes",
+    "metric:class_tokens",
+    "metric:unique_class_tokens",
+    "metric:dom_tags",
+    "metric:forms",
+    "metric:inputs",
+    "metric:buttons",
+    "metric:headings",
+    "metric:images",
+    "metric:svgs",
+    "metric:same_origin_scripts_requested",
+    "metric:same_origin_styles_requested",
+    "metric:same_origin_scripts_fetched",
+    "metric:same_origin_styles_fetched",
+    "metric:asset_bytes_fetched",
+    "extended:html_bytes",
+    "extended:visible_text_chars",
+    "extended:visible_words",
+    "extended:unique_visible_words",
+    "extended:paragraphs",
+    "extended:sections",
+    "extended:anchors",
+    "extended:navs",
+    "extended:footers",
+    "extended:dialogs",
+    "extended:tables",
+    "extended:code_blocks",
+    "extended:canvases",
+    "extended:videos",
+    "extended:meta_tags",
+    "extended:jsonld_scripts",
+    "extended:comments",
+    "extended:id_attributes",
+    "extended:role_attributes",
+    "extended:alt_attributes",
+    "extended:custom_elements",
+    "extended:tailwind_like_tokens",
+    "extended:arbitrary_class_tokens",
+    "extended:css_variables",
+    "extended:gradients",
+    "extended:keyframes",
+    "extended:external_host_count",
+    "extended:shadcn_variable_coverage",
+    "extended:data_slot_attributes",
+    "extended:radix_fingerprints",
+    "extended:lucide_fingerprints",
+    "extended:cva_fingerprints",
+    "extended:tailwind_merge_fingerprints",
+    "extended:next_themes_fingerprints",
+    "extended:sonner_fingerprints",
+    "extended:cmdk_fingerprints",
+    "extended:recharts_fingerprints",
+    "extended:embla_fingerprints",
+    "extended:tanstack_fingerprints",
+    "extended:react_hook_form_fingerprints",
+    "extended:zod_fingerprints",
+    "extended:framer_motion_fingerprints",
+    "extended:ui_cliche_tokens",
+    "extended:vite_fingerprints",
+    "extended:next_fingerprints",
+    "ratio:unique_class_tokens",
+    "ratio:visible_words_per_dom",
+    "ratio:aria_per_dom",
+    "ratio:tailwind_per_class",
+    "ratio:asset_fetch_success",
+    "ratio:text_bytes_per_html",
+    "artifact:any_direct",
+    "artifact:lovable_direct",
+    "artifact:bolt_direct",
+    "artifact:v0_direct",
+    "artifact:replit_direct",
+    "context:lovable_hosting",
+    "context:replit_hosting",
+    "context:replit_runtime",
+    "context:stackblitz_webcontainer",
+    "header:vercel",
+    "header:netlify",
+    "header:replit",
+    "header:cloudflare",
+    "hint:count"
+  ],
+  "training": {
+    "l2": 10,
+    "learning_rate": 0.05,
+    "iterations": 800,
+    "threshold": 0.44
+  },
+  "intercept": 0.11383835487243141,
+  "coefficients": {
+    "stack:Next.js": -0.1615326265647263,
+    "stack:React": -0.039447938198919556,
+    "stack:Vite": 0.08136761677530713,
+    "stack:Tailwind CSS": 0.26105734641332357,
+    "stack:Framer Motion": 0.24044377995790872,
+    "stack:Radix UI": -0.21606104158177591,
+    "stack:Lucide": 0.3244444556218345,
+    "stack:Supabase": 0.08455455387194274,
+    "stack:Firebase": 0.09178558092057482,
+    "metric:script_tags": 0.10168108084004648,
+    "metric:module_scripts": -0.05550536103315741,
+    "metric:stylesheet_links": 0.09300499742274111,
+    "metric:preload_links": -0.22043039559276245,
+    "metric:inline_styles": 0.09076630847314027,
+    "metric:inline_script_bytes": 0.36611842790256155,
+    "metric:data_attributes": -0.10274686306350479,
+    "metric:aria_attributes": -0.07619919172266522,
+    "metric:class_attributes": -0.0709089062971,
+    "metric:class_tokens": -0.13275126850514696,
+    "metric:unique_class_tokens": -0.0745086526818344,
+    "metric:dom_tags": -0.022975794943939566,
+    "metric:forms": -0.025944589074907428,
+    "metric:inputs": 0.042890418740836905,
+    "metric:buttons": 0.2952046050496851,
+    "metric:headings": 0.13688603054729936,
+    "metric:images": -0.16735719399619908,
+    "metric:svgs": -0.14008302902799402,
+    "metric:same_origin_scripts_requested": -0.085879732780847,
+    "metric:same_origin_styles_requested": 0.003688057031314261,
+    "metric:same_origin_scripts_fetched": -0.08362819703298255,
+    "metric:same_origin_styles_fetched": 0.009373700119476747,
+    "metric:asset_bytes_fetched": -0.19269370186973386,
+    "extended:html_bytes": 0.019359334323547424,
+    "extended:visible_text_chars": 0.09529543628779881,
+    "extended:visible_words": 0.10766433267659846,
+    "extended:unique_visible_words": 0.05762257067753543,
+    "extended:paragraphs": 0.03110515134866329,
+    "extended:sections": 0.3048178807996251,
+    "extended:anchors": -0.18694777909288002,
+    "extended:navs": -0.293456334281879,
+    "extended:footers": -0.09863643689054052,
+    "extended:dialogs": 0.1269792239689198,
+    "extended:tables": 0.15990849570609758,
+    "extended:code_blocks": -0.399780511274195,
+    "extended:canvases": -0.03886953145433732,
+    "extended:videos": 0.04383559668371937,
+    "extended:meta_tags": 0.07369320829048398,
+    "extended:jsonld_scripts": 0.49224186498332506,
+    "extended:comments": 0.3543476820473819,
+    "extended:id_attributes": -0.11630464017226826,
+    "extended:role_attributes": -0.2888044570448718,
+    "extended:alt_attributes": -0.019616175046526168,
+    "extended:custom_elements": -0.11046831165288525,
+    "extended:tailwind_like_tokens": -0.06644745312284608,
+    "extended:arbitrary_class_tokens": -0.1668940919935376,
+    "extended:css_variables": -0.08582553657649745,
+    "extended:gradients": 0.2137127550634174,
+    "extended:keyframes": 0.31673216384642633,
+    "extended:external_host_count": -0.15728596732028555,
+    "extended:shadcn_variable_coverage": 0.363720071032923,
+    "extended:data_slot_attributes": -0.06358642106321087,
+    "extended:radix_fingerprints": -0.22149475314255007,
+    "extended:lucide_fingerprints": 0.33519162776824396,
+    "extended:cva_fingerprints": 0,
+    "extended:tailwind_merge_fingerprints": 0,
+    "extended:next_themes_fingerprints": 0,
+    "extended:sonner_fingerprints": -0.02289132192153685,
+    "extended:cmdk_fingerprints": 0.18095751109424943,
+    "extended:recharts_fingerprints": 0.27552243503030543,
+    "extended:embla_fingerprints": 0,
+    "extended:tanstack_fingerprints": -0.08180896204303638,
+    "extended:react_hook_form_fingerprints": -0.05732944708387584,
+    "extended:zod_fingerprints": -0.13812376320868913,
+    "extended:framer_motion_fingerprints": 0.009315567899856953,
+    "extended:ui_cliche_tokens": 0.16814125951850808,
+    "extended:vite_fingerprints": -0.21789095914864606,
+    "extended:next_fingerprints": -0.0483250612848434,
+    "ratio:unique_class_tokens": -0.07920325665533547,
+    "ratio:visible_words_per_dom": 0.034026691971599424,
+    "ratio:aria_per_dom": 0.04848613163565791,
+    "ratio:tailwind_per_class": -0.0921676801537362,
+    "ratio:asset_fetch_success": -0.09289994822588064,
+    "ratio:text_bytes_per_html": -0.02232761719351001,
+    "artifact:any_direct": 0.08601559901737055,
+    "artifact:lovable_direct": 0.0027394735756470527,
+    "artifact:bolt_direct": 0.1031212901746992,
+    "artifact:v0_direct": 0,
+    "artifact:replit_direct": 0,
+    "context:lovable_hosting": 0,
+    "context:replit_hosting": 0,
+    "context:replit_runtime": 0,
+    "context:stackblitz_webcontainer": -0.09324636758842289,
+    "header:vercel": -0.21678945743756975,
+    "header:netlify": 0.28341338776172553,
+    "header:replit": 0,
+    "header:cloudflare": -0.1302780794551644,
+    "hint:count": 0.18078168239026945
+  },
+  "standardization": {
+    "stack:Next.js": {
+      "mean": 0.39893617021276595,
+      "standard_deviation": 0.4896795914766481
+    },
+    "stack:React": {
+      "mean": 0.4734042553191489,
+      "standard_deviation": 0.499292165334958
+    },
+    "stack:Vite": {
+      "mean": 0.19148936170212766,
+      "standard_deviation": 0.3934732342320612
+    },
+    "stack:Tailwind CSS": {
+      "mean": 0.6170212765957447,
+      "standard_deviation": 0.4861131769700367
+    },
+    "stack:Framer Motion": {
+      "mean": 0.03723404255319149,
+      "standard_deviation": 0.18933480564423094
+    },
+    "stack:Radix UI": {
+      "mean": 0.13829787234042554,
+      "standard_deviation": 0.34521235616144547
+    },
+    "stack:Lucide": {
+      "mean": 0.2978723404255319,
+      "standard_deviation": 0.4573230906426522
+    },
+    "stack:Supabase": {
+      "mean": 0.09574468085106383,
+      "standard_deviation": 0.294240780551901
+    },
+    "stack:Firebase": {
+      "mean": 0.015957446808510637,
+      "standard_deviation": 0.12531084031265693
+    },
+    "metric:script_tags": {
+      "mean": 2.5931050153899564,
+      "standard_deviation": 1.1525074921460856
+    },
+    "metric:module_scripts": {
+      "mean": 0.3078966228374715,
+      "standard_deviation": 0.44020896212896776
+    },
+    "metric:stylesheet_links": {
+      "mean": 1.133009187906384,
+      "standard_deviation": 0.6485978977505827
+    },
+    "metric:preload_links": {
+      "mean": 1.2780400592420622,
+      "standard_deviation": 1.2341499084192842
+    },
+    "metric:inline_styles": {
+      "mean": 2.5977583561648974,
+      "standard_deviation": 2.0790010076708536
+    },
+    "metric:inline_script_bytes": {
+      "mean": 8.172089885367512,
+      "standard_deviation": 3.8033517620952324
+    },
+    "metric:data_attributes": {
+      "mean": 2.73348540350391,
+      "standard_deviation": 1.9636901942160656
+    },
+    "metric:aria_attributes": {
+      "mean": 2.450794657478516,
+      "standard_deviation": 1.9088624191269505
+    },
+    "metric:class_attributes": {
+      "mean": 4.693417696571439,
+      "standard_deviation": 2.407261686103328
+    },
+    "metric:class_tokens": {
+      "mean": 5.546655011707898,
+      "standard_deviation": 2.8923136509480947
+    },
+    "metric:unique_class_tokens": {
+      "mean": 4.319841129978886,
+      "standard_deviation": 2.1529743367456677
+    },
+    "metric:dom_tags": {
+      "mean": 5.013421579542361,
+      "standard_deviation": 2.1632070217061456
+    },
+    "metric:forms": {
+      "mean": 0.23854228885337048,
+      "standard_deviation": 0.4878926922251748
+    },
+    "metric:inputs": {
+      "mean": 0.5280587135684718,
+      "standard_deviation": 0.7836181574623918
+    },
+    "metric:buttons": {
+      "mean": 1.6932301519638466,
+      "standard_deviation": 1.4108601177491393
+    },
+    "metric:headings": {
+      "mean": 2.164227393447572,
+      "standard_deviation": 1.3649745517588707
+    },
+    "metric:images": {
+      "mean": 2.023178146019391,
+      "standard_deviation": 1.60846646177933
+    },
+    "metric:svgs": {
+      "mean": 2.325416245028312,
+      "standard_deviation": 1.7911787604805165
+    },
+    "metric:same_origin_scripts_requested": {
+      "mean": 1.1222783689972071,
+      "standard_deviation": 0.5580170159275741
+    },
+    "metric:same_origin_styles_requested": {
+      "mean": 0.7750419210232764,
+      "standard_deviation": 0.35172642574507457
+    },
+    "metric:same_origin_scripts_fetched": {
+      "mean": 1.0774084264313788,
+      "standard_deviation": 0.6075617788834963
+    },
+    "metric:same_origin_styles_fetched": {
+      "mean": 0.7676680148471069,
+      "standard_deviation": 0.3605219474814718
+    },
+    "metric:asset_bytes_fetched": {
+      "mean": 11.481884522368217,
+      "standard_deviation": 3.6187567548280075
+    },
+    "extended:html_bytes": {
+      "mean": 10.944139514894191,
+      "standard_deviation": 1.9064792399733645
+    },
+    "extended:visible_text_chars": {
+      "mean": 7.470964767593567,
+      "standard_deviation": 2.084786397233149
+    },
+    "extended:visible_words": {
+      "mean": 5.6103238651576595,
+      "standard_deviation": 2.04506010766428
+    },
+    "extended:unique_visible_words": {
+      "mean": 4.939832005144761,
+      "standard_deviation": 1.6807021226028627
+    },
+    "extended:paragraphs": {
+      "mean": 2.535077378103301,
+      "standard_deviation": 1.684723683950081
+    },
+    "extended:sections": {
+      "mean": 1.2308180701494453,
+      "standard_deviation": 1.1056725559425586
+    },
+    "extended:anchors": {
+      "mean": 3.0226737918776525,
+      "standard_deviation": 1.6787337354465388
+    },
+    "extended:navs": {
+      "mean": 0.6707415821612757,
+      "standard_deviation": 0.5736323906281546
+    },
+    "extended:footers": {
+      "mean": 0.4724727329274539,
+      "standard_deviation": 0.4081814517642908
+    },
+    "extended:dialogs": {
+      "mean": 0.06664837108828632,
+      "standard_deviation": 0.29281404320439103
+    },
+    "extended:tables": {
+      "mean": 0.06114797870780474,
+      "standard_deviation": 0.21476984267940175
+    },
+    "extended:code_blocks": {
+      "mean": 0.2820105624673999,
+      "standard_deviation": 0.8206356554035485
+    },
+    "extended:canvases": {
+      "mean": 0.029495624704678522,
+      "standard_deviation": 0.1571178522699075
+    },
+    "extended:videos": {
+      "mean": 0.22469097885134284,
+      "standard_deviation": 0.5684565287440249
+    },
+    "extended:meta_tags": {
+      "mean": 2.6492508676544766,
+      "standard_deviation": 0.6576466040600037
+    },
+    "extended:jsonld_scripts": {
+      "mean": 0.4306824620775719,
+      "standard_deviation": 0.5866028554448761
+    },
+    "extended:comments": {
+      "mean": 2.291031225158974,
+      "standard_deviation": 1.5024139277275024
+    },
+    "extended:id_attributes": {
+      "mean": 2.296100112997771,
+      "standard_deviation": 1.3147181307071885
+    },
+    "extended:role_attributes": {
+      "mean": 1.0653795940993682,
+      "standard_deviation": 1.3142445203163853
+    },
+    "extended:alt_attributes": {
+      "mean": 1.8670577497880945,
+      "standard_deviation": 1.6368286524088855
+    },
+    "extended:custom_elements": {
+      "mean": 0.1528341930611339,
+      "standard_deviation": 0.598655976471479
+    },
+    "extended:tailwind_like_tokens": {
+      "mean": 3.578663537139804,
+      "standard_deviation": 3.416622276684363
+    },
+    "extended:arbitrary_class_tokens": {
+      "mean": 1.9708807918404894,
+      "standard_deviation": 2.6008471570835763
+    },
+    "extended:css_variables": {
+      "mean": 5.41394805812785,
+      "standard_deviation": 2.070772821858931
+    },
+    "extended:gradients": {
+      "mean": 2.159804868096091,
+      "standard_deviation": 1.4377580491895359
+    },
+    "extended:keyframes": {
+      "mean": 1.5847413546741458,
+      "standard_deviation": 1.1424467356292527
+    },
+    "extended:external_host_count": {
+      "mean": 2.6402525726299846,
+      "standard_deviation": 0.686886317578227
+    },
+    "extended:shadcn_variable_coverage": {
+      "mean": 0.8794610835103005,
+      "standard_deviation": 1.0784963802435694
+    },
+    "extended:data_slot_attributes": {
+      "mean": 0.4660001050009345,
+      "standard_deviation": 1.16052274566073
+    },
+    "extended:radix_fingerprints": {
+      "mean": 0.26933443143118807,
+      "standard_deviation": 0.710676513413939
+    },
+    "extended:lucide_fingerprints": {
+      "mean": 1.072077776304061,
+      "standard_deviation": 1.755857985513187
+    },
+    "extended:cva_fingerprints": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "extended:tailwind_merge_fingerprints": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "extended:next_themes_fingerprints": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "extended:sonner_fingerprints": {
+      "mean": 0.1277140023309368,
+      "standard_deviation": 0.7727103631978969
+    },
+    "extended:cmdk_fingerprints": {
+      "mean": 0.4794142214123265,
+      "standard_deviation": 1.1759286512585294
+    },
+    "extended:recharts_fingerprints": {
+      "mean": 0.3727632105690237,
+      "standard_deviation": 1.0500209862793513
+    },
+    "extended:embla_fingerprints": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "extended:tanstack_fingerprints": {
+      "mean": 0.02983761593183489,
+      "standard_deviation": 0.2463036010390842
+    },
+    "extended:react_hook_form_fingerprints": {
+      "mean": 0.005843682386532498,
+      "standard_deviation": 0.0799111547725555
+    },
+    "extended:zod_fingerprints": {
+      "mean": 0.04390014705096687,
+      "standard_deviation": 0.30657314119143264
+    },
+    "extended:framer_motion_fingerprints": {
+      "mean": 0.008560839959755852,
+      "standard_deviation": 0.11706772575178566
+    },
+    "extended:ui_cliche_tokens": {
+      "mean": 2.3241604380208036,
+      "standard_deviation": 2.085418728548092
+    },
+    "extended:vite_fingerprints": {
+      "mean": 0.24363922217386913,
+      "standard_deviation": 0.8431959509261439
+    },
+    "extended:next_fingerprints": {
+      "mean": 1.6768298240808632,
+      "standard_deviation": 2.134198254022666
+    },
+    "ratio:unique_class_tokens": {
+      "mean": 0.26177449567606326,
+      "standard_deviation": 0.24127306117023867
+    },
+    "ratio:visible_words_per_dom": {
+      "mean": 2.74742362735231,
+      "standard_deviation": 2.772648535824076
+    },
+    "ratio:aria_per_dom": {
+      "mean": 0.07407373917269913,
+      "standard_deviation": 0.08338978933310474
+    },
+    "ratio:tailwind_per_class": {
+      "mean": 0.27443322758590366,
+      "standard_deviation": 0.29350930348455184
+    },
+    "ratio:asset_fetch_success": {
+      "mean": 0.8882978723404256,
+      "standard_deviation": 0.2904745626655744
+    },
+    "ratio:text_bytes_per_html": {
+      "mean": 0.050266751730056125,
+      "standard_deviation": 0.051764739750222034
+    },
+    "artifact:any_direct": {
+      "mean": 0.015957446808510637,
+      "standard_deviation": 0.12531084031265702
+    },
+    "artifact:lovable_direct": {
+      "mean": 0.005319148936170213,
+      "standard_deviation": 0.07273826771902815
+    },
+    "artifact:bolt_direct": {
+      "mean": 0.010638297872340425,
+      "standard_deviation": 0.1025920293722655
+    },
+    "artifact:v0_direct": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "artifact:replit_direct": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "context:lovable_hosting": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "context:replit_hosting": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "context:replit_runtime": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "context:stackblitz_webcontainer": {
+      "mean": 0.010638297872340425,
+      "standard_deviation": 0.10259202937226548
+    },
+    "header:vercel": {
+      "mean": 0.31382978723404253,
+      "standard_deviation": 0.4640481137540357
+    },
+    "header:netlify": {
+      "mean": 0.07446808510638298,
+      "standard_deviation": 0.26253112083517227
+    },
+    "header:replit": {
+      "mean": 0,
+      "standard_deviation": 1
+    },
+    "header:cloudflare": {
+      "mean": 0.3723404255319149,
+      "standard_deviation": 0.48342841563837247
+    },
+    "hint:count": {
+      "mean": 0.6329140272200651,
+      "standard_deviation": 0.49103350451827044
+    }
+  },
+  "trained_at": "2026-08-10T15:30:03.679Z",
+  "status": "FROZEN_CANDIDATE_NOT_FOR_PRODUCTION",
+  "training_rows": 188,
+  "training_labels": {
+    "AI": 94,
+    "HUMAN": 94
+  },
+  "development_validation": {
+    "assignments": 50,
+    "assignments_meeting_80_80": 48,
+    "precision": {
+      "minimum": 0.7878787878787878,
+      "p10": 0.8105263157894737,
+      "median": 0.8387096774193549,
+      "p90": 0.8681318681318682,
+      "maximum": 0.8817204301075269
+    },
+    "recall": {
+      "minimum": 0.7978723404255319,
+      "p10": 0.8191489361702128,
+      "median": 0.8404255319148937,
+      "p90": 0.8617021276595744,
+      "maximum": 0.8829787234042553
+    }
+  },
+  "failed_confirmation_used": false,
+  "production_rule_change_authorized": false,
+  "independent_confirmation_required": true
+}

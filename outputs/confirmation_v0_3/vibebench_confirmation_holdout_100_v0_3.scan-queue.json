@@ -1,0 +1,407 @@
+{
+  "schema_version": "v0.3-confirmation-scan-queue",
+  "manifest_sha256": "7e6d0510d924120af404ba0b065e6e39db8c0c9f6d308c1e8e39cc3d2a94856b",
+  "labels_included": false,
+  "rows": [
+    {
+      "sample_id": "CONF3-001",
+      "target_url": "https://capyqr.com/"
+    },
+    {
+      "sample_id": "CONF3-002",
+      "target_url": "https://soniqtools.com/"
+    },
+    {
+      "sample_id": "CONF3-003",
+      "target_url": "https://semarize.com/"
+    },
+    {
+      "sample_id": "CONF3-004",
+      "target_url": "https://sochely.com/"
+    },
+    {
+      "sample_id": "CONF3-005",
+      "target_url": "https://candidatefalcon.com/"
+    },
+    {
+      "sample_id": "CONF3-006",
+      "target_url": "https://www.predictmybaby.com/"
+    },
+    {
+      "sample_id": "CONF3-007",
+      "target_url": "https://buildfloorplan.com/"
+    },
+    {
+      "sample_id": "CONF3-008",
+      "target_url": "https://lander.rs/?lang=en"
+    },
+    {
+      "sample_id": "CONF3-009",
+      "target_url": "https://gmcfix.com/"
+    },
+    {
+      "sample_id": "CONF3-010",
+      "target_url": "https://getbantr.com/"
+    },
+    {
+      "sample_id": "CONF3-011",
+      "target_url": "https://www.tryhooked.ai/"
+    },
+    {
+      "sample_id": "CONF3-012",
+      "target_url": "https://aidoctornotes.app/"
+    },
+    {
+      "sample_id": "CONF3-013",
+      "target_url": "https://donedone.run/"
+    },
+    {
+      "sample_id": "CONF3-014",
+      "target_url": "https://lunokid.com/"
+    },
+    {
+      "sample_id": "CONF3-015",
+      "target_url": "https://opticall.org/"
+    },
+    {
+      "sample_id": "CONF3-016",
+      "target_url": "https://www.adden.ai/"
+    },
+    {
+      "sample_id": "CONF3-017",
+      "target_url": "https://sociavault.com/"
+    },
+    {
+      "sample_id": "CONF3-018",
+      "target_url": "https://z-image.net/"
+    },
+    {
+      "sample_id": "CONF3-019",
+      "target_url": "https://privateclawd.com/"
+    },
+    {
+      "sample_id": "CONF3-020",
+      "target_url": "https://www.bonjournal.app/"
+    },
+    {
+      "sample_id": "CONF3-021",
+      "target_url": "https://www.health3.app/"
+    },
+    {
+      "sample_id": "CONF3-022",
+      "target_url": "https://pixelco.io/"
+    },
+    {
+      "sample_id": "CONF3-023",
+      "target_url": "https://applighter.com/?utm_source=hot100&utm_medium=launch_directory&utm_campaign=launch"
+    },
+    {
+      "sample_id": "CONF3-024",
+      "target_url": "https://polytest.io/"
+    },
+    {
+      "sample_id": "CONF3-025",
+      "target_url": "https://mentalnote.ai/"
+    },
+    {
+      "sample_id": "CONF3-026",
+      "target_url": "https://stitchdesk.com/"
+    },
+    {
+      "sample_id": "CONF3-027",
+      "target_url": "https://dopaloop.app/"
+    },
+    {
+      "sample_id": "CONF3-028",
+      "target_url": "https://www.datamagnet.co/"
+    },
+    {
+      "sample_id": "CONF3-029",
+      "target_url": "https://manusights.com/"
+    },
+    {
+      "sample_id": "CONF3-030",
+      "target_url": "https://pathoura.com/"
+    },
+    {
+      "sample_id": "CONF3-031",
+      "target_url": "https://noone.io/"
+    },
+    {
+      "sample_id": "CONF3-032",
+      "target_url": "https://3dsynth.app/"
+    },
+    {
+      "sample_id": "CONF3-033",
+      "target_url": "https://agentkit.ai/"
+    },
+    {
+      "sample_id": "CONF3-034",
+      "target_url": "https://www.usenovi.com/"
+    },
+    {
+      "sample_id": "CONF3-035",
+      "target_url": "https://norteapp.io/"
+    },
+    {
+      "sample_id": "CONF3-036",
+      "target_url": "https://laracopilot.com/"
+    },
+    {
+      "sample_id": "CONF3-037",
+      "target_url": "https://flagup.io/"
+    },
+    {
+      "sample_id": "CONF3-038",
+      "target_url": "https://www.looktara.com/"
+    },
+    {
+      "sample_id": "CONF3-039",
+      "target_url": "https://www.mybets.gg/"
+    },
+    {
+      "sample_id": "CONF3-040",
+      "target_url": "https://www.subclip.app/"
+    },
+    {
+      "sample_id": "CONF3-041",
+      "target_url": "https://reel25.com/"
+    },
+    {
+      "sample_id": "CONF3-042",
+      "target_url": "https://stride-fuel.com/"
+    },
+    {
+      "sample_id": "CONF3-043",
+      "target_url": "https://www.chatxos.com/"
+    },
+    {
+      "sample_id": "CONF3-044",
+      "target_url": "https://www.talentsprout.ai/"
+    },
+    {
+      "sample_id": "CONF3-045",
+      "target_url": "https://www.buildables.app/"
+    },
+    {
+      "sample_id": "CONF3-046",
+      "target_url": "https://extralt.com/"
+    },
+    {
+      "sample_id": "CONF3-047",
+      "target_url": "https://reachinbox.ai/"
+    },
+    {
+      "sample_id": "CONF3-048",
+      "target_url": "https://auditflow.work/"
+    },
+    {
+      "sample_id": "CONF3-049",
+      "target_url": "https://intellisessionai.com/"
+    },
+    {
+      "sample_id": "CONF3-050",
+      "target_url": "https://1app.energy/"
+    },
+    {
+      "sample_id": "CONF3-051",
+      "target_url": "https://www.talater.com/upup/"
+    },
+    {
+      "sample_id": "CONF3-052",
+      "target_url": "https://hledger.org/"
+    },
+    {
+      "sample_id": "CONF3-053",
+      "target_url": "http://assemble.io/"
+    },
+    {
+      "sample_id": "CONF3-054",
+      "target_url": "https://vite-pwa-org.netlify.app/"
+    },
+    {
+      "sample_id": "CONF3-055",
+      "target_url": "http://www.arachni-scanner.com/"
+    },
+    {
+      "sample_id": "CONF3-056",
+      "target_url": "https://piwigo.org/"
+    },
+    {
+      "sample_id": "CONF3-057",
+      "target_url": "https://docs.pwabuilder.com/"
+    },
+    {
+      "sample_id": "CONF3-058",
+      "target_url": "https://webhint.io/"
+    },
+    {
+      "sample_id": "CONF3-059",
+      "target_url": "https://www.commafeed.com/"
+    },
+    {
+      "sample_id": "CONF3-060",
+      "target_url": "https://swarmpit.io/"
+    },
+    {
+      "sample_id": "CONF3-061",
+      "target_url": "https://www.nosqlclient.com/"
+    },
+    {
+      "sample_id": "CONF3-062",
+      "target_url": "https://item.jd.com/12365091.html"
+    },
+    {
+      "sample_id": "CONF3-063",
+      "target_url": "https://omnidb.org/"
+    },
+    {
+      "sample_id": "CONF3-064",
+      "target_url": "https://pwasforfirefox.filips.si/"
+    },
+    {
+      "sample_id": "CONF3-065",
+      "target_url": "https://padloc.app/"
+    },
+    {
+      "sample_id": "CONF3-066",
+      "target_url": "https://vuesion.herokuapp.com/"
+    },
+    {
+      "sample_id": "CONF3-067",
+      "target_url": "https://pgtune.leopard.in.ua/"
+    },
+    {
+      "sample_id": "CONF3-068",
+      "target_url": "https://getmetastream.com/"
+    },
+    {
+      "sample_id": "CONF3-069",
+      "target_url": "https://marquez.co/statusfy"
+    },
+    {
+      "sample_id": "CONF3-070",
+      "target_url": "https://www.reactpwa.com/"
+    },
+    {
+      "sample_id": "CONF3-071",
+      "target_url": "https://storefrontui.io/"
+    },
+    {
+      "sample_id": "CONF3-072",
+      "target_url": "https://www.react-most-wanted.com/"
+    },
+    {
+      "sample_id": "CONF3-073",
+      "target_url": "https://alexandrie-hub.fr/"
+    },
+    {
+      "sample_id": "CONF3-074",
+      "target_url": "https://privoce.voce.chat/"
+    },
+    {
+      "sample_id": "CONF3-075",
+      "target_url": "https://www.projectsend.org/"
+    },
+    {
+      "sample_id": "CONF3-076",
+      "target_url": "https://www.reactivetrader.com/"
+    },
+    {
+      "sample_id": "CONF3-077",
+      "target_url": "https://www.codenameone.com/"
+    },
+    {
+      "sample_id": "CONF3-078",
+      "target_url": "https://diskoverdata.com/"
+    },
+    {
+      "sample_id": "CONF3-079",
+      "target_url": "https://yetiforce.com/"
+    },
+    {
+      "sample_id": "CONF3-080",
+      "target_url": "https://react-rainbow.io/"
+    },
+    {
+      "sample_id": "CONF3-081",
+      "target_url": "https://getmango.app/"
+    },
+    {
+      "sample_id": "CONF3-082",
+      "target_url": "https://deckdeckgo.com/"
+    },
+    {
+      "sample_id": "CONF3-083",
+      "target_url": "https://generative.fm/"
+    },
+    {
+      "sample_id": "CONF3-084",
+      "target_url": "https://amaranth-demo.netlify.app/"
+    },
+    {
+      "sample_id": "CONF3-085",
+      "target_url": "https://bento-starter.firebaseapp.com/"
+    },
+    {
+      "sample_id": "CONF3-086",
+      "target_url": "https://hn.nuxt.dev/"
+    },
+    {
+      "sample_id": "CONF3-087",
+      "target_url": "https://pwa.nuxtjs.org/"
+    },
+    {
+      "sample_id": "CONF3-088",
+      "target_url": "https://bangle.io/"
+    },
+    {
+      "sample_id": "CONF3-089",
+      "target_url": "https://www.vvveb.com/"
+    },
+    {
+      "sample_id": "CONF3-090",
+      "target_url": "https://hoverboard-master.web.app/"
+    },
+    {
+      "sample_id": "CONF3-091",
+      "target_url": "https://fixit.lruihao.cn/"
+    },
+    {
+      "sample_id": "CONF3-092",
+      "target_url": "https://developer.adobe.com/commerce/pwa-studio/"
+    },
+    {
+      "sample_id": "CONF3-093",
+      "target_url": "https://io-oi.me/hugo-theme-meme"
+    },
+    {
+      "sample_id": "CONF3-094",
+      "target_url": "https://qrcodescan.in/"
+    },
+    {
+      "sample_id": "CONF3-095",
+      "target_url": "https://ph7builder.com/"
+    },
+    {
+      "sample_id": "CONF3-096",
+      "target_url": "https://pinafore.social/"
+    },
+    {
+      "sample_id": "CONF3-097",
+      "target_url": "https://moneytracker.cc/"
+    },
+    {
+      "sample_id": "CONF3-098",
+      "target_url": "https://demopwa.surge.sh/"
+    },
+    {
+      "sample_id": "CONF3-099",
+      "target_url": "https://niceshare.site/"
+    },
+    {
+      "sample_id": "CONF3-100",
+      "target_url": "https://axelander.dev/"
+    }
+  ]
+}

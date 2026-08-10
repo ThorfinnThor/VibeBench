@@ -1,0 +1,407 @@
+{
+  "schema_version": "v0.4-confirmation-scan-queue",
+  "manifest_sha256": "5f19956eb2e34cdb1fe9f9714b0eb13bde45affeac1115032ba39795b00bd7a9",
+  "labels_included": false,
+  "rows": [
+    {
+      "sample_id": "CONF4-001",
+      "target_url": "https://www.eurouter.ai/"
+    },
+    {
+      "sample_id": "CONF4-002",
+      "target_url": "https://app.contentiq.net/"
+    },
+    {
+      "sample_id": "CONF4-003",
+      "target_url": "https://freesoragenerator.com/"
+    },
+    {
+      "sample_id": "CONF4-004",
+      "target_url": "https://tripmaven.org/"
+    },
+    {
+      "sample_id": "CONF4-005",
+      "target_url": "https://payzum.com/"
+    },
+    {
+      "sample_id": "CONF4-006",
+      "target_url": "https://pixfinder.app/"
+    },
+    {
+      "sample_id": "CONF4-007",
+      "target_url": "https://unorouter.com/"
+    },
+    {
+      "sample_id": "CONF4-008",
+      "target_url": "https://vibecodedit.com/"
+    },
+    {
+      "sample_id": "CONF4-009",
+      "target_url": "https://greatapps.net/"
+    },
+    {
+      "sample_id": "CONF4-010",
+      "target_url": "https://owni.chat/"
+    },
+    {
+      "sample_id": "CONF4-011",
+      "target_url": "https://kanjilens.com/"
+    },
+    {
+      "sample_id": "CONF4-012",
+      "target_url": "https://www.raseedapp.com/"
+    },
+    {
+      "sample_id": "CONF4-013",
+      "target_url": "https://payrollflow.io/"
+    },
+    {
+      "sample_id": "CONF4-014",
+      "target_url": "https://xpenser.cleverbrush.com/"
+    },
+    {
+      "sample_id": "CONF4-015",
+      "target_url": "https://www.digipay.guru/mobile-money-payment-solutions/"
+    },
+    {
+      "sample_id": "CONF4-016",
+      "target_url": "https://www.predictobets.com/"
+    },
+    {
+      "sample_id": "CONF4-017",
+      "target_url": "https://www.paintops.app/"
+    },
+    {
+      "sample_id": "CONF4-018",
+      "target_url": "https://trushot.app/"
+    },
+    {
+      "sample_id": "CONF4-019",
+      "target_url": "https://www.trophyjar.com/"
+    },
+    {
+      "sample_id": "CONF4-020",
+      "target_url": "https://viston.tech/"
+    },
+    {
+      "sample_id": "CONF4-021",
+      "target_url": "https://cloutstack.net/"
+    },
+    {
+      "sample_id": "CONF4-022",
+      "target_url": "https://betterdb.com/"
+    },
+    {
+      "sample_id": "CONF4-023",
+      "target_url": "https://zensched.app/"
+    },
+    {
+      "sample_id": "CONF4-024",
+      "target_url": "https://onboardhive.com/"
+    },
+    {
+      "sample_id": "CONF4-025",
+      "target_url": "https://pixpunk.ai/"
+    },
+    {
+      "sample_id": "CONF4-026",
+      "target_url": "https://www.debateee.com/"
+    },
+    {
+      "sample_id": "CONF4-027",
+      "target_url": "https://www.autohype.ai/"
+    },
+    {
+      "sample_id": "CONF4-028",
+      "target_url": "https://totext.app/"
+    },
+    {
+      "sample_id": "CONF4-029",
+      "target_url": "https://thefancyfonts.com/"
+    },
+    {
+      "sample_id": "CONF4-030",
+      "target_url": "https://pling.banegasn.dev/"
+    },
+    {
+      "sample_id": "CONF4-031",
+      "target_url": "https://fintract.ai/"
+    },
+    {
+      "sample_id": "CONF4-032",
+      "target_url": "https://namescombiner.us/couple-name-combiner/"
+    },
+    {
+      "sample_id": "CONF4-033",
+      "target_url": "https://in.bio/"
+    },
+    {
+      "sample_id": "CONF4-034",
+      "target_url": "https://www.vinthelper.app/"
+    },
+    {
+      "sample_id": "CONF4-035",
+      "target_url": "https://watchpolice.com/"
+    },
+    {
+      "sample_id": "CONF4-036",
+      "target_url": "https://nicknamegenerator.us/"
+    },
+    {
+      "sample_id": "CONF4-037",
+      "target_url": "https://getstaffscheduling.ca/"
+    },
+    {
+      "sample_id": "CONF4-038",
+      "target_url": "https://hitkeep.com/"
+    },
+    {
+      "sample_id": "CONF4-039",
+      "target_url": "https://www.deeplead.io/"
+    },
+    {
+      "sample_id": "CONF4-040",
+      "target_url": "https://www.simplepostgresql.com/"
+    },
+    {
+      "sample_id": "CONF4-041",
+      "target_url": "https://pandaexpressnutritionfacts.us/"
+    },
+    {
+      "sample_id": "CONF4-042",
+      "target_url": "https://www.graffiti-generator.art/"
+    },
+    {
+      "sample_id": "CONF4-043",
+      "target_url": "https://merchantoria.com/"
+    },
+    {
+      "sample_id": "CONF4-044",
+      "target_url": "https://www.lumisource.io/"
+    },
+    {
+      "sample_id": "CONF4-045",
+      "target_url": "https://toolsnetwork.co/"
+    },
+    {
+      "sample_id": "CONF4-046",
+      "target_url": "https://aigeneratoremail.com/"
+    },
+    {
+      "sample_id": "CONF4-047",
+      "target_url": "https://growcreator.pro/"
+    },
+    {
+      "sample_id": "CONF4-048",
+      "target_url": "https://biostackiq.com/"
+    },
+    {
+      "sample_id": "CONF4-049",
+      "target_url": "https://facesage.app/"
+    },
+    {
+      "sample_id": "CONF4-050",
+      "target_url": "https://themicrodose.ai/"
+    },
+    {
+      "sample_id": "CONF4-051",
+      "target_url": "https://sparkleshare.org/"
+    },
+    {
+      "sample_id": "CONF4-052",
+      "target_url": "https://fluidframework.com/"
+    },
+    {
+      "sample_id": "CONF4-053",
+      "target_url": "https://markwhen.com/"
+    },
+    {
+      "sample_id": "CONF4-054",
+      "target_url": "https://liveblocks.io/"
+    },
+    {
+      "sample_id": "CONF4-055",
+      "target_url": "https://portfoliooptimization.org/"
+    },
+    {
+      "sample_id": "CONF4-056",
+      "target_url": "https://pypi.org/project/mplfinance/"
+    },
+    {
+      "sample_id": "CONF4-057",
+      "target_url": "https://www.freeplane.org/"
+    },
+    {
+      "sample_id": "CONF4-058",
+      "target_url": "https://docs.projectile.mx/"
+    },
+    {
+      "sample_id": "CONF4-059",
+      "target_url": "https://wireflow.co/"
+    },
+    {
+      "sample_id": "CONF4-060",
+      "target_url": "https://klinecharts.com/"
+    },
+    {
+      "sample_id": "CONF4-061",
+      "target_url": "http://hikyuu.org/"
+    },
+    {
+      "sample_id": "CONF4-062",
+      "target_url": "https://terminusdb.org/"
+    },
+    {
+      "sample_id": "CONF4-063",
+      "target_url": "https://www.espocrm.com/"
+    },
+    {
+      "sample_id": "CONF4-064",
+      "target_url": "http://www.onlyoffice.com/"
+    },
+    {
+      "sample_id": "CONF4-065",
+      "target_url": "https://www.invoiceplane.com/"
+    },
+    {
+      "sample_id": "CONF4-066",
+      "target_url": "https://sfu.mirotalk.com/"
+    },
+    {
+      "sample_id": "CONF4-067",
+      "target_url": "https://igniterealtime.org/projects/openfire/"
+    },
+    {
+      "sample_id": "CONF4-068",
+      "target_url": "https://serversideup.net/open-source/financial-freedom/"
+    },
+    {
+      "sample_id": "CONF4-069",
+      "target_url": "https://www.teleconsole.com/"
+    },
+    {
+      "sample_id": "CONF4-070",
+      "target_url": "http://finmindtrade.com/"
+    },
+    {
+      "sample_id": "CONF4-071",
+      "target_url": "https://xalpha.readthedocs.io/"
+    },
+    {
+      "sample_id": "CONF4-072",
+      "target_url": "https://organice.200ok.ch/"
+    },
+    {
+      "sample_id": "CONF4-073",
+      "target_url": "https://www.tryquiet.org/"
+    },
+    {
+      "sample_id": "CONF4-074",
+      "target_url": "https://www.5kcrm.com/"
+    },
+    {
+      "sample_id": "CONF4-075",
+      "target_url": "https://www.documize.com/"
+    },
+    {
+      "sample_id": "CONF4-076",
+      "target_url": "http://metasfresh.com/en"
+    },
+    {
+      "sample_id": "CONF4-077",
+      "target_url": "http://aka.ms/vsls"
+    },
+    {
+      "sample_id": "CONF4-078",
+      "target_url": "https://bottlecrm.io/"
+    },
+    {
+      "sample_id": "CONF4-079",
+      "target_url": "https://fineract.apache.org/"
+    },
+    {
+      "sample_id": "CONF4-080",
+      "target_url": "http://bulbea.readthedocs.io/"
+    },
+    {
+      "sample_id": "CONF4-081",
+      "target_url": "https://awesome-streamlit.org/"
+    },
+    {
+      "sample_id": "CONF4-082",
+      "target_url": "http://moneymanagerex.org/"
+    },
+    {
+      "sample_id": "CONF4-083",
+      "target_url": "http://matterwiki.com/"
+    },
+    {
+      "sample_id": "CONF4-084",
+      "target_url": "https://twake.app/"
+    },
+    {
+      "sample_id": "CONF4-085",
+      "target_url": "https://ai4finance.org/"
+    },
+    {
+      "sample_id": "CONF4-086",
+      "target_url": "https://www.k8s9.com/"
+    },
+    {
+      "sample_id": "CONF4-087",
+      "target_url": "https://lumibot.lumiwealth.com/"
+    },
+    {
+      "sample_id": "CONF4-088",
+      "target_url": "https://syncedstore.org/"
+    },
+    {
+      "sample_id": "CONF4-089",
+      "target_url": "https://avohq.io/"
+    },
+    {
+      "sample_id": "CONF4-090",
+      "target_url": "https://dephell.org/"
+    },
+    {
+      "sample_id": "CONF4-091",
+      "target_url": "https://dj-stripe.dev/"
+    },
+    {
+      "sample_id": "CONF4-092",
+      "target_url": "https://nexustrade.io/"
+    },
+    {
+      "sample_id": "CONF4-093",
+      "target_url": "https://rocket.chat/"
+    },
+    {
+      "sample_id": "CONF4-094",
+      "target_url": "http://www.zentao.pm/"
+    },
+    {
+      "sample_id": "CONF4-095",
+      "target_url": "https://apiportal.koreainvestment.com/"
+    },
+    {
+      "sample_id": "CONF4-096",
+      "target_url": "http://twstock.readthedocs.io/"
+    },
+    {
+      "sample_id": "CONF4-097",
+      "target_url": "https://alpaca.markets/sdks/python/getting_started.html"
+    },
+    {
+      "sample_id": "CONF4-098",
+      "target_url": "https://subethaedit.net/"
+    },
+    {
+      "sample_id": "CONF4-099",
+      "target_url": "https://www.miguelsanda.com/"
+    },
+    {
+      "sample_id": "CONF4-100",
+      "target_url": "https://neuronet.io/gantt-elastic/"
+    }
+  ]
+}

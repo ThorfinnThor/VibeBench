@@ -1,0 +1,2376 @@
+{
+  "schema_version": "v0.3-development-candidate-pool",
+  "generated_at": "2026-08-10T15:09:49.894Z",
+  "purpose": "Development-only acquisition after v0.2 failure; no confirmation row-level analysis or model scoring used.",
+  "historical_chart_weeks": [
+    "2026-08-03",
+    "2026-07-20",
+    "2026-07-06",
+    "2026-06-22",
+    "2026-06-08",
+    "2026-05-25",
+    "2026-05-11",
+    "2026-04-27",
+    "2026-04-13",
+    "2026-03-30",
+    "2026-03-16",
+    "2026-03-02",
+    "2026-02-16",
+    "2026-02-02",
+    "2026-01-19",
+    "2026-01-05",
+    "2025-12-22",
+    "2025-12-08"
+  ],
+  "excluded_hosts": 302,
+  "model_scores_inspected": false,
+  "failed_confirmation_result_rows_inspected": false,
+  "summary": {
+    "CURSOR": {
+      "collected": 24,
+      "reachable": 23,
+      "selected": 6
+    },
+    "CLAUDE_CODE": {
+      "collected": 20,
+      "reachable": 19,
+      "selected": 6
+    },
+    "WINDSURF": {
+      "collected": 11,
+      "reachable": 10,
+      "selected": 6
+    },
+    "CODEX": {
+      "collected": 7,
+      "reachable": 7,
+      "selected": 6
+    },
+    "NATIVE_BUILDER": {
+      "collected": 18,
+      "reachable": 15,
+      "selected": 6
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "DEV3-CURSOR-001",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://www.boardgamesbot.com/",
+      "project_family_id": "boardgamesbot.com",
+      "project_name": "Board Games Bot",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2099",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.5, Cursor, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 80,
+      "source_project_id": 2099,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.boardgamesbot.com/",
+        "resolved_host": "boardgamesbot.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 108921,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-002",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://glitches.studionope.nl/",
+      "project_family_id": "glitches.studionope.nl",
+      "project_name": "Glitches",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1793",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: Cursor, Vercel, Next.js.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 85,
+      "source_project_id": 1793,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://glitches.studionope.nl/",
+        "resolved_host": "glitches.studionope.nl",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 26731,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-003",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://project-genie.ai/",
+      "project_family_id": "project-genie.ai",
+      "project_name": "Project Genie",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1559",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: Anthropic Claude 4 Opus, Cursor, Next.js.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 87,
+      "source_project_id": 1559,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://project-genie.ai/",
+        "resolved_host": "project-genie.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 232917,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-004",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://heymacy.ai/",
+      "project_family_id": "heymacy.ai",
+      "project_name": "Macy",
+      "builder_evidence": [
+        "Cursor",
+        "Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2323",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.6, Cursor, Codex, Other / Custom.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 89,
+      "source_project_id": 2323,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://heymacy.ai/",
+        "resolved_host": "heymacy.ai",
+        "content_type": "text/html",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-005",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://type.link/",
+      "project_family_id": "type.link",
+      "project_name": "TypeLink",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/794",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Cursor, ChatGPT Builder, Cloudflare, Supabase.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 92,
+      "source_project_id": 794,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://type.link/",
+        "resolved_host": "type.link",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 230163,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-006",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://www.labelynx.xyz/",
+      "project_family_id": "labelynx.xyz",
+      "project_name": "Labelynx - Ingredient Analyzer",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/499",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-4.1, Cursor, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 94,
+      "source_project_id": 499,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.labelynx.xyz/",
+        "resolved_host": "labelynx.xyz",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 2666,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-007",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://songai.io/",
+      "project_family_id": "songai.io",
+      "project_name": "SongAI",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1513",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 100,
+      "source_project_id": 1513,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://songai.io/",
+        "resolved_host": "songai.io",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 435483,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-008",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://aissist.io/",
+      "project_family_id": "aissist.io",
+      "project_name": "Aissist.io",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2214",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Vercel.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 80,
+      "source_project_id": 2214,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://aissist.io/",
+        "resolved_host": "aissist.io",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 146326,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-009",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://bonsplit.com/",
+      "project_family_id": "bonsplit.com",
+      "project_name": "BonSplit™",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2055",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Vercel.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 84,
+      "source_project_id": 2055,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://bonsplit.de/en/",
+        "resolved_host": "bonsplit.de",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 190096,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-010",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "http://trendgap.io/",
+      "project_family_id": "trendgap.io",
+      "project_name": "Build what people want. Skip the startup guesswork.",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2100",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Supabase, Vercel.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 90,
+      "source_project_id": 2100,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://trendgap.io/",
+        "resolved_host": "trendgap.io",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 156112,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-011",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://unboundchat.net/",
+      "project_family_id": "unboundchat.net",
+      "project_name": "UnboundChat",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1292",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: Anthropic Claude 4 Opus, Cursor, Supabase.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 91,
+      "source_project_id": 1292,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://unboundchat.net/",
+        "resolved_host": "unboundchat.net",
+        "content_type": "text/html",
+        "html_bytes_checked": 38915,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-012",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://tryverdikt.app/",
+      "project_family_id": "tryverdikt.app",
+      "project_name": "Verdikt",
+      "builder_evidence": [
+        "Claude Code",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2144",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.4, Anthropic Claude Sonnet 4.6, Claude Code, Cursor, Vercel.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 93,
+      "source_project_id": 2144,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://tryverdikt.app/",
+        "resolved_host": "tryverdikt.app",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 438681,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-013",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://imagevivid.com/",
+      "project_family_id": "imagevivid.com",
+      "project_name": "ImageVivid",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2213",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Cloudflare.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 94,
+      "source_project_id": 2213,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://imagevivid.com/",
+        "resolved_host": "imagevivid.com",
+        "content_type": "text/html",
+        "html_bytes_checked": 83971,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-014",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://neurolien.fr/",
+      "project_family_id": "neurolien.fr",
+      "project_name": "NINA AI",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1976",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: Cohere Command A, Mistral Large 3, GitHub Copilot, Cursor, Google Cloud, Google Vertex AI.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 95,
+      "source_project_id": 1976,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://neurolien.fr/",
+        "resolved_host": "neurolien.fr",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 31504,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-015",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://myminionai.com/",
+      "project_family_id": "myminionai.com",
+      "project_name": "My Minion AI",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2251",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: XAI Grok 4.5, Cursor, Render, Cloudflare.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 96,
+      "source_project_id": 2251,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://myminionai.com/",
+        "resolved_host": "myminionai.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 145971,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-016",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://mnemosphere.ai/",
+      "project_family_id": "mnemosphere.ai",
+      "project_name": "Mnemosphere AI",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1752",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.4, Anthropic Claude Sonnet 4.6, Cursor, Claude Code, Supabase, Next.js.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 97,
+      "source_project_id": 1752,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://mnemosphere.ai/",
+        "resolved_host": "mnemosphere.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 126629,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-017",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://creatok.ai/",
+      "project_family_id": "creatok.ai",
+      "project_name": "Creatok - Discover Winning Video Ads and Clone Them into Hundreds.",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/811",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5, Google Gemini 2.0 Flash, Cursor, Claude Code, Vercel, Next.js.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 98,
+      "source_project_id": 811,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.creatok.ai/",
+        "resolved_host": "creatok.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-018",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://www.alchemistaiofficial.com/",
+      "project_family_id": "alchemistaiofficial.com",
+      "project_name": "Alchemist AI",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1117",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI o1 (Reasoning), Cursor, Vercel.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 56,
+      "source_project_id": 1117,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.alchemistaiofficial.com/",
+        "resolved_host": "alchemistaiofficial.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 112044,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-019",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://audilingua.com/",
+      "project_family_id": "audilingua.com",
+      "project_name": "Audilingua",
+      "builder_evidence": [
+        "OpenAI Codex",
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2048",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI Codex, Cursor, Other / Custom.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 81,
+      "source_project_id": 2048,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://audilingua.com/",
+        "resolved_host": "audilingua.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 80797,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-020",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://www.viewzly.com/",
+      "project_family_id": "viewzly.com",
+      "project_name": "Viewzly - Real estate smart scheduling and adavnced analytics",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/833",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5, Cursor, Claude Code, Vercel.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 93,
+      "source_project_id": 833,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.viewzly.com/",
+        "resolved_host": "viewzly.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 5322,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-021",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://www.cutonce.ai/",
+      "project_family_id": "cutonce.ai",
+      "project_name": "Cutonce - Unlock your whole universe, not just your top picks",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2123",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.5, OpenAI GPT-5.4 mini, Cursor, Claude Code, Vercel, Cloudflare.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 95,
+      "source_project_id": 2123,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.cutonce.ai/",
+        "resolved_host": "cutonce.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 141351,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-022",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://causalityengine.ai/",
+      "project_family_id": "causalityengine.ai",
+      "project_name": "Causality Engine",
+      "builder_evidence": [
+        "Cursor",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2121",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.5, OpenAI GPT-5.4, Cursor, Claude Code, Vercel, Cloudflare.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 96,
+      "source_project_id": 2121,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 429"
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-023",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://eleganote.com/",
+      "project_family_id": "eleganote.com",
+      "project_name": "Eleganote",
+      "builder_evidence": [
+        "Cursor",
+        "Replit Agent"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2057",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: Anthropic Claude Sonnet 4.6, Google Gemini 3.1 Pro, Cursor, Replit Agent, Cloudflare, Render.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 98,
+      "source_project_id": 2057,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://eleganote.com/",
+        "resolved_host": "eleganote.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 30001,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CURSOR-024",
+      "label": "AI",
+      "target_group": "AI_CURSOR_NEW",
+      "builder": "CURSOR",
+      "target_url": "https://synapsehire.com/",
+      "project_family_id": "synapsehire.com",
+      "project_name": "Synapse Hire",
+      "builder_evidence": [
+        "Cursor"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2010",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: Google Gemini 3 Flash, Cursor, Other / Custom.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 99,
+      "source_project_id": 2010,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://synapsehire.com/",
+        "resolved_host": "synapsehire.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 100758,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-001",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.justghostwriter.com/",
+      "project_family_id": "justghostwriter.com",
+      "project_name": "GhostWriter",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1788",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: Anthropic Claude Sonnet 4.6, Claude Code, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 86,
+      "source_project_id": 1788,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.justghostwriter.com/",
+        "resolved_host": "justghostwriter.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 296653,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-002",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://teleprompter.works/",
+      "project_family_id": "teleprompter.works",
+      "project_name": "Teleprompter-scrolling scripts",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2300",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.5, Claude Code, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 90,
+      "source_project_id": 2300,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://teleprompter.works/",
+        "resolved_host": "teleprompter.works",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 51885,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-003",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://zest.exchange/",
+      "project_family_id": "zest.exchange",
+      "project_name": "Zest — Instant Crypto Swap & Free Tools | 1000+ Coins",
+      "builder_evidence": [
+        "Claude Code",
+        "Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2298",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.6, Anthropic Claude Sonnet 5, Claude Code, Codex, Vercel, Cloudflare.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 96,
+      "source_project_id": 2298,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://zest.exchange/",
+        "resolved_host": "zest.exchange",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 165139,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-004",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://stylecut.app/",
+      "project_family_id": "stylecut.app",
+      "project_name": "StyleCut",
+      "builder_evidence": [
+        "OpenAI Codex",
+        "OpenAI Codex",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2221",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.4, OpenAI Codex, OpenAI Codex, Claude Code, Cloudflare, Replicate.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 99,
+      "source_project_id": 2221,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://stylecut.app/",
+        "resolved_host": "stylecut.app",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 156174,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-005",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.maton.ai/",
+      "project_family_id": "maton.ai",
+      "project_name": "Maton",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/399",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: Anthropic Claude 3.5 Sonnet, OpenAI GPT-4.1, Claude Code, Vercel.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 89,
+      "source_project_id": 399,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.maton.ai/",
+        "resolved_host": "maton.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-006",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://widgetsfornotion.com/",
+      "project_family_id": "widgetsfornotion.com",
+      "project_name": "Widgets For Notion",
+      "builder_evidence": [
+        "OpenAI Codex",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2124",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.5, OpenAI Codex, Claude Code, Vercel.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 94,
+      "source_project_id": 2124,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://widgetsfornotion.com/",
+        "resolved_host": "widgetsfornotion.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 57909,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-007",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://typmo.com/",
+      "project_family_id": "typmo.com",
+      "project_name": "TypMo - Write wireframes. Generate prompts. Ship products.",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/906",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-4o, OpenAI GPT-4.1, Claude Code, Supabase, Netlify.",
+      "source_chart_week": "2026-06-22",
+      "source_rank": 64,
+      "source_project_id": 906,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://typmo.com/",
+        "resolved_host": "typmo.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 3616,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-008",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://metablast.dev/",
+      "project_family_id": "metablast.dev",
+      "project_name": "MetaBlast",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2069",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: Anthropic Claude Opus 4.8, Claude Code, Vercel, Supabase.",
+      "source_chart_week": "2026-06-22",
+      "source_rank": 88,
+      "source_project_id": 2069,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://metablast.dev/",
+        "resolved_host": "metablast.dev",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 74265,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-009",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.rankpad.app/",
+      "project_family_id": "rankpad.app",
+      "project_name": "Rankpad",
+      "builder_evidence": [
+        "Claude Code",
+        "OpenAI Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2083",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5.5, Anthropic Claude Opus 4.8, Claude Code, OpenAI Codex, Vercel, Supabase.",
+      "source_chart_week": "2026-06-22",
+      "source_rank": 99,
+      "source_project_id": 2083,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.rankpad.app/",
+        "resolved_host": "rankpad.app",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 268714,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-010",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.exporttofigma.com/",
+      "project_family_id": "exporttofigma.com",
+      "project_name": "Export to Figma",
+      "builder_evidence": [
+        "Claude Code",
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1984",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Anthropic Claude Sonnet 4.6, Claude Code, Lovable, Vercel, Supabase.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 81,
+      "source_project_id": 1984,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.exporttofigma.com/",
+        "resolved_host": "exporttofigma.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 303737,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-011",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://docuhub.live/",
+      "project_family_id": "docuhub.live",
+      "project_name": "Docuhub",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1732",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5.4, Google Gemini 3.1 Pro (Preview), Claude Code.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 88,
+      "source_project_id": 1732,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://docuhub.live/",
+        "resolved_host": "docuhub.live",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 386111,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-012",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://mailmind.online/",
+      "project_family_id": "mailmind.online",
+      "project_name": "MailMind",
+      "builder_evidence": [
+        "Claude Code",
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/809",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Anthropic Claude 4 Sonnet, Claude Code, Lovable, Supabase.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 94,
+      "source_project_id": 809,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://mailmind.online/",
+        "resolved_host": "mailmind.online",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 4253,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-013",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://voicedeck.io/",
+      "project_family_id": "voicedeck.io",
+      "project_name": "VoiceDeck",
+      "builder_evidence": [
+        "Windsurf",
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/936",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Google Gemini 2.0 Flash-Lite, Windsurf, Claude Code, Google Vertex AI.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 95,
+      "source_project_id": 936,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://voicedeck.io/",
+        "resolved_host": "voicedeck.io",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 92237,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-014",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://vaybl.quest/",
+      "project_family_id": "vaybl.quest",
+      "project_name": "Vaybl Quest",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1936",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Google Gemini 2.5 Pro, Google Gemini 2.5 Flash, Claude Code.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 96,
+      "source_project_id": 1936,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://vaybl.quest/",
+        "resolved_host": "vaybl.quest",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 41508,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-015",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://vedex.ai/",
+      "project_family_id": "vedex.ai",
+      "project_name": "Vedex",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1688",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: OpenAI GPT-5.4, Claude Code, Vercel.",
+      "source_chart_week": "2026-05-25",
+      "source_rank": 85,
+      "source_project_id": 1688,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://vedex.ai/landing",
+        "resolved_host": "vedex.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 23478,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-016",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://song-lyrics-review.com/",
+      "project_family_id": "song-lyrics-review.com",
+      "project_name": "Song Lyrics Review",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1598",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: Google Gemini 2.0 Flash, Claude Code, Next.js.",
+      "source_chart_week": "2026-05-25",
+      "source_rank": 95,
+      "source_project_id": 1598,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://song-lyrics-review.com/",
+        "resolved_host": "song-lyrics-review.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 208782,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-017",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.rapgeneratorai.com/",
+      "project_family_id": "rapgeneratorai.com",
+      "project_name": "RapGenerator AI",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/765",
+      "provenance_summary": "Hot100 chart 2026-03-30 metadata lists: Claude Code, Vercel, Next.js.",
+      "source_chart_week": "2026-03-30",
+      "source_rank": 36,
+      "source_project_id": 765,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.rapgeneratorai.com/",
+        "resolved_host": "rapgeneratorai.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 207044,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-018",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://astracms.dev/",
+      "project_family_id": "astracms.dev",
+      "project_name": "Astra CMS",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/979",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Cohere Command-A, OpenAI GPT-4o, Claude Code, GitHub Copilot, Next.js, Vercel.",
+      "source_chart_week": "2026-03-02",
+      "source_rank": 42,
+      "source_project_id": 979,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-019",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://omny.chat/",
+      "project_family_id": "omny.chat",
+      "project_name": "OMNY Chat",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1169",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Anthropic Claude 4 Opus, Claude Code, Next.js, Vercel.",
+      "source_chart_week": "2026-03-02",
+      "source_rank": 97,
+      "source_project_id": 1169,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://omny.chat/",
+        "resolved_host": "omny.chat",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 346948,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CLAUDE_CODE-020",
+      "label": "AI",
+      "target_group": "AI_CLAUDE_CODE_NEW",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.hyperpodai.com/",
+      "project_family_id": "hyperpodai.com",
+      "project_name": "Hyperpod AI",
+      "builder_evidence": [
+        "Claude Code"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/150",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: OpenAI GPT-4o, Claude Code, Supabase, Netlify.",
+      "source_chart_week": "2025-12-08",
+      "source_rank": 97,
+      "source_project_id": 150,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.hyperpodai.com/",
+        "resolved_host": "hyperpodai.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-001",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://hypemyhustle.xyz/",
+      "project_family_id": "hypemyhustle.xyz",
+      "project_name": "Hype My Hustle",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/599",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Anthropic Claude 4 Sonnet, Windsurf, Vercel, Next.js.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 40,
+      "source_project_id": 599,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.hypemyhustle.com/",
+        "resolved_host": "hypemyhustle.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 121849,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-002",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://www.agensi.io/",
+      "project_family_id": "agensi.io",
+      "project_name": "Agensi",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1820",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.4 mini, Windsurf, Next.js.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 84,
+      "source_project_id": 1820,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.agensi.io/",
+        "resolved_host": "agensi.io",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 381217,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-003",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://fastin3d.com/",
+      "project_family_id": "fastin3d.com",
+      "project_name": "text to 3d",
+      "builder_evidence": [
+        "Windsurf",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1546",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Windsurf, V0 by Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 88,
+      "source_project_id": 1546,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://fastin3d.com/",
+        "resolved_host": "fastin3d.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 74898,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-004",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://www.myswimscore.com/",
+      "project_family_id": "myswimscore.com",
+      "project_name": "SwimScore ",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1822",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5.4, Windsurf, Supabase.",
+      "source_chart_week": "2026-06-22",
+      "source_rank": 94,
+      "source_project_id": 1822,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.myswimscore.com/",
+        "resolved_host": "myswimscore.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 214448,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-005",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://commentkeyword.com/",
+      "project_family_id": "commentkeyword.com",
+      "project_name": "CommentKeyword",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1924",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5.4 mini, Windsurf, Next.js.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 66,
+      "source_project_id": 1924,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://commentkeyword.com/",
+        "resolved_host": "commentkeyword.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 109874,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-006",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://movescope.global/",
+      "project_family_id": "movescope.global",
+      "project_name": "MoveScope",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1807",
+      "provenance_summary": "Hot100 chart 2026-05-11 metadata lists: Google Gemini 3.1 Pro (Preview), Windsurf, Next.js.",
+      "source_chart_week": "2026-05-11",
+      "source_rank": 91,
+      "source_project_id": 1807,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://movescope.global/",
+        "resolved_host": "movescope.global",
+        "content_type": "text/html",
+        "html_bytes_checked": 102587,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-007",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://pipback.com/",
+      "project_family_id": "pipback.com",
+      "project_name": "PipBack",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1780",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-5.4 mini, Windsurf, Next.js.",
+      "source_chart_week": "2026-04-27",
+      "source_rank": 93,
+      "source_project_id": 1780,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://pipback.com/",
+        "resolved_host": "pipback.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 403772,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-008",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://cutback.video/selects",
+      "project_family_id": "cutback.video",
+      "project_name": "Selects",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/988",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: Google Gemini 2.0 Flash-Lite, Windsurf, Vercel.",
+      "source_chart_week": "2026-04-27",
+      "source_rank": 97,
+      "source_project_id": 988,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://cutback.video/selects",
+        "resolved_host": "cutback.video",
+        "content_type": "text/html",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-009",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://textideo.com/",
+      "project_family_id": "textideo.com",
+      "project_name": "Textideo",
+      "builder_evidence": [
+        "Replit Agent",
+        "Windsurf",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/588",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Azure OpenAI, Replit Agent, Windsurf, V0 by Vercel, Cloudflare.",
+      "source_chart_week": "2026-03-16",
+      "source_rank": 80,
+      "source_project_id": 588,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://textideo.com/",
+        "resolved_host": "textideo.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 388311,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-010",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://www.reddithunters.com/",
+      "project_family_id": "reddithunters.com",
+      "project_name": "Reddit Hunters",
+      "builder_evidence": [
+        "Windsurf"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/209",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Mistral Large, Windsurf, Vercel, Next.js.",
+      "source_chart_week": "2026-03-02",
+      "source_rank": 3,
+      "source_project_id": 209,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "DEV3-WINDSURF-011",
+      "label": "AI",
+      "target_group": "AI_WINDSURF_NEW",
+      "builder": "WINDSURF",
+      "target_url": "https://rankdots.com/",
+      "project_family_id": "rankdots.com",
+      "project_name": "RankDots",
+      "builder_evidence": [
+        "Windsurf",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/725",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Windsurf, V0 by Vercel.",
+      "source_chart_week": "2025-12-22",
+      "source_rank": 94,
+      "source_project_id": 725,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://rankdots.com/",
+        "resolved_host": "rankdots.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 437760,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-001",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://archoneai.com/",
+      "project_family_id": "archoneai.com",
+      "project_name": "ArchOne AI",
+      "builder_evidence": [
+        "OpenAI Codex",
+        "OpenAI Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2162",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.5, OpenAI Codex, OpenAI Codex, Vercel, Cloudflare.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 79,
+      "source_project_id": 2162,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://archoneai.com/",
+        "resolved_host": "archoneai.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-002",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://loomadesign.ai/",
+      "project_family_id": "loomadesign.ai",
+      "project_name": "loomadesign",
+      "builder_evidence": [
+        "OpenAI GPT-5.3-Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1952",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5.4, OpenAI GPT-5.3-Codex, Next.js, Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 83,
+      "source_project_id": 1952,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://loomadesign.ai/",
+        "resolved_host": "loomadesign.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 200080,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-003",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://uselogicnotes.com/",
+      "project_family_id": "uselogicnotes.com",
+      "project_name": "LogicNotes",
+      "builder_evidence": [
+        "OpenAI Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2107",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.5, OpenAI Codex, Vercel.",
+      "source_chart_week": "2026-07-06",
+      "source_rank": 77,
+      "source_project_id": 2107,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://uselogicnotes.com/",
+        "resolved_host": "uselogicnotes.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 106181,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-004",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://dairakar.com/",
+      "project_family_id": "dairakar.com",
+      "project_name": "Dairakar",
+      "builder_evidence": [
+        "OpenAI Codex",
+        "OpenAI Codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2059",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI Codex, Google Gemini 3 Flash, OpenAI Codex, Other / Custom, Render, Railway.",
+      "source_chart_week": "2026-06-22",
+      "source_rank": 96,
+      "source_project_id": 2059,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://dairakar.com/",
+        "resolved_host": "dairakar.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 391029,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-005",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://www.dictationdaddy.com/",
+      "project_family_id": "dictationdaddy.com",
+      "project_name": "Dictation Daddy",
+      "builder_evidence": [
+        "OpenAI GPT-5.3-Codex",
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1937",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5.4, OpenAI GPT-5.3-Codex, Lovable, Supabase.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 86,
+      "source_project_id": 1937,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.dictationdaddy.com/",
+        "resolved_host": "dictationdaddy.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 355137,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-006",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://stories-of-life.vercel.app/",
+      "project_family_id": "stories-of-life.vercel.app",
+      "project_name": "Stories of Life",
+      "builder_evidence": [
+        "Bolt",
+        "Openai-codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/40",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Bolt, Openai-codex.",
+      "source_chart_week": "2026-03-16",
+      "source_rank": 27,
+      "source_project_id": 40,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://stories-of-life.vercel.app/",
+        "resolved_host": "stories-of-life.vercel.app",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 806,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-CODEX-007",
+      "label": "AI",
+      "target_group": "AI_CODEX_NEW",
+      "builder": "CODEX",
+      "target_url": "https://offsetmy.ai/",
+      "project_family_id": "offsetmy.ai",
+      "project_name": "OffsetMy.ai – Offset Your AI Carbon Footprint with Verified Credits. Starting at $1.25/month.",
+      "builder_evidence": [
+        "Openai-codex"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/89",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: Openai-codex.",
+      "source_chart_week": "2025-12-08",
+      "source_rank": 98,
+      "source_project_id": 89,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://offsetour.ai/",
+        "resolved_host": "offsetour.ai",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 28605,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-001",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.ternwheel.com/",
+      "project_family_id": "ternwheel.com",
+      "project_name": "Ternwheel",
+      "builder_evidence": [
+        "Lovable",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/807",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Lovable, V0 by Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 91,
+      "source_project_id": 807,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.ternwheel.com/",
+        "resolved_host": "ternwheel.com",
+        "content_type": "text/html",
+        "html_bytes_checked": 500000,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-002",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://didoo.ai/",
+      "project_family_id": "didoo.ai",
+      "project_name": "Didoo AI - URL in, Meta ads out. One Click to Outperform.",
+      "builder_evidence": [
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/875",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: Google Gemini 2.0 Flash, V0.dev, Next.js, V0 by Vercel.",
+      "source_chart_week": "2026-08-03",
+      "source_rank": 93,
+      "source_project_id": 875,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://didoo.ai/",
+        "resolved_host": "didoo.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 392939,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-003",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://shogo.ai/",
+      "project_family_id": "shogo.ai",
+      "project_name": "Shogo AI",
+      "builder_evidence": [
+        "Bolt"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1733",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.4, Bolt, Vercel.",
+      "source_chart_week": "2026-07-20",
+      "source_rank": 92,
+      "source_project_id": 1733,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://shogo.ai/",
+        "resolved_host": "shogo.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 265569,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-004",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.interiordeco.ai/",
+      "project_family_id": "interiordeco.ai",
+      "project_name": "Interior Deco AI",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/752",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-4.1, Lovable, Supabase.",
+      "source_chart_week": "2026-06-08",
+      "source_rank": 85,
+      "source_project_id": 752,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.interiordeco.ai/en/",
+        "resolved_host": "interiordeco.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 178217,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-005",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://tewtor.ai/",
+      "project_family_id": "tewtor.ai",
+      "project_name": "Tewtor",
+      "builder_evidence": [
+        "Lovable",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/925",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-5, Lovable, V0 by Vercel.",
+      "source_chart_week": "2026-04-27",
+      "source_rank": 87,
+      "source_project_id": 925,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://tewtor.ai/",
+        "resolved_host": "tewtor.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 49864,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-006",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.videotoblog.ai/",
+      "project_family_id": "videotoblog.ai",
+      "project_name": "Video To Blog",
+      "builder_evidence": [
+        "Lovable",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/705",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-4.1 mini, Lovable, V0 by Vercel.",
+      "source_chart_week": "2026-04-27",
+      "source_rank": 100,
+      "source_project_id": 705,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://videotoblog.ai/",
+        "resolved_host": "videotoblog.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 89453,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-007",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://canwetalk.app/",
+      "project_family_id": "canwetalk.app",
+      "project_name": "Can We Talk?",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/535",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-4o, Google Gemini 1.5 Pro, Lovable, Next.js.",
+      "source_chart_week": "2026-04-13",
+      "source_rank": 73,
+      "source_project_id": 535,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://canwetalk.app/",
+        "resolved_host": "canwetalk.app",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 2650,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-008",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.connectmachine.ai/download-app",
+      "project_family_id": "connectmachine.ai",
+      "project_name": "ConnectMachine",
+      "builder_evidence": [
+        "Bolt"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1073",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-5, Bolt, Next.js, Cloudflare.",
+      "source_chart_week": "2026-04-13",
+      "source_rank": 95,
+      "source_project_id": 1073,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.connectmachine.ai/download-app",
+        "resolved_host": "connectmachine.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 26595,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-009",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://resumehq.ai/",
+      "project_family_id": "resumehq.ai",
+      "project_name": "ResumeHQ",
+      "builder_evidence": [
+        "Bolt"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1659",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-5, Bolt, Supabase.",
+      "source_chart_week": "2026-04-13",
+      "source_rank": 96,
+      "source_project_id": 1659,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://resumehq.ai/",
+        "resolved_host": "resumehq.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 211220,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-010",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://hungryai.app/",
+      "project_family_id": "hungryai.app",
+      "project_name": "HungryAI",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/56",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Lovable.",
+      "source_chart_week": "2026-03-16",
+      "source_rank": 7,
+      "source_project_id": 56,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-011",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://zensimu.com/",
+      "project_family_id": "zensimu.com",
+      "project_name": "Captivate Trainees and Students with Gamified Learning",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/124",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Lovable.",
+      "source_chart_week": "2026-03-16",
+      "source_rank": 62,
+      "source_project_id": 124,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://zensimu.com/",
+        "resolved_host": "zensimu.com",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 114411,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-012",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://hynote.ai/",
+      "project_family_id": "hynote.ai",
+      "project_name": "HyNote AI",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/550",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: OpenAI GPT-4o, Lovable, Vercel.",
+      "source_chart_week": "2026-03-16",
+      "source_rank": 89,
+      "source_project_id": 550,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://hynote.ai/",
+        "resolved_host": "hynote.ai",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 491576,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-013",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://scamiq.app/",
+      "project_family_id": "scamiq.app",
+      "project_name": "Scam IQ",
+      "builder_evidence": [
+        "Bolt"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/186",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Bolt, Replit.",
+      "source_chart_week": "2026-03-02",
+      "source_rank": 31,
+      "source_project_id": 186,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-014",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://writestar.ai/",
+      "project_family_id": "writestar.ai",
+      "project_name": "WriteStar",
+      "builder_evidence": [
+        "Replit Agent"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1180",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: OpenAI GPT-4o, Replit Agent, Replit.",
+      "source_chart_week": "2026-03-02",
+      "source_rank": 96,
+      "source_project_id": 1180,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://writestar.ai/",
+        "resolved_host": "writestar.ai",
+        "content_type": "text/html; charset=UTF-8",
+        "html_bytes_checked": 2463,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-015",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://sensailearn.replit.app/",
+      "project_family_id": "sensailearn.replit.app",
+      "project_name": "SensAI Learn- A personalized 1-on-1 tutoring service through AI",
+      "builder_evidence": [
+        "Replit Agent"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/131",
+      "provenance_summary": "Hot100 chart 2026-02-02 metadata lists: Google Gemini 1.5 Pro, Replit Agent.",
+      "source_chart_week": "2026-02-02",
+      "source_rank": 24,
+      "source_project_id": 131,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": false,
+        "error": "HTTP 404"
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-016",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.naked-markets.com/",
+      "project_family_id": "naked-markets.com",
+      "project_name": "Naked-Markets",
+      "builder_evidence": [
+        "Replit Agent",
+        "V0 by Vercel"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/605",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Replit Agent, V0 by Vercel.",
+      "source_chart_week": "2025-12-22",
+      "source_rank": 95,
+      "source_project_id": 605,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://www.naked-markets.com/",
+        "resolved_host": "naked-markets.com",
+        "content_type": "text/html",
+        "html_bytes_checked": 23662,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-017",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://lotsotravel.com/",
+      "project_family_id": "lotsotravel.com",
+      "project_name": "Lotsotravel",
+      "builder_evidence": [
+        "Lovable"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/496",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Lovable, GitHub Copilot, Cloudflare.",
+      "source_chart_week": "2025-12-22",
+      "source_rank": 100,
+      "source_project_id": 496,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://lotsotravel.com/",
+        "resolved_host": "lotsotravel.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 119721,
+        "disqualifying_signals": []
+      }
+    },
+    {
+      "candidate_id": "DEV3-NATIVE_BUILDER-018",
+      "label": "AI",
+      "target_group": "AI_NATIVE_BUILDER_NEW",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://babywhatnow.com/",
+      "project_family_id": "babywhatnow.com",
+      "project_name": "babywhatnow",
+      "builder_evidence": [
+        "Replit Agent"
+      ],
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/849",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: OpenAI o1 (Reasoning), Replit Agent.",
+      "source_chart_week": "2025-12-08",
+      "source_rank": 99,
+      "source_project_id": 849,
+      "confirmation_result_rows_inspected": false,
+      "model_score_inspected_during_acquisition": false,
+      "reachability": {
+        "ok": true,
+        "status": 200,
+        "resolved_url": "https://babywhatnow.com/",
+        "resolved_host": "babywhatnow.com",
+        "content_type": "text/html; charset=utf-8",
+        "html_bytes_checked": 221438,
+        "disqualifying_signals": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+import { createHash } from "node:crypto";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+
+const manifestPath = path.resolve("outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.json");
+const rawPath = path.resolve("outputs/confirmation_v0_2/blind_run_v0_2/vibebench_confirmation_raw_results_v0_2.json");
+const metricsPath = path.resolve("outputs/confirmation_v0_2/blind_run_v0_2/vibebench_confirmation_metrics_v0_2.json");
+const reportPath = path.resolve("outputs/confirmation_v0_2/blind_run_v0_2/VIBEBENCH_CONFIRMATION_EVALUATION_V0_2.md");
+const sha256 = (text) => createHash("sha256").update(text).digest("hex");
+const divide = (a, b) => b ? a / b : null;
+const [manifestText, rawText] = await Promise.all([manifestPath, rawPath].map((file) => readFile(file, "utf8")));
+const manifest = JSON.parse(manifestText);
+const raw = JSON.parse(rawText);
+if (manifest.samples?.length !== 100 || raw.results?.length !== 100 || raw.labels_used_by_runner !== false) throw new Error("Incomplete or non-blind confirmation artifacts.");
+const labels = new Map(manifest.samples.map((row) => [row.sample_id, row.label]));
+let tp = 0, fp = 0, tn = 0, fn = 0;
+const joined = raw.results.map((row) => {
+  const label = labels.get(row.sample_id);
+  if (!label) throw new Error(`Unknown sample ${row.sample_id}`);
+  if (row.ok) {
+    if (label === "AI" && row.predicted_positive) tp += 1;
+    else if (label === "AI") fn += 1;
+    else if (row.predicted_positive) fp += 1;
+    else tn += 1;
+  }
+  return { ...row, label };
+});
+const precision = divide(tp, tp + fp);
+const recall = divide(tp, tp + fn);
+const specificity = divide(tn, tn + fp);
+const accuracy = divide(tp + tn, tp + fp + tn + fn);
+const f1 = precision === null || recall === null || precision + recall === 0 ? null : 2 * precision * recall / (precision + recall);
+const metrics = {
+  schema_version: "v0.2-confirmation-metrics",
+  evaluated_at: new Date().toISOString(),
+  status: precision >= 0.8 && recall >= 0.8 ? "EXTERNAL_80_80_GATE_PASSED" : "EXTERNAL_80_80_GATE_FAILED",
+  independent_confirmation: true,
+  manifest_sha256: sha256(manifestText),
+  raw_results_sha256: sha256(rawText),
+  technical: { total: raw.total, successful: raw.successful, errors: raw.technical_errors, coverage: raw.successful / raw.total },
+  confusion: { tp, fp, tn, fn },
+  primary: { precision, recall, specificity, accuracy, f1 },
+  gate: { minimum_precision: 0.8, minimum_recall: 0.8, passed: precision >= 0.8 && recall >= 0.8 },
+  rows: joined
+};
+const pct = (value) => value === null ? "n/a" : `${(100 * value).toFixed(1)} %`;
+const report = `# VibeBench independent confirmation v0.2
+
+Status: **${metrics.status}**
+
+## Ergebnis
+
+| Kennzahl | Wert | Gate |
+|---|---:|---:|
+| Precision | ${pct(precision)} | ≥ 80,0 % |
+| Recall | ${pct(recall)} | ≥ 80,0 % |
+| Specificity | ${pct(specificity)} | — |
+| Accuracy | ${pct(accuracy)} | — |
+| F1 | ${pct(f1)} | — |
+| technische Abdeckung | ${pct(metrics.technical.coverage)} | — |
+
+Confusion Matrix auf technisch erfolgreichen Scans: TP ${tp}, FP ${fp}, TN ${tn}, FN ${fn}.
+
+## Protokoll
+
+- 100 vor dem Lauf ausgewählte Projektfamilien, 50 AI / 50 Human.
+- Auswahl ausschließlich nach Provenienz, Overlap und Erreichbarkeit.
+- Das Kandidatenmodell war vor der Auswahl eingefroren.
+- Der Runner las ausschließlich Sample-ID und URL, keine Labels.
+- Jeder technische Fehler erhielt genau einen Retry.
+- Der abgeschlossene v0.1-Holdout wurde nicht zum Tuning verwendet.
+`;
+await mkdir(path.dirname(metricsPath), { recursive: true });
+await Promise.all([
+  writeFile(metricsPath, `${JSON.stringify(metrics, null, 2)}\n`, "utf8"),
+  writeFile(reportPath, report, "utf8")
+]);
+process.stdout.write(`${JSON.stringify({ metrics: path.relative(process.cwd(), metricsPath), report: path.relative(process.cwd(), reportPath), status: metrics.status, technical: metrics.technical, confusion: metrics.confusion, primary: metrics.primary }, null, 2)}\n`);
+if (!metrics.gate.passed) process.exitCode = 1;

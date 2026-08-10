@@ -1,0 +1,52 @@
+{
+  "schema_version": "v0.3-confirmation-freeze",
+  "frozen_at": "2026-08-10T15:34:40.886Z",
+  "status": "FROZEN_UNOPENED",
+  "rows": 100,
+  "labels": {
+    "AI": 50,
+    "HUMAN": 50
+  },
+  "model_scores_opened": false,
+  "rule": {
+    "threshold": 0.44,
+    "technical_retry_limit": 1,
+    "precision_gate": 0.8,
+    "recall_gate": 0.8
+  },
+  "files": {
+    "outputs/confirmation_v0_3/vibebench_confirmation_holdout_100_v0_3.json": {
+      "sha256": "7e6d0510d924120af404ba0b065e6e39db8c0c9f6d308c1e8e39cc3d2a94856b"
+    },
+    "outputs/confirmation_v0_3/vibebench_confirmation_holdout_100_v0_3.scan-queue.json": {
+      "sha256": "98c0b7be29e154363e27dc169bad3787e46c0fad879fa8542d1814f8d7642825"
+    },
+    "outputs/development_v0_3/vibebench_development_v0_3_candidate_model.json": {
+      "sha256": "caaf1462cdfbe532f6b010889f000dbfab242060577b2d56a475a13d56200b68"
+    },
+    "outputs/development_v0_3/vibebench_development_v0_3_candidate.freeze.json": {
+      "sha256": "c3fc328ee572a4ba89d6807525985b72c366e7d22564c8870dea270fcc5ed2dd"
+    },
+    "lib/development-v0_3-candidate.mjs": {
+      "sha256": "d06aaadd1ba1dd802970ca5a485e015b8e6749a1bc4ee372084b957e0beb1789"
+    },
+    "lib/development-v0_3-page-scan.mjs": {
+      "sha256": "3d69f040b575080951d7bd0084fc25e8ac7dddcf2bef5c21ff5af5941c623b9e"
+    },
+    "lib/analyze-html.mjs": {
+      "sha256": "ba916e02693465e8372750e9575baac1101c286dbd2e2863b7c247baba14f8f3"
+    },
+    "lib/extract-assets.mjs": {
+      "sha256": "19e6209d7a4bbcdad1733587ec6c73d143537e53909898a8d8d1c2cbc82d645e"
+    },
+    "lib/portable-page-metrics.mjs": {
+      "sha256": "2ebde988892507e766323918aff90a9d6d1a89db8a276219154e842c46cbc4e5"
+    },
+    "scripts/run-confirmation-v0_3.mjs": {
+      "sha256": "56b942e62a4569f89ee3b34b28575b90faa66c0ff2d0051f217dfd456e64aca5"
+    },
+    "scripts/evaluate-confirmation-v0_3.mjs": {
+      "sha256": "c73ee8f192647d31ed3d2cb127eb46a45ca7429dde23580f683cec1cbaf6d8fb"
+    }
+  }
+}

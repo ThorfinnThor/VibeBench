@@ -1,0 +1,407 @@
+{
+  "schema_version": "v0.2-confirmation-scan-queue",
+  "purpose": "Label-free input for the one-time confirmation runner.",
+  "manifest_sha256": "6484828d354c4c8f17841cc918db114a8c41036c4568a8296dcd008ce0e5d6c1",
+  "rows": [
+    {
+      "sample_id": "CONF2-001",
+      "target_url": "https://typemyvibe.ai/"
+    },
+    {
+      "sample_id": "CONF2-002",
+      "target_url": "https://www.digia.tech/"
+    },
+    {
+      "sample_id": "CONF2-003",
+      "target_url": "https://www.bragdoc.ai/"
+    },
+    {
+      "sample_id": "CONF2-004",
+      "target_url": "https://odysser.com/"
+    },
+    {
+      "sample_id": "CONF2-005",
+      "target_url": "https://boardspace.ai/"
+    },
+    {
+      "sample_id": "CONF2-006",
+      "target_url": "https://rainz.lovable.app/"
+    },
+    {
+      "sample_id": "CONF2-007",
+      "target_url": "https://codetrain.ai/"
+    },
+    {
+      "sample_id": "CONF2-008",
+      "target_url": "https://zoemed.ai/"
+    },
+    {
+      "sample_id": "CONF2-009",
+      "target_url": "https://diffray.ai/"
+    },
+    {
+      "sample_id": "CONF2-010",
+      "target_url": "https://devscribe.app/"
+    },
+    {
+      "sample_id": "CONF2-011",
+      "target_url": "https://3d-agent.com/"
+    },
+    {
+      "sample_id": "CONF2-012",
+      "target_url": "https://moxiedocs.com/"
+    },
+    {
+      "sample_id": "CONF2-013",
+      "target_url": "https://fixfirst.health/"
+    },
+    {
+      "sample_id": "CONF2-014",
+      "target_url": "https://www.langprotect.com/armor-for-ai-apps"
+    },
+    {
+      "sample_id": "CONF2-015",
+      "target_url": "https://talkflowy.com/"
+    },
+    {
+      "sample_id": "CONF2-016",
+      "target_url": "https://flarewarden.com/"
+    },
+    {
+      "sample_id": "CONF2-017",
+      "target_url": "https://tsenta.com/"
+    },
+    {
+      "sample_id": "CONF2-018",
+      "target_url": "https://agentdeathtrap.com/"
+    },
+    {
+      "sample_id": "CONF2-019",
+      "target_url": "https://beepop.ai/"
+    },
+    {
+      "sample_id": "CONF2-020",
+      "target_url": "https://www.geminilaunch.com/"
+    },
+    {
+      "sample_id": "CONF2-021",
+      "target_url": "https://spanlens.io/"
+    },
+    {
+      "sample_id": "CONF2-022",
+      "target_url": "https://genie.ph/"
+    },
+    {
+      "sample_id": "CONF2-023",
+      "target_url": "https://bitdive.io/"
+    },
+    {
+      "sample_id": "CONF2-024",
+      "target_url": "https://hypemyhustle.xyz/"
+    },
+    {
+      "sample_id": "CONF2-025",
+      "target_url": "https://skippership.com/"
+    },
+    {
+      "sample_id": "CONF2-026",
+      "target_url": "https://xpmetric.com/"
+    },
+    {
+      "sample_id": "CONF2-027",
+      "target_url": "https://wellscout.co/"
+    },
+    {
+      "sample_id": "CONF2-028",
+      "target_url": "https://dreem.ai/"
+    },
+    {
+      "sample_id": "CONF2-029",
+      "target_url": "https://glasscribe.toolab.dev/"
+    },
+    {
+      "sample_id": "CONF2-030",
+      "target_url": "https://fownd.care/"
+    },
+    {
+      "sample_id": "CONF2-031",
+      "target_url": "https://janus.cards/"
+    },
+    {
+      "sample_id": "CONF2-032",
+      "target_url": "https://whattowatch.fyi/"
+    },
+    {
+      "sample_id": "CONF2-033",
+      "target_url": "https://ilovedcf.com/"
+    },
+    {
+      "sample_id": "CONF2-034",
+      "target_url": "https://magicshot.ai/"
+    },
+    {
+      "sample_id": "CONF2-035",
+      "target_url": "https://voice.indilingo.in/"
+    },
+    {
+      "sample_id": "CONF2-036",
+      "target_url": "https://aimangatranslate.com/"
+    },
+    {
+      "sample_id": "CONF2-037",
+      "target_url": "https://dealsflow.co/"
+    },
+    {
+      "sample_id": "CONF2-038",
+      "target_url": "https://dialaura.com/"
+    },
+    {
+      "sample_id": "CONF2-039",
+      "target_url": "https://getuplvl.com/"
+    },
+    {
+      "sample_id": "CONF2-040",
+      "target_url": "https://raccoon.page/"
+    },
+    {
+      "sample_id": "CONF2-041",
+      "target_url": "https://squaredaway.ai/"
+    },
+    {
+      "sample_id": "CONF2-042",
+      "target_url": "https://www.archrender.ai/"
+    },
+    {
+      "sample_id": "CONF2-043",
+      "target_url": "https://orav.ai/"
+    },
+    {
+      "sample_id": "CONF2-044",
+      "target_url": "https://fastimage.ai/"
+    },
+    {
+      "sample_id": "CONF2-045",
+      "target_url": "https://testimonials.ltd/"
+    },
+    {
+      "sample_id": "CONF2-046",
+      "target_url": "https://planmymeal.ai/"
+    },
+    {
+      "sample_id": "CONF2-047",
+      "target_url": "https://voicebrief.io/"
+    },
+    {
+      "sample_id": "CONF2-048",
+      "target_url": "https://gethookmesh.io/"
+    },
+    {
+      "sample_id": "CONF2-049",
+      "target_url": "https://responsehub.ai/"
+    },
+    {
+      "sample_id": "CONF2-050",
+      "target_url": "https://sidebutton.com/"
+    },
+    {
+      "sample_id": "CONF2-051",
+      "target_url": "https://ohmyz.sh/"
+    },
+    {
+      "sample_id": "CONF2-052",
+      "target_url": "https://uptime.kuma.pet/"
+    },
+    {
+      "sample_id": "CONF2-053",
+      "target_url": "https://docusaurus.io/"
+    },
+    {
+      "sample_id": "CONF2-054",
+      "target_url": "https://files.community/"
+    },
+    {
+      "sample_id": "CONF2-055",
+      "target_url": "https://cobalt.tools/"
+    },
+    {
+      "sample_id": "CONF2-056",
+      "target_url": "https://khoj.dev/"
+    },
+    {
+      "sample_id": "CONF2-057",
+      "target_url": "https://reflex.dev/"
+    },
+    {
+      "sample_id": "CONF2-058",
+      "target_url": "https://dashy.to/"
+    },
+    {
+      "sample_id": "CONF2-059",
+      "target_url": "https://nylas.com/nylas-mail/"
+    },
+    {
+      "sample_id": "CONF2-060",
+      "target_url": "https://plotly.com/dash"
+    },
+    {
+      "sample_id": "CONF2-061",
+      "target_url": "https://reactstarter.com/"
+    },
+    {
+      "sample_id": "CONF2-062",
+      "target_url": "https://www.waveterm.dev/"
+    },
+    {
+      "sample_id": "CONF2-063",
+      "target_url": "https://matomo.org/"
+    },
+    {
+      "sample_id": "CONF2-064",
+      "target_url": "http://super-productivity.com/"
+    },
+    {
+      "sample_id": "CONF2-065",
+      "target_url": "https://runacap.com/"
+    },
+    {
+      "sample_id": "CONF2-066",
+      "target_url": "https://getkap.co/"
+    },
+    {
+      "sample_id": "CONF2-067",
+      "target_url": "https://activitywatch.net/"
+    },
+    {
+      "sample_id": "CONF2-068",
+      "target_url": "https://screenity.io/"
+    },
+    {
+      "sample_id": "CONF2-069",
+      "target_url": "https://omnivore.app/"
+    },
+    {
+      "sample_id": "CONF2-070",
+      "target_url": "https://nicegui.io/"
+    },
+    {
+      "sample_id": "CONF2-071",
+      "target_url": "https://getgrav.org/"
+    },
+    {
+      "sample_id": "CONF2-072",
+      "target_url": "https://flowlauncher.com/"
+    },
+    {
+      "sample_id": "CONF2-073",
+      "target_url": "https://abp.io/"
+    },
+    {
+      "sample_id": "CONF2-074",
+      "target_url": "https://notesnook.com/"
+    },
+    {
+      "sample_id": "CONF2-075",
+      "target_url": "https://espanso.org/"
+    },
+    {
+      "sample_id": "CONF2-076",
+      "target_url": "https://www.zettlr.com/"
+    },
+    {
+      "sample_id": "CONF2-077",
+      "target_url": "https://nyxt-browser.com/"
+    },
+    {
+      "sample_id": "CONF2-078",
+      "target_url": "https://is-a.dev/"
+    },
+    {
+      "sample_id": "CONF2-079",
+      "target_url": "https://win11.blueedge.me/"
+    },
+    {
+      "sample_id": "CONF2-080",
+      "target_url": "https://chrome.google.com/webstore/detail/omni/mapjgeachilmcbbokkgcbgpbakaaeehi?hl=en&authuser=0"
+    },
+    {
+      "sample_id": "CONF2-081",
+      "target_url": "http://webstack.cc/"
+    },
+    {
+      "sample_id": "CONF2-082",
+      "target_url": "https://jrnl.sh/"
+    },
+    {
+      "sample_id": "CONF2-083",
+      "target_url": "https://masscode.io/"
+    },
+    {
+      "sample_id": "CONF2-084",
+      "target_url": "https://linearmouse.app/"
+    },
+    {
+      "sample_id": "CONF2-085",
+      "target_url": "https://devdojo.com/wave"
+    },
+    {
+      "sample_id": "CONF2-086",
+      "target_url": "https://plainapp.app/"
+    },
+    {
+      "sample_id": "CONF2-087",
+      "target_url": "https://www.rainbond.io/"
+    },
+    {
+      "sample_id": "CONF2-088",
+      "target_url": "https://passbolt.com/"
+    },
+    {
+      "sample_id": "CONF2-089",
+      "target_url": "https://getclipboard.app/"
+    },
+    {
+      "sample_id": "CONF2-090",
+      "target_url": "https://tuist.dev/"
+    },
+    {
+      "sample_id": "CONF2-091",
+      "target_url": "https://docs.ponzu-cms.org/"
+    },
+    {
+      "sample_id": "CONF2-092",
+      "target_url": "https://useplanify.com/"
+    },
+    {
+      "sample_id": "CONF2-093",
+      "target_url": "http://tasks.org/"
+    },
+    {
+      "sample_id": "CONF2-094",
+      "target_url": "https://pomotroid.app/"
+    },
+    {
+      "sample_id": "CONF2-095",
+      "target_url": "https://octolinker.vercel.app/"
+    },
+    {
+      "sample_id": "CONF2-096",
+      "target_url": "https://expressjs.com/"
+    },
+    {
+      "sample_id": "CONF2-097",
+      "target_url": "https://meetingbar.app/"
+    },
+    {
+      "sample_id": "CONF2-098",
+      "target_url": "https://mqtt.org/"
+    },
+    {
+      "sample_id": "CONF2-099",
+      "target_url": "https://dbeaver.com/"
+    },
+    {
+      "sample_id": "CONF2-100",
+      "target_url": "https://modernjs.dev/"
+    }
+  ]
+}

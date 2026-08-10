@@ -1,0 +1,74 @@
+{
+  "schema_version": "v0.2-confirmation-result-lock",
+  "generated_at": "2026-08-10T15:00:22.600Z",
+  "status": "FAILED_LOCKED_NO_TUNING",
+  "independent_confirmation": true,
+  "gate": {
+    "minimum_precision": 0.8,
+    "minimum_recall": 0.8,
+    "passed": false
+  },
+  "primary": {
+    "precision": 0.5,
+    "recall": 0.16,
+    "specificity": 0.84,
+    "accuracy": 0.5,
+    "f1": 0.24242424242424243
+  },
+  "confusion": {
+    "tp": 8,
+    "fp": 8,
+    "tn": 42,
+    "fn": 42
+  },
+  "technical": {
+    "total": 100,
+    "successful": 100,
+    "errors": 0,
+    "coverage": 1
+  },
+  "policy": {
+    "may_be_used_for_training": false,
+    "may_be_used_for_threshold_selection": false,
+    "may_be_used_for_feature_selection": false,
+    "may_be_used_for_error_driven_model_changes": false,
+    "allowed_use": "Immutable historical external-validation record only."
+  },
+  "artifacts": [
+    {
+      "path": "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.json",
+      "bytes": 126727,
+      "sha256": "6484828d354c4c8f17841cc918db114a8c41036c4568a8296dcd008ce0e5d6c1"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.scan-queue.json",
+      "bytes": 9321,
+      "sha256": "6f09b935ae9bb7ab4d1ea1cc57ef1512966b3701485a04c48294008655a9abd6"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.freeze.json",
+      "bytes": 1657,
+      "sha256": "6113be27084c1754f96ea0d0ced124246afa62e1bf4e58783ecee4f5e9f61db4"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/blind_run_v0_2/checkpoint.json",
+      "bytes": 262992,
+      "sha256": "a46cd677511661c7582048cc174dfab01c1cfe4c976cd20be1a6a0ea4ff36e4e"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/blind_run_v0_2/vibebench_confirmation_raw_results_v0_2.json",
+      "bytes": 261877,
+      "sha256": "ce35f0f8b5113654e2747270dd22fcfb2dd5327ae66ea6f17e458f78df824de3"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/blind_run_v0_2/vibebench_confirmation_metrics_v0_2.json",
+      "bytes": 264516,
+      "sha256": "33ec351f0a56a709a9be8c424abff1cdd9e1cd5018b16fa8642d32967c1dc658"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/blind_run_v0_2/VIBEBENCH_CONFIRMATION_EVALUATION_V0_2.md",
+      "bytes": 805,
+      "sha256": "d003eebc48e6cf4de049b3205a9c8244a41d917c645e4fc880047f312419f263"
+    }
+  ]
+}

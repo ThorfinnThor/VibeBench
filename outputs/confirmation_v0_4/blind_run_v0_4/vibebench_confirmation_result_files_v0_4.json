@@ -1,0 +1,77 @@
+{
+  "schema_version": "v0.4-confirmation-result-lock",
+  "generated_at": "2026-08-10T15:54:25.880Z",
+  "status": "PASSED_LOCKED",
+  "independent_confirmation": true,
+  "gate": {
+    "minimum_precision": 0.8,
+    "minimum_recall": 0.8,
+    "passed": true
+  },
+  "primary": {
+    "precision": 0.8235294117647058,
+    "recall": 0.8571428571428571,
+    "specificity": 0.82,
+    "accuracy": 0.8383838383838383,
+    "f1": 0.84
+  },
+  "confusion": {
+    "tp": 42,
+    "fp": 9,
+    "tn": 41,
+    "fn": 7
+  },
+  "technical": {
+    "total": 100,
+    "successful": 99,
+    "errors": 1,
+    "coverage": 0.99
+  },
+  "policy": {
+    "may_be_used_for_retroactive_tuning": false,
+    "production_promotion_requires_explicit_change": true,
+    "allowed_use": "Immutable independent confirmation result and candidate-promotion evidence."
+  },
+  "artifacts": [
+    {
+      "path": "outputs/confirmation_v0_4/vibebench_confirmation_holdout_100_v0_4.json",
+      "bytes": 70897,
+      "sha256": "5f19956eb2e34cdb1fe9f9714b0eb13bde45affeac1115032ba39795b00bd7a9"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/vibebench_confirmation_holdout_100_v0_4.scan-queue.json",
+      "bytes": 9595,
+      "sha256": "797bdf595078d2fde0cf5f35ed79f369a5e085e2257a4d706756870e3c79d7dd"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/vibebench_confirmation_holdout_100_v0_4.freeze.json",
+      "bytes": 1966,
+      "sha256": "0585ff88fed79c0e50254530a08eb0e01f4b26179a58d1474e4de4f2ac817f16"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/blind_run_v0_4/checkpoint.json",
+      "bytes": 710027,
+      "sha256": "1357738eb89987e8d8e1da3d924917dd5453787b916f2a69830da0906b680fcc"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_raw_results_v0_4.json",
+      "bytes": 708877,
+      "sha256": "0e887757e45771522483479afea5cc0754dd01de67d0f3d9e6bb1862957fa86b"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_metrics_v0_4.json",
+      "bytes": 711547,
+      "sha256": "d07c0492f189fb5832fdcda9777220c6b29ea1533632b571bbbe6083d12a3007"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_uncertainty_v0_4.json",
+      "bytes": 836,
+      "sha256": "d98a30d09574d4f54ffcef9aa460634c2663691edc18fd5e70cd8913e4c3867e"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/blind_run_v0_4/VIBEBENCH_CONFIRMATION_EVALUATION_V0_4.md",
+      "bytes": 632,
+      "sha256": "52d5ebf8149a081d05c6206b1bf90b58273fae21b8de854f8e03d2764c8f6fab"
+    }
+  ]
+}

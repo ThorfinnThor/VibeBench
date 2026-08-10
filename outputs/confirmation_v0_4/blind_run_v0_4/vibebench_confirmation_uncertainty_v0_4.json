@@ -1,0 +1,25 @@
+{
+  "schema_version": "v0.4-confirmation-uncertainty",
+  "generated_at": "2026-08-10T15:54:25.736Z",
+  "independent_confirmation": true,
+  "gate_is_based_on_point_estimates": true,
+  "precision": {
+    "estimate": 0.8235294117647058,
+    "lower": 0.6974585747569192,
+    "upper": 0.9042759653087368,
+    "successes": 42,
+    "total": 51,
+    "confidence": 0.95,
+    "method": "Wilson score interval"
+  },
+  "recall": {
+    "estimate": 0.8571428571428571,
+    "lower": 0.7333229377608557,
+    "upper": 0.9290357627959323,
+    "successes": 42,
+    "total": 49,
+    "confidence": 0.95,
+    "method": "Wilson score interval"
+  },
+  "interpretation": "The 80/80 gate passed on point estimates. With 99 successful scans, both 95% intervals still extend below 80%, so a larger replication is required for a high-confidence 80% lower bound."
+}

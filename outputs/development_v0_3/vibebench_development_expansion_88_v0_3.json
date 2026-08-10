@@ -1,0 +1,1514 @@
+{
+  "schema_version": "v0.3-development-expansion",
+  "generated_at": "2026-08-10T15:16:57.516Z",
+  "status": "DEVELOPMENT_ONLY_READY",
+  "failed_confirmation_used_for_training": false,
+  "failed_confirmation_used_for_error_analysis": false,
+  "model_scores_inspected_during_acquisition": false,
+  "selection": "All 44 reachable, unused historical-chart AI candidates plus first 44 reachable new pre-cutoff GitHub controls.",
+  "summary": {
+    "total": 88,
+    "ai": 44,
+    "human": 44,
+    "human_candidates_inspected": 100,
+    "human_candidates_reachable": 83
+  },
+  "samples": [
+    {
+      "sample_id": "DEV3X-001",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://songai.io/",
+      "project_family_id": "songai.io",
+      "project_name": "SongAI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1513",
+      "provenance_summary": "Hot100 chart 2026-08-03 metadata lists: OpenAI GPT-5, Cursor, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-002",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://aissist.io/",
+      "project_family_id": "aissist.io",
+      "project_name": "Aissist.io",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2214",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-003",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://bonsplit.com/",
+      "project_family_id": "bonsplit.com",
+      "project_name": "BonSplit™",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2055",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-004",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "http://trendgap.io/",
+      "project_family_id": "trendgap.io",
+      "project_name": "Build what people want. Skip the startup guesswork.",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2100",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Supabase, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-005",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://unboundchat.net/",
+      "project_family_id": "unboundchat.net",
+      "project_name": "UnboundChat",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1292",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: Anthropic Claude 4 Opus, Cursor, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-006",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://tryverdikt.app/",
+      "project_family_id": "tryverdikt.app",
+      "project_name": "Verdikt",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2144",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.4, Anthropic Claude Sonnet 4.6, Claude Code, Cursor, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-007",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://imagevivid.com/",
+      "project_family_id": "imagevivid.com",
+      "project_name": "ImageVivid",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2213",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.5, Cursor, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-008",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://neurolien.fr/",
+      "project_family_id": "neurolien.fr",
+      "project_name": "NINA AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1976",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: Cohere Command A, Mistral Large 3, GitHub Copilot, Cursor, Google Cloud, Google Vertex AI.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-009",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://myminionai.com/",
+      "project_family_id": "myminionai.com",
+      "project_name": "My Minion AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2251",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: XAI Grok 4.5, Cursor, Render, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-010",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://mnemosphere.ai/",
+      "project_family_id": "mnemosphere.ai",
+      "project_name": "Mnemosphere AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1752",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5.4, Anthropic Claude Sonnet 4.6, Cursor, Claude Code, Supabase, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-011",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://creatok.ai/",
+      "project_family_id": "creatok.ai",
+      "project_name": "Creatok - Discover Winning Video Ads and Clone Them into Hundreds.",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/811",
+      "provenance_summary": "Hot100 chart 2026-07-20 metadata lists: OpenAI GPT-5, Google Gemini 2.0 Flash, Cursor, Claude Code, Vercel, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-012",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://www.alchemistaiofficial.com/",
+      "project_family_id": "alchemistaiofficial.com",
+      "project_name": "Alchemist AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1117",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI o1 (Reasoning), Cursor, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-013",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://audilingua.com/",
+      "project_family_id": "audilingua.com",
+      "project_name": "Audilingua",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2048",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI Codex, Cursor, Other / Custom.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-014",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://www.viewzly.com/",
+      "project_family_id": "viewzly.com",
+      "project_name": "Viewzly - Real estate smart scheduling and adavnced analytics",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/833",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5, Cursor, Claude Code, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-015",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://www.cutonce.ai/",
+      "project_family_id": "cutonce.ai",
+      "project_name": "Cutonce - Unlock your whole universe, not just your top picks",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2123",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: OpenAI GPT-5.5, OpenAI GPT-5.4 mini, Cursor, Claude Code, Vercel, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-016",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://eleganote.com/",
+      "project_family_id": "eleganote.com",
+      "project_name": "Eleganote",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2057",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: Anthropic Claude Sonnet 4.6, Google Gemini 3.1 Pro, Cursor, Replit Agent, Cloudflare, Render.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-017",
+      "target_group": "AI_CURSOR_EXPANSION",
+      "label": "AI",
+      "builder": "CURSOR",
+      "target_url": "https://synapsehire.com/",
+      "project_family_id": "synapsehire.com",
+      "project_name": "Synapse Hire",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2010",
+      "provenance_summary": "Hot100 chart 2026-07-06 metadata lists: Google Gemini 3 Flash, Cursor, Other / Custom.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-018",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://typmo.com/",
+      "project_family_id": "typmo.com",
+      "project_name": "TypMo - Write wireframes. Generate prompts. Ship products.",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/906",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-4o, OpenAI GPT-4.1, Claude Code, Supabase, Netlify.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-019",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://metablast.dev/",
+      "project_family_id": "metablast.dev",
+      "project_name": "MetaBlast",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2069",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: Anthropic Claude Opus 4.8, Claude Code, Vercel, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-020",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.rankpad.app/",
+      "project_family_id": "rankpad.app",
+      "project_name": "Rankpad",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/2083",
+      "provenance_summary": "Hot100 chart 2026-06-22 metadata lists: OpenAI GPT-5.5, Anthropic Claude Opus 4.8, Claude Code, OpenAI Codex, Vercel, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-021",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.exporttofigma.com/",
+      "project_family_id": "exporttofigma.com",
+      "project_name": "Export to Figma",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1984",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Anthropic Claude Sonnet 4.6, Claude Code, Lovable, Vercel, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-022",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://docuhub.live/",
+      "project_family_id": "docuhub.live",
+      "project_name": "Docuhub",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1732",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: OpenAI GPT-5.4, Google Gemini 3.1 Pro (Preview), Claude Code.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-023",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://mailmind.online/",
+      "project_family_id": "mailmind.online",
+      "project_name": "MailMind",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/809",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Anthropic Claude 4 Sonnet, Claude Code, Lovable, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-024",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://voicedeck.io/",
+      "project_family_id": "voicedeck.io",
+      "project_name": "VoiceDeck",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/936",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Google Gemini 2.0 Flash-Lite, Windsurf, Claude Code, Google Vertex AI.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-025",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://vaybl.quest/",
+      "project_family_id": "vaybl.quest",
+      "project_name": "Vaybl Quest",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1936",
+      "provenance_summary": "Hot100 chart 2026-06-08 metadata lists: Google Gemini 2.5 Pro, Google Gemini 2.5 Flash, Claude Code.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-026",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://vedex.ai/",
+      "project_family_id": "vedex.ai",
+      "project_name": "Vedex",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1688",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: OpenAI GPT-5.4, Claude Code, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-027",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://song-lyrics-review.com/",
+      "project_family_id": "song-lyrics-review.com",
+      "project_name": "Song Lyrics Review",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1598",
+      "provenance_summary": "Hot100 chart 2026-05-25 metadata lists: Google Gemini 2.0 Flash, Claude Code, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-028",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.rapgeneratorai.com/",
+      "project_family_id": "rapgeneratorai.com",
+      "project_name": "RapGenerator AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/765",
+      "provenance_summary": "Hot100 chart 2026-03-30 metadata lists: Claude Code, Vercel, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-029",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://omny.chat/",
+      "project_family_id": "omny.chat",
+      "project_name": "OMNY Chat",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1169",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: Anthropic Claude 4 Opus, Claude Code, Next.js, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-030",
+      "target_group": "AI_CLAUDE_CODE_EXPANSION",
+      "label": "AI",
+      "builder": "CLAUDE_CODE",
+      "target_url": "https://www.hyperpodai.com/",
+      "project_family_id": "hyperpodai.com",
+      "project_name": "Hyperpod AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/150",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: OpenAI GPT-4o, Claude Code, Supabase, Netlify.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-031",
+      "target_group": "AI_WINDSURF_EXPANSION",
+      "label": "AI",
+      "builder": "WINDSURF",
+      "target_url": "https://pipback.com/",
+      "project_family_id": "pipback.com",
+      "project_name": "PipBack",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1780",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: OpenAI GPT-5.4 mini, Windsurf, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-032",
+      "target_group": "AI_WINDSURF_EXPANSION",
+      "label": "AI",
+      "builder": "WINDSURF",
+      "target_url": "https://cutback.video/selects",
+      "project_family_id": "cutback.video",
+      "project_name": "Selects",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/988",
+      "provenance_summary": "Hot100 chart 2026-04-27 metadata lists: Google Gemini 2.0 Flash-Lite, Windsurf, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-033",
+      "target_group": "AI_WINDSURF_EXPANSION",
+      "label": "AI",
+      "builder": "WINDSURF",
+      "target_url": "https://textideo.com/",
+      "project_family_id": "textideo.com",
+      "project_name": "Textideo",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/588",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Azure OpenAI, Replit Agent, Windsurf, V0 by Vercel, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-034",
+      "target_group": "AI_WINDSURF_EXPANSION",
+      "label": "AI",
+      "builder": "WINDSURF",
+      "target_url": "https://rankdots.com/",
+      "project_family_id": "rankdots.com",
+      "project_name": "RankDots",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/725",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Windsurf, V0 by Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-035",
+      "target_group": "AI_CODEX_EXPANSION",
+      "label": "AI",
+      "builder": "CODEX",
+      "target_url": "https://offsetmy.ai/",
+      "project_family_id": "offsetmy.ai",
+      "project_name": "OffsetMy.ai – Offset Your AI Carbon Footprint with Verified Credits. Starting at $1.25/month.",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/89",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: Openai-codex.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-036",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://canwetalk.app/",
+      "project_family_id": "canwetalk.app",
+      "project_name": "Can We Talk?",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/535",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-4o, Google Gemini 1.5 Pro, Lovable, Next.js.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-037",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.connectmachine.ai/download-app",
+      "project_family_id": "connectmachine.ai",
+      "project_name": "ConnectMachine",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1073",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-5, Bolt, Next.js, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-038",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://resumehq.ai/",
+      "project_family_id": "resumehq.ai",
+      "project_name": "ResumeHQ",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1659",
+      "provenance_summary": "Hot100 chart 2026-04-13 metadata lists: OpenAI GPT-5, Bolt, Supabase.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-039",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://zensimu.com/",
+      "project_family_id": "zensimu.com",
+      "project_name": "Captivate Trainees and Students with Gamified Learning",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/124",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: Lovable.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-040",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://hynote.ai/",
+      "project_family_id": "hynote.ai",
+      "project_name": "HyNote AI",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/550",
+      "provenance_summary": "Hot100 chart 2026-03-16 metadata lists: OpenAI GPT-4o, Lovable, Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-041",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://writestar.ai/",
+      "project_family_id": "writestar.ai",
+      "project_name": "WriteStar",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/1180",
+      "provenance_summary": "Hot100 chart 2026-03-02 metadata lists: OpenAI GPT-4o, Replit Agent, Replit.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-042",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://www.naked-markets.com/",
+      "project_family_id": "naked-markets.com",
+      "project_name": "Naked-Markets",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/605",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Replit Agent, V0 by Vercel.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-043",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://lotsotravel.com/",
+      "project_family_id": "lotsotravel.com",
+      "project_name": "Lotsotravel",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/496",
+      "provenance_summary": "Hot100 chart 2025-12-22 metadata lists: OpenAI GPT-4.1, Lovable, GitHub Copilot, Cloudflare.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-044",
+      "target_group": "AI_NATIVE_BUILDER_EXPANSION",
+      "label": "AI",
+      "builder": "NATIVE_BUILDER",
+      "target_url": "https://babywhatnow.com/",
+      "project_family_id": "babywhatnow.com",
+      "project_name": "babywhatnow",
+      "provenance_type": "independent_reviewed_directory_historical_chart",
+      "provenance_url": "https://hot100.ai/project/849",
+      "provenance_summary": "Hot100 chart 2025-12-08 metadata lists: OpenAI o1 (Reasoning), Replit Agent.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-045",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://coreui.io/product/free-react-admin-template/",
+      "project_family_id": "coreui.io",
+      "project_name": "coreui-free-react-admin-template",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/coreui/coreui-free-react-admin-template",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-046",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://cruip.com/",
+      "project_family_id": "cruip.com",
+      "project_name": "open-react-template",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/cruip/open-react-template",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-047",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://readme.so/",
+      "project_family_id": "readme.so",
+      "project_name": "readme.so",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/octokatherine/readme.so",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-048",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "http://cml.dev/",
+      "project_family_id": "cml.dev",
+      "project_name": "cml",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/iterative/cml",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-049",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://boop.okat.best/",
+      "project_family_id": "boop.okat.best",
+      "project_name": "Boop",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/IvanMathy/Boop",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-050",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "http://kubefwd.com/",
+      "project_family_id": "kubefwd.com",
+      "project_name": "kubefwd",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/txn2/kubefwd",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-051",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://get-iron-session.vercel.app/",
+      "project_family_id": "get-iron-session.vercel.app",
+      "project_name": "iron-session",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vvo/iron-session",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-052",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://next-auth-example.vercel.app/",
+      "project_family_id": "next-auth-example.vercel.app",
+      "project_name": "next-auth-example",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nextauthjs/next-auth-example",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-053",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://httpie.io/",
+      "project_family_id": "httpie.io",
+      "project_name": "desktop",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/httpie/desktop",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-054",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://alova.js.org/",
+      "project_family_id": "alova.js.org",
+      "project_name": "alova",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/alovajs/alova",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-055",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://draft.sh/",
+      "project_family_id": "draft.sh",
+      "project_name": "draft-classic",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Azure/draft-classic",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-056",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://notion-blog.vercel.app/",
+      "project_family_id": "notion-blog.vercel.app",
+      "project_name": "notion-blog",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ijjk/notion-blog",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-057",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://garden.io/",
+      "project_family_id": "garden.io",
+      "project_name": "garden",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/garden-io/garden",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-058",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://httptoolkit.com/",
+      "project_family_id": "httptoolkit.com",
+      "project_name": "httptoolkit",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/httptoolkit/httptoolkit",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-059",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://vanblog.mereith.com/",
+      "project_family_id": "vanblog.mereith.com",
+      "project_name": "vanblog",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Mereithhh/vanblog",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-060",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://okteto.com/",
+      "project_family_id": "okteto.com",
+      "project_name": "okteto",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/okteto/okteto",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-061",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://tsnext-tw.thcl.dev/",
+      "project_family_id": "tsnext-tw.thcl.dev",
+      "project_name": "ts-nextjs-tailwind-starter",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/theodorusclarence/ts-nextjs-tailwind-starter",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-062",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://ts-rest.com/",
+      "project_family_id": "ts-rest.com",
+      "project_name": "ts-rest",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/ts-rest/ts-rest",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-063",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://flowoss.com/",
+      "project_family_id": "flowoss.com",
+      "project_name": "flow",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/pacexy/flow",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-064",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://notion-avatar.app/",
+      "project_family_id": "notion-avatar.app",
+      "project_name": "notion-avatar",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Mayandev/notion-avatar",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-065",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://remult.dev/",
+      "project_family_id": "remult.dev",
+      "project_name": "remult",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/remult/remult",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-066",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://dblab.app/",
+      "project_family_id": "dblab.app",
+      "project_name": "dblab",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/danvergara/dblab",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-067",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://thegraph.com/",
+      "project_family_id": "thegraph.com",
+      "project_name": "graph-node",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/graphprotocol/graph-node",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-068",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://drive.swo.moe/",
+      "project_family_id": "drive.swo.moe",
+      "project_name": "onedrive-vercel-index",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/spencerwooo/onedrive-vercel-index",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-069",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://www.getdnote.com/",
+      "project_family_id": "getdnote.com",
+      "project_name": "dnote",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/dnote/dnote",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-070",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://checklyhq.com/",
+      "project_family_id": "checklyhq.com",
+      "project_name": "puppeteer-examples",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/checkly/puppeteer-examples",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-071",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://app-router.vercel.app/",
+      "project_family_id": "app-router.vercel.app",
+      "project_name": "next-app-router-playground",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/vercel/next-app-router-playground",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-072",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://lowdefy.com/",
+      "project_family_id": "lowdefy.com",
+      "project_name": "lowdefy",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/lowdefy/lowdefy",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-073",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://fullpage.caferati.dev/",
+      "project_family_id": "fullpage.caferati.dev",
+      "project_name": "react-awesome-slider",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/rcaferati/react-awesome-slider",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://notion-clone.kmuenster.com/",
+      "project_family_id": "notion-clone.kmuenster.com",
+      "project_name": "notion-clone",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/konstantinruge/notion-clone",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-075",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://zenstack.dev/",
+      "project_family_id": "zenstack.dev",
+      "project_name": "zenstack",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/zenstackhq/zenstack",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "http://www.reactsight.com/",
+      "project_family_id": "reactsight.com",
+      "project_name": "React-Sight",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/React-Sight/React-Sight",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-077",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://go-sponge.com/",
+      "project_family_id": "go-sponge.com",
+      "project_name": "sponge",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/go-dev-frame/sponge",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-078",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://getconvoy.io/",
+      "project_family_id": "getconvoy.io",
+      "project_name": "convoy",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/frain-dev/convoy",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-079",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://teaql.io/",
+      "project_family_id": "teaql.io",
+      "project_name": "teaql-agent-kit",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/teaql/teaql-agent-kit",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-080",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://next.medusajs.com/",
+      "project_family_id": "next.medusajs.com",
+      "project_name": "nextjs-starter-medusa",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/medusajs/nextjs-starter-medusa",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-081",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://restfox.dev/",
+      "project_family_id": "restfox.dev",
+      "project_name": "Restfox",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/flawiddsouza/Restfox",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-082",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://riffusion.vercel.app/",
+      "project_family_id": "riffusion.vercel.app",
+      "project_name": "riffusion-app-hobby",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/riffusion/riffusion-app-hobby",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-083",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://module-federation.io/",
+      "project_family_id": "module-federation.io",
+      "project_name": "core",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/module-federation/core",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-084",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://conform.guide/",
+      "project_family_id": "conform.guide",
+      "project_name": "conform",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/edmundhung/conform",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-085",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://useauth.dev/",
+      "project_family_id": "useauth.dev",
+      "project_name": "useAuth",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/Swizec/useAuth",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-086",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://www.craftz.dog/",
+      "project_family_id": "craftz.dog",
+      "project_name": "craftzdog-homepage",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/craftzdog/craftzdog-homepage",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-087",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://www.jest-preview.com/",
+      "project_family_id": "jest-preview.com",
+      "project_name": "jest-preview",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/nvh95/jest-preview",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    },
+    {
+      "sample_id": "DEV3X-088",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "label": "HUMAN",
+      "builder": "Human control",
+      "target_url": "https://www.portaljs.com/",
+      "project_family_id": "portaljs.com",
+      "project_name": "portaljs",
+      "provenance_type": "official_public_source_repository",
+      "provenance_url": "https://github.com/datopian/portaljs",
+      "provenance_summary": "Official public repository links the target and predates 2022-11-30T00:00:00Z.",
+      "acquisition": {
+        "model_score_inspected": false,
+        "failed_confirmation_result_rows_inspected": false,
+        "reachability_checked": true
+      }
+    }
+  ]
+}
