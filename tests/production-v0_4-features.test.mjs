@@ -1,0 +1,59 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import {
+  auditSecurity,
+  buildRecommendations,
+  collectProductionExtendedMetrics,
+  getScoreBand
+} from "../lib/production-v0_4-features.mjs";
+
+test("maps every score to an understandable, continuous band", () => {
+  assert.equal(getScoreBand(0).id, "low");
+  assert.equal(getScoreBand(24).id, "low");
+  assert.equal(getScoreBand(25).id, "light");
+  assert.equal(getScoreBand(50).id, "medium");
+  assert.equal(getScoreBand(70).id, "high");
+  assert.equal(getScoreBand(85).id, "very-high");
+  assert.equal(getScoreBand(100).id, "very-high");
+});
+
+test("gives a complete secure header baseline full credit", () => {
+  const result = auditSecurity("https://example.com", {
+    "content-security-policy": "default-src 'self'; frame-ancestors 'none'",
+    "strict-transport-security": "max-age=31536000",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "permissions-policy": "camera=(), microphone=()"
+  });
+  assert.equal(result.score, 100);
+  assert.equal(result.checks.length, 7);
+  assert.ok(result.checks.every((check) => check.status === "pass"));
+});
+
+test("turns missing public security headers into prioritized actions", () => {
+  const security = auditSecurity("https://example.com", {});
+  const recommendations = buildRecommendations({
+    analysis: { directEvidence: [] },
+    pageMetrics: { asset_bytes_fetched: 0, inline_script_bytes: 0, buttons: 0, inputs: 0, aria_attributes: 0, headings: 3 },
+    extendedMetrics: { shadcn_variable_coverage: 0, data_slot_attributes: 0, ui_cliche_tokens: 0, sections: 2, external_host_count: 0 },
+    security
+  });
+  assert.ok(security.score < 50);
+  assert.equal(recommendations[0].category, "security");
+  assert.equal(recommendations[0].priority, "high");
+  assert.ok(recommendations.some((item) => item.title === "Content Security Policy"));
+  assert.ok(recommendations.some((item) => item.category === "design"));
+  assert.ok(recommendations.some((item) => item.category === "engineering"));
+  assert.ok(recommendations.some((item) => item.category === "accessibility"));
+});
+
+test("extracts production metrics used by the frozen candidate feature map", () => {
+  const metrics = collectProductionExtendedMetrics(
+    '<main class="min-h-screen rounded-3xl"><section data-slot="card"><h1>Ein eigener Inhalt</h1></section></main>',
+    ":root{--background:white;--foreground:black;--primary:blue}"
+  );
+  assert.equal(metrics.sections, 1);
+  assert.equal(metrics.data_slot_attributes, 1);
+  assert.ok(metrics.ui_cliche_tokens >= 2);
+  assert.equal(metrics.shadcn_variable_coverage, 3);
+});

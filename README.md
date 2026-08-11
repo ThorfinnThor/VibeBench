@@ -1,9 +1,11 @@
 # VibeBench
 
-VibeBench untersucht, ob eine öffentlich erreichbare Website Hinweise auf
-AI-gestütztes Vibe-Coding enthält. Das aktuelle Ergebnis ist eine transparente
-Evidenz-Einschätzung auf Basis sichtbarer Deployment-Artefakte und struktureller
-Merkmale – kein Beweis für Autorenschaft und noch keine kalibrierte Wahrscheinlichkeit.
+VibeBench untersucht, wie stark eine öffentlich erreichbare Website sichtbaren
+Mustern aus dem validierten Vibecoding-Korpus ähnelt. Die Web-App zeigt dafür
+einen Vibe-Footprint von 0 bis 100, erklärt die wichtigsten Score-Treiber und
+liefert priorisierte Security-, Design-, Engineering- und Accessibility-Maßnahmen.
+Der Wert ist kein Prozentanteil AI-generierten Codes und kein Beweis für
+Autorenschaft.
 
 ## Was VibeBench unterscheidet
 
@@ -18,6 +20,11 @@ Merkmale – kein Beweis für Autorenschaft und noch keine kalibrierte Wahrschei
 
 ## Aktueller Forschungsstand
 
+Der aktuell in die Web-App integrierte, eingefrorene v0.4-Kandidat erreichte im
+unabhängigen 100er-Holdout 82,4 % Precision und 85,7 % Recall bei 99/100
+technisch erfolgreichen Scans. Vollständiger Stand:
+[`outputs/VIBEBENCH_STATUS_2026-08-10.md`](outputs/VIBEBENCH_STATUS_2026-08-10.md).
+
 - Master-Dataset: 2.000 Samples in vier Kohorten.
 - URL-Scan-Queue: 63 Websites, davon 52 erfolgreich gescannt.
 - Trainings-Merge: 81 eindeutige, erfolgreiche und gelabelte Samples.
@@ -31,6 +38,14 @@ Merkmale – kein Beweis für Autorenschaft und noch keine kalibrierte Wahrschei
 Der vollständige Stand, Einschränkungen und die nächsten Forschungsaufgaben
 stehen im aktuellen
 [`outputs/VIBEBENCH_HANDOVER_2026-08-10.md`](outputs/VIBEBENCH_HANDOVER_2026-08-10.md).
+
+## Produkt v0.4
+
+Die Web-App nutzt dieselbe eingefrorene Feature- und Score-Logik wie die
+erfolgreiche v0.4-Validation. Zusätzlich bewertet sie sieben öffentlich
+sichtbare Security-Header-Prüfungen und erzeugt einen priorisierten
+Verbesserungsplan. Umsetzung, Grenzen, Teststand und nächste Aufgaben stehen in
+[`outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md`](outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md).
 
 ## Produktions-Smoke-Test
 

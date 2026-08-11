@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "VibeBench — Public Website Evidence Scanner";
-const description = "Inspect public builder artifacts while keeping general stack and structural signals explicitly non-attributive.";
+const title = "VibeBench — Wie viel Vibe steckt in deiner Website?";
+const description = "Vibe-Footprint von 0 bis 100, Security-Baseline und konkrete Verbesserungen für öffentlich erreichbare Websites.";
 
 export const metadata: Metadata = { title, description };
 

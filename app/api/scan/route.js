@@ -1,8 +1,18 @@
 import { lookup } from "node:dns/promises";
 import net from "node:net";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
+import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
 import { extractSameOriginAssets, extractSameOriginManifest } from "../../../lib/extract-assets.mjs";
+import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
+import {
+  auditSecurity,
+  buildRecommendations,
+  collectProductionExtendedMetrics,
+  explainScore,
+  getScoreBand
+} from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
+import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 
 export const runtime = "nodejs";
 export const maxDuration = 20;
@@ -154,7 +164,10 @@ export async function POST(request) {
     const manifestUrl = extractSameOriginManifest({ html: fetched.html, baseUrl: fetched.url });
     const requiredOrigin = new URL(fetched.url).origin;
     const [assetResults, manifestResult] = await Promise.all([
-      Promise.allSettled(assetCandidates.map((asset) => fetchPublicAsset(new URL(asset.url), requiredOrigin))),
+      Promise.allSettled(assetCandidates.map(async (asset) => ({
+        ...asset,
+        ...await fetchPublicAsset(new URL(asset.url), requiredOrigin)
+      }))),
       manifestUrl ? fetchPublicManifest(new URL(manifestUrl), requiredOrigin).catch(() => null) : Promise.resolve(null)
     ]);
     const fetchedAssets = assetResults
@@ -168,6 +181,27 @@ export async function POST(request) {
     analysis.metrics.assetBytes = fetchedAssets.reduce((total, asset) => total + asset.bytes, 0);
     analysis.metrics.assetFetchErrors = assetResults.length - fetchedAssets.length;
     analysis.metrics.truncatedAssets = fetchedAssets.filter((asset) => asset.truncated).length;
+    const pageMetrics = collectPortablePageMetrics({ html: fetched.html, assets: assetCandidates, fetchedAssets });
+    const extendedMetrics = collectProductionExtendedMetrics(fetched.html, assetText);
+    const featureMap = buildV03FeatureMap({
+      sample_id: fetched.url,
+      stack_signals: analysis.stackSignals,
+      direct_evidence: analysis.directEvidence,
+      context_evidence: analysis.contextEvidence,
+      header_evidence: analysis.headerEvidence,
+      structural_hints: analysis.structuralHints,
+      page_metrics: pageMetrics,
+      extended_metrics: extendedMetrics,
+      asset_scan: {
+        requested: assetCandidates.length,
+        fetched: fetchedAssets.length
+      }
+    });
+    const probability = scoreV03(candidateModel, featureMap);
+    const score = Math.round(probability * 100);
+    const scoreContributions = explainScore(candidateModel, featureMap);
+    const security = auditSecurity(fetched.url, fetched.headers);
+    const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
     return Response.json({
       ok: true,
       requestedUrl: inputUrl.toString(),
@@ -188,8 +222,30 @@ export async function POST(request) {
         bytes: manifestResult?.bytes || 0,
         truncated: manifestResult?.truncated || false
       },
+      vibeScore: {
+        score,
+        probability,
+        band: getScoreBand(score),
+        threshold: Math.round(candidateModel.training.threshold * 100),
+        aboveValidatedThreshold: probability >= candidateModel.training.threshold,
+        meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeBench-Korpus.",
+        caveat: "Kein Prozentanteil AI-generierten Codes und kein Beweis für die Autorenschaft."
+      },
+      scoreDrivers: {
+        raises: scoreContributions.filter((item) => item.direction === "raises").slice(0, 5),
+        lowers: scoreContributions.filter((item) => item.direction === "lowers").slice(0, 4)
+      },
+      security,
+      recommendations,
+      model: {
+        version: "v0.4",
+        independentHoldout: 100,
+        precision: 0.824,
+        recall: 0.857,
+        f1: 0.84
+      },
       ...analysis,
-      warning: "Pilotischer Evidenz-Scan – keine kalibrierte AI-Wahrscheinlichkeit und kein Beweis für Autorenschaft."
+      warning: "Der 0–100-Score misst Ähnlichkeit mit dem validierten Korpus. Er ist kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Der Scan ist fehlgeschlagen.";
