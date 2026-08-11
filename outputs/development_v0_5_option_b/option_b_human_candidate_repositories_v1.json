@@ -1,0 +1,2748 @@
+{
+  "schema_version": "vibebench.option_b.human_candidate_repositories.v1",
+  "generated_at": "2026-08-11",
+  "selection_used_model_scores": false,
+  "queries": [
+    "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website",
+    "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp",
+    "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio",
+    "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+  ],
+  "summary": {
+    "raw": 400,
+    "unique": 390
+  },
+  "repositories": [
+    {
+      "repository_full_name": "you-dont-need/You-Dont-Need",
+      "repository_url": "https://github.com/you-dont-need/You-Dont-Need",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "MoOx/phenomic",
+      "repository_url": "https://github.com/MoOx/phenomic",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "privacytools/privacytools.io",
+      "repository_url": "https://github.com/privacytools/privacytools.io",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "boramalper/magnetico",
+      "repository_url": "https://github.com/boramalper/magnetico",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Hari-prasaanth/Web-App-Pentest-Checklist",
+      "repository_url": "https://github.com/Hari-prasaanth/Web-App-Pentest-Checklist",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "vsoch/watchme",
+      "repository_url": "https://github.com/vsoch/watchme",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ShanaMaid/vue-163-music",
+      "repository_url": "https://github.com/ShanaMaid/vue-163-music",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "FastBootWeixin/FastBootWeixin",
+      "repository_url": "https://github.com/FastBootWeixin/FastBootWeixin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "web-tiki/responsive-grid-of-hexagons",
+      "repository_url": "https://github.com/web-tiki/responsive-grid-of-hexagons",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "deepwn/deepMiner",
+      "repository_url": "https://github.com/deepwn/deepMiner",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "nickname76/russian-swears",
+      "repository_url": "https://github.com/nickname76/russian-swears",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "amfoss/club-website-2018",
+      "repository_url": "https://github.com/amfoss/club-website-2018",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "controversial/wikipedia-map",
+      "repository_url": "https://github.com/controversial/wikipedia-map",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "xiaodai945/WEBJIKE",
+      "repository_url": "https://github.com/xiaodai945/WEBJIKE",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "cdnjs/new-website",
+      "repository_url": "https://github.com/cdnjs/new-website",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "beauty-enjoy/beauty",
+      "repository_url": "https://github.com/beauty-enjoy/beauty",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ayushi7rawat/Youtube-Projects",
+      "repository_url": "https://github.com/ayushi7rawat/Youtube-Projects",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "jayboxyz/websites-and-tools",
+      "repository_url": "https://github.com/jayboxyz/websites-and-tools",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "marcosrivasr/bootstrap5-website",
+      "repository_url": "https://github.com/marcosrivasr/bootstrap5-website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "mengkunsoft/wallpaper",
+      "repository_url": "https://github.com/mengkunsoft/wallpaper",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "D4Vinci/PyFlooder",
+      "repository_url": "https://github.com/D4Vinci/PyFlooder",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "afollestad/nock-nock",
+      "repository_url": "https://github.com/afollestad/nock-nock",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "luisbraganca/fake-terminal-website",
+      "repository_url": "https://github.com/luisbraganca/fake-terminal-website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "recoilme/tgram",
+      "repository_url": "https://github.com/recoilme/tgram",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "bat67/awesome-deep-learning-and-machine-learning-questions",
+      "repository_url": "https://github.com/bat67/awesome-deep-learning-and-machine-learning-questions",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "antiops/tiktok-downloader-and-rehoster",
+      "repository_url": "https://github.com/antiops/tiktok-downloader-and-rehoster",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "scale8/scale8-tag-manager-and-analytics",
+      "repository_url": "https://github.com/scale8/scale8-tag-manager-and-analytics",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ori-mrg/robotcar-dataset-sdk",
+      "repository_url": "https://github.com/ori-mrg/robotcar-dataset-sdk",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "timmylindh/CHL",
+      "repository_url": "https://github.com/timmylindh/CHL",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "abuanwar072/Responsive-and-Animated-Portfolio-Flutter",
+      "repository_url": "https://github.com/abuanwar072/Responsive-and-Animated-Portfolio-Flutter",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "xmoyKing/localForage-cn",
+      "repository_url": "https://github.com/xmoyKing/localForage-cn",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "essuraj/swagger-toolbox",
+      "repository_url": "https://github.com/essuraj/swagger-toolbox",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "royalicing/Lantern",
+      "repository_url": "https://github.com/royalicing/Lantern",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ThatOtherZach/Web3-by-Example",
+      "repository_url": "https://github.com/ThatOtherZach/Web3-by-Example",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "webpixels/boomerang-free-bootstrap-ui-kit",
+      "repository_url": "https://github.com/webpixels/boomerang-free-bootstrap-ui-kit",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "HarrisJT/web-launch-checklist",
+      "repository_url": "https://github.com/HarrisJT/web-launch-checklist",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ForbesLindesay/promisejs.org",
+      "repository_url": "https://github.com/ForbesLindesay/promisejs.org",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "jagracar/webgl-shader-examples",
+      "repository_url": "https://github.com/jagracar/webgl-shader-examples",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ankythshukla/underexpress",
+      "repository_url": "https://github.com/ankythshukla/underexpress",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "sindresorhus/bower-components",
+      "repository_url": "https://github.com/sindresorhus/bower-components",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "deepidea/web-presentation",
+      "repository_url": "https://github.com/deepidea/web-presentation",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "TheLarkInn/bundle-buddy-webpack-plugin",
+      "repository_url": "https://github.com/TheLarkInn/bundle-buddy-webpack-plugin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "davidswelt/zot_bib_web",
+      "repository_url": "https://github.com/davidswelt/zot_bib_web",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "outmoded/hapijs.com",
+      "repository_url": "https://github.com/outmoded/hapijs.com",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "canonical-web-and-design/tutorials.ubuntu.com",
+      "repository_url": "https://github.com/canonical-web-and-design/tutorials.ubuntu.com",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "jcezarms/Front-End-Checklist",
+      "repository_url": "https://github.com/jcezarms/Front-End-Checklist",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "kriasoft/node-starter-kit",
+      "repository_url": "https://github.com/kriasoft/node-starter-kit",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "alienwhatever/Admin-Scanner",
+      "repository_url": "https://github.com/alienwhatever/Admin-Scanner",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "sindresorhus/ios-landing-page",
+      "repository_url": "https://github.com/sindresorhus/ios-landing-page",
+      "default_branch": "main",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "freyhill/awesome-web-you-should-know",
+      "repository_url": "https://github.com/freyhill/awesome-web-you-should-know",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "bedimcode/responsive-portfolio-complete",
+      "repository_url": "https://github.com/bedimcode/responsive-portfolio-complete",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "cyberboysumanjay/APIs",
+      "repository_url": "https://github.com/cyberboysumanjay/APIs",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "WalletConnect/walletconnect-website",
+      "repository_url": "https://github.com/WalletConnect/walletconnect-website",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "developit/oss.ninja",
+      "repository_url": "https://github.com/developit/oss.ninja",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "fyxtc/react-demo",
+      "repository_url": "https://github.com/fyxtc/react-demo",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "guyandtheworld/reallyconfused",
+      "repository_url": "https://github.com/guyandtheworld/reallyconfused",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "mishushakov/dialogflow-web",
+      "repository_url": "https://github.com/mishushakov/dialogflow-web",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Wrinth/personal_profile_angular4",
+      "repository_url": "https://github.com/Wrinth/personal_profile_angular4",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Empyreal96/nt-info-depot",
+      "repository_url": "https://github.com/Empyreal96/nt-info-depot",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Henryhaohao/Flask_Movie_Website",
+      "repository_url": "https://github.com/Henryhaohao/Flask_Movie_Website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ShaifArfan/frontend-mentor-challenge",
+      "repository_url": "https://github.com/ShaifArfan/frontend-mentor-challenge",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "adamdehaven/fetchurls",
+      "repository_url": "https://github.com/adamdehaven/fetchurls",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "rimijoker/Fake_Terminal_Resume_Website",
+      "repository_url": "https://github.com/rimijoker/Fake_Terminal_Resume_Website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "jkremser/nahodny-slusny-cech",
+      "repository_url": "https://github.com/jkremser/nahodny-slusny-cech",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "sharkdp/curiosity",
+      "repository_url": "https://github.com/sharkdp/curiosity",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "sofastack/sofastack-doc",
+      "repository_url": "https://github.com/sofastack/sofastack-doc",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "jomariya23156/face-recognition-with-liveness-web-login",
+      "repository_url": "https://github.com/jomariya23156/face-recognition-with-liveness-web-login",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "virejdasani/CodeBox",
+      "repository_url": "https://github.com/virejdasani/CodeBox",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "AlexLynd/ESP-Bug",
+      "repository_url": "https://github.com/AlexLynd/ESP-Bug",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "didiatworkz/screenly-ose-monitoring",
+      "repository_url": "https://github.com/didiatworkz/screenly-ose-monitoring",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "popcorn-official/popcorn-site",
+      "repository_url": "https://github.com/popcorn-official/popcorn-site",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "freenode/web-7.0",
+      "repository_url": "https://github.com/freenode/web-7.0",
+      "default_branch": "main",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "susantabiswas/facial-login-web",
+      "repository_url": "https://github.com/susantabiswas/facial-login-web",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "phalcon/website",
+      "repository_url": "https://github.com/phalcon/website",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "velopert/veltrends",
+      "repository_url": "https://github.com/velopert/veltrends",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "boramalper/Essential-YouTube",
+      "repository_url": "https://github.com/boramalper/Essential-YouTube",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Giuseppetm/mantine-template",
+      "repository_url": "https://github.com/Giuseppetm/mantine-template",
+      "default_branch": "main",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "website-templates/marketing-agency_one-page-template",
+      "repository_url": "https://github.com/website-templates/marketing-agency_one-page-template",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ziptofaf/gdpr-rails",
+      "repository_url": "https://github.com/ziptofaf/gdpr-rails",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ZiaUrR3hman/LinkedSocialToolkit",
+      "repository_url": "https://github.com/ZiaUrR3hman/LinkedSocialToolkit",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "BurdaMagazinOrg/thunder-distribution",
+      "repository_url": "https://github.com/BurdaMagazinOrg/thunder-distribution",
+      "default_branch": "8.x-2.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "MarketingPipeline/Simply-Docs",
+      "repository_url": "https://github.com/MarketingPipeline/Simply-Docs",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "Asabeneh/HTML-CSS-Website-Template",
+      "repository_url": "https://github.com/Asabeneh/HTML-CSS-Website-Template",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "zubairehman/Portfolio-Demo-1",
+      "repository_url": "https://github.com/zubairehman/Portfolio-Demo-1",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sharmakeshav1030/EventManagementWebsite",
+      "repository_url": "https://github.com/sharmakeshav1030/EventManagementWebsite",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "underpig1/widget-builder",
+      "repository_url": "https://github.com/underpig1/widget-builder",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "eslint/archive-website",
+      "repository_url": "https://github.com/eslint/archive-website",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "zyzisyz/RPI_web_remote_control",
+      "repository_url": "https://github.com/zyzisyz/RPI_web_remote_control",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "rust-lang-nursery/thanks",
+      "repository_url": "https://github.com/rust-lang-nursery/thanks",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "PacktWorkshops/The-HTML-and-CSS-Workshop",
+      "repository_url": "https://github.com/PacktWorkshops/The-HTML-and-CSS-Workshop",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "bansal/hook-theme",
+      "repository_url": "https://github.com/bansal/hook-theme",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "AlexP11223/JavaSpringMvcBlog",
+      "repository_url": "https://github.com/AlexP11223/JavaSpringMvcBlog",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "ElementsProject/elementsproject.org",
+      "repository_url": "https://github.com/ElementsProject/elementsproject.org",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "yy1193889747/fxhand",
+      "repository_url": "https://github.com/yy1193889747/fxhand",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "iweijie/react-web-highlight",
+      "repository_url": "https://github.com/iweijie/react-web-highlight",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "sharkdp/parachuting-robots",
+      "repository_url": "https://github.com/sharkdp/parachuting-robots",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "10secondsofcode/coding-ai",
+      "repository_url": "https://github.com/10secondsofcode/coding-ai",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "garimasingh128/Hacktoberfest2020-MovieDo",
+      "repository_url": "https://github.com/garimasingh128/Hacktoberfest2020-MovieDo",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "dnomd343/echoIP",
+      "repository_url": "https://github.com/dnomd343/echoIP",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "AGLcaicai/KaliToolsManual",
+      "repository_url": "https://github.com/AGLcaicai/KaliToolsManual",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:website"
+    },
+    {
+      "repository_full_name": "MarnoDev/react-native-open-project",
+      "repository_url": "https://github.com/MarnoDev/react-native-open-project",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "batnoter/batnoter",
+      "repository_url": "https://github.com/batnoter/batnoter",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "HolyBugx/HolyTips",
+      "repository_url": "https://github.com/HolyBugx/HolyTips",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "snorpey/jpg-glitch",
+      "repository_url": "https://github.com/snorpey/jpg-glitch",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "FountainJS/generator-fountain-webapp",
+      "repository_url": "https://github.com/FountainJS/generator-fountain-webapp",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "WhiteWinterWolf/wwwolf-php-webshell",
+      "repository_url": "https://github.com/WhiteWinterWolf/wwwolf-php-webshell",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "jwkvam/bowtie",
+      "repository_url": "https://github.com/jwkvam/bowtie",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Startup-Landing/Startup-Landing",
+      "repository_url": "https://github.com/Startup-Landing/Startup-Landing",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "yatessss/zhihudaily-vue",
+      "repository_url": "https://github.com/yatessss/zhihudaily-vue",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "ablestack/nestjs-bff",
+      "repository_url": "https://github.com/ablestack/nestjs-bff",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "scriptPilot/app-framework",
+      "repository_url": "https://github.com/scriptPilot/app-framework",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "thewhitetulip/Tasks",
+      "repository_url": "https://github.com/thewhitetulip/Tasks",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "pglet/pglet",
+      "repository_url": "https://github.com/pglet/pglet",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "henripal/labnotebook",
+      "repository_url": "https://github.com/henripal/labnotebook",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "fingerprintjs/blog-nojs-fingerprint-demo",
+      "repository_url": "https://github.com/fingerprintjs/blog-nojs-fingerprint-demo",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "thoughtbot/constable",
+      "repository_url": "https://github.com/thoughtbot/constable",
+      "default_branch": "main",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "linfaxin/AndroidUIX",
+      "repository_url": "https://github.com/linfaxin/AndroidUIX",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "wleepang/DesktopDeployR",
+      "repository_url": "https://github.com/wleepang/DesktopDeployR",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "TachiWeb/TachiWeb-Server",
+      "repository_url": "https://github.com/TachiWeb/TachiWeb-Server",
+      "default_branch": "develop",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "yujinjin/fans",
+      "repository_url": "https://github.com/yujinjin/fans",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "sqaiyan/neteasemusic",
+      "repository_url": "https://github.com/sqaiyan/neteasemusic",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "pgaskin/ePubViewer",
+      "repository_url": "https://github.com/pgaskin/ePubViewer",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "tamamu/darkmatter",
+      "repository_url": "https://github.com/tamamu/darkmatter",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "dunizb/sCalc",
+      "repository_url": "https://github.com/dunizb/sCalc",
+      "default_branch": "gh-pages",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "jmatth/ezprompt",
+      "repository_url": "https://github.com/jmatth/ezprompt",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "zhaoda/spa",
+      "repository_url": "https://github.com/zhaoda/spa",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "dan-v/dosxvpn",
+      "repository_url": "https://github.com/dan-v/dosxvpn",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "ImaginarySense/Imaginary-Teleprompter",
+      "repository_url": "https://github.com/ImaginarySense/Imaginary-Teleprompter",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "s1s1ty/go-mysql-crud",
+      "repository_url": "https://github.com/s1s1ty/go-mysql-crud",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "glaucia86/frontend-bootcamp-online",
+      "repository_url": "https://github.com/glaucia86/frontend-bootcamp-online",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "userdashboard/dashboard",
+      "repository_url": "https://github.com/userdashboard/dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "yangqihua/vue-scroll-mobile-demo",
+      "repository_url": "https://github.com/yangqihua/vue-scroll-mobile-demo",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "playframework/play-scala-starter-example",
+      "repository_url": "https://github.com/playframework/play-scala-starter-example",
+      "default_branch": "2.7.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "knownsec/wam",
+      "repository_url": "https://github.com/knownsec/wam",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "kosmigramma/appleshouter",
+      "repository_url": "https://github.com/kosmigramma/appleshouter",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "alienzhou/learning-pwa",
+      "repository_url": "https://github.com/alienzhou/learning-pwa",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "hugsy/proxenet",
+      "repository_url": "https://github.com/hugsy/proxenet",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "mowolf/ChatAnalyzer",
+      "repository_url": "https://github.com/mowolf/ChatAnalyzer",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "petrk94/ownhealthrecord",
+      "repository_url": "https://github.com/petrk94/ownhealthrecord",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "playframework/play-scala-websocket-example",
+      "repository_url": "https://github.com/playframework/play-scala-websocket-example",
+      "default_branch": "2.7.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "luciopanepinto/pacman",
+      "repository_url": "https://github.com/luciopanepinto/pacman",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "yehux/Coot",
+      "repository_url": "https://github.com/yehux/Coot",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "XNAL/ReadMore",
+      "repository_url": "https://github.com/XNAL/ReadMore",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "brunobord/relax",
+      "repository_url": "https://github.com/brunobord/relax",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "zuixjs/zuix-html-pwa",
+      "repository_url": "https://github.com/zuixjs/zuix-html-pwa",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "xpcrts/Steaming-IP-Camera-Nodejs",
+      "repository_url": "https://github.com/xpcrts/Steaming-IP-Camera-Nodejs",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "playframework/play-java-starter-example",
+      "repository_url": "https://github.com/playframework/play-java-starter-example",
+      "default_branch": "2.7.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "egodigital/vscode-powertools",
+      "repository_url": "https://github.com/egodigital/vscode-powertools",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Azure-Samples/active-directory-b2c-dotnetcore-webapp",
+      "repository_url": "https://github.com/Azure-Samples/active-directory-b2c-dotnetcore-webapp",
+      "default_branch": "archive",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "zhouzhihu/webapp",
+      "repository_url": "https://github.com/zhouzhihu/webapp",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "nicholaskajoh/React-Django",
+      "repository_url": "https://github.com/nicholaskajoh/React-Django",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "itta611/ChokokuCAD",
+      "repository_url": "https://github.com/itta611/ChokokuCAD",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "playframework/play-scala-isolated-slick-example",
+      "repository_url": "https://github.com/playframework/play-scala-isolated-slick-example",
+      "default_branch": "2.7.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "chkr1011/HA4IoT",
+      "repository_url": "https://github.com/chkr1011/HA4IoT",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "resume-nation/resume-nation.github.io",
+      "repository_url": "https://github.com/resume-nation/resume-nation.github.io",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "rshipp/webNUT",
+      "repository_url": "https://github.com/rshipp/webNUT",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "jasonjin-ai/react-template-easily",
+      "repository_url": "https://github.com/jasonjin-ai/react-template-easily",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "scalajs-react-interface/sri",
+      "repository_url": "https://github.com/scalajs-react-interface/sri",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "dateolive/halo-dream",
+      "repository_url": "https://github.com/dateolive/halo-dream",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "pvik/saved-for-reddit",
+      "repository_url": "https://github.com/pvik/saved-for-reddit",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "unixpickle/cbyge",
+      "repository_url": "https://github.com/unixpickle/cbyge",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "fluency03/weapp-500px",
+      "repository_url": "https://github.com/fluency03/weapp-500px",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "shadowsocks/shadowsocks-hub",
+      "repository_url": "https://github.com/shadowsocks/shadowsocks-hub",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "sirredbeard/unofficial-webapp-office",
+      "repository_url": "https://github.com/sirredbeard/unofficial-webapp-office",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "imrankst1221/Android-WebView-in-Kotlin",
+      "repository_url": "https://github.com/imrankst1221/Android-WebView-in-Kotlin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "vacationlabs/haskell-webapps",
+      "repository_url": "https://github.com/vacationlabs/haskell-webapps",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Jannchie/biliob-frontend",
+      "repository_url": "https://github.com/Jannchie/biliob-frontend",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "lettier/webviewhs",
+      "repository_url": "https://github.com/lettier/webviewhs",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "jaromaz/jslinux-mobile",
+      "repository_url": "https://github.com/jaromaz/jslinux-mobile",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Ragzouken/domino",
+      "repository_url": "https://github.com/Ragzouken/domino",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "brunocodutra/webapp-webpack-plugin",
+      "repository_url": "https://github.com/brunocodutra/webapp-webpack-plugin",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "gabrieldim/Book-Library",
+      "repository_url": "https://github.com/gabrieldim/Book-Library",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "mfinkle/web-adb",
+      "repository_url": "https://github.com/mfinkle/web-adb",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+      "repository_url": "https://github.com/Azure-Samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore",
+      "default_branch": "archive",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "drgx/react-native-plus-web",
+      "repository_url": "https://github.com/drgx/react-native-plus-web",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "SudoUserReal/WF_WebBasedFileBrowser",
+      "repository_url": "https://github.com/SudoUserReal/WF_WebBasedFileBrowser",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "luin/bazinga",
+      "repository_url": "https://github.com/luin/bazinga",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "gonimo/gonimo",
+      "repository_url": "https://github.com/gonimo/gonimo",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "nunux-keeper/keeper-web-app",
+      "repository_url": "https://github.com/nunux-keeper/keeper-web-app",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "didinj/mean-stack-angular5-crud",
+      "repository_url": "https://github.com/didinj/mean-stack-angular5-crud",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "tkainrad/keycombiner",
+      "repository_url": "https://github.com/tkainrad/keycombiner",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "lunchclass/absolute",
+      "repository_url": "https://github.com/lunchclass/absolute",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "ShivamJoker/Cert-Generator",
+      "repository_url": "https://github.com/ShivamJoker/Cert-Generator",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "anshumanv/ongaku",
+      "repository_url": "https://github.com/anshumanv/ongaku",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "DonChiaQE/vuejs-os-template",
+      "repository_url": "https://github.com/DonChiaQE/vuejs-os-template",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "gruberb/web-programming-in-rust",
+      "repository_url": "https://github.com/gruberb/web-programming-in-rust",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "kcgidw/fao",
+      "repository_url": "https://github.com/kcgidw/fao",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Lunik/Lunik-Torrent",
+      "repository_url": "https://github.com/Lunik/Lunik-Torrent",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "hubbcaps/gazee",
+      "repository_url": "https://github.com/hubbcaps/gazee",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Rishit-dagli/Greenathon-Plant-AI",
+      "repository_url": "https://github.com/Rishit-dagli/Greenathon-Plant-AI",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "str4d/wage",
+      "repository_url": "https://github.com/str4d/wage",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "jlianphoto/iver",
+      "repository_url": "https://github.com/jlianphoto/iver",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "atulmy/hire-smart",
+      "repository_url": "https://github.com/atulmy/hire-smart",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "Yangfan2016/PersonalWorks",
+      "repository_url": "https://github.com/Yangfan2016/PersonalWorks",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "playframework/play-java-websocket-example",
+      "repository_url": "https://github.com/playframework/play-java-websocket-example",
+      "default_branch": "2.7.x",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "qoobaa/fakturama",
+      "repository_url": "https://github.com/qoobaa/fakturama",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:webapp"
+    },
+    {
+      "repository_full_name": "PriyankaJhaTheDeveloper/DataAnalystPortfolioProjects",
+      "repository_url": "https://github.com/PriyankaJhaTheDeveloper/DataAnalystPortfolioProjects",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "AlexBSoft/win95.css",
+      "repository_url": "https://github.com/AlexBSoft/win95.css",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "areed1192/python-trading-robot",
+      "repository_url": "https://github.com/areed1192/python-trading-robot",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "kormyen/memex",
+      "repository_url": "https://github.com/kormyen/memex",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "zubairehman/Portfolio-Demo",
+      "repository_url": "https://github.com/zubairehman/Portfolio-Demo",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "benmarten/CryptoETF",
+      "repository_url": "https://github.com/benmarten/CryptoETF",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "naveenjujaray/DeveloperFolio",
+      "repository_url": "https://github.com/naveenjujaray/DeveloperFolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "kaustubhai/portfolio-template",
+      "repository_url": "https://github.com/kaustubhai/portfolio-template",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "gitshowcase/gitshowcase",
+      "repository_url": "https://github.com/gitshowcase/gitshowcase",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "alpha-miner/alpha-mind",
+      "repository_url": "https://github.com/alpha-miner/alpha-mind",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "teteusAraujo/portfolio",
+      "repository_url": "https://github.com/teteusAraujo/portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "mckelvin/beancount-boilerplate-cn",
+      "repository_url": "https://github.com/mckelvin/beancount-boilerplate-cn",
+      "default_branch": "dev",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "izzydoesizzy/resumetemplate",
+      "repository_url": "https://github.com/izzydoesizzy/resumetemplate",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "tomanistor/osprey",
+      "repository_url": "https://github.com/tomanistor/osprey",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "shloksomani/react-terminal-portfolio",
+      "repository_url": "https://github.com/shloksomani/react-terminal-portfolio",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "DopestTech/Dev-Folio",
+      "repository_url": "https://github.com/DopestTech/Dev-Folio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "MAGGIx1404/webgl-portfolio",
+      "repository_url": "https://github.com/MAGGIx1404/webgl-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "BraydenTW/react-tailwind-portfolio",
+      "repository_url": "https://github.com/BraydenTW/react-tailwind-portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "mayankchaudhary26/Cool-Readme-ideas",
+      "repository_url": "https://github.com/mayankchaudhary26/Cool-Readme-ideas",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "christ0ph3r/cryptocurrency-cli",
+      "repository_url": "https://github.com/christ0ph3r/cryptocurrency-cli",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "kijepark/one-page-template",
+      "repository_url": "https://github.com/kijepark/one-page-template",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sanjeevai/multi-factor-model",
+      "repository_url": "https://github.com/sanjeevai/multi-factor-model",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "wzhe06/soccerbet",
+      "repository_url": "https://github.com/wzhe06/soccerbet",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "kaustubhgupta/PortfolioFy",
+      "repository_url": "https://github.com/kaustubhgupta/PortfolioFy",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "westonplatter/fast_arrow",
+      "repository_url": "https://github.com/westonplatter/fast_arrow",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Iqrar99/data-analytics-portfolio",
+      "repository_url": "https://github.com/Iqrar99/data-analytics-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "MBKraus/Python_Portfolio__VaR_Tool",
+      "repository_url": "https://github.com/MBKraus/Python_Portfolio__VaR_Tool",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "dppalomar/riskParityPortfolio",
+      "repository_url": "https://github.com/dppalomar/riskParityPortfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "LekoArts/gatsby-starter-portfolio-bella",
+      "repository_url": "https://github.com/LekoArts/gatsby-starter-portfolio-bella",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Madonahs/Developers-Portfolio",
+      "repository_url": "https://github.com/Madonahs/Developers-Portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "rohankokkula/datasciencefolio",
+      "repository_url": "https://github.com/rohankokkula/datasciencefolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "zeshuaro/LinkedRW",
+      "repository_url": "https://github.com/zeshuaro/LinkedRW",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "celikkoseoglu/celikk-personal-website",
+      "repository_url": "https://github.com/celikkoseoglu/celikk-personal-website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "asrvd/AshTerm",
+      "repository_url": "https://github.com/asrvd/AshTerm",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "farm-army/farm-army-backend",
+      "repository_url": "https://github.com/farm-army/farm-army-backend",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "anshumanpattnaik/reactjs-portfolio-mern-website",
+      "repository_url": "https://github.com/anshumanpattnaik/reactjs-portfolio-mern-website",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "gabrieldim/Bootstrap-Company-Portfolio",
+      "repository_url": "https://github.com/gabrieldim/Bootstrap-Company-Portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "pedrorivald/portfolio",
+      "repository_url": "https://github.com/pedrorivald/portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "PierfrancescoSoffritti/pierfrancescosoffritti.com",
+      "repository_url": "https://github.com/PierfrancescoSoffritti/pierfrancescosoffritti.com",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sabirjana/blog",
+      "repository_url": "https://github.com/sabirjana/blog",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "alphagov/accessibility-tool-audit",
+      "repository_url": "https://github.com/alphagov/accessibility-tool-audit",
+      "default_branch": "gh-pages",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "uicardioHQ/hugo-uilite",
+      "repository_url": "https://github.com/uicardioHQ/hugo-uilite",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "spencerwooo/portfolio",
+      "repository_url": "https://github.com/spencerwooo/portfolio",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "melvfnz/data_science_portfolio",
+      "repository_url": "https://github.com/melvfnz/data_science_portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "GeekAbdelouahed/flutter-web-portfolio",
+      "repository_url": "https://github.com/GeekAbdelouahed/flutter-web-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "LevytsRoman/levytsroman.github.io",
+      "repository_url": "https://github.com/LevytsRoman/levytsroman.github.io",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sssain/simple-portfolio",
+      "repository_url": "https://github.com/sssain/simple-portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "MaartenGr/Projects",
+      "repository_url": "https://github.com/MaartenGr/Projects",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "mehulk05/Mehul.Kothari",
+      "repository_url": "https://github.com/mehulk05/Mehul.Kothari",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "ConradSelig/cliStocksTracker",
+      "repository_url": "https://github.com/ConradSelig/cliStocksTracker",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sunilyadav8/react-portfolio",
+      "repository_url": "https://github.com/sunilyadav8/react-portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Amine-Smahi/SimpleFolio",
+      "repository_url": "https://github.com/Amine-Smahi/SimpleFolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "aviaryan/work",
+      "repository_url": "https://github.com/aviaryan/work",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Tristeon/Tristeon3D",
+      "repository_url": "https://github.com/Tristeon/Tristeon3D",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "LekoArts/gatsby-starter-portfolio",
+      "repository_url": "https://github.com/LekoArts/gatsby-starter-portfolio",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "mack/github-pinner",
+      "repository_url": "https://github.com/mack/github-pinner",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "jieyima/Cryptocurrency_Investment_Analysis_and_Modeling",
+      "repository_url": "https://github.com/jieyima/Cryptocurrency_Investment_Analysis_and_Modeling",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "afsakar/vcard-portfolio",
+      "repository_url": "https://github.com/afsakar/vcard-portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "TheCoderDream/react-portfolio",
+      "repository_url": "https://github.com/TheCoderDream/react-portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "bankroll-py/bankroll",
+      "repository_url": "https://github.com/bankroll-py/bankroll",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "a-ahandani/remixpress",
+      "repository_url": "https://github.com/a-ahandani/remixpress",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "lequant40/portfolio_analytics_js",
+      "repository_url": "https://github.com/lequant40/portfolio_analytics_js",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "BraydenTW/obsidian",
+      "repository_url": "https://github.com/BraydenTW/obsidian",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "raphaelchelly/raph_www",
+      "repository_url": "https://github.com/raphaelchelly/raph_www",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "abrasseu/toninodemarco-photography",
+      "repository_url": "https://github.com/abrasseu/toninodemarco-photography",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "codeinpink/jekyll-portfolio-generator",
+      "repository_url": "https://github.com/codeinpink/jekyll-portfolio-generator",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Keyrxng/Testnet-wallet-drainer",
+      "repository_url": "https://github.com/Keyrxng/Testnet-wallet-drainer",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "minoveaz/github-perfil-readme-asombrosos",
+      "repository_url": "https://github.com/minoveaz/github-perfil-readme-asombrosos",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "lilykonings/louie",
+      "repository_url": "https://github.com/lilykonings/louie",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "alexszolowicz-blockether/obnoxious.club",
+      "repository_url": "https://github.com/alexszolowicz-blockether/obnoxious.club",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "khang-nd/.info",
+      "repository_url": "https://github.com/khang-nd/.info",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "alessandrokonrad/BitView",
+      "repository_url": "https://github.com/alessandrokonrad/BitView",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "iamfederico/pichichi",
+      "repository_url": "https://github.com/iamfederico/pichichi",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "ArdiaD/RiskPortfolios",
+      "repository_url": "https://github.com/ArdiaD/RiskPortfolios",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "iampavangandhi/iampavangandhi.github.io",
+      "repository_url": "https://github.com/iampavangandhi/iampavangandhi.github.io",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "lauritzsh/cryptomon",
+      "repository_url": "https://github.com/lauritzsh/cryptomon",
+      "default_branch": "develop",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "rickyall/wolfquant",
+      "repository_url": "https://github.com/rickyall/wolfquant",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "destefanis/gatsby-portfolio",
+      "repository_url": "https://github.com/destefanis/gatsby-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "one-aalam/astro-me",
+      "repository_url": "https://github.com/one-aalam/astro-me",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "leegeunhyeok/resume",
+      "repository_url": "https://github.com/leegeunhyeok/resume",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "viniciusmoreria/nextjs-portfolio",
+      "repository_url": "https://github.com/viniciusmoreria/nextjs-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "sb-ph/portfolio-starter",
+      "repository_url": "https://github.com/sb-ph/portfolio-starter",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "khurramrizvi/Portfolio",
+      "repository_url": "https://github.com/khurramrizvi/Portfolio",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "matheusrmribeiro/color_picker",
+      "repository_url": "https://github.com/matheusrmribeiro/color_picker",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "FarazzShaikh/experiments",
+      "repository_url": "https://github.com/FarazzShaikh/experiments",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "martins-rafael/rafaelmartins.dev",
+      "repository_url": "https://github.com/martins-rafael/rafaelmartins.dev",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "samzhangjy/VueTerm",
+      "repository_url": "https://github.com/samzhangjy/VueTerm",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "ApurvShah007/portfolio-optimizer",
+      "repository_url": "https://github.com/ApurvShah007/portfolio-optimizer",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "mariusz/mariusz.cc",
+      "repository_url": "https://github.com/mariusz/mariusz.cc",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "0xAliRaza/0xfolio",
+      "repository_url": "https://github.com/0xAliRaza/0xfolio",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "Chanirulk/Awwwards-remake-MIRANDA-PAPER-PORTFOLIO",
+      "repository_url": "https://github.com/Chanirulk/Awwwards-remake-MIRANDA-PAPER-PORTFOLIO",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "serg/yourfolio",
+      "repository_url": "https://github.com/serg/yourfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "alphagov/table-editor",
+      "repository_url": "https://github.com/alphagov/table-editor",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "adrianensis/ThiefEngine",
+      "repository_url": "https://github.com/adrianensis/ThiefEngine",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "akkefa/developer-portfolio",
+      "repository_url": "https://github.com/akkefa/developer-portfolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "adryansf/GithubFolio",
+      "repository_url": "https://github.com/adryansf/GithubFolio",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "codersrank-org/skills-chart-widget",
+      "repository_url": "https://github.com/codersrank-org/skills-chart-widget",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:portfolio"
+    },
+    {
+      "repository_full_name": "FormidableLabs/electron-webpack-dashboard",
+      "repository_url": "https://github.com/FormidableLabs/electron-webpack-dashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Raathigesh/dazzle",
+      "repository_url": "https://github.com/Raathigesh/dazzle",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template",
+      "repository_url": "https://github.com/BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jareware/chilipie-kiosk",
+      "repository_url": "https://github.com/jareware/chilipie-kiosk",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "martinrusev/amon",
+      "repository_url": "https://github.com/martinrusev/amon",
+      "default_branch": "7.0",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "tessera-metrics/tessera",
+      "repository_url": "https://github.com/tessera-metrics/tessera",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "slok/grafterm",
+      "repository_url": "https://github.com/slok/grafterm",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jupyter/dashboards",
+      "repository_url": "https://github.com/jupyter/dashboards",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "kittoframework/kitto",
+      "repository_url": "https://github.com/kittoframework/kitto",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "topfullstack/adminify",
+      "repository_url": "https://github.com/topfullstack/adminify",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "MentatInnovations/datastream.io",
+      "repository_url": "https://github.com/MentatInnovations/datastream.io",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "douglasmiranda/django-admin-bootstrap",
+      "repository_url": "https://github.com/douglasmiranda/django-admin-bootstrap",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "woxingxiao/DashboardView",
+      "repository_url": "https://github.com/woxingxiao/DashboardView",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "giantswarm/prometheus",
+      "repository_url": "https://github.com/giantswarm/prometheus",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "gcddblue/vue-admin-webapp",
+      "repository_url": "https://github.com/gcddblue/vue-admin-webapp",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "talpor/django-dashing",
+      "repository_url": "https://github.com/talpor/django-dashing",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "cloudflare/unsee",
+      "repository_url": "https://github.com/cloudflare/unsee",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "kstone-io/kstone",
+      "repository_url": "https://github.com/kstone-io/kstone",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "abixen/abixen-platform",
+      "repository_url": "https://github.com/abixen/abixen-platform",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "litaotao/IPython-Dashboard",
+      "repository_url": "https://github.com/litaotao/IPython-Dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Dashibase/dashibase",
+      "repository_url": "https://github.com/Dashibase/dashibase",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "ireaderlab/zkdash",
+      "repository_url": "https://github.com/ireaderlab/zkdash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "vmware-archive/cabin",
+      "repository_url": "https://github.com/vmware-archive/cabin",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "uschtwill/docker_monitoring_logging_alerting",
+      "repository_url": "https://github.com/uschtwill/docker_monitoring_logging_alerting",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "clickalicious/phpmemadmin",
+      "repository_url": "https://github.com/clickalicious/phpmemadmin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "danimahardhika/candybar-library",
+      "repository_url": "https://github.com/danimahardhika/candybar-library",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "keplr-io/hera",
+      "repository_url": "https://github.com/keplr-io/hera",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "RuntimeTools/appmetrics-dash",
+      "repository_url": "https://github.com/RuntimeTools/appmetrics-dash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "vudash/vudash",
+      "repository_url": "https://github.com/vudash/vudash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "GuangchuangYu/nCov2019",
+      "repository_url": "https://github.com/GuangchuangYu/nCov2019",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "minio/doctor",
+      "repository_url": "https://github.com/minio/doctor",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "DesignRevision/shards-dashboard-vue",
+      "repository_url": "https://github.com/DesignRevision/shards-dashboard-vue",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "barseghyanartur/django-dash",
+      "repository_url": "https://github.com/barseghyanartur/django-dash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "devfacet/natsboard",
+      "repository_url": "https://github.com/devfacet/natsboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "IndeemaSoftware/QSimpleScada",
+      "repository_url": "https://github.com/IndeemaSoftware/QSimpleScada",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "getminera/minera",
+      "repository_url": "https://github.com/getminera/minera",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "WarBean/hyperboard",
+      "repository_url": "https://github.com/WarBean/hyperboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "ahmetb/personal-dashboard",
+      "repository_url": "https://github.com/ahmetb/personal-dashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "xiaojiaqi/k8seasy_release_page",
+      "repository_url": "https://github.com/xiaojiaqi/k8seasy_release_page",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Chulong-Li/Real-time-Sentiment-Tracking-on-Twitter-for-Brand-Improvement-and-Trend-Recognition",
+      "repository_url": "https://github.com/Chulong-Li/Real-time-Sentiment-Tracking-on-Twitter-for-Brand-Improvement-and-Trend-Recognition",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "fanjyy/nepadmin",
+      "repository_url": "https://github.com/fanjyy/nepadmin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "wiesner-philipp/simple-dash",
+      "repository_url": "https://github.com/wiesner-philipp/simple-dash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "WaterByWind/grafana-dashboards",
+      "repository_url": "https://github.com/WaterByWind/grafana-dashboards",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "netbeast/dashboard",
+      "repository_url": "https://github.com/netbeast/dashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "prometheus-erl/beam-dashboards",
+      "repository_url": "https://github.com/prometheus-erl/beam-dashboards",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jilleb/mqb-pm",
+      "repository_url": "https://github.com/jilleb/mqb-pm",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "blitzcode/hue-dashboard",
+      "repository_url": "https://github.com/blitzcode/hue-dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "basetool-ai/basetool",
+      "repository_url": "https://github.com/basetool-ai/basetool",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "pmg1989/dva-admin",
+      "repository_url": "https://github.com/pmg1989/dva-admin",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Syncano/syncano-dashboard",
+      "repository_url": "https://github.com/Syncano/syncano-dashboard",
+      "default_branch": "devel",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "pipiliang/docker-dashboard",
+      "repository_url": "https://github.com/pipiliang/docker-dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "AmadeusITGroup/GraphDash",
+      "repository_url": "https://github.com/AmadeusITGroup/GraphDash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "vegasbrianc/github-monitoring",
+      "repository_url": "https://github.com/vegasbrianc/github-monitoring",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "strapi/strapi-sdk-javascript",
+      "repository_url": "https://github.com/strapi/strapi-sdk-javascript",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "trekhleb/covid-19",
+      "repository_url": "https://github.com/trekhleb/covid-19",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "sumitkumar1503/ecommerce",
+      "repository_url": "https://github.com/sumitkumar1503/ecommerce",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "yorek/ssis-dashboard",
+      "repository_url": "https://github.com/yorek/ssis-dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "BSoDium/Slashboard-desktop",
+      "repository_url": "https://github.com/BSoDium/Slashboard-desktop",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "intomylife/SpringCloud",
+      "repository_url": "https://github.com/intomylife/SpringCloud",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "peterhanania/Pogy",
+      "repository_url": "https://github.com/peterhanania/Pogy",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "danimahardhika/wallpaperboard",
+      "repository_url": "https://github.com/danimahardhika/wallpaperboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "topdown/VVV-Dashboard",
+      "repository_url": "https://github.com/topdown/VVV-Dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "shopperlabs/shopper-react",
+      "repository_url": "https://github.com/shopperlabs/shopper-react",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jkwill87/stonky",
+      "repository_url": "https://github.com/jkwill87/stonky",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "medbounaga/deftERP",
+      "repository_url": "https://github.com/medbounaga/deftERP",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "TailorDev/crick",
+      "repository_url": "https://github.com/TailorDev/crick",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "siegfried415/portia-dashboard",
+      "repository_url": "https://github.com/siegfried415/portia-dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "ilhammeidi/boss-lite",
+      "repository_url": "https://github.com/ilhammeidi/boss-lite",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "justboil/admin-one-tailwind",
+      "repository_url": "https://github.com/justboil/admin-one-tailwind",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "nebulapackage/nebula",
+      "repository_url": "https://github.com/nebulapackage/nebula",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Yiuman/citrus-vuetify",
+      "repository_url": "https://github.com/Yiuman/citrus-vuetify",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "mljar/bloxs",
+      "repository_url": "https://github.com/mljar/bloxs",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "fusion-hq/fusion",
+      "repository_url": "https://github.com/fusion-hq/fusion",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "inkscope/inkscope",
+      "repository_url": "https://github.com/inkscope/inkscope",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "home-assistant/hadashboard",
+      "repository_url": "https://github.com/home-assistant/hadashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "marcusraitner/COVID-19-Dashboard",
+      "repository_url": "https://github.com/marcusraitner/COVID-19-Dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jet-admin/jet-django",
+      "repository_url": "https://github.com/jet-admin/jet-django",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "catalogicsoftware/ngx-dynamic-dashboard-framework",
+      "repository_url": "https://github.com/catalogicsoftware/ngx-dynamic-dashboard-framework",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "yuanguandong/react-dashboard-pro",
+      "repository_url": "https://github.com/yuanguandong/react-dashboard-pro",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "chovanecm/sacredboard",
+      "repository_url": "https://github.com/chovanecm/sacredboard",
+      "default_branch": "develop",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "materialos/android-icon-pack",
+      "repository_url": "https://github.com/materialos/android-icon-pack",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "mattbrailsford/vuepoint",
+      "repository_url": "https://github.com/mattbrailsford/vuepoint",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "marcopixel/SysDash",
+      "repository_url": "https://github.com/marcopixel/SysDash",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "hastic-zzz/hastic-grafana-app",
+      "repository_url": "https://github.com/hastic-zzz/hastic-grafana-app",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "wayone/Indicator",
+      "repository_url": "https://github.com/wayone/Indicator",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "zzcandor/lowcode-dashboard",
+      "repository_url": "https://github.com/zzcandor/lowcode-dashboard",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "getway/diting",
+      "repository_url": "https://github.com/getway/diting",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "plugsy/core",
+      "repository_url": "https://github.com/plugsy/core",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "m110/grafcli",
+      "repository_url": "https://github.com/m110/grafcli",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "Azure/ibex-dashboard",
+      "repository_url": "https://github.com/Azure/ibex-dashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "zksailor534/react-adminlte-dash",
+      "repository_url": "https://github.com/zksailor534/react-adminlte-dash",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "mike-paper/pulse",
+      "repository_url": "https://github.com/mike-paper/pulse",
+      "default_branch": "main",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "meta-magic/amexio.github.io",
+      "repository_url": "https://github.com/meta-magic/amexio.github.io",
+      "default_branch": "v5.21",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "YahooArchive/swiv",
+      "repository_url": "https://github.com/YahooArchive/swiv",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "amzn/oss-dashboard",
+      "repository_url": "https://github.com/amzn/oss-dashboard",
+      "default_branch": "master",
+      "archived": true,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "jagenjo/litefilesystem.js",
+      "repository_url": "https://github.com/jagenjo/litefilesystem.js",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    },
+    {
+      "repository_full_name": "lryong/hugo-leetcode-dashboard",
+      "repository_url": "https://github.com/lryong/hugo-leetcode-dashboard",
+      "default_branch": "master",
+      "archived": false,
+      "source_query": "created:<2022-11-30 pushed:<2022-11-30 stars:20..5000 topic:dashboard"
+    }
+  ]
+}
+

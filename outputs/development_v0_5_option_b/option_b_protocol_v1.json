@@ -1,0 +1,43 @@
+{
+  "schema_version": "vibebench.option_b.protocol.v1",
+  "locked_at": "2026-08-11",
+  "primary_task": "strong_visible_vibe_footprint",
+  "cutoff": "2022-11-30T00:00:00Z",
+  "selection_prohibitions": [
+    "model_score",
+    "model_prediction",
+    "public_surface_feature_value",
+    "previous_misclassification_status",
+    "opened_confirmation_result"
+  ],
+  "strong_ai": {
+    "native_builders": [
+      "REPLIT_AGENT",
+      "BOLT",
+      "LOVABLE",
+      "V0",
+      "BASE44",
+      "NATIVE_BUILDER"
+    ],
+    "requires_target_mapping": true,
+    "requires_substantial_creation_claim": true,
+    "assistant_only_is_ambiguous": true
+  },
+  "stable_human": {
+    "requires_public_project_record": true,
+    "requires_target_mapping": true,
+    "project_created_before_cutoff": true,
+    "latest_default_branch_commit_before_cutoff": true,
+    "requires_reachable_content_eligible_target": true
+  },
+  "development_gate": {
+    "precision_min": 0.9,
+    "recall_min": 0.9,
+    "all_repeated_assignments_must_pass": true,
+    "threshold_fixed_before_holdout": true
+  },
+  "independent_holdout_gate": {
+    "precision_min": 0.9,
+    "recall_min": 0.9
+  }
+}

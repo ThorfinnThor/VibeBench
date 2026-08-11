@@ -1,0 +1,2756 @@
+{
+  "schema_version": "vibebench.option_b.github_history.v1",
+  "collected_at": "2026-08-11",
+  "collection_method": "GitHub connector: latest repository commit ordered by committer date",
+  "cutoff": "2022-11-30T00:00:00Z",
+  "summary": {
+    "candidates": 183,
+    "latest_commit_found": 182,
+    "no_commit_returned": 1,
+    "latest_commit_before_cutoff": 26
+  },
+  "records": [
+    {
+      "sample_id": "DEV2-HUM-SAAS-01",
+      "repository_full_name": "supabase/supabase",
+      "provenance_url": "https://github.com/supabase/supabase",
+      "target_url": "https://supabase.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "supabase.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "0cf543add9e3bb563a9890e46bb576c43edc8ca7",
+        "created_at": "2026-08-11T17:00:46Z",
+        "html_url": "https://github.com/supabase/supabase/commit/0cf543add9e3bb563a9890e46bb576c43edc8ca7"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-02",
+      "repository_full_name": "PostHog/posthog",
+      "provenance_url": "https://github.com/PostHog/posthog",
+      "target_url": "https://posthog.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "posthog.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "0b792521b8cf989e3477d8a87b96476a014ea773",
+        "created_at": "2026-08-11T17:07:20Z",
+        "html_url": "https://github.com/PostHog/posthog/commit/0b792521b8cf989e3477d8a87b96476a014ea773"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-03",
+      "repository_full_name": "appsmithorg/appsmith",
+      "provenance_url": "https://github.com/appsmithorg/appsmith",
+      "target_url": "https://appsmith.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "appsmith.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "107634b7e3229bb69d53674cb9ebc67bc1ed02a8",
+        "created_at": "2026-08-11T08:46:47Z",
+        "html_url": "https://github.com/appsmithorg/appsmith/commit/107634b7e3229bb69d53674cb9ebc67bc1ed02a8"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-04",
+      "repository_full_name": "novuhq/novu",
+      "provenance_url": "https://github.com/novuhq/novu",
+      "target_url": "https://novu.co",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "novu.co",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4926ef59192017a3be329ab06e9d3ea68e085fb2",
+        "created_at": "2026-08-11T16:53:40Z",
+        "html_url": "https://github.com/novuhq/novu/commit/4926ef59192017a3be329ab06e9d3ea68e085fb2"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-05",
+      "repository_full_name": "strapi/strapi",
+      "provenance_url": "https://github.com/strapi/strapi",
+      "target_url": "https://strapi.io",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "strapi.io",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4a4101264d7098754df36e85fa629fd2f2349d8c",
+        "created_at": "2026-08-11T15:05:39Z",
+        "html_url": "https://github.com/strapi/strapi/commit/4a4101264d7098754df36e85fa629fd2f2349d8c"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-06",
+      "repository_full_name": "outline/outline",
+      "provenance_url": "https://github.com/outline/outline",
+      "target_url": "https://www.getoutline.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "getoutline.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "374f5ad4035e39903db1d968d3be9c7ed8adca2c",
+        "created_at": "2026-08-11T00:27:53Z",
+        "html_url": "https://github.com/outline/outline/commit/374f5ad4035e39903db1d968d3be9c7ed8adca2c"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-07",
+      "repository_full_name": "ToolJet/ToolJet",
+      "provenance_url": "https://github.com/ToolJet/ToolJet",
+      "target_url": "https://www.tooljet.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "tooljet.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "21c05d18312a436606ab2fb9e5d52a6c57e1b57d",
+        "created_at": "2026-08-10T07:18:02Z",
+        "html_url": "https://github.com/ToolJet/ToolJet/commit/21c05d18312a436606ab2fb9e5d52a6c57e1b57d"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-08",
+      "repository_full_name": "medusajs/medusa",
+      "provenance_url": "https://github.com/medusajs/medusa",
+      "target_url": "https://medusajs.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "medusajs.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "ef62b138bc3b47bc2874378e5ec533dbd22a3f9c",
+        "created_at": "2026-08-11T15:48:45Z",
+        "html_url": "https://github.com/medusajs/medusa/commit/ef62b138bc3b47bc2874378e5ec533dbd22a3f9c"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-09",
+      "repository_full_name": "payloadcms/payload",
+      "provenance_url": "https://github.com/payloadcms/payload",
+      "target_url": "https://payloadcms.com",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "payloadcms.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f48de23691132fe89de4494954d6d60035e58cd6",
+        "created_at": "2026-08-11T14:11:01Z",
+        "html_url": "https://github.com/payloadcms/payload/commit/f48de23691132fe89de4494954d6d60035e58cd6"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-SAAS-10",
+      "repository_full_name": "logto-io/logto",
+      "provenance_url": "https://github.com/logto-io/logto",
+      "target_url": "https://logto.io",
+      "target_group": "HUMAN_MODERN_SAAS_NEW",
+      "project_family_id": "logto.io",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "7f8a3e3fc169f3f5e280a51a035c182239c31b3c",
+        "created_at": "2026-08-11T10:50:01Z",
+        "html_url": "https://github.com/logto-io/logto/commit/7f8a3e3fc169f3f5e280a51a035c182239c31b3c"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-01",
+      "repository_full_name": "triggerdotdev/jsonhero-web",
+      "provenance_url": "https://github.com/triggerdotdev/jsonhero-web",
+      "target_url": "https://jsonhero.io",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "jsonhero.io",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "15157053174ba7a0a79c77b2925fbde7e05a6334",
+        "created_at": "2025-07-17T12:31:58Z",
+        "html_url": "https://github.com/triggerdotdev/jsonhero-web/commit/15157053174ba7a0a79c77b2925fbde7e05a6334"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-02",
+      "repository_full_name": "CorentinTh/it-tools",
+      "provenance_url": "https://github.com/CorentinTh/it-tools",
+      "target_url": "https://it-tools.tech",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "it-tools.tech",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d505845f918e946ec300af7b36efc107e2f66e9e",
+        "created_at": "2026-02-12T00:59:29Z",
+        "html_url": "https://github.com/CorentinTh/it-tools/commit/d505845f918e946ec300af7b36efc107e2f66e9e"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-03",
+      "repository_full_name": "AmruthPillai/Reactive-Resume",
+      "provenance_url": "https://github.com/AmruthPillai/Reactive-Resume",
+      "target_url": "https://rxresu.me",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "rxresu.me",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3a5b12e2a40374a9571988701fcb75c5a1831c42",
+        "created_at": "2026-08-11T08:26:04Z",
+        "html_url": "https://github.com/amruthpillai/reactive-resume/commit/3a5b12e2a40374a9571988701fcb75c5a1831c42"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-04",
+      "repository_full_name": "carbon-app/carbon",
+      "provenance_url": "https://github.com/carbon-app/carbon",
+      "target_url": "https://carbon.now.sh",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "carbon.now.sh",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "1334429ae63f9a3d052d59ec8c6b158fa5db0943",
+        "created_at": "2024-12-27T22:52:38Z",
+        "html_url": "https://github.com/carbon-app/carbon/commit/1334429ae63f9a3d052d59ec8c6b158fa5db0943"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-05",
+      "repository_full_name": "responsively-org/responsively-app",
+      "provenance_url": "https://github.com/responsively-org/responsively-app",
+      "target_url": "https://responsively.app",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "responsively.app",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e5623c5a70c0c476b3f247c8d3980c7224e36410",
+        "created_at": "2026-07-17T04:45:18Z",
+        "html_url": "https://github.com/responsively-org/responsively-app/commit/e5623c5a70c0c476b3f247c8d3980c7224e36410"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-06",
+      "repository_full_name": "pastelsky/bundlephobia",
+      "provenance_url": "https://github.com/pastelsky/bundlephobia",
+      "target_url": "https://bundlephobia.com",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "bundlephobia.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "c132e5844db1cf2513a3a02a542fb2e9edaa418c",
+        "created_at": "2026-08-10T17:08:38Z",
+        "html_url": "https://github.com/pastelsky/bundlephobia/commit/c132e5844db1cf2513a3a02a542fb2e9edaa418c"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-07",
+      "repository_full_name": "octokatherine/readme.so",
+      "provenance_url": "https://github.com/octokatherine/readme.so",
+      "target_url": "https://readme.so",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "readme.so",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "90420ff0f33d1ef0e9cf4fd67515662ab626acee",
+        "created_at": "2026-03-13T04:38:06Z",
+        "html_url": "https://github.com/octokatherine/readme.so/commit/90420ff0f33d1ef0e9cf4fd67515662ab626acee"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-08",
+      "repository_full_name": "kamranahmedse/developer-roadmap",
+      "provenance_url": "https://github.com/kamranahmedse/developer-roadmap",
+      "target_url": "https://roadmap.sh",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "roadmap.sh",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "NO_COMMIT",
+      "latest_commit": null
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-09",
+      "repository_full_name": "monkeytypegame/monkeytype",
+      "provenance_url": "https://github.com/monkeytypegame/monkeytype",
+      "target_url": "https://monkeytype.com",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "monkeytype.com",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d7eb4b76f3b3000199022ea52a52365b9346b8d0",
+        "created_at": "2026-08-04T22:25:12Z",
+        "html_url": "https://github.com/monkeytypegame/monkeytype/commit/d7eb4b76f3b3000199022ea52a52365b9346b8d0"
+      }
+    },
+    {
+      "sample_id": "DEV2-HUM-APP-10",
+      "repository_full_name": "freeCodeCamp/devdocs",
+      "provenance_url": "https://github.com/freeCodeCamp/devdocs",
+      "target_url": "https://devdocs.io",
+      "target_group": "HUMAN_MODERN_APP_NEW",
+      "project_family_id": "devdocs.io",
+      "source_manifest": "outputs/development_v0_2/vibebench_development_extension_40_v0_2.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "383e7aa2a211c0637f87d522eca87e11179b1d12",
+        "created_at": "2026-07-27T18:58:01Z",
+        "html_url": "https://github.com/freeCodeCamp/devdocs/commit/383e7aa2a211c0637f87d522eca87e11179b1d12"
+      }
+    },
+    {
+      "sample_id": "DEV3-031",
+      "repository_full_name": "nylas/nylas-mail",
+      "provenance_url": "https://github.com/nylas/nylas-mail",
+      "target_url": "https://nylas.com/nylas-mail/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "nylas.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a6ec2161716bd0d7c1ef87783eba4aebce361104",
+        "created_at": "2026-06-25T18:19:28Z",
+        "html_url": "https://github.com/nylas/nylas-mail/commit/a6ec2161716bd0d7c1ef87783eba4aebce361104"
+      }
+    },
+    {
+      "sample_id": "DEV3-032",
+      "repository_full_name": "alyssaxuu/omni",
+      "provenance_url": "https://github.com/alyssaxuu/omni",
+      "target_url": "https://chrome.google.com/webstore/detail/omni/mapjgeachilmcbbokkgcbgpbakaaeehi?hl=en&authuser=0",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "chrome.google.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8bd26168ec177b938112e3d22f2a1e841360ac58",
+        "created_at": "2022-07-02T08:11:44Z",
+        "html_url": "https://github.com/alyssaxuu/omni/commit/8bd26168ec177b938112e3d22f2a1e841360ac58"
+      }
+    },
+    {
+      "sample_id": "DEV3-033",
+      "repository_full_name": "boxyhq/saas-starter-kit",
+      "provenance_url": "https://github.com/boxyhq/saas-starter-kit",
+      "target_url": "https://boxyhq.com/blog/enterprise-ready-saas-starter-kit",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "boxyhq.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "abc9b686823cbfb4973c79bc36fea37a3244be6c",
+        "created_at": "2026-05-08T22:28:06Z",
+        "html_url": "https://github.com/boxyhq/saas-starter-kit/commit/abc9b686823cbfb4973c79bc36fea37a3244be6c"
+      }
+    },
+    {
+      "sample_id": "DEV3-034",
+      "repository_full_name": "sayanarijit/xplr",
+      "provenance_url": "https://github.com/sayanarijit/xplr",
+      "target_url": "https://xplr.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "xplr.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a8d9dc3ba3bb53cad8012189b3a218efb4c8e017",
+        "created_at": "2026-08-06T08:11:14Z",
+        "html_url": "https://github.com/sayanarijit/xplr/commit/a8d9dc3ba3bb53cad8012189b3a218efb4c8e017"
+      }
+    },
+    {
+      "sample_id": "DEV3-035",
+      "repository_full_name": "miguelgrinberg/microblog",
+      "provenance_url": "https://github.com/miguelgrinberg/microblog",
+      "target_url": "http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "blog.miguelgrinberg.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a975ef64864354867c88e0ed3a17ba7d17dca752",
+        "created_at": "2025-04-06T19:01:21Z",
+        "html_url": "https://github.com/miguelgrinberg/microblog/commit/a975ef64864354867c88e0ed3a17ba7d17dca752"
+      }
+    },
+    {
+      "sample_id": "DEV3-036",
+      "repository_full_name": "meetfranz/franz",
+      "provenance_url": "https://github.com/meetfranz/franz",
+      "target_url": "http://meetfranz.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "meetfranz.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "94b1ef298aa72a41eac448f4e5e21a74d857f2fa",
+        "created_at": "2026-06-12T13:36:10Z",
+        "html_url": "https://github.com/meetfranz/franz/commit/94b1ef298aa72a41eac448f4e5e21a74d857f2fa"
+      }
+    },
+    {
+      "sample_id": "DEV3-037",
+      "repository_full_name": "nisrulz/app-privacy-policy-generator",
+      "provenance_url": "https://github.com/nisrulz/app-privacy-policy-generator",
+      "target_url": "https://app-privacy-policy-generator.nisrulz.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "app-privacy-policy-generator.nisrulz.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "efb08471899a645d8c412461c47fee736c284693",
+        "created_at": "2026-07-09T09:42:43Z",
+        "html_url": "https://github.com/nisrulz/app-privacy-policy-generator/commit/efb08471899a645d8c412461c47fee736c284693"
+      }
+    },
+    {
+      "sample_id": "DEV3-038",
+      "repository_full_name": "oliverschwendener/ueli",
+      "provenance_url": "https://github.com/oliverschwendener/ueli",
+      "target_url": "https://ueli.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "ueli.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4fb152247e86d28191dfd49057b8a5a6f8aee951",
+        "created_at": "2026-08-05T19:07:00Z",
+        "html_url": "https://github.com/oliverschwendener/ueli/commit/4fb152247e86d28191dfd49057b8a5a6f8aee951"
+      }
+    },
+    {
+      "sample_id": "DEV3-039",
+      "repository_full_name": "webui-dev/webui",
+      "provenance_url": "https://github.com/webui-dev/webui",
+      "target_url": "https://webui.me/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "webui.me",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "85043e9802d1f40cbc53c8bd63a5b7a85e362426",
+        "created_at": "2026-08-11T16:24:48Z",
+        "html_url": "https://github.com/webui-dev/webui/commit/85043e9802d1f40cbc53c8bd63a5b7a85e362426"
+      }
+    },
+    {
+      "sample_id": "DEV3-040",
+      "repository_full_name": "jameskokoska/Cashew",
+      "provenance_url": "https://github.com/jameskokoska/Cashew",
+      "target_url": "https://cashewapp.web.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "cashewapp.web.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9cfbe50c16d95429891d44faf5f2c77a3abdb93b",
+        "created_at": "2026-03-09T01:35:16Z",
+        "html_url": "https://github.com/jameskokoska/Cashew/commit/9cfbe50c16d95429891d44faf5f2c77a3abdb93b"
+      }
+    },
+    {
+      "sample_id": "DEV3-041",
+      "repository_full_name": "code-charity/youtube",
+      "provenance_url": "https://github.com/code-charity/youtube",
+      "target_url": "http://improvedtube.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "improvedtube.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "55e3f6813fb6ee8d12ee862d5419c1787d4351d7",
+        "created_at": "2026-08-05T17:38:34Z",
+        "html_url": "https://github.com/code-charity/youtube/commit/55e3f6813fb6ee8d12ee862d5419c1787d4351d7"
+      }
+    },
+    {
+      "sample_id": "DEV3-042",
+      "repository_full_name": "muety/wakapi",
+      "provenance_url": "https://github.com/muety/wakapi",
+      "target_url": "https://wakapi.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "wakapi.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "1a08af5f78d4161f8b573de6ad82615b4f2b76f4",
+        "created_at": "2026-08-08T09:25:25Z",
+        "html_url": "https://github.com/muety/wakapi/commit/1a08af5f78d4161f8b573de6ad82615b4f2b76f4"
+      }
+    },
+    {
+      "sample_id": "DEV3-043",
+      "repository_full_name": "archtechx/tenancy",
+      "provenance_url": "https://github.com/archtechx/tenancy",
+      "target_url": "https://tenancyforlaravel.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "tenancyforlaravel.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e0990a438c985c6e7a6a366757bc2dbbaf92d460",
+        "created_at": "2026-08-05T03:49:48Z",
+        "html_url": "https://github.com/archtechx/tenancy/commit/e0990a438c985c6e7a6a366757bc2dbbaf92d460"
+      }
+    },
+    {
+      "sample_id": "DEV3-044",
+      "repository_full_name": "swiftbar/SwiftBar",
+      "provenance_url": "https://github.com/swiftbar/SwiftBar",
+      "target_url": "https://swiftbar.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "swiftbar.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "05cb6cb1123bc7227ee2b39f390f8bccb839fed0",
+        "created_at": "2026-08-11T13:14:39Z",
+        "html_url": "https://github.com/swiftbar/SwiftBar/commit/05cb6cb1123bc7227ee2b39f390f8bccb839fed0"
+      }
+    },
+    {
+      "sample_id": "DEV3-045",
+      "repository_full_name": "kubero-dev/kubero",
+      "provenance_url": "https://github.com/kubero-dev/kubero",
+      "target_url": "https://demo.kubero.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "demo.kubero.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "36a5046c379c5e9e5e0b2c1b80c218bfaa811144",
+        "created_at": "2026-06-24T12:08:51Z",
+        "html_url": "https://github.com/kubero-dev/kubero/commit/36a5046c379c5e9e5e0b2c1b80c218bfaa811144"
+      }
+    },
+    {
+      "sample_id": "DEV3-046",
+      "repository_full_name": "wmariuss/awesome-devops",
+      "provenance_url": "https://github.com/wmariuss/awesome-devops",
+      "target_url": "http://awesome-devops.xyz/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "awesome-devops.xyz",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d7f166fda33e39c688fb4d962638d42d6259d296",
+        "created_at": "2026-07-24T15:51:40Z",
+        "html_url": "https://github.com/wmariuss/awesome-devops/commit/d7f166fda33e39c688fb4d962638d42d6259d296"
+      }
+    },
+    {
+      "sample_id": "DEV3-047",
+      "repository_full_name": "ever-co/ever-gauzy",
+      "provenance_url": "https://github.com/ever-co/ever-gauzy",
+      "target_url": "https://gauzy.co/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "gauzy.co",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "6d16f196fd6ccb4c89836c8e42b1a253bc25e3d8",
+        "created_at": "2026-08-11T13:41:52Z",
+        "html_url": "https://github.com/ever-co/ever-gauzy/commit/6d16f196fd6ccb4c89836c8e42b1a253bc25e3d8"
+      }
+    },
+    {
+      "sample_id": "DEV3-048",
+      "repository_full_name": "nuttyartist/notes",
+      "provenance_url": "https://github.com/nuttyartist/notes",
+      "target_url": "https://notes-foss.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "notes-foss.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5d2bbffa4ca9b2698afe54593b94490703801c6c",
+        "created_at": "2026-05-15T19:11:56Z",
+        "html_url": "https://github.com/nuttyartist/notes/commit/5d2bbffa4ca9b2698afe54593b94490703801c6c"
+      }
+    },
+    {
+      "sample_id": "DEV3-049",
+      "repository_full_name": "hoothin/UserScripts",
+      "provenance_url": "https://github.com/hoothin/UserScripts",
+      "target_url": "https://greasyfork.org/users/8227-hoothin",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "greasyfork.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4bdf45d090ae8d9ab5120d43f366b6fe2c76bb69",
+        "created_at": "2026-08-08T01:51:24Z",
+        "html_url": "https://github.com/hoothin/UserScripts/commit/4bdf45d090ae8d9ab5120d43f366b6fe2c76bb69"
+      }
+    },
+    {
+      "sample_id": "DEV3-050",
+      "repository_full_name": "h2oai/wave",
+      "provenance_url": "https://github.com/h2oai/wave",
+      "target_url": "https://wave.h2o.ai/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "wave.h2o.ai",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "cb1126fec22eb3a7594f416497f0eb6473a25ddc",
+        "created_at": "2026-07-22T13:39:25Z",
+        "html_url": "https://github.com/h2oai/wave/commit/cb1126fec22eb3a7594f416497f0eb6473a25ddc"
+      }
+    },
+    {
+      "sample_id": "DEV3-051",
+      "repository_full_name": "privacyguides/privacyguides.org",
+      "provenance_url": "https://github.com/privacyguides/privacyguides.org",
+      "target_url": "https://www.privacyguides.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "privacyguides.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "86b22a99f056707ed4df594d75b29ae0c08d8f7e",
+        "created_at": "2026-08-03T16:39:40Z",
+        "html_url": "https://github.com/privacyguides/privacyguides.org/commit/86b22a99f056707ed4df594d75b29ae0c08d8f7e"
+      }
+    },
+    {
+      "sample_id": "DEV3-052",
+      "repository_full_name": "Volmarg/personal-management-system",
+      "provenance_url": "https://github.com/Volmarg/personal-management-system",
+      "target_url": "http://personal-management-system.pl/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "personal-management-system.pl",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "462031178a1dd5bf4bf88c25e8ae9cc0bb77be88",
+        "created_at": "2026-08-04T16:47:31Z",
+        "html_url": "https://github.com/Volmarg/personal-management-system/commit/462031178a1dd5bf4bf88c25e8ae9cc0bb77be88"
+      }
+    },
+    {
+      "sample_id": "DEV3-053",
+      "repository_full_name": "Bubka/2FAuth",
+      "provenance_url": "https://github.com/Bubka/2FAuth",
+      "target_url": "https://docs.2fauth.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "docs.2fauth.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "b823160b645abe47b4dac80c3c4516f0b54aeb7d",
+        "created_at": "2026-07-05T19:29:29Z",
+        "html_url": "https://github.com/Bubka/2FAuth/commit/b823160b645abe47b4dac80c3c4516f0b54aeb7d"
+      }
+    },
+    {
+      "sample_id": "DEV3-054",
+      "repository_full_name": "didi/mpx",
+      "provenance_url": "https://github.com/didi/mpx",
+      "target_url": "https://mpxjs.cn/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "mpxjs.cn",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "ec691d2f12aca37149dedd857237848cb79499cd",
+        "created_at": "2026-08-03T12:08:32Z",
+        "html_url": "https://github.com/didi/mpx/commit/ec691d2f12aca37149dedd857237848cb79499cd"
+      }
+    },
+    {
+      "sample_id": "DEV3-055",
+      "repository_full_name": "picocms/Pico",
+      "provenance_url": "https://github.com/picocms/Pico",
+      "target_url": "http://picocms.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "picocms.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5e8e0a03f4a14d4f70a109e8f5d905fbbad897f6",
+        "created_at": "2026-07-07T12:49:41Z",
+        "html_url": "https://github.com/picocms/Pico/commit/5e8e0a03f4a14d4f70a109e8f5d905fbbad897f6"
+      }
+    },
+    {
+      "sample_id": "DEV3-056",
+      "repository_full_name": "yanzhenjie/AndServer",
+      "provenance_url": "https://github.com/yanzhenjie/AndServer",
+      "target_url": "https://yanzhenjie.com/AndServer",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "yanzhenjie.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "23a7c15512f5a70a9ce517710a5d04c06a4d57c9",
+        "created_at": "2023-06-07T07:58:41Z",
+        "html_url": "https://github.com/yanzhenjie/AndServer/commit/23a7c15512f5a70a9ce517710a5d04c06a4d57c9"
+      }
+    },
+    {
+      "sample_id": "DEV3-057",
+      "repository_full_name": "LinkStackOrg/LinkStack",
+      "provenance_url": "https://github.com/LinkStackOrg/LinkStack",
+      "target_url": "https://linkstack.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "linkstack.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "7bd6cea5d942944e14ca0dbd0a9e6b78b1f4041a",
+        "created_at": "2026-07-06T12:37:54Z",
+        "html_url": "https://github.com/LinkStackOrg/LinkStack/commit/7bd6cea5d942944e14ca0dbd0a9e6b78b1f4041a"
+      }
+    },
+    {
+      "sample_id": "DEV3-058",
+      "repository_full_name": "lookscanned/lookscanned.io",
+      "provenance_url": "https://github.com/lookscanned/lookscanned.io",
+      "target_url": "https://lookscanned.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "lookscanned.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3565da992ae2355a6cd214b5339605cb935cc4b7",
+        "created_at": "2024-12-27T01:51:54Z",
+        "html_url": "https://github.com/lookscanned/lookscanned.io/commit/3565da992ae2355a6cd214b5339605cb935cc4b7"
+      }
+    },
+    {
+      "sample_id": "DEV3-059",
+      "repository_full_name": "OpnForm/OpnForm",
+      "provenance_url": "https://github.com/OpnForm/OpnForm",
+      "target_url": "https://opnform.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "opnform.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "796d929659d93b463227fbf2d72b91bb93469f91",
+        "created_at": "2026-08-11T10:23:54Z",
+        "html_url": "https://github.com/OpnForm/OpnForm/commit/796d929659d93b463227fbf2d72b91bb93469f91"
+      }
+    },
+    {
+      "sample_id": "DEV3-060",
+      "repository_full_name": "Ajaxy/telegram-tt",
+      "provenance_url": "https://github.com/Ajaxy/telegram-tt",
+      "target_url": "https://web.telegram.org/a",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "project_family_id": "web.telegram.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_extension_60_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d915b1b9ae856eb9eae737d1816d9c05df66b1d3",
+        "created_at": "2026-08-11T15:21:19Z",
+        "html_url": "https://github.com/Ajaxy/telegram-tt/commit/d915b1b9ae856eb9eae737d1816d9c05df66b1d3"
+      }
+    },
+    {
+      "sample_id": "DEV3X-045",
+      "repository_full_name": "coreui/coreui-free-react-admin-template",
+      "provenance_url": "https://github.com/coreui/coreui-free-react-admin-template",
+      "target_url": "https://coreui.io/product/free-react-admin-template/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "coreui.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5cc3893b0de9731f239fd78a02fb763d19da128c",
+        "created_at": "2026-08-10T19:42:14Z",
+        "html_url": "https://github.com/coreui/coreui-free-react-admin-template/commit/5cc3893b0de9731f239fd78a02fb763d19da128c"
+      }
+    },
+    {
+      "sample_id": "DEV3X-046",
+      "repository_full_name": "cruip/open-react-template",
+      "provenance_url": "https://github.com/cruip/open-react-template",
+      "target_url": "https://cruip.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "cruip.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9da36763df216be7840f3c063edcdcaf7862401e",
+        "created_at": "2025-12-12T08:53:36Z",
+        "html_url": "https://github.com/cruip/open-react-template/commit/9da36763df216be7840f3c063edcdcaf7862401e"
+      }
+    },
+    {
+      "sample_id": "DEV3X-047",
+      "repository_full_name": "octokatherine/readme.so",
+      "provenance_url": "https://github.com/octokatherine/readme.so",
+      "target_url": "https://readme.so/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "readme.so",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "90420ff0f33d1ef0e9cf4fd67515662ab626acee",
+        "created_at": "2026-03-13T04:38:06Z",
+        "html_url": "https://github.com/octokatherine/readme.so/commit/90420ff0f33d1ef0e9cf4fd67515662ab626acee"
+      }
+    },
+    {
+      "sample_id": "DEV3X-048",
+      "repository_full_name": "iterative/cml",
+      "provenance_url": "https://github.com/iterative/cml",
+      "target_url": "http://cml.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "cml.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a3a66c74b218b08710f42bf599b066e37cb4cba7",
+        "created_at": "2024-10-24T14:01:52Z",
+        "html_url": "https://github.com/iterative/cml/commit/a3a66c74b218b08710f42bf599b066e37cb4cba7"
+      }
+    },
+    {
+      "sample_id": "DEV3X-049",
+      "repository_full_name": "IvanMathy/Boop",
+      "provenance_url": "https://github.com/IvanMathy/Boop",
+      "target_url": "https://boop.okat.best/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "boop.okat.best",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5cf6914381f6ed6ef004c3a7d470f241a248fcb6",
+        "created_at": "2023-05-13T00:54:41Z",
+        "html_url": "https://github.com/IvanMathy/Boop/commit/5cf6914381f6ed6ef004c3a7d470f241a248fcb6"
+      }
+    },
+    {
+      "sample_id": "DEV3X-050",
+      "repository_full_name": "txn2/kubefwd",
+      "provenance_url": "https://github.com/txn2/kubefwd",
+      "target_url": "http://kubefwd.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "kubefwd.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "10533ebd4905c190bac2027274c207b2f2dea831",
+        "created_at": "2026-07-27T02:14:06Z",
+        "html_url": "https://github.com/txn2/kubefwd/commit/10533ebd4905c190bac2027274c207b2f2dea831"
+      }
+    },
+    {
+      "sample_id": "DEV3X-051",
+      "repository_full_name": "vvo/iron-session",
+      "provenance_url": "https://github.com/vvo/iron-session",
+      "target_url": "https://get-iron-session.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "get-iron-session.vercel.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "6b51b419a918a99261fe1c468818fbcfed483834",
+        "created_at": "2026-03-04T13:00:36Z",
+        "html_url": "https://github.com/vvo/iron-session/commit/6b51b419a918a99261fe1c468818fbcfed483834"
+      }
+    },
+    {
+      "sample_id": "DEV3X-052",
+      "repository_full_name": "nextauthjs/next-auth-example",
+      "provenance_url": "https://github.com/nextauthjs/next-auth-example",
+      "target_url": "https://next-auth-example.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "next-auth-example.vercel.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "39ff2b7a375c240a4741866b3818d80fc8edaa5c",
+        "created_at": "2025-09-26T17:52:11Z",
+        "html_url": "https://github.com/nextauthjs/next-auth-example/commit/39ff2b7a375c240a4741866b3818d80fc8edaa5c"
+      }
+    },
+    {
+      "sample_id": "DEV3X-053",
+      "repository_full_name": "httpie/desktop",
+      "provenance_url": "https://github.com/httpie/desktop",
+      "target_url": "https://httpie.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "httpie.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4cb3cd3309b4970be1cb793068f5858504abb459",
+        "created_at": "2025-03-19T23:20:37Z",
+        "html_url": "https://github.com/httpie/desktop/commit/4cb3cd3309b4970be1cb793068f5858504abb459"
+      }
+    },
+    {
+      "sample_id": "DEV3X-054",
+      "repository_full_name": "alovajs/alova",
+      "provenance_url": "https://github.com/alovajs/alova",
+      "target_url": "https://alova.js.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "alova.js.org",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "83156b532e68489340d0c39ea74d9dafe55ab273",
+        "created_at": "2026-07-25T14:46:54Z",
+        "html_url": "https://github.com/alovajs/alova/commit/83156b532e68489340d0c39ea74d9dafe55ab273"
+      }
+    },
+    {
+      "sample_id": "DEV3X-055",
+      "repository_full_name": "Azure/draft-classic",
+      "provenance_url": "https://github.com/Azure/draft-classic",
+      "target_url": "https://draft.sh/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "draft.sh",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4d4826dbab8c737f8b28704117cae433cf460f9d",
+        "created_at": "2020-02-26T22:44:50Z",
+        "html_url": "https://github.com/Azure/draft-classic/commit/4d4826dbab8c737f8b28704117cae433cf460f9d"
+      }
+    },
+    {
+      "sample_id": "DEV3X-056",
+      "repository_full_name": "ijjk/notion-blog",
+      "provenance_url": "https://github.com/ijjk/notion-blog",
+      "target_url": "https://notion-blog.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "notion-blog.vercel.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "362af9e5457cdc8c11fa4d0adac6e81dcb902975",
+        "created_at": "2021-10-20T05:15:10Z",
+        "html_url": "https://github.com/ijjk/notion-blog/commit/362af9e5457cdc8c11fa4d0adac6e81dcb902975"
+      }
+    },
+    {
+      "sample_id": "DEV3X-057",
+      "repository_full_name": "garden-io/garden",
+      "provenance_url": "https://github.com/garden-io/garden",
+      "target_url": "https://garden.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "garden.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4e7128de8dfb5f38f76a5d005a65a78110be7553",
+        "created_at": "2026-06-10T07:15:01Z",
+        "html_url": "https://github.com/garden-io/garden/commit/4e7128de8dfb5f38f76a5d005a65a78110be7553"
+      }
+    },
+    {
+      "sample_id": "DEV3X-058",
+      "repository_full_name": "httptoolkit/httptoolkit",
+      "provenance_url": "https://github.com/httptoolkit/httptoolkit",
+      "target_url": "https://httptoolkit.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "httptoolkit.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "bb579a8ceadfe86b98160843c0447a5b9eec554f",
+        "created_at": "2026-02-04T10:36:05Z",
+        "html_url": "https://github.com/httptoolkit/httptoolkit/commit/bb579a8ceadfe86b98160843c0447a5b9eec554f"
+      }
+    },
+    {
+      "sample_id": "DEV3X-059",
+      "repository_full_name": "Mereithhh/vanblog",
+      "provenance_url": "https://github.com/Mereithhh/vanblog",
+      "target_url": "https://vanblog.mereith.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "vanblog.mereith.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4b488500be8100b19772ec00d8315f343a6ac21e",
+        "created_at": "2025-06-12T04:13:02Z",
+        "html_url": "https://github.com/Mereithhh/vanblog/commit/4b488500be8100b19772ec00d8315f343a6ac21e"
+      }
+    },
+    {
+      "sample_id": "DEV3X-060",
+      "repository_full_name": "okteto/okteto",
+      "provenance_url": "https://github.com/okteto/okteto",
+      "target_url": "https://okteto.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "okteto.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "95e338b1ade1d8ca24a05a893a91b19573389efa",
+        "created_at": "2026-08-10T08:32:57Z",
+        "html_url": "https://github.com/okteto/okteto/commit/95e338b1ade1d8ca24a05a893a91b19573389efa"
+      }
+    },
+    {
+      "sample_id": "DEV3X-061",
+      "repository_full_name": "theodorusclarence/ts-nextjs-tailwind-starter",
+      "provenance_url": "https://github.com/theodorusclarence/ts-nextjs-tailwind-starter",
+      "target_url": "https://tsnext-tw.thcl.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "tsnext-tw.thcl.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9a47d33ff5a329f38b9e1b923d881cbbf6b21345",
+        "created_at": "2025-07-24T13:02:32Z",
+        "html_url": "https://github.com/theodorusclarence/ts-nextjs-tailwind-starter/commit/9a47d33ff5a329f38b9e1b923d881cbbf6b21345"
+      }
+    },
+    {
+      "sample_id": "DEV3X-062",
+      "repository_full_name": "ts-rest/ts-rest",
+      "provenance_url": "https://github.com/ts-rest/ts-rest",
+      "target_url": "https://ts-rest.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "ts-rest.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "dd7239bc950d1e254d9c9cd6df7dbccc529c33cb",
+        "created_at": "2025-06-02T09:54:04Z",
+        "html_url": "https://github.com/ts-rest/ts-rest/commit/dd7239bc950d1e254d9c9cd6df7dbccc529c33cb"
+      }
+    },
+    {
+      "sample_id": "DEV3X-063",
+      "repository_full_name": "pacexy/flow",
+      "provenance_url": "https://github.com/pacexy/flow",
+      "target_url": "https://flowoss.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "flowoss.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "36f3cc7c4581f62ff6d72b75641c674020bb1e9f",
+        "created_at": "2026-03-28T00:18:30Z",
+        "html_url": "https://github.com/pacexy/flow/commit/36f3cc7c4581f62ff6d72b75641c674020bb1e9f"
+      }
+    },
+    {
+      "sample_id": "DEV3X-064",
+      "repository_full_name": "Mayandev/notion-avatar",
+      "provenance_url": "https://github.com/Mayandev/notion-avatar",
+      "target_url": "https://notion-avatar.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "notion-avatar.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d59791d24db741e307d8c91ac9f38f92e033ad46",
+        "created_at": "2026-06-05T14:04:14Z",
+        "html_url": "https://github.com/Mayandev/notion-avatar/commit/d59791d24db741e307d8c91ac9f38f92e033ad46"
+      }
+    },
+    {
+      "sample_id": "DEV3X-065",
+      "repository_full_name": "remult/remult",
+      "provenance_url": "https://github.com/remult/remult",
+      "target_url": "https://remult.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "remult.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5d22eccb1564612cc41222e43099e21751842bc8",
+        "created_at": "2026-07-19T10:55:31Z",
+        "html_url": "https://github.com/remult/remult/commit/5d22eccb1564612cc41222e43099e21751842bc8"
+      }
+    },
+    {
+      "sample_id": "DEV3X-066",
+      "repository_full_name": "danvergara/dblab",
+      "provenance_url": "https://github.com/danvergara/dblab",
+      "target_url": "https://dblab.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "dblab.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "609b067ca0128aa359a0143ec49bda9671d76ef4",
+        "created_at": "2026-08-10T18:34:00Z",
+        "html_url": "https://github.com/danvergara/dblab/commit/609b067ca0128aa359a0143ec49bda9671d76ef4"
+      }
+    },
+    {
+      "sample_id": "DEV3X-067",
+      "repository_full_name": "graphprotocol/graph-node",
+      "provenance_url": "https://github.com/graphprotocol/graph-node",
+      "target_url": "https://thegraph.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "thegraph.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8e3debd675309d96eb987bf90f053f378bc917bf",
+        "created_at": "2026-08-03T17:46:09Z",
+        "html_url": "https://github.com/graphprotocol/graph-node/commit/8e3debd675309d96eb987bf90f053f378bc917bf"
+      }
+    },
+    {
+      "sample_id": "DEV3X-068",
+      "repository_full_name": "spencerwooo/onedrive-vercel-index",
+      "provenance_url": "https://github.com/spencerwooo/onedrive-vercel-index",
+      "target_url": "https://drive.swo.moe/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "drive.swo.moe",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "bc82aff86de69e1e717b94b600f8ccaba6c57369",
+        "created_at": "2023-06-23T22:01:37Z",
+        "html_url": "https://github.com/spencerwooo/onedrive-vercel-index/commit/bc82aff86de69e1e717b94b600f8ccaba6c57369"
+      }
+    },
+    {
+      "sample_id": "DEV3X-069",
+      "repository_full_name": "dnote/dnote",
+      "provenance_url": "https://github.com/dnote/dnote",
+      "target_url": "https://www.getdnote.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "getdnote.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a07a751f9827ff0875233e05317b90de7b29fd55",
+        "created_at": "2026-07-25T04:25:48Z",
+        "html_url": "https://github.com/dnote/dnote/commit/a07a751f9827ff0875233e05317b90de7b29fd55"
+      }
+    },
+    {
+      "sample_id": "DEV3X-070",
+      "repository_full_name": "checkly/puppeteer-examples",
+      "provenance_url": "https://github.com/checkly/puppeteer-examples",
+      "target_url": "https://checklyhq.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "checklyhq.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "25a02618f6e5a2b1f2eda9e4a3b97b6091fc6491",
+        "created_at": "2020-08-19T08:32:11Z",
+        "html_url": "https://github.com/checkly/puppeteer-examples/commit/25a02618f6e5a2b1f2eda9e4a3b97b6091fc6491"
+      }
+    },
+    {
+      "sample_id": "DEV3X-071",
+      "repository_full_name": "vercel/next-app-router-playground",
+      "provenance_url": "https://github.com/vercel/next-app-router-playground",
+      "target_url": "https://app-router.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "app-router.vercel.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "cd0363f3aefd4f4b50ee1b7655feefcc04695f4c",
+        "created_at": "2026-07-23T21:12:00Z",
+        "html_url": "https://github.com/vercel/next-app-router-playground/commit/cd0363f3aefd4f4b50ee1b7655feefcc04695f4c"
+      }
+    },
+    {
+      "sample_id": "DEV3X-072",
+      "repository_full_name": "lowdefy/lowdefy",
+      "provenance_url": "https://github.com/lowdefy/lowdefy",
+      "target_url": "https://lowdefy.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "lowdefy.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d638cf7725bfc3f327366397bce55b087c5b1318",
+        "created_at": "2026-07-22T09:54:32Z",
+        "html_url": "https://github.com/lowdefy/lowdefy/commit/d638cf7725bfc3f327366397bce55b087c5b1318"
+      }
+    },
+    {
+      "sample_id": "DEV3X-073",
+      "repository_full_name": "rcaferati/react-awesome-slider",
+      "provenance_url": "https://github.com/rcaferati/react-awesome-slider",
+      "target_url": "https://fullpage.caferati.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "fullpage.caferati.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "1ff9935420283985ba7429bc2028d285d26ec61c",
+        "created_at": "2026-04-16T09:45:49Z",
+        "html_url": "https://github.com/rcaferati/react-awesome-slider/commit/1ff9935420283985ba7429bc2028d285d26ec61c"
+      }
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "repository_full_name": "konstantinruge/notion-clone",
+      "provenance_url": "https://github.com/konstantinruge/notion-clone",
+      "target_url": "https://notion-clone.kmuenster.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "notion-clone.kmuenster.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "091d0c3d163a97a15af5ed659bcd486fdc5a8f86",
+        "created_at": "2021-06-09T12:43:34Z",
+        "html_url": "https://github.com/konstantinruge/notion-clone/commit/091d0c3d163a97a15af5ed659bcd486fdc5a8f86"
+      }
+    },
+    {
+      "sample_id": "DEV3X-075",
+      "repository_full_name": "zenstackhq/zenstack",
+      "provenance_url": "https://github.com/zenstackhq/zenstack",
+      "target_url": "https://zenstack.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "zenstack.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d7c41d8567debef44b8c282c439c3e43803d7568",
+        "created_at": "2026-08-11T10:23:09Z",
+        "html_url": "https://github.com/zenstackhq/zenstack/commit/d7c41d8567debef44b8c282c439c3e43803d7568"
+      }
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "repository_full_name": "React-Sight/React-Sight",
+      "provenance_url": "https://github.com/React-Sight/React-Sight",
+      "target_url": "http://www.reactsight.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "reactsight.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a55e02c4c300b335d3bc56c61a9638add245e402",
+        "created_at": "2020-12-11T01:24:11Z",
+        "html_url": "https://github.com/React-Sight/React-Sight/commit/a55e02c4c300b335d3bc56c61a9638add245e402"
+      }
+    },
+    {
+      "sample_id": "DEV3X-077",
+      "repository_full_name": "go-dev-frame/sponge",
+      "provenance_url": "https://github.com/go-dev-frame/sponge",
+      "target_url": "https://go-sponge.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "go-sponge.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "beef9eecdc5e2dc6b1358f130d8e9133771c277b",
+        "created_at": "2025-12-14T15:02:52Z",
+        "html_url": "https://github.com/go-dev-frame/sponge/commit/beef9eecdc5e2dc6b1358f130d8e9133771c277b"
+      }
+    },
+    {
+      "sample_id": "DEV3X-078",
+      "repository_full_name": "frain-dev/convoy",
+      "provenance_url": "https://github.com/frain-dev/convoy",
+      "target_url": "https://getconvoy.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "getconvoy.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "2570e7b20ad86d3415a063a26a10976ba19d7e74",
+        "created_at": "2026-08-07T14:27:26Z",
+        "html_url": "https://github.com/frain-dev/convoy/commit/2570e7b20ad86d3415a063a26a10976ba19d7e74"
+      }
+    },
+    {
+      "sample_id": "DEV3X-079",
+      "repository_full_name": "teaql/teaql-agent-kit",
+      "provenance_url": "https://github.com/teaql/teaql-agent-kit",
+      "target_url": "https://teaql.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "teaql.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "7998323cf177ed48609986a79bf1a87a27dc2daa",
+        "created_at": "2026-08-10T22:27:06Z",
+        "html_url": "https://github.com/teaql/teaql-agent-kit/commit/7998323cf177ed48609986a79bf1a87a27dc2daa"
+      }
+    },
+    {
+      "sample_id": "DEV3X-080",
+      "repository_full_name": "medusajs/nextjs-starter-medusa",
+      "provenance_url": "https://github.com/medusajs/nextjs-starter-medusa",
+      "target_url": "https://next.medusajs.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "next.medusajs.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9818886f06e493cb2249733d114d339aa216ef00",
+        "created_at": "2026-04-23T12:19:01Z",
+        "html_url": "https://github.com/medusajs/nextjs-starter-medusa/commit/9818886f06e493cb2249733d114d339aa216ef00"
+      }
+    },
+    {
+      "sample_id": "DEV3X-081",
+      "repository_full_name": "flawiddsouza/Restfox",
+      "provenance_url": "https://github.com/flawiddsouza/Restfox",
+      "target_url": "https://restfox.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "restfox.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e8e158e8de297a2fec0259169e45e647fb989446",
+        "created_at": "2026-07-03T21:37:37Z",
+        "html_url": "https://github.com/flawiddsouza/Restfox/commit/e8e158e8de297a2fec0259169e45e647fb989446"
+      }
+    },
+    {
+      "sample_id": "DEV3X-082",
+      "repository_full_name": "riffusion/riffusion-app-hobby",
+      "provenance_url": "https://github.com/riffusion/riffusion-app-hobby",
+      "target_url": "https://riffusion.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "riffusion.vercel.app",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3a72a8ff41e8c9c84774bd75638c1176508106d3",
+        "created_at": "2024-07-22T18:01:36Z",
+        "html_url": "https://github.com/riffusion/riffusion-app-hobby/commit/3a72a8ff41e8c9c84774bd75638c1176508106d3"
+      }
+    },
+    {
+      "sample_id": "DEV3X-083",
+      "repository_full_name": "module-federation/core",
+      "provenance_url": "https://github.com/module-federation/core",
+      "target_url": "https://module-federation.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "module-federation.io",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f06303a1405a1e47111965c579e2adc8ca3bfaae",
+        "created_at": "2026-08-11T04:58:25Z",
+        "html_url": "https://github.com/module-federation/core/commit/f06303a1405a1e47111965c579e2adc8ca3bfaae"
+      }
+    },
+    {
+      "sample_id": "DEV3X-084",
+      "repository_full_name": "edmundhung/conform",
+      "provenance_url": "https://github.com/edmundhung/conform",
+      "target_url": "https://conform.guide/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "conform.guide",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "74470ab475b5b5728f3df6863e6785b6d8b9e549",
+        "created_at": "2026-08-09T20:31:10Z",
+        "html_url": "https://github.com/edmundhung/conform/commit/74470ab475b5b5728f3df6863e6785b6d8b9e549"
+      }
+    },
+    {
+      "sample_id": "DEV3X-085",
+      "repository_full_name": "Swizec/useAuth",
+      "provenance_url": "https://github.com/Swizec/useAuth",
+      "target_url": "https://useauth.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "useauth.dev",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9aa10b832896fb9932587b1ab5b57c6e821888d5",
+        "created_at": "2021-01-27T14:29:03Z",
+        "html_url": "https://github.com/Swizec/useAuth/commit/9aa10b832896fb9932587b1ab5b57c6e821888d5"
+      }
+    },
+    {
+      "sample_id": "DEV3X-086",
+      "repository_full_name": "craftzdog/craftzdog-homepage",
+      "provenance_url": "https://github.com/craftzdog/craftzdog-homepage",
+      "target_url": "https://www.craftz.dog/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "craftz.dog",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "ada0276d9ff6242597521a8c96a77c7058c74e4f",
+        "created_at": "2026-02-04T07:01:52Z",
+        "html_url": "https://github.com/craftzdog/craftzdog-homepage/commit/ada0276d9ff6242597521a8c96a77c7058c74e4f"
+      }
+    },
+    {
+      "sample_id": "DEV3X-087",
+      "repository_full_name": "nvh95/jest-preview",
+      "provenance_url": "https://github.com/nvh95/jest-preview",
+      "target_url": "https://www.jest-preview.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "jest-preview.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4da9f821ac6a9c85b96fb0fe3e19d17fddf08647",
+        "created_at": "2026-02-03T08:41:14Z",
+        "html_url": "https://github.com/nvh95/jest-preview/commit/4da9f821ac6a9c85b96fb0fe3e19d17fddf08647"
+      }
+    },
+    {
+      "sample_id": "DEV3X-088",
+      "repository_full_name": "datopian/portaljs",
+      "provenance_url": "https://github.com/datopian/portaljs",
+      "target_url": "https://www.portaljs.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "project_family_id": "portaljs.com",
+      "source_manifest": "outputs/development_v0_3/vibebench_development_expansion_88_v0_3.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f6b59e9338f19f35abf9021b21f0c05fb6823811",
+        "created_at": "2026-08-10T06:53:10Z",
+        "html_url": "https://github.com/datopian/portaljs/commit/f6b59e9338f19f35abf9021b21f0c05fb6823811"
+      }
+    },
+    {
+      "sample_id": "DEV4-030",
+      "repository_full_name": "developit/preact-boilerplate",
+      "provenance_url": "https://github.com/developit/preact-boilerplate",
+      "target_url": "https://preact-boilerplate.surge.sh/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "preact-boilerplate.surge.sh",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f2f63f8949c218311c384e4b526da9aed8d48c4d",
+        "created_at": "2022-04-28T18:56:27Z",
+        "html_url": "https://github.com/developit/preact-boilerplate/commit/f2f63f8949c218311c384e4b526da9aed8d48c4d"
+      }
+    },
+    {
+      "sample_id": "DEV4-031",
+      "repository_full_name": "qcadoo/mes",
+      "provenance_url": "https://github.com/qcadoo/mes",
+      "target_url": "https://qcadoo.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "qcadoo.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9e5ddc704ad0877d3afde15c9163cbdab42fe942",
+        "created_at": "2026-07-31T12:57:45Z",
+        "html_url": "https://github.com/qcadoo/mes/commit/9e5ddc704ad0877d3afde15c9163cbdab42fe942"
+      }
+    },
+    {
+      "sample_id": "DEV4-032",
+      "repository_full_name": "mckeever02/mailtolink",
+      "provenance_url": "https://github.com/mckeever02/mailtolink",
+      "target_url": "http://mailtolink.me/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "mailtolink.me",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "73c0c7cad7d1c2d3ac62a50d076592bc4a298788",
+        "created_at": "2021-01-12T13:19:28Z",
+        "html_url": "https://github.com/mckeever02/mailtolink/commit/73c0c7cad7d1c2d3ac62a50d076592bc4a298788"
+      }
+    },
+    {
+      "sample_id": "DEV4-033",
+      "repository_full_name": "poweradmin/poweradmin",
+      "provenance_url": "https://github.com/poweradmin/poweradmin",
+      "target_url": "http://www.poweradmin.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "poweradmin.org",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e36689d3006d54256c6c03a40df22c2eee37af4b",
+        "created_at": "2026-08-11T15:21:04Z",
+        "html_url": "https://github.com/poweradmin/poweradmin/commit/e36689d3006d54256c6c03a40df22c2eee37af4b"
+      }
+    },
+    {
+      "sample_id": "DEV4-034",
+      "repository_full_name": "khmyznikov/pwa-install",
+      "provenance_url": "https://github.com/khmyznikov/pwa-install",
+      "target_url": "https://khmyznikov.com/pwa-install/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "khmyznikov.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "31ffbf777111b4ed0db6aefd2df2808bfd13e79c",
+        "created_at": "2026-06-26T23:13:38Z",
+        "html_url": "https://github.com/khmyznikov/pwa-install/commit/31ffbf777111b4ed0db6aefd2df2808bfd13e79c"
+      }
+    },
+    {
+      "sample_id": "DEV4-035",
+      "repository_full_name": "awes-io/awes-io",
+      "provenance_url": "https://github.com/awes-io/awes-io",
+      "target_url": "https://www.awes.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "awes.io",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e8366745137693c595a857938a5ae6ed77cdd6a5",
+        "created_at": "2019-08-06T07:26:06Z",
+        "html_url": "https://github.com/awes-io/awes-io/commit/e8366745137693c595a857938a5ae6ed77cdd6a5"
+      }
+    },
+    {
+      "sample_id": "DEV4-036",
+      "repository_full_name": "yenche123/liubai",
+      "provenance_url": "https://github.com/yenche123/liubai",
+      "target_url": "https://my.liubai.cc/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "my.liubai.cc",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "dc6c044dc15d1f129a239f72f852b1760a4cd86a",
+        "created_at": "2026-07-02T04:17:54Z",
+        "html_url": "https://github.com/yenche123/liubai/commit/dc6c044dc15d1f129a239f72f852b1760a4cd86a"
+      }
+    },
+    {
+      "sample_id": "DEV4-037",
+      "repository_full_name": "shamahoque/mern-social",
+      "provenance_url": "https://github.com/shamahoque/mern-social",
+      "target_url": "http://social2.mernbook.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "social2.mernbook.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4a81f6c87b98fe54a8c92d33a6302f58876ecde1",
+        "created_at": "2020-07-14T19:26:06Z",
+        "html_url": "https://github.com/shamahoque/mern-social/commit/4a81f6c87b98fe54a8c92d33a6302f58876ecde1"
+      }
+    },
+    {
+      "sample_id": "DEV4-038",
+      "repository_full_name": "ionic-svelte/core",
+      "provenance_url": "https://github.com/ionic-svelte/core",
+      "target_url": "https://ionic-svelte.firebaseapp.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "ionic-svelte.firebaseapp.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "51134a7d0a87919b323409583c4cd27906b85ec8",
+        "created_at": "2025-11-24T12:45:42Z",
+        "html_url": "https://github.com/ionic-svelte/core/commit/51134a7d0a87919b323409583c4cd27906b85ec8"
+      }
+    },
+    {
+      "sample_id": "DEV4-039",
+      "repository_full_name": "magjac/graphviz-visual-editor",
+      "provenance_url": "https://github.com/magjac/graphviz-visual-editor",
+      "target_url": "http://magjac.com/graphviz-visual-editor",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "magjac.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4823bcd2ee1e48b8b6aa051e5750acf3f50c9619",
+        "created_at": "2024-10-21T10:08:11Z",
+        "html_url": "https://github.com/magjac/graphviz-visual-editor/commit/4823bcd2ee1e48b8b6aa051e5750acf3f50c9619"
+      }
+    },
+    {
+      "sample_id": "DEV4-040",
+      "repository_full_name": "gokulkrishh/awesome-meta-and-manifest",
+      "provenance_url": "https://github.com/gokulkrishh/awesome-meta-and-manifest",
+      "target_url": "https://git.io/awesome-meta-and-manifest",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "git.io",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "02065c6dfdb1ba6e9215fef4505217c65b0ba87b",
+        "created_at": "2020-11-11T02:35:53Z",
+        "html_url": "https://github.com/gokulkrishh/awesome-meta-and-manifest/commit/02065c6dfdb1ba6e9215fef4505217c65b0ba87b"
+      }
+    },
+    {
+      "sample_id": "DEV4-041",
+      "repository_full_name": "Adamant-im/adamant-im",
+      "provenance_url": "https://github.com/Adamant-im/adamant-im",
+      "target_url": "https://adm.im/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "adm.im",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "787d3673ee7e2728d9fdbd1ee6543c869ea9bf92",
+        "created_at": "2026-08-10T23:20:25Z",
+        "html_url": "https://github.com/Adamant-im/adamant-im/commit/787d3673ee7e2728d9fdbd1ee6543c869ea9bf92"
+      }
+    },
+    {
+      "sample_id": "DEV4-042",
+      "repository_full_name": "sign/translate",
+      "provenance_url": "https://github.com/sign/translate",
+      "target_url": "https://rylo.com/sign/translate",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "rylo.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "928d49ffe223fccedca64162851d4951b9152ecc",
+        "created_at": "2026-08-11T06:18:43Z",
+        "html_url": "https://github.com/sign/translate/commit/928d49ffe223fccedca64162851d4951b9152ecc"
+      }
+    },
+    {
+      "sample_id": "DEV4-043",
+      "repository_full_name": "saleor/saleor-storefront",
+      "provenance_url": "https://github.com/saleor/saleor-storefront",
+      "target_url": "https://demo.saleor.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "demo.saleor.io",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "52ea1dd236433466b7506c286c2f82488d35d883",
+        "created_at": "2022-02-15T08:19:58Z",
+        "html_url": "https://github.com/saleor/saleor-storefront/commit/52ea1dd236433466b7506c286c2f82488d35d883"
+      }
+    },
+    {
+      "sample_id": "DEV4-044",
+      "repository_full_name": "nglviewer/ngl",
+      "provenance_url": "https://github.com/nglviewer/ngl",
+      "target_url": "http://nglviewer.org/ngl/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "nglviewer.org",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "60be69b5fe0e9c43cb3a06fe1cb691fa9478c790",
+        "created_at": "2025-04-14T11:23:00Z",
+        "html_url": "https://github.com/nglviewer/ngl/commit/60be69b5fe0e9c43cb3a06fe1cb691fa9478c790"
+      }
+    },
+    {
+      "sample_id": "DEV4-045",
+      "repository_full_name": "suren-atoyan/react-pwa",
+      "provenance_url": "https://github.com/suren-atoyan/react-pwa",
+      "target_url": "https://react-pwa.surenatoyan.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "react-pwa.surenatoyan.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "6b315e4b67e76d0b062e58471d40ff14a1fa5447",
+        "created_at": "2025-03-02T18:00:45Z",
+        "html_url": "https://github.com/suren-atoyan/react-pwa/commit/6b315e4b67e76d0b062e58471d40ff14a1fa5447"
+      }
+    },
+    {
+      "sample_id": "DEV4-046",
+      "repository_full_name": "csxiaoyaojianxian/JavaScriptStudy",
+      "provenance_url": "https://github.com/csxiaoyaojianxian/JavaScriptStudy",
+      "target_url": "http://blog.csxiaoyao.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "blog.csxiaoyao.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e9d325c136446cd65fbe7e9969a4f0bf12da3b6b",
+        "created_at": "2025-03-09T03:55:33Z",
+        "html_url": "https://github.com/csxiaoyaojianxian/JavaScriptStudy/commit/e9d325c136446cd65fbe7e9969a4f0bf12da3b6b"
+      }
+    },
+    {
+      "sample_id": "DEV4-047",
+      "repository_full_name": "consulo/consulo",
+      "provenance_url": "https://github.com/consulo/consulo",
+      "target_url": "https://consulo.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "consulo.io",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "1602c5a70a14280dd53ed1c825faea288dcf2990",
+        "created_at": "2026-08-11T11:16:09Z",
+        "html_url": "https://github.com/consulo/consulo/commit/1602c5a70a14280dd53ed1c825faea288dcf2990"
+      }
+    },
+    {
+      "sample_id": "DEV4-048",
+      "repository_full_name": "asadahimeka/pixiv-viewer",
+      "provenance_url": "https://github.com/asadahimeka/pixiv-viewer",
+      "target_url": "https://pixiv.pictures/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "pixiv.pictures",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3df40f79032358840a514df68af7575a5bf81143",
+        "created_at": "2026-08-08T17:23:50Z",
+        "html_url": "https://github.com/asadahimeka/pixiv-viewer/commit/3df40f79032358840a514df68af7575a5bf81143"
+      }
+    },
+    {
+      "sample_id": "DEV4-049",
+      "repository_full_name": "bstavroulakis/vue-wordpress-pwa",
+      "provenance_url": "https://github.com/bstavroulakis/vue-wordpress-pwa",
+      "target_url": "https://www.fullstackweekly.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "fullstackweekly.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "76b0cae7b7c09a487b3b764aac990c5d08f6e3b5",
+        "created_at": "2019-04-26T06:53:30Z",
+        "html_url": "https://github.com/bstavroulakis/vue-wordpress-pwa/commit/76b0cae7b7c09a487b3b764aac990c5d08f6e3b5"
+      }
+    },
+    {
+      "sample_id": "DEV4-050",
+      "repository_full_name": "urlhum/UrlHum",
+      "provenance_url": "https://github.com/urlhum/UrlHum",
+      "target_url": "https://urlhum.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "urlhum.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "c431561bc847466dee1cda54e97cb286322fa8af",
+        "created_at": "2021-11-04T14:08:52Z",
+        "html_url": "https://github.com/urlhum/UrlHum/commit/c431561bc847466dee1cda54e97cb286322fa8af"
+      }
+    },
+    {
+      "sample_id": "DEV4-051",
+      "repository_full_name": "instill-ai/instill-core",
+      "provenance_url": "https://github.com/instill-ai/instill-core",
+      "target_url": "https://www.instill-ai.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "instill-ai.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "b9976c41f47b076991463725a963ee3bfc446030",
+        "created_at": "2026-05-20T12:13:01Z",
+        "html_url": "https://github.com/instill-ai/instill-core/commit/b9976c41f47b076991463725a963ee3bfc446030"
+      }
+    },
+    {
+      "sample_id": "DEV4-052",
+      "repository_full_name": "adrianhajdin/ecommerce_sanity_stripe",
+      "provenance_url": "https://github.com/adrianhajdin/ecommerce_sanity_stripe",
+      "target_url": "https://jsmastery.pro/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "jsmastery.pro",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "c4d1c0593769004d912bedbfe269ed9180f74939",
+        "created_at": "2022-08-01T07:28:23Z",
+        "html_url": "https://github.com/adrianhajdin/ecommerce_sanity_stripe/commit/c4d1c0593769004d912bedbfe269ed9180f74939"
+      }
+    },
+    {
+      "sample_id": "DEV4-053",
+      "repository_full_name": "suyalcinkaya/onur.dev",
+      "provenance_url": "https://github.com/suyalcinkaya/onur.dev",
+      "target_url": "https://onur.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "onur.dev",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5e648ec92154e23dae088b244c464649361740c3",
+        "created_at": "2026-04-13T10:57:31Z",
+        "html_url": "https://github.com/suyalcinkaya/onur.dev/commit/5e648ec92154e23dae088b244c464649361740c3"
+      }
+    },
+    {
+      "sample_id": "DEV4-054",
+      "repository_full_name": "morethanmin/morethan-log",
+      "provenance_url": "https://github.com/morethanmin/morethan-log",
+      "target_url": "https://morethan-log.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "morethan-log.vercel.app",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "272cd3e73d6fbc650c5d95c6da0846776d39e67a",
+        "created_at": "2026-02-19T07:40:18Z",
+        "html_url": "https://github.com/morethanmin/morethan-log/commit/272cd3e73d6fbc650c5d95c6da0846776d39e67a"
+      }
+    },
+    {
+      "sample_id": "DEV4-055",
+      "repository_full_name": "eikek/docspell",
+      "provenance_url": "https://github.com/eikek/docspell",
+      "target_url": "https://docspell.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "docspell.org",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "ea8420ab8fff59e23e1978f9bf8bcf72398d11a8",
+        "created_at": "2026-07-29T13:51:33Z",
+        "html_url": "https://github.com/eikek/docspell/commit/ea8420ab8fff59e23e1978f9bf8bcf72398d11a8"
+      }
+    },
+    {
+      "sample_id": "DEV4-056",
+      "repository_full_name": "brianlovin/briOS",
+      "provenance_url": "https://github.com/brianlovin/briOS",
+      "target_url": "https://brianlovin.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "brianlovin.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "44d5722fefb6b6e441224cc1dcf5b61d702856d5",
+        "created_at": "2026-08-08T02:54:04Z",
+        "html_url": "https://github.com/brianlovin/briOS/commit/44d5722fefb6b6e441224cc1dcf5b61d702856d5"
+      }
+    },
+    {
+      "sample_id": "DEV4-057",
+      "repository_full_name": "ory/polis",
+      "provenance_url": "https://github.com/ory/polis",
+      "target_url": "https://www.ory.com/?utm_source=github&utm_medium=banner&utm_campaign=polis",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "ory.com",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e13ed6541ec026dc37243f975b6d88be9488b687",
+        "created_at": "2026-07-27T21:17:26Z",
+        "html_url": "https://github.com/ory/polis/commit/e13ed6541ec026dc37243f975b6d88be9488b687"
+      }
+    },
+    {
+      "sample_id": "DEV4-058",
+      "repository_full_name": "tensorchord/envd",
+      "provenance_url": "https://github.com/tensorchord/envd",
+      "target_url": "https://envd.tensorchord.ai/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "project_family_id": "envd.tensorchord.ai",
+      "source_manifest": "outputs/development_v0_4/vibebench_development_extension_58_v0_4.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "c5e6fd54eb111453ced50fe6fac1c16a506d7d62",
+        "created_at": "2026-04-25T02:22:10Z",
+        "html_url": "https://github.com/tensorchord/envd/commit/c5e6fd54eb111453ced50fe6fac1c16a506d7d62"
+      }
+    },
+    {
+      "sample_id": "DEV5-061",
+      "repository_full_name": "kubeshop/monokle",
+      "provenance_url": "https://github.com/kubeshop/monokle",
+      "target_url": "https://monokle.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "monokle.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "64cac77463ce3f05e5c88ff1ed884caa7378fa51",
+        "created_at": "2025-09-29T11:23:25Z",
+        "html_url": "https://github.com/kubeshop/monokle/commit/64cac77463ce3f05e5c88ff1ed884caa7378fa51"
+      }
+    },
+    {
+      "sample_id": "DEV5-062",
+      "repository_full_name": "tbakerx/react-resume-template",
+      "provenance_url": "https://github.com/tbakerx/react-resume-template",
+      "target_url": "https://reactresume.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "reactresume.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "49ce16c0dd1b382edc1ec2cef6120345776d19b9",
+        "created_at": "2023-12-28T17:44:09Z",
+        "html_url": "https://github.com/tbakerx/react-resume-template/commit/49ce16c0dd1b382edc1ec2cef6120345776d19b9"
+      }
+    },
+    {
+      "sample_id": "DEV5-063",
+      "repository_full_name": "ixartz/Next-JS-Landing-Page-Starter-Template",
+      "provenance_url": "https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template",
+      "target_url": "https://creativedesignsguru.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "creativedesignsguru.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "cd6694e6c69efad1128c1ed732188389182789df",
+        "created_at": "2026-01-18T21:31:32Z",
+        "html_url": "https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template/commit/cd6694e6c69efad1128c1ed732188389182789df"
+      }
+    },
+    {
+      "sample_id": "DEV5-064",
+      "repository_full_name": "nat-n/poethepoet",
+      "provenance_url": "https://github.com/nat-n/poethepoet",
+      "target_url": "https://poethepoet.natn.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "poethepoet.natn.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e4d032ce63f6a80cef9b7fc9a956c5f4de04c9b2",
+        "created_at": "2026-07-05T21:29:33Z",
+        "html_url": "https://github.com/nat-n/poethepoet/commit/e4d032ce63f6a80cef9b7fc9a956c5f4de04c9b2"
+      }
+    },
+    {
+      "sample_id": "DEV5-065",
+      "repository_full_name": "scaffold-eth/scaffold-eth-2",
+      "provenance_url": "https://github.com/scaffold-eth/scaffold-eth-2",
+      "target_url": "https://scaffoldeth.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "scaffoldeth.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4b705355055619f0068a4d10537cab78928eb103",
+        "created_at": "2026-07-29T08:08:07Z",
+        "html_url": "https://github.com/scaffold-eth/scaffold-eth-2/commit/4b705355055619f0068a4d10537cab78928eb103"
+      }
+    },
+    {
+      "sample_id": "DEV5-066",
+      "repository_full_name": "rubycdp/ferrum",
+      "provenance_url": "https://github.com/rubycdp/ferrum",
+      "target_url": "https://ferrum.rubycdp.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "ferrum.rubycdp.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "84a1c433f024b8108332d7a5507dc3afbdcf18c0",
+        "created_at": "2026-08-10T18:27:49Z",
+        "html_url": "https://github.com/rubycdp/ferrum/commit/84a1c433f024b8108332d7a5507dc3afbdcf18c0"
+      }
+    },
+    {
+      "sample_id": "DEV5-067",
+      "repository_full_name": "CaliCastle/cali.so",
+      "provenance_url": "https://github.com/CaliCastle/cali.so",
+      "target_url": "https://cali.so/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "cali.so",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "52f679d24387305fcc9366930c6b240df378485d",
+        "created_at": "2026-08-10T01:47:45Z",
+        "html_url": "https://github.com/CaliCastle/cali.so/commit/52f679d24387305fcc9366930c6b240df378485d"
+      }
+    },
+    {
+      "sample_id": "DEV5-068",
+      "repository_full_name": "dremio/dremio-oss",
+      "provenance_url": "https://github.com/dremio/dremio-oss",
+      "target_url": "https://www.dremio.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "dremio.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "799ccbda47e6f2e1bfacf1ccbded174e00d4150a",
+        "created_at": "2025-09-15T19:11:26Z",
+        "html_url": "https://github.com/dremio/dremio-oss/commit/799ccbda47e6f2e1bfacf1ccbded174e00d4150a"
+      }
+    },
+    {
+      "sample_id": "DEV5-069",
+      "repository_full_name": "gitless-vcs/gitless",
+      "provenance_url": "https://github.com/gitless-vcs/gitless",
+      "target_url": "https://gitless.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "gitless.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3ac28e39e170acdcd1590e0a25a06790ae0e6922",
+        "created_at": "2021-02-03T06:53:34Z",
+        "html_url": "https://github.com/gitless-vcs/gitless/commit/3ac28e39e170acdcd1590e0a25a06790ae0e6922"
+      }
+    },
+    {
+      "sample_id": "DEV5-070",
+      "repository_full_name": "mlynch/nextjs-tailwind-ionic-capacitor-starter",
+      "provenance_url": "https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter",
+      "target_url": "https://dev.to/ionic/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor-3kij",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "dev.to",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "1193ca35523b5997ebd5288e3361def2a1f8f68b",
+        "created_at": "2025-09-23T17:57:16Z",
+        "html_url": "https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter/commit/1193ca35523b5997ebd5288e3361def2a1f8f68b"
+      }
+    },
+    {
+      "sample_id": "DEV5-071",
+      "repository_full_name": "zhangyuang/egg-react-ssr",
+      "provenance_url": "https://github.com/zhangyuang/egg-react-ssr",
+      "target_url": "http://doc.ssr-fc.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "doc.ssr-fc.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9e276a75425339596d06d642df85ee429c9b8904",
+        "created_at": "2021-12-07T12:12:24Z",
+        "html_url": "https://github.com/zhangyuang/egg-react-ssr/commit/9e276a75425339596d06d642df85ee429c9b8904"
+      }
+    },
+    {
+      "sample_id": "DEV5-072",
+      "repository_full_name": "lmorg/murex",
+      "provenance_url": "https://github.com/lmorg/murex",
+      "target_url": "https://murex.rocks/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "murex.rocks",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8678ad89405c2bdd2a92b203f026bc3d46abc88f",
+        "created_at": "2026-02-02T23:12:44Z",
+        "html_url": "https://github.com/lmorg/murex/commit/8678ad89405c2bdd2a92b203f026bc3d46abc88f"
+      }
+    },
+    {
+      "sample_id": "DEV5-073",
+      "repository_full_name": "zws-im/zws",
+      "provenance_url": "https://github.com/zws-im/zws",
+      "target_url": "https://zws.im/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "zws.im",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "bff30709cc29f686c3d2e0754e49875edf7e3b90",
+        "created_at": "2026-08-10T22:44:58Z",
+        "html_url": "https://github.com/zws-im/zws/commit/bff30709cc29f686c3d2e0754e49875edf7e3b90"
+      }
+    },
+    {
+      "sample_id": "DEV5-074",
+      "repository_full_name": "connectrpc/connect-es",
+      "provenance_url": "https://github.com/connectrpc/connect-es",
+      "target_url": "https://connectrpc.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "connectrpc.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f213f1a8c98d323db5a2701d319fb3aaace84a89",
+        "created_at": "2026-08-05T20:10:44Z",
+        "html_url": "https://github.com/connectrpc/connect-es/commit/f213f1a8c98d323db5a2701d319fb3aaace84a89"
+      }
+    },
+    {
+      "sample_id": "DEV5-075",
+      "repository_full_name": "fabric8io/fabric8",
+      "provenance_url": "https://github.com/fabric8io/fabric8",
+      "target_url": "http://fabric8.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "fabric8.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "57bfc330f2af8b402f0c0cbac552696b4fdc6a40",
+        "created_at": "2018-11-05T16:37:34Z",
+        "html_url": "https://github.com/fabric8io/fabric8/commit/57bfc330f2af8b402f0c0cbac552696b4fdc6a40"
+      }
+    },
+    {
+      "sample_id": "DEV5-076",
+      "repository_full_name": "clerk/javascript",
+      "provenance_url": "https://github.com/clerk/javascript",
+      "target_url": "https://clerk.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "clerk.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3132d409822a2a175ecda3fc08b3dbe7b65269f4",
+        "created_at": "2026-08-11T17:14:18Z",
+        "html_url": "https://github.com/clerk/javascript/commit/3132d409822a2a175ecda3fc08b3dbe7b65269f4"
+      }
+    },
+    {
+      "sample_id": "DEV5-077",
+      "repository_full_name": "reviewboard/reviewboard",
+      "provenance_url": "https://github.com/reviewboard/reviewboard",
+      "target_url": "https://www.reviewboard.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "reviewboard.org",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "44a9e6c00ea9a2c790fbcf0a866d32f0d6e20f26",
+        "created_at": "2026-08-04T21:46:11Z",
+        "html_url": "https://github.com/reviewboard/reviewboard/commit/44a9e6c00ea9a2c790fbcf0a866d32f0d6e20f26"
+      }
+    },
+    {
+      "sample_id": "DEV5-078",
+      "repository_full_name": "bbc/simorgh",
+      "provenance_url": "https://github.com/bbc/simorgh",
+      "target_url": "https://www.bbc.com/pidgin",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "bbc.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "e14617d696adf8614ef197d12bbd7c07a0ffca5c",
+        "created_at": "2026-08-11T10:37:47Z",
+        "html_url": "https://github.com/bbc/simorgh/commit/e14617d696adf8614ef197d12bbd7c07a0ffca5c"
+      }
+    },
+    {
+      "sample_id": "DEV5-079",
+      "repository_full_name": "chetanverma16/react-portfolio-template",
+      "provenance_url": "https://github.com/chetanverma16/react-portfolio-template",
+      "target_url": "https://react-portfolio-template.netlify.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "react-portfolio-template.netlify.app",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "cbd32bc4071e7dd299ce1fdd9833634b0d3cb7b7",
+        "created_at": "2025-07-17T08:35:49Z",
+        "html_url": "https://github.com/chetanverma16/react-portfolio-template/commit/cbd32bc4071e7dd299ce1fdd9833634b0d3cb7b7"
+      }
+    },
+    {
+      "sample_id": "DEV5-080",
+      "repository_full_name": "Blazity/next-saas-starter",
+      "provenance_url": "https://github.com/Blazity/next-saas-starter",
+      "target_url": "https://next-saas-starter-ashy.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "next-saas-starter-ashy.vercel.app",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "502d8f519dc1f55486cfe942026cd06d4ae2ad3e",
+        "created_at": "2024-01-30T11:06:25Z",
+        "html_url": "https://github.com/Blazity/next-saas-starter/commit/502d8f519dc1f55486cfe942026cd06d4ae2ad3e"
+      }
+    },
+    {
+      "sample_id": "DEV5-081",
+      "repository_full_name": "lost-pixel/lost-pixel",
+      "provenance_url": "https://github.com/lost-pixel/lost-pixel",
+      "target_url": "https://lost-pixel.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "lost-pixel.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f08221fc2a82125df56177c2363185a886bea73a",
+        "created_at": "2026-04-22T12:03:17Z",
+        "html_url": "https://github.com/lost-pixel/lost-pixel/commit/f08221fc2a82125df56177c2363185a886bea73a"
+      }
+    },
+    {
+      "sample_id": "DEV5-082",
+      "repository_full_name": "thedev-id/thedev.id",
+      "provenance_url": "https://github.com/thedev-id/thedev.id",
+      "target_url": "https://thedev.id/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "thedev.id",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "452ded2b2a9e8fb9bff666ad5e9cd93510701c6c",
+        "created_at": "2025-12-19T06:16:25Z",
+        "html_url": "https://github.com/thedev-id/thedev.id/commit/452ded2b2a9e8fb9bff666ad5e9cd93510701c6c"
+      }
+    },
+    {
+      "sample_id": "DEV5-083",
+      "repository_full_name": "vercel/nextjs-postgres-nextauth-tailwindcss-template",
+      "provenance_url": "https://github.com/vercel/nextjs-postgres-nextauth-tailwindcss-template",
+      "target_url": "https://next-admin-dash.vercel.app/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "next-admin-dash.vercel.app",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "fe026711c19ac3ee4589c86a738f59b84e611559",
+        "created_at": "2026-01-15T10:39:06Z",
+        "html_url": "https://github.com/vercel/nextjs-postgres-nextauth-tailwindcss-template/commit/fe026711c19ac3ee4589c86a738f59b84e611559"
+      }
+    },
+    {
+      "sample_id": "DEV5-084",
+      "repository_full_name": "maqi1520/mdx-notes",
+      "provenance_url": "https://github.com/maqi1520/mdx-notes",
+      "target_url": "https://mdxnotes.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "mdxnotes.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8633830b7660540463b97124e0d84441a856db74",
+        "created_at": "2025-03-25T12:36:56Z",
+        "html_url": "https://github.com/maqi1520/mdx-notes/commit/8633830b7660540463b97124e0d84441a856db74"
+      }
+    },
+    {
+      "sample_id": "DEV5-085",
+      "repository_full_name": "wpengine/faustjs",
+      "provenance_url": "https://github.com/wpengine/faustjs",
+      "target_url": "https://faustjs.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "faustjs.org",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f46f93fe4ae4f0bed1d2aec41aa6768a91e9fe89",
+        "created_at": "2026-08-11T11:25:02Z",
+        "html_url": "https://github.com/wpengine/faustjs/commit/f46f93fe4ae4f0bed1d2aec41aa6768a91e9fe89"
+      }
+    },
+    {
+      "sample_id": "DEV5-086",
+      "repository_full_name": "openshiporg/openship",
+      "provenance_url": "https://github.com/openshiporg/openship",
+      "target_url": "https://openship.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "openship.org",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "789081f7ed5d0cab039f94d699d650f3fbe37108",
+        "created_at": "2026-03-23T17:48:45Z",
+        "html_url": "https://github.com/openshiporg/openship/commit/789081f7ed5d0cab039f94d699d650f3fbe37108"
+      }
+    },
+    {
+      "sample_id": "DEV5-087",
+      "repository_full_name": "saleor/storefront",
+      "provenance_url": "https://github.com/saleor/storefront",
+      "target_url": "https://storefront.saleor.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "storefront.saleor.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a2e7d03d799a0a7ccf7a43cdb7b9043fea677964",
+        "created_at": "2026-08-11T16:21:24Z",
+        "html_url": "https://github.com/saleor/storefront/commit/a2e7d03d799a0a7ccf7a43cdb7b9043fea677964"
+      }
+    },
+    {
+      "sample_id": "DEV5-088",
+      "repository_full_name": "hoangvvo/nextjs-mongodb-app",
+      "provenance_url": "https://github.com/hoangvvo/nextjs-mongodb-app",
+      "target_url": "https://nextjs-mongodb.now.sh/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "nextjs-mongodb.now.sh",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "3a715f205da967e378a6d805614dcc13daf325f4",
+        "created_at": "2022-06-10T20:05:29Z",
+        "html_url": "https://github.com/hoangvvo/nextjs-mongodb-app/commit/3a715f205da967e378a6d805614dcc13daf325f4"
+      }
+    },
+    {
+      "sample_id": "DEV5-089",
+      "repository_full_name": "Protoqol/Prequel",
+      "provenance_url": "https://github.com/Protoqol/Prequel",
+      "target_url": "https://packagist.org/packages/protoqol/prequel",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "packagist.org",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9b37d8ca1948dffa59dbdc67edc07d0af7864f3c",
+        "created_at": "2024-03-13T11:12:51Z",
+        "html_url": "https://github.com/Protoqol/Prequel/commit/9b37d8ca1948dffa59dbdc67edc07d0af7864f3c"
+      }
+    },
+    {
+      "sample_id": "DEV5-090",
+      "repository_full_name": "creativetimofficial/notus-nextjs",
+      "provenance_url": "https://github.com/creativetimofficial/notus-nextjs",
+      "target_url": "https://www.creative-tim.com/product/notus-nextjs",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "creative-tim.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "83af9355cf3373c31d5f5f3845e65185d327186d",
+        "created_at": "2024-07-11T11:53:25Z",
+        "html_url": "https://github.com/creativetimofficial/notus-nextjs/commit/83af9355cf3373c31d5f5f3845e65185d327186d"
+      }
+    },
+    {
+      "sample_id": "DEV5-091",
+      "repository_full_name": "DefectDojo/django-DefectDojo",
+      "provenance_url": "https://github.com/DefectDojo/django-DefectDojo",
+      "target_url": "https://defectdojo.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "defectdojo.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "461efedffb081d1a05bdc3a8bc3e1ec760073715",
+        "created_at": "2026-08-10T16:58:41Z",
+        "html_url": "https://github.com/DefectDojo/django-DefectDojo/commit/461efedffb081d1a05bdc3a8bc3e1ec760073715"
+      }
+    },
+    {
+      "sample_id": "DEV5-092",
+      "repository_full_name": "aimeos/aimeos-core",
+      "provenance_url": "https://github.com/aimeos/aimeos-core",
+      "target_url": "https://aimeos.org/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "aimeos.org",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "144526508c7fe4da837e840cd8b49158e57f572e",
+        "created_at": "2026-06-11T14:34:05Z",
+        "html_url": "https://github.com/aimeos/aimeos-core/commit/144526508c7fe4da837e840cd8b49158e57f572e"
+      }
+    },
+    {
+      "sample_id": "DEV5-093",
+      "repository_full_name": "crate/crate",
+      "provenance_url": "https://github.com/crate/crate",
+      "target_url": "https://cratedb.com/database",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "cratedb.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "99ad9e3a3e82771eda838236981337d474ba9b31",
+        "created_at": "2026-08-11T16:41:18Z",
+        "html_url": "https://github.com/crate/crate/commit/99ad9e3a3e82771eda838236981337d474ba9b31"
+      }
+    },
+    {
+      "sample_id": "DEV5-094",
+      "repository_full_name": "Exrick/xboot",
+      "provenance_url": "https://github.com/Exrick/xboot",
+      "target_url": "http://xboot.exrick.cn/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "xboot.exrick.cn",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5277af0ea7db3cf085f8ef3be21329df5bb12cd9",
+        "created_at": "2021-07-02T04:11:38Z",
+        "html_url": "https://github.com/Exrick/xboot/commit/5277af0ea7db3cf085f8ef3be21329df5bb12cd9"
+      }
+    },
+    {
+      "sample_id": "DEV5-095",
+      "repository_full_name": "fastapi-admin/fastapi-admin",
+      "provenance_url": "https://github.com/fastapi-admin/fastapi-admin",
+      "target_url": "https://fastapi-admin-docs.long2ice.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "fastapi-admin-docs.long2ice.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "95b1c2e2f6c3263a31c82a2be622161b024be450",
+        "created_at": "2025-04-05T06:11:16Z",
+        "html_url": "https://github.com/fastapi-admin/fastapi-admin/commit/95b1c2e2f6c3263a31c82a2be622161b024be450"
+      }
+    },
+    {
+      "sample_id": "DEV5-096",
+      "repository_full_name": "WGDashboard/WGDashboard",
+      "provenance_url": "https://github.com/WGDashboard/WGDashboard",
+      "target_url": "https://wgdashboard.dev/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "wgdashboard.dev",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "58fa826862c7a17bdc6a832e1122d14de282e464",
+        "created_at": "2026-06-05T16:54:35Z",
+        "html_url": "https://github.com/WGDashboard/WGDashboard/commit/58fa826862c7a17bdc6a832e1122d14de282e464"
+      }
+    },
+    {
+      "sample_id": "DEV5-097",
+      "repository_full_name": "vidstack/player",
+      "provenance_url": "https://github.com/vidstack/player",
+      "target_url": "https://vidstack.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "vidstack.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "04143af0634c5c9633dbd05423d0ee62f99754fd",
+        "created_at": "2026-06-10T17:39:26Z",
+        "html_url": "https://github.com/vidstack/player/commit/04143af0634c5c9633dbd05423d0ee62f99754fd"
+      }
+    },
+    {
+      "sample_id": "DEV5-098",
+      "repository_full_name": "unfoldadmin/django-unfold",
+      "provenance_url": "https://github.com/unfoldadmin/django-unfold",
+      "target_url": "https://unfoldadmin.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "unfoldadmin.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "496de13951b7417eb94823fb3944b1ab936714dd",
+        "created_at": "2026-08-11T16:40:50Z",
+        "html_url": "https://github.com/unfoldadmin/django-unfold/commit/496de13951b7417eb94823fb3944b1ab936714dd"
+      }
+    },
+    {
+      "sample_id": "DEV5-099",
+      "repository_full_name": "plouc/mozaik",
+      "provenance_url": "https://github.com/plouc/mozaik",
+      "target_url": "http://mozaik.rocks/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "mozaik.rocks",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5fc9070d9c3aeb1c53ef1719daa3a7239c23a31b",
+        "created_at": "2019-05-28T02:07:43Z",
+        "html_url": "https://github.com/plouc/mozaik/commit/5fc9070d9c3aeb1c53ef1719daa3a7239c23a31b"
+      }
+    },
+    {
+      "sample_id": "DEV5-100",
+      "repository_full_name": "lunarphp/lunar",
+      "provenance_url": "https://github.com/lunarphp/lunar",
+      "target_url": "https://lunarphp.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "lunarphp.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4fe84c43642ab81d5b32e9c25bf3261a3a560222",
+        "created_at": "2026-06-01T19:47:01Z",
+        "html_url": "https://github.com/lunarphp/lunar/commit/4fe84c43642ab81d5b32e9c25bf3261a3a560222"
+      }
+    },
+    {
+      "sample_id": "DEV5-101",
+      "repository_full_name": "MauriceNino/dashdot",
+      "provenance_url": "https://github.com/MauriceNino/dashdot",
+      "target_url": "https://getdashdot.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "getdashdot.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "9d169fc77fefe6e50ce8a326584a8602588e6987",
+        "created_at": "2026-03-03T17:58:52Z",
+        "html_url": "https://github.com/MauriceNino/dashdot/commit/9d169fc77fefe6e50ce8a326584a8602588e6987"
+      }
+    },
+    {
+      "sample_id": "DEV5-102",
+      "repository_full_name": "Gerapy/Gerapy",
+      "provenance_url": "https://github.com/Gerapy/Gerapy",
+      "target_url": "https://docs.gerapy.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "docs.gerapy.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "f2c2a9772a718cb7879e0b6db002b7cfda7c4156",
+        "created_at": "2026-07-04T08:45:33Z",
+        "html_url": "https://github.com/Gerapy/Gerapy/commit/f2c2a9772a718cb7879e0b6db002b7cfda7c4156"
+      }
+    },
+    {
+      "sample_id": "DEV5-103",
+      "repository_full_name": "halfmoonui/halfmoon",
+      "provenance_url": "https://github.com/halfmoonui/halfmoon",
+      "target_url": "https://www.gethalfmoon.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "gethalfmoon.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "cf038207614636028d363ca5c746f532b2d1426b",
+        "created_at": "2024-09-03T11:20:09Z",
+        "html_url": "https://github.com/halfmoonui/halfmoon/commit/cf038207614636028d363ca5c746f532b2d1426b"
+      }
+    },
+    {
+      "sample_id": "DEV5-104",
+      "repository_full_name": "weld-project/weld",
+      "provenance_url": "https://github.com/weld-project/weld",
+      "target_url": "https://www.weld.rs/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "weld.rs",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "dcbba9a45ae2a190b31badec530ea54a58437606",
+        "created_at": "2020-04-04T20:50:54Z",
+        "html_url": "https://github.com/weld-project/weld/commit/dcbba9a45ae2a190b31badec530ea54a58437606"
+      }
+    },
+    {
+      "sample_id": "DEV5-105",
+      "repository_full_name": "MicrosoftDX/Vorlonjs",
+      "provenance_url": "https://github.com/MicrosoftDX/Vorlonjs",
+      "target_url": "http://www.vorlonjs.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "vorlonjs.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "dc77d6dd8ed990d0cf207e0d7230fe5568c7987f",
+        "created_at": "2023-09-18T15:18:28Z",
+        "html_url": "https://github.com/MicrosoftDX/Vorlonjs/commit/dc77d6dd8ed990d0cf207e0d7230fe5568c7987f"
+      }
+    },
+    {
+      "sample_id": "DEV5-106",
+      "repository_full_name": "puikinsh/Bootstrap-Admin-Template",
+      "provenance_url": "https://github.com/puikinsh/Bootstrap-Admin-Template",
+      "target_url": "https://preview.colorlib.com/theme/metis/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "preview.colorlib.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "17a629b5ac532eb3f3f79ec20669a04f75e0555f",
+        "created_at": "2026-08-03T13:37:07Z",
+        "html_url": "https://github.com/puikinsh/Bootstrap-Admin-Template/commit/17a629b5ac532eb3f3f79ec20669a04f75e0555f"
+      }
+    },
+    {
+      "sample_id": "DEV5-107",
+      "repository_full_name": "whylabs/whylogs",
+      "provenance_url": "https://github.com/whylabs/whylogs",
+      "target_url": "https://whylogs.readthedocs.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "whylogs.readthedocs.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "976bc4c15ca1d4a0199360b8d7708b63e4adaa6d",
+        "created_at": "2025-01-10T19:54:37Z",
+        "html_url": "https://github.com/whylabs/whylogs/commit/976bc4c15ca1d4a0199360b8d7708b63e4adaa6d"
+      }
+    },
+    {
+      "sample_id": "DEV5-108",
+      "repository_full_name": "eddwebster/football_analytics",
+      "provenance_url": "https://github.com/eddwebster/football_analytics",
+      "target_url": "https://www.eddwebster.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "eddwebster.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "47cac1ba5c9748b057b7cfa366dd3d7a21d73575",
+        "created_at": "2025-10-09T10:51:46Z",
+        "html_url": "https://github.com/eddwebster/football_analytics/commit/47cac1ba5c9748b057b7cfa366dd3d7a21d73575"
+      }
+    },
+    {
+      "sample_id": "DEV5-109",
+      "repository_full_name": "unpoller/unpoller",
+      "provenance_url": "https://github.com/unpoller/unpoller",
+      "target_url": "https://unpoller.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "unpoller.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "638da756285f49dbe9aba464a26842b921b0d346",
+        "created_at": "2026-08-10T09:54:35Z",
+        "html_url": "https://github.com/unpoller/unpoller/commit/638da756285f49dbe9aba464a26842b921b0d346"
+      }
+    },
+    {
+      "sample_id": "DEV5-110",
+      "repository_full_name": "pipelinedb/pipelinedb",
+      "provenance_url": "https://github.com/pipelinedb/pipelinedb",
+      "target_url": "https://www.pipelinedb.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "pipelinedb.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "5cc6ef58ab5b1c84bb7b4e932f99bf5c347f46d8",
+        "created_at": "2019-05-01T19:32:42Z",
+        "html_url": "https://github.com/pipelinedb/pipelinedb/commit/5cc6ef58ab5b1c84bb7b4e932f99bf5c347f46d8"
+      }
+    },
+    {
+      "sample_id": "DEV5-111",
+      "repository_full_name": "pi-hole/web",
+      "provenance_url": "https://github.com/pi-hole/web",
+      "target_url": "https://pi-hole.net/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "pi-hole.net",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "b2a4078446519c58d84f199663ca9326d5d311f0",
+        "created_at": "2026-07-06T20:34:31Z",
+        "html_url": "https://github.com/pi-hole/web/commit/b2a4078446519c58d84f199663ca9326d5d311f0"
+      }
+    },
+    {
+      "sample_id": "DEV5-112",
+      "repository_full_name": "oegedijk/explainerdashboard",
+      "provenance_url": "https://github.com/oegedijk/explainerdashboard",
+      "target_url": "http://explainerdashboard.readthedocs.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "explainerdashboard.readthedocs.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "678e695d87076c2506cac75f23f065a4b9283d91",
+        "created_at": "2026-02-11T19:52:49Z",
+        "html_url": "https://github.com/oegedijk/explainerdashboard/commit/678e695d87076c2506cac75f23f065a4b9283d91"
+      }
+    },
+    {
+      "sample_id": "DEV5-113",
+      "repository_full_name": "pingcap/ossinsight",
+      "provenance_url": "https://github.com/pingcap/ossinsight",
+      "target_url": "https://ossinsight.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "ossinsight.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "4ed2ef8d25456f4d248ea56d1ae1909a1b1dc428",
+        "created_at": "2026-07-14T15:29:20Z",
+        "html_url": "https://github.com/pingcap/ossinsight/commit/4ed2ef8d25456f4d248ea56d1ae1909a1b1dc428"
+      }
+    },
+    {
+      "sample_id": "DEV5-114",
+      "repository_full_name": "monitoringartist/grafana-aws-cloudwatch-dashboards",
+      "provenance_url": "https://github.com/monitoringartist/grafana-aws-cloudwatch-dashboards",
+      "target_url": "https://grafana.com/orgs/monitoringartist/dashboards",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "grafana.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "a8b92a67c0aa3c5e0d8f01b9a8565c1f13181a89",
+        "created_at": "2026-08-07T17:17:17Z",
+        "html_url": "https://github.com/monitoringartist/grafana-aws-cloudwatch-dashboards/commit/a8b92a67c0aa3c5e0d8f01b9a8565c1f13181a89"
+      }
+    },
+    {
+      "sample_id": "DEV5-115",
+      "repository_full_name": "vizzuhq/vizzu-lib",
+      "provenance_url": "https://github.com/vizzuhq/vizzu-lib",
+      "target_url": "https://lib.vizzuhq.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "lib.vizzuhq.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "d81a7e9abf32830093c7b37101dc89898c700f7c",
+        "created_at": "2026-04-20T12:38:43Z",
+        "html_url": "https://github.com/vizzuhq/vizzu-lib/commit/d81a7e9abf32830093c7b37101dc89898c700f7c"
+      }
+    },
+    {
+      "sample_id": "DEV5-116",
+      "repository_full_name": "ever-co/ever-demand",
+      "provenance_url": "https://github.com/ever-co/ever-demand",
+      "target_url": "https://everdemand.co/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "everdemand.co",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "c21fd5c93d4f2f3898cf60b1a62e3112bf4a5fa3",
+        "created_at": "2026-08-05T12:35:22Z",
+        "html_url": "https://github.com/ever-co/ever-demand/commit/c21fd5c93d4f2f3898cf60b1a62e3112bf4a5fa3"
+      }
+    },
+    {
+      "sample_id": "DEV5-117",
+      "repository_full_name": "openremote/openremote",
+      "provenance_url": "https://github.com/openremote/openremote",
+      "target_url": "https://openremote.io/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "openremote.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8616a12735bba9ca4ffc256aa71fe5f79a9a5c90",
+        "created_at": "2026-08-11T12:38:39Z",
+        "html_url": "https://github.com/openremote/openremote/commit/8616a12735bba9ca4ffc256aa71fe5f79a9a5c90"
+      }
+    },
+    {
+      "sample_id": "DEV5-118",
+      "repository_full_name": "MatteoGabriele/vue-analytics",
+      "provenance_url": "https://github.com/MatteoGabriele/vue-analytics",
+      "target_url": "https://matteogabriele.gitbooks.io/vue-analytics/content",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "matteogabriele.gitbooks.io",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "7241b6d9f371d3a1d71a2caa1516e13203ae732c",
+        "created_at": "2022-05-27T13:02:52Z",
+        "html_url": "https://github.com/MatteoGabriele/vue-analytics/commit/7241b6d9f371d3a1d71a2caa1516e13203ae732c"
+      }
+    },
+    {
+      "sample_id": "DEV5-119",
+      "repository_full_name": "dbt-labs/metricflow",
+      "provenance_url": "https://github.com/dbt-labs/metricflow",
+      "target_url": "https://docs.getdbt.com/docs/build/about-metricflow",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "docs.getdbt.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "65b9d4244fb79c6ff431fa8ed49fac3f435ab7f3",
+        "created_at": "2026-08-06T18:32:26Z",
+        "html_url": "https://github.com/dbt-labs/metricflow/commit/65b9d4244fb79c6ff431fa8ed49fac3f435ab7f3"
+      }
+    },
+    {
+      "sample_id": "DEV5-120",
+      "repository_full_name": "github/covid19-dashboard",
+      "provenance_url": "https://github.com/github/covid19-dashboard",
+      "target_url": "https://covid19dashboards.com/",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "project_family_id": "covid19dashboards.com",
+      "source_manifest": "outputs/development_v0_5/vibebench_development_extension_120_v0_5.json",
+      "status": "OK",
+      "latest_commit": {
+        "sha": "8f58785143bb244d080b06a08ba32bb623c64736",
+        "created_at": "2022-07-04T05:20:09Z",
+        "html_url": "https://github.com/github/covid19-dashboard/commit/8f58785143bb244d080b06a08ba32bb623c64736"
+      }
+    }
+  ]
+}
+
