@@ -1,0 +1,20 @@
+import { createHash } from "node:crypto";
+import { readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+import { V05_FEATURES, buildV05FeatureMap } from "../lib/development-v0_5-candidate.mjs";
+
+const inputPath = path.resolve("outputs/development_v0_5/vibebench_development_v0_5_full_rescan.json");
+const outputPath = path.resolve("outputs/development_v0_5/vibebench_development_v0_5_expanded_feature_matrix.json");
+const inputText = await readFile(inputPath, "utf8");
+const input = JSON.parse(inputText);
+if (input.failed_confirmation_used !== false || input.results?.length !== 366) throw new Error("Invalid v0.5 full rescan.");
+const successful = input.results.filter((row) => row.ok);
+const ai = successful.filter((row) => row.label === "AI").sort((a, b) => a.sample_id.localeCompare(b.sample_id));
+const human = successful.filter((row) => row.label === "HUMAN").sort((a, b) => a.sample_id.localeCompare(b.sample_id));
+const balancedAi = ai.slice(0, human.length);
+const rows = [...balancedAi, ...human].map((row) => ({ sample_id: row.sample_id, target_group: row.target_group, label: row.label, target: row.label === "AI" ? 1 : 0, features: buildV05FeatureMap(row) }));
+if (rows.length !== 364 || rows.filter((row) => row.target === 1).length !== 182 || new Set(rows.map((row) => row.sample_id)).size !== 364) throw new Error("Expected balanced, unique 364-row v0.5 expanded matrix.");
+const excluded = input.results.filter((row) => !row.ok).map((row) => ({ sample_id: row.sample_id, label: row.label, reason: row.error })).concat(ai.slice(human.length).map((row) => ({ sample_id: row.sample_id, label: row.label, reason: "deterministic_balance_exclusion_without_score" })));
+const output = { schema_version: "v0.5-development-expanded-feature-matrix", generated_at: new Date().toISOString(), purpose: "Development-only expanded surface features. Opened confirmation rows excluded.", failed_confirmations_used: false, opened_confirmation_rows_used: false, feature_names: V05_FEATURES, prohibited_features: ["hostname", "URL", "provenance", "declared builder"], input: { path: "outputs/development_v0_5/vibebench_development_v0_5_full_rescan.json", sha256: createHash("sha256").update(inputText).digest("hex") }, exclusion_rule: "Exclude technical failures after fixed retry, then remove the lexicographically last successful row from the larger label class before any model scoring.", excluded, rows };
+await writeFile(outputPath, `${JSON.stringify(output, null, 2)}\n`, "utf8");
+process.stdout.write(`${JSON.stringify({ output: path.relative(process.cwd(), outputPath), rows: rows.length, ai: 182, human: 182, features: V05_FEATURES.length, excluded }, null, 2)}\n`);

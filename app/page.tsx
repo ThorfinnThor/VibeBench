@@ -122,11 +122,7 @@ export default function Home() {
         <p className="eyebrow">Validierter Website-Check</p>
         <h1>Wie viel <span>Vibe</span> steckt in deiner Website?</h1>
         <p className="lede">Erhalte einen verständlichen Score von 0 bis 100, erkenne öffentlich sichtbare Vibecoding-Muster und finde konkrete Schritte für mehr Sicherheit, Eigenständigkeit und Qualität.</p>
-        <div className="validation-row" aria-label="Validierungskennzahlen">
-          <div><strong>82,4 %</strong><span>Precision</span></div>
-          <div><strong>85,7 %</strong><span>Recall</span></div>
-          <div><strong>100</strong><span>unabhängige Holdout-Seiten</span></div>
-        </div>
+        <p className="hero-trust"><span aria-hidden="true">✓</span> Methodisch validiertes v0.4-Modell · Ergebnis mit klarer Unsicherheitsgrenze</p>
       </div>
 
       <form className="scan-panel" onSubmit={scan} aria-busy={loading}>
@@ -225,7 +221,12 @@ export default function Home() {
         <article><span>02</span><h3>Muster mit v0.4 bewerten</h3><p>Das Modell kombiniert technische, strukturelle und Builder-nahe Signale zu einem Score von 0 bis 100.</p></article>
         <article><span>03</span><h3>Risiken priorisieren</h3><p>Security-, Design-, Engineering- und Accessibility-Maßnahmen werden nach Wirkung geordnet.</p></article>
       </div>
-      <div className="method-note"><strong>Unabhängig geprüft</strong><p>Das eingefrorene v0.4-Modell erreichte auf 100 zuvor ungesehenen Websites 82,4 % Precision und 85,7 % Recall. Das ist ein belastbarer Benchmark, aber keine Garantie für jede einzelne Website.</p></div>
+      <div className="method-validation">
+        <div><span>Precision</span><strong>82,4 %</strong><small>Anteil korrekter positiver Treffer</small></div>
+        <div><span>Recall</span><strong>85,7 %</strong><small>Anteil erkannter positiver Websites</small></div>
+        <div><span>Unabhängiger Holdout</span><strong>100</strong><small>Zuvor ungesehene Projektfamilien</small></div>
+        <p>Das eingefrorene v0.4-Modell wurde unabhängig geprüft. Die Werte beschreiben den Benchmark als Ganzes und sind keine Garantie für eine einzelne Website.</p>
+      </div>
     </section>
 
     <footer><a className="brand footer-brand" href="#top"><span className="brand-mark">V</span><span><strong>VibeBench</strong><small>Website Forensics</small></span></a><p>Vibe-Footprint & Security-Baseline · v0.4</p><a href="https://github.com/ThorfinnThor/VibeBench" target="_blank" rel="noreferrer">GitHub ↗</a></footer>

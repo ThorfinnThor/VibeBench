@@ -47,6 +47,12 @@ sichtbare Security-Header-Prüfungen und erzeugt einen priorisierten
 Verbesserungsplan. Umsetzung, Grenzen, Teststand und nächste Aufgaben stehen in
 [`outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md`](outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md).
 
+Der anschließende score-blinde Ausbau um 120 Development-Websites und die
+Experimente mit 180 Oberflächenmerkmalen stehen in
+[`outputs/VIBEBENCH_V0_5_90_90_RESEARCH_2026-08-11.md`](outputs/VIBEBENCH_V0_5_90_90_RESEARCH_2026-08-11.md).
+Das 90/90-Ziel wurde in Development noch nicht stabil erreicht und wird daher
+nicht als neue Produktkennzahl ausgewiesen.
+
 ## Produktions-Smoke-Test
 
 Der versionierte Testlauf gegen die veröffentlichte App umfasst 10 gelabelte
