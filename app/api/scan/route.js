@@ -1,9 +1,11 @@
 import { lookup } from "node:dns/promises";
-import net from "node:net";
+import { randomUUID } from "node:crypto";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
+import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
 import { extractSameOriginAssets, extractSameOriginManifest } from "../../../lib/extract-assets.mjs";
 import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
+import { assertPublicAddresses, normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
 import {
   auditSecurity,
   buildRecommendations,
@@ -12,7 +14,9 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
+import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
+import release from "../../../release/v0.4.json";
 
 export const runtime = "nodejs";
 export const maxDuration = 20;
@@ -23,41 +27,30 @@ const MAX_MANIFEST_BYTES = 100_000;
 const MAX_REDIRECTS = 5;
 const MAX_ASSET_REDIRECTS = 3;
 
-function normalizeUrl(value) {
-  const input = String(value || "").trim();
-  if (!input || input.length > 2048) throw new Error("Bitte eine gültige öffentliche URL eingeben.");
-  const url = new URL(/^https?:\/\//i.test(input) ? input : `https://${input}`);
-  if (!["http:", "https:"].includes(url.protocol)) throw new Error("Nur öffentliche HTTP- und HTTPS-URLs werden unterstützt.");
-  url.username = "";
-  url.password = "";
-  url.hash = "";
-  return url;
-}
-
-function isPrivateIp(address) {
-  if (net.isIPv4(address)) {
-    const [a, b] = address.split(".").map(Number);
-    return a === 10 || a === 127 || a === 0 || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || a >= 224;
-  }
-  const value = address.toLowerCase();
-  return value === "::1" || value === "::" || value.startsWith("fc") || value.startsWith("fd") || value.startsWith("fe8") || value.startsWith("fe9") || value.startsWith("fea") || value.startsWith("feb") || value.startsWith("::ffff:127.") || value.startsWith("::ffff:10.") || value.startsWith("::ffff:192.168.");
-}
-
 async function validatePublicHost(url) {
   const host = url.hostname.toLowerCase();
   if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) throw new Error("Lokale und private Adressen werden nicht gescannt.");
-  const addresses = await lookup(host, { all: true, verbatim: true });
-  if (!addresses.length || addresses.some(({ address }) => isPrivateIp(address))) throw new Error("Die URL verweist auf eine lokale oder private Adresse.");
+  let timeout;
+  const addresses = await Promise.race([
+    lookup(host, { all: true, verbatim: true }),
+    new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error("DNS lookup timeout.")), 4_000); })
+  ]).finally(() => clearTimeout(timeout));
+  assertPublicAddresses(addresses);
 }
 
-async function fetchPublicHtml(initialUrl) {
+function combinedSignal(...signals) {
+  return AbortSignal.any(signals.filter(Boolean));
+}
+
+async function fetchPublicHtml(initialUrl, signal) {
   let current = initialUrl;
   for (let redirect = 0; redirect <= MAX_REDIRECTS; redirect += 1) {
+    current = normalizePublicUrl(current.toString());
     await validatePublicHost(current);
     const response = await fetch(current, {
       redirect: "manual",
-      signal: AbortSignal.timeout(12_000),
-      headers: { "user-agent": "VibeBench/0.1 (+public website evidence scan)", accept: "text/html,application/xhtml+xml" }
+      signal: combinedSignal(signal, AbortSignal.timeout(12_000)),
+      headers: { "user-agent": release.userAgent, accept: "text/html,application/xhtml+xml" }
     });
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
@@ -71,57 +64,24 @@ async function fetchPublicHtml(initialUrl) {
     if (!/text\/html|application\/xhtml\+xml/i.test(contentType)) throw new Error("Die URL liefert keine HTML-Seite.");
     const declaredSize = Number(response.headers.get("content-length") || 0);
     if (declaredSize > MAX_HTML_BYTES) throw new Error("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
-    const bytes = new Uint8Array(await response.arrayBuffer());
-    if (bytes.byteLength > MAX_HTML_BYTES) throw new Error("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
+    const body = await readLimitedText(response, MAX_HTML_BYTES);
+    if (body.truncated) throw new Error("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
     const headers = Object.fromEntries(response.headers.entries());
-    return { html: new TextDecoder().decode(bytes), url: current.toString(), status: response.status, headers };
+    return { html: body.text, htmlBytes: body.bytes, url: current.toString(), status: response.status, headers };
   }
   throw new Error("Zu viele Weiterleitungen.");
 }
 
-async function readLimitedText(response, maxBytes) {
-  const reader = response.body?.getReader();
-  if (!reader) throw new Error("Response body unavailable.");
-  const chunks = [];
-  let total = 0;
-  let truncated = false;
-  while (total < maxBytes) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    const remaining = maxBytes - total;
-    if (value.byteLength > remaining) {
-      chunks.push(value.subarray(0, remaining));
-      total += remaining;
-      truncated = true;
-      await reader.cancel();
-      break;
-    }
-    chunks.push(value);
-    total += value.byteLength;
-  }
-  if (total === maxBytes && !truncated) {
-    const { done } = await reader.read();
-    truncated = !done;
-    if (truncated) await reader.cancel();
-  }
-  const bytes = new Uint8Array(total);
-  let offset = 0;
-  for (const chunk of chunks) {
-    bytes.set(chunk, offset);
-    offset += chunk.byteLength;
-  }
-  return { text: new TextDecoder().decode(bytes), bytes: bytes.byteLength, truncated };
-}
-
-async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, contentTypePattern, maxBytes }) {
+async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, contentTypePattern, maxBytes, signal }) {
   let current = initialUrl;
   for (let redirect = 0; redirect <= MAX_ASSET_REDIRECTS; redirect += 1) {
+    current = normalizePublicUrl(current.toString());
     if (current.origin !== requiredOrigin) throw new Error("Cross-origin asset redirect blocked.");
     await validatePublicHost(current);
     const response = await fetch(current, {
       redirect: "manual",
-      signal: AbortSignal.timeout(6_000),
-      headers: { "user-agent": "VibeBench/0.1 (+public website evidence scan)", accept }
+      signal: combinedSignal(signal, AbortSignal.timeout(6_000)),
+      headers: { "user-agent": release.userAgent, accept }
     });
     if (response.status >= 300 && response.status < 400) {
       const location = response.headers.get("location");
@@ -139,36 +99,48 @@ async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, content
   throw new Error("Too many asset redirects.");
 }
 
-function fetchPublicAsset(initialUrl, requiredOrigin) {
+function fetchPublicAsset(initialUrl, requiredOrigin, signal) {
   return fetchSameOriginText(initialUrl, requiredOrigin, {
     accept: "text/css,text/javascript,application/javascript,application/ecmascript,text/plain",
     contentTypePattern: /javascript|ecmascript|text\/css|text\/plain|application\/octet-stream/i,
-    maxBytes: MAX_ASSET_BYTES
+    maxBytes: MAX_ASSET_BYTES,
+    signal
   });
 }
 
-function fetchPublicManifest(initialUrl, requiredOrigin) {
+function fetchPublicManifest(initialUrl, requiredOrigin, signal) {
   return fetchSameOriginText(initialUrl, requiredOrigin, {
     accept: "application/manifest+json,application/json,text/plain",
     contentTypePattern: /manifest\+json|application\/json|text\/json|text\/plain/i,
-    maxBytes: MAX_MANIFEST_BYTES
+    maxBytes: MAX_MANIFEST_BYTES,
+    signal
   });
 }
 
 export async function POST(request) {
+  const requestId = randomUUID();
+  const startedAt = Date.now();
+  const deadline = AbortSignal.timeout(18_000);
+  const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION };
   try {
-    const body = await request.json();
-    const inputUrl = normalizeUrl(body?.url);
-    const fetched = await fetchPublicHtml(inputUrl);
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      throw new Error("Ungültige JSON-Anfrage.");
+    }
+    const inputUrl = normalizePublicUrl(body?.url);
+    const signal = combinedSignal(request.signal, deadline);
+    const fetched = await fetchPublicHtml(inputUrl, signal);
     const assetCandidates = extractSameOriginAssets({ html: fetched.html, baseUrl: fetched.url });
     const manifestUrl = extractSameOriginManifest({ html: fetched.html, baseUrl: fetched.url });
     const requiredOrigin = new URL(fetched.url).origin;
     const [assetResults, manifestResult] = await Promise.all([
       Promise.allSettled(assetCandidates.map(async (asset) => ({
         ...asset,
-        ...await fetchPublicAsset(new URL(asset.url), requiredOrigin)
+        ...await fetchPublicAsset(new URL(asset.url), requiredOrigin, signal)
       }))),
-      manifestUrl ? fetchPublicManifest(new URL(manifestUrl), requiredOrigin).catch(() => null) : Promise.resolve(null)
+      manifestUrl ? fetchPublicManifest(new URL(manifestUrl), requiredOrigin, signal).catch(() => null) : Promise.resolve(null)
     ]);
     const fetchedAssets = assetResults
       .filter((result) => result.status === "fulfilled")
@@ -202,8 +174,10 @@ export async function POST(request) {
     const scoreContributions = explainScore(candidateModel, featureMap);
     const security = auditSecurity(fetched.url, fetched.headers);
     const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
-    return Response.json({
+    const payload = {
+      apiVersion: SCAN_API_VERSION,
       ok: true,
+      requestId,
       requestedUrl: inputUrl.toString(),
       resolvedUrl: fetched.url,
       httpStatus: fetched.status,
@@ -232,24 +206,32 @@ export async function POST(request) {
         caveat: "Kein Prozentanteil AI-generierten Codes und kein Beweis für die Autorenschaft."
       },
       scoreDrivers: {
-        raises: scoreContributions.filter((item) => item.direction === "raises").slice(0, 5),
-        lowers: scoreContributions.filter((item) => item.direction === "lowers").slice(0, 4)
+        raises: scoreContributions.filter((item) => item.summaryVisible && item.direction === "raises").slice(0, 5),
+        lowers: scoreContributions.filter((item) => item.summaryVisible && item.direction === "lowers").slice(0, 4),
+        unit: "relative-logit-contribution",
+        baseLogit: candidateModel.intercept
       },
       security,
       recommendations,
       model: {
-        version: "v0.4",
-        independentHoldout: 100,
-        precision: 0.824,
-        recall: 0.857,
-        f1: 0.84
+        version: release.model.version,
+        releaseStatus: release.status,
+        independentHoldout: release.confirmation.total,
+        successfulHoldoutScans: release.confirmation.successful,
+        technicalCoverage: release.confirmation.coverage,
+        precision: release.confirmation.precision,
+        recall: release.confirmation.recall,
+        f1: release.confirmation.f1
       },
       ...analysis,
-      warning: "Der 0–100-Score misst Ähnlichkeit mit dem validierten Korpus. Er ist kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."
-    });
+      warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er ist keine AI-Wahrscheinlichkeit, kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."
+    };
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
+    return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Der Scan ist fehlgeschlagen.";
     const technicalOutcome = classifyScanError(error);
-    return Response.json({ ok: false, error: message, technicalOutcome }, { status: technicalOutcome.responseStatus });
+    console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
+    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, error: message, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   }
 }

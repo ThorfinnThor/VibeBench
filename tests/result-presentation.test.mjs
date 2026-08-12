@@ -33,4 +33,7 @@ test("maps size limits and timeouts separately", () => {
 test("maps invalid and private URLs to actionable input outcomes", () => {
   assert.equal(classifyScanError("Bitte eine gültige öffentliche URL eingeben.").code, "invalid_url");
   assert.equal(classifyScanError("Lokale und private Adressen werden nicht gescannt.").code, "private_address");
+  assert.equal(classifyScanError("Die URL verweist auf eine lokale, reservierte oder nicht öffentliche Adresse.").code, "private_address");
+  assert.equal(classifyScanError("Nur die öffentlichen Standardports 80 und 443 werden unterstützt.").code, "unsupported_protocol");
+  assert.equal(classifyScanError("Ungültige JSON-Anfrage.").code, "invalid_request");
 });
