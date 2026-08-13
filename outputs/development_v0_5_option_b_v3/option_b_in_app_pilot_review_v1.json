@@ -1,0 +1,86 @@
+{
+  "schema_version": "vibebench.option_b.pilot_review.v1",
+  "status": "FIRST_RUN_TECHNICAL_REVIEW_FAILED",
+  "first_run_approved": false,
+  "full_batch_approved": false,
+  "summary": {
+    "expected": 6,
+    "attempted": 6,
+    "successful": 5,
+    "failed": 1,
+    "capture_bytes": 2581312,
+    "audit_bytes": 5076
+  },
+  "gates": [
+    {
+      "id": "artifact_integrity",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "privacy",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "runtime_contract",
+      "passed": false,
+      "findings": [
+        "capture_runtime_source_not_approved",
+        "audit_runtime_source_not_approved",
+        "browser_engine_not_approved",
+        "playwright_version_not_approved"
+      ]
+    },
+    {
+      "id": "attempt_taxonomy",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "payload_completeness",
+      "passed": false,
+      "findings": [
+        "payload_viewport_mismatch:OPT-B-AI-069",
+        "payload_viewport_mismatch:DEV3X-076",
+        "payload_viewport_mismatch:DEV3-032",
+        "payload_viewport_mismatch:OPT-B-HUM-057",
+        "payload_viewport_mismatch:DEV3X-074"
+      ]
+    },
+    {
+      "id": "technical_yield",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "resource_bounds",
+      "passed": true,
+      "findings": []
+    }
+  ],
+  "next_gate": "repair_failed_technical_gates_without_labels",
+  "generated_at": "2026-08-13T11:27:07.637Z",
+  "inputs": {
+    "capture": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_in_app_pilot_capture_v1.json",
+      "sha256": "5879d5f7ceca7c212cbbb2b8396422dd9717b879112f8fd333cf1ec7849c36d9"
+    },
+    "audit": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_in_app_pilot_attempt_audit_v1.json",
+      "sha256": "de1e96829502406b7d40f4ae9c5cd1640047dc39fe203f696bbdcfb0ea638f43"
+    },
+    "manifest": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_manifest_v1.json",
+      "sha256": "bfa86babfacd60e6f68698e77388cb1b9de3c0d81d14b09192a43b580558b775"
+    },
+    "captureContract": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_capture_contract_v3.json",
+      "sha256": "bcc51c3159933a81067b7ec90a64eec8f2204a0ae6c1bc2aa290b5eef3d82b9b"
+    },
+    "reviewContract": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_pilot_review_contract_v1.json",
+      "sha256": "54142f4a885e9a04a4d31649135dc02be82893cedada4faba16d9f73b0f2a667"
+    }
+  }
+}

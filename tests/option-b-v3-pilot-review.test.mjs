@@ -37,6 +37,7 @@ function payload() {
 
 function artifacts() {
   const runId = "run-1";
+  const runtime = { engine: "chromium-compatible", version: "Chromium 139.0.0", source: "playwright-bundle", playwright_version: "1.54.2" };
   const attempts = ids.map((sampleId, index) => ({
     sample_id: sampleId,
     run_id: runId,
@@ -58,8 +59,8 @@ function artifacts() {
   }));
   const captures = attempts.slice(0, 5).map((attempt) => ({ sample_id: attempt.sample_id, run_id: runId, attempt_id: attempt.attempt_id, viewport_id: "desktop", payload: payload() }));
   return {
-    capture: { schema_version: "vibebench.option_b.local_pilot_capture.v1", run_id: runId, privacy: { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false }, summary: { attempted: 6, successful: 5, failed: 1 }, captures },
-    audit: { schema_version: "vibebench.option_b.local_pilot_attempt_audit.v1", run_id: runId, summary: { attempted: 6, successful: 5, failed: 1 }, attempts }
+    capture: { schema_version: "vibebench.option_b.local_pilot_capture.v1", run_id: runId, runtime, privacy: { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false }, summary: { attempted: 6, successful: 5, failed: 1 }, captures },
+    audit: { schema_version: "vibebench.option_b.local_pilot_attempt_audit.v1", run_id: runId, runtime, summary: { attempted: 6, successful: 5, failed: 1 }, attempts }
   };
 }
 
@@ -79,4 +80,13 @@ test("v3 pilot review fails closed on privacy and payload contract violations", 
   assert.equal(result.first_run_approved, false);
   assert.equal(result.gates.find((gate) => gate.id === "privacy").passed, false);
   assert.equal(result.gates.find((gate) => gate.id === "payload_completeness").passed, false);
+});
+
+test("v3 pilot review rejects a technically successful capture from an unapproved browser surface", () => {
+  const fixture = artifacts();
+  fixture.capture.runtime = { ...fixture.capture.runtime, source: "codex-in-app-browser-diagnostic" };
+  fixture.audit.runtime = fixture.capture.runtime;
+  const result = reviewOptionBV3Pilot({ ...fixture, captureContract, reviewContract, expectedSampleIds: ids, captureBytes: 10000, auditBytes: 5000 });
+  assert.equal(result.first_run_approved, false);
+  assert.deepEqual(result.gates.find((gate) => gate.id === "runtime_contract").findings, ["capture_runtime_source_not_approved", "audit_runtime_source_not_approved"]);
 });

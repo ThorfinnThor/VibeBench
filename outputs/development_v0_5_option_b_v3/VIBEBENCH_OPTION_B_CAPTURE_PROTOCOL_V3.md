@@ -56,6 +56,7 @@ No cloud browser worker is required for this research phase.
 The first successful pilot is reviewed with `npm run research:v0.5-option-b-v3-pilot-review`. The review was fixed before a successful local pilot and requires:
 
 - exactly six manifest attempts and at least five complete captures;
+- the repository-managed Playwright Chromium runtime pinned by the capture contract;
 - matching capture/audit identities and only registered terminal outcomes;
 - the complete document, layout, element-style, repetition and public-asset groups;
 - no persisted URL, raw HTML, visible text, screenshot or label;

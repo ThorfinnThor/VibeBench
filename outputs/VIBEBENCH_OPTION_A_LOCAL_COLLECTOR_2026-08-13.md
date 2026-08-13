@@ -33,6 +33,8 @@ The pinned Chromium build `139.0.7258.5` (Playwright build `1181`) was downloade
 
 The official run therefore waits for `npm run research:v0.5-option-b-v3-pilot-run` in a normal local terminal. No additional browser download should be necessary.
 
+A six-site in-app-browser diagnostic was completed on 2026-08-13. It produced five complete captures and identified one content-ineligible page, but correctly failed official review because the browser surface reported 1280 × 720 and was not the pinned Playwright runtime. See `VIBEBENCH_OPTION_B_PILOT_DIAGNOSTIC_2026-08-13.md`.
+
 ## Label-blind pilot
 
 The pilot manifest contains six deterministic rows selected from the 81 prior technical successes by the lowest SHA-256 of `sample_id + NUL + target_url`. Selection code never reads label, cohort, score or feature values.
