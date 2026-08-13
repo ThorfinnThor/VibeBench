@@ -1,6 +1,6 @@
 # VibeBench roadmap
 
-Updated: 2026-08-12
+Updated: 2026-08-13
 
 This roadmap preserves the agreed product direction after dropping a rigid 90/90 Precision/Recall release target. Audit hardening takes precedence; model and product research resumes on the frozen Option-B Development set afterward.
 
@@ -81,3 +81,26 @@ See:
 
 - `outputs/VIBEBENCH_AUDIT_REVIEW_2026-08-12.md`
 - `outputs/VIBEBENCH_AUDIT_IMPLEMENTATION_2026-08-12.md`
+
+## Completed Option-B visible-feature checkpoint
+
+The score-blind 28-feature v2 contract and its first fixed-protocol Development evaluation are complete. Production v0.4 remains unchanged.
+
+- 81 technically usable of 169 attempted scans (47.9% technical yield);
+- median repeated-Development Precision 76.7%, Recall 78.6% and ROC AUC 88.2%;
+- fixed 0.38–0.62 indeterminate range abstains on a median 13.6% and raises decided-case Precision to 87.5%;
+- material cohort gap remains: 69.2% median Precision on the existing cohort versus 82.4% on the expansion cohort;
+- simulated ±5% aggregate-count perturbations are locally stable, but real repeat-scan stability is still unmeasured;
+- only coefficient-direction-stable features may be candidates for benchmark explanations.
+
+See:
+
+- `outputs/development_v0_5_option_b/VIBEBENCH_OPTION_B_VISIBLE_FEATURE_CONTRACT_V2.md`
+- `outputs/VIBEBENCH_OPTION_B_VISIBLE_RESEARCH_2026-08-13.md`
+
+### Recommended next implementation order
+
+1. Add evidence completeness and a clear low-confidence/indeterminate presentation without replacing the frozen v0.4 model.
+2. Preregister a richer same-site capture contract for computed styles, component/section repetition, layout regions and visual token distributions.
+3. Improve scan-yield outcome classification before performing real repeat scans.
+4. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.
