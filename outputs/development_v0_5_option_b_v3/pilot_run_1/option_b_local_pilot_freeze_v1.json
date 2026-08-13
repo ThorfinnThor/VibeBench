@@ -1,0 +1,55 @@
+{
+  "schema_version": "vibebench.option_b.local_pilot_freeze.v1",
+  "frozen_at": "2026-08-13T11:57:01.515Z",
+  "status": "FIRST_RUN_FROZEN_REPEAT_REQUIRED",
+  "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+  "generated_at": "2026-08-13T11:55:32.668Z",
+  "runtime": {
+    "engine": "chromium-compatible",
+    "version": "Chromium 139.0.7258.5",
+    "source": "playwright-bundle",
+    "playwright_version": "1.54.2",
+    "operating_system": "darwin-arm64",
+    "locale": "de-DE",
+    "timezone": "Europe/Berlin",
+    "user_agent": "VibeBenchResearch/option-b-v3-minimal-local-pilot-2",
+    "viewport": {
+      "id": "desktop",
+      "width": 1440,
+      "height": 900,
+      "full_page": false
+    }
+  },
+  "summary": {
+    "expected": 6,
+    "attempted": 6,
+    "successful": 5,
+    "failed": 1,
+    "capture_bytes": 1808390,
+    "audit_bytes": 5932
+  },
+  "full_batch_approved": false,
+  "repeat_window": {
+    "minimum_separation_hours": 24,
+    "maximum_separation_hours": 72,
+    "earliest_utc": "2026-08-14T11:55:32.668Z",
+    "latest_utc": "2026-08-16T11:55:32.668Z"
+  },
+  "artifacts": {
+    "capture": {
+      "path": "outputs/development_v0_5_option_b_v3/pilot_run_1/option_b_local_pilot_capture_v1.json",
+      "bytes": 1808390,
+      "sha256": "9c86885164ccd7460aa3ea55e5a37d48a9b516c828c82849ab700ddeeec24054"
+    },
+    "audit": {
+      "path": "outputs/development_v0_5_option_b_v3/pilot_run_1/option_b_local_pilot_attempt_audit_v1.json",
+      "bytes": 5932,
+      "sha256": "fe792e91a8c32d0775808a43ae29b9f6bf9d9e5fe4b41071572c7ed13d0a2bd2"
+    },
+    "review": {
+      "path": "outputs/development_v0_5_option_b_v3/pilot_run_1/option_b_local_pilot_review_v1.json",
+      "bytes": 2113,
+      "sha256": "48629a8cfbc052cc48ff927feca83ee5717a37c0109332f37874578a9ea19198"
+    }
+  }
+}

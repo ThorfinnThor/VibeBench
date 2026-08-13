@@ -35,6 +35,8 @@ The official run therefore waits for `npm run research:v0.5-option-b-v3-pilot-ru
 
 A six-site in-app-browser diagnostic was completed on 2026-08-13. It produced five complete captures and identified one content-ineligible page, but correctly failed official review because the browser surface reported 1280 × 720 and was not the pinned Playwright runtime. See `VIBEBENCH_OPTION_B_PILOT_DIAGNOSTIC_2026-08-13.md`.
 
+The official repository-managed Playwright pilot subsequently completed on 2026-08-13 with five of six complete captures and all seven first-run gates passing. It is frozen in `outputs/development_v0_5_option_b_v3/pilot_run_1/`. Run 2 is required 24–72 hours later; see `VIBEBENCH_OPTION_B_PILOT_RUN_1_2026-08-13.md`.
+
 ## Label-blind pilot
 
 The pilot manifest contains six deterministic rows selected from the 81 prior technical successes by the lowest SHA-256 of `sample_id + NUL + target_url`. Selection code never reads label, cohort, score or feature values.

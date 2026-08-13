@@ -1,0 +1,153 @@
+{
+  "schema_version": "vibebench.option_b.local_pilot_attempt_audit.v1",
+  "generated_at": "2026-08-13T11:55:32.668Z",
+  "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+  "status": "LOCAL_LABEL_BLIND_TECHNICAL_PILOT",
+  "runtime": {
+    "engine": "chromium-compatible",
+    "version": "Chromium 139.0.7258.5",
+    "source": "playwright-bundle",
+    "playwright_version": "1.54.2",
+    "operating_system": "darwin-arm64",
+    "locale": "de-DE",
+    "timezone": "Europe/Berlin",
+    "user_agent": "VibeBenchResearch/option-b-v3-minimal-local-pilot-2",
+    "viewport": {
+      "id": "desktop",
+      "width": 1440,
+      "height": 900,
+      "full_page": false
+    }
+  },
+  "inputs": {
+    "manifest": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_manifest_v1.json",
+      "sha256": "bfa86babfacd60e6f68698e77388cb1b9de3c0d81d14b09192a43b580558b775"
+    },
+    "contract": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_capture_contract_v3.json",
+      "sha256": "bcc51c3159933a81067b7ec90a64eec8f2204a0ae6c1bc2aa290b5eef3d82b9b"
+    }
+  },
+  "summary": {
+    "attempted": 6,
+    "successful": 5,
+    "failed": 1
+  },
+  "attempts": [
+    {
+      "sample_id": "DEV4-030",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "e25a1166-fcc1-4ecc-92fc-3ec7d6c65684",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:07.965Z",
+      "finished_at": "2026-08-13T11:55:11.774Z",
+      "elapsed_ms": 3809,
+      "terminal_stage": "rendered_content_eligibility",
+      "outcome_code": "ineligible_empty_or_interstitial",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "c7c79c74f8ecf69a848c31834b4f23c86fbff3efce7c89a96a0d02a793232daf",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "e4418a96-6f15-489d-a99e-0eb7d31be224",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:11.793Z",
+      "finished_at": "2026-08-13T11:55:17.027Z",
+      "elapsed_ms": 5234,
+      "terminal_stage": "serialization",
+      "outcome_code": "success",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "3e780e556c5a804c9684ff12226afd5202c3f0344d80894fa7beeb41f5529296",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "a97d20d1-0a71-4926-9711-43d554ffd4ce",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:17.072Z",
+      "finished_at": "2026-08-13T11:55:21.670Z",
+      "elapsed_ms": 4598,
+      "terminal_stage": "serialization",
+      "outcome_code": "success",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "11d45227d306b283891febd333646ef37b619348dd705b4255eb1ef3bf123c69",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    },
+    {
+      "sample_id": "DEV3-032",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "a1262b22-7276-45e1-b35d-4460b4ddb93f",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:21.691Z",
+      "finished_at": "2026-08-13T11:55:24.554Z",
+      "elapsed_ms": 2863,
+      "terminal_stage": "serialization",
+      "outcome_code": "success",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "2a1f8667d13e813d86cd36447c070138972c32ea31bf0fedba273db0e956a402",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "477bc3d9-84f5-4360-8ddd-6f9c950554cb",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:24.574Z",
+      "finished_at": "2026-08-13T11:55:28.962Z",
+      "elapsed_ms": 4388,
+      "terminal_stage": "serialization",
+      "outcome_code": "success",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "8975cc18eb761521425e4215f55af163019c540f4b5145c157020ebd504d93eb",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+      "attempt_id": "a5efb4f5-be05-4707-af3b-a9f8bea31f8b",
+      "viewport_id": "desktop",
+      "started_at": "2026-08-13T11:55:28.986Z",
+      "finished_at": "2026-08-13T11:55:32.549Z",
+      "elapsed_ms": 3563,
+      "terminal_stage": "serialization",
+      "outcome_code": "success",
+      "retry_number": 0,
+      "document_observed": true,
+      "dom_observed": true,
+      "http_status_if_observed": 200,
+      "resolved_origin_hash_if_observed": "71d452f018f562b6ee2e54eac5049c47c7b7f2c426aeb9a56144e29619960c45",
+      "browser_engine": "chromium-compatible",
+      "browser_version": "Chromium 139.0.7258.5",
+      "collector_version": "option-b-v3-minimal-local-pilot-2"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "vibebench.option_b.pilot_review.v1",
+  "status": "FIRST_RUN_TECHNICALLY_ACCEPTABLE_REPEAT_REQUIRED",
+  "first_run_approved": true,
+  "full_batch_approved": false,
+  "summary": {
+    "expected": 6,
+    "attempted": 6,
+    "successful": 5,
+    "failed": 1,
+    "capture_bytes": 1808390,
+    "audit_bytes": 5932
+  },
+  "gates": [
+    {
+      "id": "artifact_integrity",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "privacy",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "runtime_contract",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "attempt_taxonomy",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "payload_completeness",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "technical_yield",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "id": "resource_bounds",
+      "passed": true,
+      "findings": []
+    }
+  ],
+  "next_gate": "repeat_same_manifest_same_runtime_after_24_to_72_hours",
+  "generated_at": "2026-08-13T11:55:51.279Z",
+  "inputs": {
+    "capture": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_capture_v1.json",
+      "sha256": "9c86885164ccd7460aa3ea55e5a37d48a9b516c828c82849ab700ddeeec24054"
+    },
+    "audit": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_attempt_audit_v1.json",
+      "sha256": "fe792e91a8c32d0775808a43ae29b9f6bf9d9e5fe4b41071572c7ed13d0a2bd2"
+    },
+    "manifest": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_manifest_v1.json",
+      "sha256": "bfa86babfacd60e6f68698e77388cb1b9de3c0d81d14b09192a43b580558b775"
+    },
+    "captureContract": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_capture_contract_v3.json",
+      "sha256": "bcc51c3159933a81067b7ec90a64eec8f2204a0ae6c1bc2aa290b5eef3d82b9b"
+    },
+    "reviewContract": {
+      "path": "outputs/development_v0_5_option_b_v3/option_b_pilot_review_contract_v1.json",
+      "sha256": "54142f4a885e9a04a4d31649135dc02be82893cedada4faba16d9f73b0f2a667"
+    }
+  }
+}
