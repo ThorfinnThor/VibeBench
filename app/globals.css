@@ -102,6 +102,17 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .score-snapshot span { max-width: 150px; color: var(--muted); font-size: 13px; line-height: 1.35; }
 .score-snapshot strong { font-family: "Manrope", sans-serif; font-size: 26px; }
 .score-snapshot small { color: var(--muted); font-size: 12px; }
+.score-snapshot strong[class^="coverage-"] { font-size: 15px; }
+.score-snapshot .coverage-broad { color: var(--green); }
+.score-snapshot .coverage-standard { color: var(--amber); }
+.score-snapshot .coverage-limited { color: var(--coral); }
+
+.coverage-note { margin: 13px 0 0; padding: 15px 18px; display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); }
+.coverage-note div { display: flex; align-items: baseline; gap: 12px; }
+.coverage-note strong { font-family: "Manrope", sans-serif; font-size: 14px; }
+.coverage-note p { margin: 0; color: var(--muted); font-size: 13px; }
+.coverage-note > span { flex: 0 0 auto; padding: 5px 8px; border-radius: 999px; background: var(--surface-soft); color: var(--muted); font-size: 11px; font-weight: 700; }
+.coverage-note.coverage-limited { border-color: #e9c4bc; background: #fff8f6; }
 
 .score-scale { padding: 25px clamp(30px, 4vw, 54px) 32px; border-top: 1px solid var(--line); border-radius: 0 0 20px 20px; background: var(--surface); box-shadow: var(--shadow); }
 .scale-labels { margin-bottom: 10px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; color: var(--muted); font-size: 12px; }
@@ -261,6 +272,9 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .score-boundary { grid-template-columns: 1fr; gap: 3px; text-align: left; }
   .score-snapshot { grid-template-columns: 1fr; gap: 0; }
   .score-snapshot div { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .coverage-note { padding: 15px; align-items: flex-start; flex-direction: column; gap: 10px; }
+  .coverage-note div { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .coverage-note > span { align-self: flex-start; }
   .score-scale { padding: 21px; }
   .section-heading { grid-template-columns: 1fr; gap: 15px; }
   .section-heading h2 { font-size: 34px; }

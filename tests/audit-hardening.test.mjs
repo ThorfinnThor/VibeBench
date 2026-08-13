@@ -40,6 +40,8 @@ test("runtime scan contract rejects partial success and incompatible versions", 
   assert.equal(parseScanPayload({ apiVersion: "future", ok: false, technicalOutcome: { code: "x", title: "x", retryable: true } }), null);
   assert.ok(parseScanPayload({ apiVersion: SCAN_API_VERSION, ok: false, technicalOutcome: { code: "timeout", title: "Timeout", retryable: true } }));
   assert.ok(parseScanPayload({ apiVersion: SCAN_API_VERSION, ok: true, vibeScore: { score: 55, band: { label: "Mittel", summary: "Gemischte Signatur" } }, security: { score: 50, checks: [] }, scoreDrivers: { raises: [], lowers: [] }, recommendations: [] }));
+  assert.ok(parseScanPayload({ apiVersion: SCAN_API_VERSION, ok: true, vibeScore: { score: 55, band: { label: "Mittel", summary: "Gemischte Signatur" } }, evidenceCoverage: { level: "standard", label: "Standard", summary: "Öffentliches HTML wurde ausgewertet.", affectsScore: false, scope: {} }, security: { score: 50, checks: [] }, scoreDrivers: { raises: [], lowers: [] }, recommendations: [] }));
+  assert.equal(parseScanPayload({ apiVersion: SCAN_API_VERSION, ok: true, vibeScore: { score: 55, band: { label: "Mittel", summary: "Gemischte Signatur" } }, evidenceCoverage: { level: "high-confidence", label: "Sicher", summary: "Unzulässige Zuverlässigkeitsbehauptung.", affectsScore: true, scope: {} }, security: { score: 50, checks: [] }, scoreDrivers: { raises: [], lowers: [] }, recommendations: [] }), null);
 });
 
 test("production release manifest binds the frozen model hash and confirmation coverage", async () => {

@@ -4,6 +4,7 @@ import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
 import { extractSameOriginAssets, extractSameOriginManifest } from "../../../lib/extract-assets.mjs";
+import { describeEvidenceCoverage } from "../../../lib/evidence-coverage.mjs";
 import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
 import { assertPublicAddresses, normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
 import {
@@ -174,6 +175,13 @@ export async function POST(request) {
     const scoreContributions = explainScore(candidateModel, featureMap);
     const security = auditSecurity(fetched.url, fetched.headers);
     const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
+    const evidenceCoverage = describeEvidenceCoverage({
+      assetCandidates: assetCandidates.length,
+      fetchedAssets: fetchedAssets.length,
+      truncatedAssets: analysis.metrics.truncatedAssets,
+      manifestLinked: Boolean(manifestUrl),
+      manifestFetched: Boolean(manifestResult)
+    });
     const payload = {
       apiVersion: SCAN_API_VERSION,
       ok: true,
@@ -211,6 +219,7 @@ export async function POST(request) {
         unit: "relative-logit-contribution",
         baseLogit: candidateModel.intercept
       },
+      evidenceCoverage,
       security,
       recommendations,
       model: {

@@ -93,6 +93,8 @@ The score-blind 28-feature v2 contract and its first fixed-protocol Development 
 - simulated ±5% aggregate-count perturbations are locally stable, but real repeat-scan stability is still unmeasured;
 - only coefficient-direction-stable features may be candidates for benchmark explanations.
 
+The product now also reports **Auswertungsbreite** (broad, standard or limited) from the actual public HTML/asset scan scope. It is explicitly separate from model confidence and does not alter the v0.4 score. Desktop and 390 px mobile result layouts were browser-tested with a real public scan.
+
 See:
 
 - `outputs/development_v0_5_option_b/VIBEBENCH_OPTION_B_VISIBLE_FEATURE_CONTRACT_V2.md`
@@ -100,7 +102,7 @@ See:
 
 ### Recommended next implementation order
 
-1. Add evidence completeness and a clear low-confidence/indeterminate presentation without replacing the frozen v0.4 model.
+1. Define and validate indeterminate semantics separately from the now-shipped evidence-scope presentation; do not infer confidence from scan breadth alone.
 2. Preregister a richer same-site capture contract for computed styles, component/section repetition, layout regions and visual token distributions.
 3. Improve scan-yield outcome classification before performing real repeat scans.
 4. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.

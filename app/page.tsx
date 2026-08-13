@@ -10,6 +10,7 @@ type ScoreBand = { id: string; label: string; shortLabel: string; summary: strin
 type ScoreDriver = { feature: string; label: string; description: string; contribution: number; direction: "raises" | "lowers"; state: "detected" | "not-detected" | "measured"; unit: string };
 type SecurityCheck = { id: string; title: string; status: "pass" | "warn" | "fail"; detail: string; action: string };
 type Recommendation = { id: string; category: string; priority: "high" | "medium" | "low"; title: string; why: string; action: string; basis: "observed" | "guidance" };
+type EvidenceCoverage = { level: "broad" | "standard" | "limited"; label: string; summary: string; affectsScore: false; scope: { html: string; assetCandidates: number; assetsFetched: number; assetErrors: number; truncatedAssets: number; manifestLinked: boolean; manifestFetched: boolean } };
 type ScanResult = {
   apiVersion: string;
   ok: boolean;
@@ -21,6 +22,7 @@ type ScanResult = {
   analyzedAt?: string;
   vibeScore?: { score: number; probability: number; band: ScoreBand; threshold: number; aboveValidatedThreshold: boolean; meaning: string; caveat: string };
   scoreDrivers?: { raises: ScoreDriver[]; lowers: ScoreDriver[]; unit: string; baseLogit: number };
+  evidenceCoverage?: EvidenceCoverage;
   security?: { score: number; checks: SecurityCheck[] };
   recommendations?: Recommendation[];
   model?: { version: string; independentHoldout: number; precision: number; recall: number; f1: number };
@@ -213,11 +215,13 @@ export default function Home() {
           </div>
           <div className="score-snapshot">
             <p>Scan-Überblick</p>
+            <div><span>Auswertungsbreite</span><strong className={`coverage-${result.evidenceCoverage?.level || "standard"}`}>{result.evidenceCoverage?.label || "Standard"}</strong></div>
             <div><span>Sicherheits-Baseline</span><strong>{result.security.score}<small>/100</small></strong></div>
             <div><span>Direkte Builder-Marker</span><strong>{result.directEvidence?.length || 0}</strong></div>
-            <div><span>Erkannte Stack-Signale</span><strong>{result.stackSignals?.length || 0}</strong></div>
           </div>
         </div>
+
+        {result.evidenceCoverage && <aside className={`coverage-note coverage-${result.evidenceCoverage.level}`}><div><strong>Auswertungsbreite: {result.evidenceCoverage.label}</strong><p>{result.evidenceCoverage.summary}</p></div><span>Verändert den Score nicht</span></aside>}
 
         <div className="score-scale" aria-label={`Score ${score} auf einer Skala von 0 bis 100`}>
           <div className="scale-labels"><span>Niedriger Footprint</span><strong>{score}/100</strong><span>Sehr hoher Footprint</span></div>
@@ -267,7 +271,7 @@ export default function Home() {
             <article><h3>Direkte Marker</h3>{result.directEvidence?.length ? <ul>{result.directEvidence.map((item) => <li key={`${item.label}-${item.marker}`}>{item.label}{item.marker ? <small>{item.marker}</small> : null}</li>)}</ul> : <p>Keine direkten Builder-Marker gefunden.</p>}</article>
             <article><h3>Stack & Kontext</h3>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].length ? <ul>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].map((label, index) => <li key={`${label}-${index}`}>{label}</li>)}</ul> : <p>Keine bekannten Stack- oder Kontextsignale sichtbar.</p>}</article>
             <article><h3>Strukturwerte</h3>{result.structuralHints?.length ? <p><strong>Hinweise:</strong> {result.structuralHints.join(", ")}</p> : null}<dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{value.toLocaleString("de-DE")}</dd></div>)}</dl></article>
-            <article><h3>Scan</h3><dl><div><dt>HTTP</dt><dd>{result.httpStatus}</dd></div><div><dt>Assets</dt><dd>{result.assetScan?.fetched || 0}/{result.assetScan?.candidates || 0}</dd></div><div><dt>Modell</dt><dd>{result.model?.version || "v0.4"}</dd></div><div><dt>Zeitpunkt</dt><dd>{result.analyzedAt ? new Date(result.analyzedAt).toLocaleString("de-DE") : "—"}</dd></div></dl></article>
+            <article><h3>Scan</h3><dl><div><dt>HTTP</dt><dd>{result.httpStatus}</dd></div><div><dt>Assets</dt><dd>{result.assetScan?.fetched || 0}/{result.assetScan?.candidates || 0}</dd></div><div><dt>Auswertungsbreite</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>Modell</dt><dd>{result.model?.version || "v0.4"}</dd></div><div><dt>Zeitpunkt</dt><dd>{result.analyzedAt ? new Date(result.analyzedAt).toLocaleString("de-DE") : "—"}</dd></div></dl></article>
           </div>
           <a className="resolved-url" href={result.resolvedUrl} target="_blank" rel="noreferrer">{result.resolvedUrl} ↗</a>
         </details>
