@@ -7,7 +7,7 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: [".next/**", "node_modules/**", "vibebench_historical_snapshots/**"] },
+  { ignores: [".next/**", ".playwright-browsers/**", "node_modules/**", "vibebench_historical_snapshots/**"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -26,4 +26,3 @@ export default tseslint.config(
     }
   }
 );
-

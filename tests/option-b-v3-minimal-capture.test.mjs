@@ -12,12 +12,24 @@ test("v3 minimal aggregation hashes structural and style signatures without page
       { dom_preorder_index: 1, parent_preorder_index: 0, tag_category: "region", semantic_role: "main", normalized_x: 0, normalized_y: 0, normalized_width: 1, normalized_height: 1, dom_depth: 2, visible_child_count: 1, interactive: false, structural_signature: "region|main|1|text", computed_style: { display: "block", font_size_px: 16, border_radius_tl_px: 0 } },
       { dom_preorder_index: 2, parent_preorder_index: 1, tag_category: "text", semantic_role: "none", normalized_x: .1, normalized_y: .1, normalized_width: .8, normalized_height: .1, dom_depth: 3, visible_child_count: 0, interactive: false, structural_signature: "text|none|1|", computed_style: { display: "block", font_size_px: 16, border_radius_tl_px: 0 } }
     ],
-    public_assets: { same_origin_stylesheet_candidates: 0, same_origin_stylesheets_readable: 0, css_custom_property_names: ["--primary"], font_face_count: 0, media_query_count: 0, container_query_count: 0 }
+    public_assets: {
+      same_origin_stylesheet_candidates: 1,
+      same_origin_stylesheets_fetched: 1,
+      stylesheet_fetch_outcomes: { readable: 1, inaccessible: 0, capped: 0 },
+      css_custom_property_names: ["--primary"],
+      css_custom_property_value_types: ["color"],
+      font_face_count: 0,
+      media_query_count: 0,
+      container_query_count: 0
+    }
   };
   const result = aggregateRenderedSurface(raw);
   assert.match(result.visible_elements[0].structural_signature_hash, /^[a-f0-9]{64}$/);
   assert.match(result.visible_elements[0].computed_style_signature_hash, /^[a-f0-9]{64}$/);
   assert.match(result.public_assets.css_custom_property_name_hashes[0], /^[a-f0-9]{64}$/);
+  assert.deepEqual(result.public_assets.css_custom_property_value_type, [{ value_type: "color", count: 1 }]);
+  assert.equal(result.public_assets.same_origin_stylesheets_fetched, 1);
+  assert.deepEqual(result.repetition.repeated_sibling_group_sizes, []);
   assert.equal(JSON.stringify(result).includes("--primary"), false);
   assert.equal(JSON.stringify(result).includes("region|main|1|text"), false);
 });

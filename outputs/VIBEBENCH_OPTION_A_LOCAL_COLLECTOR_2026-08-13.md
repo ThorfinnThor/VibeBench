@@ -1,7 +1,7 @@
 # VibeBench Option A local collector
 
 Date: 2026-08-13  
-Status: implementation complete; browser binary setup pending; public pilot not yet opened
+Status: implementation and browser binary setup complete; official public pilot not yet completed
 
 ## Decision implemented
 
@@ -29,7 +29,9 @@ npm run research:v0.5-option-b-v3-browser-setup
 
 The collector refuses to silently select a changing system browser. An explicit `VIBEBENCH_CHROME_PATH` remains available for diagnosis, but the full batch requires the repository-managed build.
 
-In the current restricted Codex execution environment, the Chromium CDN could not be resolved and macOS terminated the installed system Chrome when launched headlessly. Therefore no public pilot result is claimed. The code, manifest, contract and privacy boundary are complete and tested; the first actual collection waits for the one-time browser setup from a normal networked terminal.
+The pinned Chromium build `139.0.7258.5` (Playwright build `1181`) was downloaded successfully on 2026-08-13. The current Codex terminal sandbox still terminates locally launched macOS browser processes before navigation, so no official pilot result is claimed from this environment. The same collector successfully extracted its preregistered DOM/layout/style groups from one pilot URL through the Codex in-app browser, but that diagnostic is not treated as a protocol-compliant pilot because it does not provide the required fresh anonymous Playwright context and network policy.
+
+The official run therefore waits for `npm run research:v0.5-option-b-v3-pilot-run` in a normal local terminal. No additional browser download should be necessary.
 
 ## Label-blind pilot
 
@@ -57,13 +59,14 @@ Capture and attempt-audit outputs do not persist the target URL. Labels are not 
 npm run research:v0.5-option-b-v3-pilot-build
 npm run research:v0.5-option-b-v3-browser-setup
 npm run research:v0.5-option-b-v3-pilot-run
+npm run research:v0.5-option-b-v3-pilot-review
 ```
 
 The full 81-site run remains disabled by protocol until the six-site technical pilot is reviewed.
 
 ## Pilot review gates
 
-Before expanding beyond six sites:
+The machine-readable gates were preregistered before the first successful official pilot in `outputs/development_v0_5_option_b_v3/option_b_pilot_review_contract_v1.json`. Before expanding beyond six sites:
 
 1. at least five of six targets must produce complete structural captures;
 2. no output may violate the automated privacy boundary;

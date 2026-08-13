@@ -1,6 +1,7 @@
 import { createHash, randomUUID } from "node:crypto";
 import { lookup } from "node:dns/promises";
 import { readFile, writeFile } from "node:fs/promises";
+import { arch, platform } from "node:os";
 import path from "node:path";
 import { chromium } from "playwright";
 import { resolveLocalChromiumRuntime } from "../lib/local-chromium-runtime.mjs";
@@ -18,6 +19,7 @@ const contractPath = path.resolve("outputs/development_v0_5_option_b_v3/option_b
 const [manifestText, contractText] = await Promise.all([readFile(manifestPath, "utf8"), readFile(contractPath, "utf8")]);
 const manifest = JSON.parse(manifestText);
 const contract = JSON.parse(contractText);
+const fixedUserAgent = `VibeBenchResearch/${OPTION_B_V3_COLLECTOR_VERSION}`;
 
 if (contract.status !== "LOCAL_MINIMAL_PILOT_APPROVED" || !contract.execution_gate.pilot_may_execute) throw new Error("Local v3 pilot is not approved by the frozen contract.");
 if (manifest.status !== "LABEL_BLIND_TECHNICAL_PILOT_ONLY" || manifest.collector_visible_fields.join(",") !== "sample_id,target_url") throw new Error("Pilot manifest is not label-blind.");
@@ -78,7 +80,7 @@ for (const [index, row] of manifest.rows.entries()) {
       reducedMotion: "reduce",
       deviceScaleFactor: 1,
       serviceWorkers: "block",
-      userAgent: `VibeBenchResearch/${OPTION_B_V3_COLLECTOR_VERSION}`
+      userAgent: fixedUserAgent
     });
     await context.route("**/*", async (route) => {
       const requestUrl = new URL(route.request().url());
@@ -106,7 +108,17 @@ for (const [index, row] of manifest.rows.entries()) {
     const eligibility = await page.evaluate(() => ({ text: (document.body?.innerText || "").length, elements: document.body?.querySelectorAll("*").length || 0 }));
     if (eligibility.text < contract.rendered_content_eligibility.minimum_visible_text_characters || eligibility.elements < contract.rendered_content_eligibility.minimum_visible_elements) throw new Error("ineligible_empty_or_interstitial");
     stage = "computed_style_extraction";
-    const payload = await extractRenderedSurface(page, { maximumVisibleElements: contract.budgets.maximum_visible_elements });
+    const extraction = extractRenderedSurface(page, {
+      maximumVisibleElements: contract.budgets.maximum_visible_elements,
+      maximumDomDepth: contract.budgets.maximum_dom_depth,
+      maximumSameOriginStylesheets: contract.budgets.maximum_same_origin_stylesheets,
+      maximumStylesheetBytesEach: contract.budgets.maximum_stylesheet_bytes_each,
+      maximumTotalStylesheetBytes: contract.budgets.maximum_total_stylesheet_bytes
+    });
+    const payload = await Promise.race([
+      extraction,
+      new Promise((_, reject) => setTimeout(() => reject(new Error("computed_style_extraction_timeout")), contract.budgets.extraction_timeout_ms))
+    ]);
     stage = "structural_aggregation";
     if (!payload.visible_elements.length || !payload.document.visible_element_count) throw new Error("structural_aggregation_failed");
     stage = "serialization";
@@ -129,7 +141,17 @@ const common = {
   generated_at: new Date().toISOString(),
   run_id: runId,
   status: "LOCAL_LABEL_BLIND_TECHNICAL_PILOT",
-  runtime: { engine: "chromium-compatible", version: runtime.version, source: runtime.source, playwright_version: "1.54.2" },
+  runtime: {
+    engine: "chromium-compatible",
+    version: runtime.version,
+    source: runtime.source,
+    playwright_version: "1.54.2",
+    operating_system: `${platform()}-${arch()}`,
+    locale: contract.runtime_requirements.locale,
+    timezone: contract.runtime_requirements.timezone,
+    user_agent: fixedUserAgent,
+    viewport: contract.viewports[0]
+  },
   inputs: {
     manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") },
     contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") }

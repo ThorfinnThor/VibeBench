@@ -1,0 +1,32 @@
+{
+  "schema_version": "vibebench.option_b.pilot_review_contract.v1",
+  "locked_at": "2026-08-13T09:15:00.000Z",
+  "status": "PREREGISTERED_BEFORE_FIRST_SUCCESSFUL_LOCAL_PILOT",
+  "capture_contract": "outputs/development_v0_5_option_b_v3/option_b_capture_contract_v3.json",
+  "scope": "first-run technical and privacy review only; no labels and no model evaluation",
+  "first_run_gates": {
+    "expected_attempts": 6,
+    "minimum_successful": 5,
+    "required_viewport_id": "desktop",
+    "maximum_capture_bytes_per_success": 5242880,
+    "maximum_total_capture_bytes": 33554432,
+    "maximum_audit_bytes": 1048576,
+    "maximum_attempt_elapsed_ms": 42000
+  },
+  "full_batch_gate": {
+    "first_run_approval_is_sufficient": false,
+    "repeat_run_required": true,
+    "minimum_separation_hours": 24,
+    "maximum_separation_hours": 72,
+    "same_runtime_required": true,
+    "feature_drift_review_required": true,
+    "technical_outcome_transition_review_required": true
+  },
+  "prohibited_during_review": [
+    "label join",
+    "model score comparison",
+    "feature selection",
+    "failed-row imputation",
+    "full-batch execution"
+  ]
+}

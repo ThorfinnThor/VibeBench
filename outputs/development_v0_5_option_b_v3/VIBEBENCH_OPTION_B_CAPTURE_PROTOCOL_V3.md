@@ -51,6 +51,18 @@ The full batch remains blocked until the pilot demonstrates that the additional 
 
 No cloud browser worker is required for this research phase.
 
+## Preregistered pilot review
+
+The first successful pilot is reviewed with `npm run research:v0.5-option-b-v3-pilot-review`. The review was fixed before a successful local pilot and requires:
+
+- exactly six manifest attempts and at least five complete captures;
+- matching capture/audit identities and only registered terminal outcomes;
+- the complete document, layout, element-style, repetition and public-asset groups;
+- no persisted URL, raw HTML, visible text, screenshot or label;
+- no attempt longer than 42 seconds, no capture above 5 MiB per success, and bounded total artifacts.
+
+Passing this review does **not** unlock the full batch. The same manifest and pinned runtime must run again 24–72 hours later, followed by feature-drift and technical-outcome-transition review. The machine-readable gates are in `option_b_pilot_review_contract_v1.json`.
+
 ## Sequence after implementation
 
 1. Run capture without labels.
