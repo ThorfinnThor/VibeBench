@@ -2,6 +2,8 @@
 
 Locked: 2026-08-13, before running the v2 outcome evaluation.
 
+Correction record: an initial dry run exposed that the executable SEO coverage feature used HTML presence where the written formula said title presence, although title presence is not part of the allowed aggregate source fields. That run was discarded. The formula was corrected, without consulting feature effects or changing any other feature, to the five actually available SEO patterns before the accepted evaluation was run.
+
 ## Purpose
 
 This contract defines a development-only, outside-in representation of the **visible Vibe-Footprint**. It transforms the already frozen 81 technically usable browser-surface scans into normalized structure, styling, content, quality, asset and delivery features.

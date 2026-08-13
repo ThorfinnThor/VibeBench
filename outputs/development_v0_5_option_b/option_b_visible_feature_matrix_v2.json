@@ -1,6 +1,6 @@
 {
   "schema_version": "vibebench.option_b.visible_feature_matrix.v2",
-  "generated_at": "2026-08-13T01:58:47.647Z",
+  "generated_at": "2026-08-13T02:01:43.165Z",
   "research_status": "FEATURE_CONTRACT_FROZEN_BEFORE_V2_EVALUATION",
   "purpose": "Development-only visible Vibe-Footprint feature research; not an independent holdout.",
   "input": {
@@ -219,7 +219,7 @@
       {
         "name": "seo_pattern_coverage",
         "group": "quality",
-        "formula": "positive(canonical, favicon, og, twitter, jsonld, title-present) / 6"
+        "formula": "positive(canonical, favicon, og, twitter, jsonld) / 5"
       },
       {
         "name": "module_script_share",
@@ -379,7 +379,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.03240740740740739,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.3888888888888888
       }
@@ -417,7 +417,7 @@
         "vector_asset_share": 0,
         "media_density": 0.006756756756756757,
         "metadata_density": 0.04054054054054054,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.2857142857142857
       }
@@ -455,7 +455,7 @@
         "vector_asset_share": 1,
         "media_density": 0.08085106382978718,
         "metadata_density": 0.008510638297872337,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -493,7 +493,7 @@
         "vector_asset_share": 0.8421052631578947,
         "media_density": 0.06484641638225257,
         "metadata_density": 0.037542662116040966,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0.5,
         "stylesheet_resource_share": 0.5
       }
@@ -569,7 +569,7 @@
         "vector_asset_share": 0.7999999999999999,
         "media_density": 0.0736842105263158,
         "metadata_density": 0.1473684210526316,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.5
       }
@@ -607,7 +607,7 @@
         "vector_asset_share": 0.7142857142857143,
         "media_density": 0.07608695652173911,
         "metadata_density": 0.24999999999999997,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0.3333333333333333,
         "stylesheet_resource_share": 0.4
       }
@@ -645,7 +645,7 @@
         "vector_asset_share": 1,
         "media_density": 0.04761904761904761,
         "metadata_density": 0.09523809523809522,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.6666666666666666
       }
@@ -683,7 +683,7 @@
         "vector_asset_share": 0.8636363636363636,
         "media_density": 0.12429378531073447,
         "metadata_density": 0.016949152542372885,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0.3333333333333333,
         "stylesheet_resource_share": 0.4
       }
@@ -721,7 +721,7 @@
         "vector_asset_share": 0.7204301075268817,
         "media_density": 0.07874682472480947,
         "metadata_density": 0.010160880609652832,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.06060606060606061
       }
@@ -759,7 +759,7 @@
         "vector_asset_share": 0.918918918918919,
         "media_density": 0.09615384615384621,
         "metadata_density": 0.03586278586278589,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0.6923076923076926,
         "stylesheet_resource_share": 0.723404255319149
       }
@@ -797,7 +797,7 @@
         "vector_asset_share": 0.8,
         "media_density": 0.0847457627118644,
         "metadata_density": 0.07627118644067796,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.14285714285714285
       }
@@ -873,7 +873,7 @@
         "vector_asset_share": 0,
         "media_density": 0.018867924528301883,
         "metadata_density": 0.037735849056603765,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.13333333333333336
       }
@@ -911,7 +911,7 @@
         "vector_asset_share": 0.11111111111111109,
         "media_density": 0.028481012658227865,
         "metadata_density": 0.009493670886075953,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0.045454545454545456,
         "stylesheet_resource_share": 0.2666666666666667
       }
@@ -949,7 +949,7 @@
         "vector_asset_share": 1,
         "media_density": 0.024096385542168662,
         "metadata_density": 0.09036144578313249,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -987,7 +987,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.34375,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.5
       }
@@ -1025,7 +1025,7 @@
         "vector_asset_share": 0.5,
         "media_density": 0.023255813953488372,
         "metadata_density": 0.13953488372093023,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.4
       }
@@ -1063,7 +1063,7 @@
         "vector_asset_share": 0.13592233009708737,
         "media_density": 0.15453194650817237,
         "metadata_density": 0.01634472511144131,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.11111111111111109
       }
@@ -1101,7 +1101,7 @@
         "vector_asset_share": 0.75,
         "media_density": 0.05333333333333334,
         "metadata_density": 0.013333333333333334,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.6666666666666666
       }
@@ -1139,7 +1139,7 @@
         "vector_asset_share": 0.9619047619047619,
         "media_density": 0.06246281975014868,
         "metadata_density": 0.04104699583581202,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0.6923076923076926,
         "stylesheet_resource_share": 0.723404255319149
       }
@@ -1177,7 +1177,7 @@
         "vector_asset_share": 0.5,
         "media_density": 0.06625258799171839,
         "metadata_density": 0.045548654244306395,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.02985074626865673
       }
@@ -1215,7 +1215,7 @@
         "vector_asset_share": 1,
         "media_density": 0.02083333333333334,
         "metadata_density": 0.06250000000000003,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0.027777777777777776,
         "stylesheet_resource_share": 0.16279069767441856
       }
@@ -1253,7 +1253,7 @@
         "vector_asset_share": 0.9419354838709677,
         "media_density": 0.08902929350947726,
         "metadata_density": 0.03848363009764503,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0.6923076923076926,
         "stylesheet_resource_share": 0.723404255319149
       }
@@ -1291,7 +1291,7 @@
         "vector_asset_share": 0.4936708860759493,
         "media_density": 0.13969938107869143,
         "metadata_density": 0.022104332449160033,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.044117647058823546
       }
@@ -1329,7 +1329,7 @@
         "vector_asset_share": 0,
         "media_density": 0.008445945945945943,
         "metadata_density": 0.0033783783783783773,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.875
       }
@@ -1367,7 +1367,7 @@
         "vector_asset_share": 0,
         "media_density": 0.033783783783783786,
         "metadata_density": 0.06081081081081082,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.28571428571428564
       }
@@ -1405,7 +1405,7 @@
         "vector_asset_share": 0,
         "media_density": 0.09708737864077673,
         "metadata_density": 0.029126213592233014,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.6666666666666666
       }
@@ -1443,7 +1443,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.08860759493670887,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.11764705882352941
       }
@@ -1481,7 +1481,7 @@
         "vector_asset_share": 1,
         "media_density": 0.004987531172069825,
         "metadata_density": 0.012468827930174564,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.18421052631578944
       }
@@ -1519,7 +1519,7 @@
         "vector_asset_share": 0,
         "media_density": 0.044776119402985065,
         "metadata_density": 0.044776119402985065,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0.3333333333333333,
         "stylesheet_resource_share": 0.25
       }
@@ -1557,7 +1557,7 @@
         "vector_asset_share": 1,
         "media_density": 0.08130081300813008,
         "metadata_density": 0.08130081300813008,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0.08333333333333333,
         "stylesheet_resource_share": 0.2
       }
@@ -1595,7 +1595,7 @@
         "vector_asset_share": 0.5084745762711864,
         "media_density": 0.053442028985507255,
         "metadata_density": 0.02264492753623189,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0.10256410256410255,
         "stylesheet_resource_share": 0
       }
@@ -1633,7 +1633,7 @@
         "vector_asset_share": 0.16666666666666666,
         "media_density": 0.02307692307692307,
         "metadata_density": 0.03846153846153846,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.3333333333333333
       }
@@ -1671,7 +1671,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.004065040650406503,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -1709,7 +1709,7 @@
         "vector_asset_share": 0.9767441860465116,
         "media_density": 0.11528150134048254,
         "metadata_density": 0.005361930294906165,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -1747,7 +1747,7 @@
         "vector_asset_share": 0.9591836734693878,
         "media_density": 0.09227871939736347,
         "metadata_density": 0.032015065913370985,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.022222222222222227
       }
@@ -1785,7 +1785,7 @@
         "vector_asset_share": 0.5,
         "media_density": 0.07999999999999999,
         "metadata_density": 0.07999999999999999,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -1823,7 +1823,7 @@
         "vector_asset_share": 0.972972972972973,
         "media_density": 0.09585492227979273,
         "metadata_density": 0.018134715025906727,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0.3333333333333333,
         "stylesheet_resource_share": 0.4
       }
@@ -1861,7 +1861,7 @@
         "vector_asset_share": 0.16666666666666666,
         "media_density": 0.12765957446808507,
         "metadata_density": 0.04255319148936169,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -1899,7 +1899,7 @@
         "vector_asset_share": 0,
         "media_density": 0.018761726078799248,
         "metadata_density": 0.003752345215759849,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -1937,7 +1937,7 @@
         "vector_asset_share": 0.5,
         "media_density": 0.05882352941176472,
         "metadata_density": 0.08823529411764708,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -1975,7 +1975,7 @@
         "vector_asset_share": 0.22,
         "media_density": 0.09174311926605506,
         "metadata_density": 0.03058103975535169,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.2
       }
@@ -2013,7 +2013,7 @@
         "vector_asset_share": 0.5,
         "media_density": 0.0810810810810811,
         "metadata_density": 0.0810810810810811,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -2051,7 +2051,7 @@
         "vector_asset_share": 0.888888888888889,
         "media_density": 0.05590062111801245,
         "metadata_density": 0.01242236024844721,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -2089,7 +2089,7 @@
         "vector_asset_share": 0.7142857142857143,
         "media_density": 0.10937500000000004,
         "metadata_density": 0.031250000000000014,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -2127,7 +2127,7 @@
         "vector_asset_share": 0.961038961038961,
         "media_density": 0.09436274509803916,
         "metadata_density": 0.0024509803921568623,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -2165,7 +2165,7 @@
         "vector_asset_share": 0.8000000000000002,
         "media_density": 0.13645224171539955,
         "metadata_density": 0.005847953216374266,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.6666666666666666
       }
@@ -2241,7 +2241,7 @@
         "vector_asset_share": 1,
         "media_density": 0.07185628742514967,
         "metadata_density": 0.002994011976047903,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 1,
         "stylesheet_resource_share": 0.5
       }
@@ -2279,7 +2279,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.17142857142857143,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.058823529411764705
       }
@@ -2317,7 +2317,7 @@
         "vector_asset_share": 0.25000000000000006,
         "media_density": 0.10659898477157359,
         "metadata_density": 0.010152284263959388,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.13043478260869565
       }
@@ -2355,7 +2355,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.004634581105169338,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.25
       }
@@ -2393,7 +2393,7 @@
         "vector_asset_share": 0.058823529411764705,
         "media_density": 0.06227106227106226,
         "metadata_density": 0.014652014652014647,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0.05263157894736843,
         "stylesheet_resource_share": 0.05000000000000001
       }
@@ -2431,7 +2431,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.08474576271186443,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.3928571428571429
       }
@@ -2469,7 +2469,7 @@
         "vector_asset_share": 0,
         "media_density": 0.01659125188536954,
         "metadata_density": 0.009049773755656111,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.26086956521739135
       }
@@ -2507,7 +2507,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.1875,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -2545,7 +2545,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.14285714285714282,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.2
       }
@@ -2583,7 +2583,7 @@
         "vector_asset_share": 0.08196721311475409,
         "media_density": 0.2640692640692641,
         "metadata_density": 0.043290043290043295,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.39999999999999997
       }
@@ -2621,7 +2621,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.00699300699300699,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.3333333333333333
       }
@@ -2697,7 +2697,7 @@
         "vector_asset_share": 0,
         "media_density": 0.09090909090909091,
         "metadata_density": 0.09090909090909091,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -2735,7 +2735,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -2773,7 +2773,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.11111111111111113,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -2811,7 +2811,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.35999999999999993,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0.3333333333333333,
         "stylesheet_resource_share": 0.14285714285714285
       }
@@ -2849,7 +2849,7 @@
         "vector_asset_share": 0,
         "media_density": 0.06722689075630255,
         "metadata_density": 0.12605042016806725,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.2
       }
@@ -2925,7 +2925,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.02590673575129534,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.4
       }
@@ -2963,7 +2963,7 @@
         "vector_asset_share": 0,
         "media_density": 0.057971014492753596,
         "metadata_density": 0.14492753623188404,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.5
       }
@@ -3001,7 +3001,7 @@
         "vector_asset_share": 0.8604651162790697,
         "media_density": 0.050058207217694994,
         "metadata_density": 0.008149010477299184,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0.11111111111111109,
         "stylesheet_resource_share": 0.3076923076923076
       }
@@ -3039,7 +3039,7 @@
         "vector_asset_share": 0,
         "media_density": 0.10747663551401869,
         "metadata_density": 0.016355140186915883,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.3333333333333333
       }
@@ -3077,7 +3077,7 @@
         "vector_asset_share": 0.31884057971014484,
         "media_density": 0.11147011308562195,
         "metadata_density": 0.029079159935379628,
-        "seo_pattern_coverage": 0.8333333333333334,
+        "seo_pattern_coverage": 0.8,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.058823529411764705
       }
@@ -3115,7 +3115,7 @@
         "vector_asset_share": 0,
         "media_density": 0.00904977375565611,
         "metadata_density": 0.06787330316742081,
-        "seo_pattern_coverage": 0.6666666666666666,
+        "seo_pattern_coverage": 0.6,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.12500000000000003
       }
@@ -3153,7 +3153,7 @@
         "vector_asset_share": 0,
         "media_density": 0.0028304370721432344,
         "metadata_density": 0.00006582411795681941,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.10000000000000002
       }
@@ -3191,7 +3191,7 @@
         "vector_asset_share": 0,
         "media_density": 0.014925373134328354,
         "metadata_density": 0.022388059701492533,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
@@ -3229,7 +3229,7 @@
         "vector_asset_share": 0.875,
         "media_density": 0.00625,
         "metadata_density": 0.01041666666666667,
-        "seo_pattern_coverage": 0.5,
+        "seo_pattern_coverage": 0.4,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.07500000000000001
       }
@@ -3267,7 +3267,7 @@
         "vector_asset_share": 0.7999999999999999,
         "media_density": 0.06535947712418298,
         "metadata_density": 0.013071895424836596,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.07692307692307693
       }
@@ -3305,7 +3305,7 @@
         "vector_asset_share": 0.9,
         "media_density": 0.08928571428571427,
         "metadata_density": 0.0357142857142857,
-        "seo_pattern_coverage": 0.3333333333333333,
+        "seo_pattern_coverage": 0.2,
         "module_script_share": 0,
         "stylesheet_resource_share": 0.4
       }
@@ -3343,7 +3343,7 @@
         "vector_asset_share": 0,
         "media_density": 0,
         "metadata_density": 0.06666666666666668,
-        "seo_pattern_coverage": 0.16666666666666666,
+        "seo_pattern_coverage": 0,
         "module_script_share": 0,
         "stylesheet_resource_share": 0
       }
