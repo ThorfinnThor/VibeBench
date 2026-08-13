@@ -1,0 +1,3054 @@
+{
+  "schema_version": "vibebench.option_b.technical_yield_audit.v1",
+  "generated_at": "2026-08-13T02:23:58.753Z",
+  "status": "FROZEN_HISTORICAL_AUDIT_NO_RESCAN",
+  "input": {
+    "path": "outputs/development_v0_5_option_b/option_b_browser_surface_matrix_v1.json",
+    "sha256": "841a0fda338ee416e2f8fc4892090841cb2d7a5d6284028e2d5683b423a97ba6"
+  },
+  "interpretation": {
+    "navigation_timeout": "Historical collection retained no lower-level reason for these failures. They must remain unresolved timeouts and must not be called unreachable, offline or blocked.",
+    "label_warning": "Technical yield differs by benchmark label, so complete-case model metrics are exposed to label-dependent selection bias.",
+    "hosting_warning": "Hosting suffix is audit metadata only and must never become a model feature."
+  },
+  "overall": {
+    "attempted": 169,
+    "successful": 81,
+    "failed": 88,
+    "technical_yield": 0.47928994082840237,
+    "technical_yield_wilson_95": {
+      "lower": 0.40527196149650424,
+      "upper": 0.5542284960455616
+    },
+    "outcomes": [
+      {
+        "code": "success",
+        "count": 81,
+        "share": 0.47928994082840237
+      },
+      {
+        "code": "navigation_timeout_unresolved",
+        "count": 81,
+        "share": 0.47928994082840237
+      },
+      {
+        "code": "client_blocked",
+        "count": 3,
+        "share": 0.01775147928994083
+      },
+      {
+        "code": "dns_unresolved",
+        "count": 3,
+        "share": 0.01775147928994083
+      },
+      {
+        "code": "certificate_error",
+        "count": 1,
+        "share": 0.005917159763313609
+      }
+    ]
+  },
+  "by_label": {
+    "STABLE_HUMAN": {
+      "attempted": 86,
+      "successful": 53,
+      "failed": 33,
+      "technical_yield": 0.6162790697674418,
+      "technical_yield_wilson_95": {
+        "lower": 0.5106287727439646,
+        "upper": 0.7119855999802814
+      },
+      "outcomes": [
+        {
+          "code": "success",
+          "count": 53,
+          "share": 0.6162790697674418
+        },
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 29,
+          "share": 0.3372093023255814
+        },
+        {
+          "code": "dns_unresolved",
+          "count": 2,
+          "share": 0.023255813953488372
+        },
+        {
+          "code": "certificate_error",
+          "count": 1,
+          "share": 0.011627906976744186
+        },
+        {
+          "code": "client_blocked",
+          "count": 1,
+          "share": 0.011627906976744186
+        }
+      ]
+    },
+    "STRONG_AI": {
+      "attempted": 83,
+      "successful": 28,
+      "failed": 55,
+      "technical_yield": 0.3373493975903614,
+      "technical_yield_wilson_95": {
+        "lower": 0.24484304754653,
+        "upper": 0.44424554715628084
+      },
+      "outcomes": [
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 52,
+          "share": 0.6265060240963856
+        },
+        {
+          "code": "success",
+          "count": 28,
+          "share": 0.3373493975903614
+        },
+        {
+          "code": "client_blocked",
+          "count": 2,
+          "share": 0.024096385542168676
+        },
+        {
+          "code": "dns_unresolved",
+          "count": 1,
+          "share": 0.012048192771084338
+        }
+      ]
+    }
+  },
+  "by_cohort": {
+    "existing": {
+      "attempted": 38,
+      "successful": 37,
+      "failed": 1,
+      "technical_yield": 0.9736842105263158,
+      "technical_yield_wilson_95": {
+        "lower": 0.8650512388404787,
+        "upper": 0.9953394123142312
+      },
+      "outcomes": [
+        {
+          "code": "success",
+          "count": 37,
+          "share": 0.9736842105263158
+        },
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 1,
+          "share": 0.02631578947368421
+        }
+      ]
+    },
+    "expansion": {
+      "attempted": 131,
+      "successful": 44,
+      "failed": 87,
+      "technical_yield": 0.33587786259541985,
+      "technical_yield_wilson_95": {
+        "lower": 0.2606994715277561,
+        "upper": 0.4204075086542116
+      },
+      "outcomes": [
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 80,
+          "share": 0.6106870229007634
+        },
+        {
+          "code": "success",
+          "count": 44,
+          "share": 0.33587786259541985
+        },
+        {
+          "code": "client_blocked",
+          "count": 3,
+          "share": 0.022900763358778626
+        },
+        {
+          "code": "dns_unresolved",
+          "count": 3,
+          "share": 0.022900763358778626
+        },
+        {
+          "code": "certificate_error",
+          "count": 1,
+          "share": 0.007633587786259542
+        }
+      ]
+    }
+  },
+  "by_label_and_cohort": {
+    "STABLE_HUMAN__existing": {
+      "attempted": 26,
+      "successful": 26,
+      "failed": 0,
+      "technical_yield": 1,
+      "technical_yield_wilson_95": {
+        "lower": 0.8712710781407846,
+        "upper": 1
+      },
+      "outcomes": [
+        {
+          "code": "success",
+          "count": 26,
+          "share": 1
+        }
+      ]
+    },
+    "STABLE_HUMAN__expansion": {
+      "attempted": 60,
+      "successful": 27,
+      "failed": 33,
+      "technical_yield": 0.45,
+      "technical_yield_wilson_95": {
+        "lower": 0.3309365440675524,
+        "upper": 0.5750806411466566
+      },
+      "outcomes": [
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 29,
+          "share": 0.48333333333333334
+        },
+        {
+          "code": "success",
+          "count": 27,
+          "share": 0.45
+        },
+        {
+          "code": "dns_unresolved",
+          "count": 2,
+          "share": 0.03333333333333333
+        },
+        {
+          "code": "certificate_error",
+          "count": 1,
+          "share": 0.016666666666666666
+        },
+        {
+          "code": "client_blocked",
+          "count": 1,
+          "share": 0.016666666666666666
+        }
+      ]
+    },
+    "STRONG_AI__existing": {
+      "attempted": 12,
+      "successful": 11,
+      "failed": 1,
+      "technical_yield": 0.9166666666666666,
+      "technical_yield_wilson_95": {
+        "lower": 0.646120088858883,
+        "upper": 0.9851349055950829
+      },
+      "outcomes": [
+        {
+          "code": "success",
+          "count": 11,
+          "share": 0.9166666666666666
+        },
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 1,
+          "share": 0.08333333333333333
+        }
+      ]
+    },
+    "STRONG_AI__expansion": {
+      "attempted": 71,
+      "successful": 17,
+      "failed": 54,
+      "technical_yield": 0.23943661971830985,
+      "technical_yield_wilson_95": {
+        "lower": 0.1552094003304011,
+        "upper": 0.350412208560936
+      },
+      "outcomes": [
+        {
+          "code": "navigation_timeout_unresolved",
+          "count": 51,
+          "share": 0.7183098591549296
+        },
+        {
+          "code": "success",
+          "count": 17,
+          "share": 0.23943661971830985
+        },
+        {
+          "code": "client_blocked",
+          "count": 2,
+          "share": 0.028169014084507043
+        },
+        {
+          "code": "dns_unresolved",
+          "count": 1,
+          "share": 0.014084507042253521
+        }
+      ]
+    }
+  },
+  "label_yield_gap": {
+    "strong_ai": 0.3373493975903614,
+    "stable_human": 0.6162790697674418,
+    "absolute_percentage_point_gap": 27.89296721770804,
+    "strong_ai_to_stable_human_yield_ratio": 0.5473971357126619
+  },
+  "failed_hosting_suffixes": [
+    {
+      "hosting_suffix": "netlify.app",
+      "failures": 30
+    },
+    {
+      "hosting_suffix": "github.io",
+      "failures": 5
+    },
+    {
+      "hosting_suffix": "web.app",
+      "failures": 2
+    },
+    {
+      "hosting_suffix": "20.214",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "343.re",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "aka.ms",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "askinb.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "audio-post.it",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "bansal.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "biliob.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "boramalper.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "boredoppo.site",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "caelapp.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "caspr.social",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "docschina.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "echovault.me",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "elementsproject.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "equalid.xyz",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "feedeverychild.online",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "flowcloset.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "focusreads.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "hotdogtraining.app",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "icing.space",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "iweijie.cn",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "lightbend.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "linkedsocialtoolkit.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "moritzwolf.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "motobuddy.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "nameseekr.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "noscriptfingerprint.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "nunux.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "outstories.xyz",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "pawmatcher.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "phonologie.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "rage-encry.pt",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "readthedocs.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "redq.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "replit.app",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "scale8.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "startsnap.fun",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "tdon.site",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "tgr.am",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "thekamclub.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "thoughtfire.studio",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "trypy.me",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "veltrends.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "vercel.app",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "voicezero.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "weblaunchchecklist.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "webpixels.io",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "webuildwithai.org",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "wissssper.me",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "yotrabajoremoto.com",
+      "failures": 1
+    },
+    {
+      "hosting_suffix": "zhaoda.net",
+      "failures": 1
+    }
+  ],
+  "rows": [
+    {
+      "sample_id": "DEV2-AI-REPLIT-01",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "hosting_suffix": "genaipi.org",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-03",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "hosting_suffix": "clearscribehq.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-04",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "hosting_suffix": "realvsai.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-05",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "hosting_suffix": "thekamclub.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-06",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_REPLIT_AGENT_NEW",
+      "hosting_suffix": "findmysauna.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-01",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "toomuchforce.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-02",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "bolt-shop.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-03",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "zropi.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-04",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "onceupon.fun",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-05",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "tabsquad.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-07",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "no-fila.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-10",
+      "label": "STRONG_AI",
+      "cohort": "existing",
+      "target_group": "AI_BOLT_NEW",
+      "hosting_suffix": "ellisai.org",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV3-032",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_NEW",
+      "hosting_suffix": "google.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV3X-055",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "draft.sh",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV3X-056",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "vercel.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV3X-070",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "checklyhq.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "kmuenster.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "reactsight.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV3X-085",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_EXPANSION",
+      "hosting_suffix": "useauth.dev",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-030",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "surge.sh",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-032",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "mailtolink.me",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-035",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "awes.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV4-037",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "mernbook.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV4-040",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "git.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-043",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "saleor.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-049",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "fullstackweekly.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV4-050",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "urlhum.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV4-052",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V04",
+      "hosting_suffix": "jsmastery.pro",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-069",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "gitless.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-071",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "ssr-fc.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-075",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "fabric8.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-088",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "now.sh",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-094",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "exrick.cn",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-099",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "mozaik.rocks",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-104",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "weld.rs",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-110",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "pipelinedb.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "DEV5-118",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "gitbooks.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "DEV5-120",
+      "label": "STABLE_HUMAN",
+      "cohort": "existing",
+      "target_group": "HUMAN_ESTABLISHED_PRODUCT_V05",
+      "hosting_suffix": "covid19dashboards.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-001",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "callvance.net",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-002",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "modelmash.site",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-003",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "boredoppo.site",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-004",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "voicezero.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-005",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "macsim.store",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-006",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "hotdogtraining.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-007",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "startsnap.fun",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-008",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "outstories.xyz",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-009",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-010",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "yakhol.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-011",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "webuildwithai.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-012",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "echovault.me",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-013",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-014",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-015",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "trypy.me",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-016",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-017",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-018",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "feedeverychild.online",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-019",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-020",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-021",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-022",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-023",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-024",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-025",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-026",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "caspr.social",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-027",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "pawmatcher.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-028",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "nameseekr.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-029",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "vercel.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-030",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "askinb.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-031",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-032",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-033",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-034",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-035",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "phonologie.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-036",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-037",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-038",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "caelapp.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-039",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-040",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-041",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "equalid.xyz",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-042",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-043",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "focusreads.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-044",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-045",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-046",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "flowcloset.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-047",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-048",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "replit.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-049",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-050",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-051",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-052",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "motobuddy.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-053",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-054",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "reddit.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-055",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "avilta.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-056",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "wissssper.me",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-057",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "client_blocked",
+        "family": "blocked",
+        "retryable": true,
+        "label": "Durch Browser/Client blockiert"
+      },
+      "original_error": "Error: Browser Use cannot open https://ubiquitous-brioche-898a5a.netlify.app in tab 101. Browser reported: net::ERR_BLOCKED_BY_CLIENT"
+    },
+    {
+      "sample_id": "OPT-B-AI-058",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "thoughtfire.studio",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-059",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-060",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-061",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-062",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "audio-post.it",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-AI-063",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-064",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "client_blocked",
+        "family": "blocked",
+        "retryable": true,
+        "label": "Durch Browser/Client blockiert"
+      },
+      "original_error": "Error: Browser Use cannot open https://heartfelt-unicorn-0bd5be.netlify.app in tab 108. Browser reported: net::ERR_BLOCKED_BY_CLIENT"
+    },
+    {
+      "sample_id": "OPT-B-AI-065",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-066",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "yotrabajoremoto.com",
+      "ok": false,
+      "outcome": {
+        "code": "dns_unresolved",
+        "family": "reachability",
+        "retryable": true,
+        "label": "DNS-Name nicht auflösbar"
+      },
+      "original_error": "Error: Browser Use cannot open https://www.yotrabajoremoto.com in tab 110. Browser reported: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "sample_id": "OPT-B-AI-067",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-068",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "affordwiz.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-071",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-AI-072",
+      "label": "STRONG_AI",
+      "cohort": "expansion",
+      "target_group": "STRONG_AI_BOLT_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-001",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "boramalper.org",
+      "ok": false,
+      "outcome": {
+        "code": "dns_unresolved",
+        "family": "reachability",
+        "retryable": true,
+        "label": "DNS-Name nicht auflösbar"
+      },
+      "original_error": "Error: Browser Use cannot open http://labs.boramalper.org/magnetico/ in tab 116. Browser reported: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "sample_id": "OPT-B-HUM-002",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-003",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "amfoss.in",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-004",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "luk.ke",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-005",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "webjike.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-006",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "now.sh",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-007",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "vercel.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-008",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "af.codes",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-009",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "tgr.am",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-010",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "scale8.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-011",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "docschina.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-012",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "icing.space",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-013",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "webpixels.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-014",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "weblaunchchecklist.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-015",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "promisejs.org",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-016",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "frontendchecklist.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-017",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "sindresorhus.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-018",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "henryhao.cn",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-019",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "netlify.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-020",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "adamdehaven.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-021",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-022",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "alexlynd.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-023",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "freenode.net",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-024",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-025",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "phalcon.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-026",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "veltrends.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-027",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-028",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "linkedsocialtoolkit.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-029",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "thunder.org",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-030",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-031",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "eslint.org",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-032",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "bansal.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-033",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "elementsproject.org",
+      "ok": false,
+      "outcome": {
+        "code": "certificate_error",
+        "family": "reachability",
+        "retryable": false,
+        "label": "TLS-Zertifikatsfehler"
+      },
+      "original_error": "Error: Browser Use cannot open https://www.elementsproject.org in tab 148. Browser reported: net::ERR_CERT_COMMON_NAME_INVALID"
+    },
+    {
+      "sample_id": "OPT-B-HUM-034",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "iweijie.cn",
+      "ok": false,
+      "outcome": {
+        "code": "dns_unresolved",
+        "family": "reachability",
+        "retryable": true,
+        "label": "DNS-Name nicht auflösbar"
+      },
+      "original_error": "Error: Browser Use cannot open http://web-highlight.iweijie.cn in tab 149. Browser reported: net::ERR_NAME_NOT_RESOLVED"
+    },
+    {
+      "sample_id": "OPT-B-HUM-035",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "343.re",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-036",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "redq.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-037",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "noscriptfingerprint.com",
+      "ok": false,
+      "outcome": {
+        "code": "client_blocked",
+        "family": "blocked",
+        "retryable": true,
+        "label": "Durch Browser/Client blockiert"
+      },
+      "original_error": "Error: Browser Use cannot open https://noscriptfingerprint.com in tab 152. Browser reported: net::ERR_BLOCKED_BY_CLIENT"
+    },
+    {
+      "sample_id": "OPT-B-HUM-038",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-039",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "zhaoda.net",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-040",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-041",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "20.214",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-042",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "lightbend.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-043",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "readthedocs.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-044",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "moritzwolf.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-045",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "tdon.site",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-046",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-047",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "aka.ms",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-048",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "biliob.com",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-049",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "nunux.org",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-050",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "netlify.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-051",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "rage-encry.pt",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-052",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-053",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-054",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "surge.sh",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-055",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "web.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-056",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "web.app",
+      "ok": false,
+      "outcome": {
+        "code": "navigation_timeout_unresolved",
+        "family": "timeout",
+        "retryable": true,
+        "label": "Navigation-Timeout, Ursache unaufgelöst"
+      },
+      "original_error": "Error: navigation_timeout"
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "google.com",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-058",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "github.io",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-059",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "vercel.app",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    },
+    {
+      "sample_id": "OPT-B-HUM-060",
+      "label": "STABLE_HUMAN",
+      "cohort": "expansion",
+      "target_group": "STABLE_HUMAN_PRE_AI_OPTION_B",
+      "hosting_suffix": "kaustubhgupta.me",
+      "ok": true,
+      "outcome": {
+        "code": "success",
+        "family": "success",
+        "retryable": false,
+        "label": "Technisch verwertbar"
+      },
+      "original_error": null
+    }
+  ]
+}

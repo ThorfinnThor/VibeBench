@@ -95,6 +95,8 @@ The score-blind 28-feature v2 contract and its first fixed-protocol Development 
 
 The product now also reports **Auswertungsbreite** (broad, standard or limited) from the actual public HTML/asset scan scope. It is explicitly separate from model confidence and does not alter the v0.4 score. Desktop and 390 px mobile result layouts were browser-tested with a real public scan.
 
+The historical 169-row acquisition has now been audited separately. Technical yield was label- and cohort-dependent: 33.7% for Strong AI versus 61.6% for Stable Human, and 97.4% for the existing cohort versus 33.6% for the expansion cohort. Of 88 failures, 81 retain only an unresolved historical navigation-timeout reason. See `outputs/VIBEBENCH_OPTION_B_TECHNICAL_YIELD_AUDIT_2026-08-13.md`.
+
 See:
 
 - `outputs/development_v0_5_option_b/VIBEBENCH_OPTION_B_VISIBLE_FEATURE_CONTRACT_V2.md`
