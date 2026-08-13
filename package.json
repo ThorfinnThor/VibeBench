@@ -74,6 +74,9 @@
     "research:v0.5-option-b-visible-evaluate": "node scripts/evaluate-development-v0_5-option-b-visible-v2.mjs",
     "research:v0.5-option-b-yield-audit": "node scripts/audit-development-v0_5-option-b-technical-yield.mjs",
     "research:v0.5-option-b-v3-contract-validate": "node scripts/validate-development-v0_5-option-b-capture-contract-v3.mjs",
+    "research:v0.5-option-b-v3-pilot-build": "node scripts/build-development-v0_5-option-b-v3-pilot-manifest.mjs",
+    "research:v0.5-option-b-v3-browser-setup": "PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers playwright install chromium",
+    "research:v0.5-option-b-v3-pilot-run": "PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers node scripts/run-development-v0_5-option-b-v3-local-pilot.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",
@@ -99,6 +102,7 @@
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "16.4.0",
+    "playwright": "1.54.2",
     "typescript": "5.9.3",
     "typescript-eslint": "8.59.3"
   },

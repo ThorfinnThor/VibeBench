@@ -5,6 +5,7 @@ __pycache__/
 .venv/
 venv/
 node_modules/
+.playwright-browsers/
 .next/
 out/
 npm-debug.log*
@@ -27,4 +28,3 @@ vibebench_historical_snapshots/locks/
 !.env.example
 *.pem
 *.key
-

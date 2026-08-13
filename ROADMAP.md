@@ -97,7 +97,7 @@ The product now also reports **Auswertungsbreite** (broad, standard or limited) 
 
 The historical 169-row acquisition has now been audited separately. Technical yield was label- and cohort-dependent: 33.7% for Strong AI versus 61.6% for Stable Human, and 97.4% for the existing cohort versus 33.6% for the expansion cohort. Of 88 failures, 81 retain only an unresolved historical navigation-timeout reason. See `outputs/VIBEBENCH_OPTION_B_TECHNICAL_YIELD_AUDIT_2026-08-13.md`.
 
-The label-blind v3 capture protocol is preregistered and validated. It fixes desktop/mobile viewports, readiness, terminal failure stages, ephemeral visual extraction, computed-style/layout/repetition payloads and repeat-scan timing. It is intentionally blocked from execution until the browser/worker architecture and privacy/retention policy are selected. See `outputs/development_v0_5_option_b_v3/VIBEBENCH_OPTION_B_CAPTURE_PROTOCOL_V3.md`.
+Option A is selected and implemented as a local minimal Playwright collector. The reduced pilot uses one desktop viewport, rendered DOM, computed typography/spacing/radius/layout styles and repetition signatures. It creates no screenshots and performs no color or mobile comparison. The six-site manifest is frozen labelblind. The repository-managed Chromium download is still pending because the current restricted environment could not resolve the Playwright CDN; no public pilot result is claimed yet. See `outputs/VIBEBENCH_OPTION_A_LOCAL_COLLECTOR_2026-08-13.md`.
 
 See:
 
@@ -107,7 +107,7 @@ See:
 ### Recommended next implementation order
 
 1. Define and validate indeterminate semantics separately from the now-shipped evidence-scope presentation; do not infer confidence from scan breadth alone.
-2. Select the pinned browser/shared-worker architecture and approve privacy/retention so the preregistered v3 capture can be implemented.
-3. Implement the v3 collector and run its contract tests before opening any target URL.
-4. Run label-blind capture and real repeat scans, then freeze hashes before joining labels.
+2. Run the one-time repository-managed Chromium setup from a normal networked terminal.
+3. Execute and review the six-site label-blind technical pilot; do not expand unless its fixed gates pass.
+4. Repeat the pilot 24–72 hours later, compare feature drift, and freeze hashes before joining labels.
 5. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.

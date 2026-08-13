@@ -1,7 +1,7 @@
 # VibeBench Option-B capture protocol v3
 
 Locked: 2026-08-13  
-Status: preregistered; execution blocked on infrastructure and privacy decisions
+Status: local minimal pilot approved (Option A); full batch blocked until pilot review
 
 ## What this fixes
 
@@ -15,28 +15,25 @@ The collector receives only `sample_id` and `target_url`. Labels, target groups,
 
 The URL is used for navigation. It, the hostname, origin, hosting provider and origin hash are prohibited model inputs.
 
-## Two fixed viewports
+## One fixed pilot viewport
 
 - Desktop: 1440 × 900
-- Mobile: 390 × 844
 
-Both viewports must succeed for a technically usable row. Each gets at most two attempts in fresh anonymous contexts. Partial captures remain failures rather than silently receiving zeros.
+The minimal pilot deliberately excludes mobile comparison. Each pilot row gets one attempt in a fresh anonymous context. Partial captures remain failures rather than silently receiving zeros.
 
 ## What is measured
 
 - normalized page and semantic-region geometry;
 - visible-element boxes, roles, depth and deterministic structural signatures;
-- a fixed computed-style property vector covering type, spacing, radii, color, borders, shadows and layout;
+- a fixed computed-style property vector covering type, spacing, radii, borders, shadows and layout;
 - structural and computed-style repetition frequencies;
-- a 12 × 8 visual grid derived from an ephemeral screenshot;
-- palette, edge, occupancy and symmetry summaries;
 - capped same-origin stylesheet coverage and CSS token-type summaries.
 
-Raw text, raw HTML, response bodies and screenshots are not persisted by default. Screenshots exist only in memory long enough to derive the fixed visual grid. Any human-review image set needs a separate privacy and retention decision.
+Raw text, raw HTML, response bodies and screenshots are not persisted. The minimal collector does not create screenshots or perform color/image analysis.
 
 ## Readiness and failures
 
-Collection waits for DOMContentLoaded, fonts and two stable samples 500 ms apart. Every attempt records its terminal stage. DNS, TCP/TLS, HTTP, DOM readiness, content eligibility, computed-style extraction, visual extraction and serialization have distinct outcomes.
+Collection waits for DOMContentLoaded, fonts and two stable samples 500 ms apart. Every attempt records its terminal stage. DNS, TCP/TLS, HTTP, DOM readiness, content eligibility, computed-style extraction, structural aggregation and serialization have distinct outcomes.
 
 A timeout records its active stage, elapsed time and whether a document or DOM was already observed. This prevents another undifferentiated `navigation_timeout` bucket.
 
@@ -44,15 +41,15 @@ A timeout records its active stage, elapsed time and whether a document or DOM w
 
 Development stability requires two runs with the same pinned runtime, separated by 24–72 hours and using fresh contexts. Failed repeats are not imputed. Reports must include both feature drift and technical-outcome transitions.
 
-## What remains undecided
+## Option A decision
 
-Execution is intentionally blocked until three decisions are recorded:
+The pilot runs locally through Playwright and a locally installed Chromium-compatible browser. Its exact browser version is written into every run. The live Vercel product and v0.4 model are not involved.
 
-1. the pinned browser runtime and shared scan-worker architecture;
-2. the privacy/retention policy for derived data and any optional review assets;
-3. the exact deployed transport and concurrency controls.
+The repository-managed Chromium build is installed with `npm run research:v0.5-option-b-v3-browser-setup`. An explicit `VIBEBENCH_CHROME_PATH` is accepted for pilot diagnosis, but the full batch requires the repository-managed build. The exact runtime version is written into each output.
 
-Those choices affect reproducibility, cost, security and whether full browser capture is suitable for the deployment environment. The contract records required behavior without pretending that the infrastructure choice has already been made.
+The full batch remains blocked until the pilot demonstrates that the additional structural/style measurements are technically stable and useful.
+
+No cloud browser worker is required for this research phase.
 
 ## Sequence after implementation
 

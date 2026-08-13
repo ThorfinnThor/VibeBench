@@ -1,7 +1,7 @@
 {
   "schema_version": "vibebench.option_b.capture_contract.v3",
   "locked_at": "2026-08-13T00:00:00.000Z",
-  "status": "PREREGISTERED_EXECUTION_BLOCKED_ON_RUNTIME_DECISION",
+  "status": "LOCAL_MINIMAL_PILOT_APPROVED",
   "primary_task": "strong_visible_vibe_footprint",
   "scope": "label-blind public-surface capture on the frozen Option-B candidate set",
   "claims": {
@@ -11,10 +11,12 @@
     "capture_completeness_equals_model_confidence": false
   },
   "execution_gate": {
-    "browser_runtime_selected": false,
-    "shared_scan_worker_selected": false,
-    "privacy_and_retention_policy_approved": false,
-    "may_execute_before_all_true": false
+    "mode": "option_a_local_research",
+    "browser_runtime_selected": true,
+    "shared_scan_worker_required": false,
+    "minimal_privacy_defaults_active": true,
+    "pilot_may_execute": true,
+    "full_batch_may_execute_before_pilot_review": false
   },
   "collector_blinding": {
     "input_fields": ["sample_id", "target_url"],
@@ -24,7 +26,7 @@
     "join_labels_after_capture_freeze": true
   },
   "runtime_requirements": {
-    "browser_engine": "must be pinned before first attempt",
+    "browser_engine": "local Playwright driving Chromium-compatible browser",
     "browser_version": "must be recorded per collection run",
     "operating_system": "must be recorded per collection run",
     "locale": "de-DE",
@@ -39,14 +41,13 @@
     "user_agent": "fixed and recorded before first attempt"
   },
   "viewports": [
-    { "id": "desktop", "width": 1440, "height": 900, "full_page": false },
-    { "id": "mobile", "width": 390, "height": 844, "full_page": false }
+    { "id": "desktop", "width": 1440, "height": 900, "full_page": false }
   ],
   "budgets": {
     "navigation_timeout_ms": 15000,
     "readiness_timeout_ms": 12000,
     "extraction_timeout_ms": 10000,
-    "attempts_per_viewport": 2,
+    "attempts_per_viewport": 1,
     "maximum_redirects": 5,
     "maximum_visible_elements": 2000,
     "maximum_dom_depth": 80,
@@ -62,7 +63,7 @@
     "dom_readiness",
     "rendered_content_eligibility",
     "computed_style_extraction",
-    "visual_structure_extraction",
+    "structural_aggregation",
     "serialization"
   ],
   "terminal_outcomes": [
@@ -79,7 +80,7 @@
     { "code": "client_or_policy_blocked", "family": "blocked", "retryable": true },
     { "code": "ineligible_empty_or_interstitial", "family": "content", "retryable": true },
     { "code": "computed_style_extraction_failed", "family": "collector", "retryable": true },
-    { "code": "visual_extraction_failed", "family": "collector", "retryable": true },
+    { "code": "structural_aggregation_failed", "family": "collector", "retryable": true },
     { "code": "serialization_failed", "family": "collector", "retryable": true },
     { "code": "unknown_technical_error", "family": "unknown", "retryable": true }
   ],
@@ -164,9 +165,6 @@
       "line_height_px",
       "letter_spacing_px",
       "text_align",
-      "foreground_color_lab",
-      "background_color_lab",
-      "border_color_lab",
       "padding_top_px",
       "padding_right_px",
       "padding_bottom_px",
@@ -187,13 +185,6 @@
       "overflow_x",
       "overflow_y"
     ],
-    "visual_grid": {
-      "source": "ephemeral viewport screenshot after readiness",
-      "columns": 12,
-      "rows": 8,
-      "per_cell": ["mean_color_lab", "color_variance", "edge_density", "foreground_occupancy"],
-      "global": ["palette_lab_k8", "palette_share_k8", "edge_density", "foreground_occupancy", "horizontal_symmetry", "vertical_symmetry"]
-    },
     "repetition": [
       "structural_signature_frequency",
       "computed_style_signature_frequency",
@@ -214,7 +205,6 @@
   "normalization": {
     "coordinates": "divide x/width values by viewport width and y/height values by viewport height",
     "lengths": "round CSS pixel lengths to nearest 0.5 px before aggregation",
-    "colors": "convert sRGB to CIE Lab and round channels to 0.5 units",
     "font_family": "store generic category and salted family hash, never raw remote font URL",
     "structural_signature": "hash tag category, semantic role, depth bin and ordered child tag categories",
     "computed_style_signature": "hash normalized property vector listed in capture_payload",
@@ -225,8 +215,8 @@
     "raw_html_persisted": false,
     "full_visible_text_persisted": false,
     "network_response_bodies_persisted": false,
+    "screenshots_created": false,
     "screenshots_persisted_by_default": false,
-    "ephemeral_screenshots_destroyed_after_visual_feature_extraction": true,
     "derived_aggregate_payload_persisted": true,
     "attempt_audit_persisted": true,
     "manual_review_assets_require_separate_approved_policy": true
@@ -251,9 +241,10 @@
     "direct_builder_badge_or_marker"
   ],
   "success_definition": {
-    "both_viewports_required": true,
+    "desktop_only_for_minimal_pilot": true,
+    "both_viewports_required": false,
     "at_least_one_successful_attempt_per_viewport": true,
-    "required_capture_groups": ["document", "layout_regions", "visible_elements", "computed_style_properties", "visual_grid", "repetition", "public_assets"],
+    "required_capture_groups": ["document", "layout_regions", "visible_elements", "computed_style_properties", "repetition", "public_assets"],
     "partial_capture_is_failure": true,
     "failed_rows_retained_in_coverage_reporting": true
   },
