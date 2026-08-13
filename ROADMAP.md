@@ -97,6 +97,8 @@ The product now also reports **Auswertungsbreite** (broad, standard or limited) 
 
 The historical 169-row acquisition has now been audited separately. Technical yield was label- and cohort-dependent: 33.7% for Strong AI versus 61.6% for Stable Human, and 97.4% for the existing cohort versus 33.6% for the expansion cohort. Of 88 failures, 81 retain only an unresolved historical navigation-timeout reason. See `outputs/VIBEBENCH_OPTION_B_TECHNICAL_YIELD_AUDIT_2026-08-13.md`.
 
+The label-blind v3 capture protocol is preregistered and validated. It fixes desktop/mobile viewports, readiness, terminal failure stages, ephemeral visual extraction, computed-style/layout/repetition payloads and repeat-scan timing. It is intentionally blocked from execution until the browser/worker architecture and privacy/retention policy are selected. See `outputs/development_v0_5_option_b_v3/VIBEBENCH_OPTION_B_CAPTURE_PROTOCOL_V3.md`.
+
 See:
 
 - `outputs/development_v0_5_option_b/VIBEBENCH_OPTION_B_VISIBLE_FEATURE_CONTRACT_V2.md`
@@ -105,6 +107,7 @@ See:
 ### Recommended next implementation order
 
 1. Define and validate indeterminate semantics separately from the now-shipped evidence-scope presentation; do not infer confidence from scan breadth alone.
-2. Preregister a richer same-site capture contract for computed styles, component/section repetition, layout regions and visual token distributions.
-3. Improve scan-yield outcome classification before performing real repeat scans.
-4. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.
+2. Select the pinned browser/shared-worker architecture and approve privacy/retention so the preregistered v3 capture can be implemented.
+3. Implement the v3 collector and run its contract tests before opening any target URL.
+4. Run label-blind capture and real repeat scans, then freeze hashes before joining labels.
+5. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.
