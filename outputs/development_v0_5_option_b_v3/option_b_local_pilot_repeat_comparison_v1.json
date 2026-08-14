@@ -1,0 +1,138 @@
+{
+  "schema_version": "vibebench.option_b.local_pilot_repeat_comparison.v1",
+  "generated_at": "2026-08-14T13:51:34.172Z",
+  "status": "REPEAT_COMPARISON_READY_FOR_METHOD_REVIEW",
+  "full_batch_approved": false,
+  "run_1": {
+    "run_id": "f1b234c7-a93e-4576-9005-6744d5c662d9",
+    "generated_at": "2026-08-13T11:55:32.668Z"
+  },
+  "run_2": {
+    "run_id": "0d4afa78-7aba-40b7-bc6c-a4300f51a93d",
+    "generated_at": "2026-08-14T13:51:09.586Z"
+  },
+  "separation_hours": 25.926921666666665,
+  "technical_checks": {
+    "same_manifest": true,
+    "same_runtime": true,
+    "separation_within_24_to_72_hours": true,
+    "same_sample_set": true,
+    "all_second_attempts_registered": true,
+    "no_unknown_outcome": true
+  },
+  "technical_outcome_transitions": [
+    {
+      "sample_id": "DEV3-032",
+      "from": "success",
+      "to": "success",
+      "changed": false
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "from": "success",
+      "to": "success",
+      "changed": false
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "from": "success",
+      "to": "success",
+      "changed": false
+    },
+    {
+      "sample_id": "DEV4-030",
+      "from": "ineligible_empty_or_interstitial",
+      "to": "ineligible_empty_or_interstitial",
+      "changed": false
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "from": "success",
+      "to": "success",
+      "changed": false
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "from": "success",
+      "to": "success",
+      "changed": false
+    }
+  ],
+  "feature_drift_by_viewport": [
+    {
+      "sample_id": "DEV3-032",
+      "viewport_match": true,
+      "visible_element_count_run_1": 42,
+      "visible_element_count_run_2": 42,
+      "visible_element_count_delta": 0,
+      "visible_element_count_relative_delta": 0,
+      "document_width_delta": 0,
+      "document_height_delta": 0,
+      "layout_region_count_run_1": 1,
+      "layout_region_count_run_2": 1,
+      "layout_region_count_delta": 0,
+      "public_asset_fetch_count_delta": 0
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "viewport_match": true,
+      "visible_element_count_run_1": 17,
+      "visible_element_count_run_2": 17,
+      "visible_element_count_delta": 0,
+      "visible_element_count_relative_delta": 0,
+      "document_width_delta": 0,
+      "document_height_delta": 0,
+      "layout_region_count_run_1": 4,
+      "layout_region_count_run_2": 4,
+      "layout_region_count_delta": 0,
+      "public_asset_fetch_count_delta": 0
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "viewport_match": true,
+      "visible_element_count_run_1": 124,
+      "visible_element_count_run_2": 124,
+      "visible_element_count_delta": 0,
+      "visible_element_count_relative_delta": 0,
+      "document_width_delta": 0,
+      "document_height_delta": 0,
+      "layout_region_count_run_1": 8,
+      "layout_region_count_run_2": 8,
+      "layout_region_count_delta": 0,
+      "public_asset_fetch_count_delta": 0
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "viewport_match": true,
+      "visible_element_count_run_1": 598,
+      "visible_element_count_run_2": 598,
+      "visible_element_count_delta": 0,
+      "visible_element_count_relative_delta": 0,
+      "document_width_delta": 0,
+      "document_height_delta": 0,
+      "layout_region_count_run_1": 8,
+      "layout_region_count_run_2": 8,
+      "layout_region_count_delta": 0,
+      "public_asset_fetch_count_delta": 0
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "viewport_match": true,
+      "visible_element_count_run_1": 220,
+      "visible_element_count_run_2": 229,
+      "visible_element_count_delta": 9,
+      "visible_element_count_relative_delta": 0.0409,
+      "document_width_delta": 0,
+      "document_height_delta": 0,
+      "layout_region_count_run_1": 4,
+      "layout_region_count_run_2": 4,
+      "layout_region_count_delta": 0,
+      "public_asset_fetch_count_delta": 0
+    }
+  ],
+  "next_gate": "method_review_of_drift_and_outcome_transitions_before_any_full_batch",
+  "artifact_sizes": {
+    "run_2_capture_bytes": 1823811,
+    "run_2_audit_bytes": 5932
+  }
+}
