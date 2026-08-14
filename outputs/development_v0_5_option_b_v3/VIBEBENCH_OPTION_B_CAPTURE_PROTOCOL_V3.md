@@ -1,7 +1,7 @@
 # VibeBench Option-B capture protocol v3
 
 Locked: 2026-08-13  
-Status: local minimal pilot approved (Option A); full batch blocked until pilot review
+Status: two-run local pilot and derived-feature stability gate passed; larger label-blind capture requires explicit scope approval
 
 ## What this fixes
 
@@ -47,7 +47,7 @@ The pilot runs locally through Playwright and a locally installed Chromium-compa
 
 The repository-managed Chromium build is installed with `npm run research:v0.5-option-b-v3-browser-setup`. An explicit `VIBEBENCH_CHROME_PATH` is accepted for pilot diagnosis, but the full batch requires the repository-managed build. The exact runtime version is written into each output.
 
-The full batch remains blocked until the pilot demonstrates that the additional structural/style measurements are technically stable and useful.
+The two-run pilot has demonstrated technical repeatability of the derived structural/style measurements. Predictive usefulness has not been evaluated. A larger label-blind Development capture remains blocked until its scope is explicitly approved and frozen.
 
 No cloud browser worker is required for this research phase.
 
@@ -63,6 +63,12 @@ The first successful pilot is reviewed with `npm run research:v0.5-option-b-v3-p
 - no attempt longer than 42 seconds, no capture above 5 MiB per success, and bounded total artifacts.
 
 Passing this review does **not** unlock the full batch. The same manifest and pinned runtime must run again 24–72 hours later, followed by feature-drift and technical-outcome-transition review. The machine-readable gates are in `option_b_pilot_review_contract_v1.json`.
+
+## Completed repeat and derived-feature gate
+
+The second official run completed 25.93 hours after Run 1 with the same runtime, manifest and technical outcomes. The 42-feature derived contract was frozen before values were computed and before any label join. All 210 paired drift checks across the five shared successful pages passed their preregistered tolerances. See `VIBEBENCH_OPTION_B_V3_METHOD_REVIEW_2026-08-14.md` and `../VIBEBENCH_OPTION_B_V3_DERIVED_FEATURE_STABILITY_2026-08-14.md`.
+
+This pass establishes pilot repeatability only. The next gate is an explicit decision on the size of a larger label-blind technical capture; model usefulness, Precision, Recall and product scoring remain unchanged.
 
 ## Sequence after implementation
 

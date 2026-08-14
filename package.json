@@ -80,6 +80,8 @@
     "research:v0.5-option-b-v3-pilot-review": "node scripts/review-development-v0_5-option-b-v3-local-pilot.mjs",
     "research:v0.5-option-b-v3-pilot-freeze": "node scripts/freeze-development-v0_5-option-b-v3-local-pilot.mjs",
     "research:v0.5-option-b-v3-pilot-repeat-compare": "node scripts/compare-development-v0_5-option-b-v3-pilot-repeat.mjs",
+    "research:v0.5-option-b-v3-derived-pilot-build": "node scripts/build-development-v0_5-option-b-v3-derived-pilot-features.mjs",
+    "research:v0.5-option-b-v3-derived-pilot-stability": "node scripts/evaluate-development-v0_5-option-b-v3-derived-pilot-stability.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",

@@ -1,6 +1,6 @@
 # VibeBench roadmap
 
-Updated: 2026-08-13
+Updated: 2026-08-14
 
 This roadmap preserves the agreed product direction after dropping a rigid 90/90 Precision/Recall release target. Audit hardening takes precedence; model and product research resumes on the frozen Option-B Development set afterward.
 
@@ -97,7 +97,9 @@ The product now also reports **Auswertungsbreite** (broad, standard or limited) 
 
 The historical 169-row acquisition has now been audited separately. Technical yield was label- and cohort-dependent: 33.7% for Strong AI versus 61.6% for Stable Human, and 97.4% for the existing cohort versus 33.6% for the expansion cohort. Of 88 failures, 81 retain only an unresolved historical navigation-timeout reason. See `outputs/VIBEBENCH_OPTION_B_TECHNICAL_YIELD_AUDIT_2026-08-13.md`.
 
-Option A is selected and implemented as a local minimal Playwright collector. The reduced pilot uses one desktop viewport, rendered DOM, computed typography/spacing/radius/layout styles and repetition signatures. It creates no screenshots and performs no color or mobile comparison. The six-site manifest is frozen labelblind. The repository-managed Chromium download is still pending because the current restricted environment could not resolve the Playwright CDN; no public pilot result is claimed yet. See `outputs/VIBEBENCH_OPTION_A_LOCAL_COLLECTOR_2026-08-13.md`.
+Option A is selected and implemented as a local minimal Playwright collector. The reduced pilot uses one desktop viewport, rendered DOM, computed typography/spacing/radius/layout styles and repetition signatures. It creates no screenshots and performs no color or mobile comparison. Two official label-blind runs completed 25.93 hours apart with the same pinned Chromium/runtime and the same five successes plus one content-ineligible page.
+
+The 42-feature aggregate contract was frozen before derived evaluation and before any label join. All 210 paired stability checks passed their preregistered tolerances. This establishes pilot repeatability only; predictive usefulness, Precision/Recall improvement and the public score remain untested and production v0.4 remains unchanged. See `outputs/VIBEBENCH_OPTION_B_V3_DERIVED_FEATURE_STABILITY_2026-08-14.md`.
 
 See:
 
@@ -106,8 +108,8 @@ See:
 
 ### Recommended next implementation order
 
-1. Define and validate indeterminate semantics separately from the now-shipped evidence-scope presentation; do not infer confidence from scan breadth alone.
-2. Run the one-time repository-managed Chromium setup from a normal networked terminal.
-3. Execute and review the six-site label-blind technical pilot; do not expand unless its fixed gates pass.
-4. Repeat the pilot 24–72 hours later, compare feature drift, and freeze hashes before joining labels.
-5. Freeze a new independent Option-B holdout only after the Development cohort gap is understood.
+1. Decide whether the next label-blind technical capture is a conservative fixed 20-site expansion or the full frozen 81-site Development set.
+2. Freeze the selected manifest and technical-yield gates before capture; keep labels unavailable to the collector and feature builder.
+3. Audit capture completeness, category/cohort yield and resource bounds; repeat a fixed subset before any label join.
+4. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
+5. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.

@@ -1,0 +1,50 @@
+{
+  "schema_version": "vibebench.option_b.derived_feature_contract.v1",
+  "contract_version": "option-b-v3-derived-feature-contract-v1",
+  "locked_at": "2026-08-14T14:17:59.000Z",
+  "status": "FROZEN_BEFORE_DERIVED_PILOT_EVALUATION_AND_BEFORE_LABEL_JOIN",
+  "metadata_correction": {
+    "recorded_at": "2026-08-14T14:22:30.000Z",
+    "field": "locked_at",
+    "reason": "The initially entered rounded timestamp was replaced by the file creation time normalized to UTC.",
+    "feature_or_tolerance_change": false
+  },
+  "purpose": "Measure stable, identity-free aggregates of the visible rendered surface for later research evaluation.",
+  "non_claims": [
+    "This contract does not estimate authorship probability.",
+    "This contract does not estimate a percentage of AI-written code.",
+    "This contract does not measure security.",
+    "Passing the pilot stability gate does not establish predictive usefulness."
+  ],
+  "information_boundary": {
+    "labels_available_to_feature_builder": false,
+    "targets_available_to_feature_builder": false,
+    "cohorts_available_to_feature_builder": false,
+    "urls_available_to_feature_builder": false,
+    "hostnames_available_to_feature_builder": false,
+    "provenance_available_to_feature_builder": false,
+    "builder_markers_available_to_feature_builder": false,
+    "error_codes_used_as_features": false,
+    "raw_signature_hashes_used_as_features": false,
+    "sample_id_is_model_feature": false
+  },
+  "feature_source": "Successful Option B v3 minimal rendered-surface payloads only.",
+  "feature_definitions_source": "lib/option-b-v3-derived-feature-contract-v1.mjs",
+  "feature_definitions_source_sha256": "0faf5956e75eaedbbfa4accf7dd0b637510ff3c3e60b6b8f685b4e751bf580dd",
+  "stability_gate": {
+    "comparison_unit": "same sample and viewport across two runs",
+    "shared_successful_rows_only": true,
+    "same_manifest_required": true,
+    "same_runtime_required": true,
+    "unchanged_outcome_required": true,
+    "imputation_allowed": false,
+    "criterion": "Every absolute per-feature drift must be less than or equal to its preregistered tolerance."
+  },
+  "tolerance_policy": {
+    "normalized_shares_and_ratios": 0.05,
+    "log_transformed_counts_and_densities": 0.1,
+    "post_evaluation_tolerance_changes_allowed": false
+  },
+  "feature_count": 42,
+  "full_batch_approved": false
+}

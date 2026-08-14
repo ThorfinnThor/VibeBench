@@ -1,0 +1,2113 @@
+{
+  "schema_version": "vibebench.option_b.derived_pilot_stability.v1",
+  "generated_at": "2026-08-14T14:23:55.349Z",
+  "status": "DERIVED_FEATURE_STABILITY_GATE_PASSED",
+  "interpretation": "All preregistered derived-feature tolerances passed on the five shared successful pilot pages. This establishes pilot repeatability only.",
+  "label_join_performed": false,
+  "predictive_usefulness_evaluated": false,
+  "full_batch_approved": false,
+  "gate": {
+    "samples_compared": 5,
+    "features_per_sample": 42,
+    "comparisons_performed": 210,
+    "same_sample_set": true,
+    "no_imputation": true,
+    "all_within_preregistered_tolerance": true
+  },
+  "source_integrity": {
+    "matrix_sha256": "825f856b900d2e7eb9c74d2e773871b4cc8c4e6420ea50851b233093c9ba8122",
+    "frozen_contract_sha256": "66cbd54202932d6f505c556a48b4f4c1ba70999cb400a4e4f01f5a73365f9a3a"
+  },
+  "feature_summary": [
+    {
+      "feature": "page_height_viewports_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "visible_elements_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0.00798332,
+      "maximum_absolute_drift": 0.03991661,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "dom_nodes_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0.01613243,
+      "maximum_absolute_drift": 0.08066215,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "visible_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00100814,
+      "maximum_absolute_drift": 0.0050407,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "text_chars_per_visible_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0.0024666,
+      "maximum_absolute_drift": 0.00691291,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "words_per_visible_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0.00113622,
+      "maximum_absolute_drift": 0.00508907,
+      "maximum_drift_sample_id": "DEV3X-076",
+      "passed": true
+    },
+    {
+      "feature": "max_dom_depth_scaled",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.005,
+      "maximum_absolute_drift": 0.025,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "region_density",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00014291,
+      "maximum_absolute_drift": 0.00071457,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "region_role_diversity",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "mean_region_height_viewports_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "interactive_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00082175,
+      "maximum_absolute_drift": 0.00410877,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "container_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00005558,
+      "maximum_absolute_drift": 0.00027789,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "text_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.0005002,
+      "maximum_absolute_drift": 0.00250099,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "media_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00076618,
+      "maximum_absolute_drift": 0.00383089,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "form_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "list_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "semantic_role_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00044859,
+      "maximum_absolute_drift": 0.00224296,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "mean_depth_scaled",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00051603,
+      "maximum_absolute_drift": 0.00258014,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "full_width_element_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00210798,
+      "maximum_absolute_drift": 0.0105399,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "above_fold_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00115919,
+      "maximum_absolute_drift": 0.00579595,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "flex_grid_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00263597,
+      "maximum_absolute_drift": 0.01317983,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "positioned_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00068281,
+      "maximum_absolute_drift": 0.00341405,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "system_sans_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "large_type_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00007146,
+      "maximum_absolute_drift": 0.00035729,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "bold_type_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00003573,
+      "maximum_absolute_drift": 0.00017864,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "font_size_diversity",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.0002501,
+      "maximum_absolute_drift": 0.00125049,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "positive_gap_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00007146,
+      "maximum_absolute_drift": 0.00035729,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "positive_padding_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00262406,
+      "maximum_absolute_drift": 0.01312028,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "nonzero_radius_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00133386,
+      "maximum_absolute_drift": 0.00666932,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "bordered_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00087733,
+      "maximum_absolute_drift": 0.00438666,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "shadow_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00003573,
+      "maximum_absolute_drift": 0.00017864,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "clipped_overflow_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00228662,
+      "maximum_absolute_drift": 0.01143311,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "structural_signature_reuse",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00093291,
+      "maximum_absolute_drift": 0.00466455,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "style_signature_reuse",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00281952,
+      "maximum_absolute_drift": 0.0083612,
+      "maximum_drift_sample_id": "OPT-B-AI-069",
+      "passed": true
+    },
+    {
+      "feature": "largest_structural_cluster_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00103216,
+      "maximum_absolute_drift": 0.00516078,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "largest_style_cluster_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00042874,
+      "maximum_absolute_drift": 0.0021437,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "repeated_sibling_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0.00171497,
+      "maximum_absolute_drift": 0.00857483,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "custom_properties_per_stylesheet_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0.00154441,
+      "maximum_absolute_drift": 0.00772205,
+      "maximum_drift_sample_id": "OPT-B-HUM-057",
+      "passed": true
+    },
+    {
+      "feature": "custom_property_type_diversity",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "media_queries_per_stylesheet_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "stylesheet_readability_share",
+      "tolerance": 0.05,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    },
+    {
+      "feature": "font_faces_log",
+      "tolerance": 0.1,
+      "mean_absolute_drift": 0,
+      "maximum_absolute_drift": 0,
+      "maximum_drift_sample_id": "DEV3-032",
+      "passed": true
+    }
+  ],
+  "sample_summary": [
+    {
+      "sample_id": "DEV3-032",
+      "passed": true,
+      "features_changed": 0,
+      "maximum_tolerance_fraction": 0
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "passed": true,
+      "features_changed": 0,
+      "maximum_tolerance_fraction": 0
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "passed": true,
+      "features_changed": 2,
+      "maximum_tolerance_fraction": 0.0542007
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "passed": true,
+      "features_changed": 1,
+      "maximum_tolerance_fraction": 0.167224
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "passed": true,
+      "features_changed": 32,
+      "maximum_tolerance_fraction": 0.8066215
+    }
+  ],
+  "comparisons": [
+    {
+      "sample_id": "DEV3-032",
+      "passed": true,
+      "features_changed": 0,
+      "maximum_tolerance_fraction": 0,
+      "drifts": [
+        {
+          "feature": "page_height_viewports_log",
+          "run_1": 0.77932488,
+          "run_2": 0.77932488,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_elements_log",
+          "run_1": 3.76120012,
+          "run_2": 3.76120012,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "dom_nodes_log",
+          "run_1": 5.24702407,
+          "run_2": 5.24702407,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_element_share",
+          "run_1": 0.22222222,
+          "run_2": 0.22222222,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_chars_per_visible_log",
+          "run_1": 3.96533806,
+          "run_2": 3.96533806,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "words_per_visible_log",
+          "run_1": 2.20512976,
+          "run_2": 2.20512976,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "max_dom_depth_scaled",
+          "run_1": 0.1375,
+          "run_2": 0.1375,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_density",
+          "run_1": 0.02380952,
+          "run_2": 0.02380952,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_role_diversity",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_region_height_viewports_log",
+          "run_1": 0.76080583,
+          "run_2": 0.76080583,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "interactive_share",
+          "run_1": 0.21428571,
+          "run_2": 0.21428571,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "container_share",
+          "run_1": 0.28571429,
+          "run_2": 0.28571429,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_element_share",
+          "run_1": 0.16666667,
+          "run_2": 0.16666667,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_element_share",
+          "run_1": 0.04761905,
+          "run_2": 0.04761905,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "form_element_share",
+          "run_1": 0.07142857,
+          "run_2": 0.07142857,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "list_element_share",
+          "run_1": 0.21428571,
+          "run_2": 0.21428571,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "semantic_role_share",
+          "run_1": 0.0952381,
+          "run_2": 0.0952381,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_depth_scaled",
+          "run_1": 0.07857143,
+          "run_2": 0.07857143,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "full_width_element_share",
+          "run_1": 0.07142857,
+          "run_2": 0.07142857,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "above_fold_share",
+          "run_1": 0.85714286,
+          "run_2": 0.85714286,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "flex_grid_share",
+          "run_1": 0.19047619,
+          "run_2": 0.19047619,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positioned_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "system_sans_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "large_type_share",
+          "run_1": 0.02380952,
+          "run_2": 0.02380952,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bold_type_share",
+          "run_1": 0.02380952,
+          "run_2": 0.02380952,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_size_diversity",
+          "run_1": 0.0952381,
+          "run_2": 0.0952381,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_gap_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_padding_share",
+          "run_1": 0.19047619,
+          "run_2": 0.19047619,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "nonzero_radius_share",
+          "run_1": 0.11904762,
+          "run_2": 0.11904762,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bordered_share",
+          "run_1": 0.16666667,
+          "run_2": 0.16666667,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "shadow_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "clipped_overflow_share",
+          "run_1": 0.11904762,
+          "run_2": 0.11904762,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "structural_signature_reuse",
+          "run_1": 0.4047619,
+          "run_2": 0.4047619,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "style_signature_reuse",
+          "run_1": 0.45238095,
+          "run_2": 0.45238095,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_structural_cluster_share",
+          "run_1": 0.16666667,
+          "run_2": 0.16666667,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_style_cluster_share",
+          "run_1": 0.16666667,
+          "run_2": 0.16666667,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "repeated_sibling_share",
+          "run_1": 0.4047619,
+          "run_2": 0.4047619,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "custom_properties_per_stylesheet_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "custom_property_type_diversity",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_queries_per_stylesheet_log",
+          "run_1": 1.09861229,
+          "run_2": 1.09861229,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "stylesheet_readability_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_faces_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "passed": true,
+      "features_changed": 0,
+      "maximum_tolerance_fraction": 0,
+      "drifts": [
+        {
+          "feature": "page_height_viewports_log",
+          "run_1": 0.69314718,
+          "run_2": 0.69314718,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_elements_log",
+          "run_1": 2.89037176,
+          "run_2": 2.89037176,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "dom_nodes_log",
+          "run_1": 3.4339872,
+          "run_2": 3.4339872,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_element_share",
+          "run_1": 0.56666667,
+          "run_2": 0.56666667,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_chars_per_visible_log",
+          "run_1": 1.80151564,
+          "run_2": 1.80151564,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "words_per_visible_log",
+          "run_1": 0.60077386,
+          "run_2": 0.60077386,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "max_dom_depth_scaled",
+          "run_1": 0.0875,
+          "run_2": 0.0875,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_density",
+          "run_1": 0.23529412,
+          "run_2": 0.23529412,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_role_diversity",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_region_height_viewports_log",
+          "run_1": 0.21662233,
+          "run_2": 0.21662233,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "interactive_share",
+          "run_1": 0.17647059,
+          "run_2": 0.17647059,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "container_share",
+          "run_1": 0.35294118,
+          "run_2": 0.35294118,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_element_share",
+          "run_1": 0.17647059,
+          "run_2": 0.17647059,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_element_share",
+          "run_1": 0.05882353,
+          "run_2": 0.05882353,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "form_element_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "list_element_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "semantic_role_share",
+          "run_1": 0.41176471,
+          "run_2": 0.41176471,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_depth_scaled",
+          "run_1": 0.06323529,
+          "run_2": 0.06323529,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "full_width_element_share",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "above_fold_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "flex_grid_share",
+          "run_1": 0.17647059,
+          "run_2": 0.17647059,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positioned_share",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "system_sans_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "large_type_share",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bold_type_share",
+          "run_1": 0.29411765,
+          "run_2": 0.29411765,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_size_diversity",
+          "run_1": 0.17647059,
+          "run_2": 0.17647059,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_gap_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_padding_share",
+          "run_1": 0.23529412,
+          "run_2": 0.23529412,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "nonzero_radius_share",
+          "run_1": 0.17647059,
+          "run_2": 0.17647059,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bordered_share",
+          "run_1": 0.05882353,
+          "run_2": 0.05882353,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "shadow_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "clipped_overflow_share",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "structural_signature_reuse",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "style_signature_reuse",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_structural_cluster_share",
+          "run_1": 0.11764706,
+          "run_2": 0.11764706,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_style_cluster_share",
+          "run_1": 0.05882353,
+          "run_2": 0.05882353,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "repeated_sibling_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "custom_properties_per_stylesheet_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "custom_property_type_diversity",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_queries_per_stylesheet_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "stylesheet_readability_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_faces_log",
+          "run_1": 3.29583687,
+          "run_2": 3.29583687,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "passed": true,
+      "features_changed": 2,
+      "maximum_tolerance_fraction": 0.0542007,
+      "drifts": [
+        {
+          "feature": "page_height_viewports_log",
+          "run_1": 1.87299804,
+          "run_2": 1.87299804,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_elements_log",
+          "run_1": 4.82831374,
+          "run_2": 4.82831374,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "dom_nodes_log",
+          "run_1": 5.64897424,
+          "run_2": 5.64897424,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_element_share",
+          "run_1": 0.43816254,
+          "run_2": 0.43816254,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_chars_per_visible_log",
+          "run_1": 1.49868655,
+          "run_2": 1.49326648,
+          "absolute_drift": 0.00542007,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "words_per_visible_log",
+          "run_1": 0.46292216,
+          "run_2": 0.45783309,
+          "absolute_drift": 0.00508907,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "max_dom_depth_scaled",
+          "run_1": 0.125,
+          "run_2": 0.125,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_density",
+          "run_1": 0.06451613,
+          "run_2": 0.06451613,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_role_diversity",
+          "run_1": 0.375,
+          "run_2": 0.375,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_region_height_viewports_log",
+          "run_1": 0.52381095,
+          "run_2": 0.52381095,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "interactive_share",
+          "run_1": 0.10483871,
+          "run_2": 0.10483871,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "container_share",
+          "run_1": 0.62096774,
+          "run_2": 0.62096774,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_element_share",
+          "run_1": 0.09677419,
+          "run_2": 0.09677419,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_element_share",
+          "run_1": 0.02419355,
+          "run_2": 0.02419355,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "form_element_share",
+          "run_1": 0.00806452,
+          "run_2": 0.00806452,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "list_element_share",
+          "run_1": 0.08064516,
+          "run_2": 0.08064516,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "semantic_role_share",
+          "run_1": 0.07258065,
+          "run_2": 0.07258065,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_depth_scaled",
+          "run_1": 0.08296371,
+          "run_2": 0.08296371,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "full_width_element_share",
+          "run_1": 0.08064516,
+          "run_2": 0.08064516,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "above_fold_share",
+          "run_1": 0.08064516,
+          "run_2": 0.08064516,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "flex_grid_share",
+          "run_1": 0.00806452,
+          "run_2": 0.00806452,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positioned_share",
+          "run_1": 0.01612903,
+          "run_2": 0.01612903,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "system_sans_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "large_type_share",
+          "run_1": 0.0483871,
+          "run_2": 0.0483871,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bold_type_share",
+          "run_1": 0.15322581,
+          "run_2": 0.15322581,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_size_diversity",
+          "run_1": 0.0483871,
+          "run_2": 0.0483871,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_gap_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_padding_share",
+          "run_1": 0.20967742,
+          "run_2": 0.20967742,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "nonzero_radius_share",
+          "run_1": 0.08870968,
+          "run_2": 0.08870968,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bordered_share",
+          "run_1": 0.0483871,
+          "run_2": 0.0483871,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "shadow_share",
+          "run_1": 0.04032258,
+          "run_2": 0.04032258,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "clipped_overflow_share",
+          "run_1": 0.08064516,
+          "run_2": 0.08064516,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "structural_signature_reuse",
+          "run_1": 0.66935484,
+          "run_2": 0.66935484,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "style_signature_reuse",
+          "run_1": 0.66935484,
+          "run_2": 0.66935484,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_structural_cluster_share",
+          "run_1": 0.22580645,
+          "run_2": 0.22580645,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_style_cluster_share",
+          "run_1": 0.23387097,
+          "run_2": 0.23387097,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "repeated_sibling_share",
+          "run_1": 0.57258065,
+          "run_2": 0.57258065,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "custom_properties_per_stylesheet_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "custom_property_type_diversity",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_queries_per_stylesheet_log",
+          "run_1": 0.6061358,
+          "run_2": 0.6061358,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "stylesheet_readability_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_faces_log",
+          "run_1": 1.09861229,
+          "run_2": 1.09861229,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "passed": true,
+      "features_changed": 1,
+      "maximum_tolerance_fraction": 0.16722399999999998,
+      "drifts": [
+        {
+          "feature": "page_height_viewports_log",
+          "run_1": 0.69314718,
+          "run_2": 0.69314718,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_elements_log",
+          "run_1": 6.3952616,
+          "run_2": 6.3952616,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "dom_nodes_log",
+          "run_1": 6.49072353,
+          "run_2": 6.49072353,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_element_share",
+          "run_1": 0.90881459,
+          "run_2": 0.90881459,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_chars_per_visible_log",
+          "run_1": 1.91016166,
+          "run_2": 1.91016166,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "words_per_visible_log",
+          "run_1": 0.5562657,
+          "run_2": 0.5562657,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "max_dom_depth_scaled",
+          "run_1": 0.2125,
+          "run_2": 0.2125,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_density",
+          "run_1": 0.01337793,
+          "run_2": 0.01337793,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_role_diversity",
+          "run_1": 0.25,
+          "run_2": 0.25,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_region_height_viewports_log",
+          "run_1": 1.01331762,
+          "run_2": 1.01331762,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "interactive_share",
+          "run_1": 0.07859532,
+          "run_2": 0.07859532,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "container_share",
+          "run_1": 0.69899666,
+          "run_2": 0.69899666,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_element_share",
+          "run_1": 0.14882943,
+          "run_2": 0.14882943,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_element_share",
+          "run_1": 0.08026756,
+          "run_2": 0.08026756,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "form_element_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "list_element_share",
+          "run_1": 0.03177258,
+          "run_2": 0.03177258,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "semantic_role_share",
+          "run_1": 0.01337793,
+          "run_2": 0.01337793,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_depth_scaled",
+          "run_1": 0.1319398,
+          "run_2": 0.1319398,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "full_width_element_share",
+          "run_1": 0.02341137,
+          "run_2": 0.02341137,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "above_fold_share",
+          "run_1": 0.40301003,
+          "run_2": 0.40301003,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "flex_grid_share",
+          "run_1": 0.18060201,
+          "run_2": 0.18060201,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positioned_share",
+          "run_1": 0.47157191,
+          "run_2": 0.47157191,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "system_sans_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "large_type_share",
+          "run_1": 0.05016722,
+          "run_2": 0.05016722,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bold_type_share",
+          "run_1": 0.17558528,
+          "run_2": 0.17558528,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_size_diversity",
+          "run_1": 0.01505017,
+          "run_2": 0.01505017,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_gap_share",
+          "run_1": 0.01337793,
+          "run_2": 0.01337793,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_padding_share",
+          "run_1": 0.0735786,
+          "run_2": 0.0735786,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "nonzero_radius_share",
+          "run_1": 0.4548495,
+          "run_2": 0.4548495,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bordered_share",
+          "run_1": 0.06688963,
+          "run_2": 0.06688963,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "shadow_share",
+          "run_1": 0.31438127,
+          "run_2": 0.31438127,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "clipped_overflow_share",
+          "run_1": 0.14046823,
+          "run_2": 0.14046823,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "structural_signature_reuse",
+          "run_1": 0.87123746,
+          "run_2": 0.87123746,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "style_signature_reuse",
+          "run_1": 0.70735786,
+          "run_2": 0.71571906,
+          "absolute_drift": 0.0083612,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_structural_cluster_share",
+          "run_1": 0.14715719,
+          "run_2": 0.14715719,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_style_cluster_share",
+          "run_1": 0.03846154,
+          "run_2": 0.03846154,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "repeated_sibling_share",
+          "run_1": 0.43143813,
+          "run_2": 0.43143813,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "custom_properties_per_stylesheet_log",
+          "run_1": 2.80336038,
+          "run_2": 2.80336038,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "custom_property_type_diversity",
+          "run_1": 0.77777778,
+          "run_2": 0.77777778,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_queries_per_stylesheet_log",
+          "run_1": 1.178655,
+          "run_2": 1.178655,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "stylesheet_readability_share",
+          "run_1": 1,
+          "run_2": 1,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_faces_log",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "passed": true,
+      "features_changed": 32,
+      "maximum_tolerance_fraction": 0.8066215,
+      "drifts": [
+        {
+          "feature": "page_height_viewports_log",
+          "run_1": 0.69314718,
+          "run_2": 0.69314718,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_elements_log",
+          "run_1": 5.3981627,
+          "run_2": 5.43807931,
+          "absolute_drift": 0.03991661,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "dom_nodes_log",
+          "run_1": 7.46049031,
+          "run_2": 7.54115246,
+          "absolute_drift": 0.08066215,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "visible_element_share",
+          "run_1": 0.12665515,
+          "run_2": 0.12161445,
+          "absolute_drift": 0.0050407,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_chars_per_visible_log",
+          "run_1": 1.21437308,
+          "run_2": 1.20746017,
+          "absolute_drift": 0.00691291,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "words_per_visible_log",
+          "run_1": 0.21584425,
+          "run_2": 0.21525223,
+          "absolute_drift": 0.00059202,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "max_dom_depth_scaled",
+          "run_1": 0.2,
+          "run_2": 0.225,
+          "absolute_drift": 0.025,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_density",
+          "run_1": 0.01818182,
+          "run_2": 0.01746725,
+          "absolute_drift": 0.00071457,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "region_role_diversity",
+          "run_1": 0.75,
+          "run_2": 0.75,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_region_height_viewports_log",
+          "run_1": 0.08633823,
+          "run_2": 0.08633823,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "interactive_share",
+          "run_1": 0.10454545,
+          "run_2": 0.10043668,
+          "absolute_drift": 0.00410877,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "container_share",
+          "run_1": 0.88181818,
+          "run_2": 0.88209607,
+          "absolute_drift": 0.00027789,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "text_element_share",
+          "run_1": 0.06363636,
+          "run_2": 0.06113537,
+          "absolute_drift": 0.00250099,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_element_share",
+          "run_1": 0.01363636,
+          "run_2": 0.01746725,
+          "absolute_drift": 0.00383089,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "form_element_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "list_element_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "semantic_role_share",
+          "run_1": 0.16818182,
+          "run_2": 0.16593886,
+          "absolute_drift": 0.00224296,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "mean_depth_scaled",
+          "run_1": 0.11073864,
+          "run_2": 0.11331878,
+          "absolute_drift": 0.00258014,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "full_width_element_share",
+          "run_1": 0.26818182,
+          "run_2": 0.25764192,
+          "absolute_drift": 0.0105399,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "above_fold_share",
+          "run_1": 0.96363636,
+          "run_2": 0.96943231,
+          "absolute_drift": 0.00579595,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "flex_grid_share",
+          "run_1": 0.10909091,
+          "run_2": 0.12227074,
+          "absolute_drift": 0.01317983,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positioned_share",
+          "run_1": 0.69090909,
+          "run_2": 0.69432314,
+          "absolute_drift": 0.00341405,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "system_sans_share",
+          "run_1": 0,
+          "run_2": 0,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "large_type_share",
+          "run_1": 0.00909091,
+          "run_2": 0.00873362,
+          "absolute_drift": 0.00035729,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bold_type_share",
+          "run_1": 0.00454545,
+          "run_2": 0.00436681,
+          "absolute_drift": 0.00017864,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_size_diversity",
+          "run_1": 0.03181818,
+          "run_2": 0.03056769,
+          "absolute_drift": 0.00125049,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_gap_share",
+          "run_1": 0.00909091,
+          "run_2": 0.00873362,
+          "absolute_drift": 0.00035729,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "positive_padding_share",
+          "run_1": 0.22272727,
+          "run_2": 0.20960699,
+          "absolute_drift": 0.01312028,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "nonzero_radius_share",
+          "run_1": 0.16363636,
+          "run_2": 0.17030568,
+          "absolute_drift": 0.00666932,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "bordered_share",
+          "run_1": 0.22272727,
+          "run_2": 0.21834061,
+          "absolute_drift": 0.00438666,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "shadow_share",
+          "run_1": 0.00454545,
+          "run_2": 0.00436681,
+          "absolute_drift": 0.00017864,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "clipped_overflow_share",
+          "run_1": 0.29090909,
+          "run_2": 0.27947598,
+          "absolute_drift": 0.01143311,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "structural_signature_reuse",
+          "run_1": 0.65909091,
+          "run_2": 0.66375546,
+          "absolute_drift": 0.00466455,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "style_signature_reuse",
+          "run_1": 0.36818182,
+          "run_2": 0.36244541,
+          "absolute_drift": 0.00573641,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_structural_cluster_share",
+          "run_1": 0.09090909,
+          "run_2": 0.09606987,
+          "absolute_drift": 0.00516078,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "largest_style_cluster_share",
+          "run_1": 0.05454545,
+          "run_2": 0.05240175,
+          "absolute_drift": 0.0021437,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "repeated_sibling_share",
+          "run_1": 0.21818182,
+          "run_2": 0.20960699,
+          "absolute_drift": 0.00857483,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "custom_properties_per_stylesheet_log",
+          "run_1": 3.48124009,
+          "run_2": 3.47351804,
+          "absolute_drift": 0.00772205,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "custom_property_type_diversity",
+          "run_1": 0.77777778,
+          "run_2": 0.77777778,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "media_queries_per_stylesheet_log",
+          "run_1": 1.83258146,
+          "run_2": 1.83258146,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        },
+        {
+          "feature": "stylesheet_readability_share",
+          "run_1": 0.61538462,
+          "run_2": 0.61538462,
+          "absolute_drift": 0,
+          "tolerance": 0.05,
+          "passed": true
+        },
+        {
+          "feature": "font_faces_log",
+          "run_1": 3.61091791,
+          "run_2": 3.61091791,
+          "absolute_drift": 0,
+          "tolerance": 0.1,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}
