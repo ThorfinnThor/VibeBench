@@ -42,13 +42,17 @@ jobs:
         run: |
           mkdir -p "$OPTION_B_V4_ARTIFACT_DIR"
           chmod 0777 "$OPTION_B_V4_ARTIFACT_DIR"
+          docker pull --quiet mcr.microsoft.com/playwright:v1.54.2-noble
+          docker pull --quiet node:22.13.0-bookworm-slim
           docker compose -f infra/option-b-v4/compose.yml build --pull
           COLLECTOR_IMAGE_ID=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v4-collector:local)
           EGRESS_IMAGE_ID=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v4-egress:local)
+          COLLECTOR_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' mcr.microsoft.com/playwright:v1.54.2-noble)
+          EGRESS_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' node:22.13.0-bookworm-slim)
           echo "OPTION_B_V4_COLLECTOR_IMAGE=$COLLECTOR_IMAGE_ID" >> "$GITHUB_ENV"
           echo "OPTION_B_V4_EGRESS_IMAGE=$EGRESS_IMAGE_ID" >> "$GITHUB_ENV"
-          echo "OPTION_B_V4_COLLECTOR_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' mcr.microsoft.com/playwright:v1.54.2-noble)" >> "$GITHUB_ENV"
-          echo "OPTION_B_V4_EGRESS_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' node:22.13.0-bookworm-slim)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V4_COLLECTOR_BASE_DIGEST=$COLLECTOR_BASE_DIGEST" >> "$GITHUB_ENV"
+          echo "OPTION_B_V4_EGRESS_BASE_DIGEST=$EGRESS_BASE_DIGEST" >> "$GITHUB_ENV"
           node scripts/fingerprint-option-b-v4-runtime.mjs --github-env >> "$GITHUB_ENV"
           echo "OPTION_B_V4_ARTIFACT_DIR=$OPTION_B_V4_ARTIFACT_DIR" >> "$GITHUB_ENV"
       - name: Verify container isolation profile
