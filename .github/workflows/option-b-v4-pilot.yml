@@ -58,8 +58,8 @@ jobs:
       - name: Verify container isolation profile
         run: |
           docker compose -f infra/option-b-v4/compose.yml create egress collector
-          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q collector)" | node scripts/verify-option-b-v4-container-profile.mjs --role collector
-          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q egress)" | node scripts/verify-option-b-v4-container-profile.mjs --role egress
+          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q --all collector)" | node scripts/verify-option-b-v4-container-profile.mjs --role collector
+          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q --all egress)" | node scripts/verify-option-b-v4-container-profile.mjs --role egress
       - name: Verify corrected capture semantics inside the isolated image
         run: |
           docker compose -f infra/option-b-v4/compose.yml up -d egress
