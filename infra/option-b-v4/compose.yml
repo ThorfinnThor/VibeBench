@@ -46,7 +46,7 @@ services:
     cap_drop: [ALL]
     security_opt:
       - no-new-privileges:true
-      - seccomp=infra/option-b-v4/seccomp_profile.json
+      - seccomp=./seccomp_profile.json
     init: true
     pids_limit: 256
     mem_limit: 1536m
