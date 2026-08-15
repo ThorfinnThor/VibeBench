@@ -1,0 +1,22 @@
+{
+  "schema_version": "vibebench.option_b.v4_pilot_manifest.v1",
+  "locked_at": "2026-08-15T00:00:00.000Z",
+  "status": "LABEL_BLIND_TECHNICAL_PILOT_ONLY",
+  "source_manifest": "outputs/development_v0_5_option_b_v3/option_b_local_pilot_manifest_v1.json",
+  "selection": {
+    "selected": 6,
+    "same_rows_as_reviewed_v3_repeat": true,
+    "labels_inspected": false,
+    "previous_scores_inspected": false,
+    "previous_features_inspected": false
+  },
+  "collector_visible_fields": ["sample_id", "target_url"],
+  "rows": [
+    { "sample_id": "DEV4-030", "target_url": "https://preact-boilerplate.surge.sh/" },
+    { "sample_id": "OPT-B-AI-069", "target_url": "https://n9n.netlify.app/" },
+    { "sample_id": "DEV3X-076", "target_url": "http://www.reactsight.com/" },
+    { "sample_id": "DEV3-032", "target_url": "https://chrome.google.com/webstore/detail/omni/mapjgeachilmcbbokkgcbgpbakaaeehi?hl=en&authuser=0" },
+    { "sample_id": "OPT-B-HUM-057", "target_url": "https://docs.google.com/spreadsheets/d/1jnds3X_-RSTN4ATuOFV-v6tar0KfAla88vC43Vq6ubc/edit" },
+    { "sample_id": "DEV3X-074", "target_url": "https://notion-clone.kmuenster.com/" }
+  ]
+}

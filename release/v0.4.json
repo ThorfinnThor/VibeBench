@@ -22,7 +22,10 @@
     "recall": 0.8571428571428571,
     "recallWilson95": [0.7333229377608557, 0.9290357627959323],
     "f1": 0.84,
-    "independent": true
+    "independent": true,
+    "status": "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE",
+    "currentPerformanceClaim": false,
+    "rerunDecision": "DEFERRED_UNTIL_OPTION_B_V4_DEVELOPMENT_COLLECTOR_IS_STABLE"
   },
   "userAgent": "VibeBench/0.4.0 (+public website evidence scan)"
 }

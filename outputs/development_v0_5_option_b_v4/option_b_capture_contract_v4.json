@@ -1,0 +1,141 @@
+{
+  "schema_version": "vibebench.option_b.capture_contract.v4",
+  "locked_at": "2026-08-15T00:00:00.000Z",
+  "status": "ISOLATED_SIX_SITE_PILOT_APPROVED",
+  "primary_task": "strong_visible_vibe_footprint",
+  "scope": "label-blind public-surface capture in an ephemeral isolated browser runtime",
+  "claims": {
+    "authorship_probability": false,
+    "ai_generated_code_percentage": false,
+    "security_changes_vibe_score": false,
+    "capture_completeness_equals_model_confidence": false,
+    "declared_font_category_equals_rendered_glyph_font": false
+  },
+  "execution_gate": {
+    "mode": "option_b_v4_isolated_container",
+    "six_site_pilot_may_execute": true,
+    "repeat_required_before_expansion": true,
+    "maximum_extension_after_repeat_review": 20,
+    "full_81_site_run_may_execute": false,
+    "independent_confirmation_may_execute": false
+  },
+  "collector_blinding": {
+    "input_fields": ["sample_id", "target_url"],
+    "fields_unavailable_to_collector": ["label", "target", "target_group", "cohort", "provenance_url", "previous_score", "previous_outcome"],
+    "model_scores_inspected_during_collection": false,
+    "previous_public_surface_features_inspected_during_collection": false,
+    "join_labels_after_capture_freeze": true
+  },
+  "isolation_requirements": {
+    "ephemeral_container": true,
+    "non_root": true,
+    "chromium_sandbox": "enabled with the official Playwright v1.54.2 seccomp profile",
+    "read_only_root_filesystem": true,
+    "linux_capabilities": "drop_all",
+    "no_new_privileges": true,
+    "collector_direct_network": false,
+    "collector_network": "Docker internal network only",
+    "egress": "separate peer-pinning proxy on standard HTTP/HTTPS ports",
+    "private_or_reserved_addresses": "blocked before connect",
+    "connected_peer": "must equal DNS-pinned public address",
+    "service_workers": "blocked",
+    "websockets": "blocked",
+    "request_methods": ["GET", "HEAD"],
+    "downloads": false,
+    "docker_socket_mounted": false,
+    "resource_limits_required": true,
+    "collector_and_egress_image_ids_recorded": true
+  },
+  "runtime_requirements": {
+    "browser_engine": "Playwright 1.54.2 with Chromium from the matching official Playwright image",
+    "browser_version": "recorded per run",
+    "locale": "de-DE",
+    "timezone": "Europe/Berlin",
+    "color_scheme": "light",
+    "reduced_motion": "reduce",
+    "device_scale_factor": 1,
+    "fresh_anonymous_context_per_attempt": true,
+    "cookies_or_authenticated_state": false,
+    "cache": "fresh context per attempt",
+    "user_agent": "fixed before first attempt"
+  },
+  "viewports": [
+    { "id": "desktop", "width": 1440, "height": 900, "full_page": false }
+  ],
+  "budgets": {
+    "navigation_timeout_ms": 15000,
+    "readiness_timeout_ms": 12000,
+    "extraction_timeout_ms": 10000,
+    "attempts_per_viewport": 1,
+    "maximum_visible_elements": 2000,
+    "maximum_dom_depth": 80,
+    "maximum_same_origin_stylesheets": 8,
+    "maximum_stylesheet_bytes_each": 300000,
+    "maximum_total_stylesheet_bytes": 1500000
+  },
+  "readiness": {
+    "navigation_event": "domcontentloaded",
+    "sampling_interval_ms": 500,
+    "required_consecutive_stable_samples": 2,
+    "stable_if_document_dimensions_delta_px_max": 2,
+    "stable_if_visible_element_count_delta_share_max": 0.02,
+    "font_readiness_wait": true,
+    "stabilization_css_installed_before_readiness": true,
+    "stabilization_stylesheet_excluded_from_css_metrics": true,
+    "readiness_and_capture_visibility_predicate_shared": true
+  },
+  "semantic_corrections_from_v3": [
+    "ancestor visibility and overflow clipping are considered",
+    "section and form receive landmark roles only when named",
+    "interactive excludes disabled, inert and negative-tabindex controls",
+    "font fields describe declared stack categories and do not claim active rendered glyph fonts",
+    "non-pixel CSS lengths are typed and never coerced to zero pixels",
+    "sibling aggregation is linear rather than repeated full-array search",
+    "payload validation is an allowlist schema"
+  ],
+  "rendered_content_eligibility": {
+    "minimum_visible_text_characters": 80,
+    "minimum_visible_elements": 8,
+    "failed_eligibility_is_not_a_class_prediction": true
+  },
+  "terminal_outcomes": [
+    { "code": "success", "family": "success" },
+    { "code": "invalid_url", "family": "input" },
+    { "code": "private_or_disallowed_target", "family": "input" },
+    { "code": "egress_policy_blocked", "family": "blocked" },
+    { "code": "dns_unresolved", "family": "reachability" },
+    { "code": "tcp_connection_failed", "family": "reachability" },
+    { "code": "tls_certificate_error", "family": "reachability" },
+    { "code": "http_blocked_or_denied", "family": "blocked" },
+    { "code": "http_error", "family": "reachability" },
+    { "code": "navigation_timeout", "family": "timeout" },
+    { "code": "dom_readiness_timeout", "family": "timeout" },
+    { "code": "ineligible_empty_or_interstitial", "family": "content" },
+    { "code": "capture_surface_unstable", "family": "collector" },
+    { "code": "computed_style_extraction_failed", "family": "collector" },
+    { "code": "structural_aggregation_failed", "family": "collector" },
+    { "code": "serialization_failed", "family": "collector" },
+    { "code": "unknown_technical_error", "family": "unknown" }
+  ],
+  "privacy_and_retention": {
+    "raw_html_persisted": false,
+    "full_visible_text_persisted": false,
+    "network_response_bodies_persisted": false,
+    "screenshots_created": false,
+    "target_urls_persisted_in_capture_or_audit": false,
+    "derived_aggregate_payload_persisted": true,
+    "attempt_audit_persisted": true
+  },
+  "repeat_protocol": {
+    "same_six_rows": true,
+    "same_contract_and_images": true,
+    "minimum_hours_after_first_run": 24,
+    "maximum_hours_after_first_run": 72,
+    "technical_review_before_extension": true
+  },
+  "confirmation_policy": {
+    "current_result_status": "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE",
+    "current_precision_recall_are_primary_claim": false,
+    "fresh_independent_confirmation": "deferred until the v4 development collector and feature definitions are stable"
+  }
+}

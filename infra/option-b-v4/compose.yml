@@ -1,0 +1,63 @@
+name: vibebench-option-b-v4
+
+services:
+  egress:
+    build:
+      context: ../..
+      dockerfile: infra/option-b-v4/Dockerfile.egress
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    init: true
+    pids_limit: 64
+    mem_limit: 128m
+    cpus: 0.50
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=16m
+    networks: [collector_internal, public_egress]
+    healthcheck:
+      test: [CMD, node, -e, "require('http').get('http://127.0.0.1:8080/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 2s
+      timeout: 2s
+      retries: 15
+
+  collector:
+    build:
+      context: ../..
+      dockerfile: infra/option-b-v4/Dockerfile.collector
+    depends_on:
+      egress:
+        condition: service_healthy
+    environment:
+      OPTION_B_V4_ISOLATED_RUNTIME: "1"
+      OPTION_B_V4_ARTIFACT_ROOT: /artifacts
+      OPTION_B_V4_COLLECTOR_IMAGE: ${OPTION_B_V4_COLLECTOR_IMAGE:?collector image id required}
+      OPTION_B_V4_EGRESS_IMAGE: ${OPTION_B_V4_EGRESS_IMAGE:?egress image id required}
+      OPTION_B_V4_COLLECTOR_BASE_DIGEST: ${OPTION_B_V4_COLLECTOR_BASE_DIGEST:?collector base digest required}
+      OPTION_B_V4_EGRESS_BASE_DIGEST: ${OPTION_B_V4_EGRESS_BASE_DIGEST:?egress base digest required}
+      OPTION_B_V4_COLLECTOR_SOURCE_SHA256: ${OPTION_B_V4_COLLECTOR_SOURCE_SHA256:?collector source fingerprint required}
+      OPTION_B_V4_EGRESS_SOURCE_SHA256: ${OPTION_B_V4_EGRESS_SOURCE_SHA256:?egress source fingerprint required}
+      HTTP_PROXY: http://egress:8080
+      HTTPS_PROXY: http://egress:8080
+      NO_PROXY: ""
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+      - seccomp=infra/option-b-v4/seccomp_profile.json
+    init: true
+    pids_limit: 256
+    mem_limit: 1536m
+    cpus: 2.0
+    shm_size: 256m
+    tmpfs:
+      - /tmp:rw,nosuid,nodev,size=256m
+    volumes:
+      - ${OPTION_B_V4_ARTIFACT_DIR:?artifact directory required}:/artifacts:rw
+    networks: [collector_internal]
+
+networks:
+  collector_internal:
+    internal: true
+  public_egress:
+    driver: bridge

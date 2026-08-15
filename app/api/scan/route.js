@@ -257,7 +257,9 @@ export async function POST(request) {
         technicalCoverage: release.confirmation.coverage,
         precision: release.confirmation.precision,
         recall: release.confirmation.recall,
-        f1: release.confirmation.f1
+        f1: release.confirmation.f1,
+        confirmationStatus: release.confirmation.status,
+        performanceClaimCurrent: release.confirmation.currentPerformanceClaim
       },
       ...analysis,
       warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er ist keine AI-Wahrscheinlichkeit, kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."

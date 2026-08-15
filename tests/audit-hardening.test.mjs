@@ -49,7 +49,7 @@ const validSuccess = () => ({
   recommendations: [],
   assetScan: { discovered: 0, selected: 0, ignoredByCap: 0, candidates: 0, fetched: 0, errors: 0, bytes: 0, truncated: 0 },
   manifestScan: { linked: false, fetched: false, validJson: false, bytes: 0, truncated: false },
-  model: { version: "v0.4", releaseStatus: "RESEARCH_BETA", independentHoldout: 100, successfulHoldoutScans: 99, technicalCoverage: .99, precision: .85, recall: .85, f1: .85 },
+  model: { version: "v0.4", releaseStatus: "RESEARCH_BETA", independentHoldout: 100, successfulHoldoutScans: 99, technicalCoverage: .99, precision: .85, recall: .85, f1: .85, confirmationStatus: "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE", performanceClaimCurrent: false },
   directEvidence: [],
   contextEvidence: [],
   headerEvidence: [],
@@ -128,5 +128,7 @@ test("production release manifest binds the frozen model hash and confirmation c
   assert.equal(createHash("sha256").update(model).digest("hex"), release.model.sha256);
   assert.equal(release.model.threshold, .44);
   assert.deepEqual([release.confirmation.total, release.confirmation.successful, release.confirmation.coverage], [100, 99, .99]);
+  assert.equal(release.confirmation.status, "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE");
+  assert.equal(release.confirmation.currentPerformanceClaim, false);
   assert.equal(release.status, "RESEARCH_BETA");
 });

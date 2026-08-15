@@ -113,9 +113,15 @@ See:
 
 ### Recommended next implementation order
 
-1. Choose and document the disposable/rootless browser runtime and egress policy.
-2. Freeze an Option-B v4 capture contract that corrects the measurement issues listed above.
-3. Repeat the six-site label-blind pilot twice with the v4 collector and the same fixed runtime.
+1. **Completed:** use an ephemeral non-root Docker runtime on GitHub-hosted runners, with an internal-only collector network and a separate DNS/peer-pinning egress proxy.
+2. **Completed:** freeze the Option-B v4 capture contract and corrected positive-schema collector. The local environment must not fall back to a non-isolated run when Docker is unavailable.
+3. **Next:** run the six-site label-blind pilot as `run-1`, then repeat the same manifest, source fingerprints and base-image digests 24–72 hours later as `run-2`.
 4. If the technical, privacy and stability gates pass, freeze a conservative 20-site expansion manifest; do not jump directly to 81.
 5. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
 6. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.
+
+The existing 82.4% Precision / 85.7% Recall confirmation is now explicitly a
+`LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE` result, not a current performance
+claim. A fresh independent confirmation is deferred until the v4 Development
+collector and derived features are stable. See
+`outputs/VIBEBENCH_OPTION_B_V4_ISOLATION_DECISION_2026-08-15.md`.

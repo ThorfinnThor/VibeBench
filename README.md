@@ -21,8 +21,12 @@ Autorenschaft.
 ## Aktueller Forschungsstand
 
 Der aktuell in die Web-App integrierte, eingefrorene v0.4-Kandidat erreichte im
-unabhängigen 100er-Holdout 82,4 % Precision und 85,7 % Recall bei 99/100
-technisch erfolgreichen Scans. Vollständiger Stand:
+damaligen unabhängigen 100er-Holdout 82,4 % Precision und 85,7 % Recall bei
+99/100 technisch erfolgreichen Scans. Diese Zahlen sind nur noch als
+**Legacy-Ergebnis** gekennzeichnet: Die Vollständigkeit der damaligen Captures
+ist nachträglich nicht belegbar, daher sind sie kein aktueller Leistungsnachweis.
+Eine frische unabhängige Confirmation folgt erst, wenn der isolierte
+Option-B-v4-Development-Collector stabil ist. Vollständiger Stand:
 [`outputs/VIBEBENCH_STATUS_2026-08-10.md`](outputs/VIBEBENCH_STATUS_2026-08-10.md).
 
 - Master-Dataset: 2.000 Samples in vier Kohorten.

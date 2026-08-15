@@ -25,7 +25,7 @@ type ScanResult = {
   evidenceCoverage?: EvidenceCoverage;
   security?: { score: number; checks: SecurityCheck[] };
   recommendations?: Recommendation[];
-  model?: { version: string; independentHoldout: number; precision: number; recall: number; f1: number };
+  model?: { version: string; independentHoldout: number; precision: number; recall: number; f1: number; confirmationStatus?: string; performanceClaimCurrent?: boolean };
   directEvidence?: Evidence[];
   directBuilderCount?: number;
   contextEvidence?: Evidence[];
@@ -328,10 +328,10 @@ export default function Home() {
         <article><span>03</span><h3>Hinweise sauber trennen</h3><p>Beobachtete technische Findings werden von optionaler manueller Guidance getrennt und nach Wirkung geordnet.</p></article>
       </div>
       <div className="method-validation">
-        <div><span>Precision</span><strong>{(release.confirmation.precision * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: {formatInterval(release.confirmation.precisionWilson95)} %</small></div>
-        <div><span>Recall</span><strong>{(release.confirmation.recall * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: {formatInterval(release.confirmation.recallWilson95)} %</small></div>
-        <div><span>Technische Abdeckung</span><strong>{release.confirmation.successful}/{release.confirmation.total}</strong><small>Technisch erfolgreiche unabhängige Scans</small></div>
-        <p>Die Werte gehören zur eingefrorenen binären {release.displayVersion}-Bestätigung und validieren weder einzelne Score-Bänder noch eine AI-Wahrscheinlichkeit. Die strengere Evidenzextraktion dieses Beta-Releases benötigt vor einer neuen Leistungsbehauptung eine eigene unabhängige Replikation.</p>
+        <div><span>Legacy-Precision</span><strong>{(release.confirmation.precision * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>Historisch · 95-%-Wilson-Intervall: {formatInterval(release.confirmation.precisionWilson95)} %</small></div>
+        <div><span>Legacy-Recall</span><strong>{(release.confirmation.recall * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>Historisch · 95-%-Wilson-Intervall: {formatInterval(release.confirmation.recallWilson95)} %</small></div>
+        <div><span>Legacy-Abdeckung</span><strong>{release.confirmation.successful}/{release.confirmation.total}</strong><small>Capture-Vollständigkeit nachträglich nicht belegbar</small></div>
+        <p><strong>Kein aktueller Leistungsnachweis:</strong> Diese eingefrorenen {release.displayVersion}-Werte bleiben als Legacy-Ergebnis dokumentiert. Sie validieren weder einzelne Score-Bänder noch eine AI-Wahrscheinlichkeit und werden erst nach Stabilisierung des neuen isolierten Collectors durch eine frische unabhängige Confirmation ersetzt.</p>
       </div>
     </section>
 
