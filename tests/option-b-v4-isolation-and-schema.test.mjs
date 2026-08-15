@@ -94,5 +94,10 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.doesNotMatch(workflow, /compose\.yml images -q/);
   assert.match(workflow, /docker image inspect --format '\{\{\.Id\}\}' vibebench-option-b-v4-collector:local/);
   assert.match(workflow, /docker image inspect --format '\{\{\.Id\}\}' vibebench-option-b-v4-egress:local/);
+  assert.match(workflow, /docker pull --quiet mcr\.microsoft\.com\/playwright:v1\.54\.2-noble/);
+  assert.match(workflow, /docker pull --quiet node:22\.13\.0-bookworm-slim/);
+  assert.match(workflow, /COLLECTOR_BASE_DIGEST=\$\(docker image inspect/);
+  assert.match(workflow, /EGRESS_BASE_DIGEST=\$\(docker image inspect/);
+  assert.doesNotMatch(workflow, /BASE_DIGEST=\$\(docker image inspect[^\n]+\)" >>/);
   assert.doesNotMatch(captureSource, /elements\.find\(/);
 });
