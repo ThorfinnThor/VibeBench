@@ -100,7 +100,33 @@ test("reports known response headers as context without changing the verdict", (
   ]);
   const result = analyzeHtml({ html: "<html></html>", url: "https://example.com/", headers });
   assert.equal(result.verdict.level, "indeterminate");
-  assert.ok(result.stackSignals.includes("Next.js"));
+  assert.equal(result.stackSignals.includes("Next.js"), false);
+  assert.deepEqual(result.headerEvidence.map((item) => item.label), ["Vercel response", "Cloudflare edge", "Next.js response"]);
+});
+
+test("ignores builder-looking content in inert markup and rejects deceptive badge hosts", () => {
+  const inert = analyzeHtml({
+    html: '<!-- <meta name="generator" content="Bolt"> --><script>"data-lov-id"</script><template><p data-base44></p></template><pre><a href="https://v0.dev">Built with v0</a></pre>',
+    url: "https://example.com/",
+    headers: {}
+  });
+  assert.deepEqual(inert.directEvidence, []);
+  for (const href of ["https://lovable.dev.example.com", "https://lovable.dev@evil.example", "https://evil.example/?next=https://lovable.dev"]) {
+    const result = analyzeHtml({ html: `<a href="${href}">Built with Lovable</a>`, url: "https://example.com/", headers: {} });
+    assert.deepEqual(result.directEvidence, [], href);
+  }
+});
+
+test("retains distinct markers while reporting unique builder count separately", () => {
+  const result = analyzeHtml({
+    html: '<meta name="generator" content="Bolt"><p data-bolt-id="1"></p>',
+    assetText: 'const boltGenerated="bolt-generated"; const generatedBy="bolt.new";',
+    url: "https://example.com/",
+    headers: {}
+  });
+  assert.equal(result.directBuilderCount, 1);
+  assert.equal(result.directEvidence.length, 4);
+  assert.equal(new Set(result.directEvidence.map(({ marker }) => marker)).size, 4);
 });
 
 test("reports a Google Frontend proxy response as generic context", () => {

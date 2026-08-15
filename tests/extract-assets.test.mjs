@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { extractSameOriginAssets, extractSameOriginManifest } from "../lib/extract-assets.mjs";
+import { extractSameOriginAssets, extractSameOriginManifest, selectSameOriginAssets } from "../lib/extract-assets.mjs";
 
 test("extracts capped same-origin scripts and stylesheets", () => {
   const html = `
@@ -17,6 +17,15 @@ test("extracts capped same-origin scripts and stylesheets", () => {
     { kind: "script", url: "https://example.com/assets/b.js" },
     { kind: "stylesheet", url: "https://example.com/assets/app.css?x=1&y=2" }
   ]);
+});
+
+test("reports all discovered assets separately from the bounded selection", () => {
+  const html = `${Array.from({ length: 20 }, (_, index) => `<script src="/s${index}.js"></script>`).join("")} ${Array.from({ length: 10 }, (_, index) => `<link rel="stylesheet" href="/c${index}.css">`).join("")}`;
+  const result = selectSameOriginAssets({ html, baseUrl: "https://example.com/", maxScripts: 4, maxStylesheets: 2 });
+  assert.deepEqual(result.discovered, { scripts: 20, stylesheets: 10, total: 30 });
+  assert.deepEqual(result.selected, { scripts: 4, stylesheets: 2, total: 6 });
+  assert.equal(result.ignoredByCap, 24);
+  assert.equal(result.assets.length, 6);
 });
 
 test("rejects credentials, non-http URLs, and duplicate assets", () => {

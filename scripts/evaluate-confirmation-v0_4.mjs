@@ -1,4 +1,45 @@
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-const manifestPath = path.resolve("outputs/confirmation_v0_4/vibebench_confirmation_holdout_100_v0_4.json"); const rawPath = path.resolve("outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_raw_results_v0_4.json"); const metricsPath = path.resolve("outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_metrics_v0_4.json"); const reportPath = path.resolve("outputs/confirmation_v0_4/blind_run_v0_4/VIBEBENCH_CONFIRMATION_EVALUATION_V0_4.md"); const [manifestText, rawText] = await Promise.all([manifestPath, rawPath].map((file) => readFile(file, "utf8"))); const manifest = JSON.parse(manifestText); const raw = JSON.parse(rawText); if (manifest.samples?.length !== 100 || raw.results?.length !== 100 || raw.labels_used_by_runner !== false) throw new Error("Incomplete or non-blind v0.4 results."); const labels = new Map(manifest.samples.map((row) => [row.sample_id, row.label])); let tp = 0, fp = 0, tn = 0, fn = 0; const rows = raw.results.map((row) => { const label = labels.get(row.sample_id); if (row.ok) { if (label === "AI" && row.predicted_positive) tp++; else if (label === "AI") fn++; else if (row.predicted_positive) fp++; else tn++; } return { ...row, label }; }); const divide = (a, b) => b ? a / b : null; const precision = divide(tp, tp + fp); const recall = divide(tp, tp + fn); const specificity = divide(tn, tn + fp); const accuracy = divide(tp + tn, tp + fp + tn + fn); const f1 = precision + recall ? 2 * precision * recall / (precision + recall) : 0; const passed = precision >= 0.8 && recall >= 0.8; const metrics = { schema_version: "v0.4-confirmation-metrics", evaluated_at: new Date().toISOString(), status: passed ? "EXTERNAL_80_80_GATE_PASSED" : "EXTERNAL_80_80_GATE_FAILED", independent_confirmation: true, manifest_sha256: createHash("sha256").update(manifestText).digest("hex"), raw_results_sha256: createHash("sha256").update(rawText).digest("hex"), technical: { total: 100, successful: raw.successful, errors: raw.technical_errors, coverage: raw.successful / 100 }, confusion: { tp, fp, tn, fn }, primary: { precision, recall, specificity, accuracy, f1 }, gate: { minimum_precision: 0.8, minimum_recall: 0.8, passed }, rows }; const pct = (value) => `${(100 * value).toFixed(1)} %`; const report = `# VibeBench independent confirmation v0.4\n\nStatus: **${metrics.status}**\n\n| Kennzahl | Wert | Gate |\n|---|---:|---:|\n| Precision | ${pct(precision)} | ≥ 80,0 % |\n| Recall | ${pct(recall)} | ≥ 80,0 % |\n| Specificity | ${pct(specificity)} | — |\n| Accuracy | ${pct(accuracy)} | — |\n| F1 | ${pct(f1)} | — |\n| technische Abdeckung | ${pct(metrics.technical.coverage)} | — |\n\nConfusion Matrix: TP ${tp}, FP ${fp}, TN ${tn}, FN ${fn}.\n\n- 100 neue Projektfamilien (50 AI / 50 Human), vor dem Lauf und ohne Modellscore ausgewählt.\n- Neue AI-Akquisitionsquelle: öffentliche genehmigte Submissions; sechs Builder-Strata.\n- Label-freier Runner, exakt ein technischer Retry; frühere Holdouts nicht trainiert.\n`; await Promise.all([writeFile(metricsPath, `${JSON.stringify(metrics, null, 2)}\n`, "utf8"), writeFile(reportPath, report, "utf8")]); process.stdout.write(`${JSON.stringify({ metrics: path.relative(process.cwd(), metricsPath), report: path.relative(process.cwd(), reportPath), status: metrics.status, technical: metrics.technical, confusion: metrics.confusion, primary: metrics.primary }, null, 2)}\n`); if (!passed) process.exitCode = 1;
+import { evaluateConfirmationIntegrity } from "../lib/confirmation-v0_4-integrity.mjs";
+
+const root = path.resolve("outputs/confirmation_v0_4");
+const manifestPath = path.join(root, "vibebench_confirmation_holdout_100_v0_4.json");
+const queuePath = path.join(root, "vibebench_confirmation_holdout_100_v0_4.scan-queue.json");
+const rawPath = path.join(root, "blind_run_v0_4", "vibebench_confirmation_raw_results_v0_4.json");
+const metricsPath = path.join(root, "blind_run_v0_4", "vibebench_confirmation_integrity_reconstruction_v0_4.json");
+const reportPath = path.join(root, "blind_run_v0_4", "VIBEBENCH_CONFIRMATION_INTEGRITY_RECONSTRUCTION_V0_4.md");
+const modelPath = path.resolve("outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json");
+const sha256 = (value) => createHash("sha256").update(value).digest("hex");
+const [manifestText, queueText, rawText, modelText] = await Promise.all([manifestPath, queuePath, rawPath, modelPath].map((file) => readFile(file, "utf8")));
+const manifest = JSON.parse(manifestText);
+const queue = JSON.parse(queueText);
+const raw = JSON.parse(rawText);
+const model = JSON.parse(modelText);
+
+if (queue.manifest_sha256 !== sha256(manifestText)) throw new Error("Queue is not bound to the current manifest.");
+if (raw.queue_sha256 !== sha256(queueText)) throw new Error("Raw results are not bound to the current queue.");
+if (raw.model_sha256 !== sha256(modelText)) throw new Error("Raw results are not bound to the frozen model.");
+const evaluated = evaluateConfirmationIntegrity({ manifest, raw, model });
+const { precision, recall, specificity, accuracy, f1 } = evaluated.primary;
+const metricThresholdsPassed = precision >= 0.8 && recall >= 0.8;
+const completenessVerified = evaluated.capture_completeness.unverifiable_legacy_rows === 0;
+const metrics = {
+  schema_version: "v0.4-confirmation-metrics-integrity-reconstruction-v2",
+  evaluated_at: new Date().toISOString(),
+  status: completenessVerified ? (metricThresholdsPassed ? "EXTERNAL_80_80_GATE_PASSED" : "EXTERNAL_80_80_GATE_FAILED") : "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE",
+  independent_confirmation: true,
+  manifest_sha256: sha256(manifestText),
+  raw_results_sha256: sha256(rawText),
+  technical: evaluated.technical,
+  capture_completeness: evaluated.capture_completeness,
+  confusion: evaluated.confusion,
+  primary: evaluated.primary,
+  gate: { minimum_precision: 0.8, minimum_recall: 0.8, metric_thresholds_passed: metricThresholdsPassed, capture_completeness_required: true, passed: metricThresholdsPassed && completenessVerified },
+  rows: evaluated.rows
+};
+const pct = (value) => `${(100 * value).toFixed(1)} %`;
+const report = `# VibeBench independent confirmation v0.4 — integrity reconstruction\n\nStatus: **${metrics.status}**\n\n| Kennzahl | Wert | Gate |\n|---|---:|---:|\n| Precision | ${pct(precision)} | ≥ 80,0 % |\n| Recall | ${pct(recall)} | ≥ 80,0 % |\n| Specificity | ${pct(specificity)} | — |\n| Accuracy | ${pct(accuracy)} | — |\n| F1 | ${pct(f1)} | — |\n| technische Abdeckung | ${pct(metrics.technical.coverage)} | — |\n\nConfusion Matrix: TP ${evaluated.confusion.tp}, FP ${evaluated.confusion.fp}, TN ${evaluated.confusion.tn}, FN ${evaluated.confusion.fn}.\n\nThe evaluator reconstructed every stored classification from probability and the frozen threshold and verified exact ID sets, labels, class balance and technical totals. The legacy scanner did not persist stream-completeness evidence for ${evaluated.capture_completeness.unverifiable_legacy_rows} successful rows; therefore the prior performance result is not promoted as capture-completeness-verified. The original frozen artifacts remain unchanged.\n`;
+await Promise.all([writeFile(metricsPath, `${JSON.stringify(metrics, null, 2)}\n`, "utf8"), writeFile(reportPath, report, "utf8")]);
+process.stdout.write(`${JSON.stringify({ metrics: path.relative(process.cwd(), metricsPath), report: path.relative(process.cwd(), reportPath), status: metrics.status, technical: metrics.technical, confusion: metrics.confusion, primary: metrics.primary, capture_completeness: metrics.capture_completeness }, null, 2)}\n`);
+if (!metrics.gate.passed) process.exitCode = 1;

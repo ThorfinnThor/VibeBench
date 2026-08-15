@@ -1,9 +1,10 @@
 import { lookup } from "node:dns/promises";
 import { randomUUID } from "node:crypto";
+import net from "node:net";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
-import { extractSameOriginAssets, extractSameOriginManifest } from "../../../lib/extract-assets.mjs";
+import { extractSameOriginManifest, selectSameOriginAssets } from "../../../lib/extract-assets.mjs";
 import { describeEvidenceCoverage } from "../../../lib/evidence-coverage.mjs";
 import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
 import { assertPublicAddresses, normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
@@ -15,6 +16,13 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
+import {
+  assertEligibleHtmlDocument,
+  assertScanRequestBody,
+  assertSupportedTextEncoding,
+  assertV04DocumentSemantics,
+  parseMediaType
+} from "../../../lib/scan-response-policy.mjs";
 import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 import release from "../../../release/v0.4.json";
@@ -29,8 +37,12 @@ const MAX_REDIRECTS = 5;
 const MAX_ASSET_REDIRECTS = 3;
 
 async function validatePublicHost(url) {
-  const host = url.hostname.toLowerCase();
+  const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, "");
   if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) throw new Error("Lokale und private Adressen werden nicht gescannt.");
+  if (net.isIP(host)) {
+    assertPublicAddresses([{ address: host }]);
+    return;
+  }
   let timeout;
   const addresses = await Promise.race([
     lookup(host, { all: true, verbatim: true }),
@@ -62,18 +74,21 @@ async function fetchPublicHtml(initialUrl, signal) {
     }
     if (!response.ok) throw new Error(`Website antwortet mit HTTP ${response.status}.`);
     const contentType = response.headers.get("content-type") || "";
-    if (!/text\/html|application\/xhtml\+xml/i.test(contentType)) throw new Error("Die URL liefert keine HTML-Seite.");
+    if (!["text/html", "application/xhtml+xml"].includes(parseMediaType(contentType))) throw new Error("Die URL liefert keine HTML-Seite.");
+    assertSupportedTextEncoding(contentType);
     const declaredSize = Number(response.headers.get("content-length") || 0);
     if (declaredSize > MAX_HTML_BYTES) throw new Error("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
     const body = await readLimitedText(response, MAX_HTML_BYTES);
     if (body.truncated) throw new Error("Die HTML-Antwort ist für den sicheren Schnellscan zu groß.");
+    assertEligibleHtmlDocument({ status: response.status, headers: response.headers, html: body.text });
+    assertV04DocumentSemantics(body.text);
     const headers = Object.fromEntries(response.headers.entries());
     return { html: body.text, htmlBytes: body.bytes, url: current.toString(), status: response.status, headers };
   }
   throw new Error("Zu viele Weiterleitungen.");
 }
 
-async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, contentTypePattern, maxBytes, signal }) {
+async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, allowedMediaTypes, maxBytes, signal }) {
   let current = initialUrl;
   for (let redirect = 0; redirect <= MAX_ASSET_REDIRECTS; redirect += 1) {
     current = normalizePublicUrl(current.toString());
@@ -92,18 +107,20 @@ async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, content
     }
     if (!response.ok) throw new Error(`Asset HTTP ${response.status}.`);
     const contentType = response.headers.get("content-type") || "";
-    if (contentType && !contentTypePattern.test(contentType)) {
-      throw new Error("Unsupported asset content type.");
-    }
-    return readLimitedText(response, maxBytes);
+    if (!allowedMediaTypes.includes(parseMediaType(contentType))) throw new Error("Unsupported asset content type.");
+    assertSupportedTextEncoding(contentType);
+    const body = await readLimitedText(response, maxBytes);
+    if (body.truncated) throw new Error("Asset response exceeds byte limit.");
+    return body;
   }
   throw new Error("Too many asset redirects.");
 }
 
-function fetchPublicAsset(initialUrl, requiredOrigin, signal) {
-  return fetchSameOriginText(initialUrl, requiredOrigin, {
-    accept: "text/css,text/javascript,application/javascript,application/ecmascript,text/plain",
-    contentTypePattern: /javascript|ecmascript|text\/css|text\/plain|application\/octet-stream/i,
+function fetchPublicAsset(asset, requiredOrigin, signal) {
+  const scriptTypes = ["text/javascript", "application/javascript", "application/ecmascript", "text/ecmascript"];
+  return fetchSameOriginText(new URL(asset.url), requiredOrigin, {
+    accept: asset.kind === "stylesheet" ? "text/css" : "text/javascript,application/javascript,application/ecmascript",
+    allowedMediaTypes: asset.kind === "stylesheet" ? ["text/css"] : scriptTypes,
     maxBytes: MAX_ASSET_BYTES,
     signal
   });
@@ -112,7 +129,7 @@ function fetchPublicAsset(initialUrl, requiredOrigin, signal) {
 function fetchPublicManifest(initialUrl, requiredOrigin, signal) {
   return fetchSameOriginText(initialUrl, requiredOrigin, {
     accept: "application/manifest+json,application/json,text/plain",
-    contentTypePattern: /manifest\+json|application\/json|text\/json|text\/plain/i,
+    allowedMediaTypes: ["application/manifest+json", "application/json"],
     maxBytes: MAX_MANIFEST_BYTES,
     signal
   });
@@ -124,25 +141,30 @@ export async function POST(request) {
   const deadline = AbortSignal.timeout(18_000);
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION };
   try {
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
     let body;
     try {
       body = await request.json();
     } catch {
       throw new Error("Ungültige JSON-Anfrage.");
     }
-    const inputUrl = normalizePublicUrl(body?.url);
+    const inputUrl = normalizePublicUrl(assertScanRequestBody(body));
     const signal = combinedSignal(request.signal, deadline);
     const fetched = await fetchPublicHtml(inputUrl, signal);
-    const assetCandidates = extractSameOriginAssets({ html: fetched.html, baseUrl: fetched.url });
+    signal.throwIfAborted();
+    const assetSelection = selectSameOriginAssets({ html: fetched.html, baseUrl: fetched.url });
+    const assetCandidates = assetSelection.assets;
     const manifestUrl = extractSameOriginManifest({ html: fetched.html, baseUrl: fetched.url });
     const requiredOrigin = new URL(fetched.url).origin;
     const [assetResults, manifestResult] = await Promise.all([
       Promise.allSettled(assetCandidates.map(async (asset) => ({
         ...asset,
-        ...await fetchPublicAsset(new URL(asset.url), requiredOrigin, signal)
+        ...await fetchPublicAsset(asset, requiredOrigin, signal)
       }))),
       manifestUrl ? fetchPublicManifest(new URL(manifestUrl), requiredOrigin, signal).catch(() => null) : Promise.resolve(null)
     ]);
+    signal.throwIfAborted();
     const fetchedAssets = assetResults
       .filter((result) => result.status === "fulfilled")
       .map((result) => result.value);
@@ -177,11 +199,13 @@ export async function POST(request) {
     const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
     const evidenceCoverage = describeEvidenceCoverage({
       assetCandidates: assetCandidates.length,
+      discoveredAssets: assetSelection.discovered.total,
       fetchedAssets: fetchedAssets.length,
       truncatedAssets: analysis.metrics.truncatedAssets,
       manifestLinked: Boolean(manifestUrl),
       manifestFetched: Boolean(manifestResult)
     });
+    if (evidenceCoverage.level === "limited") throw new Error("Auswertungsbreite unzureichend für einen belastbaren Score.");
     const payload = {
       apiVersion: SCAN_API_VERSION,
       ok: true,
@@ -191,6 +215,9 @@ export async function POST(request) {
       httpStatus: fetched.status,
       analyzedAt: new Date().toISOString(),
       assetScan: {
+        discovered: assetSelection.discovered.total,
+        selected: assetSelection.selected.total,
+        ignoredByCap: assetSelection.ignoredByCap,
         candidates: assetCandidates.length,
         fetched: fetchedAssets.length,
         errors: assetResults.length - fetchedAssets.length,
@@ -238,9 +265,8 @@ export async function POST(request) {
     console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
-    const message = error instanceof Error ? error.message : "Der Scan ist fehlgeschlagen.";
     const technicalOutcome = classifyScanError(error);
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
-    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, error: message, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
+    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   }
 }

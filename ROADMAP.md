@@ -1,6 +1,6 @@
 # VibeBench roadmap
 
-Updated: 2026-08-14
+Updated: 2026-08-15
 
 This roadmap preserves the agreed product direction after dropping a rigid 90/90 Precision/Recall release target. Audit hardening takes precedence; model and product research resumes on the frozen Option-B Development set afterward.
 
@@ -23,20 +23,25 @@ The index is not a probability of AI use, a percentage of AI-generated code, or 
 - Define an indeterminate state for sparse or contradictory observable evidence.
 - Validate stability under harmless page/build changes before changing public claims.
 
-### 2. Improve observable features on the frozen 81-site Option-B set
+### 2. Prepare a corrected Option-B v4 collector before expanding
 
 No additional website acquisition is planned for this phase.
 
-- component and section repetition;
-- layout-template similarity;
-- spacing, radius and design-token consistency;
-- CTA and generic copy-pattern structure;
-- icon and asset-graph consistency;
-- placeholder/demo content;
-- bundle and production-hygiene signals;
-- visible brand differentiation.
+The v3 two-run pilot remains a useful repeatability artifact, but the fifth audit
+identified capture-surface, semantic and runtime-isolation gaps. Neither a
+20-site nor an 81-site capture is approved with the v3 collector. A v4 contract
+must be frozen and re-piloted first, without rewriting the v3 artifacts.
 
-Predefine the feature contract before evaluating it. Keep hostname, URL, provenance and builder declarations out of model features.
+- isolate the browser in a disposable non-root runtime with an explicit egress policy;
+- apply capture mutations before readiness and verify the same surface remains stable;
+- define visibility, accessible role/name and active-font semantics precisely;
+- exclude collector-injected CSS from page measurements;
+- correct non-pixel CSS units and interactive-state rules;
+- use linear-time repetition aggregation and positive payload validation.
+
+Only after a new six-site repeat pilot passes may a fixed 20-site label-blind
+technical expansion be considered. Keep hostname, URL, provenance and builder
+declarations out of model features.
 
 ### 3. Replace the old success target with evidence-based gates
 
@@ -108,8 +113,9 @@ See:
 
 ### Recommended next implementation order
 
-1. Decide whether the next label-blind technical capture is a conservative fixed 20-site expansion or the full frozen 81-site Development set.
-2. Freeze the selected manifest and technical-yield gates before capture; keep labels unavailable to the collector and feature builder.
-3. Audit capture completeness, category/cohort yield and resource bounds; repeat a fixed subset before any label join.
-4. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
-5. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.
+1. Choose and document the disposable/rootless browser runtime and egress policy.
+2. Freeze an Option-B v4 capture contract that corrects the measurement issues listed above.
+3. Repeat the six-site label-blind pilot twice with the v4 collector and the same fixed runtime.
+4. If the technical, privacy and stability gates pass, freeze a conservative 20-site expansion manifest; do not jump directly to 81.
+5. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
+6. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.

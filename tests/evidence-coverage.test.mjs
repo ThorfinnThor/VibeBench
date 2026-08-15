@@ -6,7 +6,15 @@ test("describes broad evidence without turning coverage into score confidence", 
   const result = describeEvidenceCoverage({ assetCandidates: 4, fetchedAssets: 3, truncatedAssets: 0, manifestLinked: true, manifestFetched: true });
   assert.equal(result.level, "broad");
   assert.equal(result.affectsScore, false);
-  assert.deepEqual(result.scope, { html: "fetched", assetCandidates: 4, assetsFetched: 3, assetErrors: 1, truncatedAssets: 0, manifestLinked: true, manifestFetched: true });
+  assert.deepEqual(result.scope, { html: "fetched", assetsDiscovered: 4, assetsSelected: 4, assetCandidates: 4, assetsFetched: 3, assetErrors: 1, truncatedAssets: 0, manifestLinked: true, manifestFetched: true });
+});
+
+test("discloses when the bounded scanner selected only part of the discovered assets", () => {
+  const result = describeEvidenceCoverage({ assetCandidates: 6, discoveredAssets: 20, fetchedAssets: 6 });
+  assert.equal(result.level, "broad");
+  assert.equal(result.scope.assetsDiscovered, 20);
+  assert.equal(result.scope.assetsSelected, 6);
+  assert.match(result.summary, /6 von 6 ausgewählten.*20 passende Assets/);
 });
 
 test("marks severely incomplete or truncated asset inspection as limited", () => {

@@ -30,7 +30,13 @@ test("Development freeze content gate rejects parked domains", () => {
     html: '<a href="https://img.sedoparking.com">Buy this domain</a>'
   });
   assert.equal(parked.eligible, false);
-  assert.deepEqual(parked.disqualifying_signals, ["parking-server-header", "sedo-parking", "buy-this-domain"]);
+  assert.deepEqual(parked.disqualifying_signals, ["parking-server-header", "sedo-parking", "buy-this-domain", "no-meaningful-document-structure"]);
+});
+
+test("Development freeze content gate rejects challenge, expired and empty pages", () => {
+  assert.equal(assessDevelopmentPageQuality({ headers: new Headers(), html: "<title>Just a moment...</title><div id=cf-chl-widget></div>" }).eligible, false);
+  assert.equal(assessDevelopmentPageQuality({ headers: new Headers(), html: "<main>This domain has expired. Renewal instructions follow.</main>" }).eligible, false);
+  assert.equal(assessDevelopmentPageQuality({ headers: new Headers(), html: "<title>Hi</title>" }).eligible, false);
 });
 
 test("Development freeze content gate accepts an ordinary application page", () => {

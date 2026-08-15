@@ -20,6 +20,29 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
+SAMPLE_ID_PATTERN = re.compile(r"^[A-Z0-9][A-Z0-9_-]{0,63}$")
+
+
+def validate_sample_id(value: str) -> str:
+    """Return a manifest sample ID only when it is safe as a path component."""
+    if not isinstance(value, str) or not SAMPLE_ID_PATTERN.fullmatch(value):
+        raise ValueError(
+            "sample_id must match ^[A-Z0-9][A-Z0-9_-]{0,63}$; "
+            f"received {value!r}"
+        )
+    return value
+
+
+def contained_path(root: Path, *parts: str) -> Path:
+    """Resolve a child path and fail closed if it escapes the expected root."""
+    resolved_root = root.resolve()
+    candidate = resolved_root.joinpath(*parts).resolve()
+    try:
+        candidate.relative_to(resolved_root)
+    except ValueError:
+        raise ValueError(f"Path escapes configured root: {candidate}")
+    return candidate
+
 
 def run(cmd, cwd=None, check=True, env=None):
     process = subprocess.run(
@@ -238,14 +261,14 @@ def scan_local(snapshot_dir: Path, runtime: str, extractor: Path, result_json: P
 
 
 def process_sample(row, output_root: Path, lock_directory: Path, extractor: Path | None):
-    sample_id = row["sample_id"]
+    sample_id = validate_sample_id(row["sample_id"])
     repository = row["repo"]
     repo_url = row["repo_url"]
     strategy = row["strategy"]
     cutoff = row["cutoff"]
-    working = output_root / "_work" / sample_id
-    frozen = output_root / "snapshots" / sample_id
-    lock_file = lock_directory / f"{sample_id}.json"
+    working = contained_path(output_root, "_work", sample_id)
+    frozen = contained_path(output_root, "snapshots", sample_id)
+    lock_file = contained_path(lock_directory, f"{sample_id}.json")
     pinned = None
     if lock_file.exists():
         try:
@@ -317,6 +340,8 @@ def main():
     wanted_strategies = set(args.strategy or [])
     with open(args.manifest, encoding="utf-8-sig", newline="") as handle:
         rows = list(csv.DictReader(handle))
+    for row in rows:
+        validate_sample_id(row.get("sample_id"))
     if wanted:
         rows = [row for row in rows if row["sample_id"] in wanted]
     if wanted_strategies:
@@ -326,25 +351,26 @@ def main():
 
     results = []
     for index, row in enumerate(rows, 1):
-        print(f"[{index}/{len(rows)}] {row['sample_id']} {row['repo']}", flush=True)
-        lock_file = lock_directory / f"{row['sample_id']}.json"
+        sample_id = validate_sample_id(row["sample_id"])
+        print(f"[{index}/{len(rows)}] {sample_id} {row['repo']}", flush=True)
+        lock_file = contained_path(lock_directory, f"{sample_id}.json")
         if args.resume and lock_file.exists():
             try:
                 lock = json.loads(lock_file.read_text(encoding="utf-8"))
                 serve_root = Path(lock["serve_root"])
                 scan_complete = not extractor or Path(lock.get("scan_result", "")).exists()
                 if serve_root.exists() and scan_complete:
-                    results.append({"sample_id": row["sample_id"], "status": "OK", "resumed": True, **lock})
+                    results.append({"sample_id": sample_id, "status": "OK", "resumed": True, **lock})
                     print(f"  RESUME {lock['commit_sha'][:12]} {lock['snapshot_sha256'][:12]}")
                     continue
             except Exception:
                 pass
         try:
             lock = process_sample(row, output_root, lock_directory, extractor)
-            results.append({"sample_id": row["sample_id"], "status": "OK", **lock})
+            results.append({"sample_id": sample_id, "status": "OK", **lock})
             print(f"  OK {lock['commit_sha'][:12]} {lock['snapshot_sha256'][:12]}")
         except Exception as error:
-            results.append({"sample_id": row["sample_id"], "status": "ERROR", "error": str(error)})
+            results.append({"sample_id": sample_id, "status": "ERROR", "error": str(error)})
             print(f"  ERROR: {error}", file=sys.stderr)
 
     output_root.mkdir(parents=True, exist_ok=True)

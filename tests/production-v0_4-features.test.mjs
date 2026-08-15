@@ -49,6 +49,32 @@ test("does not reward disabling or permissive security header values", () => {
   assert.equal(result.checks.find((item) => item.id === "permissions").status, "fail");
 });
 
+test("evaluates effective CSP element directives and parenthesized Permissions-Policy wildcards", () => {
+  const result = auditSecurity("https://example.com", {
+    "content-security-policy": "default-src 'self'; script-src 'self'; script-src-elem *; frame-ancestors 'none'",
+    "strict-transport-security": "max-age=31536000",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "permissions-policy": "camera=(*), microphone=()"
+  });
+  assert.equal(result.checks.find(({ id }) => id === "csp").status, "fail");
+  assert.equal(result.checks.find(({ id }) => id === "permissions").status, "fail");
+});
+
+test("recommendations preserve all findings and do not advise score gaming", () => {
+  const recommendations = buildRecommendations({
+    analysis: { directEvidence: [{ label: "Bolt" }] },
+    pageMetrics: { asset_bytes_fetched: 1_000_000, inline_script_bytes: 100_000, headings: 0 },
+    extendedMetrics: { shadcn_variable_coverage: 10, data_slot_attributes: 5, ui_cliche_tokens: 10, sections: 0, external_host_count: 100 },
+    security: auditSecurity("http://example.com", {})
+  });
+  assert.ok(recommendations.length > 10);
+  assert.equal(recommendations.some(({ why, action }) => /score|external host|third.party/i.test(`${why} ${action}`)), false);
+  const marker = recommendations.find(({ title }) => title === "Builder-Provenienz bewusst entscheiden");
+  assert.equal(marker.priority, "low");
+  assert.match(marker.action, /Brand-, Privacy- oder Release-Grund/);
+});
+
 test("score explanations distinguish detected and absent binary features", () => {
   const model = {
     feature_names: ["stack:React", "stack:Next.js", "stack:Vite", "stack:Radix UI"],

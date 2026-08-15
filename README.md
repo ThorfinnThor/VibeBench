@@ -41,8 +41,9 @@ stehen im aktuellen
 
 ## Produkt v0.4
 
-Die Web-App nutzt dieselbe eingefrorene Feature- und Score-Logik wie die
-erfolgreiche v0.4-Validation. Zusätzlich bewertet sie sieben öffentlich
+Die Web-App ist der öffentliche Adapter um den eingefrorenen v0.4-
+Forschungskandidaten; `v0.4` bezeichnet die Modell-/Release-Linie und nicht
+jede einzelne Scanner- oder API-Komponente. Sie bewertet zusätzlich sieben öffentlich
 sichtbare Security-Header-Prüfungen und erzeugt einen priorisierten
 Verbesserungsplan. Umsetzung, Grenzen, Teststand und nächste Aufgaben stehen in
 [`outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md`](outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md).

@@ -36,4 +36,16 @@ test("maps invalid and private URLs to actionable input outcomes", () => {
   assert.equal(classifyScanError("Die URL verweist auf eine lokale, reservierte oder nicht öffentliche Adresse.").code, "private_address");
   assert.equal(classifyScanError("Nur die öffentlichen Standardports 80 und 443 werden unterstützt.").code, "unsupported_protocol");
   assert.equal(classifyScanError("Ungültige JSON-Anfrage.").code, "invalid_request");
+  assert.equal(classifyScanError("URLs mit Zugangsdaten werden nicht unterstützt.").code, "credentials_not_supported");
+});
+
+test("separates temporary HTTP states, unsupported documents and limited evidence", () => {
+  for (const status of [408, 425]) {
+    const outcome = classifyScanError(`Website antwortet mit HTTP ${status}.`);
+    assert.equal(outcome.code, "target_temporarily_unavailable");
+    assert.equal(outcome.retryable, true);
+  }
+  assert.equal(classifyScanError("Nicht unterstützte Zeichenkodierung: utf-16.").code, "unsupported_encoding");
+  assert.equal(classifyScanError("Auswertungsbreite unzureichend für einen belastbaren Score.").code, "insufficient_evidence");
+  assert.equal(classifyScanError("Die URL liefert einen Download statt einer Website.").code, "ineligible_document");
 });

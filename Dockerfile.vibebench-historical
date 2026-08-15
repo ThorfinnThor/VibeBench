@@ -21,8 +21,10 @@ RUN apt-get update \
 RUN mkdir -p /tmp/vibebench-home \
     && chmod 1777 /tmp/vibebench-home
 
-ENV HOME=/tmp/vibebench-home \
-    BUNDLE_SILENCE_ROOT_WARNING=1 \
+RUN groupadd --gid 10001 vibebench \
+    && useradd --uid 10001 --gid 10001 --create-home --home-dir /home/vibebench vibebench
+
+ENV HOME=/home/vibebench \
     NPM_CONFIG_AUDIT=false \
     NPM_CONFIG_FUND=false \
     NPM_CONFIG_UPDATE_NOTIFIER=false \
@@ -30,5 +32,7 @@ ENV HOME=/tmp/vibebench-home \
     PYTHONUNBUFFERED=1
 
 WORKDIR /workspace
+
+USER 10001:10001
 
 ENTRYPOINT ["python3", "/workspace/vibebench_snapshot_builder.py"]

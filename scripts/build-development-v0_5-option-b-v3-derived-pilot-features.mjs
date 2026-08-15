@@ -7,6 +7,7 @@ import {
   buildOptionBV3DerivedFeatures
 } from "../lib/option-b-v3-derived-feature-contract-v1.mjs";
 import { assertMinimalPilotPrivacy } from "../lib/option-b-v3-minimal-capture.mjs";
+import { assertOptionBV3DerivedPayload } from "../lib/option-b-v3-derived-payload-validation-v1.mjs";
 
 const root = path.resolve("outputs/development_v0_5_option_b_v3");
 const sources = {
@@ -46,6 +47,7 @@ if (sharedSampleIds.length !== 5) throw new Error(`Expected five shared successf
 const buildRows = (capture, rows) => sharedSampleIds.map((sampleId) => {
   const row = rows.get(sampleId);
   if (row.viewport_id !== "desktop") throw new Error(`Unexpected viewport for ${sampleId}`);
+  assertOptionBV3DerivedPayload(row.payload);
   return {
     sample_id: sampleId,
     run_id: capture.run_id,

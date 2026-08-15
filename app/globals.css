@@ -81,6 +81,8 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 
 .results { width: min(1280px, calc(100% - 48px)); margin: 18px auto 92px; scroll-margin-top: 24px; }
 .results:focus { outline: 3px solid var(--green); outline-offset: 7px; border-radius: 28px; }
+.stale-note { margin: 0 0 13px; padding: 14px 18px; display: flex; justify-content: space-between; gap: 18px; border: 1px solid #d8cba8; border-radius: 12px; background: #fffaf0; color: var(--muted); font-size: 13px; }
+.stale-note strong { color: var(--ink); }
 .error-card + .score-hero { margin-top: 24px; }
 .score-hero { padding: clamp(30px, 4vw, 54px); display: grid; grid-template-columns: 240px minmax(0, 1fr) 280px; gap: clamp(32px, 5vw, 68px); align-items: center; border-radius: 28px 28px 0 0; background: var(--surface); box-shadow: var(--shadow); }
 .score-ring { --ring-color: var(--green); width: 220px; height: 220px; padding: 15px; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(var(--ring-color) var(--score-angle), #e6ebe8 0); position: relative; }
@@ -93,6 +95,7 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .score-copy .eyebrow { margin-bottom: 9px; }
 .score-copy h2 { margin-bottom: 13px; font-size: clamp(32px, 3.6vw, 49px); line-height: 1.05; letter-spacing: -.055em; }
 .score-copy > p:not(.eyebrow) { max-width: 650px; margin-bottom: 23px; color: var(--muted); font-size: 17px; }
+.score-copy .result-target { margin: -5px 0 17px; font-size: 13px; }
 .score-boundary { max-width: 700px; padding: 14px 16px; display: grid; grid-template-columns: 130px 1fr; gap: 16px; border-radius: 10px; background: var(--surface-soft); font-size: 13px; }
 .score-boundary span { color: var(--muted); }
 .score-boundary a, .score-explainer a { color: var(--green-dark); font-weight: 700; }
@@ -142,7 +145,7 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .empty-state { margin: 0; color: var(--muted); }
 
 .filter-row { margin-bottom: 14px; display: flex; flex-wrap: wrap; gap: 8px; }
-.filter-row button { padding: 9px 12px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.5); color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; }
+.filter-row button { min-height: 44px; padding: 9px 12px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.5); color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; }
 .filter-row button span { min-width: 22px; height: 22px; padding: 0 6px; display: grid; place-items: center; border-radius: 999px; background: var(--surface-soft); color: var(--ink); font-size: 11px; }
 .filter-row button.active { border-color: var(--ink); background: var(--ink); color: white; }
 .filter-row button.active span { background: rgba(255,255,255,.16); color: white; }
@@ -215,7 +218,7 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .error-action { margin-top: 18px; }
 .error-card details { margin-top: 20px; }
 .error-card code { display: block; margin-top: 8px; overflow-wrap: anywhere; }
-.retry-button { margin-top: 15px; padding: 10px 15px; border: 0; border-radius: 8px; background: var(--ink); color: white; font-weight: 700; cursor: pointer; }
+.retry-button { min-height: 44px; margin-top: 15px; padding: 10px 15px; border: 0; border-radius: 8px; background: var(--ink); color: white; font-weight: 700; cursor: pointer; }
 .request-id { margin: 16px 0 0; color: var(--muted); font-size: 12px; }
 
 .method { padding: 88px max(24px, calc((100vw - 1280px) / 2)); background: var(--surface); }
@@ -275,6 +278,7 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .coverage-note { padding: 15px; align-items: flex-start; flex-direction: column; gap: 10px; }
   .coverage-note div { align-items: flex-start; flex-direction: column; gap: 4px; }
   .coverage-note > span { align-self: flex-start; }
+  .stale-note { align-items: flex-start; flex-direction: column; gap: 4px; }
   .score-scale { padding: 21px; }
   .section-heading { grid-template-columns: 1fr; gap: 15px; }
   .section-heading h2 { font-size: 34px; }

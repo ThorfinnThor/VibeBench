@@ -10,7 +10,7 @@ type ScoreBand = { id: string; label: string; shortLabel: string; summary: strin
 type ScoreDriver = { feature: string; label: string; description: string; contribution: number; direction: "raises" | "lowers"; state: "detected" | "not-detected" | "measured"; unit: string };
 type SecurityCheck = { id: string; title: string; status: "pass" | "warn" | "fail"; detail: string; action: string };
 type Recommendation = { id: string; category: string; priority: "high" | "medium" | "low"; title: string; why: string; action: string; basis: "observed" | "guidance" };
-type EvidenceCoverage = { level: "broad" | "standard" | "limited"; label: string; summary: string; affectsScore: false; scope: { html: string; assetCandidates: number; assetsFetched: number; assetErrors: number; truncatedAssets: number; manifestLinked: boolean; manifestFetched: boolean } };
+type EvidenceCoverage = { level: "broad" | "standard" | "limited"; label: string; summary: string; affectsScore: false; scope: { html: string; assetsDiscovered: number; assetsSelected: number; assetCandidates: number; assetsFetched: number; assetErrors: number; truncatedAssets: number; manifestLinked: boolean; manifestFetched: boolean } };
 type ScanResult = {
   apiVersion: string;
   ok: boolean;
@@ -27,13 +27,14 @@ type ScanResult = {
   recommendations?: Recommendation[];
   model?: { version: string; independentHoldout: number; precision: number; recall: number; f1: number };
   directEvidence?: Evidence[];
+  directBuilderCount?: number;
   contextEvidence?: Evidence[];
   headerEvidence?: Evidence[];
   manifestEvidence?: Evidence[];
   stackSignals?: string[];
   structuralHints?: string[];
   metrics?: Record<string, number>;
-  assetScan?: { candidates: number; fetched: number; errors: number; bytes: number; truncated: number };
+  assetScan?: { discovered: number; selected: number; ignoredByCap: number; candidates: number; fetched: number; errors: number; bytes: number; truncated: number };
   warning?: string;
 };
 
@@ -49,7 +50,7 @@ const incompatibleTechnicalOutcome: TechnicalOutcome = {
   code: "incompatible_response",
   title: "Antwort nicht kompatibel",
   summary: "Der Scan-Dienst hat keine vollständig auswertbare Antwort geliefert. Es wurde kein neues Ergebnis übernommen.",
-  action: "Seite neu laden und den Scan erneut starten. Bleibt der Fehler bestehen, bitte die Request-ID an den Support geben.",
+  action: "Seite neu laden und den Scan erneut starten.",
   retryable: true
 };
 
@@ -93,6 +94,25 @@ const metricLabels: Record<string, string> = {
   sameOriginAssets: "Geprüfte Assets", assetBytes: "Asset-Größe", assetFetchErrors: "Asset-Fehler", truncatedAssets: "Gekürzte Assets"
 };
 
+const structuralHintLabels: Record<string, string> = {
+  "dense-modern-stack": "viele moderne Stack-Signale",
+  "high-data-attribute-density": "hohe Dichte strukturierter Data-Attribute",
+  "script-heavy-static-shell": "skriptlastige Oberfläche ohne Formularstruktur"
+};
+
+function formatMetric(key: string, value: number) {
+  if (["htmlBytes", "assetBytes"].includes(key)) {
+    if (value >= 1_000_000) return `${(value / 1_000_000).toLocaleString("de-DE", { maximumFractionDigits: 1 })} MB`;
+    if (value >= 1_000) return `${(value / 1_000).toLocaleString("de-DE", { maximumFractionDigits: 1 })} KB`;
+    return `${value.toLocaleString("de-DE")} B`;
+  }
+  return value.toLocaleString("de-DE");
+}
+
+function formatInterval(values: number[]) {
+  return values.map((value) => (value * 100).toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })).join("–");
+}
+
 function ScoreRing({ score }: { score: number }) {
   return <div className="score-ring" style={{ "--score-angle": `${score * 3.6}deg` } as CSSProperties} aria-label={`${score} von 100`}>
     <div className="score-ring-inner"><strong>{score}</strong><span>von 100</span></div>
@@ -105,13 +125,17 @@ export default function Home() {
   const [result, setResult] = useState<ScanResult | null>(null);
   const [errorResult, setErrorResult] = useState<ScanResult | null>(null);
   const [category, setCategory] = useState("all");
+  const [pendingUrl, setPendingUrl] = useState<string | null>(null);
   const resultsRef = useRef<HTMLElement>(null);
   const controllerRef = useRef<AbortController | null>(null);
+  const scanSequenceRef = useRef(0);
+  const loadingRef = useRef(false);
 
   useEffect(() => {
     if ((!result && !errorResult) || !resultsRef.current) return;
     resultsRef.current.focus({ preventScroll: true });
-    resultsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    resultsRef.current.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
   }, [result, errorResult]);
 
   const visibleRecommendations = useMemo(() => {
@@ -120,9 +144,14 @@ export default function Home() {
   }, [category, result]);
 
   async function runScan() {
+    const requestedUrl = url.trim();
+    const sequence = ++scanSequenceRef.current;
+    controllerRef.current?.abort("superseded");
     const controller = new AbortController();
     controllerRef.current = controller;
+    loadingRef.current = true;
     setLoading(true);
+    setPendingUrl(requestedUrl);
     setErrorResult(null);
     setCategory("all");
     const timeout = window.setTimeout(() => controller.abort("client-timeout"), 19_000);
@@ -130,29 +159,36 @@ export default function Home() {
       const response = await fetch("/api/scan", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ url }),
+        body: JSON.stringify({ url: requestedUrl }),
         signal: controller.signal
       });
       const responseRequestId = response.headers.get("x-vibebench-request-id") || undefined;
       const payload = await response.json().catch(() => null);
       const parsed = parseScanPayload(payload) as ScanResult | null;
+      if (sequence !== scanSequenceRef.current) return;
       if (!parsed) setErrorResult({ apiVersion: release.apiVersion, ok: false, requestId: responseRequestId, technicalOutcome: incompatibleTechnicalOutcome });
       else if (parsed.ok) setResult(parsed);
       else setErrorResult(parsed);
     } catch {
+      if (sequence !== scanSequenceRef.current) return;
       const outcome = controller.signal.aborted
         ? controller.signal.reason === "client-timeout" ? clientTimeoutTechnicalOutcome : cancelledTechnicalOutcome
         : fallbackTechnicalOutcome;
       setErrorResult({ apiVersion: release.apiVersion, ok: false, technicalOutcome: outcome });
     } finally {
       window.clearTimeout(timeout);
-      if (controllerRef.current === controller) controllerRef.current = null;
-      setLoading(false);
+      if (sequence === scanSequenceRef.current && controllerRef.current === controller) {
+        controllerRef.current = null;
+        loadingRef.current = false;
+        setLoading(false);
+        setPendingUrl(null);
+      }
     }
   }
 
   function scan(event: FormEvent) {
     event.preventDefault();
+    if (loadingRef.current) return;
     void runScan();
   }
 
@@ -164,6 +200,7 @@ export default function Home() {
   const score = result?.vibeScore?.score ?? 0;
   const observedRecommendations = visibleRecommendations.filter((item) => item.basis !== "guidance");
   const guidanceRecommendations = visibleRecommendations.filter((item) => item.basis === "guidance");
+  const resultHost = result?.resolvedUrl ? new URL(result.resolvedUrl).hostname : null;
 
   return <main id="top">
     <a className="skip-link" href="#scanner">Direkt zum Website-Scan</a>
@@ -173,9 +210,9 @@ export default function Home() {
       <nav aria-label="Seitennavigation"><a href="#scanner">Scan</a><a className="method-link" href="#method">Methodik</a><span className="version">{release.displayVersion}</span></nav>
     </header>
 
-    <section className="hero" id="scanner">
+    <section className="hero" id="scanner" tabIndex={-1}>
       <div className="hero-copy">
-        <p className="eyebrow">Validierter Website-Check</p>
+        <p className="eyebrow">Transparente Research-Beta</p>
         <h1>Wie viel <span>Vibe</span> steckt in deiner Website?</h1>
         <p className="lede">Erhalte einen verständlichen Score von 0 bis 100, erkenne öffentlich sichtbare Vibecoding-Muster und finde konkrete Schritte für mehr Sicherheit, Eigenständigkeit und Qualität.</p>
         <p className="hero-trust"><span aria-hidden="true">✓</span> Transparentes Beta-Modell · qualitative Orientierung mit klarer Unsicherheitsgrenze</p>
@@ -200,9 +237,10 @@ export default function Home() {
     </section>
 
     {(result || errorResult) && <section className="results" aria-label="Scan-Ergebnisse" ref={resultsRef} tabIndex={-1}>
+      {loading && resultHost && <aside className="stale-note"><strong>Vorheriges Ergebnis für {resultHost}</strong><span>Neue Analyse für {pendingUrl} läuft.</span></aside>}
       {errorResult && technicalOutcome ? <div className="error-card">
         <span className="error-symbol" aria-hidden="true">!</span>
-        <div><p className="eyebrow">Kein neues Ergebnis erzeugt</p><h2>{technicalOutcome.title}</h2><p>{technicalOutcome.summary}</p><p className="error-action"><strong>Nächster Schritt:</strong> {technicalOutcome.action}</p>{technicalOutcome.retryable && <button className="retry-button" type="button" onClick={() => void runScan()} disabled={loading}>Erneut versuchen</button>}{errorResult.requestId && <p className="request-id">Request-ID: <code>{errorResult.requestId}</code></p>}{errorResult.error && <details><summary>Technisches Detail</summary><code>{errorResult.error}</code></details>}</div>
+        <div><p className="eyebrow">{resultHost ? `Vorheriges Ergebnis für ${resultHost} bleibt erhalten` : "Kein neues Ergebnis erzeugt"}</p><h2>{technicalOutcome.title}</h2><p>{technicalOutcome.summary}</p><p className="error-action"><strong>Nächster Schritt:</strong> {technicalOutcome.action}</p>{technicalOutcome.retryable && <button className="retry-button" type="button" onClick={() => void runScan()} disabled={loading}>Erneut versuchen</button>}{errorResult.requestId && <p className="request-id">Request-ID: <code>{errorResult.requestId}</code></p>}</div>
       </div> : null}
       {result?.ok && result.vibeScore && result.security ? <>
         <div className={`score-hero score-${result.vibeScore.band.id}`}>
@@ -210,6 +248,7 @@ export default function Home() {
           <div className="score-copy">
             <p className="eyebrow">Dein Vibe-Footprint</p>
             <h2>{result.vibeScore.band.label}</h2>
+            {resultHost && <p className="result-target">Analysiert: <strong>{resultHost}</strong></p>}
             <p>{result.vibeScore.band.summary}</p>
             <div className="score-boundary"><strong>Was das bedeutet</strong><span>{result.vibeScore.meaning} {result.vibeScore.caveat} <a href="#method">Methodik ansehen</a></span></div>
           </div>
@@ -217,11 +256,12 @@ export default function Home() {
             <p>Scan-Überblick</p>
             <div><span>Auswertungsbreite</span><strong className={`coverage-${result.evidenceCoverage?.level || "standard"}`}>{result.evidenceCoverage?.label || "Standard"}</strong></div>
             <div><span>Sicherheits-Baseline</span><strong>{result.security.score}<small>/100</small></strong></div>
-            <div><span>Direkte Builder-Marker</span><strong>{result.directEvidence?.length || 0}</strong></div>
+            <div><span>Direkte Marker</span><strong>{result.directEvidence?.length || 0}</strong></div>
+            <div><span>Eindeutige Builder</span><strong>{result.directBuilderCount ?? new Set(result.directEvidence?.map((item) => item.label)).size}</strong></div>
           </div>
         </div>
 
-        {result.evidenceCoverage && <aside className={`coverage-note coverage-${result.evidenceCoverage.level}`}><div><strong>Auswertungsbreite: {result.evidenceCoverage.label}</strong><p>{result.evidenceCoverage.summary}</p></div><span>Verändert den Score nicht</span></aside>}
+        {result.evidenceCoverage && <aside className={`coverage-note coverage-${result.evidenceCoverage.level}`}><div><strong>Auswertungsbreite: {result.evidenceCoverage.label}</strong><p>{result.evidenceCoverage.summary}</p></div><span>Kein separater Bonus oder Abzug</span></aside>}
 
         <div className="score-scale" aria-label={`Score ${score} auf einer Skala von 0 bis 100`}>
           <div className="scale-labels"><span>Niedriger Footprint</span><strong>{score}/100</strong><span>Sehr hoher Footprint</span></div>
@@ -232,10 +272,10 @@ export default function Home() {
           <div className="section-heading"><div><p className="eyebrow">Index verständlich gemacht</p><h2>Was beeinflusst das Ergebnis?</h2></div><p>Nur tatsächlich erkannte Binärsignale erscheinen hier. Die Reihenfolge zeigt relative Modellwirkung, keine Punkte auf der 0–100-Skala.</p></div>
           <div className="drivers-grid">
             <article><div className="driver-title raises"><span>↑</span><div><strong>Erhöht den Score</strong><small>stärkere Ähnlichkeit</small></div></div>
-              {result.scoreDrivers?.raises.length ? <ul>{result.scoreDrivers.raises.map((driver) => <li key={driver.feature}><span>{driver.description}</span><b>stark</b></li>)}</ul> : <p className="empty-state">Keine einzelnen starken positiven Treiber sichtbar.</p>}
+              {result.scoreDrivers?.raises.length ? <ul>{result.scoreDrivers.raises.map((driver) => <li key={driver.feature}><span>{driver.description}</span></li>)}</ul> : <p className="empty-state">Keine einzelnen positiven Treiber sichtbar.</p>}
             </article>
             <article><div className="driver-title lowers"><span>↓</span><div><strong>Senkt den Score</strong><small>geringere Ähnlichkeit</small></div></div>
-              {result.scoreDrivers?.lowers.length ? <ul>{result.scoreDrivers.lowers.map((driver) => <li key={driver.feature}><span>{driver.description}</span><b>stark</b></li>)}</ul> : <p className="empty-state">Keine einzelnen starken negativen Treiber sichtbar.</p>}
+              {result.scoreDrivers?.lowers.length ? <ul>{result.scoreDrivers.lowers.map((driver) => <li key={driver.feature}><span>{driver.description}</span></li>)}</ul> : <p className="empty-state">Keine einzelnen negativen Treiber sichtbar.</p>}
             </article>
           </div>
         </section>
@@ -270,8 +310,8 @@ export default function Home() {
           <div className="technical-grid">
             <article><h3>Direkte Marker</h3>{result.directEvidence?.length ? <ul>{result.directEvidence.map((item) => <li key={`${item.label}-${item.marker}`}>{item.label}{item.marker ? <small>{item.marker}</small> : null}</li>)}</ul> : <p>Keine direkten Builder-Marker gefunden.</p>}</article>
             <article><h3>Stack & Kontext</h3>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].length ? <ul>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].map((label, index) => <li key={`${label}-${index}`}>{label}</li>)}</ul> : <p>Keine bekannten Stack- oder Kontextsignale sichtbar.</p>}</article>
-            <article><h3>Strukturwerte</h3>{result.structuralHints?.length ? <p><strong>Hinweise:</strong> {result.structuralHints.join(", ")}</p> : null}<dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{value.toLocaleString("de-DE")}</dd></div>)}</dl></article>
-            <article><h3>Scan</h3><dl><div><dt>HTTP</dt><dd>{result.httpStatus}</dd></div><div><dt>Assets</dt><dd>{result.assetScan?.fetched || 0}/{result.assetScan?.candidates || 0}</dd></div><div><dt>Auswertungsbreite</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>Modell</dt><dd>{result.model?.version || "v0.4"}</dd></div><div><dt>Zeitpunkt</dt><dd>{result.analyzedAt ? new Date(result.analyzedAt).toLocaleString("de-DE") : "—"}</dd></div></dl></article>
+            <article><h3>Strukturwerte</h3>{result.structuralHints?.length ? <p><strong>Hinweise:</strong> {result.structuralHints.map((hint) => structuralHintLabels[hint] || hint).join(", ")}</p> : null}<dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{formatMetric(key, value)}</dd></div>)}</dl></article>
+            <article><h3>Scan</h3><dl><div><dt>HTTP</dt><dd>{result.httpStatus}</dd></div><div><dt>Assets geladen</dt><dd>{result.assetScan?.fetched || 0}/{result.assetScan?.selected || 0} ausgewählt</dd></div><div><dt>Assets gefunden</dt><dd>{result.assetScan?.discovered || 0}</dd></div><div><dt>Auswertungsbreite</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>Modell</dt><dd>{result.model?.version || "v0.4"}</dd></div><div><dt>Zeitpunkt</dt><dd>{result.analyzedAt ? new Date(result.analyzedAt).toLocaleString("de-DE") : "—"}</dd></div></dl></article>
           </div>
           <a className="resolved-url" href={result.resolvedUrl} target="_blank" rel="noreferrer">{result.resolvedUrl} ↗</a>
         </details>
@@ -288,8 +328,8 @@ export default function Home() {
         <article><span>03</span><h3>Hinweise sauber trennen</h3><p>Beobachtete technische Findings werden von optionaler manueller Guidance getrennt und nach Wirkung geordnet.</p></article>
       </div>
       <div className="method-validation">
-        <div><span>Precision</span><strong>{(release.confirmation.precision * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: 69,7–90,4 %</small></div>
-        <div><span>Recall</span><strong>{(release.confirmation.recall * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: 73,3–92,9 %</small></div>
+        <div><span>Precision</span><strong>{(release.confirmation.precision * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: {formatInterval(release.confirmation.precisionWilson95)} %</small></div>
+        <div><span>Recall</span><strong>{(release.confirmation.recall * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>95-%-Wilson-Intervall: {formatInterval(release.confirmation.recallWilson95)} %</small></div>
         <div><span>Technische Abdeckung</span><strong>{release.confirmation.successful}/{release.confirmation.total}</strong><small>Technisch erfolgreiche unabhängige Scans</small></div>
         <p>Die Werte gehören zur eingefrorenen binären {release.displayVersion}-Bestätigung und validieren weder einzelne Score-Bänder noch eine AI-Wahrscheinlichkeit. Die strengere Evidenzextraktion dieses Beta-Releases benötigt vor einer neuen Leistungsbehauptung eine eigene unabhängige Replikation.</p>
       </div>
