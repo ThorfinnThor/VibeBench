@@ -1,10 +1,13 @@
 import assert from "node:assert/strict";
+import { spawn } from "node:child_process";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import { aggregateOptionBV4Surface, assertOptionBV4Payload } from "../lib/option-b-v4-capture.mjs";
 import { assertPinnedPeer, choosePinnedAddress, parseConnectAuthority, parseHttpProxyTarget } from "../lib/peer-pinned-egress-policy.mjs";
 
 const root = new URL("../", import.meta.url);
+const profileVerifier = fileURLToPath(new URL("scripts/verify-option-b-v4-container-profile.mjs", root));
 const length = (kind = "zero", value = 0) => ({ kind, value });
 const style = {
   display: "block", position: "static", font_primary_declared_category: "custom-family", font_fallback_declared_categories: ["generic-sans"],
@@ -25,6 +28,19 @@ function fixture() {
     ],
     public_assets: { same_origin_stylesheet_candidates: 1, same_origin_stylesheets_fetched: 1, stylesheet_fetch_outcomes: { readable: 1, inaccessible: 0, capped: 0 }, css_custom_property_names: ["--space"], css_custom_property_value_types: ["length"], font_face_count: 0, media_query_count: 1, container_query_count: 0 }
   };
+}
+
+function verifyProfile(role, record) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(process.execPath, [profileVerifier, "--role", role], { stdio: ["pipe", "pipe", "pipe"] });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (chunk) => { stdout += chunk; });
+    child.stderr.on("data", (chunk) => { stderr += chunk; });
+    child.on("error", reject);
+    child.on("close", (code) => code === 0 ? resolve(stdout) : reject(new Error(stderr || `Verifier exited ${code}.`)));
+    child.stdin.end(JSON.stringify([record]));
+  });
 }
 
 test("peer-pinning policy allows only public standard-port targets and verifies the connected peer", () => {
@@ -102,4 +118,12 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.match(workflow, /EGRESS_BASE_DIGEST=\$\(docker image inspect/);
   assert.doesNotMatch(workflow, /BASE_DIGEST=\$\(docker image inspect[^\n]+\)" >>/);
   assert.doesNotMatch(captureSource, /elements\.find\(/);
+});
+
+test("v4 container profile verifier consumes docker inspect JSON from stdin", async () => {
+  const host = { ReadonlyRootfs: true, CapDrop: ["ALL"], SecurityOpt: ["no-new-privileges:true"], PidsLimit: 64, Memory: 1024, NanoCpus: 1_000_000 };
+  const collector = { Config: { User: "1000" }, HostConfig: { ...host, SecurityOpt: [...host.SecurityOpt, "seccomp=frozen"] }, Mounts: [{ RW: true, Destination: "/artifacts" }], NetworkSettings: { Networks: { vibebench_collector_internal: {} }, Ports: {} } };
+  const egress = { Config: { User: "65532:65532" }, HostConfig: host, Mounts: [], NetworkSettings: { Networks: { vibebench_collector_internal: {}, vibebench_public_egress: {} }, Ports: {} } };
+  assert.match(await verifyProfile("collector", collector), /collector container profile verified/);
+  assert.match(await verifyProfile("egress", egress), /egress container profile verified/);
 });

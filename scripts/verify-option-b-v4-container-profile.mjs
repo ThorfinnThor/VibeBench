@@ -1,9 +1,14 @@
-import { readFile } from "node:fs/promises";
-
 const roleIndex = process.argv.indexOf("--role");
 const role = roleIndex >= 0 ? process.argv[roleIndex + 1] : null;
 if (!new Set(["collector", "egress"]).has(role)) throw new Error("Use --role collector or --role egress.");
-const input = JSON.parse(await readFile(0, "utf8"));
+const chunks = [];
+let inputBytes = 0;
+for await (const chunk of process.stdin) {
+  inputBytes += chunk.length;
+  if (inputBytes > 1_000_000) throw new Error("Docker inspect input exceeds one megabyte.");
+  chunks.push(chunk);
+}
+const input = JSON.parse(Buffer.concat(chunks).toString("utf8"));
 if (!Array.isArray(input) || input.length !== 1) throw new Error("Expected one docker inspect record.");
 const record = input[0];
 const user = String(record.Config?.User || "");
