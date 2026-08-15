@@ -2,6 +2,7 @@ name: vibebench-option-b-v4
 
 services:
   egress:
+    image: vibebench-option-b-v4-egress:local
     build:
       context: ../..
       dockerfile: infra/option-b-v4/Dockerfile.egress
@@ -22,6 +23,7 @@ services:
       retries: 15
 
   collector:
+    image: vibebench-option-b-v4-collector:local
     build:
       context: ../..
       dockerfile: infra/option-b-v4/Dockerfile.collector

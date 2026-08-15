@@ -76,6 +76,8 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
     readFile(new URL("infra/option-b-v4/seccomp_profile.json", root), "utf8").then(JSON.parse)
   ]);
   assert.match(compose, /collector_internal:\n\s+internal: true/);
+  assert.match(compose, /image: vibebench-option-b-v4-collector:local/);
+  assert.match(compose, /image: vibebench-option-b-v4-egress:local/);
   assert.match(compose, /cap_drop: \[ALL]/g);
   assert.match(compose, /no-new-privileges:true/g);
   assert.match(compose, /read_only: true/g);
@@ -88,5 +90,9 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   const actionRefs = [...workflow.matchAll(/uses:\s*[^@\s]+@([a-f0-9]+)/g)].map((match) => match[1]);
   assert.ok(actionRefs.length >= 3);
   assert.equal(actionRefs.every((value) => value.length === 40), true);
+  assert.match(workflow, /env:\n\s+OPTION_B_V4_ARTIFACT_DIR: \$\{\{ github\.workspace \}\}\/pilot-artifacts/);
+  assert.doesNotMatch(workflow, /compose\.yml images -q/);
+  assert.match(workflow, /docker image inspect --format '\{\{\.Id\}\}' vibebench-option-b-v4-collector:local/);
+  assert.match(workflow, /docker image inspect --format '\{\{\.Id\}\}' vibebench-option-b-v4-egress:local/);
   assert.doesNotMatch(captureSource, /elements\.find\(/);
 });
