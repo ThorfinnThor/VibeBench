@@ -117,6 +117,10 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.match(workflow, /COLLECTOR_BASE_DIGEST=\$\(docker image inspect/);
   assert.match(workflow, /EGRESS_BASE_DIGEST=\$\(docker image inspect/);
   assert.doesNotMatch(workflow, /BASE_DIGEST=\$\(docker image inspect[^\n]+\)" >>/);
+  assert.match(workflow, /ps -q --all collector/);
+  assert.match(workflow, /ps -q --all egress/);
+  assert.doesNotMatch(workflow, /ps -q collector/);
+  assert.doesNotMatch(workflow, /ps -q egress/);
   assert.doesNotMatch(captureSource, /elements\.find\(/);
 });
 
