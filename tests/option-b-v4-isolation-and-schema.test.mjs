@@ -80,6 +80,8 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.match(compose, /image: vibebench-option-b-v4-egress:local/);
   assert.match(compose, /cap_drop: \[ALL]/g);
   assert.match(compose, /no-new-privileges:true/g);
+  assert.match(compose, /seccomp=\.\/seccomp_profile\.json/);
+  assert.doesNotMatch(compose, /seccomp=infra\/option-b-v4\/seccomp_profile\.json/);
   assert.match(compose, /read_only: true/g);
   assert.doesNotMatch(compose, /docker\.sock/);
   assert.match(collectorDockerfile, /USER pwuser/);
