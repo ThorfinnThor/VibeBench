@@ -19,7 +19,7 @@ if (capture.inputs?.manifest?.sha256 !== audit.inputs?.manifest?.sha256 || captu
 if (capture.runtime?.isolation?.collector_direct_network !== false || capture.runtime?.isolation?.peer_pinning_egress !== true || capture.runtime?.isolation?.read_only_root !== true || capture.runtime?.isolation?.non_root !== true || capture.runtime?.isolation?.no_new_privileges !== true || capture.runtime?.isolation?.capabilities_dropped !== "ALL") findings.push("isolation_attestation");
 if (!/^sha256:[a-f0-9]{64}$/.test(capture.runtime?.isolation?.collector_image_id || "") || !/^sha256:[a-f0-9]{64}$/.test(capture.runtime?.isolation?.egress_image_id || "")) findings.push("image_ids");
 if (!capture.runtime?.isolation?.collector_base_digest?.includes("@sha256:") || !capture.runtime?.isolation?.egress_base_digest?.includes("@sha256:") || !/^[a-f0-9]{64}$/.test(capture.runtime?.isolation?.collector_source_sha256 || "") || !/^[a-f0-9]{64}$/.test(capture.runtime?.isolation?.egress_source_sha256 || "")) findings.push("base_or_source_fingerprints");
-if (new Set(audit.attempts.map(({ sample_id }) => sample_id)).size !== 6 || audit.attempts.some((attempt) => "target_url" in attempt || "url" in attempt || "hostname" in attempt)) findings.push("attempt_identity_or_privacy");
+if (new Set(audit.attempts.map(({ sample_id }) => sample_id)).size !== expectedAttempts || audit.attempts.some((attempt) => "target_url" in attempt || "url" in attempt || "hostname" in attempt)) findings.push("attempt_identity_or_privacy");
 for (const captureRow of capture.captures || []) {
   try { assertOptionBV4Payload(captureRow.payload); } catch (error) { findings.push(`payload:${captureRow.sample_id}:${error.message}`); }
 }
