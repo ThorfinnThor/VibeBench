@@ -86,6 +86,8 @@
     "research:v0.5-option-b-v4-pilot-repeat-compare": "node scripts/compare-development-v0_5-option-b-v4-pilot-repeat.mjs",
     "research:v0.5-option-b-v4-runtime-fingerprint": "node scripts/fingerprint-option-b-v4-runtime.mjs",
     "research:v0.5-option-b-v4-extension-build": "node scripts/build-development-v0_5-option-b-v4-extension-manifest.mjs",
+    "research:v0.5-option-b-v4-derived-features": "node scripts/build-development-v0_5-option-b-v4-derived-features.mjs",
+    "research:v0.5-option-b-v4-models": "node scripts/research-development-v0_5-option-b-v4-models.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",
