@@ -33,3 +33,15 @@ test("v5 Development runner streams large capture rows instead of retaining the 
   assert.match(source, /await unlink\(rowsFile\)/);
   assert.doesNotMatch(source, /captures\.push\(/);
 });
+
+test("v5 Development runner bounds context and browser cleanup", async () => {
+  const source = await readFile(new URL("../scripts/run-development-v0_6-option-b-v5-isolated.mjs", import.meta.url), "utf8");
+  assert.match(source, /CONTEXT_CLOSE_TIMEOUT_MS = 5_000/);
+  assert.match(source, /BROWSER_CLOSE_TIMEOUT_MS = 10_000/);
+  assert.match(source, /settleWithin\(\(\) => context\.close\(\), CONTEXT_CLOSE_TIMEOUT_MS\)/);
+  assert.match(source, /settleWithin\(\(\) => browser\.close\(\), BROWSER_CLOSE_TIMEOUT_MS\)/);
+  assert.match(source, /context_close_timeouts/);
+  assert.match(source, /browser_context_creation_timeout/);
+  assert.match(source, /browser_page_creation_timeout/);
+  assert.match(source, /surface_helper_installation_failed: timeout/);
+});
