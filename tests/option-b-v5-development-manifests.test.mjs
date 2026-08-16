@@ -84,3 +84,10 @@ test("collector error gates use terminal retry outcomes rather than every attemp
   assert.equal(rates.collector_origin_extraction_failure, 0.25);
   assert.match(rates.basis, /last attempt/);
 });
+
+test("v5 finalizer streams the selected capture matrix instead of creating one giant string", async () => {
+  const source = await readFile(new URL("../scripts/finalize-development-v0_6-option-b-v5-capture.mjs", import.meta.url), "utf8");
+  assert.match(source, /createWriteStream\(file, \{ flags: "wx"/);
+  assert.match(source, /writeJsonWithRows\(paths\.output, finalCapture, "captures", captureRows\)/);
+  assert.doesNotMatch(source, /JSON\.stringify\(finalCapture/);
+});
