@@ -1,0 +1,75 @@
+name: Option B v5 isolated six-site smoke
+
+on:
+  workflow_dispatch:
+    inputs:
+      run:
+        description: Phase 1 smoke run
+        required: true
+        type: choice
+        options: [run-1, run-2]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: option-b-v5-six-site-smoke-${{ inputs.run }}
+  cancel-in-progress: false
+
+jobs:
+  isolated-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPTION_B_V5_ARTIFACT_DIR: ${{ github.workspace }}/pilot-artifacts
+      OPTION_B_V5_COLLECTOR_IMAGE: pending
+      OPTION_B_V5_EGRESS_IMAGE: pending
+      OPTION_B_V5_COLLECTOR_BASE_DIGEST: pending
+      OPTION_B_V5_EGRESS_BASE_DIGEST: pending
+      OPTION_B_V5_COLLECTOR_SOURCE_SHA256: pending
+      OPTION_B_V5_EGRESS_SOURCE_SHA256: pending
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - name: Verify Phase 0 and Phase 1 sources
+        run: |
+          npm ci
+          npm test
+          npm run research:v0.6-option-b-v5-manifest
+      - name: Build isolated v5 images and record identities
+        run: |
+          mkdir -p "$OPTION_B_V5_ARTIFACT_DIR"
+          chmod 0777 "$OPTION_B_V5_ARTIFACT_DIR"
+          docker pull --quiet mcr.microsoft.com/playwright:v1.54.2-noble
+          docker pull --quiet node:22.13.0-bookworm-slim
+          docker compose -f infra/option-b-v5/compose.yml build --pull
+          echo "OPTION_B_V5_COLLECTOR_IMAGE=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v5-collector:local)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V5_EGRESS_IMAGE=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v5-egress:local)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V5_COLLECTOR_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' mcr.microsoft.com/playwright:v1.54.2-noble)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V5_EGRESS_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' node:22.13.0-bookworm-slim)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V5_COLLECTOR_SOURCE_SHA256=$(git ls-files -s lib/option-b-v5-capture.mjs scripts/run-development-v0_6-option-b-v5-isolated.mjs | sha256sum | cut -d' ' -f1)" >> "$GITHUB_ENV"
+          echo "OPTION_B_V5_EGRESS_SOURCE_SHA256=$(git ls-files -s infra/option-b-v5/Dockerfile.egress infra/option-b-v4/egress-proxy.mjs | sha256sum | cut -d' ' -f1)" >> "$GITHUB_ENV"
+      - name: Verify isolated container profile
+        run: |
+          docker compose -f infra/option-b-v5/compose.yml create egress collector
+          docker inspect "$(docker compose -f infra/option-b-v5/compose.yml ps -q --all collector)" | node scripts/verify-option-b-v4-container-profile.mjs --role collector
+          docker inspect "$(docker compose -f infra/option-b-v5/compose.yml ps -q --all egress)" | node scripts/verify-option-b-v4-container-profile.mjs --role egress
+      - name: Run six-site smoke through peer-pinning egress
+        run: |
+          docker compose -f infra/option-b-v5/compose.yml up -d egress
+          docker compose -f infra/option-b-v5/compose.yml run --rm collector --output "/artifacts/${{ inputs.run }}.capture.json" --audit "/artifacts/${{ inputs.run }}.attempt-audit.json"
+          node scripts/review-development-v0_6-option-b-v5-capture.mjs --capture "pilot-artifacts/${{ inputs.run }}.capture.json" --audit "pilot-artifacts/${{ inputs.run }}.attempt-audit.json" > "pilot-artifacts/${{ inputs.run }}.review.json"
+      - name: Tear down isolation network
+        if: always()
+        run: docker compose -f infra/option-b-v5/compose.yml down --volumes --remove-orphans
+      - name: Upload privacy-minimal smoke artifacts
+        if: ${{ always() && hashFiles('pilot-artifacts/**') != '' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: option-b-v5-six-site-smoke-${{ inputs.run }}
+          path: pilot-artifacts/
+          if-no-files-found: error
+          retention-days: 14

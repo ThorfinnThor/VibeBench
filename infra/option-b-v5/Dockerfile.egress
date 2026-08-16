@@ -1,0 +1,8 @@
+FROM node:22.13.0-bookworm-slim
+WORKDIR /opt/vibebench
+COPY lib/public-url-policy.mjs lib/public-url-policy.mjs
+COPY lib/peer-pinned-egress-policy.mjs lib/peer-pinned-egress-policy.mjs
+COPY infra/option-b-v4/egress-proxy.mjs infra/option-b-v4/egress-proxy.mjs
+USER 65532:65532
+EXPOSE 8080
+CMD ["node", "infra/option-b-v4/egress-proxy.mjs"]
