@@ -71,6 +71,20 @@ test("normalizes only credential-free HTTP(S) URLs on standard ports", () => {
   assert.throws(() => normalizePublicUrl("https://user:pass@example.com"), /Zugangsdaten/);
 });
 
+test("accepts both boolean performance-claim states in the scan response contract", () => {
+  const currentClaim = validSuccess();
+  currentClaim.model.performanceClaimCurrent = true;
+  assert.equal(parseScanPayload(currentClaim), currentClaim);
+
+  const legacyClaim = validSuccess();
+  legacyClaim.model.performanceClaimCurrent = false;
+  assert.equal(parseScanPayload(legacyClaim), legacyClaim);
+
+  const invalidClaim = validSuccess();
+  invalidClaim.model.performanceClaimCurrent = "false";
+  assert.equal(parseScanPayload(invalidClaim), null);
+});
+
 test("blocks mapped, private and special IP ranges while allowing public examples", () => {
   for (const address of ["10.0.0.1", "100.100.100.200", "127.0.0.1", "169.254.169.254", "172.16.0.1", "192.168.1.1", "198.18.0.1", "203.0.113.1", "::1", "::ffff:172.16.0.1", "::ffff:169.254.169.254", "2001::1", "2001:db8::1", "2002:0a00:1::", "3fff::1", "4000::1", "fec0::1", "ff02::1"]) {
     assert.equal(isNonPublicIp(address), true, address);

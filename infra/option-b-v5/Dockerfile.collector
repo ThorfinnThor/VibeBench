@@ -1,0 +1,14 @@
+FROM mcr.microsoft.com/playwright:v1.54.2-noble
+
+ENV NODE_ENV=production PLAYWRIGHT_BROWSERS_PATH=/ms-playwright HOME=/tmp/vibebench-home
+WORKDIR /opt/vibebench
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev --ignore-scripts && npm cache clean --force
+COPY lib/public-url-policy.mjs lib/public-url-policy.mjs
+COPY lib/option-b-v4-capture.mjs lib/option-b-v4-capture.mjs
+COPY lib/option-b-v5-capture.mjs lib/option-b-v5-capture.mjs
+COPY scripts/run-development-v0_6-option-b-v5-isolated.mjs scripts/run-development-v0_6-option-b-v5-isolated.mjs
+COPY outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json
+COPY outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json
+USER pwuser
+ENTRYPOINT ["node", "scripts/run-development-v0_6-option-b-v5-isolated.mjs"]
