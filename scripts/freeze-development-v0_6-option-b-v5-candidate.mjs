@@ -10,21 +10,23 @@ const featurePath = path.resolve(argument("--features", "outputs/development_v0_
 const registryPath = path.resolve(argument("--registry", "outputs/development_v0_6_option_b_v5/option_b_v5_development_evaluation_registry_v1.json"));
 const evaluationPath = path.resolve(argument("--evaluation", "outputs/development_v0_6_option_b_v5/option_b_v5_grouped_nested_evaluation_v2.json"));
 const captureFreezePath = path.resolve(argument("--capture-freeze", "outputs/development_v0_6_option_b_v5/option_b_v5_development_capture_v1.freeze.json"));
-const protocolPath = path.resolve(argument("--protocol", "outputs/development_v0_6_option_b_v5/option_b_v5_candidate_freeze_protocol_v1.json"));
+const protocolPath = path.resolve(argument("--protocol", "outputs/development_v0_6_option_b_v5/option_b_v5_candidate_freeze_protocol_v2.json"));
+const collectorRepeatPath = path.resolve(argument("--collector-repeat", "outputs/development_v0_6_option_b_v5/option_b_v5_development_repeat_comparison_v1.json"));
 const modelPath = path.resolve(argument("--model", "outputs/development_v0_6_option_b_v5/option_b_v5_candidate_model_v1.json"));
 const freezePath = path.resolve(argument("--freeze", "outputs/development_v0_6_option_b_v5/option_b_v5_candidate_v1.freeze.json"));
-const inputPaths = [featurePath, registryPath, evaluationPath, captureFreezePath, protocolPath];
+const inputPaths = [featurePath, registryPath, evaluationPath, captureFreezePath, protocolPath, collectorRepeatPath];
 const inputs = await Promise.all(inputPaths.map(async (file) => {
   const text = await readFile(file, "utf8");
   return { file, text, value: JSON.parse(text), sha256: createHash("sha256").update(text).digest("hex") };
 }));
-const [featureInput, registryInput, evaluationInput, captureFreezeInput, protocolInput] = inputs;
+const [featureInput, registryInput, evaluationInput, captureFreezeInput, protocolInput, collectorRepeatInput] = inputs;
 const features = featureInput.value;
 const registry = registryInput.value;
 const evaluation = evaluationInput.value;
 const captureFreeze = captureFreezeInput.value;
 const protocol = protocolInput.value;
-if (protocol.status !== "CANDIDATE_FREEZE_ALGORITHM_PREDECLARED_NOT_AUTHORIZED" || protocol.safeguards?.automatic_execution !== false) throw new Error("Candidate freeze protocol is not valid.");
+const collectorRepeat = collectorRepeatInput.value;
+if (protocol.status !== "CANDIDATE_FREEZE_ALGORITHM_AND_MULTI_RUN_GATE_PREDECLARED_NOT_AUTHORIZED" || protocol.safeguards?.automatic_execution !== false) throw new Error("Candidate freeze protocol is not valid.");
 if (features.contract?.schema_version !== OPTION_B_V5_DERIVED_FEATURE_SCHEMA || features.contract.feature_names.join("\0") !== OPTION_B_V5_DERIVED_FEATURES.join("\0")) throw new Error("Candidate features do not match Feature Contract v2.");
 const requiredGates = {
   development_gate_passed: evaluation.development_gate_passed === true,
@@ -35,7 +37,8 @@ const requiredGates = {
   successful_paired_sites: features.rows?.length >= 200,
   collector_technical_yield: captureFreeze.collector_promotion_gate?.technical_yield_at_least_90_percent === true,
   unknown_technical_error: captureFreeze.rates?.unknown_technical_error <= 0.01,
-  extraction_failure: captureFreeze.rates?.collector_origin_extraction_failure <= 0.02
+  extraction_failure: captureFreeze.rates?.collector_origin_extraction_failure <= 0.02,
+  collector_repeat_gate: collectorRepeat.status === "MULTI_RUN_COLLECTOR_GATE_PASSED" && Object.values(collectorRepeat.gates || {}).every(Boolean)
 };
 if (!Object.values(requiredGates).every(Boolean)) throw new Error(`Candidate freeze blocked: ${Object.entries(requiredGates).filter(([, passed]) => !passed).map(([name]) => name).join(", ")}`);
 const registryById = new Map(registry.rows.map((row) => [row.sample_id, row]));
@@ -66,7 +69,7 @@ const freeze = {
   production_promotion_authorized: false,
   tuning_after_freeze_allowed: false,
   development_gates: requiredGates,
-  inputs: Object.fromEntries(inputs.map(({ file, sha256, value }, index) => [["features", "evaluation_registry", "grouped_evaluation", "capture_freeze", "candidate_protocol"][index], { path: path.relative(process.cwd(), file), sha256, schema_version: value.schema_version }])),
+  inputs: Object.fromEntries(inputs.map(({ file, sha256, value }, index) => [["features", "evaluation_registry", "grouped_evaluation", "capture_freeze", "candidate_protocol", "collector_repeat_comparison"][index], { path: path.relative(process.cwd(), file), sha256, schema_version: value.schema_version }])),
   model: { path: path.relative(process.cwd(), modelPath), sha256: createHash("sha256").update(modelText).digest("hex") },
   independent_confirmation: { status: "NOT_RUN", manifest_hash: null, precision: null, recall: null }
 };
