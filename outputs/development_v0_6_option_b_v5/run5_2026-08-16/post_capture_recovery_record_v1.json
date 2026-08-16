@@ -37,6 +37,8 @@
     "capture_freeze_sha256": "27867a8532aacce70f0428f48dfaa7beb939885b2a25979958b4e97cba7a4fde",
     "replacement_audit_sha256": "1d18c936006bb793b0ee11d80a146b0feb177647adb447fbab4c1c382fdf3157",
     "derived_features_sha256": "d60517ec1d73ff11a0799cf0bccaa5c7e04e0feeb3335a0b02a3541c5d789d34",
+    "derived_features_storage": "gzip bytes encoded as one base64 text stream",
+    "derived_features_storage_sha256": "9ff245afebf94c0fa562f2e362a98b223ab472326c90492fbf03d926dc8d7685",
     "grouped_nested_evaluation_sha256": "7651ddc4ca6261c9df10e3509a7b2ecd39853d4318938d748bde597b65e6c783"
   },
   "decisions": {
