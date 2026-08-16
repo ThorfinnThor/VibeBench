@@ -1,7 +1,10 @@
 # VibeBench Option-B-v4: Isolation Decision and Pilot Gate
 
-Date: 2026-08-15
-Status: **IMPLEMENTED — SIX-SITE RUN 1 NOT YET EXECUTED**
+Date: 2026-08-15 (execution status updated 2026-08-16)
+Status: **IMPLEMENTED — RUN 1 PASSED; EARLY TECHNICAL REPEAT PASSED BUT IS NOT THE OFFICIAL 24–72 HOUR REPEAT**
+
+The exact execution evidence and repeat comparison are recorded in
+[`VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md`](VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md).
 
 ## Decision
 
