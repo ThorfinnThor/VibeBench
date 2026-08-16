@@ -110,7 +110,7 @@ async function attempt(row, viewport, retryNumber) {
   try {
     const target = normalizePublicUrl(row.target_url);
     context = await runWithin(() => browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, locale: contract.runtime_requirements.locale, timezoneId: contract.runtime_requirements.timezone, colorScheme: "light", reducedMotion: "reduce", deviceScaleFactor: 1, serviceWorkers: "block", acceptDownloads: false, userAgent: fixedUserAgent }), "browser_context_creation_timeout", contract.budgets.navigation_timeout_ms);
-    await context.route("**/*", async (route) => {
+    await runWithin(() => context.route("**/*", async (route) => {
       const request = route.request();
       if (!["GET", "HEAD"].includes(request.method())) return route.abort("blockedbyclient");
       let requestUrl;
@@ -118,11 +118,11 @@ async function attempt(row, viewport, retryNumber) {
       if (["data:", "blob:", "about:"].includes(requestUrl.protocol)) return route.continue();
       if (!["http:", "https:"].includes(requestUrl.protocol)) return route.abort("blockedbyclient");
       try { normalizePublicUrl(requestUrl.toString()); return route.continue(); } catch { return route.abort("blockedbyclient"); }
-    });
-    if (typeof context.routeWebSocket === "function") await context.routeWebSocket("**/*", (socket) => socket.close());
+    }), "browser_routing_configuration_timeout", contract.budgets.navigation_timeout_ms);
+    if (typeof context.routeWebSocket === "function") await runWithin(() => context.routeWebSocket("**/*", (socket) => socket.close()), "browser_websocket_routing_configuration_timeout", contract.budgets.navigation_timeout_ms);
     const page = await runWithin(() => context.newPage(), "browser_page_creation_timeout", contract.budgets.navigation_timeout_ms);
     stage = "http_navigation";
-    const response = await page.goto(target.toString(), { waitUntil: "domcontentloaded", timeout: contract.budgets.navigation_timeout_ms });
+    const response = await runWithin(() => page.goto(target.toString(), { waitUntil: "domcontentloaded", timeout: contract.budgets.navigation_timeout_ms }), "navigation_timeout", contract.budgets.navigation_timeout_ms + 1_000);
     documentObserved = true;
     status = response?.status() || null;
     if (status === 429) throw new Error("HTTP 429");
@@ -131,12 +131,12 @@ async function attempt(row, viewport, retryNumber) {
     stage = "surface_helper_installation";
     await runWithin(() => installOptionBV5SurfaceHelpers(page), "surface_helper_installation_failed: timeout", contract.budgets.extraction_timeout_ms);
     stage = "dom_readiness";
-    await waitForOptionBV5Readiness(page, { timeout_ms: contract.budgets.readiness_timeout_ms, sampling_interval_ms: contract.readiness.sampling_interval_ms, required_consecutive_stable_samples: contract.readiness.required_consecutive_stable_samples, dimension_delta_px_max: contract.readiness.stable_if_document_dimensions_delta_px_max, visible_element_delta_share_max: contract.readiness.stable_if_visible_element_count_delta_share_max });
+    await runWithin(() => waitForOptionBV5Readiness(page, { timeout_ms: contract.budgets.readiness_timeout_ms, sampling_interval_ms: contract.readiness.sampling_interval_ms, required_consecutive_stable_samples: contract.readiness.required_consecutive_stable_samples, dimension_delta_px_max: contract.readiness.stable_if_document_dimensions_delta_px_max, visible_element_delta_share_max: contract.readiness.stable_if_visible_element_count_delta_share_max }), "dom_readiness_timeout", contract.budgets.readiness_timeout_ms + 5_000);
     domObserved = true;
     const eligibility = await runWithin(() => page.evaluate(() => { const helper = window.__VIBEBENCH_OPTION_B_V4_SURFACE__; return { text: (document.body?.innerText || "").length, elements: [...document.body.querySelectorAll("*")].filter(helper.isVisible).length }; }), "dom_readiness_timeout", contract.budgets.extraction_timeout_ms);
     if (eligibility.text < 80 || eligibility.elements < 8) throw new Error("ineligible_empty_or_interstitial");
     stage = "computed_style_extraction";
-    const payload = await Promise.race([extractOptionBV5Surface(page, contract.budgets), new Promise((_, reject) => setTimeout(() => reject(new Error("computed_style_extraction_timeout")), contract.budgets.extraction_timeout_ms))]);
+    const payload = await runWithin(() => extractOptionBV5Surface(page, contract.budgets), "computed_style_extraction_timeout", contract.budgets.extraction_timeout_ms);
     stage = "structural_aggregation";
     assertOptionBV5Payload(payload);
     stage = "serialization";
