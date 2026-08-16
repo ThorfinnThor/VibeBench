@@ -1,0 +1,30 @@
+{
+  "schema_version": "vibebench.option_b.v5_development_package_freeze.v1",
+  "locked_at": "2026-08-16T18:00:00.000Z",
+  "status": "MANIFESTS_AND_REPLACEMENT_ORDER_FROZEN_FEATURE_SCHEMA_PENDING",
+  "capture_may_start": false,
+  "blocking_gate": "FEATURE_CONTRACT_V2_AND_EXPANSION_RUNTIME_MUST_BE_FROZEN",
+  "primary_quotas": {
+    "AI_NATIVE": 43,
+    "AI_ASSISTANT": 57,
+    "HUMAN_CONTROL": 100
+  },
+  "artifacts": {
+    "primary": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_primary_manifest_v1.json",
+      "sha256": "51348fbec1584d3130aa2643213a6c66b4fee61ab66d1d90f40320abc4b4a2bb"
+    },
+    "reserve": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_reserve_manifest_v1.json",
+      "sha256": "3d126b00d9cceab2aaee909916d86cee0a708348b2d95384ce934742ae8c8192"
+    },
+    "registry": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_evaluation_registry_v1.json",
+      "sha256": "74747895f855a85960a35ae771d44dfffb9d3b8c744fa6cbfdb45db054655061"
+    },
+    "replacement": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_replacement_policy_v1.json",
+      "sha256": "71a98d2d8977d76455995f7d53384becca60ee4b79cd794bcec9ae3d12039af3"
+    }
+  }
+}

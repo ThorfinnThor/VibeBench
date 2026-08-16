@@ -10,5 +10,8 @@ COPY lib/option-b-v5-capture.mjs lib/option-b-v5-capture.mjs
 COPY scripts/run-development-v0_6-option-b-v5-isolated.mjs scripts/run-development-v0_6-option-b-v5-isolated.mjs
 COPY outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json
 COPY outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json
+COPY outputs/development_v0_6_option_b_v5/option_b_v5_development_capture_contract_v1.json outputs/development_v0_6_option_b_v5/option_b_v5_development_capture_contract_v1.json
+COPY outputs/development_v0_6_option_b_v5/option_b_v5_development_primary_manifest_v1.json outputs/development_v0_6_option_b_v5/option_b_v5_development_primary_manifest_v1.json
+COPY outputs/development_v0_6_option_b_v5/option_b_v5_development_reserve_manifest_v1.json outputs/development_v0_6_option_b_v5/option_b_v5_development_reserve_manifest_v1.json
 USER pwuser
 ENTRYPOINT ["node", "scripts/run-development-v0_6-option-b-v5-isolated.mjs"]
