@@ -4,6 +4,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { aggregateOptionBV4Surface, assertOptionBV4Payload } from "../lib/option-b-v4-capture.mjs";
+import { assertOptionBV4DerivedFeatures, deriveOptionBV4Features, OPTION_B_V4_DERIVED_FEATURES } from "../lib/option-b-v4-derived-feature-contract.mjs";
 import { assertPinnedPeer, choosePinnedAddress, parseConnectAuthority, parseHttpProxyTarget } from "../lib/peer-pinned-egress-policy.mjs";
 
 const root = new URL("../", import.meta.url);
@@ -63,6 +64,15 @@ test("v4 aggregation emits the positive privacy-minimal schema and rejects addit
   const contaminated = structuredClone(payload);
   contaminated.visible_elements[0].target_url = "https://example.com";
   assert.throws(() => assertOptionBV4Payload(contaminated), /unexpected or missing fields/);
+});
+
+test("v4 derived feature contract is finite, fixed and independent of URL/text fields", () => {
+  const payload = aggregateOptionBV4Surface(fixture());
+  assert.equal(assertOptionBV4Payload(payload), true);
+  const features = deriveOptionBV4Features(payload);
+  assert.equal(assertOptionBV4DerivedFeatures(features), true);
+  assert.equal(Object.keys(features).length, OPTION_B_V4_DERIVED_FEATURES.length);
+  assert.equal(Object.values(features).every((value) => Number.isFinite(value)), true);
 });
 
 test("v4 contract freezes six-repeat-twenty ordering and confirmation legacy status", async () => {

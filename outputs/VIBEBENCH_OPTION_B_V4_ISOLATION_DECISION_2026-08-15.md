@@ -1,7 +1,7 @@
 # VibeBench Option-B-v4: Isolation Decision and Pilot Gate
 
 Date: 2026-08-15 (execution status updated 2026-08-16)
-Status: **IMPLEMENTED — RUN 1 PASSED; EARLY REPEAT ACCEPTED BY EXPLICIT OWNER WAIVER; FIXED 20-SITE EXTENSION AUTHORIZED**
+Status: **IMPLEMENTED — RUN 1 PASSED; EARLY REPEAT ACCEPTED BY EXPLICIT OWNER WAIVER; 20-SITE EXTENSION PASSED; 81-SITE EXTENSION PASSED TECHNICAL GATE**
 
 The exact execution evidence and repeat comparison are recorded in
 [`VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md`](VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md).
@@ -86,9 +86,8 @@ rewriting the frozen v3 artifacts:
 4. Compare both captures with
    `npm run research:v0.5-option-b-v4-pilot-repeat-compare` and manually review
    the descriptive per-sample drift.
-5. Only after that review may one fixed, label-blind **20-site** extension be
-   specified. There is no automatic approval.
-6. The 81-site run remains prohibited.
+5. The fixed, label-blind **20-site** extension was then executed and passed its technical gate.
+6. The owner-authorized **81-site** label-blind extension was executed after the v4 execution gate was opened. It produced 61/81 technical successes and passed the minimum-success floor. See `VIBEBENCH_OPTION_B_V4_EXTENSION_81_RESULT_2026-08-16.md`.
 
 ## Independent Confirmation decision
 
@@ -97,25 +96,26 @@ Precision and 85.7% Recall, but its new status is
 `LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE`. It is not a current performance
 claim in the release manifest, API contract, README or Methodology display.
 
-A fresh independent Confirmation is deliberately deferred. Running it now would
-validate a collector and derived-feature definition that are still changing.
-The rerun becomes appropriate only after:
+A fresh independent Confirmation is still deliberately separate from the
+technical 81-site result. It becomes appropriate only after:
 
 - both v4 pilots pass;
-- any approved 20-site extension is frozen and reviewed;
+- the approved 81-site extension and derived feature contract are frozen and reviewed;
 - the derived feature contract and model decision rule are frozen on
   Development data;
 - no further collector-semantic changes are pending.
 
 ## Verification completed locally
 
-- `npm test`: 107/107 passed.
+- `npm test`: 112/112 passed.
 - `npm run lint`: passed.
 - `npm run build`: passed.
 - `docker compose ... config --quiet`: passed with required runtime variables.
 - GitHub workflow YAML: parsed successfully.
 - v4 collector, proxy, reviewer, comparison and fingerprint scripts: syntax and
   unit coverage passed.
+- 81-site review artifact: 61/81 successes, technical floor passed; derived
+  feature contract and Development model research are hash-recorded separately.
 - Local container execution: not run because the Docker service is unavailable.
 - Local browser smoke execution: host closed the browser process; the workflow
   therefore keeps the smoke test as a mandatory pre-navigation gate inside the

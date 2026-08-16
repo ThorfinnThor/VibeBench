@@ -25,8 +25,10 @@ damaligen unabhängigen 100er-Holdout 82,4 % Precision und 85,7 % Recall bei
 99/100 technisch erfolgreichen Scans. Diese Zahlen sind nur noch als
 **Legacy-Ergebnis** gekennzeichnet: Die Vollständigkeit der damaligen Captures
 ist nachträglich nicht belegbar, daher sind sie kein aktueller Leistungsnachweis.
-Eine frische unabhängige Confirmation folgt erst, wenn der isolierte
-Option-B-v4-Development-Collector stabil ist. Vollständiger Stand:
+Der isolierte Option-B-v4-Development-Collector ist technisch stabil; eine
+frische unabhängige Confirmation ist als nächster, separat zu autorisierender
+Schritt vorbereitet, aber noch nicht als neue Leistungszahl ausgeführt.
+Vollständiger Stand:
 [`outputs/VIBEBENCH_STATUS_2026-08-10.md`](outputs/VIBEBENCH_STATUS_2026-08-10.md).
 Run 1 und ein technisch stabiler, aber mit 18,93 Stunden zu früh ausgeführter
 Repeat sind in
@@ -37,6 +39,13 @@ Audit unverändert als nicht erfüllt sichtbar. Die anschließend erlaubte,
 eingefrorene 20er-Erweiterung erreichte 20/20 technische Erfolge und bestand
 den korrigierten Isolation-, Privacy-, Payload- und Yield-Review:
 [`outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md`](outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md).
+Die danach autorisierte 81er-Erweiterung erreichte 61/81 technische Erfolge
+(über dem technischen Mindestwert 57). Die Captures wurden label-blind im
+isolierten Runtime-Pfad erstellt; die 20 Ausfälle sind technische bzw. nicht
+klassifizierbare Ergebnisse. Die daraus abgeleiteten 38 Features und die
+Development-Cross-Validation bleiben ausdrücklich Forschung und ändern das
+Live-Modell nicht. Siehe
+[`outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_81_RESULT_2026-08-16.md`](outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_81_RESULT_2026-08-16.md).
 
 - Master-Dataset: 2.000 Samples in vier Kohorten.
 - URL-Scan-Queue: 63 Websites, davon 52 erfolgreich gescannt.

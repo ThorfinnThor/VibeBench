@@ -23,9 +23,10 @@ The index is not a probability of AI use, a percentage of AI-generated code, or 
 - Define an indeterminate state for sparse or contradictory observable evidence.
 - Validate stability under harmless page/build changes before changing public claims.
 
-### 2. Prepare a corrected Option-B v4 collector before expanding
+### 2. Prepare and validate the corrected Option-B v4 collector
 
-No additional website acquisition is planned for this phase.
+The isolated v4 path is now complete through the approved 81-site technical
+extension. No further acquisition is required for the current customer release.
 
 The v3 two-run pilot remains a useful repeatability artifact, but the fifth audit
 identified capture-surface, semantic and runtime-isolation gaps. Neither a
@@ -39,9 +40,11 @@ must be frozen and re-piloted first, without rewriting the v3 artifacts.
 - correct non-pixel CSS units and interactive-state rules;
 - use linear-time repetition aggregation and positive payload validation.
 
-Only after a new six-site repeat pilot passes may a fixed 20-site label-blind
-technical expansion be considered. Keep hostname, URL, provenance and builder
-declarations out of model features.
+The six-site repeat and fixed 20-site extension passed their technical gates.
+The owner-authorized 81-site label-blind extension then produced 61/81 usable
+captures and passed the fixed technical yield floor. Keep hostname, URL,
+provenance and builder declarations out of model features. See
+`outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_81_RESULT_2026-08-16.md`.
 
 ### 3. Replace the old success target with evidence-based gates
 
@@ -117,8 +120,8 @@ See:
 2. **Completed:** freeze the Option-B v4 capture contract and corrected positive-schema collector. The local environment must not fall back to a non-isolated run when Docker is unavailable.
 3. **Completed with disclosed waiver:** Run 1 and the early technical repeat both produced the same five successes and perfect descriptive stability. The repeat ran after 18.9288 rather than 24 hours; the owner explicitly accepted this narrow protocol deviation without rewriting the original failed time gate.
 4. **Completed:** the frozen deterministic, label-blind 20-site technical extension produced 20/20 successful captures and passed the corrected isolation, privacy, payload and yield review. The initial post-capture reviewer retained a six-site constant; the collector and records were valid, the reviewer was fixed with a regression assertion, and the unchanged 20-site workflow then passed. See `outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md`.
-5. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
-6. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.
+5. **Completed:** freeze the 81-site capture and derive the 38-feature identity-free matrix after capture freeze. Development cross-validation is documented and does not meet a stable 90/90 gate.
+6. Next: decide whether to run a fresh untouched independent confirmation or keep the existing v0.4 confirmation explicitly legacy-only. Do not promote v4 from the 81-site technical result alone.
 
 The existing 82.4% Precision / 85.7% Recall confirmation is now explicitly a
 `LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE` result, not a current performance
