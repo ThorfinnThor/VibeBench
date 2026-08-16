@@ -2,6 +2,7 @@
 
 import { CSSProperties, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { parseScanPayload } from "../lib/scan-contract.mjs";
+import { localizeTechnicalOutcome } from "../lib/scan-localization.mjs";
 import release from "../release/v0.4.json";
 
 type Evidence = { type: string; label: string; strength: string; source?: string; marker?: string };
@@ -102,17 +103,15 @@ const priorityLabelsByLanguage = {
   en: { high: "Do first", medium: "Next", low: "Optimize" },
   de: { high: "Zuerst lösen", medium: "Danach", low: "Optimierung" }
 } as const;
-const metricLabels: Record<string, string> = {
-  htmlBytes: "HTML-Größe", scriptTags: "Skripte", stylesheetLinks: "Stylesheets", inlineStyles: "Inline-Styles",
-  dataAttributes: "Data-Attribute", forms: "Formulare", headings: "Überschriften", images: "Bilder",
-  sameOriginAssets: "Geprüfte Assets", assetBytes: "Asset-Größe", assetFetchErrors: "Asset-Fehler", truncatedAssets: "Gekürzte Assets"
-};
+const metricLabelsByLanguage = {
+  en: { htmlBytes: "HTML size", scriptTags: "Scripts", stylesheetLinks: "Stylesheets", inlineStyles: "Inline styles", dataAttributes: "Data attributes", forms: "Forms", headings: "Headings", images: "Images", sameOriginAssets: "Inspected assets", assetBytes: "Asset size", assetFetchErrors: "Asset errors", truncatedAssets: "Truncated assets" },
+  de: { htmlBytes: "HTML-Größe", scriptTags: "Skripte", stylesheetLinks: "Stylesheets", inlineStyles: "Inline-Styles", dataAttributes: "Data-Attribute", forms: "Formulare", headings: "Überschriften", images: "Bilder", sameOriginAssets: "Geprüfte Assets", assetBytes: "Asset-Größe", assetFetchErrors: "Asset-Fehler", truncatedAssets: "Gekürzte Assets" }
+} as const;
 
-const structuralHintLabels: Record<string, string> = {
-  "dense-modern-stack": "viele moderne Stack-Signale",
-  "high-data-attribute-density": "hohe Dichte strukturierter Data-Attribute",
-  "script-heavy-static-shell": "skriptlastige Oberfläche ohne Formularstruktur"
-};
+const structuralHintLabelsByLanguage = {
+  en: { "dense-modern-stack": "many modern stack signals", "high-data-attribute-density": "high density of structured data attributes", "script-heavy-static-shell": "script-heavy surface without form structure" },
+  de: { "dense-modern-stack": "viele moderne Stack-Signale", "high-data-attribute-density": "hohe Dichte strukturierter Data-Attribute", "script-heavy-static-shell": "skriptlastige Oberfläche ohne Formularstruktur" }
+} as const;
 
 function formatMetric(key: string, value: number) {
   if (["htmlBytes", "assetBytes"].includes(key)) {
@@ -150,6 +149,8 @@ export default function Home() {
   const categories = categoryIds.map((id) => ({ id, label: categoryLabelsByLanguage[language][id] }));
   const categoryLabels: Record<string, string> = categoryLabelsByLanguage[language];
   const priorityLabels = priorityLabelsByLanguage[language];
+  const metricLabels: Record<string, string> = metricLabelsByLanguage[language];
+  const structuralHintLabels: Record<string, string> = structuralHintLabelsByLanguage[language];
 
   function changeLanguage(next: Language) {
     setLanguage(next);
@@ -183,7 +184,7 @@ export default function Home() {
     try {
       const response = await fetch("/api/scan", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": "application/json", "accept-language": language },
         body: JSON.stringify({ url: requestedUrl }),
         signal: controller.signal
       });
@@ -221,7 +222,7 @@ export default function Home() {
     controllerRef.current?.abort("user-cancelled");
   }
 
-  const technicalOutcome = errorResult?.technicalOutcome || null;
+  const technicalOutcome = localizeTechnicalOutcome(errorResult?.technicalOutcome || null, language);
   const score = result?.vibeScore?.score ?? 0;
   const observedRecommendations = visibleRecommendations.filter((item) => item.basis !== "guidance");
   const guidanceRecommendations = visibleRecommendations.filter((item) => item.basis === "guidance");
@@ -351,15 +352,6 @@ export default function Home() {
         <article><span>01</span><h3>{copy.methodOneTitle}</h3><p>{copy.methodOneText}</p><small className="method-tag">PUBLIC SURFACE</small></article>
         <article><span>02</span><h3>{copy.methodTwoTitle}</h3><p>{copy.methodTwoText}</p><small className="method-tag">QUALITATIVE INDEX</small></article>
         <article><span>03</span><h3>{copy.methodThreeTitle}</h3><p>{copy.methodThreeText}</p><small className="method-tag">ACTIONABLE OUTPUT</small></article>
-      </div>
-      <div className="method-proof">
-        <div className="method-proof-copy"><p className="eyebrow">EVIDENCE BOUNDARY</p><h3>{copy.proofTitle}</h3><p>{copy.proofText}</p></div>
-        <div className="method-proof-list">
-          <div><span>01</span><strong>{copy.proofPublic}</strong><small>HTML, headers &amp; bounded same-origin assets</small></div>
-          <div><span>02</span><strong>{copy.proofScore}</strong><small>No claim of authorship or AI probability</small></div>
-          <div><span>03</span><strong>{copy.proofSecurity}</strong><small>Visible header checks stay separate</small></div>
-          <div><span>04</span><strong>{copy.proofPrivacy}</strong><small>No login, repository or private source code</small></div>
-        </div>
       </div>
     </section>
 
