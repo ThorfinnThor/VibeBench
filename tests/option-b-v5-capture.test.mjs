@@ -43,5 +43,9 @@ test("v5 Development runner bounds context and browser cleanup", async () => {
   assert.match(source, /context_close_timeouts/);
   assert.match(source, /browser_context_creation_timeout/);
   assert.match(source, /browser_page_creation_timeout/);
+  assert.match(source, /browser_routing_configuration_timeout/);
+  assert.match(source, /browser_websocket_routing_configuration_timeout/);
+  assert.match(source, /page\.goto[\s\S]*navigation_timeout[\s\S]*navigation_timeout_ms \+ 1_000/);
   assert.match(source, /surface_helper_installation_failed: timeout/);
+  assert.match(source, /waitForOptionBV5Readiness[\s\S]*contract\.budgets\.readiness_timeout_ms \+ 5_000/);
 });
