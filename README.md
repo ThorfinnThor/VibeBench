@@ -28,6 +28,10 @@ ist nachträglich nicht belegbar, daher sind sie kein aktueller Leistungsnachwei
 Eine frische unabhängige Confirmation folgt erst, wenn der isolierte
 Option-B-v4-Development-Collector stabil ist. Vollständiger Stand:
 [`outputs/VIBEBENCH_STATUS_2026-08-10.md`](outputs/VIBEBENCH_STATUS_2026-08-10.md).
+Run 1 und ein technisch stabiler, aber mit 18,93 Stunden zu früh ausgeführter
+Repeat sind in
+[`outputs/VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md`](outputs/VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md)
+dokumentiert; die offizielle 24–72-Stunden-Wiederholung steht weiterhin aus.
 
 - Master-Dataset: 2.000 Samples in vier Kohorten.
 - URL-Scan-Queue: 63 Websites, davon 52 erfolgreich gescannt.
