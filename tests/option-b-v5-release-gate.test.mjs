@@ -27,8 +27,9 @@ test("candidate configuration selection is predeclared and deterministic", () =>
 });
 
 test("candidate-freeze protocol cannot authorize itself or production", async () => {
-  const protocol = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_candidate_freeze_protocol_v1.json", import.meta.url), "utf8"));
-  assert.equal(protocol.status, "CANDIDATE_FREEZE_ALGORITHM_PREDECLARED_NOT_AUTHORIZED");
+  const protocol = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_candidate_freeze_protocol_v2.json", import.meta.url), "utf8"));
+  assert.equal(protocol.status, "CANDIDATE_FREEZE_ALGORITHM_AND_MULTI_RUN_GATE_PREDECLARED_NOT_AUTHORIZED");
+  assert.equal(protocol.prerequisites.frozen_development_runs_minimum, 2);
   assert.equal(protocol.safeguards.automatic_execution, false);
   assert.equal(protocol.safeguards.production_promotion_authorized, false);
 });
