@@ -45,6 +45,8 @@ const fixedUserAgent = `VibeBenchResearch/${OPTION_B_V5_COLLECTOR_VERSION}`;
 const attempts = [];
 const captureCounts = new Map();
 let captureCount = 0;
+const CONTEXT_CLOSE_TIMEOUT_MS = 5_000;
+const BROWSER_CLOSE_TIMEOUT_MS = 10_000;
 await mkdir(path.dirname(outputPath), { recursive: true });
 const captureRowsPath = `${outputPath}.${randomUUID()}.rows.ndjson`;
 const captureRowsStream = createWriteStream(captureRowsPath, { mode: 0o600 });
@@ -53,6 +55,22 @@ const browserVersion = await browser.version();
 
 const assertPrivacy = (value, at = "output") => { if (Array.isArray(value)) return value.forEach((item, index) => assertPrivacy(item, `${at}[${index}]`)); if (!value || typeof value !== "object") return; for (const [key, item] of Object.entries(value)) { if (/^(target_url|resolved_url|url|hostname|label|target_group|raw_html|visible_text|text|screenshot|image)$/i.test(key)) throw new Error(`Prohibited persisted field at ${at}.${key}`); assertPrivacy(item, `${at}.${key}`); } };
 const writeChunk = async (stream, chunk) => { if (!stream.write(chunk)) await once(stream, "drain"); };
+const runWithin = async (operation, message, timeoutMs) => {
+  let timer;
+  try {
+    return await Promise.race([operation(), new Promise((_, reject) => { timer = setTimeout(() => reject(new Error(message)), timeoutMs); })]);
+  } finally {
+    clearTimeout(timer);
+  }
+};
+const settleWithin = async (operation, timeoutMs) => {
+  let timer;
+  const completion = Promise.resolve().then(operation).then(() => "closed", () => "error");
+  const timeout = new Promise((resolve) => { timer = setTimeout(() => resolve("timed_out"), timeoutMs); });
+  const outcome = await Promise.race([completion, timeout]);
+  clearTimeout(timer);
+  return outcome;
+};
 const appendCapture = async (row) => {
   assertPrivacy(row, "capture");
   await writeChunk(captureRowsStream, `${JSON.stringify(row)}\n`);
@@ -91,7 +109,7 @@ async function attempt(row, viewport, retryNumber) {
   let context;
   try {
     const target = normalizePublicUrl(row.target_url);
-    context = await browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, locale: contract.runtime_requirements.locale, timezoneId: contract.runtime_requirements.timezone, colorScheme: "light", reducedMotion: "reduce", deviceScaleFactor: 1, serviceWorkers: "block", acceptDownloads: false, userAgent: fixedUserAgent });
+    context = await runWithin(() => browser.newContext({ viewport: { width: viewport.width, height: viewport.height }, locale: contract.runtime_requirements.locale, timezoneId: contract.runtime_requirements.timezone, colorScheme: "light", reducedMotion: "reduce", deviceScaleFactor: 1, serviceWorkers: "block", acceptDownloads: false, userAgent: fixedUserAgent }), "browser_context_creation_timeout", contract.budgets.navigation_timeout_ms);
     await context.route("**/*", async (route) => {
       const request = route.request();
       if (!["GET", "HEAD"].includes(request.method())) return route.abort("blockedbyclient");
@@ -102,7 +120,7 @@ async function attempt(row, viewport, retryNumber) {
       try { normalizePublicUrl(requestUrl.toString()); return route.continue(); } catch { return route.abort("blockedbyclient"); }
     });
     if (typeof context.routeWebSocket === "function") await context.routeWebSocket("**/*", (socket) => socket.close());
-    const page = await context.newPage();
+    const page = await runWithin(() => context.newPage(), "browser_page_creation_timeout", contract.budgets.navigation_timeout_ms);
     stage = "http_navigation";
     const response = await page.goto(target.toString(), { waitUntil: "domcontentloaded", timeout: contract.budgets.navigation_timeout_ms });
     documentObserved = true;
@@ -111,11 +129,11 @@ async function attempt(row, viewport, retryNumber) {
     if (status && status >= 400) throw new Error(`HTTP ${status}`);
     resolvedOriginHash = createHash("sha256").update(`${originSalt}\0${new URL(page.url()).origin}`).digest("hex");
     stage = "surface_helper_installation";
-    await installOptionBV5SurfaceHelpers(page);
+    await runWithin(() => installOptionBV5SurfaceHelpers(page), "surface_helper_installation_failed: timeout", contract.budgets.extraction_timeout_ms);
     stage = "dom_readiness";
     await waitForOptionBV5Readiness(page, { timeout_ms: contract.budgets.readiness_timeout_ms, sampling_interval_ms: contract.readiness.sampling_interval_ms, required_consecutive_stable_samples: contract.readiness.required_consecutive_stable_samples, dimension_delta_px_max: contract.readiness.stable_if_document_dimensions_delta_px_max, visible_element_delta_share_max: contract.readiness.stable_if_visible_element_count_delta_share_max });
     domObserved = true;
-    const eligibility = await page.evaluate(() => { const helper = window.__VIBEBENCH_OPTION_B_V4_SURFACE__; return { text: (document.body?.innerText || "").length, elements: [...document.body.querySelectorAll("*")].filter(helper.isVisible).length }; });
+    const eligibility = await runWithin(() => page.evaluate(() => { const helper = window.__VIBEBENCH_OPTION_B_V4_SURFACE__; return { text: (document.body?.innerText || "").length, elements: [...document.body.querySelectorAll("*")].filter(helper.isVisible).length }; }), "dom_readiness_timeout", contract.budgets.extraction_timeout_ms);
     if (eligibility.text < 80 || eligibility.elements < 8) throw new Error("ineligible_empty_or_interstitial");
     stage = "computed_style_extraction";
     const payload = await Promise.race([extractOptionBV5Surface(page, contract.budgets), new Promise((_, reject) => setTimeout(() => reject(new Error("computed_style_extraction_timeout")), contract.budgets.extraction_timeout_ms))]);
@@ -133,10 +151,13 @@ async function attempt(row, viewport, retryNumber) {
     attempts.push(audit);
     return { ok: false, audit };
   } finally {
-    await context?.close().catch(() => {});
+    const cleanup = context ? await settleWithin(() => context.close(), CONTEXT_CLOSE_TIMEOUT_MS) : "not_created";
+    const audit = attempts.at(-1);
+    if (audit?.attempt_id === attemptId) audit.context_close_outcome = cleanup;
   }
 }
 
+let browserCloseOutcome = "not_started";
 try {
   for (const [index, row] of manifest.rows.entries()) {
     let siteSuccess = true;
@@ -152,12 +173,12 @@ try {
     process.stdout.write(`${index + 1}/${manifest.rows.length} ${row.sample_id} ${siteSuccess ? "success" : "failed"}\n`);
   }
 } finally {
-  await browser.close();
+  browserCloseOutcome = await settleWithin(() => browser.close(), BROWSER_CLOSE_TIMEOUT_MS);
   captureRowsStream.end();
   await once(captureRowsStream, "close");
 }
 
-const common = { generated_at: new Date().toISOString(), run_id: runId, status: mode === "smoke" ? "ISOLATED_LABEL_BLIND_SIX_SITE_SMOKE" : "ISOLATED_LABEL_BLIND_DEVELOPMENT_CAPTURE", runtime: { engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewports: contract.viewports, isolation: { collector_direct_network: false, peer_pinning_egress: true, read_only_root: true, non_root: true, no_new_privileges: true, capabilities_dropped: "ALL", collector_image_id: process.env.OPTION_B_V5_COLLECTOR_IMAGE, egress_image_id: process.env.OPTION_B_V5_EGRESS_IMAGE, collector_base_digest: process.env.OPTION_B_V5_COLLECTOR_BASE_DIGEST, egress_base_digest: process.env.OPTION_B_V5_EGRESS_BASE_DIGEST, collector_source_sha256: process.env.OPTION_B_V5_COLLECTOR_SOURCE_SHA256, egress_source_sha256: process.env.OPTION_B_V5_EGRESS_SOURCE_SHA256 } }, inputs: { manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") }, contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") } } };
+const common = { generated_at: new Date().toISOString(), run_id: runId, status: mode === "smoke" ? "ISOLATED_LABEL_BLIND_SIX_SITE_SMOKE" : "ISOLATED_LABEL_BLIND_DEVELOPMENT_CAPTURE", runtime: { engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewports: contract.viewports, cleanup: { context_close_timeout_ms: CONTEXT_CLOSE_TIMEOUT_MS, context_close_timeouts: attempts.filter(({ context_close_outcome }) => context_close_outcome === "timed_out").length, context_close_errors: attempts.filter(({ context_close_outcome }) => context_close_outcome === "error").length, browser_close_timeout_ms: BROWSER_CLOSE_TIMEOUT_MS, browser_close_outcome: browserCloseOutcome }, isolation: { collector_direct_network: false, peer_pinning_egress: true, read_only_root: true, non_root: true, no_new_privileges: true, capabilities_dropped: "ALL", collector_image_id: process.env.OPTION_B_V5_COLLECTOR_IMAGE, egress_image_id: process.env.OPTION_B_V5_EGRESS_IMAGE, collector_base_digest: process.env.OPTION_B_V5_COLLECTOR_BASE_DIGEST, egress_base_digest: process.env.OPTION_B_V5_EGRESS_BASE_DIGEST, collector_source_sha256: process.env.OPTION_B_V5_COLLECTOR_SOURCE_SHA256, egress_source_sha256: process.env.OPTION_B_V5_EGRESS_SOURCE_SHA256 } }, inputs: { manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") }, contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") } } };
 const privacy = { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false };
 const successfulSiteIds = new Set([...captureCounts].filter(([, count]) => count === contract.viewports.length).map(([sampleId]) => sampleId));
 const captureOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_capture.v1" : "vibebench.option_b.v5_development_capture.v1", ...common, privacy, summary: { attempted: manifest.rows.length, viewports: contract.viewports.length, successful: successfulSiteIds.size, captures: captureCount, failed: manifest.rows.length - successfulSiteIds.size, incomplete_viewport_pairs: [...captureCounts].filter(([, count]) => count !== contract.viewports.length).length } };
@@ -185,4 +206,5 @@ const atomicJsonWithRows = async (file, value, arrayKey, rowsFile) => {
   await unlink(rowsFile);
 };
 await Promise.all([atomicJsonWithRows(outputPath, captureOutput, "captures", captureRowsPath), atomicJson(auditPath, auditOutput)]);
-process.stdout.write(`${JSON.stringify({ capture: outputPath, audit: auditPath, summary: captureOutput.summary }, null, 2)}\n`);
+await new Promise((resolve) => process.stdout.write(`${JSON.stringify({ capture: outputPath, audit: auditPath, summary: captureOutput.summary, cleanup: common.runtime.cleanup }, null, 2)}\n`, resolve));
+if (browserCloseOutcome === "timed_out") process.exit(0);
