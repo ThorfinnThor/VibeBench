@@ -1,0 +1,16 @@
+{
+  "schema_version": "vibebench.option_b.v4_81_authorization.v1",
+  "status": "TECHNICAL_81_RUN_AUTHORIZED_BY_PROJECT_OWNER",
+  "authorized_at": "2026-08-16T00:00:00.000Z",
+  "scope": "one frozen, label-blind 81-site Development capture through the already-verified isolated v4 runtime",
+  "reason": "Explicit project-owner instruction to complete the 81-site research step and finalize the product.",
+  "collector_visible_fields": ["sample_id", "target_url"],
+  "labels_joined_during_capture": false,
+  "production_model_change_authorized": false,
+  "independent_confirmation_authorized": false,
+  "post_capture_requirements": [
+    "review artifact integrity, isolation, privacy and technical yield",
+    "freeze derived features before joining labels",
+    "do not publish Precision/Recall as current performance without independent confirmation"
+  ]
+}

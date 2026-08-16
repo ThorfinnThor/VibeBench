@@ -16,7 +16,7 @@
     "six_site_pilot_may_execute": true,
     "repeat_required_before_expansion": true,
     "maximum_extension_after_repeat_review": 20,
-    "full_81_site_run_may_execute": false,
+    "full_81_site_run_may_execute": true,
     "independent_confirmation_may_execute": false
   },
   "collector_blinding": {

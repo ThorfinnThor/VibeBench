@@ -1,0 +1,81 @@
+name: Option B v4 isolated 81-site Development capture
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: option-b-v4-extension-81
+  cancel-in-progress: false
+
+jobs:
+  isolated-extension-81:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPTION_B_V4_ARTIFACT_DIR: ${{ github.workspace }}/extension-81-artifacts
+      OPTION_B_V4_COLLECTOR_IMAGE: pending
+      OPTION_B_V4_EGRESS_IMAGE: pending
+      OPTION_B_V4_COLLECTOR_BASE_DIGEST: pending
+      OPTION_B_V4_EGRESS_BASE_DIGEST: pending
+      OPTION_B_V4_COLLECTOR_SOURCE_SHA256: pending
+      OPTION_B_V4_EGRESS_SOURCE_SHA256: pending
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22.13.0
+          cache: npm
+      - name: Verify source and tests
+        run: |
+          npm ci
+          npm test
+      - name: Build isolated images and record immutable image IDs
+        run: |
+          mkdir -p "$OPTION_B_V4_ARTIFACT_DIR"
+          chmod 0777 "$OPTION_B_V4_ARTIFACT_DIR"
+          docker pull --quiet mcr.microsoft.com/playwright:v1.54.2-noble
+          docker pull --quiet node:22.13.0-bookworm-slim
+          docker compose -f infra/option-b-v4/compose.yml build --pull
+          COLLECTOR_IMAGE_ID=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v4-collector:local)
+          EGRESS_IMAGE_ID=$(docker image inspect --format '{{.Id}}' vibebench-option-b-v4-egress:local)
+          COLLECTOR_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' mcr.microsoft.com/playwright:v1.54.2-noble)
+          EGRESS_BASE_DIGEST=$(docker image inspect --format '{{index .RepoDigests 0}}' node:22.13.0-bookworm-slim)
+          echo "OPTION_B_V4_COLLECTOR_IMAGE=$COLLECTOR_IMAGE_ID" >> "$GITHUB_ENV"
+          echo "OPTION_B_V4_EGRESS_IMAGE=$EGRESS_IMAGE_ID" >> "$GITHUB_ENV"
+          echo "OPTION_B_V4_COLLECTOR_BASE_DIGEST=$COLLECTOR_BASE_DIGEST" >> "$GITHUB_ENV"
+          echo "OPTION_B_V4_EGRESS_BASE_DIGEST=$EGRESS_BASE_DIGEST" >> "$GITHUB_ENV"
+          node scripts/fingerprint-option-b-v4-runtime.mjs --github-env >> "$GITHUB_ENV"
+      - name: Verify container isolation profile
+        run: |
+          docker compose -f infra/option-b-v4/compose.yml create egress collector
+          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q --all collector)" | node scripts/verify-option-b-v4-container-profile.mjs --role collector
+          docker inspect "$(docker compose -f infra/option-b-v4/compose.yml ps -q --all egress)" | node scripts/verify-option-b-v4-container-profile.mjs --role egress
+      - name: Verify corrected capture semantics inside the isolated image
+        run: |
+          docker compose -f infra/option-b-v4/compose.yml up -d egress
+          docker compose -f infra/option-b-v4/compose.yml run --rm --entrypoint node collector scripts/smoke-option-b-v4-capture.mjs
+      - name: Run frozen 81-site Development capture through peer-pinning egress
+        run: |
+          docker compose -f infra/option-b-v4/compose.yml run --rm collector \
+            --manifest outputs/development_v0_5_option_b_v4/option_b_v4_81_manifest_v1.json \
+            --authorization outputs/development_v0_5_option_b_v4/option_b_v4_81_authorization_v1.json \
+            --output /artifacts/extension-81.capture.json \
+            --audit /artifacts/extension-81.attempt-audit.json
+          node scripts/review-development-v0_5-option-b-v4-pilot.mjs \
+            --capture extension-81-artifacts/extension-81.capture.json \
+            --audit extension-81-artifacts/extension-81.attempt-audit.json \
+            > extension-81-artifacts/extension-81.review.json
+      - name: Tear down isolation network
+        if: always()
+        run: docker compose -f infra/option-b-v4/compose.yml down --volumes --remove-orphans
+      - name: Upload privacy-minimal 81-site artifacts
+        if: ${{ always() && hashFiles('extension-81-artifacts/**') != '' }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: option-b-v4-extension-81
+          path: extension-81-artifacts/
+          if-no-files-found: error
+          retention-days: 14

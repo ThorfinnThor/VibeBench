@@ -7,7 +7,7 @@ const groups = {
     "lib/public-url-policy.mjs", "lib/option-b-v4-capture.mjs",
     "scripts/run-development-v0_5-option-b-v4-isolated-pilot.mjs", "scripts/smoke-option-b-v4-capture.mjs",
     "outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json", "outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json",
-    "outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json", "outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json"
+    "outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json", "outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json", "outputs/development_v0_5_option_b_v4/option_b_v4_81_manifest_v1.json", "outputs/development_v0_5_option_b_v4/option_b_v4_81_authorization_v1.json"
   ],
   egress: [".dockerignore", "infra/option-b-v4/compose.yml", "infra/option-b-v4/Dockerfile.egress", "infra/option-b-v4/egress-proxy.mjs", "lib/public-url-policy.mjs", "lib/peer-pinned-egress-policy.mjs"]
 };
