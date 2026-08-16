@@ -1,0 +1,289 @@
+{
+  "schema_version": "vibebench.option_b.v5_development_reserve_manifest.v1",
+  "locked_at": "2026-08-16T18:00:00.000Z",
+  "status": "LABEL_BLIND_DEVELOPMENT_RESERVE_FROZEN",
+  "purpose": "Development-only v5 public-surface capture; not an independent performance claim",
+  "sources": [
+    {
+      "path": "outputs/development_v0_5_option_b/option_b_browser_surface_matrix_v1.json",
+      "sha256": "841a0fda338ee416e2f8fc4892090841cb2d7a5d6284028e2d5683b423a97ba6",
+      "schema_version": "vibebench.option_b.browser_surface_matrix.v1"
+    },
+    {
+      "path": "outputs/development_v0_5/vibebench_development_v0_5_candidate_pool.json",
+      "sha256": "49aa0b7785a39df600c8efc4d57963eeaecb4631b7762a16807f6780516f2362",
+      "schema_version": "v0.5-development-candidate-pool"
+    },
+    {
+      "path": "outputs/confirmation_v0_2/vibebench_confirmation_holdout_100_v0_2.json",
+      "sha256": "6484828d354c4c8f17841cc918db114a8c41036c4568a8296dcd008ce0e5d6c1",
+      "schema_version": "v0.2-confirmation-holdout-manifest"
+    },
+    {
+      "path": "outputs/confirmation_v0_3/vibebench_confirmation_holdout_100_v0_3.json",
+      "sha256": "7e6d0510d924120af404ba0b065e6e39db8c0c9f6d308c1e8e39cc3d2a94856b",
+      "schema_version": "v0.3-confirmation-holdout"
+    },
+    {
+      "path": "outputs/confirmation_v0_4/vibebench_confirmation_holdout_100_v0_4.json",
+      "sha256": "5f19956eb2e34cdb1fe9f9714b0eb13bde45affeac1115032ba39795b00bd7a9",
+      "schema_version": "v0.4-confirmation-holdout"
+    }
+  ],
+  "selection": {
+    "labels_inspected_by_collector": false,
+    "model_scores_inspected": false,
+    "previous_features_inspected": false,
+    "historical_technical_eligibility_required": true
+  },
+  "collector_visible_fields": [
+    "sample_id",
+    "target_url"
+  ],
+  "rows": [
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-048",
+      "target_url": "https://laboratory-python.readthedocs.io/en/latest/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-next-saas-starter-ashy.vercel.app",
+      "target_url": "https://next-saas-starter-ashy.vercel.app/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-020",
+      "target_url": "https://www.adamdehaven.com/blog/easily-crawl-a-website-and-fetch-all-urls-with-a-shell-script/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-078",
+      "target_url": "https://resizeimagefor.com/resize-image-for-instagram"
+    },
+    {
+      "sample_id": "OPT-B-HUM-022",
+      "target_url": "http://alexlynd.com/projects/ESP-Bug"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-038",
+      "target_url": "https://www.dremio.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-169",
+      "target_url": "https://crm-match.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-070",
+      "target_url": "http://www.coreshop.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-faustjs.org",
+      "target_url": "https://faustjs.org/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-028",
+      "target_url": "https://grafana.com/orgs/monitoringartist/dashboards"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-014",
+      "target_url": "https://www.gethalfmoon.com/"
+    },
+    {
+      "sample_id": "DEV4-043",
+      "target_url": "https://demo.saleor.io/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-clerk.com",
+      "target_url": "https://clerk.com/"
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "target_url": "https://notion-clone.kmuenster.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-048",
+      "target_url": "https://talkvialink.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-026",
+      "target_url": "http://explainerdashboard.readthedocs.io/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-022",
+      "target_url": "https://www.eddwebster.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-033",
+      "target_url": "https://kruxdev.com/go?c=test"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-229",
+      "target_url": "https://murmurvt.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-179",
+      "target_url": "https://enigmaeasel.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-scaffoldeth.io",
+      "target_url": "https://scaffoldeth.io/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-173",
+      "target_url": "https://www.listmailer.dev/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-077",
+      "target_url": "https://docs.mall.offline.ch/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-cali.so",
+      "target_url": "https://cali.so/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-dev.to",
+      "target_url": "https://dev.to/ionic/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor-3kij"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-083",
+      "target_url": "https://serverbuddy.net/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-017",
+      "target_url": "https://sindresorhus.com/ios-landing-page/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-083",
+      "target_url": "https://merx.wagnerwagner.de/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-openship.org",
+      "target_url": "https://openship.org/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-063",
+      "target_url": "https://renava.app/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-021",
+      "target_url": "https://submitbear.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-zws.im",
+      "target_url": "https://zws.im/"
+    },
+    {
+      "sample_id": "DEV5-104",
+      "target_url": "https://www.weld.rs/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-registry.terraform.io",
+      "target_url": "https://registry.terraform.io/modules/milliHQ/next-js/aws"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-186",
+      "target_url": "https://imagetoimageai.live/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-035",
+      "target_url": "https://docs.getdbt.com/docs/build/about-metricflow"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-050",
+      "target_url": "https://swiftrocks.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-030",
+      "target_url": "https://lib.vizzuhq.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-058",
+      "target_url": "https://applyboostai.com/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-005",
+      "target_url": "http://webjike.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-006",
+      "target_url": "https://flick-clean.com/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-058",
+      "target_url": "https://maggix1404.github.io/webgl-portfolio/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "target_url": "https://docs.google.com/spreadsheets/d/1jnds3X_-RSTN4ATuOFV-v6tar0KfAla88vC43Vq6ubc/edit"
+    },
+    {
+      "sample_id": "OPT-B-HUM-024",
+      "target_url": "https://susantabiswas.github.io/facial-login-web/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-thedev.id",
+      "target_url": "https://thedev.id/"
+    },
+    {
+      "sample_id": "DEV4-052",
+      "target_url": "https://jsmastery.pro/"
+    },
+    {
+      "sample_id": "DEV4-040",
+      "target_url": "https://git.io/awesome-meta-and-manifest"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-051",
+      "target_url": "https://yscope.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-055",
+      "target_url": "https://elide.io/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-096",
+      "target_url": "https://zenvoya.ai/"
+    },
+    {
+      "sample_id": "OPT-B-AI-067",
+      "target_url": "https://founderfocus-claritypartner.netlify.app/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-104",
+      "target_url": "https://patterai.app/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-078",
+      "target_url": "https://www.aquila-cms.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-AI-105",
+      "target_url": "https://www.launchchair.io/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-EXISTING-murex.rocks",
+      "target_url": "https://murex.rocks/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-009",
+      "target_url": "https://unfoldadmin.com/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-006",
+      "target_url": "https://beauty.now.sh/"
+    },
+    {
+      "sample_id": "OPT-B-AI-071",
+      "target_url": "https://gitflowa-ai.netlify.app/"
+    },
+    {
+      "sample_id": "DEV5-099",
+      "target_url": "http://mozaik.rocks/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-062",
+      "target_url": "https://vulcansql.com/"
+    },
+    {
+      "sample_id": "V5-DEV5-HUM-NEW-039",
+      "target_url": "https://tensorbase.io/"
+    }
+  ]
+}
