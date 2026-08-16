@@ -220,7 +220,7 @@ export async function POST(request) {
         band: getScoreBand(score),
         threshold: Math.round(candidateModel.training.threshold * 100),
         aboveValidatedThreshold: probability >= candidateModel.training.threshold,
-        meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeBench-Korpus.",
+        meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeFootprint-Korpus.",
         caveat: "Kein Prozentanteil AI-generierten Codes und kein Beweis für die Autorenschaft."
       },
       scoreDrivers: {
@@ -257,3 +257,4 @@ export async function POST(request) {
     releaseAdmission();
   }
 }
+
