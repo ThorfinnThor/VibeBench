@@ -1,4 +1,6 @@
 import { createHash } from "node:crypto";
+import { once } from "node:events";
+import { createWriteStream } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { assertOptionBV5Payload } from "../lib/option-b-v5-capture.mjs";
@@ -79,12 +81,26 @@ const finalCapture = {
   privacy: primaryCapture.privacy,
   runtime: { primary: primaryCapture.runtime, reserve: reserveCapture.runtime },
   inputs: Object.fromEntries(inputKeys.map((key) => [key, { sha256: inputs[key].sha256, schema_version: inputs[key].value.schema_version }])),
-  summary: { primary_attempted: primaryManifest.rows.length, primary_successful_pairs: primarySuccessfulIds.size, reserve_attempted: reserveManifest.rows.length, reserve_successful_pairs: reserveSuccessfulIds.size, replacements_selected: selected.replacements.length, unresolved: selected.unresolved.length, selected_successful_pairs: selectedIds.size, captures: captureRows.length },
-  captures: captureRows
+  summary: { primary_attempted: primaryManifest.rows.length, primary_successful_pairs: primarySuccessfulIds.size, reserve_attempted: reserveManifest.rows.length, reserve_successful_pairs: reserveSuccessfulIds.size, replacements_selected: selected.replacements.length, unresolved: selected.unresolved.length, selected_successful_pairs: selectedIds.size, captures: captureRows.length }
 };
 inspect(finalCapture); inspect(replacementAudit);
-const captureText = `${JSON.stringify(finalCapture, null, 2)}\n`;
 const replacementText = `${JSON.stringify(replacementAudit, null, 2)}\n`;
+const writeChunk = async (stream, hash, chunk) => {
+  hash.update(chunk);
+  if (!stream.write(chunk)) await once(stream, "drain");
+};
+const writeJsonWithRows = async (file, value, arrayKey, rows) => {
+  const stream = createWriteStream(file, { flags: "wx", mode: 0o600 });
+  const hash = createHash("sha256");
+  const header = JSON.stringify(value, null, 2);
+  if (!header.endsWith("\n}")) throw new Error("Unexpected streamed Development capture header.");
+  await writeChunk(stream, hash, `${header.slice(0, -2)},\n  ${JSON.stringify(arrayKey)}: [\n`);
+  for (const [index, row] of rows.entries()) await writeChunk(stream, hash, `${index ? ",\n" : ""}    ${JSON.stringify(row)}`);
+  await writeChunk(stream, hash, "\n  ]\n}\n");
+  stream.end();
+  await once(stream, "close");
+  return hash.digest("hex");
+};
 const gates = {
   exactly_200_successful_paired_captures: selectedIds.size === 200,
   all_primary_failures_resolved: selected.unresolved.length === 0,
@@ -95,6 +111,8 @@ const gates = {
   model_performance_not_inspected: true
 };
 const passed = Object.values(gates).every(Boolean);
+await mkdir(path.dirname(paths.output), { recursive: true });
+const captureSha256 = await writeJsonWithRows(paths.output, finalCapture, "captures", captureRows);
 const freeze = {
   schema_version: "vibebench.option_b.v5_development_capture_freeze.v1",
   generated_at: new Date().toISOString(),
@@ -102,9 +120,8 @@ const freeze = {
   gates,
   rates: { primary_technical_yield: primarySuccessfulIds.size / Math.max(1, primaryManifest.rows.length), reserve_technical_yield: reserveSuccessfulIds.size / Math.max(1, reserveManifest.rows.length), ...terminalRates },
   collector_promotion_gate: { technical_yield_at_least_90_percent: primarySuccessfulIds.size / Math.max(1, primaryManifest.rows.length) >= 0.9, note: "A failed collector-promotion gate does not invalidate a complete Development matrix, but it blocks candidate promotion." },
-  artifacts: { capture: { sha256: createHash("sha256").update(captureText).digest("hex") }, replacement_audit: { sha256: createHash("sha256").update(replacementText).digest("hex") } }
+  artifacts: { capture: { sha256: captureSha256 }, replacement_audit: { sha256: createHash("sha256").update(replacementText).digest("hex") } }
 };
-await mkdir(path.dirname(paths.output), { recursive: true });
-for (const [file, text] of [[paths.output, captureText], [paths.replacementAudit, replacementText], [paths.freeze, `${JSON.stringify(freeze, null, 2)}\n`]]) await writeFile(file, text, { flag: "wx", mode: 0o600 });
+for (const [file, text] of [[paths.replacementAudit, replacementText], [paths.freeze, `${JSON.stringify(freeze, null, 2)}\n`]]) await writeFile(file, text, { flag: "wx", mode: 0o600 });
 process.stdout.write(`${JSON.stringify({ capture: path.relative(process.cwd(), paths.output), replacement_audit: path.relative(process.cwd(), paths.replacementAudit), freeze: path.relative(process.cwd(), paths.freeze), status: freeze.status, summary: finalCapture.summary, gates }, null, 2)}\n`);
 if (!passed) process.exitCode = 1;
