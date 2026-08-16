@@ -100,6 +100,8 @@
     "research:v0.6-option-b-v5-evaluation-freeze": "node scripts/freeze-development-v0_6-option-b-v5-evaluation-protocol.mjs",
     "research:v0.6-option-b-v5-capture-finalize": "node scripts/finalize-development-v0_6-option-b-v5-capture.mjs",
     "research:v0.6-option-b-v5-development-authorize": "node scripts/authorize-development-v0_6-option-b-v5-execution.mjs",
+    "research:v0.6-option-b-v5-candidate-protocol": "node scripts/freeze-development-v0_6-option-b-v5-candidate-protocol.mjs",
+    "research:v0.6-option-b-v5-candidate-freeze": "node scripts/freeze-development-v0_6-option-b-v5-candidate.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
     "holdout:validate": "node scripts/validate-holdout.mjs",

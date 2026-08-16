@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { selectFrozenCandidateConfiguration } from "../lib/option-b-v5-candidate-freeze.mjs";
 
 test("v5 release gate is smoke-only and retains two fixed viewports", async () => {
   const contract = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json", import.meta.url), "utf8"));
@@ -9,6 +10,27 @@ test("v5 release gate is smoke-only and retains two fixed viewports", async () =
   assert.deepEqual(contract.viewports.map(({ id, width, height }) => ({ id, width, height })), [{ id: "desktop", width: 1440, height: 900 }, { id: "mobile", width: 390, height: 844 }]);
   assert.equal(contract.retry_policy.fresh_context_per_retry, true);
   assert.equal(contract.retry_policy.no_access_control_evasion, true);
+});
+
+test("candidate configuration selection is predeclared and deterministic", () => {
+  const configurations = [{ id: "a" }, { id: "b" }];
+  const audit = [
+    { selected_by_inner_cv: { configuration_id: "b", threshold: 0.55 } },
+    { selected_by_inner_cv: { configuration_id: "a", threshold: 0.4 } },
+    { selected_by_inner_cv: { configuration_id: "b", threshold: 0.5 } },
+    { selected_by_inner_cv: { configuration_id: "b", threshold: 0.6 } }
+  ];
+  const selected = selectFrozenCandidateConfiguration(audit, configurations);
+  assert.equal(selected.configuration.id, "b");
+  assert.equal(selected.threshold, 0.55);
+  assert.equal(selected.selection_count, 3);
+});
+
+test("candidate-freeze protocol cannot authorize itself or production", async () => {
+  const protocol = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_candidate_freeze_protocol_v1.json", import.meta.url), "utf8"));
+  assert.equal(protocol.status, "CANDIDATE_FREEZE_ALGORITHM_PREDECLARED_NOT_AUTHORIZED");
+  assert.equal(protocol.safeguards.automatic_execution, false);
+  assert.equal(protocol.safeguards.production_promotion_authorized, false);
 });
 
 test("Development execution is separately authorized without authorizing candidate or production promotion", async () => {
