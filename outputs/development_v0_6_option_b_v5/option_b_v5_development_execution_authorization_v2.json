@@ -1,0 +1,68 @@
+{
+  "schema_version": "vibebench.option_b.v5_development_execution_authorization.v2",
+  "locked_at": "2026-08-16T17:52:00.000Z",
+  "status": "FROZEN_DEVELOPMENT_CAPTURE_MAY_EXECUTE",
+  "supersedes": "option_b_v5_development_execution_authorization_v1.json after the memory-bounded artifact writer and terminal-outcome gate fix",
+  "scope": "200 primary plus 61 pre-registered reserve targets; Development research only",
+  "gates": {
+    "capture_may_start": true,
+    "labels_available_to_collector": false,
+    "model_performance_may_be_inspected_before_capture_freeze": false,
+    "group_cv_may_start_after_capture_freeze": true,
+    "candidate_freeze_may_start_automatically": false,
+    "independent_confirmation_may_start_automatically": false,
+    "production_promotion_authorized": false
+  },
+  "artifacts": {
+    "development_package": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_package_v1.freeze.json",
+      "sha256": "252f5e7998210b426195bf5fd0402af75bce8b735e480ce41248d8ab1f78f5ba",
+      "schema_version": "vibebench.option_b.v5_development_package_freeze.v1"
+    },
+    "feature_contract": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_feature_contract_v2.freeze.json",
+      "sha256": "86f93770f1be4d8764b6003491e542af0b50b276eec0e3ba4215ac6fe0c4d8be",
+      "schema_version": "vibebench.option_b.v5_feature_contract_freeze.v2"
+    },
+    "evaluation_protocol": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_evaluation_protocol_v2.freeze.json",
+      "sha256": "41e9ffa7c3db5ec8d7280982c1fa931b99dd762e0c46c1a64155f1d9410a0df3",
+      "schema_version": "vibebench.option_b.v5_evaluation_protocol_freeze.v2"
+    },
+    "capture_contract": {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_development_capture_contract_v1.json",
+      "sha256": "34b06d220c4d9825d192035fb9b38a4073e02bb9ab673d1d2895a7c9269b7aad",
+      "schema_version": "vibebench.option_b.capture_contract.v5.development.v1"
+    },
+    "workflow": {
+      "path": ".github/workflows/option-b-v5-development-expansion.yml",
+      "sha256": "72e3af7aa3a93ba69a0bb51b7cc7a78af25bbc2386b2df7d15da99bec47edb04",
+      "schema_version": null
+    },
+    "collector_image": {
+      "path": "infra/option-b-v5/Dockerfile.collector",
+      "sha256": "aa84aa530117ca10412a919936dc4eb254747ef147cfa07829a51b59f52fae8d",
+      "schema_version": null
+    },
+    "collector_runner": {
+      "path": "scripts/run-development-v0_6-option-b-v5-isolated.mjs",
+      "sha256": "b7ecbdf11ff4f048eb6e428b0046deb2eca76f76fd3c321064ed52ad0ac28470",
+      "schema_version": null
+    },
+    "capture_finalizer": {
+      "path": "scripts/finalize-development-v0_6-option-b-v5-capture.mjs",
+      "sha256": "d9ab36d36c0b4539ae3ade4e08ab517f582c4fe1344927a354ba1f82e06e0d86",
+      "schema_version": null
+    },
+    "feature_builder": {
+      "path": "scripts/build-development-v0_6-option-b-v5-derived-features.mjs",
+      "sha256": "68e5070f0bb825c65ed5b1bd91ce03f967881d49f05395456fd384445e51813e",
+      "schema_version": null
+    },
+    "grouped_evaluator": {
+      "path": "scripts/evaluate-development-v0_6-option-b-v5-grouped.mjs",
+      "sha256": "2be635b434b3c26b951ec0f7e17bb363f9346e6321914c09f103c6a31aa8d1b4",
+      "schema_version": null
+    }
+  }
+}

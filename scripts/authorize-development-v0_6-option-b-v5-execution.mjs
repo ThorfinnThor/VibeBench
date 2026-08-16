@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
-const outputPath = path.resolve("outputs/development_v0_6_option_b_v5/option_b_v5_development_execution_authorization_v1.json");
+const outputPath = path.resolve("outputs/development_v0_6_option_b_v5/option_b_v5_development_execution_authorization_v2.json");
 const required = [
   ["development_package", "outputs/development_v0_6_option_b_v5/option_b_v5_development_package_v1.freeze.json", "vibebench.option_b.v5_development_package_freeze.v1"],
   ["feature_contract", "outputs/development_v0_6_option_b_v5/option_b_v5_feature_contract_v2.freeze.json", "vibebench.option_b.v5_feature_contract_freeze.v2"],
@@ -24,9 +24,10 @@ for (const [id, relativePath, expectedSchema] of required) {
   artifacts[id] = { path: relativePath, sha256: createHash("sha256").update(text).digest("hex"), schema_version: schemaVersion };
 }
 const output = {
-  schema_version: "vibebench.option_b.v5_development_execution_authorization.v1",
-  locked_at: "2026-08-16T19:30:00.000Z",
+  schema_version: "vibebench.option_b.v5_development_execution_authorization.v2",
+  locked_at: "2026-08-16T17:52:00.000Z",
   status: "FROZEN_DEVELOPMENT_CAPTURE_MAY_EXECUTE",
+  supersedes: "option_b_v5_development_execution_authorization_v1.json after the memory-bounded artifact writer and terminal-outcome gate fix",
   scope: "200 primary plus 61 pre-registered reserve targets; Development research only",
   gates: {
     capture_may_start: true,
@@ -44,6 +45,6 @@ try {
   await writeFile(outputPath, serialized, { flag: "wx", mode: 0o600 });
 } catch (error) {
   if (error?.code !== "EEXIST") throw error;
-  if (await readFile(outputPath, "utf8") !== serialized) throw new Error("Frozen Development execution authorization differs from the current implementation.");
+  if (await readFile(outputPath, "utf8") !== serialized) throw new Error("Frozen Development execution authorization v2 differs from the current implementation.");
 }
 process.stdout.write(`${JSON.stringify({ output: path.relative(process.cwd(), outputPath), status: output.status, gates: output.gates }, null, 2)}\n`);

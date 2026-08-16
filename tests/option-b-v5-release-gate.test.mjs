@@ -35,7 +35,8 @@ test("candidate-freeze protocol cannot authorize itself or production", async ()
 });
 
 test("Development execution is separately authorized without authorizing candidate or production promotion", async () => {
-  const authorization = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_development_execution_authorization_v1.json", import.meta.url), "utf8"));
+  const authorization = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_development_execution_authorization_v2.json", import.meta.url), "utf8"));
+  assert.equal(authorization.schema_version, "vibebench.option_b.v5_development_execution_authorization.v2");
   assert.equal(authorization.status, "FROZEN_DEVELOPMENT_CAPTURE_MAY_EXECUTE");
   assert.equal(authorization.gates.capture_may_start, true);
   assert.equal(authorization.gates.labels_available_to_collector, false);
