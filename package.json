@@ -93,6 +93,7 @@
     "research:v0.6-option-b-v5-review": "node scripts/review-development-v0_6-option-b-v5-capture.mjs",
     "research:v0.6-option-b-v5-repeat-compare": "node scripts/compare-development-v0_6-option-b-v5-smoke-repeat.mjs",
     "research:v0.6-option-b-v5-development-freeze": "node scripts/build-development-v0_6-option-b-v5-reserve-manifest.mjs",
+    "research:v0.6-option-b-v5-feature-freeze": "node scripts/freeze-development-v0_6-option-b-v5-feature-contract.mjs",
     "research:v0.6-option-b-v5-derived-features": "node scripts/build-development-v0_6-option-b-v5-derived-features.mjs",
     "holdout:build": "node scripts/build-holdout-workbook.mjs",
     "holdout:reachability": "node scripts/audit-holdout-reachability.mjs",
