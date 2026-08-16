@@ -1,6 +1,9 @@
 import { createHash, randomUUID } from "node:crypto";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { createReadStream, createWriteStream } from "node:fs";
+import { once } from "node:events";
+import { mkdir, readFile, rename, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { createInterface } from "node:readline";
 import { chromium } from "playwright";
 import { normalizePublicUrl } from "../lib/public-url-policy.mjs";
 import {
@@ -39,10 +42,23 @@ if (mode === "development" && (contract.status !== "ISOLATED_DEVELOPMENT_EXPANSI
 const runId = randomUUID();
 const originSalt = randomUUID();
 const fixedUserAgent = `VibeBenchResearch/${OPTION_B_V5_COLLECTOR_VERSION}`;
-const captures = [];
 const attempts = [];
+const captureCounts = new Map();
+let captureCount = 0;
+await mkdir(path.dirname(outputPath), { recursive: true });
+const captureRowsPath = `${outputPath}.${randomUUID()}.rows.ndjson`;
+const captureRowsStream = createWriteStream(captureRowsPath, { mode: 0o600 });
 const browser = await chromium.launch({ headless: true, proxy: { server: process.env.HTTPS_PROXY }, args: ["--force-webrtc-ip-handling-policy=disable_non_proxied_udp", "--webrtc-ip-handling-policy=disable_non_proxied_udp"] });
 const browserVersion = await browser.version();
+
+const assertPrivacy = (value, at = "output") => { if (Array.isArray(value)) return value.forEach((item, index) => assertPrivacy(item, `${at}[${index}]`)); if (!value || typeof value !== "object") return; for (const [key, item] of Object.entries(value)) { if (/^(target_url|resolved_url|url|hostname|label|target_group|raw_html|visible_text|text|screenshot|image)$/i.test(key)) throw new Error(`Prohibited persisted field at ${at}.${key}`); assertPrivacy(item, `${at}.${key}`); } };
+const writeChunk = async (stream, chunk) => { if (!stream.write(chunk)) await once(stream, "drain"); };
+const appendCapture = async (row) => {
+  assertPrivacy(row, "capture");
+  await writeChunk(captureRowsStream, `${JSON.stringify(row)}\n`);
+  captureCounts.set(row.sample_id, (captureCounts.get(row.sample_id) || 0) + 1);
+  captureCount += 1;
+};
 
 const auditAttempt = ({ row, viewport, attemptId, retryNumber, started, startedMs, stage, outcome, documentObserved, domObserved, status, resolvedOriginHash }) => ({
   sample_id: row.sample_id,
@@ -107,7 +123,7 @@ async function attempt(row, viewport, retryNumber) {
     assertOptionBV5Payload(payload);
     stage = "serialization";
     JSON.stringify(payload);
-    captures.push({ sample_id: row.sample_id, run_id: runId, attempt_id: attemptId, viewport_id: viewport.id, payload });
+    await appendCapture({ sample_id: row.sample_id, run_id: runId, attempt_id: attemptId, viewport_id: viewport.id, payload });
     const audit = auditAttempt({ row, viewport, attemptId, retryNumber, started, startedMs, stage, outcome: "success", documentObserved, domObserved, status, resolvedOriginHash });
     attempts.push(audit);
     return { ok: true, audit };
@@ -137,16 +153,36 @@ try {
   }
 } finally {
   await browser.close();
+  captureRowsStream.end();
+  await once(captureRowsStream, "close");
 }
 
 const common = { generated_at: new Date().toISOString(), run_id: runId, status: mode === "smoke" ? "ISOLATED_LABEL_BLIND_SIX_SITE_SMOKE" : "ISOLATED_LABEL_BLIND_DEVELOPMENT_CAPTURE", runtime: { engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewports: contract.viewports, isolation: { collector_direct_network: false, peer_pinning_egress: true, read_only_root: true, non_root: true, no_new_privileges: true, capabilities_dropped: "ALL", collector_image_id: process.env.OPTION_B_V5_COLLECTOR_IMAGE, egress_image_id: process.env.OPTION_B_V5_EGRESS_IMAGE, collector_base_digest: process.env.OPTION_B_V5_COLLECTOR_BASE_DIGEST, egress_base_digest: process.env.OPTION_B_V5_EGRESS_BASE_DIGEST, collector_source_sha256: process.env.OPTION_B_V5_COLLECTOR_SOURCE_SHA256, egress_source_sha256: process.env.OPTION_B_V5_EGRESS_SOURCE_SHA256 } }, inputs: { manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") }, contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") } } };
 const privacy = { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false };
-const captureCounts = captures.reduce((counts, { sample_id }) => (counts.set(sample_id, (counts.get(sample_id) || 0) + 1), counts), new Map());
 const successfulSiteIds = new Set([...captureCounts].filter(([, count]) => count === contract.viewports.length).map(([sampleId]) => sampleId));
-const captureOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_capture.v1" : "vibebench.option_b.v5_development_capture.v1", ...common, privacy, summary: { attempted: manifest.rows.length, viewports: contract.viewports.length, successful: successfulSiteIds.size, captures: captures.length, failed: manifest.rows.length - successfulSiteIds.size, incomplete_viewport_pairs: [...captureCounts].filter(([, count]) => count !== contract.viewports.length).length }, captures };
+const captureOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_capture.v1" : "vibebench.option_b.v5_development_capture.v1", ...common, privacy, summary: { attempted: manifest.rows.length, viewports: contract.viewports.length, successful: successfulSiteIds.size, captures: captureCount, failed: manifest.rows.length - successfulSiteIds.size, incomplete_viewport_pairs: [...captureCounts].filter(([, count]) => count !== contract.viewports.length).length } };
 const auditOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_attempt_audit.v1" : "vibebench.option_b.v5_development_attempt_audit.v1", ...common, summary: { sites_attempted: manifest.rows.length, attempts: attempts.length, successful_attempts: attempts.filter(({ outcome_code }) => outcome_code === "success").length, failed_attempts: attempts.filter(({ outcome_code }) => outcome_code !== "success").length }, attempts };
-const assertPrivacy = (value, at = "output") => { if (Array.isArray(value)) return value.forEach((item, index) => assertPrivacy(item, `${at}[${index}]`)); if (!value || typeof value !== "object") return; for (const [key, item] of Object.entries(value)) { if (/^(target_url|resolved_url|url|hostname|label|target_group|raw_html|visible_text|text|screenshot|image)$/i.test(key)) throw new Error(`Prohibited persisted field at ${at}.${key}`); assertPrivacy(item, `${at}.${key}`); } };
 assertPrivacy(captureOutput); assertPrivacy(auditOutput);
 const atomicJson = async (file, value) => { await mkdir(path.dirname(file), { recursive: true }); const tmp = `${file}.${randomUUID()}.tmp`; await writeFile(tmp, `${JSON.stringify(value, null, 2)}\n`, { mode: 0o600 }); await rename(tmp, file); };
-await Promise.all([atomicJson(outputPath, captureOutput), atomicJson(auditPath, auditOutput)]);
+const atomicJsonWithRows = async (file, value, arrayKey, rowsFile) => {
+  await mkdir(path.dirname(file), { recursive: true });
+  const tmp = `${file}.${randomUUID()}.tmp`;
+  const stream = createWriteStream(tmp, { mode: 0o600 });
+  const header = JSON.stringify(value, null, 2);
+  if (!header.endsWith("\n}")) throw new Error("Unexpected streamed JSON header.");
+  await writeChunk(stream, `${header.slice(0, -2)},\n  ${JSON.stringify(arrayKey)}: [\n`);
+  const lines = createInterface({ input: createReadStream(rowsFile), crlfDelay: Infinity });
+  let first = true;
+  for await (const line of lines) {
+    if (!line) continue;
+    await writeChunk(stream, `${first ? "" : ",\n"}    ${line}`);
+    first = false;
+  }
+  await writeChunk(stream, "\n  ]\n}\n");
+  stream.end();
+  await once(stream, "close");
+  await rename(tmp, file);
+  await unlink(rowsFile);
+};
+await Promise.all([atomicJsonWithRows(outputPath, captureOutput, "captures", captureRowsPath), atomicJson(auditPath, auditOutput)]);
 process.stdout.write(`${JSON.stringify({ capture: outputPath, audit: auditPath, summary: captureOutput.summary }, null, 2)}\n`);
