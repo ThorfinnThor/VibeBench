@@ -223,7 +223,7 @@ export default function Home() {
         <label htmlFor="url">Website-URL</label>
         <input id="url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder="https://deine-website.de" autoComplete="url" inputMode="url" required />
         <div className="scan-actions"><button disabled={loading}><span>{loading ? "Website wird untersucht …" : "Kostenlosen Scan starten"}</span><b aria-hidden="true">→</b></button>{loading && <button className="cancel-button" type="button" onClick={cancelScan}>Abbrechen</button>}</div>
-        <p className="privacy-note"><span aria-hidden="true">✓</span> Begrenzte serverseitige GET-Abrufe von öffentlichem HTML und Same-Origin-Assets. Die Zielseite kann diese Abrufe protokollieren. Keine Anmeldung, kein privater Quellcode.</p>
+        <p className="privacy-note"><span aria-hidden="true">✓</span> Begrenzte, IP-gepinnte GET-Abrufe von öffentlichem HTML und Same-Origin-Assets. Die Zielseite kann diese Abrufe protokollieren. Keine Anmeldung, kein privater Quellcode.</p>
       </form>
     </section>
 
@@ -323,7 +323,7 @@ export default function Home() {
     <section className="method" id="method">
       <div className="section-heading"><div><p className="eyebrow">So funktioniert VibeBench</p><h2>Von sichtbaren Mustern zu klaren nächsten Schritten.</h2></div><p>Der Scan untersucht nur das, was eine öffentliche Website ausliefert. Kein Login, kein Repository und kein privater Quellcode werden benötigt.</p></div>
       <div className="method-grid">
-        <article><span>01</span><h3>Öffentliche Oberfläche scannen</h3><p>HTML, Response-Header und eine begrenzte Auswahl gleich-originiger Skripte und Stylesheets.</p></article>
+        <article><span>01</span><h3>Öffentliche Oberfläche scannen</h3><p>HTML, Response-Header und eine begrenzte Auswahl gleich-originiger Skripte und Stylesheets über geprüfte, IP-gepinnte Verbindungen.</p></article>
         <article><span>02</span><h3>Muster mit {release.displayVersion} bewerten</h3><p>Das Modell kombiniert öffentlich sichtbare technische und strukturelle Signale zu einem unkalibrierten Ähnlichkeitsindex von 0 bis 100.</p></article>
         <article><span>03</span><h3>Hinweise sauber trennen</h3><p>Beobachtete technische Findings werden von optionaler manueller Guidance getrennt und nach Wirkung geordnet.</p></article>
       </div>
@@ -332,9 +332,10 @@ export default function Home() {
         <div><span>Legacy-Recall</span><strong>{(release.confirmation.recall * 100).toLocaleString("de-DE", { maximumFractionDigits: 1 })} %</strong><small>Historisch · 95-%-Wilson-Intervall: {formatInterval(release.confirmation.recallWilson95)} %</small></div>
         <div><span>Legacy-Abdeckung</span><strong>{release.confirmation.successful}/{release.confirmation.total}</strong><small>Capture-Vollständigkeit nachträglich nicht belegbar</small></div>
         <p><strong>Kein aktueller Leistungsnachweis:</strong> Diese eingefrorenen {release.displayVersion}-Werte bleiben als Legacy-Ergebnis dokumentiert. Sie validieren weder einzelne Score-Bänder noch eine AI-Wahrscheinlichkeit und werden erst nach Stabilisierung des neuen isolierten Collectors durch eine frische unabhängige Confirmation ersetzt.</p>
+        <p><strong>Datenschutz und Betrieb:</strong> VibeBench speichert eingegebene Ziel-URLs nicht in einer Ergebnisdatenbank und schreibt sie nicht in die eigenen Diagnose-Events. Die Zielwebsite kann die begrenzten öffentlichen Abrufe wie jeden anderen Websitebesuch protokollieren. Für die Beta gelten technische Kapazitäts- und IP-basierte Abruflimits.</p>
       </div>
     </section>
 
-    <footer><a className="brand footer-brand" href="#top"><span className="brand-mark">V</span><span><strong>VibeBench</strong><small>Website Forensics</small></span></a><p>Vibe-Footprint & Security-Baseline · {release.displayVersion} Beta</p><a href="#method">Methodik & Grenzen ↑</a></footer>
+    <footer><a className="brand footer-brand" href="#top"><span className="brand-mark">V</span><span><strong>VibeBench</strong><small>Website Forensics</small></span></a><p>Vibe-Footprint & Security-Baseline · Produkt {release.productVersion} · Modell {release.displayVersion} Beta</p><a href="#method">Methodik & Grenzen ↑</a></footer>
   </main>;
 }

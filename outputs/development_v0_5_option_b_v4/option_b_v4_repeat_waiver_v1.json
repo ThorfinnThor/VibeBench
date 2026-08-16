@@ -1,0 +1,36 @@
+{
+  "schema_version": "vibebench.option_b.v4_repeat_waiver.v1",
+  "decided_at": "2026-08-16T10:28:33Z",
+  "status": "TECHNICAL_REPEAT_ACCEPTED_WITH_EXPLICIT_TIME_WINDOW_WAIVER",
+  "decision_authority": "project_owner",
+  "reason": "The 18.9288-hour separation is accepted as sufficient for this technical repeat; the 5-hour-4-minute shortfall is judged immaterial for this pilot.",
+  "disclosure_required": true,
+  "original_protocol_unchanged": true,
+  "original_time_gate_passed": false,
+  "approved_effect": {
+    "technical_repeat_accepted": true,
+    "fixed_label_blind_extension_20_may_execute": true,
+    "full_81_site_run_may_execute": false,
+    "independent_confirmation_may_execute": false,
+    "public_performance_claim_may_change": false
+  },
+  "evidence": {
+    "source_commit": "77439afec2813df067d4c7783895a9003f37adfa",
+    "comparison_file": "outputs/development_v0_5_option_b_v4/option_b_v4_early_repeat_comparison_v1.json",
+    "comparator_sha256": "398f21b4d27ae3af974757520eb4f4fd4fd37671008b0c6588c0a9970ff13710",
+    "contract_sha256": "5b9826730b10803172a9be74439c1417f548822eeb56e472dbaa392f07c30c96",
+    "manifest_sha256": "815510c10018e685bfa08e4eacda550229f13b79a8ed12cc5765845cdf979270",
+    "run_1": {
+      "workflow_run_id": 31891561586,
+      "artifact_id": 9248706274,
+      "artifact_sha256": "372945ade52993b09e7981ebaafe17dc8b8e09f0cc56e40733b1b7e96d5ce191",
+      "capture_sha256": "4cc6428c3a8a57c78834bcfb25ef40dd146710f7bc22859fce311ba164b65c65"
+    },
+    "early_repeat": {
+      "workflow_run_id": 31940432771,
+      "artifact_id": 9261884076,
+      "artifact_sha256": "db0762f34348b326ab1fdf51cf71601936b58a79b4a858395f5fbfb207cd13df",
+      "capture_sha256": "9d3aba18c3e9eb6787e3092ba236814ac39038e5b724d0bb13766cb6648ec1e0"
+    }
+  }
+}

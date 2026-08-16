@@ -1,13 +1,12 @@
-import { lookup } from "node:dns/promises";
 import { randomUUID } from "node:crypto";
-import net from "node:net";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
 import { extractSameOriginManifest, selectSameOriginAssets } from "../../../lib/extract-assets.mjs";
 import { describeEvidenceCoverage } from "../../../lib/evidence-coverage.mjs";
+import { pinnedPublicFetch } from "../../../lib/pinned-public-fetch.mjs";
 import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
-import { assertPublicAddresses, normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
+import { normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
 import {
   auditSecurity,
   buildRecommendations,
@@ -16,6 +15,7 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
+import { acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
   assertScanRequestBody,
@@ -36,21 +36,6 @@ const MAX_MANIFEST_BYTES = 100_000;
 const MAX_REDIRECTS = 5;
 const MAX_ASSET_REDIRECTS = 3;
 
-async function validatePublicHost(url) {
-  const host = url.hostname.toLowerCase().replace(/^\[|\]$/g, "");
-  if (host === "localhost" || host.endsWith(".localhost") || host.endsWith(".local")) throw new Error("Lokale und private Adressen werden nicht gescannt.");
-  if (net.isIP(host)) {
-    assertPublicAddresses([{ address: host }]);
-    return;
-  }
-  let timeout;
-  const addresses = await Promise.race([
-    lookup(host, { all: true, verbatim: true }),
-    new Promise((_, reject) => { timeout = setTimeout(() => reject(new Error("DNS lookup timeout.")), 4_000); })
-  ]).finally(() => clearTimeout(timeout));
-  assertPublicAddresses(addresses);
-}
-
 function combinedSignal(...signals) {
   return AbortSignal.any(signals.filter(Boolean));
 }
@@ -59,9 +44,7 @@ async function fetchPublicHtml(initialUrl, signal) {
   let current = initialUrl;
   for (let redirect = 0; redirect <= MAX_REDIRECTS; redirect += 1) {
     current = normalizePublicUrl(current.toString());
-    await validatePublicHost(current);
-    const response = await fetch(current, {
-      redirect: "manual",
+    const response = await pinnedPublicFetch(current, {
       signal: combinedSignal(signal, AbortSignal.timeout(12_000)),
       headers: { "user-agent": release.userAgent, accept: "text/html,application/xhtml+xml" }
     });
@@ -93,9 +76,7 @@ async function fetchSameOriginText(initialUrl, requiredOrigin, { accept, allowed
   for (let redirect = 0; redirect <= MAX_ASSET_REDIRECTS; redirect += 1) {
     current = normalizePublicUrl(current.toString());
     if (current.origin !== requiredOrigin) throw new Error("Cross-origin asset redirect blocked.");
-    await validatePublicHost(current);
-    const response = await fetch(current, {
-      redirect: "manual",
+    const response = await pinnedPublicFetch(current, {
       signal: combinedSignal(signal, AbortSignal.timeout(6_000)),
       headers: { "user-agent": release.userAgent, accept }
     });
@@ -139,7 +120,8 @@ export async function POST(request) {
   const requestId = randomUUID();
   const startedAt = Date.now();
   const deadline = AbortSignal.timeout(18_000);
-  const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION };
+  const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
+  let releaseAdmission = () => {};
   try {
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
@@ -150,6 +132,7 @@ export async function POST(request) {
       throw new Error("Ungültige JSON-Anfrage.");
     }
     const inputUrl = normalizePublicUrl(assertScanRequestBody(body));
+    releaseAdmission = acquireScanAdmission({ clientId: scanAdmissionIdentity(request), targetId: scanTargetIdentity(inputUrl) });
     const signal = combinedSignal(request.signal, deadline);
     const fetched = await fetchPublicHtml(inputUrl, signal);
     signal.throwIfAborted();
@@ -270,5 +253,7 @@ export async function POST(request) {
     const technicalOutcome = classifyScanError(error);
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
     return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
+  } finally {
+    releaseAdmission();
   }
 }

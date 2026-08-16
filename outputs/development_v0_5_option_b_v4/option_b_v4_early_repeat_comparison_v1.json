@@ -1,0 +1,28 @@
+{
+  "schema_version": "vibebench.option_b.v4_pilot_repeat_comparison.v1",
+  "generated_at": "2026-08-16T10:05:58.712Z",
+  "status": "REPEAT_INTEGRITY_REJECTED",
+  "elapsed_hours": 18.928829722222222,
+  "gates": {
+    "elapsed_24_to_72_hours": false,
+    "same_manifest_and_contract": true,
+    "same_runtime_sources": true,
+    "each_run_at_least_four_successes": true,
+    "at_least_four_common_successes": true
+  },
+  "summary": {
+    "first": { "attempted": 6, "successful": 5, "failed": 1 },
+    "second": { "attempted": 6, "successful": 5, "failed": 1 },
+    "common_successes": 5
+  },
+  "descriptive_stability_only": {
+    "samples": [
+      { "sample_id": "OPT-B-AI-069", "visible_element_delta_share": 0, "structural_signature_jaccard": 1 },
+      { "sample_id": "DEV3X-076", "visible_element_delta_share": 0, "structural_signature_jaccard": 1 },
+      { "sample_id": "DEV3-032", "visible_element_delta_share": 0, "structural_signature_jaccard": 1 },
+      { "sample_id": "OPT-B-HUM-057", "visible_element_delta_share": 0, "structural_signature_jaccard": 1 },
+      { "sample_id": "DEV3X-074", "visible_element_delta_share": 0, "structural_signature_jaccard": 1 }
+    ]
+  },
+  "next_gate": "An explicit protocol adjudication is required before any fixed 20-site extension; the 81-site run remains prohibited."
+}

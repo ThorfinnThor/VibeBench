@@ -13,6 +13,8 @@ COPY scripts/run-development-v0_5-option-b-v4-isolated-pilot.mjs scripts/run-dev
 COPY scripts/smoke-option-b-v4-capture.mjs scripts/smoke-option-b-v4-capture.mjs
 COPY outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json
 COPY outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json
+COPY outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json
+COPY outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json
 
 USER pwuser
 ENTRYPOINT ["node", "scripts/run-development-v0_5-option-b-v4-isolated-pilot.mjs"]

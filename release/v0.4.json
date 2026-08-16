@@ -1,9 +1,9 @@
 {
   "schemaVersion": "vibebench-production-release-v1",
-  "productVersion": "0.4.0",
+  "productVersion": "0.4.1",
   "displayVersion": "v0.4",
   "apiVersion": "1",
-  "approvedAt": "2026-08-11",
+  "approvedAt": "2026-08-16",
   "status": "RESEARCH_BETA",
   "model": {
     "version": "v0.4",
@@ -27,5 +27,23 @@
     "currentPerformanceClaim": false,
     "rerunDecision": "DEFERRED_UNTIL_OPTION_B_V4_DEVELOPMENT_COLLECTOR_IS_STABLE"
   },
-  "userAgent": "VibeBench/0.4.0 (+public website evidence scan)"
+  "launchSafety": {
+    "publicTransport": "DNS-validated and peer-IP-pinned HTTP(S) connections",
+    "responseBodiesBounded": true,
+    "perInstanceConcurrentScans": 4,
+    "perInstanceConcurrentScansPerTarget": 1,
+    "perClientScansPerTenMinutesPerInstance": 20,
+    "sharedEdgeRateLimitRequired": true,
+    "sharedEdgeRateLimitActive": true,
+    "sharedEdgeRateLimit": {
+      "provider": "Vercel Firewall",
+      "path": "/api/scan",
+      "key": "IP Address",
+      "algorithm": "Fixed Window",
+      "requests": 20,
+      "windowSeconds": 600,
+      "action": "429 Too Many Requests"
+    }
+  },
+  "userAgent": "VibeBench/0.4.1 (+public website evidence scan)"
 }

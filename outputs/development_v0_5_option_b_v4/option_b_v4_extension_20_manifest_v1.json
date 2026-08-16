@@ -1,0 +1,108 @@
+{
+  "schema_version": "vibebench.option_b.v4_extension_manifest.v1",
+  "locked_at": "2026-08-16T10:28:33Z",
+  "status": "LABEL_BLIND_TECHNICAL_EXTENSION_20_FROZEN",
+  "source": {
+    "path": "outputs/development_v0_5_option_b/option_b_label_registry_v1.json",
+    "sha256": "62187ffd40811147ab418a06da7e70430b8acacaa9d3dbd3d90f1dc352a4502a",
+    "fields_projected_before_selection": [
+      "sample_id",
+      "target_url"
+    ]
+  },
+  "selection": {
+    "algorithm": "ascending SHA-256 of fixed seed, sample_id and normalized target_url",
+    "seed": "vibebench-option-b-v4-extension-20-v1",
+    "selected": 20,
+    "pilot_rows_excluded": 6,
+    "labels_inspected": false,
+    "previous_scores_inspected": false,
+    "previous_features_inspected": false
+  },
+  "collector_visible_fields": [
+    "sample_id",
+    "target_url"
+  ],
+  "rows": [
+    {
+      "sample_id": "DEV4-056",
+      "target_url": "https://brianlovin.com/"
+    },
+    {
+      "sample_id": "DEV3X-033",
+      "target_url": "https://textideo.com/"
+    },
+    {
+      "sample_id": "DEV3X-009",
+      "target_url": "https://myminionai.com/"
+    },
+    {
+      "sample_id": "DEV5-013",
+      "target_url": "https://serverbuddy.net/"
+    },
+    {
+      "sample_id": "DEV5-060",
+      "target_url": "https://routinemetric.com/"
+    },
+    {
+      "sample_id": "DEV5-035",
+      "target_url": "https://applyboostai.com/"
+    },
+    {
+      "sample_id": "DEV3X-063",
+      "target_url": "https://flowoss.com/"
+    },
+    {
+      "sample_id": "DEV5-093",
+      "target_url": "https://cratedb.com/database"
+    },
+    {
+      "sample_id": "DEV4-022",
+      "target_url": "https://www.wisdemic.com/"
+    },
+    {
+      "sample_id": "DEV5-042",
+      "target_url": "https://sanebar.com/"
+    },
+    {
+      "sample_id": "DEV3X-039",
+      "target_url": "https://zensimu.com/"
+    },
+    {
+      "sample_id": "DEV4-009",
+      "target_url": "https://seven.radostit.com/"
+    },
+    {
+      "sample_id": "DEV5-027",
+      "target_url": "https://getcombase.com/"
+    },
+    {
+      "sample_id": "DEV3-003",
+      "target_url": "https://project-genie.ai/"
+    },
+    {
+      "sample_id": "DEV5-041",
+      "target_url": "http://climbx.so/"
+    },
+    {
+      "sample_id": "DEV3X-020",
+      "target_url": "https://www.rankpad.app/"
+    },
+    {
+      "sample_id": "DEV3X-045",
+      "target_url": "https://coreui.io/product/free-react-admin-template/"
+    },
+    {
+      "sample_id": "DEV3X-055",
+      "target_url": "https://draft.sh/"
+    },
+    {
+      "sample_id": "DEV4-005",
+      "target_url": "https://www.consistentcharacterai.org/"
+    },
+    {
+      "sample_id": "DEV3X-057",
+      "target_url": "https://garden.io/"
+    }
+  ]
+}

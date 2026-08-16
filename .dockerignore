@@ -13,6 +13,8 @@
 !outputs/development_v0_5_option_b_v4/
 !outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json
 !outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json
+!outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json
+!outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json
 !infra/
 !infra/option-b-v4/
 !infra/option-b-v4/Dockerfile.collector
