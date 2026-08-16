@@ -1,0 +1,36 @@
+{
+  "schema_version": "vibebench.option_b.v5_development_capture_freeze.v1",
+  "generated_at": "2026-08-16T21:31:47.880Z",
+  "status": "DEVELOPMENT_CAPTURE_FROZEN_LABEL_JOIN_AUTHORIZED",
+  "gates": {
+    "exactly_200_successful_paired_captures": true,
+    "all_primary_failures_resolved": true,
+    "unknown_technical_error_rate_at_most_1_percent": true,
+    "collector_origin_extraction_failure_rate_at_most_2_percent": true,
+    "privacy_boundary_preserved": true,
+    "runtime_identity_consistent": true,
+    "model_performance_not_inspected": true
+  },
+  "rates": {
+    "primary_technical_yield": 0.875,
+    "reserve_technical_yield": 0.8688524590163934,
+    "denominator_terminal_target_viewports": 522,
+    "unknown_technical_error_count": 0,
+    "collector_origin_extraction_failure_count": 1,
+    "unknown_technical_error": 0,
+    "collector_origin_extraction_failure": 0.0019157088122605363,
+    "basis": "last attempt per sample_id and viewport_id after the frozen retry policy"
+  },
+  "collector_promotion_gate": {
+    "technical_yield_at_least_90_percent": false,
+    "note": "A failed collector-promotion gate does not invalidate a complete Development matrix, but it blocks candidate promotion."
+  },
+  "artifacts": {
+    "capture": {
+      "sha256": "dc38ee227b2d642727480c724cc7b340083d7903941f3345a595c18a519838a3"
+    },
+    "replacement_audit": {
+      "sha256": "1d18c936006bb793b0ee11d80a146b0feb177647adb447fbab4c1c382fdf3157"
+    }
+  }
+}
