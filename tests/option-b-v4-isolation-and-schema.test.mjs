@@ -94,7 +94,7 @@ test("v4 contract freezes six-repeat-twenty ordering and confirmation legacy sta
 });
 
 test("v4 compose and workflow enforce the isolated container profile", async () => {
-  const [compose, collectorDockerfile, egressDockerfile, dockerignore, workflow, extensionWorkflow, captureSource, seccomp] = await Promise.all([
+  const [compose, collectorDockerfile, egressDockerfile, dockerignore, workflow, extensionWorkflow, captureSource, reviewerSource, seccomp] = await Promise.all([
     readFile(new URL("infra/option-b-v4/compose.yml", root), "utf8"),
     readFile(new URL("infra/option-b-v4/Dockerfile.collector", root), "utf8"),
     readFile(new URL("infra/option-b-v4/Dockerfile.egress", root), "utf8"),
@@ -102,6 +102,7 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
     readFile(new URL(".github/workflows/option-b-v4-pilot.yml", root), "utf8"),
     readFile(new URL(".github/workflows/option-b-v4-extension-20.yml", root), "utf8"),
     readFile(new URL("lib/option-b-v4-capture.mjs", root), "utf8"),
+    readFile(new URL("scripts/review-development-v0_5-option-b-v4-pilot.mjs", root), "utf8"),
     readFile(new URL("infra/option-b-v4/seccomp_profile.json", root), "utf8").then(JSON.parse)
   ]);
   assert.match(compose, /collector_internal:\n\s+internal: true/);
@@ -139,6 +140,8 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.match(extensionWorkflow, /option_b_v4_repeat_waiver_v1\.json/);
   assert.match(extensionWorkflow, /timeout-minutes: 45/);
   assert.equal([...extensionWorkflow.matchAll(/uses:\s*[^@\s]+@([a-f0-9]+)/g)].every((match) => match[1].length === 40), true);
+  assert.match(reviewerSource, /new Set\(audit\.attempts\.map[\s\S]*\.size !== expectedAttempts/);
+  assert.doesNotMatch(reviewerSource, /new Set\(audit\.attempts\.map[\s\S]*\.size !== 6/);
 });
 
 test("v4 container profile verifier consumes docker inspect JSON from stdin", async () => {
