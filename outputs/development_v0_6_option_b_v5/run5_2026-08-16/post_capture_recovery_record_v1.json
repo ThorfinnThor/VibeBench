@@ -1,0 +1,51 @@
+{
+  "schema_version": "vibebench.option_b.v5_post_capture_recovery_record.v1",
+  "recorded_at": "2026-08-16T21:35:00.000Z",
+  "status": "RECOVERY_COMPLETE_CANDIDATE_FREEZE_BLOCKED",
+  "source": {
+    "workflow_run_id": 31972093367,
+    "workflow_head_sha": "644a407b0c6a621d1f66794467ab3e1d60c27ca8",
+    "artifact_id": 9270458119,
+    "artifact_name": "option-b-v5-frozen-development-expansion",
+    "artifact_archive_sha256": "3242398cad6a01caeda7acd81144a4b7f9ee40f8de63003ea9d30f0c460ed69e",
+    "capture_completed_before_processing_failure": true,
+    "model_performance_inspected_before_capture_completion": false
+  },
+  "raw_artifacts": {
+    "primary_capture": "bb53891cdde439013bb6534daf40ce90bc35bbca92235374d0cb9b033fff6a75",
+    "primary_attempt_audit": "4fad2d3a1a0f977946a4e9dbdbf008240dc17d9bdcdbf41d830418818d5cb0df",
+    "reserve_capture": "72cb17ba488550c46c5f65b9b96e6a1cca2a9ba39d22f3b16f9b458e82ef8eb3",
+    "reserve_attempt_audit": "f6a070095991cf2077898755f0a2224f360e40342c43dc1d9c86b5977ffc0091"
+  },
+  "incident": {
+    "stage": "capture_finalization",
+    "error": "RangeError: Invalid string length",
+    "cause": "The original finalizer serialized the complete selected capture matrix into one JavaScript string.",
+    "capture_invalidated": false,
+    "rescan_performed": false
+  },
+  "recovery_implementation": {
+    "finalizer_sha256": "e16c218b824411ab70b2c7c8ed4fa10237ba3dca835cc04b18a017dd08c35dcf",
+    "feature_builder_sha256": "68e5070f0bb825c65ed5b1bd91ce03f967881d49f05395456fd384445e51813e",
+    "grouped_evaluator_sha256": "2be635b434b3c26b951ec0f7e17bb363f9346e6321914c09f103c6a31aa8d1b4",
+    "feature_contract_freeze_sha256": "86f93770f1be4d8764b6003491e542af0b50b276eec0e3ba4215ac6fe0c4d8be",
+    "evaluation_protocol_freeze_sha256": "41e9ffa7c3db5ec8d7280982c1fa931b99dd762e0c46c1a64155f1d9410a0df3",
+    "change": "Stream the selected capture rows while hashing the exact output bytes.",
+    "labels_or_scores_used_to_change_capture": false
+  },
+  "result_artifacts": {
+    "capture_freeze_sha256": "27867a8532aacce70f0428f48dfaa7beb939885b2a25979958b4e97cba7a4fde",
+    "replacement_audit_sha256": "1d18c936006bb793b0ee11d80a146b0feb177647adb447fbab4c1c382fdf3157",
+    "derived_features_sha256": "d60517ec1d73ff11a0799cf0bccaa5c7e04e0feeb3335a0b02a3541c5d789d34",
+    "grouped_nested_evaluation_sha256": "7651ddc4ca6261c9df10e3509a7b2ecd39853d4318938d748bde597b65e6c783"
+  },
+  "decisions": {
+    "development_matrix_complete": true,
+    "collector_promotion_gate_passed": false,
+    "development_90_90_gate_passed": false,
+    "second_frozen_development_run_required": false,
+    "candidate_freeze_authorized": false,
+    "independent_confirmation_authorized": false,
+    "production_promotion_authorized": false
+  }
+}

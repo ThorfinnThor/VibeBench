@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { selectFrozenCandidateConfiguration } from "../lib/option-b-v5-candidate-freeze.mjs";
@@ -42,4 +43,27 @@ test("Development execution is separately authorized without authorizing candida
   assert.equal(authorization.gates.labels_available_to_collector, false);
   assert.equal(authorization.gates.candidate_freeze_may_start_automatically, false);
   assert.equal(authorization.gates.production_promotion_authorized, false);
+});
+
+test("valid run 5 remains a frozen Development rejection, not a production candidate", async () => {
+  const root = new URL("../outputs/development_v0_6_option_b_v5/run5_2026-08-16/", import.meta.url);
+  const names = {
+    capture_freeze_sha256: "option_b_v5_development_capture_v1.freeze.json",
+    replacement_audit_sha256: "option_b_v5_development_replacement_audit_v1.json",
+    derived_features_sha256: "option_b_v5_development_derived_features_v2.json",
+    grouped_nested_evaluation_sha256: "option_b_v5_grouped_nested_evaluation_v2.json"
+  };
+  const record = JSON.parse(await readFile(new URL("post_capture_recovery_record_v1.json", root), "utf8"));
+  for (const [key, name] of Object.entries(names)) {
+    const text = await readFile(new URL(name, root), "utf8");
+    assert.equal(createHash("sha256").update(text).digest("hex"), record.result_artifacts[key]);
+  }
+  const captureFreeze = JSON.parse(await readFile(new URL(names.capture_freeze_sha256, root), "utf8"));
+  const evaluation = JSON.parse(await readFile(new URL(names.grouped_nested_evaluation_sha256, root), "utf8"));
+  assert.equal(captureFreeze.status, "DEVELOPMENT_CAPTURE_FROZEN_LABEL_JOIN_AUTHORIZED");
+  assert.equal(captureFreeze.collector_promotion_gate.technical_yield_at_least_90_percent, false);
+  assert.equal(evaluation.development_gate_passed, false);
+  assert.equal(evaluation.candidate_freeze_authorized, false);
+  assert.equal(record.decisions.independent_confirmation_authorized, false);
+  assert.equal(record.decisions.production_promotion_authorized, false);
 });

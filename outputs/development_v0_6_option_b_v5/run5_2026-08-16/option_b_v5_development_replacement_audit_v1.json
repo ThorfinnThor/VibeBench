@@ -1,0 +1,406 @@
+{
+  "schema_version": "vibebench.option_b.v5_development_replacement_audit.v1",
+  "generated_at": "2026-08-16T21:31:45.654Z",
+  "status": "TECHNICAL_REPLACEMENTS_COMPLETE",
+  "original_failures": 25,
+  "replacements": [
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-025",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-EXISTING-dev.to",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-EXISTING-dev.to",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "navigation_context_replaced"
+    },
+    {
+      "failed_primary_sample_id": "DEV2-AI-REPLIT-04",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-096",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-096",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-AI-227",
+      "replacement_bucket": "AI_ASSISTANT",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-033",
+          "technically_successful": false
+        },
+        {
+          "sample_id": "V5-DEV5-AI-063",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-063",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "egress_policy_blocked"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-HUM-NEW-044",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-070",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-070",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-AI-049",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-048",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-048",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "http_blocked_or_denied"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-AI-114",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-186",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-186",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "egress_policy_blocked"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-060",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "OPT-B-HUM-020",
+          "technically_successful": false
+        },
+        {
+          "sample_id": "OPT-B-HUM-057",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "OPT-B-HUM-057",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "http_not_found"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-019",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-028",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-028",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "http_not_found"
+    },
+    {
+      "failed_primary_sample_id": "DEV4-049",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-030",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-030",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "navigation_context_replaced"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-HUM-NEW-075",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-022",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-022",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-029",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-014",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-014",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "computed_style_extraction_failed"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-AI-016",
+      "replacement_bucket": "AI_ASSISTANT",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-021",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-021",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "egress_policy_blocked"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-HUM-NEW-025",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "OPT-B-HUM-017",
+          "technically_successful": false
+        },
+        {
+          "sample_id": "DEV5-104",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "DEV5-104",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-054",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-050",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-050",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-AI-183",
+      "replacement_bucket": "AI_ASSISTANT",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-078",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-078",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "capture_surface_unstable"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-AI-054",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-058",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-058",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "http_blocked_or_denied"
+    },
+    {
+      "failed_primary_sample_id": "DEV4-032",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "DEV4-052",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "DEV4-052",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "DEV5-120",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-EXISTING-thedev.id",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-EXISTING-thedev.id",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "DEV4-030",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-051",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-051",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-AI-005",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-AI-179",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-AI-179",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-007",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "DEV3X-074",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "DEV3X-074",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-HUM-018",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "OPT-B-HUM-006",
+          "technically_successful": false
+        },
+        {
+          "sample_id": "V5-DEV5-HUM-EXISTING-zws.im",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-EXISTING-zws.im",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-HUM-NEW-067",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-EXISTING-scaffoldeth.io",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-EXISTING-scaffoldeth.io",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    },
+    {
+      "failed_primary_sample_id": "V5-DEV5-HUM-NEW-047",
+      "replacement_bucket": "HUMAN_CONTROL",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "V5-DEV5-HUM-NEW-078",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "V5-DEV5-HUM-NEW-078",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "navigation_context_replaced"
+    },
+    {
+      "failed_primary_sample_id": "OPT-B-AI-014",
+      "replacement_bucket": "AI_NATIVE",
+      "attempted_reserve_candidates": [
+        {
+          "sample_id": "OPT-B-AI-067",
+          "technically_successful": true
+        }
+      ],
+      "selected_reserve_sample_id": "OPT-B-AI-067",
+      "replacement_pre_registered": true,
+      "model_score_inspected": false,
+      "reason": "ineligible_empty_or_interstitial"
+    }
+  ],
+  "unresolved": [],
+  "unused_successful_reserves": [
+    "DEV4-040",
+    "DEV4-043",
+    "DEV5-099",
+    "OPT-B-AI-071",
+    "OPT-B-HUM-024",
+    "OPT-B-HUM-058",
+    "V5-DEV5-AI-006",
+    "V5-DEV5-AI-083",
+    "V5-DEV5-AI-105",
+    "V5-DEV5-AI-173",
+    "V5-DEV5-AI-229",
+    "V5-DEV5-HUM-EXISTING-cali.so",
+    "V5-DEV5-HUM-EXISTING-clerk.com",
+    "V5-DEV5-HUM-EXISTING-faustjs.org",
+    "V5-DEV5-HUM-EXISTING-murex.rocks",
+    "V5-DEV5-HUM-EXISTING-next-saas-starter-ashy.vercel.app",
+    "V5-DEV5-HUM-EXISTING-openship.org",
+    "V5-DEV5-HUM-EXISTING-registry.terraform.io",
+    "V5-DEV5-HUM-NEW-009",
+    "V5-DEV5-HUM-NEW-026",
+    "V5-DEV5-HUM-NEW-035",
+    "V5-DEV5-HUM-NEW-038",
+    "V5-DEV5-HUM-NEW-039",
+    "V5-DEV5-HUM-NEW-048",
+    "V5-DEV5-HUM-NEW-055",
+    "V5-DEV5-HUM-NEW-062",
+    "V5-DEV5-HUM-NEW-077",
+    "V5-DEV5-HUM-NEW-083"
+  ],
+  "model_performance_inspected": false
+}
