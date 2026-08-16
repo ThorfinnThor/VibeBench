@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { assertOptionBV5Payload } from "../lib/option-b-v5-capture.mjs";
-import { pairedSuccessfulSampleIds, selectFrozenTechnicalReplacements } from "../lib/option-b-v5-development-finalize.mjs";
+import { pairedSuccessfulSampleIds, selectFrozenTechnicalReplacements, terminalAttemptRates } from "../lib/option-b-v5-development-finalize.mjs";
 
 const argument = (name, fallback) => { const index = process.argv.indexOf(name); return index >= 0 ? process.argv[index + 1] : fallback; };
 const root = path.resolve(argument("--root", "outputs/development_v0_6_option_b_v5"));
@@ -69,9 +69,9 @@ const replacementAudit = {
   unused_successful_reserves: [...reserveSuccessfulIds].filter((sampleId) => !selected.usedReserveIds.has(sampleId)).sort(),
   model_performance_inspected: false
 };
-const allAttempts = [...primaryAudit.attempts, ...reserveAudit.attempts];
-const unknownRate = allAttempts.filter(({ outcome_code }) => outcome_code === "unknown_technical_error").length / Math.max(1, allAttempts.length);
-const extractionRate = allAttempts.filter(({ outcome_code }) => ["computed_style_extraction_failed", "structural_aggregation_failed", "serialization_failed"].includes(outcome_code)).length / Math.max(1, allAttempts.length);
+const terminalRates = terminalAttemptRates([primaryAudit, reserveAudit]);
+const unknownRate = terminalRates.unknown_technical_error;
+const extractionRate = terminalRates.collector_origin_extraction_failure;
 const finalCapture = {
   schema_version: "vibebench.option_b.v5_development_capture_frozen.v1",
   generated_at: new Date().toISOString(),
@@ -100,7 +100,7 @@ const freeze = {
   generated_at: new Date().toISOString(),
   status: passed ? "DEVELOPMENT_CAPTURE_FROZEN_LABEL_JOIN_AUTHORIZED" : "DEVELOPMENT_CAPTURE_REJECTED_LABEL_JOIN_BLOCKED",
   gates,
-  rates: { primary_technical_yield: primarySuccessfulIds.size / Math.max(1, primaryManifest.rows.length), reserve_technical_yield: reserveSuccessfulIds.size / Math.max(1, reserveManifest.rows.length), unknown_technical_error: unknownRate, collector_origin_extraction_failure: extractionRate },
+  rates: { primary_technical_yield: primarySuccessfulIds.size / Math.max(1, primaryManifest.rows.length), reserve_technical_yield: reserveSuccessfulIds.size / Math.max(1, reserveManifest.rows.length), ...terminalRates },
   collector_promotion_gate: { technical_yield_at_least_90_percent: primarySuccessfulIds.size / Math.max(1, primaryManifest.rows.length) >= 0.9, note: "A failed collector-promotion gate does not invalidate a complete Development matrix, but it blocks candidate promotion." },
   artifacts: { capture: { sha256: createHash("sha256").update(captureText).digest("hex") }, replacement_audit: { sha256: createHash("sha256").update(replacementText).digest("hex") } }
 };
