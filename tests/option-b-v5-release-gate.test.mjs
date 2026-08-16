@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { gunzipSync } from "node:zlib";
 import { selectFrozenCandidateConfiguration } from "../lib/option-b-v5-candidate-freeze.mjs";
 
 test("v5 release gate is smoke-only and retains two fixed viewports", async () => {
@@ -50,7 +51,6 @@ test("valid run 5 remains a frozen Development rejection, not a production candi
   const names = {
     capture_freeze_sha256: "option_b_v5_development_capture_v1.freeze.json",
     replacement_audit_sha256: "option_b_v5_development_replacement_audit_v1.json",
-    derived_features_sha256: "option_b_v5_development_derived_features_v2.json",
     grouped_nested_evaluation_sha256: "option_b_v5_grouped_nested_evaluation_v2.json"
   };
   const record = JSON.parse(await readFile(new URL("post_capture_recovery_record_v1.json", root), "utf8"));
@@ -58,6 +58,10 @@ test("valid run 5 remains a frozen Development rejection, not a production candi
     const text = await readFile(new URL(name, root), "utf8");
     assert.equal(createHash("sha256").update(text).digest("hex"), record.result_artifacts[key]);
   }
+  const packedFeatures = await readFile(new URL("option_b_v5_development_derived_features_v2.json.gz.base64", root), "utf8");
+  assert.equal(createHash("sha256").update(packedFeatures).digest("hex"), record.result_artifacts.derived_features_storage_sha256);
+  const featureText = gunzipSync(Buffer.from(packedFeatures, "base64"));
+  assert.equal(createHash("sha256").update(featureText).digest("hex"), record.result_artifacts.derived_features_sha256);
   const captureFreeze = JSON.parse(await readFile(new URL(names.capture_freeze_sha256, root), "utf8"));
   const evaluation = JSON.parse(await readFile(new URL(names.grouped_nested_evaluation_sha256, root), "utf8"));
   assert.equal(captureFreeze.status, "DEVELOPMENT_CAPTURE_FROZEN_LABEL_JOIN_AUTHORIZED");

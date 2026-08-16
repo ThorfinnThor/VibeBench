@@ -44,6 +44,11 @@ median Precision/Recall >=92%. The observed result is materially below both
 requirements. Selective decisions also do not rescue the gate: p10 decided
 Precision is 70.8%, p10 decided Recall is 64.3%, and p10 coverage is 77.5%.
 
+The frozen feature artifact is stored as gzip bytes encoded in base64 so it
+can remain in the repository without altering the evaluated JSON bytes. Decode
+the `.json.gz.base64` file, then gunzip it; the recovered JSON SHA-256 is
+`d60517ec1d73ff11a0799cf0bccaa5c7e04e0feeb3335a0b02a3541c5d789d34`.
+
 ## Decision
 
 1. Keep customer-facing v0.4 labelled as a Research Beta and keep its old
