@@ -1,0 +1,216 @@
+{
+  "schema_version": "vibebench.option_b.v5_smoke_repeat_comparison.v1",
+  "status": "V5_REPEAT_INTEGRITY_ACCEPTABLE_PHASE_2_TECHNICAL_REVIEW_COMPLETE",
+  "phase_gate": "DEVELOPMENT_EXPANSION_REQUIRES_SEPARATE_MANIFEST_RESERVE_FEATURE_SCHEMA_FREEZE",
+  "timing": {
+    "first_generated_at": "2026-08-16T16:27:13.298Z",
+    "second_generated_at": "2026-08-16T16:32:08.830Z",
+    "elapsed_hours": 0.08209222222222222,
+    "interval_gate_applied": false,
+    "rationale": "Project owner explicitly authorized an immediate technical repeat on 2026-08-16."
+  },
+  "inputs": {
+    "first_capture": {
+      "source": "github-actions:run/31958522228/artifact/9266636105/run-1.capture.json",
+      "sha256": "b9c042610cab425ae86f9d2165a9a3a7969eef75ac30d6371756e9383e50d692",
+      "schema_version": "vibebench.option_b.v5_smoke_capture.v1"
+    },
+    "second_capture": {
+      "source": "github-actions:run/31958742790/artifact/9266697534/run-2.capture.json",
+      "sha256": "b18ec912708fc482045a6897350a671381991b5513ade8917c1156dc43c802e5",
+      "schema_version": "vibebench.option_b.v5_smoke_capture.v1"
+    },
+    "first_audit": {
+      "source": "github-actions:run/31958522228/artifact/9266636105/run-1.attempt-audit.json",
+      "sha256": "8d1eac304c21bc70da0ce1d9b448fb2f6210e9a1676df8a23fab3b0fe805b8a1",
+      "schema_version": "vibebench.option_b.v5_smoke_attempt_audit.v1"
+    },
+    "second_audit": {
+      "source": "github-actions:run/31958742790/artifact/9266697534/run-2.attempt-audit.json",
+      "sha256": "1db79f961e461e34ed418df894d89b924312986e9692e5f3cf17b3ad0dc37c2d",
+      "schema_version": "vibebench.option_b.v5_smoke_attempt_audit.v1"
+    }
+  },
+  "gates": {
+    "same_manifest_and_contract": true,
+    "same_runtime_sources": true,
+    "same_successful_capture_keys": true,
+    "at_least_eight_common_captures": true,
+    "same_terminal_outcome_counts": true,
+    "privacy_boundaries_preserved": true
+  },
+  "summary": {
+    "first": {
+      "attempted": 6,
+      "viewports": 2,
+      "successful": 5,
+      "captures": 10,
+      "failed": 1
+    },
+    "second": {
+      "attempted": 6,
+      "viewports": 2,
+      "successful": 5,
+      "captures": 10,
+      "failed": 1
+    },
+    "common_captures": 10,
+    "exact_payload_matches": 6,
+    "common_responsive_samples": 5
+  },
+  "success_consistency": {
+    "first_capture_keys": [
+      "DEV3-032:desktop",
+      "DEV3-032:mobile",
+      "DEV3X-074:desktop",
+      "DEV3X-074:mobile",
+      "DEV3X-076:desktop",
+      "DEV3X-076:mobile",
+      "OPT-B-AI-069:desktop",
+      "OPT-B-AI-069:mobile",
+      "OPT-B-HUM-057:desktop",
+      "OPT-B-HUM-057:mobile"
+    ],
+    "second_capture_keys": [
+      "DEV3-032:desktop",
+      "DEV3-032:mobile",
+      "DEV3X-074:desktop",
+      "DEV3X-074:mobile",
+      "DEV3X-076:desktop",
+      "DEV3X-076:mobile",
+      "OPT-B-AI-069:desktop",
+      "OPT-B-AI-069:mobile",
+      "OPT-B-HUM-057:desktop",
+      "OPT-B-HUM-057:mobile"
+    ]
+  },
+  "retry_and_runtime": {
+    "first": {
+      "attempts": 14,
+      "elapsed_ms_p50": 2506,
+      "elapsed_ms_p90": 4425,
+      "elapsed_ms_max": 6967,
+      "retry_keys": 2,
+      "recovered_retry_keys": 0,
+      "retry_recovery_rate": 0,
+      "outcomes": {
+        "ineligible_empty_or_interstitial": 4,
+        "success": 10
+      }
+    },
+    "second": {
+      "attempts": 14,
+      "elapsed_ms_p50": 2714,
+      "elapsed_ms_p90": 3665,
+      "elapsed_ms_max": 4041,
+      "retry_keys": 2,
+      "recovered_retry_keys": 0,
+      "retry_recovery_rate": 0,
+      "outcomes": {
+        "ineligible_empty_or_interstitial": 4,
+        "success": 10
+      }
+    }
+  },
+  "feature_stability": {
+    "visible_element_delta_share_p50": 0,
+    "visible_element_delta_share_max": 0,
+    "structural_signature_jaccard_p50": 1,
+    "structural_signature_jaccard_min": 1,
+    "captures": [
+      {
+        "capture_key": "DEV3-032:desktop",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "DEV3-032:mobile",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "DEV3X-074:desktop",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "DEV3X-074:mobile",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "DEV3X-076:desktop",
+        "exact_payload_match": false,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "DEV3X-076:mobile",
+        "exact_payload_match": false,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "OPT-B-AI-069:desktop",
+        "exact_payload_match": false,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "OPT-B-AI-069:mobile",
+        "exact_payload_match": false,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "OPT-B-HUM-057:desktop",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      },
+      {
+        "capture_key": "OPT-B-HUM-057:mobile",
+        "exact_payload_match": true,
+        "visible_element_delta_share": 0,
+        "structural_signature_jaccard": 1
+      }
+    ]
+  },
+  "responsive_delta_stability": [
+    {
+      "sample_id": "DEV3-032",
+      "visible_element_delta_share_change": 0,
+      "document_height_ratio_change": 0,
+      "structural_jaccard_change": 0
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "visible_element_delta_share_change": 0,
+      "document_height_ratio_change": 0,
+      "structural_jaccard_change": 0
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "visible_element_delta_share_change": 0,
+      "document_height_ratio_change": 0,
+      "structural_jaccard_change": 0
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "visible_element_delta_share_change": 0,
+      "document_height_ratio_change": 0,
+      "structural_jaccard_change": 0
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "visible_element_delta_share_change": 0,
+      "document_height_ratio_change": 0,
+      "structural_jaccard_change": 0
+    }
+  ],
+  "model_performance_inspected": false
+}
