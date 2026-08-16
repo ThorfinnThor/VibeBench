@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import { pairedSuccessfulSampleIds, selectFrozenTechnicalReplacements } from "../lib/option-b-v5-development-finalize.mjs";
+import { pairedSuccessfulSampleIds, selectFrozenTechnicalReplacements, terminalAttemptRates } from "../lib/option-b-v5-development-finalize.mjs";
 import { chooseOptionBV5TechnicalReplacement } from "../lib/option-b-v5-development-manifests.mjs";
 
 const root = new URL("../outputs/development_v0_6_option_b_v5/", import.meta.url);
@@ -69,4 +69,18 @@ test("v5 technical replacement is pre-registered, label-compatible and family-ex
   assert.notEqual(replacement.project_family_id, failed.project_family_id);
   const exhausted = new Set(policy.reserve_by_bucket[failed.replacement_bucket]);
   assert.equal(chooseOptionBV5TechnicalReplacement({ failedSampleId: failed.sample_id, registry: registryArtifact.rows, reserveByBucket: policy.reserve_by_bucket, usedSampleIds: exhausted }), null);
+});
+
+test("collector error gates use terminal retry outcomes rather than every attempt", () => {
+  const rates = terminalAttemptRates([{ attempts: [
+    { sample_id: "a", viewport_id: "desktop", retry_number: 0, attempt_id: "a0", outcome_code: "unknown_technical_error" },
+    { sample_id: "a", viewport_id: "desktop", retry_number: 1, attempt_id: "a1", outcome_code: "success" },
+    { sample_id: "a", viewport_id: "mobile", retry_number: 0, attempt_id: "a2", outcome_code: "success" },
+    { sample_id: "b", viewport_id: "desktop", retry_number: 0, attempt_id: "b0", outcome_code: "computed_style_extraction_failed" },
+    { sample_id: "b", viewport_id: "mobile", retry_number: 0, attempt_id: "b1", outcome_code: "unknown_technical_error" }
+  ] }]);
+  assert.equal(rates.denominator_terminal_target_viewports, 4);
+  assert.equal(rates.unknown_technical_error, 0.25);
+  assert.equal(rates.collector_origin_extraction_failure, 0.25);
+  assert.match(rates.basis, /last attempt/);
 });
