@@ -26,6 +26,7 @@ import {
 import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 import release from "../../../release/v0.4.json";
+import { localizeScanPayload, localizeTechnicalOutcome } from "../../../lib/scan-localization.mjs";
 
 export const runtime = "nodejs";
 export const maxDuration = 20;
@@ -122,6 +123,7 @@ export async function POST(request) {
   const deadline = AbortSignal.timeout(18_000);
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
   let releaseAdmission = () => {};
+  const locale = request.headers.get("accept-language")?.toLowerCase().startsWith("de") ? "de" : "en";
   try {
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
@@ -248,13 +250,12 @@ export async function POST(request) {
       warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er ist keine AI-Wahrscheinlichkeit, kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."
     };
     console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
-    return Response.json(payload, { headers: responseHeaders });
+    return Response.json(localizeScanPayload(payload, locale), { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
-    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
+    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome: localizeTechnicalOutcome(technicalOutcome, locale) }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   } finally {
     releaseAdmission();
   }
 }
-
