@@ -15,11 +15,13 @@ import {
 } from "../lib/option-b-v5-capture.mjs";
 
 const arg = (name, fallback) => { const index = process.argv.indexOf(name); return index >= 0 ? process.argv[index + 1] : fallback; };
+const mode = arg("--mode", "smoke");
+if (!new Set(["smoke", "development"]).has(mode)) throw new Error("--mode must be smoke or development.");
 const root = path.resolve(process.env.OPTION_B_V5_ARTIFACT_ROOT || "outputs/development_v0_6_option_b_v5");
 const outputPath = path.resolve(arg("--output", path.join(root, "option_b_v5_capture.json")));
 const auditPath = path.resolve(arg("--audit", path.join(root, "option_b_v5_attempt_audit.json")));
-const manifestPath = path.resolve(arg("--manifest", "outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json"));
-const contractPath = path.resolve(arg("--contract", "outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json"));
+const manifestPath = path.resolve(arg("--manifest", mode === "smoke" ? "outputs/development_v0_6_option_b_v5/option_b_v5_primary_manifest.json" : "outputs/development_v0_6_option_b_v5/option_b_v5_development_primary_manifest_v1.json"));
+const contractPath = path.resolve(arg("--contract", mode === "smoke" ? "outputs/development_v0_6_option_b_v5/option_b_capture_contract_v5.json" : "outputs/development_v0_6_option_b_v5/option_b_v5_development_capture_contract_v1.json"));
 
 if (process.env.OPTION_B_V5_ISOLATED_RUNTIME !== "1") throw new Error("The v5 collector requires OPTION_B_V5_ISOLATED_RUNTIME=1.");
 if (process.env.HTTPS_PROXY !== "http://egress:8080" || process.env.HTTP_PROXY !== process.env.HTTPS_PROXY) throw new Error("The v5 collector requires the isolated egress proxy.");
@@ -28,9 +30,11 @@ for (const name of ["OPTION_B_V5_COLLECTOR_IMAGE", "OPTION_B_V5_EGRESS_IMAGE", "
 const [manifestText, contractText] = await Promise.all([readFile(manifestPath, "utf8"), readFile(contractPath, "utf8")]);
 const manifest = JSON.parse(manifestText);
 const contract = JSON.parse(contractText);
-if (manifest.rows?.length !== 6 || manifest.collector_visible_fields?.join(",") !== "sample_id,target_url") throw new Error("v5 smoke manifest must contain exactly six label-blind rows.");
+const expectedManifestSchema = mode === "smoke" ? "vibebench.option_b.v5_primary_manifest.v1" : /^vibebench\.option_b\.v5_development_(?:primary|reserve)_manifest\.v1$/;
+if ((typeof expectedManifestSchema === "string" ? manifest.schema_version !== expectedManifestSchema : !expectedManifestSchema.test(manifest.schema_version)) || (mode === "smoke" && manifest.rows?.length !== 6) || (mode === "development" && !(manifest.rows?.length > 0 && manifest.rows.length <= 200)) || manifest.collector_visible_fields?.join(",") !== "sample_id,target_url") throw new Error(`Invalid label-blind v5 ${mode} manifest.`);
 if (manifest.rows.some((row) => Object.keys(row).sort().join(",") !== "sample_id,target_url")) throw new Error("v5 manifest exposes prohibited collector fields.");
-if (contract.status !== "ISOLATED_SIX_SITE_SMOKE_ONLY" || contract.execution_gate?.six_site_smoke_may_execute !== true) throw new Error("v5 smoke execution gate is not approved.");
+if (mode === "smoke" && (contract.status !== "ISOLATED_SIX_SITE_SMOKE_ONLY" || contract.execution_gate?.six_site_smoke_may_execute !== true)) throw new Error("v5 smoke execution gate is not approved.");
+if (mode === "development" && (contract.status !== "ISOLATED_DEVELOPMENT_EXPANSION_FROZEN" || contract.execution_gate?.expansion_may_execute !== true || contract.execution_gate?.group_cv_may_execute !== false)) throw new Error("v5 Development execution gate is not approved.");
 
 const runId = randomUUID();
 const originSalt = randomUUID();
@@ -135,10 +139,12 @@ try {
   await browser.close();
 }
 
-const common = { generated_at: new Date().toISOString(), run_id: runId, status: "ISOLATED_LABEL_BLIND_SIX_SITE_SMOKE", runtime: { engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewports: contract.viewports, isolation: { collector_direct_network: false, read_only_root: true, non_root: true, no_new_privileges: true, capabilities_dropped: "ALL", collector_image_id: process.env.OPTION_B_V5_COLLECTOR_IMAGE, egress_image_id: process.env.OPTION_B_V5_EGRESS_IMAGE, collector_base_digest: process.env.OPTION_B_V5_COLLECTOR_BASE_DIGEST, egress_base_digest: process.env.OPTION_B_V5_EGRESS_BASE_DIGEST, collector_source_sha256: process.env.OPTION_B_V5_COLLECTOR_SOURCE_SHA256, egress_source_sha256: process.env.OPTION_B_V5_EGRESS_SOURCE_SHA256 } }, inputs: { manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") }, contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") } } };
+const common = { generated_at: new Date().toISOString(), run_id: runId, status: mode === "smoke" ? "ISOLATED_LABEL_BLIND_SIX_SITE_SMOKE" : "ISOLATED_LABEL_BLIND_DEVELOPMENT_CAPTURE", runtime: { engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewports: contract.viewports, isolation: { collector_direct_network: false, peer_pinning_egress: true, read_only_root: true, non_root: true, no_new_privileges: true, capabilities_dropped: "ALL", collector_image_id: process.env.OPTION_B_V5_COLLECTOR_IMAGE, egress_image_id: process.env.OPTION_B_V5_EGRESS_IMAGE, collector_base_digest: process.env.OPTION_B_V5_COLLECTOR_BASE_DIGEST, egress_base_digest: process.env.OPTION_B_V5_EGRESS_BASE_DIGEST, collector_source_sha256: process.env.OPTION_B_V5_COLLECTOR_SOURCE_SHA256, egress_source_sha256: process.env.OPTION_B_V5_EGRESS_SOURCE_SHA256 } }, inputs: { manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") }, contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") } } };
 const privacy = { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false };
-const captureOutput = { schema_version: "vibebench.option_b.v5_smoke_capture.v1", ...common, privacy, summary: { attempted: manifest.rows.length, viewports: contract.viewports.length, successful: new Set(captures.map(({ sample_id }) => sample_id)).size, captures: captures.length, failed: manifest.rows.length - new Set(captures.map(({ sample_id }) => sample_id)).size }, captures };
-const auditOutput = { schema_version: "vibebench.option_b.v5_smoke_attempt_audit.v1", ...common, summary: { attempted: attempts.length, successful: attempts.filter(({ outcome_code }) => outcome_code === "success").length, failed: attempts.filter(({ outcome_code }) => outcome_code !== "success").length }, attempts };
+const captureCounts = captures.reduce((counts, { sample_id }) => (counts.set(sample_id, (counts.get(sample_id) || 0) + 1), counts), new Map());
+const successfulSiteIds = new Set([...captureCounts].filter(([, count]) => count === contract.viewports.length).map(([sampleId]) => sampleId));
+const captureOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_capture.v1" : "vibebench.option_b.v5_development_capture.v1", ...common, privacy, summary: { attempted: manifest.rows.length, viewports: contract.viewports.length, successful: successfulSiteIds.size, captures: captures.length, failed: manifest.rows.length - successfulSiteIds.size, incomplete_viewport_pairs: [...captureCounts].filter(([, count]) => count !== contract.viewports.length).length }, captures };
+const auditOutput = { schema_version: mode === "smoke" ? "vibebench.option_b.v5_smoke_attempt_audit.v1" : "vibebench.option_b.v5_development_attempt_audit.v1", ...common, summary: { sites_attempted: manifest.rows.length, attempts: attempts.length, successful_attempts: attempts.filter(({ outcome_code }) => outcome_code === "success").length, failed_attempts: attempts.filter(({ outcome_code }) => outcome_code !== "success").length }, attempts };
 const assertPrivacy = (value, at = "output") => { if (Array.isArray(value)) return value.forEach((item, index) => assertPrivacy(item, `${at}[${index}]`)); if (!value || typeof value !== "object") return; for (const [key, item] of Object.entries(value)) { if (/^(target_url|resolved_url|url|hostname|label|target_group|raw_html|visible_text|text|screenshot|image)$/i.test(key)) throw new Error(`Prohibited persisted field at ${at}.${key}`); assertPrivacy(item, `${at}.${key}`); } };
 assertPrivacy(captureOutput); assertPrivacy(auditOutput);
 const atomicJson = async (file, value) => { await mkdir(path.dirname(file), { recursive: true }); const tmp = `${file}.${randomUUID()}.tmp`; await writeFile(tmp, `${JSON.stringify(value, null, 2)}\n`, { mode: 0o600 }); await rename(tmp, file); };

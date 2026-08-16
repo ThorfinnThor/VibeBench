@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import { pairedSuccessfulSampleIds, selectFrozenTechnicalReplacements } from "../lib/option-b-v5-development-finalize.mjs";
 import { chooseOptionBV5TechnicalReplacement } from "../lib/option-b-v5-development-manifests.mjs";
 
 const root = new URL("../outputs/development_v0_6_option_b_v5/", import.meta.url);
@@ -23,6 +24,30 @@ test("v5 Development manifests keep labels out of the collector and families out
   assert.equal([...primaryFamilies].some((family) => reserveFamilies.has(family)), false);
   assert.deepEqual(registry.summary.primary_targets, { 0: 100, 1: 100 });
   assert.equal(freeze.capture_may_start, false);
+});
+
+test("capture finalization uses only complete viewport pairs and advances past failed reserves", () => {
+  const primarySuccessfulIds = pairedSuccessfulSampleIds({ captures: [
+    { sample_id: "p1", viewport_id: "desktop" }, { sample_id: "p1", viewport_id: "mobile" },
+    { sample_id: "p2", viewport_id: "desktop" }
+  ] });
+  const reserveSuccessfulIds = pairedSuccessfulSampleIds({ captures: [
+    { sample_id: "r2", viewport_id: "desktop" }, { sample_id: "r2", viewport_id: "mobile" }
+  ] });
+  assert.deepEqual([...primarySuccessfulIds], ["p1"]);
+  const result = selectFrozenTechnicalReplacements({
+    primarySampleIds: ["p1", "p2"],
+    primarySuccessfulIds,
+    reserveSuccessfulIds,
+    primaryBucketBySampleId: { p1: "AI_NATIVE", p2: "AI_NATIVE" },
+    reserveByBucket: { AI_NATIVE: ["r1", "r2"] }
+  });
+  assert.equal(result.unresolved.length, 0);
+  assert.equal(result.replacements[0].selected_reserve_sample_id, "r2");
+  assert.deepEqual(result.replacements[0].attempted_reserve_candidates, [
+    { sample_id: "r1", technically_successful: false },
+    { sample_id: "r2", technically_successful: true }
+  ]);
 });
 
 test("v5 technical replacement is pre-registered, label-compatible and family-exclusive", async () => {

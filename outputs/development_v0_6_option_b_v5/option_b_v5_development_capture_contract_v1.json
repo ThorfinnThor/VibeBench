@@ -1,0 +1,91 @@
+{
+  "schema_version": "vibebench.option_b.capture_contract.v5.development.v1",
+  "locked_at": "2026-08-16T19:00:00.000Z",
+  "status": "ISOLATED_DEVELOPMENT_EXPANSION_FROZEN",
+  "scope": "label-blind Development-only public-surface capture in an ephemeral isolated browser runtime",
+  "execution_gate": {
+    "six_site_smoke_may_execute": false,
+    "scored_development_run_may_execute": true,
+    "group_cv_may_execute": false,
+    "nested_evaluation_may_execute": false,
+    "candidate_freeze_may_execute": false,
+    "expansion_may_execute": true
+  },
+  "collector_blinding": {
+    "input_fields": ["sample_id", "target_url"],
+    "fields_unavailable_to_collector": ["label", "target", "target_group", "cohort", "provenance_url", "previous_score", "previous_outcome"],
+    "model_scores_inspected_during_collection": false,
+    "join_labels_after_capture_freeze": true
+  },
+  "isolation_requirements": {
+    "ephemeral_container": true,
+    "non_root": true,
+    "read_only_root_filesystem": true,
+    "linux_capabilities": "drop_all",
+    "no_new_privileges": true,
+    "collector_direct_network": false,
+    "service_workers": "blocked",
+    "websockets": "blocked",
+    "request_methods": ["GET", "HEAD"],
+    "downloads": false,
+    "cookies_or_authenticated_state": false
+  },
+  "runtime_requirements": {
+    "browser_engine": "Playwright 1.54.2 with Chromium from the matching official Playwright image",
+    "locale": "de-DE",
+    "timezone": "Europe/Berlin",
+    "color_scheme": "light",
+    "reduced_motion": "reduce",
+    "device_scale_factor": 1,
+    "fresh_anonymous_context_per_attempt": true,
+    "user_agent": "fixed before first attempt"
+  },
+  "viewports": [
+    { "id": "desktop", "width": 1440, "height": 900, "full_page": false },
+    { "id": "mobile", "width": 390, "height": 844, "full_page": false }
+  ],
+  "budgets": {
+    "navigation_timeout_ms": 18000,
+    "readiness_timeout_ms": 14000,
+    "extraction_timeout_ms": 12000,
+    "attempts_per_viewport": 2,
+    "maximum_visible_elements": 2000,
+    "maximum_dom_depth": 80,
+    "maximum_same_origin_stylesheets": 8,
+    "maximum_stylesheet_bytes_each": 300000,
+    "maximum_total_stylesheet_bytes": 1500000
+  },
+  "retry_policy": {
+    "fresh_context_per_retry": true,
+    "maximum_attempts": 2,
+    "retry_transient_only": true,
+    "no_access_control_evasion": true,
+    "same_user_agent_locale_timezone_and_viewports": true,
+    "backoff": "rate-limit exponential capped at 8000ms; other transient failures 500ms then 1250ms"
+  },
+  "readiness": {
+    "navigation_event": "domcontentloaded",
+    "sampling_interval_ms": 500,
+    "required_consecutive_stable_samples": 2,
+    "stable_if_document_dimensions_delta_px_max": 2,
+    "stable_if_visible_element_count_delta_share_max": 0.02,
+    "font_readiness_wait": true
+  },
+  "terminal_outcomes": [
+    "success", "invalid_url", "private_or_disallowed_target", "egress_policy_blocked", "dns_unresolved",
+    "tcp_connection_failed", "tls_certificate_error", "http_rate_limited", "http_blocked_or_denied",
+    "http_not_found", "http_legal_block", "http_error", "navigation_timeout", "navigation_context_replaced",
+    "surface_helper_installation_failed", "dom_readiness_timeout", "ineligible_empty_or_interstitial",
+    "capture_surface_unstable", "computed_style_extraction_failed", "structural_aggregation_failed",
+    "serialization_failed", "unknown_technical_error"
+  ],
+  "privacy_and_retention": {
+    "raw_html_persisted": false,
+    "full_visible_text_persisted": false,
+    "network_response_bodies_persisted": false,
+    "screenshots_created": false,
+    "target_urls_persisted_in_capture_or_audit": false,
+    "derived_aggregate_payload_persisted": true,
+    "attempt_audit_persisted": true
+  }
+}

@@ -10,3 +10,12 @@ test("v5 release gate is smoke-only and retains two fixed viewports", async () =
   assert.equal(contract.retry_policy.fresh_context_per_retry, true);
   assert.equal(contract.retry_policy.no_access_control_evasion, true);
 });
+
+test("Development execution is separately authorized without authorizing candidate or production promotion", async () => {
+  const authorization = JSON.parse(await readFile(new URL("../outputs/development_v0_6_option_b_v5/option_b_v5_development_execution_authorization_v1.json", import.meta.url), "utf8"));
+  assert.equal(authorization.status, "FROZEN_DEVELOPMENT_CAPTURE_MAY_EXECUTE");
+  assert.equal(authorization.gates.capture_may_start, true);
+  assert.equal(authorization.gates.labels_available_to_collector, false);
+  assert.equal(authorization.gates.candidate_freeze_may_start_automatically, false);
+  assert.equal(authorization.gates.production_promotion_authorized, false);
+});
