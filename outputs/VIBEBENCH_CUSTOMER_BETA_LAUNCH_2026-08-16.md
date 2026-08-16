@@ -82,9 +82,14 @@ Production smoke:
 ## Research work that does not block customer beta
 
 The Option-B-v4 collector is a Development research track and is not the live
-customer scoring model. The accepted early repeat authorizes exactly one frozen
-20-site technical extension. It does not authorize the 81-site run, independent
-Confirmation, a model change or a stronger public performance claim.
+customer scoring model. The accepted early repeat and the exactly-one frozen
+20-site technical extension are complete. The extension produced 20/20
+successful isolated captures and passed the corrected artifact, privacy,
+isolation, payload and yield review. See
+`VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md`.
+
+This does not authorize the 81-site run, independent Confirmation, a model
+change or a stronger public performance claim.
 
 Before promoting the product beyond a limited Research Beta, still complete a
 fresh preregistered independent Confirmation on the final collector/features,

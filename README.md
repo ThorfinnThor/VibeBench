@@ -31,7 +31,12 @@ Option-B-v4-Development-Collector stabil ist. Vollständiger Stand:
 Run 1 und ein technisch stabiler, aber mit 18,93 Stunden zu früh ausgeführter
 Repeat sind in
 [`outputs/VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md`](outputs/VIBEBENCH_OPTION_B_V4_EARLY_REPEAT_2026-08-16.md)
-dokumentiert; die offizielle 24–72-Stunden-Wiederholung steht weiterhin aus.
+dokumentiert. Der Projektinhaber hat die Abweichung für den engen technischen
+Gate ausdrücklich akzeptiert; die ursprüngliche 24–72-Stunden-Regel bleibt im
+Audit unverändert als nicht erfüllt sichtbar. Die anschließend erlaubte,
+eingefrorene 20er-Erweiterung erreichte 20/20 technische Erfolge und bestand
+den korrigierten Isolation-, Privacy-, Payload- und Yield-Review:
+[`outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md`](outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md).
 
 - Master-Dataset: 2.000 Samples in vier Kohorten.
 - URL-Scan-Queue: 63 Websites, davon 52 erfolgreich gescannt.

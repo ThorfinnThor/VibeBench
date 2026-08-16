@@ -1,6 +1,6 @@
 # VibeBench roadmap
 
-Updated: 2026-08-15
+Updated: 2026-08-16
 
 This roadmap preserves the agreed product direction after dropping a rigid 90/90 Precision/Recall release target. Audit hardening takes precedence; model and product research resumes on the frozen Option-B Development set afterward.
 
@@ -116,7 +116,7 @@ See:
 1. **Completed:** use an ephemeral non-root Docker runtime on GitHub-hosted runners, with an internal-only collector network and a separate DNS/peer-pinning egress proxy.
 2. **Completed:** freeze the Option-B v4 capture contract and corrected positive-schema collector. The local environment must not fall back to a non-isolated run when Docker is unavailable.
 3. **Completed with disclosed waiver:** Run 1 and the early technical repeat both produced the same five successes and perfect descriptive stability. The repeat ran after 18.9288 rather than 24 hours; the owner explicitly accepted this narrow protocol deviation without rewriting the original failed time gate.
-4. **In progress:** execute the now-frozen deterministic, label-blind 20-site technical extension; do not jump directly to 81.
+4. **Completed:** the frozen deterministic, label-blind 20-site technical extension produced 20/20 successful captures and passed the corrected isolation, privacy, payload and yield review. The initial post-capture reviewer retained a six-site constant; the collector and records were valid, the reviewer was fixed with a regression assertion, and the unchanged 20-site workflow then passed. See `outputs/VIBEBENCH_OPTION_B_V4_EXTENSION_20_RESULT_2026-08-16.md`.
 5. Only after freezing capture and derived-feature hashes, join Development labels and test incremental usefulness, stability and cohort gaps.
 6. Define and validate indeterminate semantics separately from scan breadth, then freeze a new independent Option-B holdout only after Development stabilizes.
 
@@ -125,3 +125,7 @@ The existing 82.4% Precision / 85.7% Recall confirmation is now explicitly a
 claim. A fresh independent confirmation is deferred until the v4 Development
 collector and derived features are stable. See
 `outputs/VIBEBENCH_OPTION_B_V4_ISOLATION_DECISION_2026-08-15.md`.
+
+For customer delivery, product `0.4.1` is ready for a limited Research Beta.
+The live endpoint, safety controls, production verification and rollback rules
+are recorded in `outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md`.
