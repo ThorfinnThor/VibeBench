@@ -25,3 +25,11 @@ test("v5 extraction uses page-local caches and terminates CSS traversal at the f
   assert.match(source, /if \(budgetExhausted\) return/);
   assert.match(source, /option-b-v4-capture/);
 });
+
+test("v5 Development runner streams large capture rows instead of retaining the full payload matrix", async () => {
+  const source = await readFile(new URL("../scripts/run-development-v0_6-option-b-v5-isolated.mjs", import.meta.url), "utf8");
+  assert.match(source, /createWriteStream\(captureRowsPath/);
+  assert.match(source, /atomicJsonWithRows\(outputPath, captureOutput, "captures"/);
+  assert.match(source, /await unlink\(rowsFile\)/);
+  assert.doesNotMatch(source, /captures\.push\(/);
+});
