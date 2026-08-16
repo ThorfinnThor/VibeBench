@@ -11,8 +11,9 @@ const capture = JSON.parse(captureBytes);
 const audit = JSON.parse(auditBytes);
 const findings = [];
 const isPilot = capture.schema_version === "vibebench.option_b.v4_pilot_capture.v1" && audit.schema_version === "vibebench.option_b.v4_pilot_attempt_audit.v1";
-const isExtension = capture.schema_version === "vibebench.option_b.v4_extension_capture.v1" && audit.schema_version === "vibebench.option_b.v4_extension_attempt_audit.v1";
-const expectedAttempts = isPilot ? 6 : isExtension ? 20 : 0;
+const isExtension20 = capture.schema_version === "vibebench.option_b.v4_extension_capture.v1" && audit.schema_version === "vibebench.option_b.v4_extension_attempt_audit.v1";
+const isExtension81 = capture.schema_version === "vibebench.option_b.v4_extension_81_capture.v1" && audit.schema_version === "vibebench.option_b.v4_extension_81_attempt_audit.v1";
+const expectedAttempts = isPilot ? 6 : isExtension20 ? 20 : isExtension81 ? 81 : 0;
 if (!expectedAttempts) findings.push("schema_version");
 if (capture.run_id !== audit.run_id || capture.summary.attempted !== expectedAttempts || audit.summary.attempted !== expectedAttempts) findings.push("run_or_attempt_count");
 if (capture.inputs?.manifest?.sha256 !== audit.inputs?.manifest?.sha256 || capture.inputs?.contract?.sha256 !== audit.inputs?.contract?.sha256) findings.push("input_hash_mismatch");
@@ -23,12 +24,12 @@ if (new Set(audit.attempts.map(({ sample_id }) => sample_id)).size !== expectedA
 for (const captureRow of capture.captures || []) {
   try { assertOptionBV4Payload(captureRow.payload); } catch (error) { findings.push(`payload:${captureRow.sample_id}:${error.message}`); }
 }
-const minimumSuccessful = isExtension ? 14 : 4;
+const minimumSuccessful = isExtension81 ? 57 : isExtension20 ? 14 : 4;
 if (capture.summary.successful < minimumSuccessful || capture.summary.successful !== capture.captures.length || audit.summary.successful !== capture.summary.successful) findings.push("technical_yield");
 const review = {
   schema_version: "vibebench.option_b.v4_pilot_review.v1",
   generated_at: new Date().toISOString(),
-  status: findings.length ? (isExtension ? "TECHNICAL_EXTENSION_REJECTED" : "PILOT_REJECTED") : (isExtension ? "TECHNICAL_EXTENSION_ACCEPTABLE_MANUAL_REVIEW_REQUIRED" : "FIRST_RUN_TECHNICALLY_ACCEPTABLE_REPEAT_REQUIRED"),
+  status: findings.length ? (isExtension81 ? "TECHNICAL_EXTENSION_81_REJECTED" : isExtension20 ? "TECHNICAL_EXTENSION_REJECTED" : "PILOT_REJECTED") : (isExtension81 ? "TECHNICAL_EXTENSION_81_ACCEPTABLE_MANUAL_REVIEW_REQUIRED" : isExtension20 ? "TECHNICAL_EXTENSION_ACCEPTABLE_MANUAL_REVIEW_REQUIRED" : "FIRST_RUN_TECHNICALLY_ACCEPTABLE_REPEAT_REQUIRED"),
   run_id: capture.run_id,
   inputs: { capture: { sha256: createHash("sha256").update(captureBytes).digest("hex"), bytes: captureBytes.length }, audit: { sha256: createHash("sha256").update(auditBytes).digest("hex"), bytes: auditBytes.length } },
   summary: capture.summary,

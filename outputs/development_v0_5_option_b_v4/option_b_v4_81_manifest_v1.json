@@ -1,0 +1,346 @@
+{
+  "schema_version": "vibebench.option_b.v4_development_81_manifest.v1",
+  "locked_at": "2026-08-16T12:21:43.819Z",
+  "status": "LABEL_BLIND_TECHNICAL_81_FROZEN",
+  "purpose": "Development-only v4 public-surface capture; no independent performance claim",
+  "source": {
+    "path": "outputs/development_v0_5_option_b/option_b_browser_surface_matrix_v1.json",
+    "sha256": "841a0fda338ee416e2f8fc4892090841cb2d7a5d6284028e2d5683b423a97ba6",
+    "projection_before_execution": [
+      "sample_id",
+      "target_url"
+    ],
+    "historical_success_filter": "ok === true",
+    "labels_and_model_fields_excluded": true
+  },
+  "collector_visible_fields": [
+    "sample_id",
+    "target_url"
+  ],
+  "rows": [
+    {
+      "sample_id": "DEV2-AI-REPLIT-01",
+      "target_url": "https://genaipi.org"
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-03",
+      "target_url": "https://clearscribehq.com"
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-04",
+      "target_url": "https://realvsai.com"
+    },
+    {
+      "sample_id": "DEV2-AI-REPLIT-06",
+      "target_url": "https://findmysauna.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-01",
+      "target_url": "https://toomuchforce.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-02",
+      "target_url": "https://bolt-shop.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-03",
+      "target_url": "https://zropi.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-04",
+      "target_url": "https://onceupon.fun"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-05",
+      "target_url": "https://app.tabsquad.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-07",
+      "target_url": "https://no-fila.com"
+    },
+    {
+      "sample_id": "DEV2-AI-BOLT-10",
+      "target_url": "https://ellisai.org"
+    },
+    {
+      "sample_id": "DEV3-032",
+      "target_url": "https://chrome.google.com/webstore/detail/omni/mapjgeachilmcbbokkgcbgpbakaaeehi?hl=en&authuser=0"
+    },
+    {
+      "sample_id": "DEV3X-055",
+      "target_url": "https://draft.sh/"
+    },
+    {
+      "sample_id": "DEV3X-056",
+      "target_url": "https://notion-blog.vercel.app/"
+    },
+    {
+      "sample_id": "DEV3X-070",
+      "target_url": "https://checklyhq.com/"
+    },
+    {
+      "sample_id": "DEV3X-074",
+      "target_url": "https://notion-clone.kmuenster.com/"
+    },
+    {
+      "sample_id": "DEV3X-076",
+      "target_url": "http://www.reactsight.com/"
+    },
+    {
+      "sample_id": "DEV3X-085",
+      "target_url": "https://useauth.dev/"
+    },
+    {
+      "sample_id": "DEV4-030",
+      "target_url": "https://preact-boilerplate.surge.sh/"
+    },
+    {
+      "sample_id": "DEV4-032",
+      "target_url": "http://mailtolink.me/"
+    },
+    {
+      "sample_id": "DEV4-035",
+      "target_url": "https://www.awes.io/"
+    },
+    {
+      "sample_id": "DEV4-037",
+      "target_url": "http://social2.mernbook.com/"
+    },
+    {
+      "sample_id": "DEV4-040",
+      "target_url": "https://git.io/awesome-meta-and-manifest"
+    },
+    {
+      "sample_id": "DEV4-043",
+      "target_url": "https://demo.saleor.io/"
+    },
+    {
+      "sample_id": "DEV4-049",
+      "target_url": "https://www.fullstackweekly.com/"
+    },
+    {
+      "sample_id": "DEV4-050",
+      "target_url": "https://urlhum.com/"
+    },
+    {
+      "sample_id": "DEV4-052",
+      "target_url": "https://jsmastery.pro/"
+    },
+    {
+      "sample_id": "DEV5-069",
+      "target_url": "https://gitless.com/"
+    },
+    {
+      "sample_id": "DEV5-071",
+      "target_url": "http://doc.ssr-fc.com/"
+    },
+    {
+      "sample_id": "DEV5-075",
+      "target_url": "http://fabric8.io/"
+    },
+    {
+      "sample_id": "DEV5-088",
+      "target_url": "https://nextjs-mongodb.now.sh/"
+    },
+    {
+      "sample_id": "DEV5-094",
+      "target_url": "http://xboot.exrick.cn/"
+    },
+    {
+      "sample_id": "DEV5-099",
+      "target_url": "http://mozaik.rocks/"
+    },
+    {
+      "sample_id": "DEV5-104",
+      "target_url": "https://www.weld.rs/"
+    },
+    {
+      "sample_id": "DEV5-110",
+      "target_url": "https://www.pipelinedb.com/"
+    },
+    {
+      "sample_id": "DEV5-118",
+      "target_url": "https://matteogabriele.gitbooks.io/vue-analytics/content"
+    },
+    {
+      "sample_id": "DEV5-120",
+      "target_url": "https://covid19dashboards.com/"
+    },
+    {
+      "sample_id": "OPT-B-AI-001",
+      "target_url": "https://callvance.net/"
+    },
+    {
+      "sample_id": "OPT-B-AI-002",
+      "target_url": "https://modelmash.site/"
+    },
+    {
+      "sample_id": "OPT-B-AI-005",
+      "target_url": "https://macsim.store/"
+    },
+    {
+      "sample_id": "OPT-B-AI-010",
+      "target_url": "https://yakhol.com/"
+    },
+    {
+      "sample_id": "OPT-B-AI-014",
+      "target_url": "https://mathbombs.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-022",
+      "target_url": "https://dancingai.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-054",
+      "target_url": "https://www.reddit.com/r/vibecoding/comments/1lkjmo6/i_built_sleeperr_in_3_weeks_a_vibecoded_alarm_app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-055",
+      "target_url": "http://avilta.com/"
+    },
+    {
+      "sample_id": "OPT-B-AI-059",
+      "target_url": "https://rainbow-frangollo-66874e.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-061",
+      "target_url": "https://leafy-pasca-f3bd91.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-063",
+      "target_url": "https://mailed.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-065",
+      "target_url": "https://creativeproai.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-067",
+      "target_url": "https://founderfocus-claritypartner.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-068",
+      "target_url": "https://affordwiz.com/"
+    },
+    {
+      "sample_id": "OPT-B-AI-069",
+      "target_url": "https://n9n.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-071",
+      "target_url": "https://gitflowa-ai.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-AI-072",
+      "target_url": "https://postivo.netlify.app/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-002",
+      "target_url": "https://nickname76.github.io/russian-swears"
+    },
+    {
+      "sample_id": "OPT-B-HUM-003",
+      "target_url": "http://amfoss.in/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-004",
+      "target_url": "https://wikipedia.luk.ke/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-005",
+      "target_url": "http://webjike.com/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-006",
+      "target_url": "https://beauty.now.sh/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-007",
+      "target_url": "https://bizhi.vercel.app/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-008",
+      "target_url": "https://af.codes/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-015",
+      "target_url": "https://www.promisejs.org/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-016",
+      "target_url": "https://frontendchecklist.io/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-017",
+      "target_url": "https://sindresorhus.com/ios-landing-page/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-018",
+      "target_url": "http://henryhao.cn/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-019",
+      "target_url": "https://frontend-mentor-challenge-webcifar.netlify.com/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-020",
+      "target_url": "https://www.adamdehaven.com/blog/easily-crawl-a-website-and-fetch-all-urls-with-a-shell-script/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-021",
+      "target_url": "https://virejdasani.github.io/CodeBox/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-022",
+      "target_url": "http://alexlynd.com/projects/ESP-Bug"
+    },
+    {
+      "sample_id": "OPT-B-HUM-023",
+      "target_url": "https://freenode.net/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-024",
+      "target_url": "https://susantabiswas.github.io/facial-login-web/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-025",
+      "target_url": "https://phalcon.io/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-029",
+      "target_url": "http://www.thunder.org/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-031",
+      "target_url": "https://eslint.org/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-052",
+      "target_url": "https://yangfan2016.github.io/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-053",
+      "target_url": "https://kormyen.github.io/memex/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-054",
+      "target_url": "http://zubair-portfolio.surge.sh/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-057",
+      "target_url": "https://docs.google.com/spreadsheets/d/1jnds3X_-RSTN4ATuOFV-v6tar0KfAla88vC43Vq6ubc/edit"
+    },
+    {
+      "sample_id": "OPT-B-HUM-058",
+      "target_url": "https://maggix1404.github.io/webgl-portfolio/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-059",
+      "target_url": "https://react-tailwind-portfolio.braydentw.vercel.app/"
+    },
+    {
+      "sample_id": "OPT-B-HUM-060",
+      "target_url": "https://www.kaustubhgupta.me/PortfolioFy"
+    }
+  ]
+}

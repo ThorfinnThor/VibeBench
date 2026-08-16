@@ -66,10 +66,12 @@ test("v4 aggregation emits the positive privacy-minimal schema and rejects addit
 });
 
 test("v4 contract freezes six-repeat-twenty ordering and confirmation legacy status", async () => {
-  const [contract, manifest, extension, waiver, previousManifest, release, builder] = await Promise.all([
+  const [contract, manifest, extension, extension81, authorization, waiver, previousManifest, release, builder] = await Promise.all([
     readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json", root), "utf8").then(JSON.parse),
     readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json", root), "utf8").then(JSON.parse),
     readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_v4_extension_20_manifest_v1.json", root), "utf8").then(JSON.parse),
+    readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_v4_81_manifest_v1.json", root), "utf8").then(JSON.parse),
+    readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_v4_81_authorization_v1.json", root), "utf8").then(JSON.parse),
     readFile(new URL("outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json", root), "utf8").then(JSON.parse),
     readFile(new URL("outputs/development_v0_5_option_b_v3/option_b_local_pilot_manifest_v1.json", root), "utf8").then(JSON.parse),
     readFile(new URL("release/v0.4.json", root), "utf8").then(JSON.parse),
@@ -78,12 +80,17 @@ test("v4 contract freezes six-repeat-twenty ordering and confirmation legacy sta
   assert.equal(contract.execution_gate.six_site_pilot_may_execute, true);
   assert.equal(contract.execution_gate.repeat_required_before_expansion, true);
   assert.equal(contract.execution_gate.maximum_extension_after_repeat_review, 20);
-  assert.equal(contract.execution_gate.full_81_site_run_may_execute, false);
+  assert.equal(contract.execution_gate.full_81_site_run_may_execute, true);
   assert.deepEqual(manifest.rows, previousManifest.rows);
   assert.equal(extension.rows.length, 20);
   assert.equal(new Set(extension.rows.map(({ sample_id }) => sample_id)).size, 20);
   assert.equal(extension.rows.every((row) => Object.keys(row).sort().join(",") === "sample_id,target_url"), true);
   assert.equal(extension.rows.some(({ sample_id }) => manifest.rows.some((pilotRow) => pilotRow.sample_id === sample_id)), false);
+  assert.equal(extension81.status, "LABEL_BLIND_TECHNICAL_81_FROZEN");
+  assert.equal(extension81.rows.length, 81);
+  assert.equal(extension81.rows.every((row) => Object.keys(row).sort().join(",") === "sample_id,target_url"), true);
+  assert.equal(authorization.status, "TECHNICAL_81_RUN_AUTHORIZED_BY_PROJECT_OWNER");
+  assert.equal(authorization.labels_joined_during_capture, false);
   assert.equal(waiver.original_time_gate_passed, false);
   assert.equal(waiver.approved_effect.fixed_label_blind_extension_20_may_execute, true);
   assert.equal(waiver.approved_effect.full_81_site_run_may_execute, false);
@@ -94,13 +101,14 @@ test("v4 contract freezes six-repeat-twenty ordering and confirmation legacy sta
 });
 
 test("v4 compose and workflow enforce the isolated container profile", async () => {
-  const [compose, collectorDockerfile, egressDockerfile, dockerignore, workflow, extensionWorkflow, captureSource, reviewerSource, seccomp] = await Promise.all([
+  const [compose, collectorDockerfile, egressDockerfile, dockerignore, workflow, extensionWorkflow, extension81Workflow, captureSource, reviewerSource, seccomp] = await Promise.all([
     readFile(new URL("infra/option-b-v4/compose.yml", root), "utf8"),
     readFile(new URL("infra/option-b-v4/Dockerfile.collector", root), "utf8"),
     readFile(new URL("infra/option-b-v4/Dockerfile.egress", root), "utf8"),
     readFile(new URL(".dockerignore", root), "utf8"),
     readFile(new URL(".github/workflows/option-b-v4-pilot.yml", root), "utf8"),
     readFile(new URL(".github/workflows/option-b-v4-extension-20.yml", root), "utf8"),
+    readFile(new URL(".github/workflows/option-b-v4-extension-81.yml", root), "utf8"),
     readFile(new URL("lib/option-b-v4-capture.mjs", root), "utf8"),
     readFile(new URL("scripts/review-development-v0_5-option-b-v4-pilot.mjs", root), "utf8"),
     readFile(new URL("infra/option-b-v4/seccomp_profile.json", root), "utf8").then(JSON.parse)
@@ -142,6 +150,10 @@ test("v4 compose and workflow enforce the isolated container profile", async () 
   assert.equal([...extensionWorkflow.matchAll(/uses:\s*[^@\s]+@([a-f0-9]+)/g)].every((match) => match[1].length === 40), true);
   assert.match(reviewerSource, /new Set\(audit\.attempts\.map[\s\S]*\.size !== expectedAttempts/);
   assert.doesNotMatch(reviewerSource, /new Set\(audit\.attempts\.map[\s\S]*\.size !== 6/);
+  assert.match(reviewerSource, /v4_extension_81_capture\.v1/);
+  assert.match(extension81Workflow, /option_b_v4_81_manifest_v1\.json/);
+  assert.match(extension81Workflow, /option_b_v4_81_authorization_v1\.json/);
+  assert.match(extension81Workflow, /timeout-minutes: 60/);
 });
 
 test("v4 container profile verifier consumes docker inspect JSON from stdin", async () => {
