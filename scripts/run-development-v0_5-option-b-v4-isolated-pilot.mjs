@@ -69,13 +69,22 @@ function classify(error, stage, status) {
 requireIsolatedRuntime();
 const manifestPath = path.resolve(argument("--manifest", "outputs/development_v0_5_option_b_v4/option_b_v4_pilot_manifest.json"));
 const contractPath = path.resolve(argument("--contract", "outputs/development_v0_5_option_b_v4/option_b_capture_contract_v4.json"));
+const waiverPath = path.resolve(argument("--waiver", "outputs/development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json"));
 const outputPath = artifactPath("--output");
 const auditPath = artifactPath("--audit");
 const [manifestText, contractText] = await Promise.all([readFile(manifestPath, "utf8"), readFile(contractPath, "utf8")]);
 const manifest = JSON.parse(manifestText);
 const contract = JSON.parse(contractText);
 if (contract.status !== "ISOLATED_SIX_SITE_PILOT_APPROVED" || !contract.execution_gate.six_site_pilot_may_execute || contract.execution_gate.full_81_site_run_may_execute) throw new Error("The frozen v4 execution gate does not approve this pilot.");
-if (manifest.status !== "LABEL_BLIND_TECHNICAL_PILOT_ONLY" || manifest.rows.length !== 6 || manifest.collector_visible_fields.join(",") !== "sample_id,target_url") throw new Error("The pilot manifest is not the frozen six-row label-blind manifest.");
+const isPilot = manifest.status === "LABEL_BLIND_TECHNICAL_PILOT_ONLY" && manifest.rows.length === 6;
+const isExtension = manifest.status === "LABEL_BLIND_TECHNICAL_EXTENSION_20_FROZEN" && manifest.rows.length === 20;
+let waiverText = null;
+if (isExtension) {
+  waiverText = await readFile(waiverPath, "utf8");
+  const waiver = JSON.parse(waiverText);
+  if (waiver.status !== "TECHNICAL_REPEAT_ACCEPTED_WITH_EXPLICIT_TIME_WINDOW_WAIVER" || waiver.original_time_gate_passed !== false || waiver.approved_effect?.fixed_label_blind_extension_20_may_execute !== true || waiver.approved_effect?.full_81_site_run_may_execute !== false) throw new Error("The fixed extension lacks an explicit valid repeat adjudication.");
+}
+if ((!isPilot && !isExtension) || manifest.collector_visible_fields.join(",") !== "sample_id,target_url") throw new Error("The manifest is not an approved label-blind v4 collection manifest.");
 if (manifest.rows.some((row) => Object.keys(row).sort().join(",") !== "sample_id,target_url")) throw new Error("The manifest exposes prohibited collector fields.");
 
 const runId = randomUUID();
@@ -177,7 +186,7 @@ try {
 }
 
 const common = {
-  generated_at: new Date().toISOString(), run_id: runId, status: "ISOLATED_LABEL_BLIND_SIX_SITE_PILOT",
+  generated_at: new Date().toISOString(), run_id: runId, status: isPilot ? "ISOLATED_LABEL_BLIND_SIX_SITE_PILOT" : "ISOLATED_LABEL_BLIND_TECHNICAL_EXTENSION_20",
   runtime: {
     engine: "chromium", version: browserVersion, source: "official-playwright-container", playwright_version: "1.54.2", operating_system: "ephemeral-linux-container",
     locale: contract.runtime_requirements.locale, timezone: contract.runtime_requirements.timezone, user_agent: fixedUserAgent, viewport: contract.viewports[0],
@@ -185,11 +194,14 @@ const common = {
   },
   inputs: {
     manifest: { path: path.relative(process.cwd(), manifestPath), sha256: createHash("sha256").update(manifestText).digest("hex") },
-    contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") }
+    contract: { path: path.relative(process.cwd(), contractPath), sha256: createHash("sha256").update(contractText).digest("hex") },
+    ...(waiverText ? { waiver: { path: path.relative(process.cwd(), waiverPath), sha256: createHash("sha256").update(waiverText).digest("hex") } } : {})
   }
 };
-const captureOutput = { schema_version: "vibebench.option_b.v4_pilot_capture.v1", ...common, privacy: { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false }, summary: { attempted: manifest.rows.length, successful: captures.length, failed: manifest.rows.length - captures.length }, captures };
-const auditOutput = { schema_version: "vibebench.option_b.v4_pilot_attempt_audit.v1", ...common, summary: { attempted: attempts.length, successful: attempts.filter(({ outcome_code }) => outcome_code === "success").length, failed: attempts.filter(({ outcome_code }) => outcome_code !== "success").length }, attempts };
+const captureSchema = isPilot ? "vibebench.option_b.v4_pilot_capture.v1" : "vibebench.option_b.v4_extension_capture.v1";
+const auditSchema = isPilot ? "vibebench.option_b.v4_pilot_attempt_audit.v1" : "vibebench.option_b.v4_extension_attempt_audit.v1";
+const captureOutput = { schema_version: captureSchema, ...common, privacy: { urls_persisted: false, raw_html_persisted: false, text_persisted: false, screenshots_created: false }, summary: { attempted: manifest.rows.length, successful: captures.length, failed: manifest.rows.length - captures.length }, captures };
+const auditOutput = { schema_version: auditSchema, ...common, summary: { attempted: attempts.length, successful: attempts.filter(({ outcome_code }) => outcome_code === "success").length, failed: attempts.filter(({ outcome_code }) => outcome_code !== "success").length }, attempts };
 assertNoUnexpectedSensitiveFields(captureOutput);
 assertNoUnexpectedSensitiveFields(auditOutput);
 await Promise.all([atomicJson(outputPath, captureOutput), atomicJson(auditPath, auditOutput)]);

@@ -3,8 +3,10 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { readLimitedText } from "../lib/bounded-response.mjs";
+import { buildPinnedRequestOptions, resolvePinnedPublicTarget } from "../lib/pinned-public-fetch.mjs";
 import { isNonPublicIp, normalizePublicUrl } from "../lib/public-url-policy.mjs";
 import { parseScanPayload, SCAN_API_VERSION } from "../lib/scan-contract.mjs";
+import { acquireScanAdmission, SCAN_ADMISSION_LIMITS } from "../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
   assertScanRequestBody,
@@ -77,6 +79,39 @@ test("blocks mapped, private and special IP ranges while allowing public example
   assert.equal(isNonPublicIp("2606:4700:4700::1111"), false);
 });
 
+test("production transport pins a validated public DNS answer into the socket lookup", async () => {
+  const target = await resolvePinnedPublicTarget("https://example.com/path?q=1", {
+    resolver: async () => [
+      { address: "2606:4700:4700::1111", family: 6 },
+      { address: "1.1.1.1", family: 4 }
+    ]
+  });
+  assert.equal(target.pinned.address, "1.1.1.1");
+  const options = buildPinnedRequestOptions(target, { headers: { accept: "text/html" } });
+  assert.equal(options.hostname, "example.com");
+  assert.equal(options.path, "/path?q=1");
+  assert.equal(options.headers.host, "example.com");
+  assert.equal(options.headers["accept-encoding"], "identity");
+  await new Promise((resolve, reject) => options.lookup("example.com", {}, (error, address, family) => {
+    try {
+      assert.equal(error, null);
+      assert.deepEqual({ address, family }, { address: "1.1.1.1", family: 4 });
+      resolve();
+    } catch (assertionError) { reject(assertionError); }
+  }));
+  await new Promise((resolve, reject) => options.lookup("example.com", { all: true }, (error, addresses) => {
+    try {
+      assert.equal(error, null);
+      assert.deepEqual(addresses, [{ address: "1.1.1.1", family: 4 }]);
+      resolve();
+    } catch (assertionError) { reject(assertionError); }
+  }));
+  await assert.rejects(
+    resolvePinnedPublicTarget("https://example.com", { resolver: async () => [{ address: "127.0.0.1", family: 4 }] }),
+    /nicht öffentliche/
+  );
+});
+
 test("bounded reader cancels a chunked body at the configured byte limit", async () => {
   let cancelled = false;
   const body = new ReadableStream({
@@ -122,6 +157,21 @@ test("runtime scan contract rejects partial success and incompatible versions", 
   assert.equal(parseScanPayload(misleading), null);
 });
 
+test("beta admission bounds per-instance concurrency and releases capacity", () => {
+  const releases = [];
+  for (let index = 0; index < SCAN_ADMISSION_LIMITS.active_per_instance; index += 1) {
+    releases.push(acquireScanAdmission({ clientId: `concurrency-client-${index}`, targetId: `concurrency-target-${index}` }));
+  }
+  assert.throws(
+    () => acquireScanAdmission({ clientId: "concurrency-overflow", targetId: "concurrency-overflow" }),
+    /Kapazität/
+  );
+  releases.pop()();
+  const replacement = acquireScanAdmission({ clientId: "concurrency-replacement", targetId: "concurrency-replacement" });
+  replacement();
+  releases.forEach((release) => release());
+});
+
 test("production release manifest binds the frozen model hash and confirmation coverage", async () => {
   const release = JSON.parse(await readFile(new URL("../release/v0.4.json", import.meta.url), "utf8"));
   const model = await readFile(new URL(`../${release.model.artifact}`, import.meta.url));
@@ -131,4 +181,12 @@ test("production release manifest binds the frozen model hash and confirmation c
   assert.equal(release.confirmation.status, "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE");
   assert.equal(release.confirmation.currentPerformanceClaim, false);
   assert.equal(release.status, "RESEARCH_BETA");
+  assert.equal(release.productVersion, "0.4.1");
+  assert.equal(release.launchSafety.publicTransport, "DNS-validated and peer-IP-pinned HTTP(S) connections");
+  assert.equal(release.launchSafety.sharedEdgeRateLimitRequired, true);
+  assert.equal(release.launchSafety.sharedEdgeRateLimitActive, true);
+  assert.deepEqual(
+    [release.launchSafety.sharedEdgeRateLimit.path, release.launchSafety.sharedEdgeRateLimit.requests, release.launchSafety.sharedEdgeRateLimit.windowSeconds],
+    ["/api/scan", 20, 600]
+  );
 });

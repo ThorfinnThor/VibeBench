@@ -1,7 +1,7 @@
 # VibeBench Option-B-v4: Run 1 and Early Technical Repeat
 
 Date: 2026-08-16  
-Status: **TECHNICALLY STABLE; OFFICIAL REPEAT GATE NOT YET PASSED**
+Status: **TECHNICALLY STABLE; ACCEPTED WITH AN EXPLICIT TIME-WINDOW WAIVER**
 
 ## Outcome
 
@@ -14,8 +14,10 @@ The second execution was intentionally started early on user instruction. Its
 capture was generated **18.9288 hours** after Run 1, while the frozen protocol
 requires **24–72 hours**. The repository comparison therefore returns
 `REPEAT_INTEGRITY_REJECTED` solely for the elapsed-time gate. This execution is
-retained as an **early technical repeat**, not relabelled as the official
-repeat.
+retained as an **early technical repeat**. On 2026-08-16 the project owner
+explicitly accepted the 18.9288-hour separation as sufficient for the technical
+repeat. The machine-readable waiver preserves the original failed time gate and
+records the approved consequence separately; it does not rewrite the protocol.
 
 ## Immutable execution evidence
 
@@ -64,17 +66,18 @@ raw HTML and text were not persisted and that screenshots were not created. The
 attempt audits contain sample IDs and outcome taxonomy only, without target URLs
 or hostnames.
 
-## Current decision gate
+## Decision and next gate
 
 The earliest valid official repeat against Run 1 is
 `2026-08-16T15:04:44.863Z` (17:04:44 CEST). The latest is
 `2026-08-18T15:04:44.863Z` (17:04:44 CEST).
 
-Recommended action: execute `run-2` once more inside that window with the same
-source commit, then rerun the comparator and manual technical review. Do not
-start the fixed 20-site extension before that gate passes. The 81-site run
-remains prohibited.
+The explicit owner decision accepts the early repeat for the narrow technical
+gate and authorizes one fixed, label-blind 20-site extension. The disclosure is
+stored in
+`development_v0_5_option_b_v4/option_b_v4_repeat_waiver_v1.json`; the raw
+comparison remains rejected under the original 24–72-hour rule in
+`development_v0_5_option_b_v4/option_b_v4_early_repeat_comparison_v1.json`.
 
-The alternative is an explicit protocol amendment that accepts the 18.9288-hour
-repeat. That would no longer be the preregistered 24–72-hour procedure and must
-be disclosed as a waiver; it is not recommended.
+The waiver does not authorize the 81-site run, independent Confirmation, a
+model change or any new public performance claim.
