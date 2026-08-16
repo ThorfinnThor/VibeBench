@@ -1,0 +1,103 @@
+{
+  "schema_version": "vibebench.option_b.v5_candidate_freeze_protocol.v2",
+  "locked_at": "2026-08-16T17:30:00.000Z",
+  "status": "CANDIDATE_FREEZE_ALGORITHM_AND_MULTI_RUN_GATE_PREDECLARED_NOT_AUTHORIZED",
+  "prerequisites": {
+    "development_gate_passed": true,
+    "frozen_development_runs_minimum": 2,
+    "collector_primary_technical_yield_minimum_each_run": 0.9,
+    "aggregate_unknown_technical_error_maximum": 0.01,
+    "aggregate_collector_origin_extraction_failure_maximum": 0.02,
+    "successful_paired_sites_minimum": 200
+  },
+  "selection_rule": "Choose the modal configuration across outer-fold inner-CV selections; break frequency ties lexicographically; use the median inner-selected threshold among folds selecting that configuration; select the frozen feature-limit subset by variance on all Development rows; fit once on all Development rows.",
+  "collector_rule": "Require two independent label-blind runs over the same frozen primary and reserve manifests. Compute failure rates from the last attempt per sample and viewport after the frozen retry policy. Do not use the second run for model tuning.",
+  "allowed_configurations": [
+    {
+      "id": "logistic-l2-3-unweighted-k40",
+      "family": "logistic_l2",
+      "l1": 0,
+      "l2": 3,
+      "class_weight": "none",
+      "feature_limit": 40
+    },
+    {
+      "id": "logistic-l2-10-balanced-k80",
+      "family": "logistic_l2",
+      "l1": 0,
+      "l2": 10,
+      "class_weight": "balanced",
+      "feature_limit": 80
+    },
+    {
+      "id": "logistic-l2-30-balanced-all",
+      "family": "logistic_l2",
+      "l1": 0,
+      "l2": 30,
+      "class_weight": "balanced",
+      "feature_limit": null
+    },
+    {
+      "id": "elastic-1-balanced-k40",
+      "family": "logistic_elastic_net",
+      "l1": 0.01,
+      "l2": 3,
+      "class_weight": "balanced",
+      "feature_limit": 40
+    },
+    {
+      "id": "elastic-3-unweighted-k80",
+      "family": "logistic_elastic_net",
+      "l1": 0.03,
+      "l2": 10,
+      "class_weight": "none",
+      "feature_limit": 80
+    },
+    {
+      "id": "elastic-6-balanced-all",
+      "family": "logistic_elastic_net",
+      "l1": 0.06,
+      "l2": 30,
+      "class_weight": "balanced",
+      "feature_limit": null
+    }
+  ],
+  "safeguards": {
+    "confirmation_data_available": false,
+    "automatic_execution": false,
+    "tuning_after_freeze": false,
+    "production_promotion_authorized": false
+  },
+  "sources": [
+    {
+      "path": "lib/option-b-v5-candidate-freeze.mjs",
+      "sha256": "8d239a10ec22e850e4230411a26cf8fcc2d4dcaeaf93d19e1480c553b4a4df2d",
+      "schema_version": null
+    },
+    {
+      "path": "lib/option-b-v5-development-repeat.mjs",
+      "sha256": "739a6bebf67c35ee43ee101a882305c69ee21b4a8f974c057ded80bf425fcf56",
+      "schema_version": null
+    },
+    {
+      "path": "scripts/compare-development-v0_6-option-b-v5-expansion-repeat.mjs",
+      "sha256": "bc973ac3a0d8c400828f116848d367f583ec2649ffdbd4ed6dd43099821a4475",
+      "schema_version": null
+    },
+    {
+      "path": "scripts/freeze-development-v0_6-option-b-v5-candidate.mjs",
+      "sha256": "5b642bd81830a891b00fd5a29d89f6c545a97f9f5476e8e3b2942c363ad46126",
+      "schema_version": null
+    },
+    {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_feature_contract_v2.freeze.json",
+      "sha256": "86f93770f1be4d8764b6003491e542af0b50b276eec0e3ba4215ac6fe0c4d8be",
+      "schema_version": "vibebench.option_b.v5_feature_contract_freeze.v2"
+    },
+    {
+      "path": "outputs/development_v0_6_option_b_v5/option_b_v5_evaluation_protocol_v2.freeze.json",
+      "sha256": "41e9ffa7c3db5ec8d7280982c1fa931b99dd762e0c46c1a64155f1d9410a0df3",
+      "schema_version": "vibebench.option_b.v5_evaluation_protocol_freeze.v2"
+    }
+  ]
+}
