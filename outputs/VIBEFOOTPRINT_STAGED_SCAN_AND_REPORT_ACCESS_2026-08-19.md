@@ -56,3 +56,20 @@ This sprint does not yet create or persist an actual purchasable full report. A 
 4. Add Stripe webhook verification and idempotent fulfillment.
 5. Add conversion analytics for scan completion, unlock click, checkout start and purchase.
 6. Run a focused production accessibility and mobile-device QA pass after checkout integration.
+
+## Report-preview refinement
+
+The first preview used generic blurred shapes. It was replaced with a realistic structural representation of the intended paid report.
+
+- Removed the ambiguous `≠` symbol between the two free scores.
+- Replaced it with the explicit labels `Separate scores` and `Getrennte Scores`.
+- Established one fixed six-section premium-report structure:
+  1. Executive summary;
+  2. Score drivers;
+  3. Priority findings;
+  4. Security review;
+  5. Improvement plan;
+  6. Technical appendix.
+- The locked preview now visually mirrors this format with score cards, driver columns, critical and review findings, warning colors and a report index.
+- The preview still contains no private premium findings. It combines already-public scores with neutral structural placeholders, so removing the blur cannot reveal paid evidence.
+- Fixed the saved-language hydration mismatch discovered during browser verification.

@@ -1,10 +1,11 @@
 "use client";
 
-import { CSSProperties, FormEvent, useEffect, useMemo, useRef, useState } from "react";
+import { CSSProperties, FormEvent, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import { parseScanPayload } from "../lib/scan-contract.mjs";
 import { localizeScanPayload, localizeTechnicalOutcome } from "../lib/scan-localization.mjs";
 import { automaticRetryDelayMs, MAX_CLIENT_SCAN_ATTEMPTS, shouldAutomaticallyRetry } from "../lib/client-scan-retry.mjs";
 import { buildCustomerReport, customerReportFilename } from "../lib/customer-report.mjs";
+import { premiumReportSections } from "../lib/premium-report-structure.mjs";
 import { estimatedScanProgress, remainingRevealDelay, REPORT_READY_HOLD_MS, scanStageIndex } from "../lib/scan-progress.mjs";
 import release from "../release/v0.4.json";
 
@@ -30,6 +31,24 @@ type ScanResult = {
 };
 
 type Language = "en" | "de";
+const LANGUAGE_STORAGE_EVENT = "vibefootprint-language-change";
+
+function subscribeLanguage(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener(LANGUAGE_STORAGE_EVENT, onStoreChange);
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener(LANGUAGE_STORAGE_EVENT, onStoreChange);
+  };
+}
+
+function getLanguageSnapshot(): Language {
+  return window.localStorage.getItem("vibefootprint-language") === "de" ? "de" : "en";
+}
+
+function getServerLanguageSnapshot(): Language {
+  return "en";
+}
 
 const copyByLanguage = {
   en: {
@@ -140,11 +159,7 @@ export default function Home() {
   const [technicalScanComplete, setTechnicalScanComplete] = useState(false);
   const [reportStatus, setReportStatus] = useState("");
   const [purchaseNotice, setPurchaseNotice] = useState("");
-  const [language, setLanguage] = useState<Language>(() => {
-    if (typeof window === "undefined") return "en";
-    const saved = window.localStorage.getItem("vibefootprint-language");
-    return saved === "de" ? "de" : "en";
-  });
+  const language = useSyncExternalStore(subscribeLanguage, getLanguageSnapshot, getServerLanguageSnapshot);
   const resultsRef = useRef<HTMLElement>(null);
   const controllerRef = useRef<AbortController | null>(null);
   const scanSequenceRef = useRef(0);
@@ -152,11 +167,12 @@ export default function Home() {
   const copy = copyByLanguage[language];
   const categoryLabels = categoryLabelsByLanguage[language];
   const scanProgressCopy = scanProgressCopyByLanguage[language];
+  const premiumSections = premiumReportSections(language);
   const result = useMemo(() => localizeScanPayload(rawResult, language) as ScanResult | null, [rawResult, language]);
 
   function changeLanguage(next: Language) {
-    setLanguage(next);
     window.localStorage.setItem("vibefootprint-language", next);
+    window.dispatchEvent(new Event(LANGUAGE_STORAGE_EVENT));
   }
 
   useEffect(() => {
@@ -379,7 +395,7 @@ export default function Home() {
           <div className="report-heading"><div><p className="eyebrow">{copy.reportEyebrow}</p><h2 id="customer-report-title">{copy.reportTitle}</h2></div><p>{copy.reportDescription}</p></div>
           <div className="report-score-pair">
             <article><span>01 · {copy.reportFootprint}</span><strong>{score}<small>/100</small></strong><p>{result.vibeScore.band.label}</p></article>
-            <i aria-hidden="true">≠</i>
+            <div className="report-score-separator" aria-hidden="true"><span>{language === "en" ? "Separate scores" : "Getrennte Scores"}</span></div>
             <article><span>02 · {copy.reportSecurity}</span><strong>{result.security.score}<small>/100</small></strong><p>{copy.headerProtection}</p></article>
           </div>
           <p className="report-independence"><span aria-hidden="true">✓</span>{copy.reportIndependent}</p>
@@ -420,10 +436,21 @@ export default function Home() {
           </div>
           <div className="locked-preview" aria-label={copy.previewLabel}>
             <div className="locked-preview-document" aria-hidden="true">
-              <span className="preview-warning">!</span><i className="preview-line preview-line-long" /><i className="preview-line preview-line-short" />
-              <div className="preview-columns"><span /><span /></div>
-              <i className="preview-line preview-line-long" /><i className="preview-line preview-line-medium" />
-              <div className="preview-alerts"><span /><span /><span /></div>
+              <header className="preview-report-header"><div><span>V</span><p>VibeFootprint<strong>{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><small>{resultHost}</small></header>
+              <section className="preview-report-summary">
+                <div className="preview-section-heading"><span>{premiumSections[0].number}</span><strong>{premiumSections[0].label}</strong></div>
+                <div className="preview-score-cards"><article><small>VIBE-FOOTPRINT</small><strong>{score}<i>/100</i></strong><span className="preview-line preview-line-medium" /></article><article><small>SECURITY BASELINE</small><strong>{result.security.score}<i>/100</i></strong><span className="preview-line preview-line-short" /></article></div>
+              </section>
+              <section className="preview-report-section preview-report-drivers">
+                <div className="preview-section-heading"><span>{premiumSections[1].number}</span><strong>{premiumSections[1].label}</strong></div>
+                <div className="preview-driver-columns"><div><b>↑</b><i className="preview-line preview-line-long" /><i className="preview-line preview-line-medium" /><i className="preview-line preview-line-long" /></div><div><b>↓</b><i className="preview-line preview-line-medium" /><i className="preview-line preview-line-long" /><i className="preview-line preview-line-short" /></div></div>
+              </section>
+              <section className="preview-report-section preview-report-findings">
+                <div className="preview-section-heading"><span>{premiumSections[2].number}</span><strong>{premiumSections[2].label}</strong></div>
+                <div className="preview-finding"><b>!</b><div><i className="preview-line preview-line-medium" /><i className="preview-line preview-line-long" /></div><em>CRITICAL</em></div>
+                <div className="preview-finding preview-finding-warning"><b>!</b><div><i className="preview-line preview-line-long" /><i className="preview-line preview-line-medium" /></div><em>REVIEW</em></div>
+              </section>
+              <footer className="preview-report-index">{premiumSections.slice(3).map((section) => <div key={section.id}><span>{section.number}</span><strong>{section.label}</strong></div>)}</footer>
             </div>
             <div className="locked-preview-overlay"><span aria-hidden="true">🔒</span><strong>{copy.lockedBadge}</strong><small>{copy.previewLabel}</small></div>
           </div>
