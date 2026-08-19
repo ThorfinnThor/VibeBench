@@ -210,6 +210,18 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .locked-report-copy .preview-report-button { border: 1px solid var(--ink); background: transparent; color: var(--ink); }
 .locked-report-copy .preview-report-button:hover { background: white; }
 .purchase-notice { min-height: 18px; margin: 11px 0 0; color: #873426 !important; font-size: 12px; font-weight: 700; }
+.admin-report-access { margin-top: 22px; padding: 17px; border: 1px dashed rgba(20,33,29,.28); border-radius: 12px; background: rgba(255,255,255,.55); }
+.admin-report-access > summary { display: flex; justify-content: space-between; color: var(--green); font-size: 11px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; list-style: none; }
+.admin-report-access > summary span { font-size: 16px; transition: transform .2s ease; }
+.admin-report-access[open] > summary span { transform: rotate(45deg); }
+.admin-report-access form { margin-top: 13px; }
+.admin-report-access form > p { margin: 0 0 13px; color: var(--muted); font-size: 12px; line-height: 1.45; }
+.admin-report-access label { display: block; margin-bottom: 6px; font-size: 11px; font-weight: 800; }
+.admin-key-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+.admin-key-row input { min-width: 0; min-height: 46px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; background: white; color: var(--ink); font: inherit; font-size: 13px; }
+.locked-report-copy .admin-key-row button { min-height: 46px; padding: 10px 13px; justify-content: center; font-size: 12px; }
+.admin-report-access form > small { margin-top: 8px; display: block; color: var(--muted); font-size: 10px; line-height: 1.4; }
+.locked-report-copy .admin-open-report { width: 100%; min-height: 44px; margin-top: 12px; background: var(--green); }
 .locked-preview { min-height: 590px; padding: 20px; display: grid; position: relative; border: 1px solid #dca89e; border-radius: 20px; background: #fff; overflow: hidden; box-shadow: 0 24px 45px rgba(81,31,24,.13); }
 .locked-preview::before { content: ""; width: 150px; height: 150px; position: absolute; right: -45px; top: -50px; border: 25px solid rgba(229,101,79,.1); border-radius: 50%; }
 .locked-preview-document { padding: 18px; filter: blur(4.5px); opacity: .72; user-select: none; }
@@ -300,6 +312,52 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .sample-report-footer { min-height: 72px; padding: 14px 26px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); background: white; }
 .sample-report-footer span { color: var(--muted); font-size: 12px; }
 .sample-report-footer button { min-height: 42px; padding: 9px 14px; border: 0; border-radius: 8px; background: var(--ink); color: white; font-weight: 800; cursor: pointer; }
+.admin-full-report { width: min(1180px, 100%); }
+.admin-report-notice { border-color: #a8d7ca; background: #e7f5f0; color: var(--green-dark); }
+.admin-report-boundary { margin-top: 18px; padding: 12px 14px; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; background: var(--green-light); color: var(--green-dark) !important; }
+.admin-driver-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.admin-driver-columns > article { padding: 18px; border-radius: 12px; background: var(--surface-soft); }
+.admin-driver-columns h3 { margin: 0 0 12px; display: flex; align-items: center; gap: 9px; font-size: 16px; }
+.admin-driver-columns h3 b { width: 31px; height: 31px; display: grid; place-items: center; border-radius: 8px; background: var(--coral-light); color: #973b2c; }
+.admin-driver-columns article:last-child h3 b { background: var(--green-light); color: var(--green); }
+.admin-driver { padding: 12px 0; border-top: 1px solid var(--line); }
+.admin-driver strong { font-size: 13px; }
+.admin-driver p { margin: 4px 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.admin-driver small { color: var(--green); font-size: 10px; font-weight: 800; }
+.admin-findings { display: grid; gap: 10px; }
+.admin-finding { padding: 18px; display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 14px; border: 1px solid var(--line); border-left: 5px solid var(--amber); border-radius: 11px; background: #fffdf8; }
+.admin-finding.priority-high { border-left-color: var(--coral); background: #fff9f7; }
+.admin-finding.priority-low { border-left-color: var(--green); }
+.admin-finding-index { color: var(--muted); font-family: "Manrope", sans-serif; font-size: 13px; font-weight: 900; }
+.admin-finding small { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+.admin-finding h3 { margin: 5px 0 10px; font-size: 17px; }
+.admin-finding p { margin: 5px 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+.admin-finding > b { align-self: start; padding: 6px 8px; border-radius: 6px; background: var(--amber-light); color: #6e4a12; font-size: 9px; letter-spacing: .07em; }
+.admin-finding.priority-high > b { background: var(--coral-light); color: #8f3628; }
+.admin-finding.priority-low > b { background: var(--green-light); color: var(--green-dark); }
+.admin-security-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.admin-security-check { padding: 16px; border: 1px solid var(--line); border-radius: 10px; }
+.admin-security-check > div { display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; }
+.admin-security-check > div > span { width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: var(--green-light); color: var(--green-dark); font-weight: 900; }
+.admin-security-check.status-warn > div > span { background: var(--amber-light); color: #744c10; }
+.admin-security-check.status-fail > div > span { background: var(--coral-light); color: #983b2c; }
+.admin-security-check h3 { margin: 0; font-size: 14px; }
+.admin-security-check b { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
+.admin-security-check p, .admin-security-check small { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.admin-subheading { margin: 24px 0 10px; font-size: 15px; }
+.admin-fix-prompts details, .admin-technical-details { border: 1px solid var(--line); border-radius: 9px; background: var(--surface-soft); overflow: hidden; }
+.admin-fix-prompts details + details { margin-top: 7px; }
+.admin-fix-prompts summary, .admin-technical-details summary { padding: 12px 14px; display: flex; gap: 10px; cursor: pointer; list-style: none; }
+.admin-fix-prompts summary b { margin-left: auto; }
+.admin-fix-prompts pre, .admin-technical-details pre { max-height: 420px; margin: 0; padding: 16px; border-top: 1px solid var(--line); background: #15231f; color: #e7f5f0; font-size: 10px; line-height: 1.55; white-space: pre-wrap; overflow: auto; }
+.admin-launch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.admin-launch-grid article { padding: 12px; display: flex; gap: 10px; border: 1px solid var(--line); border-radius: 9px; }
+.admin-launch-grid article > b { color: var(--green); }
+.admin-launch-grid .status-warn > b { color: var(--amber); }
+.admin-launch-grid .status-fail > b { color: var(--coral); }
+.admin-launch-grid strong { font-size: 12px; }
+.admin-launch-grid p { margin: 3px 0 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.admin-technical-details { margin-top: 14px; }
 
 .drivers-section, .recommendations-section { margin-top: 76px; }
 .section-heading { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); gap: 50px; align-items: end; margin-bottom: 28px; }
@@ -506,6 +564,9 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .category-card h3 { margin-top: 23px; }
   .locked-report { margin-top: 55px; padding: 28px 21px; }
   .locked-actions { grid-template-columns: 1fr; }
+  .admin-key-row, .admin-driver-columns, .admin-security-grid, .admin-launch-grid { grid-template-columns: 1fr; }
+  .admin-finding { grid-template-columns: 30px 1fr; }
+  .admin-finding > b { grid-column: 2; justify-self: start; }
   .locked-preview { min-height: 530px; padding: 10px; }
   .locked-preview-document { padding: 9px; }
   .locked-preview footer.preview-report-index { grid-template-columns: 1fr; }

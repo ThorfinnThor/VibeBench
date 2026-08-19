@@ -70,6 +70,22 @@ sichtbare Security-Header-Prüfungen und erzeugt einen priorisierten
 Verbesserungsplan. Umsetzung, Grenzen, Teststand und nächste Aufgaben stehen in
 [`outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md`](outputs/VIBEBENCH_PRODUCT_V0_4_UI_2026-08-11.md).
 
+### Temporärer Admin-Testzugang zum vollständigen Report
+
+Während der Produktprüfung kann der Eigentümer den echten Detailreport eines
+aktuellen Scans über den geschützten Admin-Testzugang öffnen. Dafür muss nur
+serverseitig `VIBEFOOTPRINT_ADMIN_PREVIEW_KEY` mit einem eindeutigen Wert von
+mindestens 24 Zeichen gesetzt werden. Auf Vercel gehört der Wert in die
+Environment Variables des gewünschten Deployments; danach ist ein Redeploy
+erforderlich. Der Wert darf nicht mit `NEXT_PUBLIC_` beginnen.
+
+Die normale Scan-Anfrage und ihre öffentliche API-Antwort bleiben unverändert
+detailfrei. Erst eine Anfrage mit dem passenden Header erhält Score-Treiber,
+Findings, einzelne Security-Prüfungen, Fix-Prompts, Launch-Checks und technische
+Messwerte. Der Schlüssel wird von der Oberfläche weder in Local Storage noch
+in einer URL gespeichert. Rohes HTML wird auch im Adminreport nicht
+ausgeliefert. Beispielkonfiguration: [`.env.example`](.env.example).
+
 Der anschließende score-blinde Ausbau um 120 Development-Websites und die
 Experimente mit 180 Oberflächenmerkmalen stehen in
 [`outputs/VIBEBENCH_V0_5_90_90_RESEARCH_2026-08-11.md`](outputs/VIBEBENCH_V0_5_90_90_RESEARCH_2026-08-11.md).

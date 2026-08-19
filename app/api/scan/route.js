@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { ADMIN_PREVIEW_HEADER, adminPreviewAuthorization, buildAdminReport } from "../../../lib/admin-report.mjs";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
@@ -123,6 +124,35 @@ export async function POST(request) {
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
   let releaseAdmission = () => {};
   try {
+    const adminAuthorization = adminPreviewAuthorization(request.headers.get(ADMIN_PREVIEW_HEADER), process.env.VIBEFOOTPRINT_ADMIN_PREVIEW_KEY);
+    if (adminAuthorization.requested && !adminAuthorization.configured) {
+      return Response.json({
+        apiVersion: SCAN_API_VERSION,
+        ok: false,
+        requestId,
+        technicalOutcome: {
+          code: "admin_preview_unavailable",
+          title: "Admin-Vorschau nicht konfiguriert",
+          summary: "Der geschützte Testzugang ist in dieser Umgebung nicht aktiviert.",
+          action: "Serverseitigen Admin-Schlüssel konfigurieren und das Deployment neu starten.",
+          retryable: false
+        }
+      }, { status: 503, headers: responseHeaders });
+    }
+    if (adminAuthorization.requested && !adminAuthorization.authorized) {
+      return Response.json({
+        apiVersion: SCAN_API_VERSION,
+        ok: false,
+        requestId,
+        technicalOutcome: {
+          code: "admin_access_denied",
+          title: "Admin-Zugriff abgelehnt",
+          summary: "Der eingegebene Testschlüssel ist nicht gültig.",
+          action: "Admin-Schlüssel prüfen und den geschützten Scan erneut starten.",
+          retryable: false
+        }
+      }, { status: 401, headers: responseHeaders });
+    }
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
     let body;
@@ -189,6 +219,8 @@ export async function POST(request) {
       manifestFetched: Boolean(manifestResult)
     });
     if (evidenceCoverage.level === "limited") throw new Error("Auswertungsbreite unzureichend für einen belastbaren Score.");
+    const analyzedAt = new Date().toISOString();
+    const scoreBand = getScoreBand(score);
     const payload = {
       apiVersion: SCAN_API_VERSION,
       ok: true,
@@ -196,10 +228,10 @@ export async function POST(request) {
       requestedUrl: inputUrl.toString(),
       resolvedUrl: fetched.url,
       httpStatus: fetched.status,
-      analyzedAt: new Date().toISOString(),
+      analyzedAt,
       vibeScore: {
         score,
-        band: getScoreBand(score),
+        band: scoreBand,
         meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeFootprint-Korpus.",
         caveat: "Der Wert misst weder den Anteil generierten Codes noch die Autorenschaft."
       },
@@ -208,7 +240,30 @@ export async function POST(request) {
       categoryOverview,
       reportAccess: { status: "locked", previewOnly: true, entitlementRequired: true }
     };
-    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
+    if (adminAuthorization.authorized) {
+      payload.adminReport = buildAdminReport({
+        model: candidateModel,
+        features: featureMap,
+        score,
+        scoreBand,
+        security,
+        recommendations,
+        evidenceCoverage,
+        analysis,
+        pageMetrics,
+        extendedMetrics,
+        assetSelection,
+        assetCandidates,
+        fetchedAssets,
+        manifestLinked: Boolean(manifestUrl),
+        manifestFetched: Boolean(manifestResult),
+        target: fetched.url,
+        analyzedAt,
+        html: fetched.html,
+        headers: fetched.headers
+      });
+    }
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, adminPreview: adminAuthorization.authorized }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);
