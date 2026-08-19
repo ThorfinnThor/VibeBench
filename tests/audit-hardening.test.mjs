@@ -32,9 +32,6 @@ const validSuccess = () => ({
   analyzedAt: "2026-08-15T10:00:00.000Z",
   vibeScore: {
     score: 55,
-    probability: .55,
-    threshold: 44,
-    aboveValidatedThreshold: true,
     meaning: "Corpus similarity.",
     caveat: "Not proof of authorship.",
     band: { id: "medium", label: "Mittel", shortLabel: "Mittel", summary: "Gemischte Signatur" }
@@ -169,6 +166,9 @@ test("runtime scan contract rejects partial success and incompatible versions", 
   const misleading = validSuccess();
   misleading.evidenceCoverage = { ...misleading.evidenceCoverage, level: "high-confidence", affectsScore: true };
   assert.equal(parseScanPayload(misleading), null);
+  const probabilityShaped = validSuccess();
+  probabilityShaped.vibeScore.probability = .55;
+  assert.equal(parseScanPayload(probabilityShaped), null);
 });
 
 test("beta admission bounds per-instance concurrency and releases capacity", () => {
@@ -195,7 +195,7 @@ test("production release manifest binds the frozen model hash and confirmation c
   assert.equal(release.confirmation.status, "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE");
   assert.equal(release.confirmation.currentPerformanceClaim, false);
   assert.equal(release.status, "RESEARCH_BETA");
-  assert.equal(release.productVersion, "0.4.1");
+  assert.equal(release.productVersion, "0.4.2");
   assert.equal(release.launchSafety.publicTransport, "DNS-validated and peer-IP-pinned HTTP(S) connections");
   assert.equal(release.launchSafety.sharedEdgeRateLimitRequired, true);
   assert.equal(release.launchSafety.sharedEdgeRateLimitActive, true);

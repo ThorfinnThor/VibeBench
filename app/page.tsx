@@ -2,7 +2,9 @@
 
 import { CSSProperties, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import { parseScanPayload } from "../lib/scan-contract.mjs";
-import { localizeTechnicalOutcome } from "../lib/scan-localization.mjs";
+import { localizeScanPayload, localizeTechnicalOutcome } from "../lib/scan-localization.mjs";
+import { automaticRetryDelayMs, MAX_CLIENT_SCAN_ATTEMPTS, shouldAutomaticallyRetry } from "../lib/client-scan-retry.mjs";
+import { buildCustomerReport, customerReportFilename } from "../lib/customer-report.mjs";
 import release from "../release/v0.4.json";
 
 type Evidence = { type: string; label: string; strength: string; source?: string; marker?: string };
@@ -21,7 +23,7 @@ type ScanResult = {
   resolvedUrl?: string;
   httpStatus?: number;
   analyzedAt?: string;
-  vibeScore?: { score: number; probability: number; band: ScoreBand; threshold: number; aboveValidatedThreshold: boolean; meaning: string; caveat: string };
+  vibeScore?: { score: number; band: ScoreBand; meaning: string; caveat: string };
   scoreDrivers?: { raises: ScoreDriver[]; lowers: ScoreDriver[]; unit: string; baseLogit: number };
   evidenceCoverage?: EvidenceCoverage;
   security?: { score: number; checks: SecurityCheck[] };
@@ -50,15 +52,16 @@ const copyByLanguage = {
     scanTitle: "Analyze a website", scanDescription: "Enter a public URL — most scans finish in a few seconds.", urlLabel: "Website URL", placeholder: "https://your-website.com", startScan: "Start free scan", scanning: "Scanning website …", cancel: "Cancel",
     privacy: "Bounded, peer-pinned GET requests for public HTML and same-origin assets. The target site may log these requests. No login or private source code.",
     low: "Low", light: "Light", medium: "Medium", high: "High", veryHigh: "Very high",
-    scaleNote: <>This is an uncalibrated qualitative similarity index — not an AI probability or a percentage of AI-generated code. <a href="#method">Read the methodology</a></>,
-    results: "Scan results", previous: "Previous result for", newScan: "A new analysis for", noResult: "No new result created", previousKept: "Previous result remains available", yourFootprint: "Your Vibe-Footprint", analyzed: "Analyzed", whatItMeans: "What this means", seeMethod: "See methodology", scanOverview: "Scan overview", breadth: "Evidence breadth", securityBaseline: "Security baseline", directMarkers: "Direct markers", uniqueBuilders: "Unique builders", noBonus: "No separate score bonus or penalty",
+    scaleNote: <>This qualitative index compares public website patterns with the reference corpus. It does not estimate code origin, generated-code share or authorship. <a href="#method">Read the methodology</a></>,
+    results: "Scan results", previous: "Previous result for", newScan: "A new analysis for", noResult: "No new result created", previousKept: "Previous result remains available", yourFootprint: "Your Vibe-Footprint", analyzed: "Analyzed", whatItMeans: "What this means", seeMethod: "See methodology", scanOverview: "Footprint evidence", breadth: "Evidence breadth", securityBaseline: "Security baseline", directMarkers: "Direct markers", uniqueBuilders: "Unique builders", noBonus: "No separate score bonus or penalty", footprintScoreType: "Public-pattern similarity", footprintSeparate: "Security findings do not change this score.", securityScoreType: "Public header protection", securitySeparate: "This is independent from the Vibe-Footprint.",
     indexExplained: "Index explained", driversTitle: "What shapes the result?", driversDescription: "Only signals actually observed on the public surface appear here. Order shows relative model influence, not points on the 0–100 scale.", raises: "Raises the score", strongerSimilarity: "stronger similarity", lowers: "Lowers the score", lowerSimilarity: "lower similarity", noPositive: "No individual positive drivers are visible.", noNegative: "No individual negative drivers are visible.",
     improvementEyebrow: "Practical improvement plan", improvementTitle: "What to improve next", improvementDescription: "Prioritized by likely impact. Address the first items, then scan again.", observed: "Observed findings", guidance: "Optional manual checks", doFirst: "Do first", doNext: "Next", optimize: "Optimize", implement: "How to implement", manualCheck: "Manual check", healthy: "No high-confidence issue was found in this area.", noFilter: "This filter has no observed finding or general guidance.",
-    security: "Security baseline", headerProtection: "Publicly visible header protection", securityDescription: "Value-based checks of selected main-document headers — not a full penetration test.", limits: "See limits", effective: "Effective", review: "Review", missing: "Missing / ineffective",
+    security: "Security baseline", headerProtection: "Publicly visible header protection", securityDescription: "Value-based checks of selected main-document headers — not a full penetration test.", limits: "See limits", effective: "Effective", review: "Review", missing: "Missing / ineffective", recommendationLabel: "Recommendation:",
+    reportEyebrow: "Client-ready summary", reportTitle: "Share this result with confidence", reportDescription: "A concise report keeps the footprint, security baseline, priority findings and interpretation boundary together.", reportFootprint: "Pattern similarity", reportSecurity: "Header protection", reportIndependent: "Independent assessments — neither score changes the other.", shareReport: "Share report", copyReport: "Copy summary", downloadReport: "Download report", printReport: "Print / save PDF", reportShared: "Report shared", reportCopied: "Summary copied", reportDownloaded: "Report downloaded", retrying: "The first attempt did not complete. One automatic retry is running …",
     technical: "View technical evidence", technicalDescription: "Builder markers, stack signals, measurements and scan metadata", directEvidence: "Direct markers", noDirect: "No direct builder markers found.", stackContext: "Stack & context", noStack: "No known stack or context signals were visible.", structural: "Structure values", hints: "Hints", loaded: "Assets loaded", selected: "selected", found: "Assets found", model: "Model", time: "Time", viewUrl: "Open resolved URL", importantLimit: "Important boundary", dataProtection: "Data and operation", methodEyebrow: "How VibeFootprint works", methodTitle: "A visible footprint, turned into useful next steps.", methodDescription: "We inspect only what a public website delivers. No login, repository or private source code is required.", methodOneTitle: "Inspect the public surface", methodOneText: "HTML, response headers and a bounded selection of same-origin assets over validated, peer-pinned connections.", methodTwoTitle: "Score visible patterns", methodTwoText: "The frozen model combines public technical and structural signals into an uncalibrated 0–100 similarity index.", methodThreeTitle: "Separate evidence from advice", methodThreeText: "Observed findings stay distinct from optional manual guidance and are ordered by impact.", proofTitle: "Designed for a clear decision", proofText: "Use the footprint to see where a site looks generic, where it needs hardening, and what to improve next — without pretending to know who authored it.", proofPublic: "Public surface only", proofScore: "0–100 qualitative index", proofSecurity: "Separate security baseline", proofPrivacy: "No source access required", footerLine: "Vibe-Footprint & Security-Baseline · Research Beta", backToMethod: "Methodology & limits ↑"
   },
   de: {
-    home: "VibeFootprint Startseite", subtitle: "Website-Intelligenz", scan: "Scan", methodology: "Methodik", beta: "Research-Beta", heroEyebrow: "Evidenzbasierte Website-Prüfung", heroTitle: <>Wie viel <span>Vibe</span> steckt in deiner Website?</>, heroLede: "Erhalte einen verständlichen Score von 0 bis 100, erkenne öffentlich sichtbare Muster und finde konkrete Schritte für mehr Sicherheit, Qualität und Eigenständigkeit.", heroTrust: "Transparentes Beta-Modell · qualitative Orientierung mit klarer Unsicherheitsgrenze", scanTitle: "Website analysieren", scanDescription: "Öffentliche URL eingeben – der Scan dauert meist wenige Sekunden.", urlLabel: "Website-URL", placeholder: "https://deine-website.de", startScan: "Kostenlosen Scan starten", scanning: "Website wird untersucht …", cancel: "Abbrechen", privacy: "Begrenzte, IP-gepinnte GET-Abrufe von öffentlichem HTML und gleich-originigen Assets. Die Zielseite kann diese Abrufe protokollieren. Keine Anmeldung, kein privater Quellcode.", low: "Niedrig", light: "Leicht", medium: "Mittel", high: "Hoch", veryHigh: "Sehr hoch", scaleNote: <>Der Index ist eine unkalibrierte, qualitative Ähnlichkeitsorientierung – keine AI-Wahrscheinlichkeit und kein Prozentanteil AI-generierten Codes. <a href="#method">Methodik und Grenzen</a></>, results: "Scan-Ergebnisse", previous: "Vorheriges Ergebnis für", newScan: "Neue Analyse für", noResult: "Kein neues Ergebnis erzeugt", previousKept: "Vorheriges Ergebnis bleibt erhalten", yourFootprint: "Dein Vibe-Footprint", analyzed: "Analysiert", whatItMeans: "Was das bedeutet", seeMethod: "Methodik ansehen", scanOverview: "Scan-Überblick", breadth: "Auswertungsbreite", securityBaseline: "Sicherheits-Baseline", directMarkers: "Direkte Marker", uniqueBuilders: "Eindeutige Builder", noBonus: "Kein separater Bonus oder Abzug", indexExplained: "Index verständlich gemacht", driversTitle: "Was beeinflusst das Ergebnis?", driversDescription: "Nur tatsächlich erkannte Binärsignale erscheinen hier. Die Reihenfolge zeigt relative Modellwirkung, keine Punkte auf der 0–100-Skala.", raises: "Erhöht den Score", strongerSimilarity: "stärkere Ähnlichkeit", lowers: "Senkt den Score", lowerSimilarity: "geringere Ähnlichkeit", noPositive: "Keine einzelnen positiven Treiber sichtbar.", noNegative: "Keine einzelnen negativen Treiber sichtbar.", improvementEyebrow: "Konkreter Verbesserungsplan", improvementTitle: "Was du jetzt verbessern solltest", improvementDescription: "Priorisiert nach Wirkung. Arbeite die ersten Punkte ab und scanne die Website danach erneut.", observed: "Beobachtete Hinweise", guidance: "Optionale manuelle Prüfungen", doFirst: "Zuerst lösen", doNext: "Danach", optimize: "Optimierung", implement: "So setzt du es um", manualCheck: "Manuell prüfen", healthy: "Keine hochkonfidenten Probleme in diesem Bereich erkannt.", noFilter: "Für diesen Filter gibt es weder ein beobachtetes Finding noch allgemeine Guidance.", security: "Security-Baseline", headerProtection: "Öffentlich sichtbarer Headerschutz", securityDescription: "Wertbezogene Prüfung ausgewählter Hauptdokument-Header – kein vollständiger Penetrationstest.", limits: "Grenzen ansehen", effective: "Wirksam", review: "Prüfen", missing: "Fehlt/Unwirksam", technical: "Technische Evidenz ansehen", technicalDescription: "Builder-Marker, Stack, Messwerte und Scan-Metadaten", directEvidence: "Direkte Marker", noDirect: "Keine direkten Builder-Marker gefunden.", stackContext: "Stack & Kontext", noStack: "Keine bekannten Stack- oder Kontextsignale sichtbar.", structural: "Strukturwerte", hints: "Hinweise", loaded: "Assets geladen", selected: "ausgewählt", found: "Assets gefunden", model: "Modell", time: "Zeitpunkt", viewUrl: "Aufgelöste URL öffnen", importantLimit: "Wichtige Grenze", dataProtection: "Datenschutz und Betrieb", methodEyebrow: "So funktioniert VibeFootprint", methodTitle: "Von sichtbaren Mustern zu klaren nächsten Schritten.", methodDescription: "Der Scan untersucht nur das, was eine öffentliche Website ausliefert. Kein Login, kein Repository und kein privater Quellcode werden benötigt.", methodOneTitle: "Öffentliche Oberfläche scannen", methodOneText: "HTML, Response-Header und eine begrenzte Auswahl gleich-originiger Skripte und Stylesheets über geprüfte, IP-gepinnte Verbindungen.", methodTwoTitle: "Sichtbare Muster bewerten", methodTwoText: "Das eingefrorene Modell kombiniert öffentlich sichtbare technische und strukturelle Signale zu einem unkalibrierten Ähnlichkeitsindex von 0 bis 100.", methodThreeTitle: "Evidenz und Hinweise trennen", methodThreeText: "Beobachtete Findings bleiben von optionaler manueller Guidance getrennt und werden nach Wirkung geordnet.", proofTitle: "Für klare Entscheidungen gebaut", proofText: "Nutze den Footprint, um generische Stellen, Härtungsbedarf und nächste Verbesserungen zu erkennen – ohne vorzugeben, wer die Website erstellt hat.", proofPublic: "Nur öffentliche Oberfläche", proofScore: "Qualitativer Index 0–100", proofSecurity: "Separate Security-Baseline", proofPrivacy: "Kein Quellcodezugriff nötig", footerLine: "Vibe-Footprint & Security-Baseline · Research-Beta", backToMethod: "Methodik & Grenzen ↑"
+    home: "VibeFootprint Startseite", subtitle: "Website-Intelligenz", scan: "Scan", methodology: "Methodik", beta: "Research-Beta", heroEyebrow: "Evidenzbasierte Website-Prüfung", heroTitle: <>Wie viel <span>Vibe</span> steckt in deiner Website?</>, heroLede: "Erhalte einen verständlichen Score von 0 bis 100, erkenne öffentlich sichtbare Muster und finde konkrete Schritte für mehr Sicherheit, Qualität und Eigenständigkeit.", heroTrust: "Transparentes Beta-Modell · qualitative Orientierung mit klarer Unsicherheitsgrenze", scanTitle: "Website analysieren", scanDescription: "Öffentliche URL eingeben – der Scan dauert meist wenige Sekunden.", urlLabel: "Website-URL", placeholder: "https://deine-website.de", startScan: "Kostenlosen Scan starten", scanning: "Website wird untersucht …", cancel: "Abbrechen", privacy: "Begrenzte, IP-gepinnte GET-Abrufe von öffentlichem HTML und gleich-originigen Assets. Die Zielseite kann diese Abrufe protokollieren. Keine Anmeldung, kein privater Quellcode.", low: "Niedrig", light: "Leicht", medium: "Mittel", high: "Hoch", veryHigh: "Sehr hoch", scaleNote: <>Der qualitative Index vergleicht öffentliche Website-Muster mit dem Referenzkorpus. Er misst weder Codeherkunft, Anteil generierten Codes noch Autorenschaft. <a href="#method">Methodik und Grenzen</a></>, results: "Scan-Ergebnisse", previous: "Vorheriges Ergebnis für", newScan: "Neue Analyse für", noResult: "Kein neues Ergebnis erzeugt", previousKept: "Vorheriges Ergebnis bleibt erhalten", yourFootprint: "Dein Vibe-Footprint", analyzed: "Analysiert", whatItMeans: "Was das bedeutet", seeMethod: "Methodik ansehen", scanOverview: "Footprint-Evidenz", breadth: "Auswertungsbreite", securityBaseline: "Sicherheits-Baseline", directMarkers: "Direkte Marker", uniqueBuilders: "Eindeutige Builder", noBonus: "Kein separater Bonus oder Abzug", footprintScoreType: "Ähnlichkeit öffentlicher Muster", footprintSeparate: "Security-Findings verändern diesen Score nicht.", securityScoreType: "Öffentlicher Headerschutz", securitySeparate: "Diese Bewertung ist unabhängig vom Vibe-Footprint.", indexExplained: "Index verständlich gemacht", driversTitle: "Was beeinflusst das Ergebnis?", driversDescription: "Nur tatsächlich erkannte Signale erscheinen hier. Die Reihenfolge zeigt relative Modellwirkung, keine Punkte auf der 0–100-Skala.", raises: "Erhöht den Score", strongerSimilarity: "stärkere Ähnlichkeit", lowers: "Senkt den Score", lowerSimilarity: "geringere Ähnlichkeit", noPositive: "Keine einzelnen positiven Treiber sichtbar.", noNegative: "Keine einzelnen negativen Treiber sichtbar.", improvementEyebrow: "Konkreter Verbesserungsplan", improvementTitle: "Was du jetzt verbessern solltest", improvementDescription: "Priorisiert nach Wirkung. Arbeite die ersten Punkte ab und scanne die Website danach erneut.", observed: "Beobachtete Hinweise", guidance: "Optionale manuelle Prüfungen", doFirst: "Zuerst lösen", doNext: "Danach", optimize: "Optimierung", implement: "So setzt du es um", manualCheck: "Manuell prüfen", healthy: "Keine hochkonfidenten Probleme in diesem Bereich erkannt.", noFilter: "Für diesen Filter gibt es weder ein beobachtetes Finding noch allgemeine Guidance.", security: "Security-Baseline", headerProtection: "Öffentlich sichtbarer Headerschutz", securityDescription: "Wertbezogene Prüfung ausgewählter Hauptdokument-Header – kein vollständiger Penetrationstest.", limits: "Grenzen ansehen", effective: "Wirksam", review: "Prüfen", missing: "Fehlt/Unwirksam", recommendationLabel: "Empfehlung:", reportEyebrow: "Kundenfertige Zusammenfassung", reportTitle: "Dieses Ergebnis sicher teilen", reportDescription: "Ein kompakter Report hält Footprint, Sicherheits-Baseline, priorisierte Findings und Interpretationsgrenze zusammen.", reportFootprint: "Musterähnlichkeit", reportSecurity: "Headerschutz", reportIndependent: "Unabhängige Bewertungen – kein Score verändert den anderen.", shareReport: "Report teilen", copyReport: "Zusammenfassung kopieren", downloadReport: "Report herunterladen", printReport: "Drucken / als PDF sichern", reportShared: "Report geteilt", reportCopied: "Zusammenfassung kopiert", reportDownloaded: "Report heruntergeladen", retrying: "Der erste Versuch war nicht vollständig. Ein automatischer Wiederholungsversuch läuft …", technical: "Technische Evidenz ansehen", technicalDescription: "Builder-Marker, Stack, Messwerte und Scan-Metadaten", directEvidence: "Direkte Marker", noDirect: "Keine direkten Builder-Marker gefunden.", stackContext: "Stack & Kontext", noStack: "Keine bekannten Stack- oder Kontextsignale sichtbar.", structural: "Strukturwerte", hints: "Hinweise", loaded: "Assets geladen", selected: "ausgewählt", found: "Assets gefunden", model: "Modell", time: "Zeitpunkt", viewUrl: "Aufgelöste URL öffnen", importantLimit: "Wichtige Grenze", dataProtection: "Datenschutz und Betrieb", methodEyebrow: "So funktioniert VibeFootprint", methodTitle: "Von sichtbaren Mustern zu klaren nächsten Schritten.", methodDescription: "Der Scan untersucht nur das, was eine öffentliche Website ausliefert. Kein Login, kein Repository und kein privater Quellcode werden benötigt.", methodOneTitle: "Öffentliche Oberfläche scannen", methodOneText: "HTML, Response-Header und eine begrenzte Auswahl gleich-originiger Skripte und Stylesheets über geprüfte, IP-gepinnte Verbindungen.", methodTwoTitle: "Sichtbare Muster bewerten", methodTwoText: "Das eingefrorene Modell kombiniert öffentlich sichtbare technische und strukturelle Signale zu einem unkalibrierten Ähnlichkeitsindex von 0 bis 100.", methodThreeTitle: "Evidenz und Hinweise trennen", methodThreeText: "Beobachtete Findings bleiben von optionaler manueller Guidance getrennt und werden nach Wirkung geordnet.", proofTitle: "Für klare Entscheidungen gebaut", proofText: "Nutze den Footprint, um generische Stellen, Härtungsbedarf und nächste Verbesserungen zu erkennen – ohne vorzugeben, wer die Website erstellt hat.", proofPublic: "Nur öffentliche Oberfläche", proofScore: "Qualitativer Index 0–100", proofSecurity: "Separate Security-Baseline", proofPrivacy: "Kein Quellcodezugriff nötig", footerLine: "Vibe-Footprint & Security-Baseline · Research-Beta", backToMethod: "Methodik & Grenzen ↑"
   }
 } as const;
 
@@ -113,13 +116,14 @@ const structuralHintLabelsByLanguage = {
   de: { "dense-modern-stack": "viele moderne Stack-Signale", "high-data-attribute-density": "hohe Dichte strukturierter Data-Attribute", "script-heavy-static-shell": "skriptlastige Oberfläche ohne Formularstruktur" }
 } as const;
 
-function formatMetric(key: string, value: number) {
+function formatMetric(key: string, value: number, language: Language) {
+  const locale = language === "en" ? "en-US" : "de-DE";
   if (["htmlBytes", "assetBytes"].includes(key)) {
-    if (value >= 1_000_000) return `${(value / 1_000_000).toLocaleString("de-DE", { maximumFractionDigits: 1 })} MB`;
-    if (value >= 1_000) return `${(value / 1_000).toLocaleString("de-DE", { maximumFractionDigits: 1 })} KB`;
-    return `${value.toLocaleString("de-DE")} B`;
+    if (value >= 1_000_000) return `${(value / 1_000_000).toLocaleString(locale, { maximumFractionDigits: 1 })} MB`;
+    if (value >= 1_000) return `${(value / 1_000).toLocaleString(locale, { maximumFractionDigits: 1 })} KB`;
+    return `${value.toLocaleString(locale)} B`;
   }
-  return value.toLocaleString("de-DE");
+  return value.toLocaleString(locale);
 }
 
 function ScoreRing({ score, language }: { score: number; language: Language }) {
@@ -132,10 +136,12 @@ function ScoreRing({ score, language }: { score: number; language: Language }) {
 export default function Home() {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<ScanResult | null>(null);
+  const [rawResult, setRawResult] = useState<ScanResult | null>(null);
   const [errorResult, setErrorResult] = useState<ScanResult | null>(null);
   const [category, setCategory] = useState("all");
   const [pendingUrl, setPendingUrl] = useState<string | null>(null);
+  const [retryAttempt, setRetryAttempt] = useState(0);
+  const [reportStatus, setReportStatus] = useState("");
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window === "undefined") return "en";
     const saved = window.localStorage.getItem("vibefootprint-language");
@@ -151,6 +157,7 @@ export default function Home() {
   const priorityLabels = priorityLabelsByLanguage[language];
   const metricLabels: Record<string, string> = metricLabelsByLanguage[language];
   const structuralHintLabels: Record<string, string> = structuralHintLabelsByLanguage[language];
+  const result = useMemo(() => localizeScanPayload(rawResult, language) as ScanResult | null, [rawResult, language]);
 
   function changeLanguage(next: Language) {
     setLanguage(next);
@@ -168,46 +175,76 @@ export default function Home() {
     const items = result?.recommendations || [];
     return category === "all" ? items : items.filter((item) => item.category === category);
   }, [category, result]);
+  const reportText = useMemo(() => result?.ok ? buildCustomerReport(result, language) : "", [language, result]);
 
   async function runScan() {
     const requestedUrl = url.trim();
     const sequence = ++scanSequenceRef.current;
     controllerRef.current?.abort("superseded");
-    const controller = new AbortController();
-    controllerRef.current = controller;
     loadingRef.current = true;
     setLoading(true);
     setPendingUrl(requestedUrl);
     setErrorResult(null);
+    setRetryAttempt(0);
+    setReportStatus("");
     setCategory("all");
-    const timeout = window.setTimeout(() => controller.abort("client-timeout"), 19_000);
     try {
-      const response = await fetch("/api/scan", {
-        method: "POST",
-        headers: { "content-type": "application/json", "accept-language": language },
-        body: JSON.stringify({ url: requestedUrl }),
-        signal: controller.signal
-      });
-      const responseRequestId = response.headers.get("x-vibebench-request-id") || undefined;
-      const payload = await response.json().catch(() => null);
-      const parsed = parseScanPayload(payload) as ScanResult | null;
-      if (sequence !== scanSequenceRef.current) return;
-      if (!parsed) setErrorResult({ apiVersion: release.apiVersion, ok: false, requestId: responseRequestId, technicalOutcome: incompatibleTechnicalOutcome });
-      else if (parsed.ok) setResult(parsed);
-      else setErrorResult(parsed);
-    } catch {
-      if (sequence !== scanSequenceRef.current) return;
-      const outcome = controller.signal.aborted
-        ? controller.signal.reason === "client-timeout" ? clientTimeoutTechnicalOutcome : cancelledTechnicalOutcome
-        : fallbackTechnicalOutcome;
-      setErrorResult({ apiVersion: release.apiVersion, ok: false, technicalOutcome: outcome });
+      for (let attempt = 1; attempt <= MAX_CLIENT_SCAN_ATTEMPTS; attempt += 1) {
+        const controller = new AbortController();
+        controllerRef.current = controller;
+        const timeout = window.setTimeout(() => controller.abort("client-timeout"), 19_000);
+        let failedResult: ScanResult | null = null;
+        try {
+          const response = await fetch("/api/scan", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ url: requestedUrl }),
+            signal: controller.signal
+          });
+          const responseRequestId = response.headers.get("x-vibebench-request-id") || undefined;
+          const payload = await response.json().catch(() => null);
+          const parsed = parseScanPayload(payload) as ScanResult | null;
+          if (sequence !== scanSequenceRef.current) return;
+          if (!parsed) failedResult = { apiVersion: release.apiVersion, ok: false, requestId: responseRequestId, technicalOutcome: incompatibleTechnicalOutcome };
+          else if (parsed.ok) {
+            setRawResult(parsed);
+            setErrorResult(null);
+            return;
+          } else failedResult = parsed;
+        } catch {
+          if (sequence !== scanSequenceRef.current) return;
+          const outcome = controller.signal.aborted
+            ? controller.signal.reason === "client-timeout" ? clientTimeoutTechnicalOutcome : cancelledTechnicalOutcome
+            : fallbackTechnicalOutcome;
+          failedResult = { apiVersion: release.apiVersion, ok: false, technicalOutcome: outcome };
+        } finally {
+          window.clearTimeout(timeout);
+        }
+
+        if (sequence !== scanSequenceRef.current || !failedResult?.technicalOutcome) return;
+        if (controller.signal.reason === "user-cancelled") {
+          setErrorResult(failedResult);
+          return;
+        }
+        if (shouldAutomaticallyRetry(failedResult.technicalOutcome, attempt)) {
+          setRetryAttempt(attempt + 1);
+          await new Promise((resolve) => window.setTimeout(resolve, automaticRetryDelayMs(failedResult?.technicalOutcome?.code)));
+          if (controller.signal.reason === "user-cancelled") {
+            setErrorResult({ apiVersion: release.apiVersion, ok: false, technicalOutcome: cancelledTechnicalOutcome });
+            return;
+          }
+          continue;
+        }
+        setErrorResult(failedResult);
+        return;
+      }
     } finally {
-      window.clearTimeout(timeout);
-      if (sequence === scanSequenceRef.current && controllerRef.current === controller) {
+      if (sequence === scanSequenceRef.current) {
         controllerRef.current = null;
         loadingRef.current = false;
         setLoading(false);
         setPendingUrl(null);
+        setRetryAttempt(0);
       }
     }
   }
@@ -220,6 +257,40 @@ export default function Home() {
 
   function cancelScan() {
     controllerRef.current?.abort("user-cancelled");
+  }
+
+  async function copyCustomerReport() {
+    if (!reportText) return;
+    try {
+      await navigator.clipboard.writeText(reportText);
+      setReportStatus(copy.reportCopied);
+    } catch {
+      setReportStatus(language === "en" ? "Copying is not available in this browser." : "Kopieren ist in diesem Browser nicht verfügbar.");
+    }
+  }
+
+  async function shareCustomerReport() {
+    if (!reportText || !result) return;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: copy.reportTitle, text: reportText });
+        setReportStatus(copy.reportShared);
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") return;
+      }
+    }
+    await copyCustomerReport();
+  }
+
+  function downloadCustomerReport() {
+    if (!reportText || !result) return;
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(new Blob([reportText], { type: "text/markdown;charset=utf-8" }));
+    link.download = customerReportFilename(result, language);
+    link.click();
+    URL.revokeObjectURL(link.href);
+    setReportStatus(copy.reportDownloaded);
   }
 
   const technicalOutcome = localizeTechnicalOutcome(errorResult?.technicalOutcome || null, language);
@@ -248,7 +319,7 @@ export default function Home() {
         <div className="scan-heading"><span>01</span><div><h2>{copy.scanTitle}</h2><p>{copy.scanDescription}</p></div></div>
         <label htmlFor="url">{copy.urlLabel}</label>
         <input id="url" value={url} onChange={(event) => setUrl(event.target.value)} placeholder={copy.placeholder} autoComplete="url" inputMode="url" required />
-        <div className="scan-actions"><button disabled={loading}><span>{loading ? copy.scanning : copy.startScan}</span><b aria-hidden="true">→</b></button>{loading && <button className="cancel-button" type="button" onClick={cancelScan}>{copy.cancel}</button>}</div>
+        <div className="scan-actions"><button disabled={loading}><span>{loading ? retryAttempt ? copy.retrying : copy.scanning : copy.startScan}</span><b aria-hidden="true">→</b></button>{loading && <button className="cancel-button" type="button" onClick={cancelScan}>{copy.cancel}</button>}</div>
         <p className="privacy-note"><span aria-hidden="true">✓</span> {copy.privacy}</p>
       </form>
     </section>
@@ -273,6 +344,7 @@ export default function Home() {
           <ScoreRing score={score} language={language} />
           <div className="score-copy">
             <p className="eyebrow">{copy.yourFootprint}</p>
+            <p className="score-kind">{copy.footprintScoreType} · <span>{copy.footprintSeparate}</span></p>
             <h2>{result.vibeScore.band.label}</h2>
             {resultHost && <p className="result-target">{copy.analyzed}: <strong>{resultHost}</strong></p>}
             <p>{result.vibeScore.band.summary}</p>
@@ -281,7 +353,6 @@ export default function Home() {
           <div className="score-snapshot">
             <p>{copy.scanOverview}</p>
             <div><span>{copy.breadth}</span><strong className={`coverage-${result.evidenceCoverage?.level || "standard"}`}>{result.evidenceCoverage?.label || "Standard"}</strong></div>
-            <div><span>{copy.securityBaseline}</span><strong>{result.security.score}<small>/100</small></strong></div>
             <div><span>{copy.directMarkers}</span><strong>{result.directEvidence?.length || 0}</strong></div>
             <div><span>{copy.uniqueBuilders}</span><strong>{result.directBuilderCount ?? new Set(result.directEvidence?.map((item) => item.label)).size}</strong></div>
           </div>
@@ -289,10 +360,27 @@ export default function Home() {
 
         {result.evidenceCoverage && <aside className={`coverage-note coverage-${result.evidenceCoverage.level}`}><div><strong>{copy.breadth}: {result.evidenceCoverage.label}</strong><p>{result.evidenceCoverage.summary}</p></div><span>{copy.noBonus}</span></aside>}
 
-        <div className="score-scale" aria-label={`Score ${score} auf einer Skala von 0 bis 100`}>
+        <div className="score-scale" aria-label={language === "en" ? `Score ${score} on a scale from 0 to 100` : `Score ${score} auf einer Skala von 0 bis 100`}>
           <div className="scale-labels"><span>{language === "en" ? "Lower footprint" : "Niedriger Footprint"}</span><strong>{score}/100</strong><span>{language === "en" ? "Very high footprint" : "Sehr hoher Footprint"}</span></div>
           <div className="scale-track"><i style={{ width: `${score}%` }} /><b style={{ left: `${score}%` }} /></div>
         </div>
+
+        <section className="customer-report" aria-labelledby="customer-report-title">
+          <div className="report-heading"><div><p className="eyebrow">{copy.reportEyebrow}</p><h2 id="customer-report-title">{copy.reportTitle}</h2></div><p>{copy.reportDescription}</p></div>
+          <div className="report-score-pair">
+            <article><span>01 · {copy.reportFootprint}</span><strong>{score}<small>/100</small></strong><p>{result.vibeScore.band.label}</p></article>
+            <i aria-hidden="true">≠</i>
+            <article><span>02 · {copy.reportSecurity}</span><strong>{result.security.score}<small>/100</small></strong><p>{copy.headerProtection}</p></article>
+          </div>
+          <p className="report-independence"><span aria-hidden="true">✓</span>{copy.reportIndependent}</p>
+          <div className="report-actions">
+            <button type="button" onClick={() => void shareCustomerReport()}>{copy.shareReport}</button>
+            <button type="button" onClick={() => void copyCustomerReport()}>{copy.copyReport}</button>
+            <button type="button" onClick={downloadCustomerReport}>{copy.downloadReport}</button>
+            <button type="button" onClick={() => window.print()}>{copy.printReport}</button>
+          </div>
+          <p className="report-status" role="status" aria-live="polite">{reportStatus}</p>
+        </section>
 
         <section className="drivers-section">
           <div className="section-heading"><div><p className="eyebrow">{copy.indexExplained}</p><h2>{copy.driversTitle}</h2></div><p>{copy.driversDescription}</p></div>
@@ -324,10 +412,10 @@ export default function Home() {
         </section>
 
         <section className="security-section">
-          <div className="security-score"><p className="eyebrow">{copy.security}</p><strong>{result.security.score}<span>/100</span></strong><h2>{copy.headerProtection}</h2><p>{copy.securityDescription} <a href="#method">{copy.limits}</a></p></div>
+          <div className="security-score"><p className="eyebrow">{copy.security}</p><p className="score-kind security-kind">{copy.securityScoreType}</p><strong>{result.security.score}<span>/100</span></strong><h2>{copy.headerProtection}</h2><p className="security-separation">{copy.securitySeparate}</p><p>{copy.securityDescription} <a href="#method">{copy.limits}</a></p></div>
           <div className="security-checks">{result.security.checks.map((check) => <details key={check.id} className={`security-${check.status}`}>
             <summary><span aria-hidden="true">{check.status === "pass" ? "✓" : check.status === "warn" ? "!" : "×"}</span><strong>{check.title}</strong><small>{check.status === "pass" ? copy.effective : check.status === "warn" ? copy.review : copy.missing}</small></summary>
-            <p>{check.detail}</p>{check.status !== "pass" && <p><b>Empfehlung:</b> {check.action}</p>}
+            <p>{check.detail}</p>{check.status !== "pass" && <p><b>{copy.recommendationLabel}</b> {check.action}</p>}
           </details>)}</div>
         </section>
 
@@ -336,7 +424,7 @@ export default function Home() {
           <div className="technical-grid">
             <article><h3>{copy.directEvidence}</h3>{result.directEvidence?.length ? <ul>{result.directEvidence.map((item) => <li key={`${item.label}-${item.marker}`}>{item.label}{item.marker ? <small>{item.marker}</small> : null}</li>)}</ul> : <p>{copy.noDirect}</p>}</article>
             <article><h3>{copy.stackContext}</h3>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].length ? <ul>{[...(result.stackSignals || []), ...(result.contextEvidence || []).map((item) => item.label), ...(result.headerEvidence || []).map((item) => item.label), ...(result.manifestEvidence || []).map((item) => item.label)].map((label, index) => <li key={`${label}-${index}`}>{label}</li>)}</ul> : <p>{copy.noStack}</p>}</article>
-            <article><h3>{copy.structural}</h3>{result.structuralHints?.length ? <p><strong>{copy.hints}:</strong> {result.structuralHints.map((hint) => structuralHintLabels[hint] || hint).join(", ")}</p> : null}<dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{formatMetric(key, value)}</dd></div>)}</dl></article>
+            <article><h3>{copy.structural}</h3>{result.structuralHints?.length ? <p><strong>{copy.hints}:</strong> {result.structuralHints.map((hint) => structuralHintLabels[hint] || hint).join(", ")}</p> : null}<dl>{Object.entries(result.metrics || {}).map(([key, value]) => <div key={key}><dt>{metricLabels[key] || key}</dt><dd>{formatMetric(key, value, language)}</dd></div>)}</dl></article>
             <article><h3>{copy.scan}</h3><dl><div><dt>HTTP</dt><dd>{result.httpStatus}</dd></div><div><dt>{copy.loaded}</dt><dd>{result.assetScan?.fetched || 0}/{result.assetScan?.selected || 0} {copy.selected}</dd></div><div><dt>{copy.found}</dt><dd>{result.assetScan?.discovered || 0}</dd></div><div><dt>{copy.breadth}</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>{copy.model}</dt><dd>{result.model?.version || "v0.4"}</dd></div><div><dt>{copy.time}</dt><dd>{result.analyzedAt ? new Date(result.analyzedAt).toLocaleString(language === "en" ? "en-US" : "de-DE") : "—"}</dd></div></dl></article>
           </div>
           <a className="resolved-url" href={result.resolvedUrl} target="_blank" rel="noreferrer">{copy.viewUrl}: {result.resolvedUrl} ↗</a>

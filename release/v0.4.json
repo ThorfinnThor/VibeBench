@@ -1,8 +1,8 @@
 {
   "schemaVersion": "vibebench-production-release-v1",
-  "productVersion": "0.4.1",
+  "productVersion": "0.4.2",
   "displayVersion": "v0.4",
-  "apiVersion": "1",
+  "apiVersion": "2",
   "approvedAt": "2026-08-16",
   "status": "RESEARCH_BETA",
   "model": {
@@ -10,7 +10,7 @@
     "artifact": "outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json",
     "sha256": "d66b60f87b091a6401c38c337243750167d1c6d87849c17735f1a033967c8d7b",
     "threshold": 0.44,
-    "outputMeaning": "Uncalibrated corpus-similarity index; not an authorship probability or percentage of AI-generated code."
+    "outputMeaning": "Uncalibrated corpus-similarity index; it does not estimate code origin, code share, or authorship."
   },
   "confirmation": {
     "resultLock": "outputs/confirmation_v0_4/blind_run_v0_4/vibebench_confirmation_result_files_v0_4.json",
@@ -45,5 +45,5 @@
       "action": "429 Too Many Requests"
     }
   },
-  "userAgent": "VibeBench/0.4.1 (+public website evidence scan)"
+  "userAgent": "VibeFootprint/0.4.2 (+public website evidence scan)"
 }

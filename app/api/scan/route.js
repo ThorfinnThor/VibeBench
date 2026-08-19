@@ -26,7 +26,6 @@ import {
 import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 import release from "../../../release/v0.4.json";
-import { localizeScanPayload, localizeTechnicalOutcome } from "../../../lib/scan-localization.mjs";
 
 export const runtime = "nodejs";
 export const maxDuration = 20;
@@ -123,7 +122,6 @@ export async function POST(request) {
   const deadline = AbortSignal.timeout(18_000);
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
   let releaseAdmission = () => {};
-  const locale = request.headers.get("accept-language")?.toLowerCase().startsWith("de") ? "de" : "en";
   try {
     const contentLength = Number(request.headers.get("content-length") || 0);
     if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
@@ -177,8 +175,8 @@ export async function POST(request) {
         fetched: fetchedAssets.length
       }
     });
-    const probability = scoreV03(candidateModel, featureMap);
-    const score = Math.round(probability * 100);
+    const similarityRatio = scoreV03(candidateModel, featureMap);
+    const score = Math.round(similarityRatio * 100);
     const scoreContributions = explainScore(candidateModel, featureMap);
     const security = auditSecurity(fetched.url, fetched.headers);
     const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
@@ -218,12 +216,9 @@ export async function POST(request) {
       },
       vibeScore: {
         score,
-        probability,
         band: getScoreBand(score),
-        threshold: Math.round(candidateModel.training.threshold * 100),
-        aboveValidatedThreshold: probability >= candidateModel.training.threshold,
         meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeFootprint-Korpus.",
-        caveat: "Kein Prozentanteil AI-generierten Codes und kein Beweis für die Autorenschaft."
+        caveat: "Der Wert misst weder den Anteil generierten Codes noch die Autorenschaft."
       },
       scoreDrivers: {
         raises: scoreContributions.filter((item) => item.summaryVisible && item.direction === "raises").slice(0, 5),
@@ -247,14 +242,14 @@ export async function POST(request) {
         performanceClaimCurrent: release.confirmation.currentPerformanceClaim
       },
       ...analysis,
-      warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er ist keine AI-Wahrscheinlichkeit, kein Prozentanteil AI-generierten Codes und kein Beweis für Autorenschaft."
+      warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er misst weder den Anteil generierten Codes noch die Autorenschaft."
     };
     console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
-    return Response.json(localizeScanPayload(payload, locale), { headers: responseHeaders });
+    return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
-    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome: localizeTechnicalOutcome(technicalOutcome, locale) }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
+    return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   } finally {
     releaseAdmission();
   }
