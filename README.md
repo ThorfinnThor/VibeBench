@@ -1,13 +1,13 @@
-# VibeBench
+# VibeFootprint
 
-VibeBench untersucht, wie stark eine öffentlich erreichbare Website sichtbaren
+VibeFootprint untersucht, wie stark eine öffentlich erreichbare Website sichtbaren
 Mustern aus dem validierten Vibecoding-Korpus ähnelt. Die Web-App zeigt dafür
 einen Vibe-Footprint von 0 bis 100, erklärt die wichtigsten Score-Treiber und
 liefert priorisierte Security-, Design-, Engineering- und Accessibility-Maßnahmen.
 Der Wert ist kein Prozentanteil AI-generierten Codes und kein Beweis für
 Autorenschaft.
 
-## Was VibeBench unterscheidet
+## Was VibeFootprint unterscheidet
 
 - **Builder-Evidenz:** direkte Artefakte von Lovable, Bolt, v0, Replit Agent
   und weiteren AI-Buildern.

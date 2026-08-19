@@ -6,6 +6,7 @@ test("public category overview exposes counts and severity without detailed find
   const overview = buildPublicCategoryOverview({
     recommendations: [
       { category: "design", priority: "high", basis: "observed", title: "private detail" },
+      { category: "content", priority: "low", basis: "context", title: "benign technology context" },
       { category: "engineering", priority: "medium", basis: "guidance", title: "manual guidance" }
     ],
     securityChecks: [{ status: "pass" }, { status: "warn" }, { status: "fail" }]
@@ -13,6 +14,7 @@ test("public category overview exposes counts and severity without detailed find
   assert.deepEqual(overview.find((item) => item.id === "security"), { id: "security", issueCount: 2, status: "attention" });
   assert.deepEqual(overview.find((item) => item.id === "design"), { id: "design", issueCount: 1, status: "attention" });
   assert.deepEqual(overview.find((item) => item.id === "engineering"), { id: "engineering", issueCount: 0, status: "no-observed-issue" });
+  assert.deepEqual(overview.find((item) => item.id === "content"), { id: "content", issueCount: 0, status: "no-observed-issue" });
   assert.equal(JSON.stringify(overview).includes("private detail"), false);
 });
 

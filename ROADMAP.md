@@ -1,5 +1,7 @@
 # VibeBench roadmap
 
+> Customer-facing product name: **VibeFootprint**. Historical research artifacts and internal namespaces retain `VibeBench` where renaming would break reproducibility.
+
 Updated: 2026-08-16
 
 This roadmap preserves the agreed product direction after dropping a rigid 90/90 Precision/Recall release target. Audit hardening takes precedence; model and product research resumes on the frozen Option-B Development set afterward.

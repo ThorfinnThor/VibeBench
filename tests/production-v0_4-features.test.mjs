@@ -71,8 +71,22 @@ test("recommendations preserve all findings and do not advise score gaming", () 
   assert.ok(recommendations.length > 10);
   assert.equal(recommendations.some(({ why, action }) => /score|external host|third.party/i.test(`${why} ${action}`)), false);
   const marker = recommendations.find(({ title }) => title === "Builder-Provenienz bewusst entscheiden");
+  assert.equal(marker.id, "VF-CTX-BUILDER-PROVENANCE");
+  assert.equal(marker.basis, "context");
   assert.equal(marker.priority, "low");
   assert.match(marker.action, /Brand-, Privacy- oder Release-Grund/);
+});
+
+test("recommendation IDs are stable and independent from list position", () => {
+  const recommendations = buildRecommendations({
+    analysis: { directEvidence: [] },
+    pageMetrics: { asset_bytes_fetched: 1_000_000, inline_script_bytes: 100_000, headings: 0 },
+    extendedMetrics: { shadcn_variable_coverage: 10, data_slot_attributes: 0, ui_cliche_tokens: 10, sections: 0 },
+    security: auditSecurity("https://example.com", {})
+  });
+  const ids = recommendations.map((item) => item.id);
+  assert.equal(new Set(ids).size, ids.length);
+  for (const id of ["VF-SEC-CSP", "VF-DES-COMPONENT-SYSTEM", "VF-DES-GENERIC-UI", "VF-ENG-ASSET-PAYLOAD", "VF-ENG-INLINE-JS", "VF-CONTENT-HIERARCHY"]) assert.ok(ids.includes(id));
 });
 
 test("score explanations distinguish detected and absent binary features", () => {
