@@ -131,6 +131,6 @@ claim. A fresh independent confirmation is deferred until the v4 Development
 collector and derived features are stable. See
 `outputs/VIBEBENCH_OPTION_B_V4_ISOLATION_DECISION_2026-08-15.md`.
 
-For customer delivery, product `0.4.1` is ready for a limited Research Beta.
+For customer delivery, product `0.4.1` is ready for a limited public launch.
 The live endpoint, safety controls, production verification and rollback rules
-are recorded in `outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md`.
+are recorded in the historical launch artifact `outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md`.

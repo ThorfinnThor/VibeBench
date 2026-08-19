@@ -41,8 +41,8 @@ test("maps invalid and private URLs to actionable input outcomes", () => {
 
 test("maps launch admission limits separately from target failures", () => {
   assert.deepEqual(
-    classifyScanError(new Error("VibeBench Beta-Limit erreicht.")),
-    { code: "client_rate_limited", title: "Beta-Limit erreicht", summary: "Für diesen Zugang wurden in kurzer Zeit zu viele Scans gestartet.", action: "Nach zehn Minuten erneut versuchen.", retryable: true, responseStatus: 429 }
+    classifyScanError(new Error("VibeFootprint Scan-Limit erreicht.")),
+    { code: "client_rate_limited", title: "Scan-Limit erreicht", summary: "Für diesen Zugang wurden in kurzer Zeit zu viele Scans gestartet.", action: "Nach zehn Minuten erneut versuchen.", retryable: true, responseStatus: 429 }
   );
   assert.equal(classifyScanError(new Error("VibeBench Scan-Kapazität vorübergehend erreicht.")).code, "service_busy");
   assert.equal(classifyScanError(new Error("Für diese Website läuft bereits ein Scan.")).code, "target_scan_in_progress");

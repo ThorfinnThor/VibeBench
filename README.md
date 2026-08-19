@@ -76,7 +76,7 @@ Experimente mit 180 Oberflächenmerkmalen stehen in
 Das 90/90-Ziel wurde in Development noch nicht stabil erreicht und wird daher
 nicht als neue Produktkennzahl ausgewiesen.
 
-Der für erste Kunden vorgesehene begrenzte Beta-Betrieb, die peer-gepinnte
+Der für erste Kunden vorgesehene begrenzte Produktionsbetrieb, die peer-gepinnte
 Produktionsverbindung, Ressourcenlimits, Vercel-Firewall-Regel und der
 Release-/Rollback-Check stehen in
 [`outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md`](outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md).
