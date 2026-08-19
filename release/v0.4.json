@@ -1,8 +1,8 @@
 {
   "schemaVersion": "vibebench-production-release-v1",
-  "productVersion": "0.4.2",
+  "productVersion": "0.5.0",
   "displayVersion": "v0.4",
-  "apiVersion": "2",
+  "apiVersion": "3",
   "approvedAt": "2026-08-16",
   "status": "RESEARCH_BETA",
   "model": {
@@ -45,5 +45,5 @@
       "action": "429 Too Many Requests"
     }
   },
-  "userAgent": "VibeFootprint/0.4.2 (+public website evidence scan)"
+  "userAgent": "VibeFootprint/0.5.0 (+public website evidence scan)"
 }

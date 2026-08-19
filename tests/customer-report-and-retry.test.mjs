@@ -9,11 +9,11 @@ const result = {
   resolvedUrl: "https://example.com/path",
   analyzedAt: "2026-08-19T10:00:00.000Z",
   vibeScore: { score: 66, band: { label: "Medium Vibe-Footprint", summary: "Mixed visible patterns." } },
-  security: { score: 78 },
+  security: { score: 78, counts: { pass: 4, review: 1, missing: 2 } },
   evidenceCoverage: { label: "Broad" },
-  recommendations: [
-    { title: "Content Security Policy", why: "No policy found.", action: "Start in report-only mode.", basis: "observed" },
-    { title: "Manual design review", why: "Needs human review.", action: "Review three screens.", basis: "guidance" }
+  categoryOverview: [
+    { id: "security", issueCount: 3, status: "attention" },
+    { id: "design", issueCount: 1, status: "review" }
   ]
 };
 
@@ -22,10 +22,12 @@ test("customer report keeps footprint and security assessments explicitly separa
   assert.match(report, /Vibe-Footprint: 66\/100/);
   assert.match(report, /Public security baseline: 78\/100/);
   assert.match(report, /two scores are independent/);
-  assert.match(report, /Content Security Policy/);
-  assert.doesNotMatch(report, /Manual design review/);
+  assert.match(report, /Category overview/);
+  assert.match(report, /security:\*\* 3 observed issues/);
+  assert.match(report, /require an unlocked full report/);
+  assert.doesNotMatch(report, /Content Security Policy/);
   assert.doesNotMatch(report, /AI probability/i);
-  assert.equal(customerReportFilename(result, "en"), "vibefootprint-example.com-2026-08-19-en.md");
+  assert.equal(customerReportFilename(result, "en"), "vibefootprint-summary-example.com-2026-08-19-en.md");
 });
 
 test("client retries transient outcomes exactly once and never hammers rate limits", () => {

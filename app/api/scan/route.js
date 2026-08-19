@@ -6,12 +6,12 @@ import { extractSameOriginManifest, selectSameOriginAssets } from "../../../lib/
 import { describeEvidenceCoverage } from "../../../lib/evidence-coverage.mjs";
 import { pinnedPublicFetch } from "../../../lib/pinned-public-fetch.mjs";
 import { collectPortablePageMetrics } from "../../../lib/portable-page-metrics.mjs";
+import { buildPublicCategoryOverview, summarizeSecurityChecks } from "../../../lib/public-report-summary.mjs";
 import { normalizePublicUrl } from "../../../lib/public-url-policy.mjs";
 import {
   auditSecurity,
   buildRecommendations,
   collectProductionExtendedMetrics,
-  explainScore,
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
@@ -177,9 +177,9 @@ export async function POST(request) {
     });
     const similarityRatio = scoreV03(candidateModel, featureMap);
     const score = Math.round(similarityRatio * 100);
-    const scoreContributions = explainScore(candidateModel, featureMap);
     const security = auditSecurity(fetched.url, fetched.headers);
     const recommendations = buildRecommendations({ analysis, pageMetrics, extendedMetrics, security });
+    const categoryOverview = buildPublicCategoryOverview({ recommendations, securityChecks: security.checks });
     const evidenceCoverage = describeEvidenceCoverage({
       assetCandidates: assetCandidates.length,
       discoveredAssets: assetSelection.discovered.total,
@@ -197,52 +197,16 @@ export async function POST(request) {
       resolvedUrl: fetched.url,
       httpStatus: fetched.status,
       analyzedAt: new Date().toISOString(),
-      assetScan: {
-        discovered: assetSelection.discovered.total,
-        selected: assetSelection.selected.total,
-        ignoredByCap: assetSelection.ignoredByCap,
-        candidates: assetCandidates.length,
-        fetched: fetchedAssets.length,
-        errors: assetResults.length - fetchedAssets.length,
-        bytes: analysis.metrics.assetBytes,
-        truncated: analysis.metrics.truncatedAssets
-      },
-      manifestScan: {
-        linked: Boolean(manifestUrl),
-        fetched: Boolean(manifestResult),
-        validJson: manifestAnalysis.validJson,
-        bytes: manifestResult?.bytes || 0,
-        truncated: manifestResult?.truncated || false
-      },
       vibeScore: {
         score,
         band: getScoreBand(score),
         meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeFootprint-Korpus.",
         caveat: "Der Wert misst weder den Anteil generierten Codes noch die Autorenschaft."
       },
-      scoreDrivers: {
-        raises: scoreContributions.filter((item) => item.summaryVisible && item.direction === "raises").slice(0, 5),
-        lowers: scoreContributions.filter((item) => item.summaryVisible && item.direction === "lowers").slice(0, 4),
-        unit: "relative-logit-contribution",
-        baseLogit: candidateModel.intercept
-      },
       evidenceCoverage,
-      security,
-      recommendations,
-      model: {
-        version: release.model.version,
-        releaseStatus: release.status,
-        independentHoldout: release.confirmation.total,
-        successfulHoldoutScans: release.confirmation.successful,
-        technicalCoverage: release.confirmation.coverage,
-        precision: release.confirmation.precision,
-        recall: release.confirmation.recall,
-        f1: release.confirmation.f1,
-        confirmationStatus: release.confirmation.status,
-        performanceClaimCurrent: release.confirmation.currentPerformanceClaim
-      },
-      ...analysis,
-      warning: "Der 0–100-Index misst unkalibrierte Ähnlichkeit mit dem validierten Korpus. Er misst weder den Anteil generierten Codes noch die Autorenschaft."
+      security: { score: security.score, counts: summarizeSecurityChecks(security.checks) },
+      categoryOverview,
+      reportAccess: { status: "locked", previewOnly: true, entitlementRequired: true }
     };
     console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version }));
     return Response.json(payload, { headers: responseHeaders });

@@ -43,20 +43,15 @@ const validSuccess = () => ({
     affectsScore: false,
     scope: { html: "fetched", assetsDiscovered: 0, assetsSelected: 0, assetCandidates: 0, assetsFetched: 0, assetErrors: 0, truncatedAssets: 0, manifestLinked: false, manifestFetched: false }
   },
-  security: { score: 50, checks: [] },
-  scoreDrivers: { raises: [], lowers: [], unit: "relative-logit-contribution", baseLogit: 0 },
-  recommendations: [],
-  assetScan: { discovered: 0, selected: 0, ignoredByCap: 0, candidates: 0, fetched: 0, errors: 0, bytes: 0, truncated: 0 },
-  manifestScan: { linked: false, fetched: false, validJson: false, bytes: 0, truncated: false },
-  model: { version: "v0.4", releaseStatus: "RESEARCH_BETA", independentHoldout: 100, successfulHoldoutScans: 99, technicalCoverage: .99, precision: .85, recall: .85, f1: .85, confirmationStatus: "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE", performanceClaimCurrent: false },
-  directEvidence: [],
-  contextEvidence: [],
-  headerEvidence: [],
-  manifestEvidence: [],
-  stackSignals: [],
-  structuralHints: [],
-  metrics: { htmlBytes: 100 },
-  warning: "A bounded research estimate."
+  security: { score: 50, counts: { pass: 1, review: 2, missing: 3 } },
+  categoryOverview: [
+    { id: "security", issueCount: 5, status: "attention" },
+    { id: "design", issueCount: 2, status: "review" },
+    { id: "engineering", issueCount: 1, status: "review" },
+    { id: "accessibility", issueCount: 0, status: "no-observed-issue" },
+    { id: "content", issueCount: 0, status: "no-observed-issue" }
+  ],
+  reportAccess: { status: "locked", previewOnly: true, entitlementRequired: true }
 });
 
 test("normalizes only credential-free HTTP(S) URLs on standard ports", () => {
@@ -68,18 +63,18 @@ test("normalizes only credential-free HTTP(S) URLs on standard ports", () => {
   assert.throws(() => normalizePublicUrl("https://user:pass@example.com"), /Zugangsdaten/);
 });
 
-test("accepts both boolean performance-claim states in the scan response contract", () => {
-  const currentClaim = validSuccess();
-  currentClaim.model.performanceClaimCurrent = true;
-  assert.equal(parseScanPayload(currentClaim), currentClaim);
-
-  const legacyClaim = validSuccess();
-  legacyClaim.model.performanceClaimCurrent = false;
-  assert.equal(parseScanPayload(legacyClaim), legacyClaim);
-
-  const invalidClaim = validSuccess();
-  invalidClaim.model.performanceClaimCurrent = "false";
-  assert.equal(parseScanPayload(invalidClaim), null);
+test("accepts the summary-only access state and rejects exposed premium detail", () => {
+  const summary = validSuccess();
+  assert.equal(parseScanPayload(summary), summary);
+  const exposed = validSuccess();
+  exposed.recommendations = [{ title: "Leaked finding" }];
+  assert.equal(parseScanPayload(exposed), null);
+  const exposedEvidenceCount = validSuccess();
+  exposedEvidenceCount.directEvidenceCount = 2;
+  assert.equal(parseScanPayload(exposedEvidenceCount), null);
+  const unlocked = validSuccess();
+  unlocked.reportAccess.status = "unlocked";
+  assert.equal(parseScanPayload(unlocked), null);
 });
 
 test("blocks mapped, private and special IP ranges while allowing public examples", () => {
@@ -161,7 +156,7 @@ test("runtime scan contract rejects partial success and incompatible versions", 
   assert.ok(parseScanPayload(validFailure()));
   assert.ok(parseScanPayload(validSuccess()));
   const incomplete = validSuccess();
-  delete incomplete.assetScan.discovered;
+  delete incomplete.security.counts.pass;
   assert.equal(parseScanPayload(incomplete), null);
   const misleading = validSuccess();
   misleading.evidenceCoverage = { ...misleading.evidenceCoverage, level: "high-confidence", affectsScore: true };
@@ -195,7 +190,7 @@ test("production release manifest binds the frozen model hash and confirmation c
   assert.equal(release.confirmation.status, "LEGACY_CAPTURE_COMPLETENESS_UNVERIFIABLE");
   assert.equal(release.confirmation.currentPerformanceClaim, false);
   assert.equal(release.status, "RESEARCH_BETA");
-  assert.equal(release.productVersion, "0.4.2");
+  assert.equal(release.productVersion, "0.5.0");
   assert.equal(release.launchSafety.publicTransport, "DNS-validated and peer-IP-pinned HTTP(S) connections");
   assert.equal(release.launchSafety.sharedEdgeRateLimitRequired, true);
   assert.equal(release.launchSafety.sharedEdgeRateLimitActive, true);
