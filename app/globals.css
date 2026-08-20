@@ -41,8 +41,8 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .topbar nav a:hover { color: var(--green); }
 .version { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.55); color: var(--green); font-size: 12px; font-weight: 700; }
 .language-switcher { display: flex; gap: 4px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.6); }
-.language-switcher button { min-width: 35px; padding: 5px 7px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; cursor: pointer; }
-.language-switcher button:hover, .language-switcher button.active { background: var(--ink); color: white; }
+.language-switcher a { min-width: 35px; padding: 5px 7px; display: inline-flex; align-items: center; justify-content: center; gap: 4px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); font-size: 11px; font-weight: 800; text-decoration: none; }
+.language-switcher a:hover, .language-switcher a.active { background: var(--ink); color: white; }
 
 .hero { width: min(1280px, calc(100% - 48px)); margin: 20px auto 0; padding: clamp(48px, 6vw, 78px); display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(390px, .78fr); gap: clamp(48px, 7vw, 100px); align-items: center; border-radius: 30px; background: var(--ink); color: white; position: relative; overflow: hidden; }
 .hero::before { content: ""; position: absolute; width: 620px; height: 620px; right: -290px; top: -380px; border: 95px solid rgba(102, 192, 173, .1); border-radius: 50%; }
@@ -547,6 +547,10 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .method-evaluation-boundary { margin-top: 14px; padding: 18px 22px; display: grid; grid-template-columns: minmax(180px, .35fr) minmax(320px, 1fr); gap: 28px; border: 1px solid #c8d5d0; border-radius: 14px; background: #edf3f0; }
 .method-evaluation-boundary strong { font-family: "Manrope", sans-serif; font-size: 15px; color: var(--green-dark); }
 .method-evaluation-boundary p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+.seo-discovery-links { margin-top: 17px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 14px; background: var(--surface-soft); overflow: hidden; }
+.seo-discovery-links a { min-height: 72px; padding: 16px 19px; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-right: 1px solid var(--line); color: var(--ink); font-size: 13px; font-weight: 800; text-decoration: none; }
+.seo-discovery-links a:last-child { border-right: 0; }
+.seo-discovery-links a:hover { background: white; color: var(--green); }
 .method-validation { margin-top: 17px; padding: 25px; display: grid; grid-template-columns: repeat(3, minmax(150px, .62fr)) minmax(280px, 1.14fr); gap: 25px; align-items: center; border-radius: 14px; background: var(--surface-soft); }
 .method-validation div { min-height: 92px; padding-right: 22px; display: flex; flex-direction: column; border-right: 1px solid #cfd7d2; }
 .method-validation span { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -611,7 +615,7 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .topbar { width: min(100% - 32px, 1280px); height: 68px; }
   .topbar nav { gap: 13px; }
   .topbar nav .method-link { display: none; }
-  .language-switcher button { min-width: 31px; padding: 5px; }
+  .language-switcher a { min-width: 31px; padding: 5px; }
   .hero { width: calc(100% - 24px); margin-top: 6px; padding: 39px 22px 22px; gap: 34px; border-radius: 22px; }
   .hero h1 { font-size: clamp(42px, 13vw, 62px); }
   .lede { font-size: 17px; }
@@ -674,6 +678,9 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .method { padding: 62px 20px; }
   .method-grid { grid-template-columns: 1fr; }
   .method-evaluation-boundary { grid-template-columns: 1fr; gap: 8px; }
+  .seo-discovery-links { grid-template-columns: 1fr; }
+  .seo-discovery-links a { border-right: 0; border-bottom: 1px solid var(--line); }
+  .seo-discovery-links a:last-child { border-bottom: 0; }
   .method-grid article { padding: 23px; }
   .method-grid article > span { margin-bottom: 20px; }
   .method-limitations > div { grid-template-columns: 1fr; gap: 15px; }

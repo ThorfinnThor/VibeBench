@@ -1,0 +1,76 @@
+.page { min-width: 320px; overflow: hidden; }
+.header { width: min(1180px, calc(100% - 48px)); height: 78px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.header nav { display: flex; align-items: center; gap: 26px; }
+.header nav a { color: var(--muted); font-size: 14px; font-weight: 700; text-decoration: none; }
+.header nav a:hover { color: var(--green); }
+.header .language { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.7); }
+.hero { padding: 70px max(24px, calc((100vw - 1180px) / 2)) 54px; background: var(--ink); color: white; }
+.breadcrumb { margin-bottom: 54px; display: flex; flex-wrap: wrap; gap: 9px; color: #9eb0a9; font-size: 12px; }
+.breadcrumb a { color: #9fdacc; text-decoration: none; }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(320px, .75fr); gap: clamp(48px, 8vw, 110px); align-items: end; }
+.hero h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 6vw, 82px); line-height: .99; letter-spacing: -.065em; }
+.intro { margin: 0 0 28px; color: #c2cec9; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.55; }
+.primaryCta, .scanCta > a { min-height: 54px; padding: 14px 18px; display: inline-flex; align-items: center; justify-content: space-between; gap: 34px; border-radius: 10px; background: #8dd3c4; color: var(--ink); font-weight: 800; text-decoration: none; }
+.primaryCta span, .scanCta > a span { font-size: 22px; }
+.boundary { margin-top: 55px; padding: 18px 21px; display: grid; grid-template-columns: 180px 1fr; gap: 28px; border: 1px solid rgba(159,218,204,.28); border-radius: 12px; background: rgba(159,218,204,.08); }
+.boundary strong { color: #9fdacc; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.boundary p { margin: 0; color: #c7d2cd; font-size: 14px; }
+.body { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 82px 0 90px; display: grid; grid-template-columns: 220px minmax(0, 760px); gap: clamp(50px, 9vw, 120px); justify-content: center; }
+.sideNav { height: fit-content; padding: 19px 0; display: flex; flex-direction: column; position: sticky; top: 24px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.sideNav strong { margin-bottom: 12px; color: var(--green); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.sideNav a { padding: 8px 0; color: var(--muted); font-size: 12px; line-height: 1.35; text-decoration: none; }
+.sideNav a:hover { color: var(--green); }
+.content section { padding: 0 0 60px; scroll-margin-top: 24px; }
+.content section + section { padding-top: 58px; border-top: 1px solid var(--line); }
+.content section > span { color: var(--green); font-family: "Manrope", sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .09em; }
+.content h2 { margin: 11px 0 24px; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; letter-spacing: -.052em; }
+.content p { margin: 0 0 20px; color: var(--muted); font-size: 17px; line-height: 1.75; }
+.content ul { margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; list-style: none; }
+.content li { padding: 16px 17px 16px 42px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); color: #33413c; font-size: 14px; position: relative; }
+.content li::before { content: "✓"; position: absolute; left: 16px; color: var(--green); font-weight: 900; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; color: var(--ink); font-family: "Manrope", sans-serif; font-weight: 800; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary b { font-size: 24px; font-weight: 400; transition: transform .2s; }
+.faq details[open] summary b { transform: rotate(45deg); }
+.faq details p { padding-right: 38px; font-size: 15px; }
+.scanCta { width: min(1180px, calc(100% - 48px)); margin: 0 auto 30px; padding: clamp(32px, 5vw, 58px); display: grid; grid-template-columns: 1fr auto; gap: 55px; align-items: end; border-radius: 24px; background: #dcebe6; }
+.scanCta h2 { max-width: 700px; margin: 0 0 10px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; letter-spacing: -.055em; }
+.scanCta p:not(:global(.eyebrow)) { max-width: 680px; margin: 0; color: var(--muted); }
+.scanCta > a { background: var(--ink); color: white; }
+.related { width: min(1180px, calc(100% - 48px)); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.related a { min-height: 85px; padding: 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-right: 1px solid var(--line); color: var(--ink); font-weight: 800; text-decoration: none; }
+.related a:last-child { border-right: 0; }
+.related a:hover { background: rgba(255,255,255,.55); color: var(--green); }
+.footer { width: min(1180px, calc(100% - 48px)); min-height: 120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+.footer p { margin: 0; color: var(--muted); font-size: 13px; }
+@media (max-width: 850px) {
+  .heroGrid { grid-template-columns: 1fr; }
+  .body { grid-template-columns: 1fr; }
+  .sideNav { display: none; }
+  .scanCta { grid-template-columns: 1fr; gap: 28px; }
+  .scanCta > a { width: fit-content; }
+  .related { grid-template-columns: 1fr 1fr; }
+  .related a:nth-child(2) { border-right: 0; }
+  .related a:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 620px) {
+  .header { width: calc(100% - 32px); height: 68px; }
+  .header nav > a:not(.language):not(:first-child) { display: none; }
+  .header nav { gap: 12px; }
+  .hero { padding: 48px 20px 38px; }
+  .breadcrumb { margin-bottom: 38px; }
+  .hero h1 { font-size: 44px; }
+  .boundary { grid-template-columns: 1fr; gap: 6px; }
+  .body { width: calc(100% - 40px); padding: 58px 0 65px; }
+  .content ul { grid-template-columns: 1fr; }
+  .scanCta, .related, .footer { width: calc(100% - 24px); }
+  .scanCta { padding: 27px 22px; }
+  .related { grid-template-columns: 1fr; }
+  .related a { border-right: 0; border-bottom: 1px solid var(--line); }
+  .related a:last-child { border-bottom: 0; }
+  .footer { padding: 28px 0; }
+  .footer p { display: none; }
+}
+

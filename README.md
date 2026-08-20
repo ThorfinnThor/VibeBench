@@ -97,6 +97,19 @@ Produktionsverbindung, Ressourcenlimits, Vercel-Firewall-Regel und der
 Release-/Rollback-Check stehen in
 [`outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md`](outputs/VIBEBENCH_CUSTOMER_BETA_LAUNCH_2026-08-16.md).
 
+## SEO und Google Search Console
+
+Die technische SEO-Basis umfasst kanonische URLs, englische und deutsche
+Sprachalternativen, `robots.txt`, `sitemap.xml`, strukturierte Daten und
+individuelle Metadaten für die öffentlichen Ratgeberseiten. Der aktuelle Stand
+und die einmaligen Produktionsschritte stehen in
+[`outputs/VIBEFOOTPRINT_SEO_FOUNDATION_2026-08-20.md`](outputs/VIBEFOOTPRINT_SEO_FOUNDATION_2026-08-20.md).
+
+Vor der Search-Console-Verifizierung müssen in Vercel die finale Domain als
+`NEXT_PUBLIC_SITE_URL` und – bei Verwendung der HTML-Tag-Methode – der reine
+Google-Token als `GOOGLE_SITE_VERIFICATION` gesetzt werden. Danach ist ein
+Redeploy erforderlich.
+
 ## Produktions-Smoke-Test
 
 Der versionierte Testlauf gegen die veröffentlichte App umfasst 10 gelabelte
