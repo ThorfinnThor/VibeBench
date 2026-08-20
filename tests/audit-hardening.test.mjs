@@ -75,6 +75,9 @@ test("accepts the summary-only access state and rejects exposed premium detail",
   const unlocked = validSuccess();
   unlocked.reportAccess.status = "unlocked";
   assert.equal(parseScanPayload(unlocked), null);
+  const testing = validSuccess();
+  testing.reportAccess = { status: "testing", previewOnly: false, entitlementRequired: false };
+  assert.equal(parseScanPayload(testing), testing);
 });
 
 test("blocks mapped, private and special IP ranges while allowing public examples", () => {

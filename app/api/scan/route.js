@@ -16,6 +16,7 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
+import { publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
 import { acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
@@ -124,6 +125,7 @@ export async function POST(request) {
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
   let releaseAdmission = () => {};
   try {
+    const reportMode = resolveReportAccessMode(process.env.VIBEFOOTPRINT_REPORT_MODE);
     const adminAuthorization = adminPreviewAuthorization(request.headers.get(ADMIN_PREVIEW_HEADER), process.env.VIBEFOOTPRINT_ADMIN_PREVIEW_KEY);
     if (adminAuthorization.requested && !adminAuthorization.configured) {
       return Response.json({
@@ -238,9 +240,10 @@ export async function POST(request) {
       evidenceCoverage,
       security: { score: security.score, counts: summarizeSecurityChecks(security.checks) },
       categoryOverview,
-      reportAccess: { status: "locked", previewOnly: true, entitlementRequired: true }
+      reportAccess: publicReportAccess(reportMode)
     };
-    if (adminAuthorization.authorized) {
+    const fullReportEnabled = reportMode === REPORT_ACCESS_MODE.FREE_TEST || adminAuthorization.authorized;
+    if (fullReportEnabled) {
       payload.adminReport = buildAdminReport({
         model: candidateModel,
         features: featureMap,
@@ -263,7 +266,7 @@ export async function POST(request) {
         headers: fetched.headers
       });
     }
-    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, adminPreview: adminAuthorization.authorized }));
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, adminPreview: adminAuthorization.authorized }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);

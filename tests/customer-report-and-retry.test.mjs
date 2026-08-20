@@ -30,6 +30,15 @@ test("customer report keeps footprint and security assessments explicitly separa
   assert.equal(customerReportFilename(result, "en"), "vibefootprint-summary-example.com-2026-08-19-en.md");
 });
 
+test("free testing summaries disclose that the full report is included", () => {
+  const report = buildCustomerReport({
+    ...result,
+    reportAccess: { status: "testing", previewOnly: false, entitlementRequired: false }
+  }, "en");
+  assert.match(report, /complete detailed report is included/i);
+  assert.doesNotMatch(report, /require an unlocked full report/i);
+});
+
 test("client retries transient outcomes exactly once and never hammers rate limits", () => {
   assert.equal(MAX_CLIENT_SCAN_ATTEMPTS, 2);
   assert.equal(shouldAutomaticallyRetry({ code: "target_timeout", retryable: true }, 1), true);

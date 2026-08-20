@@ -222,6 +222,16 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .locked-report-copy .admin-key-row button { min-height: 46px; padding: 10px 13px; justify-content: center; font-size: 12px; }
 .admin-report-access form > small { margin-top: 8px; display: block; color: var(--muted); font-size: 10px; line-height: 1.4; }
 .locked-report-copy .admin-open-report { width: 100%; min-height: 44px; margin-top: 12px; background: var(--green); }
+.testing-report { margin-top: 76px; padding: clamp(30px, 4vw, 50px); display: flex; align-items: center; justify-content: space-between; gap: 40px; border: 1px solid #a7cfc3; border-radius: 26px; background: linear-gradient(145deg, #f5fbf8 0%, #e4f2ed 100%); box-shadow: 0 24px 70px rgba(21,106,91,.1); }
+.testing-report > div { max-width: 790px; }
+.testing-report .eyebrow { color: var(--green); }
+.testing-report h2 { margin: 12px 0 14px; font-size: clamp(32px, 4vw, 50px); line-height: 1.05; letter-spacing: -.055em; }
+.testing-report p { color: var(--muted); }
+.testing-report-badge { width: fit-content; padding: 7px 10px; display: flex; align-items: center; gap: 7px; border-radius: 999px; background: #cce8df; color: #0d5e50; font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.testing-report-badge i { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; font-style: normal; }
+.testing-report > button { min-width: 230px; min-height: 54px; padding: 13px 18px; display: flex; align-items: center; justify-content: space-between; gap: 22px; border: 0; border-radius: 11px; background: var(--ink); color: white; font-weight: 800; cursor: pointer; }
+.testing-report > button:hover { background: #263a34; transform: translateY(-1px); }
+.testing-report > button:disabled { cursor: wait; opacity: .55; }
 .locked-preview { min-height: 590px; padding: 20px; display: grid; position: relative; border: 1px solid #dca89e; border-radius: 20px; background: #fff; overflow: hidden; box-shadow: 0 24px 45px rgba(81,31,24,.13); }
 .locked-preview::before { content: ""; width: 150px; height: 150px; position: absolute; right: -45px; top: -50px; border: 25px solid rgba(229,101,79,.1); border-radius: 50%; }
 .locked-preview-document { padding: 18px; filter: blur(4.5px); opacity: .72; user-select: none; }
@@ -515,6 +525,7 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .technical-grid { grid-template-columns: repeat(2, 1fr); }
   .category-overview-grid { grid-template-columns: repeat(3, 1fr); }
   .locked-report { grid-template-columns: 1fr; }
+  .testing-report { align-items: flex-start; flex-direction: column; }
   .sample-report-backdrop { padding: 14px; }
 }
 
@@ -528,7 +539,7 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
 }
 
 @media print {
-  .skip-link, .topbar, .hero, .score-explainer, .stale-note, .error-card, .drivers-section, .filter-row, .guidance-list, .technical-details, .locked-report, .method, footer, .report-actions, .report-status, .clear-history-button { display: none !important; }
+  .skip-link, .topbar, .hero, .score-explainer, .stale-note, .error-card, .drivers-section, .filter-row, .guidance-list, .technical-details, .locked-report, .testing-report, .method, footer, .report-actions, .report-status, .clear-history-button { display: none !important; }
   body { background: white; }
   .results { width: 100%; margin: 0; }
   .score-hero, .score-scale, .customer-report, .recommendations-section, .security-section { break-inside: avoid; box-shadow: none; }
@@ -577,7 +588,8 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .category-overview-grid { grid-template-columns: 1fr; }
   .category-card { min-height: 145px; }
   .category-card h3 { margin-top: 23px; }
-  .locked-report { margin-top: 55px; padding: 28px 21px; }
+  .locked-report, .testing-report { margin-top: 55px; padding: 28px 21px; }
+  .testing-report > button { width: 100%; min-width: 0; }
   .locked-actions { grid-template-columns: 1fr; }
   .admin-key-row, .admin-driver-columns, .admin-security-grid, .admin-launch-grid { grid-template-columns: 1fr; }
   .admin-report-export-bar { align-items: flex-start; flex-direction: column; }
