@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildScanUsageProperties, getDurationBucket, SCAN_USAGE_EVENT } from "../lib/scan-usage-analytics.mjs";
+import { buildScanUsageProperties, getDurationBucket, SCAN_USAGE_EVENT } from "../lib/scan-usage-event.mjs";
 
 test("uses one stable anonymous event name", () => {
   assert.equal(SCAN_USAGE_EVENT, "vibefootprint_scan");

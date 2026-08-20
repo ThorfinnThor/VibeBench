@@ -3,6 +3,7 @@
 import { CSSProperties, FormEvent, ReactNode, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 import { parseScanPayload } from "../lib/scan-contract.mjs";
 import { parseAdminReport } from "../lib/admin-report-contract.mjs";
 import { adminReportFilename, buildAdminReportMarkdown } from "../lib/admin-report-export.mjs";
@@ -13,6 +14,7 @@ import { buildCustomerReport, customerReportFilename } from "../lib/customer-rep
 import { clearLocalScanHost, compareLocalScans, LOCAL_SCAN_HISTORY_KEY, parseLocalScanHistory, previousLocalScan, recordLocalScan, toLocalScanSnapshot } from "../lib/local-scan-history.mjs";
 import { premiumReportSections } from "../lib/premium-report-structure.mjs";
 import { estimatedScanProgress, remainingRevealDelay, REPORT_READY_HOLD_MS, scanStageIndex } from "../lib/scan-progress.mjs";
+import { buildScanUsageProperties, SCAN_USAGE_EVENT } from "../lib/scan-usage-event.mjs";
 import release from "../release/v0.4.json";
 
 type TechnicalOutcome = { code: string; title: string; summary: string; action: string; retryable: boolean };
@@ -341,6 +343,13 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
           if (sequence !== scanSequenceRef.current) return;
           if (!parsed || (requestedAdminKey && parsed.ok && !protectedReport)) failedResult = { apiVersion: release.apiVersion, ok: false, requestId: responseRequestId, technicalOutcome: incompatibleTechnicalOutcome };
           else if (parsed.ok) {
+            if (!requestedAdminKey) {
+              track(SCAN_USAGE_EVENT, buildScanUsageProperties({
+                outcome: "success",
+                durationMs: Date.now() - scanStartedAt,
+                evidenceBreadth: parsed.evidenceCoverage?.level
+              }));
+            }
             setTechnicalScanComplete(true);
             const revealReady = await waitForDelay(remainingRevealDelay(scanStartedAt), controller.signal);
             if (!revealReady || sequence !== scanSequenceRef.current) {
@@ -382,6 +391,14 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
             return;
           }
           continue;
+        }
+        if (!requestedAdminKey) {
+          track(SCAN_USAGE_EVENT, buildScanUsageProperties({
+            outcome: "failed",
+            durationMs: Date.now() - scanStartedAt,
+            errorCode: failedResult.technicalOutcome.code,
+            retryable: failedResult.technicalOutcome.retryable
+          }));
         }
         setErrorResult(failedResult);
         return;

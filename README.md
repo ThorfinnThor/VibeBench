@@ -114,14 +114,14 @@ weiterleitet.
 
 ## Interne Scan-Nutzungsmessung
 
-Produktive Scan-Anfragen erzeugen nach Abschluss genau ein anonymes Vercel-
-Analytics-Event namens `vibefootprint_scan`. In Vercel unter **Analytics →
+Öffentliche Scan-Anfragen erzeugen nach ihrem terminalen Ergebnis genau ein
+anonymes Vercel-Analytics-Event namens `vibefootprint_scan`. In Vercel unter **Analytics →
 Events → vibefootprint_scan** lässt es sich nach `outcome` in erfolgreiche und
 fehlgeschlagene Scans aufteilen. Zusätzlich werden nur grobe Laufzeit-,
 Auswertungsbreiten- und Fehlerkategorien erfasst. Ziel-URLs, Domains,
 IP-Adressen, Request-IDs und Scan-Ergebnisse werden nicht als Eventdaten
-übermittelt. Preview- und lokale Deployments zählen nicht mit; ein Ausfall der
-Analytics-Annahme beeinflusst die Scan-Antwort nicht.
+übermittelt. Admin-Vorschau-Scans zählen nicht mit; der bestehende clientseitige
+Vercel-Analytics-Kanal übernimmt die Übertragung nach dem Scan.
 
 ## Produktions-Smoke-Test
 
