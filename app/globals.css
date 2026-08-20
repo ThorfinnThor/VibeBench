@@ -314,6 +314,11 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .sample-report-footer button { min-height: 42px; padding: 9px 14px; border: 0; border-radius: 8px; background: var(--ink); color: white; font-weight: 800; cursor: pointer; }
 .admin-full-report { width: min(1180px, 100%); }
 .admin-report-notice { border-color: #a8d7ca; background: #e7f5f0; color: var(--green-dark); }
+.admin-report-export-bar { min-height: 66px; padding: 11px 26px; display: flex; align-items: center; justify-content: space-between; gap: 18px; border-bottom: 1px solid var(--line); background: white; }
+.admin-report-export-bar > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-report-export-bar button { min-height: 40px; padding: 9px 13px; border: 1px solid var(--ink); border-radius: 8px; background: white; color: var(--ink); font-weight: 800; cursor: pointer; }
+.admin-report-export-bar button:first-child { background: var(--ink); color: white; }
+.admin-report-export-bar p { margin: 0; color: var(--green); font-size: 11px; font-weight: 800; }
 .admin-report-boundary { margin-top: 18px; padding: 12px 14px; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; background: var(--green-light); color: var(--green-dark) !important; }
 .admin-driver-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .admin-driver-columns > article { padding: 18px; border-radius: 12px; background: var(--surface-soft); }
@@ -345,10 +350,15 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .admin-security-check b { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
 .admin-security-check p, .admin-security-check small { color: var(--muted); font-size: 11px; line-height: 1.5; }
 .admin-subheading { margin: 24px 0 10px; font-size: 15px; }
-.admin-fix-prompts details, .admin-technical-details { border: 1px solid var(--line); border-radius: 9px; background: var(--surface-soft); overflow: hidden; }
-.admin-fix-prompts details + details { margin-top: 7px; }
-.admin-fix-prompts summary, .admin-technical-details summary { padding: 12px 14px; display: flex; gap: 10px; cursor: pointer; list-style: none; }
-.admin-fix-prompts summary b { margin-left: auto; }
+.admin-prompt-card, .admin-technical-details { border: 1px solid var(--line); border-radius: 9px; background: var(--surface-soft); overflow: hidden; }
+.admin-prompt-card + .admin-prompt-card { margin-top: 8px; }
+.admin-prompt-card > header { padding: 10px 12px; display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; background: white; }
+.admin-prompt-card > header span { color: var(--muted); font-size: 11px; font-weight: 900; }
+.admin-prompt-card > header strong { font-size: 12px; }
+.admin-prompt-card > header button { min-height: 34px; padding: 7px 10px; border: 0; border-radius: 7px; background: var(--green); color: white; font-size: 10px; font-weight: 900; cursor: pointer; }
+.admin-prompt-card details { border-top: 1px solid var(--line); }
+.admin-prompt-card summary, .admin-technical-details summary { padding: 12px 14px; display: flex; gap: 10px; cursor: pointer; list-style: none; }
+.admin-prompt-card summary b { margin-left: auto; }
 .admin-fix-prompts pre, .admin-technical-details pre { max-height: 420px; margin: 0; padding: 16px; border-top: 1px solid var(--line); background: #15231f; color: #e7f5f0; font-size: 10px; line-height: 1.55; white-space: pre-wrap; overflow: auto; }
 .admin-launch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .admin-launch-grid article { padding: 12px; display: flex; gap: 10px; border: 1px solid var(--line); border-radius: 9px; }
@@ -527,6 +537,11 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .security-checks { border-color: #bbc5c0; }
   .security-checks details { border-color: #bbc5c0; }
   .security-checks details > p, .security-checks summary small { color: #33413c; }
+  body:has(.admin-report-backdrop) .results > :not(.admin-report-backdrop) { display: none !important; }
+  body:has(.admin-report-backdrop) .admin-report-backdrop { padding: 0; display: block; position: static; background: white; overflow: visible; backdrop-filter: none; }
+  body:has(.admin-report-backdrop) .admin-full-report { width: 100%; border-radius: 0; box-shadow: none; overflow: visible; }
+  body:has(.admin-report-backdrop) .admin-report-export-bar, body:has(.admin-report-backdrop) .sample-report-topbar button { display: none !important; }
+  body:has(.admin-report-backdrop) .sample-report-block { break-inside: avoid; }
 }
 
 @media (max-width: 760px) {
@@ -565,6 +580,9 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .locked-report { margin-top: 55px; padding: 28px 21px; }
   .locked-actions { grid-template-columns: 1fr; }
   .admin-key-row, .admin-driver-columns, .admin-security-grid, .admin-launch-grid { grid-template-columns: 1fr; }
+  .admin-report-export-bar { align-items: flex-start; flex-direction: column; }
+  .admin-prompt-card > header { grid-template-columns: 28px 1fr; }
+  .admin-prompt-card > header button { grid-column: 2; justify-self: start; }
   .admin-finding { grid-template-columns: 30px 1fr; }
   .admin-finding > b { grid-column: 2; justify-self: start; }
   .locked-preview { min-height: 530px; padding: 10px; }
