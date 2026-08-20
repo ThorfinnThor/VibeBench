@@ -269,13 +269,13 @@ export async function POST(request) {
     }
     const durationMs = Date.now() - startedAt;
     console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, adminPreview: adminAuthorization.authorized }));
-    after(() => trackScanUsage({ outcome: "success", durationMs, evidenceBreadth: evidenceCoverage.level }));
+    after(() => trackScanUsage({ outcome: "success", durationMs, evidenceBreadth: evidenceCoverage.level }, { request }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);
     const durationMs = Date.now() - startedAt;
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
-    after(() => trackScanUsage({ outcome: "failed", durationMs, errorCode: technicalOutcome.code, retryable: technicalOutcome.retryable }));
+    after(() => trackScanUsage({ outcome: "failed", durationMs, errorCode: technicalOutcome.code, retryable: technicalOutcome.retryable }, { request }));
     return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   } finally {
     releaseRedirectAdmissions.reverse().forEach((release) => release());
