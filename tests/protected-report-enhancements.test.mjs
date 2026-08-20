@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildCodingAgentPrompt, buildTopFixPack, classifyProtectedFinding } from "../lib/protected-report-enhancements.mjs";
+import { buildCodingAgentPrompt, buildDistinctivenessReviewPrompt, buildTopFixPack, classifyProtectedFinding } from "../lib/protected-report-enhancements.mjs";
 
 const findings = [
   { id: "VF-CTX-BUILDER-PROVENANCE", category: "design", priority: "low", title: "Builder context", why: "A public marker was observed.", action: "Review it.", basis: "context" },
@@ -29,4 +29,19 @@ test("top fix pack contains at most three actionable priority findings", () => {
   assert.deepEqual(pack.map((item) => item.id), ["VF-ENG-ASSET-PAYLOAD", "VF-SEC-CSP", "VF-DES-GENERIC-UI"]);
   assert.equal(pack.some((item) => item.id === "VF-CTX-BUILDER-PROVENANCE"), false);
   assert.equal(pack.every((item) => typeof item.prompt === "string"), true);
+});
+
+test("high similarity can produce an optional anti-gaming distinctiveness review without inventing a defect", () => {
+  const prompt = buildDistinctivenessReviewPrompt({
+    score: 91,
+    scoreBand: "Very high Vibe-Footprint",
+    scoreDrivers: { raises: [{ label: "Component repetition", description: "Above the reference baseline." }] },
+    target: "https://example.com/",
+    analyzedAt: "2026-08-20T10:00:00Z",
+    locale: "en"
+  });
+  assert.match(prompt, /public-pattern similarity index, not a defect count/);
+  assert.match(prompt, /Component repetition/);
+  assert.match(prompt, /Do not hide public evidence/);
+  assert.equal(buildDistinctivenessReviewPrompt({ score: 42, scoreBand: "Light", scoreDrivers: { raises: [] }, target: "https://example.com/", analyzedAt: "2026-08-20T10:00:00Z" }), null);
 });

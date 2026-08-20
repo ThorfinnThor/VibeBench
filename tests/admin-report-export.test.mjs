@@ -22,3 +22,10 @@ test("full admin report export follows the seven-section customer order", () => 
   assert.match(markdown, /Fix CSP safely/);
   assert.equal(adminReportFilename(report.target, "en"), "vibefootprint-full-report-example.com-en.md");
 });
+
+test("high-footprint export includes a separate optional distinctiveness review", () => {
+  const markdown = buildAdminReportMarkdown({ report, footprintScore: 91, footprintBand: "Very high Vibe-Footprint", evidenceLabel: "Standard", locale: "en" });
+  assert.match(markdown, /Optional distinctiveness review \(not a defect fix\)/);
+  assert.match(markdown, /must not be used to conceal evidence/);
+  assert.deepEqual([...markdown.matchAll(/^## (\d{2}) · (.+)$/gm)].map((match) => match[1]), ["01", "02", "03", "04", "05", "06", "07"]);
+});
