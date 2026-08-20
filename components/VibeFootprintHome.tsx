@@ -504,7 +504,7 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
     <p className="sr-only" role="status" aria-live="polite">{loading ? copy.scanning : errorResult ? technicalOutcome?.title : result ? copy.results : ""}</p>
     <header className="topbar">
       <a className="brand" href="#top" aria-label={copy.home}><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a>
-      <nav aria-label={language === "en" ? "Primary navigation" : "Seitennavigation"}><a href="#scanner">{copy.scan}</a><a className="method-link" href={language === "de" ? "/de/methodik" : "/methodology"}>{copy.methodology}</a><div className="language-switcher" aria-label={language === "en" ? "Choose language" : "Sprache wählen"}><Link href="/" className={language === "en" ? "active" : ""} hrefLang="en" lang="en" aria-current={language === "en" ? "page" : undefined}>🇬🇧 <span>EN</span></Link><Link href="/de" className={language === "de" ? "active" : ""} hrefLang="de" lang="de" aria-current={language === "de" ? "page" : undefined}>🇩🇪 <span>DE</span></Link></div></nav>
+      <nav aria-label="Primary navigation"><a href="#scanner">{copy.scan}</a><Link href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
     </header>
 
     <section className="hero" id="scanner" tabIndex={-1}>
@@ -744,13 +744,14 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
           ? "The score uses the frozen v0.4 reference corpus. Historical confirmation is retained for research provenance, but legacy response-body completeness cannot be verified; those historical metrics are not a current performance claim."
           : "Der Score nutzt das eingefrorene v0.4-Referenzkorpus. Die historische Confirmation bleibt zur Forschungsprovenienz dokumentiert; die Vollständigkeit alter Response-Bodies ist jedoch nicht verifizierbar. Diese historischen Kennzahlen sind kein aktueller Leistungsnachweis."}</p>
       </aside>
-      <nav className="seo-discovery-links" aria-label={language === "en" ? "VibeFootprint guides" : "VibeFootprint-Ratgeber"}>
-        <a href={language === "en" ? "/vibe-coding-website-checker" : "/de/vibe-coding-website-checker"}>{language === "en" ? "Vibe-coding website checker" : "Vibe-Coding-Website-Checker"}<span>→</span></a>
-        <a href={language === "en" ? "/how-to-tell-if-a-website-was-vibe-coded" : "/de/vibe-coding-website-erkennen"}>{language === "en" ? "How to recognize vibe-coding patterns" : "Vibe-Coding-Muster erkennen"}<span>→</span></a>
-        <a href={language === "en" ? "/vibe-coding-security-checklist" : "/de/vibe-coding-sicherheitscheck"}>{language === "en" ? "Vibe-coding security checklist" : "Vibe-Coding-Sicherheitscheck"}<span>→</span></a>
+      <nav className="seo-discovery-links" aria-label="VibeFootprint guides">
+        <Link href="/guides"><strong>95 practical website guides</strong><span>→</span></Link>
+        <Link href="/guides/security">Website security</Link>
+        <Link href="/guides/design">Design distinctiveness</Link>
+        <Link href="/guides/engineering">Frontend engineering</Link>
       </nav>
     </section>
 
-    <footer><a className="brand footer-brand" href={language === "de" ? "/de" : "/"}><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><a href={language === "de" ? "/de/methodik" : "/methodology"}>{copy.backToMethod}</a></footer>
+    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><Link href="/guides">Guides</Link><Link href="/methodology">{copy.backToMethod}</Link></footer>
   </main>;
 }

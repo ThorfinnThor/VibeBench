@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: page.metaTitle,
     description: page.description,
-    alternates: { canonical: `/${page.slug}`, languages: { "en-US": `/${page.slug}`, "de-DE": `/de/${page.alternateSlug}`, "x-default": `/${page.slug}` } },
-    openGraph: { title: `${page.metaTitle} | VibeFootprint`, description: page.description, url: `/${page.slug}`, locale: "en_US", alternateLocale: ["de_DE"], images: [] },
+    alternates: { canonical: `/${page.slug}` },
+    openGraph: { title: `${page.metaTitle} | VibeFootprint`, description: page.description, url: `/${page.slug}`, locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint website intelligence" }] },
     twitter: { title: `${page.metaTitle} | VibeFootprint`, description: page.description, images: [] }
   };
 }
