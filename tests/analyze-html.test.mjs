@@ -26,15 +26,15 @@ test("reports multi-signal structural hints without claiming direct attribution"
   assert.equal(result.verdict.level, "indicative");
 });
 
-test("finds a direct Bolt marker in a same-origin asset", () => {
+test("does not treat same-origin JavaScript text as direct builder provenance", () => {
   const result = analyzeHtml({
     html: '<html><script src="/assets/index.js"></script></html>',
     assetText: 'const generatedBy = "bolt.new";',
     url: "https://example.com/",
     headers: {}
   });
-  assert.equal(result.verdict.level, "direct");
-  assert.deepEqual(result.directEvidence.map((item) => [item.label, item.source, item.marker]), [["Bolt", "same-origin-asset", "Bolt generator assignment"]]);
+  assert.equal(result.verdict.level, "indeterminate");
+  assert.deepEqual(result.directEvidence, []);
 });
 
 test("does not allow requested URLs or ordinary prose to create direct evidence", () => {
@@ -117,7 +117,7 @@ test("ignores builder-looking content in inert markup and rejects deceptive badg
   }
 });
 
-test("retains distinct markers while reporting unique builder count separately", () => {
+test("retains distinct structured markers while ignoring raw asset marker text", () => {
   const result = analyzeHtml({
     html: '<meta name="generator" content="Bolt"><p data-bolt-id="1"></p>',
     assetText: 'const boltGenerated="bolt-generated"; const generatedBy="bolt.new";',
@@ -125,8 +125,8 @@ test("retains distinct markers while reporting unique builder count separately",
     headers: {}
   });
   assert.equal(result.directBuilderCount, 1);
-  assert.equal(result.directEvidence.length, 4);
-  assert.equal(new Set(result.directEvidence.map(({ marker }) => marker)).size, 4);
+  assert.equal(result.directEvidence.length, 2);
+  assert.equal(new Set(result.directEvidence.map(({ marker }) => marker)).size, 2);
 });
 
 test("reports a Google Frontend proxy response as generic context", () => {

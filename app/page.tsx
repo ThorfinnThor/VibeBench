@@ -1,6 +1,7 @@
 "use client";
 
-import { CSSProperties, FormEvent, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { CSSProperties, FormEvent, ReactNode, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 import { parseScanPayload } from "../lib/scan-contract.mjs";
 import { parseAdminReport } from "../lib/admin-report-contract.mjs";
 import { adminReportFilename, buildAdminReportMarkdown } from "../lib/admin-report-export.mjs";
@@ -67,24 +68,22 @@ type ScanResult = {
 type Language = "en" | "de";
 const LANGUAGE_STORAGE_EVENT = "vibefootprint-language-change";
 
-const germanLaunchCopy: Record<string, [string, string]> = {
-  "VF-LAUNCH-INDEXING": ["Indexierungsanweisung", "Keine öffentliche noindex-Anweisung beobachtet."],
-  "VF-LAUNCH-TITLE": ["Dokumenttitel", "Ein Dokumenttitel wurde beobachtet."],
-  "VF-LAUNCH-DESCRIPTION": ["Meta-Beschreibung", "Keine Meta-Beschreibung beobachtet."],
-  "VF-LAUNCH-LANGUAGE": ["Dokumentsprache", "Das Dokument deklariert eine Sprache."],
-  "VF-LAUNCH-VIEWPORT": ["Viewport-Metadaten", "Viewport-Metadaten wurden beobachtet."],
-  "VF-LAUNCH-CANONICAL": ["Kanonische URL", "Keine kanonische URL beobachtet."],
-  "VF-LAUNCH-H1": ["Primäre Überschrift", "Eine primäre Überschrift wurde beobachtet."],
-  "VF-LAUNCH-OPEN-GRAPH": ["Open-Graph-Metadaten", "Grundlegende Open-Graph-Metadaten sind unvollständig."]
+const germanLaunchCopy: Record<string, { label: string; pass: string; review: string; attention: string }> = {
+  "VF-LAUNCH-INDEXING": { label: "Indexierungsanweisung", pass: "Keine öffentliche noindex-Anweisung beobachtet.", review: "Indexierungsanweisungen sollten geprüft werden.", attention: "Eine öffentliche noindex-Anweisung wurde beobachtet." },
+  "VF-LAUNCH-TITLE": { label: "Dokumenttitel", pass: "Ein Dokumenttitel wurde beobachtet.", review: "Kein Dokumenttitel wurde beobachtet.", attention: "Kein Dokumenttitel wurde beobachtet." },
+  "VF-LAUNCH-DESCRIPTION": { label: "Meta-Beschreibung", pass: "Eine Meta-Beschreibung wurde beobachtet.", review: "Keine Meta-Beschreibung wurde beobachtet.", attention: "Keine Meta-Beschreibung wurde beobachtet." },
+  "VF-LAUNCH-LANGUAGE": { label: "Dokumentsprache", pass: "Das Dokument deklariert eine Sprache.", review: "Keine Dokumentsprache wurde beobachtet.", attention: "Keine Dokumentsprache wurde beobachtet." },
+  "VF-LAUNCH-VIEWPORT": { label: "Viewport-Metadaten", pass: "Viewport-Metadaten wurden beobachtet.", review: "Keine Viewport-Metadaten wurden beobachtet.", attention: "Keine Viewport-Metadaten wurden beobachtet." },
+  "VF-LAUNCH-CANONICAL": { label: "Kanonische URL", pass: "Eine gültige kanonische URL wurde beobachtet.", review: "Keine gültige kanonische URL wurde beobachtet.", attention: "Keine gültige kanonische URL wurde beobachtet." },
+  "VF-LAUNCH-H1": { label: "Primäre Überschrift", pass: "Eine nicht leere primäre Überschrift wurde beobachtet.", review: "Keine nicht leere H1 wurde im ausgelieferten HTML beobachtet.", attention: "Keine nicht leere H1 wurde im ausgelieferten HTML beobachtet." },
+  "VF-LAUNCH-OPEN-GRAPH": { label: "Open-Graph-Metadaten", pass: "Grundlegende Open-Graph-Metadaten wurden beobachtet.", review: "Grundlegende Open-Graph-Metadaten sind unvollständig.", attention: "Grundlegende Open-Graph-Metadaten sind unvollständig." }
 };
 
 function presentLaunchCheck(check: LaunchCheck, language: Language) {
   if (language === "en") return check;
   const translated = germanLaunchCopy[check.id];
   if (!translated) return check;
-  const missing = check.status !== "pass";
-  const detail = missing ? translated[1] : translated[1].replace(/^Keine /, "").replace(/ nicht beobachtet\.$/, " wurde beobachtet.");
-  return { ...check, label: translated[0], detail };
+  return { ...check, label: translated.label, detail: translated[check.status] };
 }
 
 function subscribeLanguage(onStoreChange: () => void) {
@@ -97,11 +96,51 @@ function subscribeLanguage(onStoreChange: () => void) {
 }
 
 function getLanguageSnapshot(): Language {
-  return window.localStorage.getItem("vibefootprint-language") === "de" ? "de" : "en";
+  try { return window.localStorage.getItem("vibefootprint-language") === "de" ? "de" : "en"; }
+  catch { return document.documentElement.lang === "de" ? "de" : "en"; }
 }
 
 function getServerLanguageSnapshot(): Language {
   return "en";
+}
+
+function AccessibleDialog({ labelledBy, className, backdropClassName = "", onClose, children }: { labelledBy: string; className: string; backdropClassName?: string; onClose: () => void; children: ReactNode }) {
+  const dialogRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLElement | null>(null);
+  const closeRef = useRef(onClose);
+  useEffect(() => { closeRef.current = onClose; }, [onClose]);
+  useEffect(() => {
+    if (!dialogRef.current) return;
+    triggerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const main = document.querySelector("main");
+    const wasInert = main instanceof HTMLElement ? main.inert : false;
+    const previousOverflow = document.body.style.overflow;
+    if (main instanceof HTMLElement) main.inert = true;
+    document.body.style.overflow = "hidden";
+    const focusable = () => [...dialogRef.current!.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])')].filter((item) => !item.hasAttribute("hidden"));
+    focusable()[0]?.focus();
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { event.preventDefault(); closeRef.current(); return; }
+      if (event.key !== "Tab") return;
+      const items = focusable();
+      if (!items.length) { event.preventDefault(); dialogRef.current?.focus(); return; }
+      const first = items[0];
+      const last = items.at(-1)!;
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener("keydown", keydown);
+    return () => {
+      document.removeEventListener("keydown", keydown);
+      if (main instanceof HTMLElement) main.inert = wasInert;
+      document.body.style.overflow = previousOverflow;
+      triggerRef.current?.focus();
+    };
+  }, []);
+
+  return createPortal(<div className={`sample-report-backdrop ${backdropClassName}`.trim()} role="presentation">
+    <section ref={dialogRef} className={className} role="dialog" aria-modal="true" aria-labelledby={labelledBy} tabIndex={-1}>{children}</section>
+  </div>, document.body);
 }
 
 const copyByLanguage = {
@@ -237,9 +276,14 @@ export default function Home() {
   const localComparison = useMemo(() => compareLocalScans(currentLocalScan, previousLocalResult), [currentLocalScan, previousLocalResult]);
 
   function changeLanguage(next: Language) {
-    window.localStorage.setItem("vibefootprint-language", next);
+    try { window.localStorage.setItem("vibefootprint-language", next); } catch { /* Locale still changes for this tab. */ }
+    document.documentElement.lang = next;
     window.dispatchEvent(new Event(LANGUAGE_STORAGE_EVENT));
   }
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   useEffect(() => {
     if ((!result && !errorResult) || !resultsRef.current) return;
@@ -253,11 +297,16 @@ export default function Home() {
   function recordSuccessfulScan(parsed: ScanResult) {
     const snapshot = toLocalScanSnapshot(parsed) as LocalScanSnapshot | null;
     if (!snapshot) return;
-    const history = parseLocalScanHistory(window.localStorage.getItem(LOCAL_SCAN_HISTORY_KEY)) as LocalScanSnapshot[];
     setCurrentLocalScan(snapshot);
-    setPreviousLocalResult(previousLocalScan(history, snapshot) as LocalScanSnapshot | null);
-    setHistoryStatus("");
-    window.localStorage.setItem(LOCAL_SCAN_HISTORY_KEY, JSON.stringify(recordLocalScan(history, snapshot)));
+    try {
+      const history = parseLocalScanHistory(window.localStorage.getItem(LOCAL_SCAN_HISTORY_KEY)) as LocalScanSnapshot[];
+      setPreviousLocalResult(previousLocalScan(history, snapshot) as LocalScanSnapshot | null);
+      setHistoryStatus("");
+      window.localStorage.setItem(LOCAL_SCAN_HISTORY_KEY, JSON.stringify(recordLocalScan(history, snapshot)));
+    } catch {
+      setPreviousLocalResult(null);
+      setHistoryStatus(language === "de" ? "Lokaler Vergleich ist in diesem Browser nicht verfügbar." : "Local comparison is unavailable in this browser.");
+    }
   }
 
   async function runScan(options: { adminKey?: string; requestedUrl?: string } = {}) {
@@ -312,8 +361,8 @@ export default function Home() {
             }
             setScanProgress(100);
             if (!await waitForDelay(REPORT_READY_HOLD_MS, controller.signal) || sequence !== scanSequenceRef.current) return;
-            recordSuccessfulScan(parsed);
             setRawResult(parsed);
+            if (!requestedAdminKey) recordSuccessfulScan(parsed);
             if (protectedReport) {
               setRawAdminReport(protectedReport);
               setAdminReportOpen(true);
@@ -339,7 +388,8 @@ export default function Home() {
         if (shouldAutomaticallyRetry(failedResult.technicalOutcome, attempt)) {
           setRetryAttempt(attempt + 1);
           await new Promise((resolve) => window.setTimeout(resolve, automaticRetryDelayMs(failedResult?.technicalOutcome?.code)));
-          if (controller.signal.reason === "user-cancelled") {
+          if (sequence !== scanSequenceRef.current || controller.signal.aborted) {
+            if (sequence !== scanSequenceRef.current) return;
             setErrorResult({ apiVersion: release.apiVersion, ok: false, technicalOutcome: cancelledTechnicalOutcome });
             return;
           }
@@ -437,10 +487,14 @@ export default function Home() {
 
   function clearCurrentHostHistory() {
     if (!currentLocalScan) return;
-    const history = parseLocalScanHistory(window.localStorage.getItem(LOCAL_SCAN_HISTORY_KEY));
-    window.localStorage.setItem(LOCAL_SCAN_HISTORY_KEY, JSON.stringify(clearLocalScanHost(history, currentLocalScan.host)));
-    setPreviousLocalResult(null);
-    setHistoryStatus(copy.historyCleared);
+    try {
+      const history = parseLocalScanHistory(window.localStorage.getItem(LOCAL_SCAN_HISTORY_KEY));
+      window.localStorage.setItem(LOCAL_SCAN_HISTORY_KEY, JSON.stringify(clearLocalScanHost(history, currentLocalScan.host)));
+      setPreviousLocalResult(null);
+      setHistoryStatus(copy.historyCleared);
+    } catch {
+      setHistoryStatus(language === "de" ? "Lokaler Verlauf ist in diesem Browser nicht verfügbar." : "Local history is unavailable in this browser.");
+    }
   }
 
   function signed(value: number) {
@@ -623,8 +677,7 @@ export default function Home() {
           </div>
         </section>}
 
-        {sampleReportOpen && <div className="sample-report-backdrop" role="presentation">
-          <section className="sample-report-modal" role="dialog" aria-modal="true" aria-labelledby="sample-report-title">
+        {sampleReportOpen && <AccessibleDialog labelledBy="sample-report-title" className="sample-report-modal" onClose={() => setSampleReportOpen(false)}>
             <header className="sample-report-topbar"><div><span>V</span><p>VibeFootprint<strong id="sample-report-title">{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><button type="button" onClick={() => setSampleReportOpen(false)} aria-label={copy.closePreview}>×</button></header>
             <aside className="sample-report-notice"><strong>{copy.sampleLabel}</strong><span>{copy.sampleNotice}</span></aside>
             <div className="sample-report-body">
@@ -639,11 +692,9 @@ export default function Home() {
               <section className="sample-report-block sample-report-appendix"><div className="sample-report-section-title"><span>{premiumSections[6].number}</span><h2>{premiumSections[6].label}</h2></div><p>{copy.sampleAppendix}</p><dl><div><dt>{copy.breadth}</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>{language === "en" ? "Source" : "Quelle"}</dt><dd>{language === "en" ? "Public surface only" : "Nur öffentliche Oberfläche"}</dd></div><div><dt>{language === "en" ? "Score relationship" : "Score-Beziehung"}</dt><dd>{language === "en" ? "Independent" : "Unabhängig"}</dd></div></dl></section>
             </div>
             <footer className="sample-report-footer"><span>{resultHost}</span><button type="button" onClick={() => setSampleReportOpen(false)}>{copy.closePreview}</button></footer>
-          </section>
-        </div>}
+        </AccessibleDialog>}
 
-        {adminReportOpen && adminReport && <div className="sample-report-backdrop admin-report-backdrop" role="presentation">
-          <section className="sample-report-modal admin-full-report" role="dialog" aria-modal="true" aria-labelledby="admin-report-title">
+        {adminReportOpen && adminReport && <AccessibleDialog labelledBy="admin-report-title" className="sample-report-modal admin-full-report" backdropClassName="admin-report-backdrop" onClose={() => setAdminReportOpen(false)}>
             <header className="sample-report-topbar"><div><span>V</span><p>VibeFootprint<strong id="admin-report-title">{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><button type="button" onClick={() => setAdminReportOpen(false)} aria-label={freeTestingReport ? (language === "en" ? "Close full report" : "Vollständigen Report schließen") : copy.adminClose}>×</button></header>
             <aside className="sample-report-notice admin-report-notice"><strong>{freeTestingReport ? (language === "en" ? "Free test report · actual scan data" : "Kostenloser Testreport · echte Scan-Daten") : copy.adminAuthorized}</strong><span>{adminReport.target}</span></aside>
             <div className="admin-report-export-bar"><div><button type="button" onClick={downloadAdminMarkdown}>{language === "en" ? "Download Markdown" : "Markdown herunterladen"}</button><button type="button" onClick={printAdminReport}>{language === "en" ? "Print / Save PDF" : "Drucken / Als PDF sichern"}</button></div><p role="status" aria-live="polite">{adminReportStatus}</p></div>
@@ -663,8 +714,7 @@ export default function Home() {
               <section className="sample-report-block sample-report-appendix"><div className="sample-report-section-title"><span>{premiumSections[6].number}</span><h2>{premiumSections[6].label}</h2></div><p>{copy.reportEvidence}</p><dl><div><dt>{copy.breadth}</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>{copy.directEvidence}</dt><dd>{adminReport.evidence.directEvidence.length}</dd></div><div><dt>{copy.stackContext}</dt><dd>{adminReport.evidence.stackSignals.length + adminReport.evidence.contextEvidence.length}</dd></div><div><dt>{copy.loaded}</dt><dd>{adminReport.evidence.assetScan.fetched}/{adminReport.evidence.assetScan.selected}</dd></div><div><dt>{language === "en" ? "Launch checks" : "Launch-Prüfungen"}</dt><dd>{adminReport.launchCheck.counts.pass}/{adminReport.launchCheck.checks.length} {language === "en" ? "passed" : "wirksam"}</dd></div><div><dt>{copy.time}</dt><dd>{new Intl.DateTimeFormat(language === "de" ? "de-DE" : "en-GB", { dateStyle: "medium", timeStyle: "short" }).format(new Date(adminReport.generatedAt))}</dd></div></dl><details className="admin-technical-details"><summary>{language === "en" ? "View metric snapshot" : "Messwert-Snapshot ansehen"}</summary><pre>{JSON.stringify({ pageMetrics: adminReport.evidence.pageMetrics, extendedMetrics: adminReport.evidence.extendedMetrics, scanMetrics: adminReport.evidence.scanMetrics }, null, 2)}</pre></details></section>
             </div>
             <footer className="sample-report-footer"><span>{resultHost}</span><button type="button" onClick={() => setAdminReportOpen(false)}>{freeTestingReport ? (language === "en" ? "Close full report" : "Vollständigen Report schließen") : copy.adminClose}</button></footer>
-          </section>
-        </div>}
+        </AccessibleDialog>}
       </> : null}
     </section>}
 
@@ -679,6 +729,12 @@ export default function Home() {
         <summary><span>{copy.limitationsTitle}</span><b aria-hidden="true">+</b></summary>
         <div><p>{copy.limitationsIntro}</p><ul>{copy.limitations.map((item) => <li key={item}>{item}</li>)}</ul></div>
       </details>
+      <aside className="method-evaluation-boundary">
+        <strong>{language === "en" ? "Evaluation boundary" : "Evaluationsgrenze"}</strong>
+        <p>{language === "en"
+          ? "The score uses the frozen v0.4 reference corpus. Historical confirmation is retained for research provenance, but legacy response-body completeness cannot be verified; those historical metrics are not a current performance claim."
+          : "Der Score nutzt das eingefrorene v0.4-Referenzkorpus. Die historische Confirmation bleibt zur Forschungsprovenienz dokumentiert; die Vollständigkeit alter Response-Bodies ist jedoch nicht verifizierbar. Diese historischen Kennzahlen sind kein aktueller Leistungsnachweis."}</p>
+      </aside>
     </section>
 
     <footer><a className="brand footer-brand" href="#top"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><a href="#method">{copy.backToMethod}</a></footer>

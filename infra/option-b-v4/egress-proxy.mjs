@@ -17,11 +17,27 @@ const httpResponseByteLimit = Number(process.env.EGRESS_HTTP_RESPONSE_BYTE_LIMIT
 const maxConnections = Number(process.env.EGRESS_MAX_CONNECTIONS || 64);
 let activeConnections = 0;
 
-function publicLookup(hostname) {
-  return Promise.race([
-    dns.lookup(hostname, { all: true, verbatim: true }).then(choosePinnedAddress),
-    new Promise((_, reject) => setTimeout(() => reject(new Error("DNS policy timeout.")), dnsTimeoutMs))
-  ]);
+async function publicLookup(hostname) {
+  let timer;
+  try {
+    return await Promise.race([
+      dns.lookup(hostname, { all: true, verbatim: true }).then(choosePinnedAddress),
+      new Promise((_, reject) => { timer = setTimeout(() => reject(new Error("DNS policy timeout.")), dnsTimeoutMs); })
+    ]);
+  } finally {
+    if (timer) clearTimeout(timer);
+  }
+}
+
+function acquireConnection() {
+  if (activeConnections >= maxConnections) return null;
+  activeConnections += 1;
+  let released = false;
+  return () => {
+    if (released) return;
+    released = true;
+    activeConnections = Math.max(0, activeConnections - 1);
+  };
 }
 
 function reject(socket, status = "403 Forbidden") {
@@ -56,6 +72,14 @@ const server = http.createServer(async (request, response) => {
     response.end();
     return;
   }
+  const release = acquireConnection();
+  if (!release) {
+    response.writeHead(429, { connection: "close", "content-length": "0" });
+    response.end();
+    return;
+  }
+  response.once("close", release);
+  response.once("finish", release);
   try {
     const target = parseHttpProxyTarget(request.url);
     const pinned = await publicLookup(target.hostname);
@@ -95,10 +119,10 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.on("connect", async (request, clientSocket, head) => {
-  if (activeConnections >= maxConnections || head.length) return reject(clientSocket, "429 Too Many Requests");
-  activeConnections += 1;
+  if (head.length) return reject(clientSocket, "400 Bad Request");
+  const release = acquireConnection();
+  if (!release) return reject(clientSocket, "429 Too Many Requests");
   let upstream;
-  const release = () => { activeConnections = Math.max(0, activeConnections - 1); };
   try {
     const target = parseConnectAuthority(request.url);
     const pinned = await publicLookup(target.hostname);

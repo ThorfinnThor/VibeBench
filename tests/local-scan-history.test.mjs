@@ -53,3 +53,11 @@ test("history parsing fails closed and clearing is host scoped", () => {
   const history = parseLocalScanHistory(JSON.stringify([first, second]));
   assert.deepEqual(clearLocalScanHost(history, "example.com").map((entry) => entry.id), ["two"]);
 });
+
+test("history evicts the oldest hosts after the global cap", () => {
+  let history = [];
+  for (let index = 0; index < 4; index += 1) {
+    history = recordLocalScan(history, toLocalScanSnapshot(result({ id: `host-${index}`, analyzedAt: `2026-08-19T1${index}:00:00.000Z`, footprint: 50, security: 60, host: `host-${index}.example` })), 3, 2);
+  }
+  assert.deepEqual([...new Set(history.map((entry) => entry.host))], ["host-3.example", "host-2.example"]);
+});

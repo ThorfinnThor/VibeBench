@@ -47,6 +47,9 @@ test("admin report contains actual protected findings without raw source", () =>
   assert.equal(report.launchCheck.checks.length, 8);
   assert.equal("html" in report, false);
   assert.equal(JSON.stringify(report).includes("<html"), false);
+  assert.equal(parseAdminReport({ ...report, evidence: { ...report.evidence, rawHtml: "<html>secret</html>" } }), null);
+  assert.equal(parseAdminReport({ ...report, boundary: { ...report.boundary, rawSourceIncluded: true } }), null);
+  assert.equal(parseAdminReport({ ...report, target: "https://example.com/?token=secret" }), null);
 });
 
 test("public response parser remains fail-closed for protected admin reports", () => {

@@ -6,7 +6,7 @@ import { readLimitedText } from "../lib/bounded-response.mjs";
 import { buildPinnedRequestOptions, resolvePinnedPublicTarget } from "../lib/pinned-public-fetch.mjs";
 import { isNonPublicIp, normalizePublicUrl } from "../lib/public-url-policy.mjs";
 import { parseScanPayload, SCAN_API_VERSION } from "../lib/scan-contract.mjs";
-import { acquireScanAdmission, SCAN_ADMISSION_LIMITS } from "../lib/scan-admission.mjs";
+import { acquireRedirectTargetAdmission, acquireScanAdmission, SCAN_ADMISSION_LIMITS } from "../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
   assertScanRequestBody,
@@ -135,6 +135,14 @@ test("bounded reader cancels a chunked body at the configured byte limit", async
   assert.deepEqual({ bytes: result.bytes, truncated: result.truncated, cancelled }, { bytes: 1_500, truncated: true, cancelled: true });
 });
 
+test("bounded reader enforces the scan body limit without Content-Length", async () => {
+  const request = new Request("https://scanner.example/api/scan", { method: "POST", body: "x".repeat(5_000) });
+  assert.equal(request.headers.get("content-length"), null);
+  const result = await readLimitedText(request, 4_096);
+  assert.equal(result.bytes, 4_096);
+  assert.equal(result.truncated, true);
+});
+
 test("scan response policy fails closed on ambiguous or ineligible documents", () => {
   assert.equal(parseMediaType("text/html; charset=UTF-8"), "text/html");
   assert.doesNotThrow(() => assertSupportedTextEncoding("text/html; charset=us-ascii"));
@@ -182,6 +190,16 @@ test("beta admission bounds per-instance concurrency and releases capacity", () 
   const replacement = acquireScanAdmission({ clientId: "concurrency-replacement", targetId: "concurrency-replacement" });
   replacement();
   releases.forEach((release) => release());
+});
+
+test("redirect destination reservations enforce the per-target limit", () => {
+  const releaseInitial = acquireScanAdmission({ clientId: "redirect-client", targetId: "redirector-target" });
+  const releaseDestination = acquireRedirectTargetAdmission({ targetId: "final-target" });
+  assert.throws(() => acquireScanAdmission({ clientId: "other-client", targetId: "final-target" }), /bereits ein Scan/);
+  releaseDestination();
+  const releaseOther = acquireScanAdmission({ clientId: "other-client", targetId: "final-target" });
+  releaseOther();
+  releaseInitial();
 });
 
 test("production release manifest binds the frozen model hash and confirmation coverage", async () => {

@@ -17,7 +17,7 @@ import {
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
 import { publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
-import { acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
+import { acquireRedirectTargetAdmission, acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
   assertScanRequestBody,
@@ -42,10 +42,11 @@ function combinedSignal(...signals) {
   return AbortSignal.any(signals.filter(Boolean));
 }
 
-async function fetchPublicHtml(initialUrl, signal) {
+async function fetchPublicHtml(initialUrl, signal, reserveTarget) {
   let current = initialUrl;
   for (let redirect = 0; redirect <= MAX_REDIRECTS; redirect += 1) {
     current = normalizePublicUrl(current.toString());
+    reserveTarget(current);
     const response = await pinnedPublicFetch(current, {
       signal: combinedSignal(signal, AbortSignal.timeout(12_000)),
       headers: { "user-agent": release.userAgent, accept: "text/html,application/xhtml+xml" }
@@ -124,24 +125,12 @@ export async function POST(request) {
   const deadline = AbortSignal.timeout(18_000);
   const responseHeaders = { "x-vibebench-request-id": requestId, "x-vibebench-api-version": SCAN_API_VERSION, "cache-control": "private, no-store, max-age=0" };
   let releaseAdmission = () => {};
+  const releaseRedirectAdmissions = [];
   try {
     const reportMode = resolveReportAccessMode(process.env.VIBEFOOTPRINT_REPORT_MODE);
     const adminAuthorization = adminPreviewAuthorization(request.headers.get(ADMIN_PREVIEW_HEADER), process.env.VIBEFOOTPRINT_ADMIN_PREVIEW_KEY);
-    if (adminAuthorization.requested && !adminAuthorization.configured) {
-      return Response.json({
-        apiVersion: SCAN_API_VERSION,
-        ok: false,
-        requestId,
-        technicalOutcome: {
-          code: "admin_preview_unavailable",
-          title: "Admin-Vorschau nicht konfiguriert",
-          summary: "Der geschützte Testzugang ist in dieser Umgebung nicht aktiviert.",
-          action: "Serverseitigen Admin-Schlüssel konfigurieren und das Deployment neu starten.",
-          retryable: false
-        }
-      }, { status: 503, headers: responseHeaders });
-    }
     if (adminAuthorization.requested && !adminAuthorization.authorized) {
+      console.warn(JSON.stringify({ event: "admin_access_denied", requestId, configured: adminAuthorization.configured }));
       return Response.json({
         apiVersion: SCAN_API_VERSION,
         ok: false,
@@ -149,8 +138,8 @@ export async function POST(request) {
         technicalOutcome: {
           code: "admin_access_denied",
           title: "Admin-Zugriff abgelehnt",
-          summary: "Der eingegebene Testschlüssel ist nicht gültig.",
-          action: "Admin-Schlüssel prüfen und den geschützten Scan erneut starten.",
+          summary: "Der geschützte Testzugang konnte nicht autorisiert werden.",
+          action: "Zugangsdaten und Serverkonfiguration prüfen.",
           retryable: false
         }
       }, { status: 401, headers: responseHeaders });
@@ -159,14 +148,24 @@ export async function POST(request) {
     if (contentLength > 4_096) throw new Error("Die Scan-Anfrage ist zu groß.");
     let body;
     try {
-      body = await request.json();
+      const requestBody = await readLimitedText(request, 4_096);
+      if (requestBody.truncated) throw new Error("request_too_large");
+      body = JSON.parse(requestBody.text);
     } catch {
       throw new Error("Ungültige JSON-Anfrage.");
     }
     const inputUrl = normalizePublicUrl(assertScanRequestBody(body));
-    releaseAdmission = acquireScanAdmission({ clientId: scanAdmissionIdentity(request), targetId: scanTargetIdentity(inputUrl) });
+    const initialTargetId = scanTargetIdentity(inputUrl);
+    const reservedTargetIds = new Set([initialTargetId]);
+    releaseAdmission = acquireScanAdmission({ clientId: scanAdmissionIdentity(request), targetId: initialTargetId });
+    const reserveTarget = (targetUrl) => {
+      const targetId = scanTargetIdentity(targetUrl);
+      if (reservedTargetIds.has(targetId)) return;
+      releaseRedirectAdmissions.push(acquireRedirectTargetAdmission({ targetId }));
+      reservedTargetIds.add(targetId);
+    };
     const signal = combinedSignal(request.signal, deadline);
-    const fetched = await fetchPublicHtml(inputUrl, signal);
+    const fetched = await fetchPublicHtml(inputUrl, signal, reserveTarget);
     signal.throwIfAborted();
     const assetSelection = selectSameOriginAssets({ html: fetched.html, baseUrl: fetched.url });
     const assetCandidates = assetSelection.assets;
@@ -234,7 +233,7 @@ export async function POST(request) {
       vibeScore: {
         score,
         band: scoreBand,
-        meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem validierten VibeFootprint-Korpus.",
+        meaning: "Ähnlichkeit der öffentlich sichtbaren Website-Muster mit dem eingefrorenen VibeFootprint-Referenzkorpus.",
         caveat: "Der Wert misst weder den Anteil generierten Codes noch die Autorenschaft."
       },
       evidenceCoverage,
@@ -273,6 +272,7 @@ export async function POST(request) {
     console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
     return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   } finally {
+    releaseRedirectAdmissions.reverse().forEach((release) => release());
     releaseAdmission();
   }
 }

@@ -20,3 +20,14 @@ test("noindex and missing basics are observations, not a fabricated readiness sc
   assert.equal("score" in result, false);
   assert.equal(result.checks.every((item) => item.id.startsWith("VF-LAUNCH-")), true);
 });
+
+test("launch checks handle unquoted attributes, robots none, empty headings and invalid canonicals", () => {
+  const result = inspectPublicLaunchSurface({
+    target: "https://example.com/page",
+    html: "<html lang=en><head><title>Example</title><meta name=robots content=none><meta name=description content=Example><meta name=viewport content=width=device-width><link rel=canonical href=javascript:alert(1)><meta property=og:title content=Example><meta property=og:description content=Example></head><body><h1> &nbsp; </h1></body></html>"
+  });
+  assert.equal(result.checks.find(({ id }) => id === "VF-LAUNCH-INDEXING").status, "attention");
+  assert.equal(result.checks.find(({ id }) => id === "VF-LAUNCH-LANGUAGE").status, "pass");
+  assert.equal(result.checks.find(({ id }) => id === "VF-LAUNCH-CANONICAL").status, "review");
+  assert.equal(result.checks.find(({ id }) => id === "VF-LAUNCH-H1").status, "review");
+});

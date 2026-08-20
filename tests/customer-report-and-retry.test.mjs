@@ -39,6 +39,12 @@ test("free testing summaries disclose that the full report is included", () => {
   assert.doesNotMatch(report, /require an unlocked full report/i);
 });
 
+test("customer report redacts query parameters and fragments", () => {
+  const report = buildCustomerReport({ ...result, resolvedUrl: "https://example.com/path?token=secret#private" }, "en");
+  assert.match(report, /https:\/\/example\.com\/path/);
+  assert.doesNotMatch(report, /token|secret|private/);
+});
+
 test("client retries transient outcomes exactly once and never hammers rate limits", () => {
   assert.equal(MAX_CLIENT_SCAN_ATTEMPTS, 2);
   assert.equal(shouldAutomaticallyRetry({ code: "target_timeout", retryable: true }, 1), true);

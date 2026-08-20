@@ -496,6 +496,9 @@ h1, h2, h3, .brand strong { font-family: "Manrope", Arial, sans-serif; }
 .method-limitations p { margin: 0; color: var(--muted); font-size: 14px; }
 .method-limitations ul { margin: 0; padding-left: 20px; columns: 2; column-gap: 35px; }
 .method-limitations li { margin: 0 0 10px; break-inside: avoid; color: var(--muted); font-size: 13px; }
+.method-evaluation-boundary { margin-top: 14px; padding: 18px 22px; display: grid; grid-template-columns: minmax(180px, .35fr) minmax(320px, 1fr); gap: 28px; border: 1px solid #c8d5d0; border-radius: 14px; background: #edf3f0; }
+.method-evaluation-boundary strong { font-family: "Manrope", sans-serif; font-size: 15px; color: var(--green-dark); }
+.method-evaluation-boundary p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .method-validation { margin-top: 17px; padding: 25px; display: grid; grid-template-columns: repeat(3, minmax(150px, .62fr)) minmax(280px, 1.14fr); gap: 25px; align-items: center; border-radius: 14px; background: var(--surface-soft); }
 .method-validation div { min-height: 92px; padding-right: 22px; display: flex; flex-direction: column; border-right: 1px solid #cfd7d2; }
 .method-validation span { color: var(--green); font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
@@ -622,6 +625,7 @@ footer > a:last-child { justify-self: end; color: var(--green); font-size: 13px;
   .scan-actions:has(.cancel-button) { grid-template-columns: 1fr; }
   .method { padding: 62px 20px; }
   .method-grid { grid-template-columns: 1fr; }
+  .method-evaluation-boundary { grid-template-columns: 1fr; gap: 8px; }
   .method-grid article { padding: 23px; }
   .method-grid article > span { margin-bottom: 20px; }
   .method-limitations > div { grid-template-columns: 1fr; gap: 15px; }

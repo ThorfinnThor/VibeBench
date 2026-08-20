@@ -61,6 +61,13 @@ test("evaluates effective CSP element directives and parenthesized Permissions-P
   assert.equal(result.checks.find(({ id }) => id === "permissions").status, "fail");
 });
 
+test("rejects broad CSP script schemes and wildcard hosts", () => {
+  for (const policy of ["default-src 'self'; script-src-elem https:", "default-src 'self'; script-src https://*.example.com", "default-src 'self'; script-src data:"]) {
+    const result = auditSecurity("https://example.com", { "content-security-policy": policy });
+    assert.equal(result.checks.find(({ id }) => id === "csp").status, "fail", policy);
+  }
+});
+
 test("recommendations preserve all findings and do not advise score gaming", () => {
   const recommendations = buildRecommendations({
     analysis: { directEvidence: [{ label: "Bolt" }] },
