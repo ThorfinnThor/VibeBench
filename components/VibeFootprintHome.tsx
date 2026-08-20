@@ -739,19 +739,17 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
         <div><p>{copy.limitationsIntro}</p><ul>{copy.limitations.map((item) => <li key={item}>{item}</li>)}</ul></div>
       </details>
       <aside className="method-evaluation-boundary">
-        <strong>{language === "en" ? "Evaluation boundary" : "Evaluationsgrenze"}</strong>
-        <p>{language === "en"
-          ? "The score uses the frozen v0.4 reference corpus. Historical confirmation is retained for research provenance, but legacy response-body completeness cannot be verified; those historical metrics are not a current performance claim."
-          : "Der Score nutzt das eingefrorene v0.4-Referenzkorpus. Die historische Confirmation bleibt zur Forschungsprovenienz dokumentiert; die Vollständigkeit alter Response-Bodies ist jedoch nicht verifizierbar. Diese historischen Kennzahlen sind kein aktueller Leistungsnachweis."}</p>
+        <strong>Evaluation boundary</strong>
+        <p>VibeFootprint uses the frozen v0.4 reference corpus. It measures public-pattern similarity—not authorship or generated-code share. Historical metrics remain documented for provenance and are not a current performance claim.</p>
       </aside>
       <nav className="seo-discovery-links" aria-label="VibeFootprint guides">
-        <Link href="/guides"><strong>95 practical website guides</strong><span>→</span></Link>
-        <Link href="/guides/security">Website security</Link>
-        <Link href="/guides/design">Design distinctiveness</Link>
-        <Link href="/guides/engineering">Frontend engineering</Link>
+        <Link className="guide-library-link" href="/guides"><span><small>Guide library</small><strong>95 practical website guides</strong></span><b aria-hidden="true">→</b></Link>
+        <Link href="/guides/security"><span><small>01</small><strong>Website security</strong></span><b aria-hidden="true">→</b></Link>
+        <Link href="/guides/design"><span><small>02</small><strong>Design distinctiveness</strong></span><b aria-hidden="true">→</b></Link>
+        <Link href="/guides/engineering"><span><small>03</small><strong>Frontend engineering</strong></span><b aria-hidden="true">→</b></Link>
       </nav>
     </section>
 
-    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><Link href="/guides">Guides</Link><Link href="/methodology">{copy.backToMethod}</Link></footer>
+    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link></nav></footer>
   </main>;
 }
