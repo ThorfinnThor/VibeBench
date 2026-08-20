@@ -108,7 +108,9 @@ und die einmaligen Produktionsschritte stehen in
 Vor der Search-Console-Verifizierung müssen in Vercel die finale Domain als
 `NEXT_PUBLIC_SITE_URL` und – bei Verwendung der HTML-Tag-Methode – der reine
 Google-Token als `GOOGLE_SITE_VERIFICATION` gesetzt werden. Danach ist ein
-Redeploy erforderlich.
+Redeploy erforderlich. Die kanonische Produktions-URL ist aktuell
+`https://www.vibefootprint.com`, da die Apex-Domain permanent auf `www`
+weiterleitet.
 
 ## Produktions-Smoke-Test
 

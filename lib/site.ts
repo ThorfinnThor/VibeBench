@@ -1,4 +1,4 @@
-const fallbackSiteUrl = "https://vibe-bench-cyan.vercel.app";
+const fallbackSiteUrl = "https://www.vibefootprint.com";
 
 function normalizeSiteUrl(value: string | undefined) {
   const candidate = value?.trim() || fallbackSiteUrl;
@@ -15,4 +15,3 @@ export const siteOrigin = normalizeSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 export function absoluteUrl(path = "/") {
   return new URL(path, `${siteOrigin}/`).toString();
 }
-

@@ -25,25 +25,25 @@
 Set these Vercel environment variables for Production and redeploy:
 
 ```text
-NEXT_PUBLIC_SITE_URL=https://YOUR-FINAL-DOMAIN
+NEXT_PUBLIC_SITE_URL=https://www.vibefootprint.com
 GOOGLE_SITE_VERIFICATION=TOKEN_FROM_GOOGLE
 ```
 
 `NEXT_PUBLIC_SITE_URL` must be the final canonical origin, without a trailing
-path. Until it is configured, the current fallback is
-`https://vibe-bench-cyan.vercel.app`.
+path. The configured fallback is `https://www.vibefootprint.com`, matching the
+current permanent redirect from the apex domain to `www`.
 
 For `GOOGLE_SITE_VERIFICATION`, paste only the `content` value from Google's
 HTML-tag verification method. Never paste the complete `<meta>` element.
 
 ## Google Search Console activation
 
-1. Add the final domain as a Domain property when DNS access is available, or
-   add the canonical URL as a URL-prefix property.
+1. Add `vibefootprint.com` as a Domain property when DNS access is available,
+   or add `https://www.vibefootprint.com/` as a URL-prefix property.
 2. Prefer DNS verification for the Domain property. If using the HTML-tag
    method, set `GOOGLE_SITE_VERIFICATION` in Vercel and redeploy.
 3. Confirm the verification meta tag is visible on the deployed homepage.
-4. Submit `https://YOUR-FINAL-DOMAIN/sitemap.xml`.
+4. Submit `https://www.vibefootprint.com/sitemap.xml`.
 5. Inspect and request indexing for the homepage, methodology page and the
    English website-checker page first.
 6. Confirm that Google-selected canonicals match the declared canonicals and
@@ -67,4 +67,3 @@ HTML-tag verification method. Never paste the complete `<meta>` element.
   VibeFootprint data.
 - Expand pages based on observed queries instead of mass-producing keyword
   variants.
-
