@@ -1,4 +1,5 @@
 import { randomUUID } from "node:crypto";
+import { after } from "next/server";
 import { ADMIN_PREVIEW_HEADER, adminPreviewAuthorization, buildAdminReport } from "../../../lib/admin-report.mjs";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
@@ -26,6 +27,7 @@ import {
   parseMediaType
 } from "../../../lib/scan-response-policy.mjs";
 import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
+import { trackScanUsage } from "../../../lib/scan-usage-analytics.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 import release from "../../../release/v0.4.json";
 
@@ -265,11 +267,15 @@ export async function POST(request) {
         headers: fetched.headers
       });
     }
-    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs: Date.now() - startedAt, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, adminPreview: adminAuthorization.authorized }));
+    const durationMs = Date.now() - startedAt;
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, adminPreview: adminAuthorization.authorized }));
+    after(() => trackScanUsage({ outcome: "success", durationMs, evidenceBreadth: evidenceCoverage.level }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);
-    console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs: Date.now() - startedAt, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
+    const durationMs = Date.now() - startedAt;
+    console.warn(JSON.stringify({ event: "scan_failed", requestId, durationMs, outcome: technicalOutcome.code, retryable: technicalOutcome.retryable }));
+    after(() => trackScanUsage({ outcome: "failed", durationMs, errorCode: technicalOutcome.code, retryable: technicalOutcome.retryable }));
     return Response.json({ apiVersion: SCAN_API_VERSION, ok: false, requestId, technicalOutcome }, { status: technicalOutcome.responseStatus, headers: responseHeaders });
   } finally {
     releaseRedirectAdmissions.reverse().forEach((release) => release());

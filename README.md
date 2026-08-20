@@ -112,6 +112,17 @@ Redeploy erforderlich. Die kanonische Produktions-URL ist aktuell
 `https://www.vibefootprint.com`, da die Apex-Domain permanent auf `www`
 weiterleitet.
 
+## Interne Scan-Nutzungsmessung
+
+Produktive Scan-Anfragen erzeugen nach Abschluss genau ein anonymes Vercel-
+Analytics-Event namens `vibefootprint_scan`. In Vercel unter **Analytics →
+Events → vibefootprint_scan** lässt es sich nach `outcome` in erfolgreiche und
+fehlgeschlagene Scans aufteilen. Zusätzlich werden nur grobe Laufzeit-,
+Auswertungsbreiten- und Fehlerkategorien erfasst. Ziel-URLs, Domains,
+IP-Adressen, Request-IDs und Scan-Ergebnisse werden nicht als Eventdaten
+übermittelt. Preview- und lokale Deployments zählen nicht mit; ein Ausfall der
+Analytics-Annahme beeinflusst die Scan-Antwort nicht.
+
 ## Produktions-Smoke-Test
 
 Der versionierte Testlauf gegen die veröffentlichte App umfasst 10 gelabelte
