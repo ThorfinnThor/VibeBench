@@ -12,6 +12,12 @@
 .debt-ledger .hero::after { border-width: 1px; border-radius: 18px; box-shadow: inset 0 0 0 62px rgba(229,101,79,.04); transform: rotate(9deg); }
 .handoff-kit .hero::after { width: 430px; height: 300px; border-width: 1px; border-radius: 32px; box-shadow: -70px 70px 0 rgba(141,211,196,.025); }
 .test-lab .hero::after { width: 400px; height: 400px; border-width: 55px 1px 1px 55px; border-radius: 50%; transform: rotate(-20deg); }
+.founder-brief .hero::after { width: 360px; height: 360px; border-width: 1px; border-radius: 50%; box-shadow: inset 0 0 0 60px rgba(141,211,196,.035); }
+.cost-model .hero::after { width: 440px; height: 280px; border-width: 1px 1px 65px; border-radius: 22px; transform: rotate(-8deg); }
+.accessibility-lab .hero::after { border-width: 1px; border-radius: 50%; box-shadow: 0 0 0 65px rgba(141,211,196,.035), 0 0 0 130px rgba(141,211,196,.02); }
+.tool-selection .hero::after { width: 430px; height: 300px; border-width: 1px; border-radius: 22px; box-shadow: 70px -70px 0 rgba(141,211,196,.025); transform: rotate(7deg); }
+.privacy-map .hero::after { width: 380px; height: 380px; border-width: 50px 1px; border-radius: 50% 12%; transform: rotate(24deg); }
+.migration-runbook .hero::after { width: 470px; height: 240px; border-width: 1px 70px 1px 1px; border-radius: 120px; transform: rotate(-12deg); }
 .breadcrumb { margin-bottom: 52px; display: flex; flex-wrap: wrap; gap: 9px; color: #9eb0a9; font-size: 12px; }
 .breadcrumb a { color: #9fdacc; text-decoration: none; }
 .heroGrid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(330px, .72fr); gap: clamp(50px, 8vw, 112px); align-items: end; position: relative; z-index: 1; }
@@ -182,6 +188,66 @@
 .testLab p strong, .testLab aside strong { margin-bottom: 4px; display: block; color: var(--green); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
 .testLab aside strong { color: #9b3d2d; }
 
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.controls article { padding: 25px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+.controls article > div { grid-column: 1 / -1; padding-bottom: 19px; border-bottom: 1px solid var(--line); }
+.controls article > div span { color: var(--green); font-size: 11px; font-weight: 900; }
+.controls h3 { margin: 10px 0 0; font-size: 22px; }
+.controls p, .controls aside { margin: 0; padding: 13px; border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 12px; }
+.controls p:nth-child(3) { background: #fff1ed; }
+.controls aside { grid-column: 1 / -1; background: #eff7f4; }
+.controls strong, .costModel strong, .toolScore strong, .migration strong { margin-bottom: 4px; display: block; color: var(--green); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.controls p:nth-child(3) strong { color: #9b3d2d; }
+
+.costModel { display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px; }
+.costModel article { border: 1px solid var(--line); border-radius: 17px; background: white; overflow: hidden; }
+.costModel header { min-height: 122px; padding: 24px; background: #fff4d9; }
+.costModel header span { color: #79510f; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.costModel h3 { margin: 16px 0 0; font-size: 22px; }
+.costModel article > div { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.costModel p, .costModel aside { margin: 0; padding: 12px; border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 12px; }
+.costModel aside { grid-column: 1 / -1; background: #eff7f4; }
+
+.accessJourneys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.accessJourneys article { border: 1px solid var(--line); border-top: 5px solid var(--green); border-radius: 15px; background: white; }
+.accessJourneys header { min-height: 115px; padding: 23px; }
+.accessJourneys header span { color: var(--green); font-size: 10px; font-weight: 900; }
+.accessJourneys h3 { margin: 16px 0 0; font-size: 20px; }
+.accessJourneys dl { margin: 0; padding: 0 20px 20px; }
+.accessJourneys dl div { padding: 13px 0; border-top: 1px solid var(--line); }
+.accessJourneys dt, .dataFlow dt { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.accessJourneys dd, .dataFlow dd { margin: 5px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+.toolScore { border: 1px solid var(--line); border-radius: 18px; background: white; overflow: hidden; }
+.toolScore article { padding: 24px; display: grid; grid-template-columns: .78fr 1fr 1fr 1fr; gap: 12px; border-bottom: 1px solid var(--line); }
+.toolScore article:last-child { border-bottom: 0; }
+.toolScore h3 { margin: 0 0 9px; font-size: 20px; }
+.toolScore article > div > p { margin: 0; color: var(--muted); font-size: 12px; }
+.toolScore article > p, .toolScore aside { margin: 0; padding: 12px; border-radius: 8px; background: #eff7f4; color: var(--muted); font-size: 12px; }
+.toolScore article > p:nth-child(3) { background: #fff1ed; }
+.toolScore aside { background: var(--surface-soft); }
+.toolScore article > p:nth-child(3) strong { color: #9b3d2d; }
+
+.dataFlow { margin: 0; padding: 0; position: relative; list-style: none; }
+.dataFlow::before { content: ""; position: absolute; left: 34px; top: 35px; bottom: 35px; width: 1px; background: var(--green); }
+.dataFlow li { padding: 0 0 18px; display: grid; grid-template-columns: 230px 1fr; gap: 24px; position: relative; }
+.dataFlow li > div { padding: 22px; display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; position: relative; border-radius: 14px; background: var(--ink); color: white; z-index: 1; }
+.dataFlow li > div b { width: 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; background: #9fdacc; color: var(--green-dark); font-size: 10px; }
+.dataFlow h3 { margin: 3px 0 0; font-size: 19px; }
+.dataFlow dl { margin: 0; padding: 17px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; border: 1px solid var(--line); border-radius: 14px; background: white; }
+.dataFlow dl div { padding: 11px; border-radius: 7px; background: var(--surface-soft); }
+.dataFlow dl div:last-child { background: #eff7f4; }
+
+.migration { display: grid; gap: 13px; }
+.migration article { display: grid; grid-template-columns: 240px 1fr; border: 1px solid var(--line); border-radius: 16px; background: white; overflow: hidden; }
+.migration header { padding: 26px; background: var(--ink); color: white; }
+.migration header span { color: #9fdacc; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.migration h3 { margin: 20px 0 0; font-size: 22px; }
+.migration article > div { padding: 19px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.migration p, .migration aside { margin: 0; padding: 12px; border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 12px; }
+.migration aside { background: #fff4d9; }
+.migration aside strong { color: #79510f; }
+
 .faq details { border-top: 1px solid var(--line); }
 .faq details:last-child { border-bottom: 1px solid var(--line); }
 .faq summary { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: "Manrope", sans-serif; font-size: 18px; font-weight: 700; cursor: pointer; list-style: none; }
@@ -216,7 +282,7 @@
 @media (max-width: 900px) {
   .heroGrid, .sectionHeading { grid-template-columns: 1fr; gap: 32px; }
   .heroGrid { align-items: start; }
-  .ladder, .scorecard, .claims, .seoClinic, .ledger, .testLab { grid-template-columns: 1fr; }
+  .ladder, .scorecard, .claims, .seoClinic, .ledger, .testLab, .controls, .costModel, .accessJourneys { grid-template-columns: 1fr; }
   .ladder article:first-child { grid-column: auto; }
   .phases article { grid-template-columns: 130px 1fr; }
   .phases article ul { grid-column: 1 / -1; }
@@ -226,6 +292,9 @@
   .decisions li > div, .decisions aside { grid-column: 2; }
   .handoff article { grid-template-columns: 1fr 1fr; }
   .handoff article > div { grid-column: 1 / -1; }
+  .toolScore article { grid-template-columns: 1fr 1fr; }
+  .toolScore article > div { grid-column: 1 / -1; }
+  .dataFlow li, .migration article { grid-template-columns: 1fr; }
   .sources > div:last-child, .related > div:nth-child(2) { grid-template-columns: 1fr 1fr; }
 }
 
@@ -245,6 +314,8 @@
   .risks dl, .decisions li > div, .handoff article { grid-template-columns: 1fr; }
   .decisions li > div, .decisions aside { grid-column: 1 / -1; }
   .handoff article > div { grid-column: auto; }
+  .controls article, .costModel article > div, .toolScore article, .dataFlow dl, .migration article > div { grid-template-columns: 1fr; }
+  .controls article > div, .controls aside, .costModel aside, .toolScore article > div { grid-column: auto; }
   .sources > div:last-child, .related > div:nth-child(2) { grid-template-columns: 1fr; }
   .scanCta { grid-template-columns: 1fr; gap: 27px; }
   .scanCta > a { min-width: 0; }

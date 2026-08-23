@@ -15,7 +15,7 @@ export default function EditorialDirectory() {
     </header>
 
     <section id="editorial-guides" className={styles.library}>
-      <div className={styles.sectionHeading}><div><p className="eyebrow">Start with the real question</p><h2>Twelve guides. Twelve different jobs.</h2></div><p>Diagnose public patterns, distinguish templates, audit quality, improve design, review code, test detector claims, model threats, decide production readiness, repair SEO, reduce debt, complete handoff or build a release test lab.</p></div>
+      <div className={styles.sectionHeading}><div><p className="eyebrow">Start with the real question</p><h2>Eighteen guides. Eighteen different jobs.</h2></div><p>From pattern diagnosis and production safety to platform choice, total cost, accessibility, privacy, founder control and migration—each guide ends in a different practical decision.</p></div>
       <Link className={styles.featured} href={`/${featured.slug}`}>
         <div><span>{featured.formatLabel}</span><small>{featured.readingMinutes} minute read</small></div><h3>{featured.title}</h3><p>{featured.dek}</p><b>Open the field guide →</b>
       </Link>

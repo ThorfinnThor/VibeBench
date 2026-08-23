@@ -41,8 +41,14 @@ Primary guidance:
 | How do I reduce technical debt after a fast build? | `/vibe-coding-technical-debt` | Technical-debt ledger | Prioritizes recurring interest and product consequence instead of code aesthetics |
 | What must an agency transfer to its client? | `/vibe-coding-client-handoff-checklist` | Client handoff kit | Defines seven owned artifacts and a client-operated acceptance session |
 | How should I test a vibe-coded website? | `/how-to-test-a-vibe-coded-website` | Website testing lab | Provides six experiments with setup, assertions and negative cases plus a release evidence packet |
+| How can a non-technical founder stay in control? | `/vibe-coding-for-non-technical-founders` | Founder control brief | Converts product ownership into six business controls and four specialist-escalation decisions |
+| What does a vibe-coded website really cost? | `/how-much-does-a-vibe-coded-website-cost` | Total-cost model | Budgets six cost centers across creation, verification, operation and exit without inventing universal prices |
+| How should I test accessibility? | `/vibe-coding-accessibility-checklist` | Accessibility journey lab | Tests six complete journeys and separates automation from human accessibility evidence |
+| How should I choose a vibe-coding platform? | `/how-to-choose-a-vibe-coding-platform` | Platform selection scorecard | Evaluates ownership, data, deployment, security, review, operations and a real exit test |
+| What privacy risks does vibe coding introduce? | `/vibe-coding-privacy-risks` | Privacy data-journey map | Follows data through six operational stages and states a clear non-legal boundary |
+| How do I migrate away from a builder or fragile prototype? | `/how-to-migrate-a-vibe-coded-website` | Migration runbook | Moves contracts and journeys through six reversible phases instead of proposing a blind rewrite |
 
-The `/insights` hub explains the editorial model and links to all twelve pages. Each
+The `/insights` hub explains the editorial model and links to all eighteen pages. Each
 article links to three genuinely adjacent decisions and to first-party standards
 or primary documentation.
 

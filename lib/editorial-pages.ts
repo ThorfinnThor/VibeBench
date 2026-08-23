@@ -1,4 +1,4 @@
-export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab";
+export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook";
 
 export type EditorialSource = {
   label: string;
@@ -22,6 +22,12 @@ export type EditorialBlock =
   | { type: "ledger"; heading: string; intro: string; items: { debt: string; interest: string; signal: string; action: string }[] }
   | { type: "handoff"; heading: string; intro: string; items: { artifact: string; owner: string; acceptance: string; failure: string }[] }
   | { type: "testLab"; heading: string; intro: string; items: { experiment: string; setup: string; assertions: string; negative: string }[] }
+  | { type: "controls"; heading: string; intro: string; items: { area: string; founderQuestion: string; risk: string; evidence: string }[] }
+  | { type: "costModel"; heading: string; intro: string; items: { center: string; initial: string; recurring: string; trigger: string; decision: string }[] }
+  | { type: "accessJourneys"; heading: string; intro: string; items: { journey: string; barrier: string; test: string; repair: string }[] }
+  | { type: "toolScore"; heading: string; intro: string; items: { dimension: string; ask: string; strong: string; weak: string; exit: string }[] }
+  | { type: "dataFlow"; heading: string; intro: string; items: { stage: string; data: string; purpose: string; risk: string; control: string }[] }
+  | { type: "migration"; heading: string; intro: string; items: { phase: string; keep: string; replace: string; proof: string; rollback: string }[] }
   | { type: "faq"; heading: string; items: { question: string; answer: string }[] };
 
 export type EditorialPage = {
@@ -53,6 +59,11 @@ const googleJavaScriptSeo = { label: "Google Search: JavaScript SEO basics", hre
 const googleCanonical = { label: "Google Search: canonical URL guidance", href: "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls", note: "Primary guidance for consolidating duplicate URLs and keeping indexing signals aligned." };
 const githubCodeOwners = { label: "GitHub CODEOWNERS documentation", href: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners", note: "Primary documentation for making repository review ownership explicit." };
 const webTesting = { label: "web.dev Learn Testing", href: "https://web.dev/learn/testing/", note: "A practical introduction to automated testing levels, assertions and test design for web applications." };
+const wcag = { label: "W3C Web Content Accessibility Guidelines 2.2", href: "https://www.w3.org/TR/WCAG22/", note: "The W3C Recommendation defining testable accessibility success criteria across perceivable, operable, understandable and robust content." };
+const ariaPractices = { label: "WAI-ARIA Authoring Practices Guide", href: "https://www.w3.org/WAI/ARIA/apg/", note: "Primary interaction and keyboard-pattern guidance for common accessible widgets." };
+const nistPrivacy = { label: "NIST Privacy Framework", href: "https://www.nist.gov/privacy-framework", note: "A voluntary framework for identifying and managing privacy risk through organizational systems and data processing." };
+const nistSsdf = { label: "NIST Secure Software Development Framework", href: "https://csrc.nist.gov/Projects/ssdf", note: "A risk-based set of secure software-development practices that can be integrated into different development lifecycles." };
+const twelveFactor = { label: "The Twelve-Factor App", href: "https://12factor.net/", note: "A methodology covering portable configuration, dependencies, processes, logs and disposability for web applications." };
 
 export const editorialPages: Record<string, EditorialPage> = {
   "how-to-tell-if-a-website-was-vibe-coded": {
@@ -663,6 +674,305 @@ export const editorialPages: Record<string, EditorialPage> = {
     ],
     sources: [webTesting, w3cAccessibility, owaspTesting, nextProduction],
     related: ["is-vibe-coding-ready-for-production", "how-to-review-ai-generated-frontend-code", "are-vibe-coded-websites-secure"]
+  },
+
+  "vibe-coding-for-non-technical-founders": {
+    slug: "vibe-coding-for-non-technical-founders",
+    format: "founder-brief",
+    formatLabel: "Non-technical founder control brief",
+    eyebrow: "Ownership without pretending to code",
+    title: "Vibe coding for non-technical founders: stay in control",
+    metaTitle: "Vibe Coding for Non-Technical Founders",
+    description: "A practical operating guide for non-technical founders using vibe coding: retain account ownership, define acceptance evidence and know when specialist review is required.",
+    dek: "You do not need to explain every line of code. You do need to know what the product promises, which systems hold customer trust, who can change them and how the business recovers when an assumption fails.",
+    scope: "This brief helps founders govern product delivery. It does not turn a checklist into engineering, security, legal or accessibility expertise; high-consequence decisions still need qualified review.",
+    audience: "Non-technical founders building or commissioning an AI-assisted web product",
+    readingMinutes: 11,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "controls", heading: "Six controls a founder should be able to demonstrate", intro: "These are business-control questions, not coding trivia. Ask the person responsible to show the evidence in the actual accounts and product.", items: [
+        { area: "Customer promise", founderQuestion: "Which three user outcomes must work every time?", risk: "The team optimizes screenshots and feature volume without a shared definition of done.", evidence: "Named journeys with success, failure and recovery criteria." },
+        { area: "Account ownership", founderQuestion: "Which organization controls source, hosting, domain, email, data and billing?", risk: "A contractor departure or lost personal account can stop the business.", evidence: "Organization-owned administrators, recovery methods and a current access register." },
+        { area: "Data responsibility", founderQuestion: "What customer data enters, where does it go and when is it removed?", risk: "The product collects information the team cannot locate, protect or delete.", evidence: "A plain-language data journey matched to real vendors and configuration." },
+        { area: "Release safety", founderQuestion: "Who approves a release and how can the previous version be restored?", risk: "Every production change becomes an irreversible experiment on users.", evidence: "A preview, acceptance record, release owner and practiced rollback." },
+        { area: "Failure ownership", founderQuestion: "How will we know the core journey is broken, and who responds?", risk: "Customers become the monitoring system and incidents wait for the original builder.", evidence: "Meaningful signal, alert owner, support path and recovery steps." },
+        { area: "Specialist boundary", founderQuestion: "Which risks exceed the current team’s expertise?", risk: "Confidence from a working demo substitutes for security, legal or domain review.", evidence: "A written escalation rule for payments, sensitive data, complex permissions and regulated use." }
+      ] },
+      { type: "prose", eyebrow: "Manage claims, not code volume", heading: "Ask for proof in outcomes a business can understand", paragraphs: [
+        "‘The AI says it is secure’ and ‘the build passed’ are not acceptance evidence. Ask to see two users blocked from one another’s data, a failed dependency recover safely, a keyboard-only journey complete and a backup restored. Concrete demonstrations let technical specialists challenge the right boundary later.",
+        "Keep changes small enough that a person can review their purpose and consequence. Fast generation is useful when it shortens the route to evidence; it becomes dangerous when output volume makes ownership impossible."
+      ], bullets: ["Put acceptance criteria before the implementation prompt", "Separate the Vibe-Footprint from security and product quality", "Require an owner for every critical vendor", "Budget for independent review before high-consequence exposure"] },
+      { type: "decisions", heading: "When to stop building and bring in a specialist", intro: "A founder can make the escalation decision without solving the technical problem. A ‘yes’ means the consequence justifies deeper review.", items: [
+        { question: "Can one customer action affect another customer’s data or money?", yes: "Request authorization and transaction-focused engineering review.", no: "Continue with ordinary journey testing.", evidence: "Role map, negative API tests and transaction behavior." },
+        { question: "Does the product store sensitive, regulated or high-impact information?", yes: "Obtain relevant privacy, security and legal guidance before expanding use.", no: "Still minimize collection and document retention.", evidence: "Data categories, purposes, processors, locations and deletion path." },
+        { question: "Would one hour of downtime materially harm customers?", yes: "Define reliability targets, monitoring, response and recovery ownership.", no: "Document the current support and recovery expectation.", evidence: "Critical signal, alert exercise and restore result." },
+        { question: "Can nobody besides the builder explain a critical path?", yes: "Pause feature expansion and transfer knowledge through maps, tests and paired review.", no: "Keep ownership current as the product changes.", evidence: "A second person can diagnose and safely change the path." }
+      ] },
+      { type: "scenario", heading: "Founder case: the launch that depends on one freelancer", context: "The product has early customers, but the repository, domain and database live in the freelancer’s personal accounts. The founder sees a working URL and assumes ownership is complete.", observations: [
+        "The business cannot independently recover access or authorize another maintainer.",
+        "A technical export alone may not transfer vendor configuration, data or domain control.",
+        "The founder can resolve the governance failure without reviewing source code.",
+        "Account transfer, recovery verification and a client-operated release should become acceptance conditions."
+      ], conclusion: "Pause further dependency on the setup until the company controls critical accounts and another person can operate the service. This is business continuity, not code style." },
+      { type: "faq", heading: "Founder questions", items: [
+        { question: "Do I need a technical co-founder before launching anything?", answer: "Not universally. Exposure should match team capability. A low-risk prototype can gather learning, while accounts, payments, sensitive data and complex permissions warrant experienced technical ownership sooner." },
+        { question: "How can I judge a developer if I cannot review code?", answer: "Judge whether they make risks visible, produce reproducible evidence, transfer ownership, explain trade-offs and invite independent review of important boundaries." },
+        { question: "Should I ask for a guarantee that the site is not vibe coded?", answer: "If production provenance matters, define contractual evidence. For quality and risk, evaluate the delivered product, operating controls and ownership directly." }
+      ] }
+    ],
+    sources: [nistSsdf, owaspAsvs, githubCodeOwners],
+    related: ["vibe-coding-client-handoff-checklist", "is-vibe-coding-ready-for-production", "how-to-choose-a-vibe-coding-platform"]
+  },
+
+  "how-much-does-a-vibe-coded-website-cost": {
+    slug: "how-much-does-a-vibe-coded-website-cost",
+    format: "cost-model",
+    formatLabel: "Total-cost planning model",
+    eyebrow: "The first build is only one line item",
+    title: "How much does a vibe-coded website really cost?",
+    metaTitle: "How Much Does a Vibe-Coded Website Cost?",
+    description: "Estimate the real cost of a vibe-coded website across initial build, tools, infrastructure, review, maintenance, recovery and migration instead of comparing prompt prices alone.",
+    dek: "Vibe coding can reduce the cost of reaching a useful first version. The total cost depends on what must be owned, verified and operated after that moment—and on how expensive uncertainty becomes when the product changes.",
+    scope: "This page provides a planning model rather than market prices or a quote. Vendor pricing, taxes, labor rates and usage costs change by provider, region, contract and product behavior.",
+    audience: "Founders and buyers budgeting an AI-assisted website or web application",
+    readingMinutes: 10,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "costModel", heading: "The six cost centers in a realistic budget", intro: "Estimate a low, expected and high scenario for each center. Use product exposure and consequence—not excitement about the prototype—to choose the contingency.", items: [
+        { center: "Discovery and content", initial: "User journey, page purpose, real content and acceptance criteria", recurring: "Research, copy updates and content governance", trigger: "Generic output creates rework or fails to answer customer objections", decision: "Fund specific inputs before paying for more generated pages" },
+        { center: "Build and integration", initial: "Interface, data, authentication, vendors and deployment", recurring: "Feature changes, dependency updates and integration drift", trigger: "The prototype crosses into accounts, transactions or complex state", decision: "Separate a marketing-site estimate from an application estimate" },
+        { center: "Quality and specialist review", initial: "Journey, accessibility, security, performance and privacy assessment", recurring: "Regression testing and review after material change", trigger: "Risk grows faster than the original builder’s expertise", decision: "Reserve review budget according to consequence and data sensitivity" },
+        { center: "Infrastructure and vendors", initial: "Domains, environments, storage, monitoring and account setup", recurring: "Usage, seats, bandwidth, email, databases and observability", trigger: "Free allowances end or product behavior creates expensive requests", decision: "Model cost per active user and one high-usage scenario" },
+        { center: "Operations and support", initial: "Runbooks, alerts, backups, recovery and support setup", recurring: "Incidents, customer support and routine maintenance", trigger: "Real users expect response and data durability", decision: "Assign ownership and response expectations before launch" },
+        { center: "Change or exit", initial: "Portable data, source access, licenses and migration path", recurring: "Keeping exports, tests and documentation current", trigger: "Vendor limits, pricing or product needs change", decision: "Price the ability to leave before lock-in makes it urgent" }
+      ] },
+      { type: "prose", eyebrow: "A useful formula", heading: "Compare total ownership, not day-one invoices", paragraphs: [
+        "A practical estimate is: creation plus verification plus twelve months of tools and operations plus an explicit change contingency. Add an exit allowance when the platform controls data, deployment or components that cannot be reproduced elsewhere.",
+        "Do not assume a more expensive initial build is safer, or a cheap build is automatically wasteful. The economic advantage appears when the system remains understandable, changes stay small, failures are recoverable and the product reaches evidence of demand sooner."
+      ], bullets: ["Estimate the same scope for every delivery option", "Separate fixed costs from usage-sensitive costs", "Name who absorbs defects and maintenance", "Write the assumptions beside the number"] },
+      { type: "matrix", heading: "Budget differently by product exposure", intro: "The interface may look similar while the operating cost changes substantially. These are planning directions, not price bands.", columns: ["Product type", "Cost emphasis", "Commonly forgotten", "Budget signal"], rows: [
+        ["Static campaign page", "Content, design, accessibility and analytics", "Domain ownership, forms and consent", "Short lifespan with a clear archive plan"],
+        ["Company marketing site", "Content system, SEO, performance and maintenance", "Editing workflow and dependency updates", "Named owner after launch"],
+        ["Authenticated SaaS pilot", "Data, authorization, monitoring and support", "Negative-path tests and recovery", "Controlled user and data scope"],
+        ["Payments or marketplace", "Transactions, fraud, roles and reconciliation", "Idempotency and dispute operations", "Specialist review and incident capacity"],
+        ["Sensitive-data product", "Privacy, security, retention and governance", "Processors, deletion and breach response", "Domain-qualified advice before exposure"]
+      ] },
+      { type: "scenario", heading: "Why the cheapest prototype can become the expensive option", context: "Two proposals deliver the same visible portal. One includes organization-owned accounts, tests, documentation and a client-operated handoff. The other includes only a live URL and promises fast future edits.", observations: [
+        "The second proposal may have a lower initial invoice but leaves ownership and maintenance undefined.",
+        "Future changes depend on one builder rediscovering undocumented behavior.",
+        "Migration or incident recovery becomes an unpriced emergency rather than planned work.",
+        "The correct comparison adds the missing verification, ownership and operating obligations to both scopes."
+      ], conclusion: "Choose the option with the best cost-to-learning and ownership profile for the product’s real risk—not the lowest visible creation price." },
+      { type: "faq", heading: "Cost questions", items: [
+        { question: "Is vibe coding cheaper than hiring a developer?", answer: "It can reduce time for some discovery and implementation work. Total cost still depends on complexity, review, operations, ownership and the cost of errors; the categories are not interchangeable." },
+        { question: "Can I stay on free plans indefinitely?", answer: "Do not build a budget around that assumption. Model the usage level that would indicate product success and review current vendor terms directly." },
+        { question: "What is the most important contingency?", answer: "For a low-risk site it may be content and maintenance; for an application it is often data, security, recovery or migration. Tie contingency to consequence." }
+      ] }
+    ],
+    sources: [twelveFactor, nextProduction, { label: "FinOps Framework", href: "https://www.finops.org/framework/", note: "A practitioner framework for creating visibility, accountability and business value around variable cloud cost." }],
+    related: ["how-to-choose-a-vibe-coding-platform", "vibe-coding-technical-debt", "vibe-coding-client-handoff-checklist"]
+  },
+
+  "vibe-coding-accessibility-checklist": {
+    slug: "vibe-coding-accessibility-checklist",
+    format: "accessibility-lab",
+    formatLabel: "Accessibility journey lab",
+    eyebrow: "Test people doing real work",
+    title: "A practical accessibility checklist for vibe-coded websites",
+    metaTitle: "Vibe-Coding Accessibility Checklist",
+    description: "Test a vibe-coded website through complete accessible journeys covering keyboard use, focus, forms, semantics, zoom, motion and status messages—not screenshots alone.",
+    dek: "Generated markup can look correct while hiding broken names, focus order or state communication. Accessibility becomes actionable when you test a user journey, identify the barrier and preserve the repair as a repeatable acceptance condition.",
+    scope: "This checklist supports product testing and does not certify WCAG conformance. Formal conformance claims require the applicable standard, scope, testing method and qualified human judgment.",
+    audience: "Designers, builders and product owners testing an AI-assisted website",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "accessJourneys", heading: "Six journeys to test before release", intro: "Run these on the assembled page. Automated checks are useful for detectable violations; human interaction reveals whether the journey actually works.", items: [
+        { journey: "Understand the page", barrier: "Heading structure, landmarks or link text do not communicate purpose", test: "Navigate headings and landmarks; read links out of surrounding context", repair: "Use native structure and descriptive text that matches the visible hierarchy" },
+        { journey: "Navigate without a pointer", barrier: "Controls are unreachable, focus disappears or order conflicts with the layout", test: "Complete the primary task using keyboard input only", repair: "Use native interactive elements, logical order and visible focus" },
+        { journey: "Complete and correct a form", barrier: "Labels, requirements and errors are visual but not programmatically associated", test: "Submit empty and invalid values, then locate and fix every error", repair: "Associate names, instructions and errors; preserve entered values and move focus intentionally" },
+        { journey: "Use dynamic UI", barrier: "Dialogs, menus, tabs or updates lack correct focus and state behavior", test: "Open, operate and close each widget by keyboard; inspect its accessible name and state", repair: "Prefer native elements or follow the relevant WAI-ARIA interaction pattern completely" },
+        { journey: "Read at different perception settings", barrier: "Zoom, text spacing, contrast or narrow layout hides content and controls", test: "Zoom and enlarge text; inspect reflow and essential contrast", repair: "Allow responsive reflow, sufficient contrast and flexible content sizing" },
+        { journey: "Receive status and recover", barrier: "Loading, success and error changes are visible but never announced or remain ambiguous", test: "Trigger slow, successful and failed actions with assistive technology", repair: "Expose concise status, retain context and provide a clear recovery action" }
+      ] },
+      { type: "prose", eyebrow: "Why generated semantics need review", heading: "An ARIA attribute is not evidence that the interaction works", paragraphs: [
+        "Generated components may add roles while omitting keyboard behavior, focus management or state updates. Incorrect ARIA can make a native interaction less understandable. Start with the semantic HTML element that already matches the behavior, and use a custom widget only when the product genuinely needs it.",
+        "Accessibility also includes content and error recovery. A perfectly named button cannot rescue an unclear task, a destructive action without confirmation or a timeout that discards entered information."
+      ], bullets: ["Test the critical journey, not isolated components only", "Include disabled, loading, empty, invalid and error states", "Keep automated findings separate from human-verified usability", "Retest after layout and interaction changes"] },
+      { type: "matrix", heading: "Match tools to the question they can answer", intro: "No single tool establishes accessibility. Combine fast automation with browser inspection and representative human use.", columns: ["Method", "Good at", "Cannot establish alone", "Evidence"], rows: [
+        ["Automated rules", "Missing names, invalid attributes and some contrast issues", "Comprehension, correct focus flow or complete conformance", "Repeatable violations tied to elements"],
+        ["Keyboard review", "Reachability, order, focus and operability", "Screen-reader output or visual perception", "Recorded completion and blockers"],
+        ["Accessibility tree", "Computed roles, names, states and relationships", "Whether the content makes sense", "Observed semantic contract"],
+        ["Zoom and responsive review", "Reflow, clipping and enlarged-text behavior", "All visual needs or device combinations", "Viewport, settings and screenshots"],
+        ["Assistive-technology testing", "Real announcements, navigation and recovery", "Every user’s experience", "Named environment, journey and outcome"]
+      ] },
+      { type: "scenario", heading: "Accessibility failure: a beautiful custom select", context: "A generated pricing form uses a styled div as a plan selector. It responds to clicks but is skipped by Tab, has no accessible name and does not expose the selected value.", observations: [
+        "A screenshot and mouse-only demo show no failure.",
+        "Keyboard and assistive-technology users cannot perceive or operate the choice.",
+        "Adding only a role would still leave keyboard behavior and state management incomplete.",
+        "A native select may satisfy the requirement with less code and a more reliable interaction contract."
+      ], conclusion: "Replace the control with a native element unless the custom behavior is essential. Then test naming, keyboard operation, state and error recovery as one journey." },
+      { type: "faq", heading: "Accessibility questions", items: [
+        { question: "Can an automated score prove accessibility?", answer: "No. Automation catches a valuable subset of issues. Complete conformance and practical usability require scoped human evaluation." },
+        { question: "Does semantic HTML matter if the page looks correct?", answer: "Yes. Semantics provide structure, names and behavior used by browsers and assistive technology, and often reduce the amount of custom code required." },
+        { question: "Should accessibility wait until the design is finished?", answer: "No. Requirements such as focus order, error recovery and content structure affect component and journey design; late fixes are usually more expensive." }
+      ] }
+    ],
+    sources: [wcag, ariaPractices, w3cAccessibility],
+    related: ["how-to-test-a-vibe-coded-website", "vibe-coding-website-audit-framework", "how-to-make-a-vibe-coded-website-look-less-generic"]
+  },
+
+  "how-to-choose-a-vibe-coding-platform": {
+    slug: "how-to-choose-a-vibe-coding-platform",
+    format: "tool-selection",
+    formatLabel: "Platform selection scorecard",
+    eyebrow: "Choose for the next stage, not the first demo",
+    title: "How to choose a vibe-coding platform without getting trapped",
+    metaTitle: "How to Choose a Vibe-Coding Platform",
+    description: "Compare vibe-coding platforms by ownership, export, data, deployment, security, review and operating fit instead of choosing from one generated demo.",
+    dek: "The best tool is not the one that produces the most impressive first screen. It is the one whose constraints match your current stage while preserving enough ownership, evidence and exit capacity for the stage you expect next.",
+    scope: "This vendor-neutral scorecard does not rank current products or promise that features and terms remain unchanged. Verify capabilities, prices, data terms and export behavior in the provider’s current documentation and contract.",
+    audience: "Founders, agencies and product teams evaluating an AI website or application builder",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "toolScore", heading: "Seven dimensions to test with your own project", intro: "Do not accept a feature-list answer. Ask for a demonstration using the same authentication, data, deployment and ownership constraints your product will face.", items: [
+        { dimension: "Source ownership", ask: "Can we obtain the current source and history in an organization-owned repository?", strong: "Documented export with understandable files, dependencies and licenses", weak: "Copy individual snippets or rely on a private generated workspace", exit: "Export, build and make one change outside the platform" },
+        { dimension: "Data portability", ask: "Can we export customer data and configuration in documented formats?", strong: "Complete, repeatable export with identifiers and relationships", weak: "Manual download without guarantees or critical provider-only state", exit: "Restore a representative export into a clean environment" },
+        { dimension: "Deployment control", ask: "Who controls domains, environments, secrets and rollback?", strong: "Organization-owned deployment with preview and recovery paths", weak: "One opaque production button and no reproducible environment contract", exit: "Deploy the same commit through an independent documented path" },
+        { dimension: "Security boundary", ask: "Where are authentication, authorization, secrets and server actions enforced?", strong: "Explicit server boundaries with logs and testable policies", weak: "Security described mainly through hidden UI or broad marketing claims", exit: "Run a negative role test and inspect the authoritative enforcement" },
+        { dimension: "Reviewability", ask: "Can our team inspect changes and constrain generated diffs?", strong: "Versioned, scoped changes with tests and approval", weak: "Large rewrites with no stable comparison or rollback", exit: "Review one generated feature as an ordinary pull request" },
+        { dimension: "Operating fit", ask: "How do we observe failures, usage limits and vendor incidents?", strong: "Logs, alerts, status, quotas and clear owners", weak: "Only the visual builder indicates whether production works", exit: "Simulate one failed dependency and find the diagnosis" },
+        { dimension: "Commercial exit", ask: "What changes when usage, team size or contract needs grow?", strong: "Current terms, predictable cost drivers and a documented termination path", weak: "Essential ownership or export depends on an undefined future plan", exit: "Write the migration steps and price them before committing" }
+      ] },
+      { type: "prose", eyebrow: "Score against a product stage", heading: "A prototype tool and an operating platform solve different jobs", paragraphs: [
+        "For a disposable concept, speed and low setup cost may outweigh deep export and operational controls. The decision changes when the product holds private data, accepts money, has several maintainers or must satisfy a client’s ownership requirements.",
+        "Choose a review date and an exit trigger before the tool becomes invisible infrastructure. Triggers might include the first external customer, the first sensitive dataset, a recurring cost threshold or a feature the platform cannot support safely."
+      ], bullets: ["Test with a realistic thin slice, not the vendor tutorial", "Use must-have gates before weighted preferences", "Record assumptions and unknowns beside the score", "Repeat the exit test after major platform changes"] },
+      { type: "matrix", heading: "Different stages justify different priorities", intro: "This prevents one universal score from rewarding capabilities your project does not need while hiding a future blocker.", columns: ["Stage", "Prioritize", "Accept temporarily", "Do not accept"], rows: [
+        ["Concept", "Iteration, previews and disposable experiments", "Manual operation and limited scale", "Loss of important source or confidential data"],
+        ["Customer pilot", "Ownership, access controls, logs and recovery", "Bounded users and explicit limitations", "Unverified cross-account behavior"],
+        ["Production service", "Reliability, security, portability and maintainability", "Known trade-offs with accountable owners", "Unknown data location or unrehearsed recovery"],
+        ["Client delivery", "Transfer, licenses, documentation and acceptance", "Contracted managed service with clear terms", "Permanent dependence not disclosed in the scope"]
+      ] },
+      { type: "scenario", heading: "Selection example: the fastest tool fails the exit test", context: "Two tools can build the required dashboard. Tool A is faster but exports static screens without the data model. Tool B takes longer and provides a repository, data export and independent deployment path.", observations: [
+        "For a disposable internal demonstration, Tool A may be the rational choice.",
+        "For a customer portal, the missing data and deployment portability create a material ownership risk.",
+        "The decision should be tied to the product stage rather than a blanket tool ranking.",
+        "Running the exit test before adding customers turns lock-in from a surprise into a priced trade-off."
+      ], conclusion: "Choose the smallest platform commitment that meets today’s non-negotiable controls and preserves a credible route to the next stage." },
+      { type: "faq", heading: "Platform-selection questions", items: [
+        { question: "Should I always choose the platform with full code export?", answer: "Not for every disposable experiment, but lack of export becomes important when continuity, client ownership or independent maintenance matters. Make the trade-off explicit." },
+        { question: "Can I rely on a provider’s security statement?", answer: "Provider controls are one layer. Your application logic, configuration, data use and integrations still require their own evidence and shared-responsibility understanding." },
+        { question: "How many platforms should I trial?", answer: "Trial only credible candidates against one representative thin slice. A deeper exit and failure test is more informative than many superficial demos." }
+      ] }
+    ],
+    sources: [twelveFactor, nistSsdf, githubCodeOwners],
+    related: ["how-much-does-a-vibe-coded-website-cost", "how-to-migrate-a-vibe-coded-website", "vibe-coding-for-non-technical-founders"]
+  },
+
+  "vibe-coding-privacy-risks": {
+    slug: "vibe-coding-privacy-risks",
+    format: "privacy-map",
+    formatLabel: "Privacy data-journey map",
+    eyebrow: "Follow the data, not the privacy-page template",
+    title: "Vibe-coding privacy risks: map data before launch",
+    metaTitle: "Vibe-Coding Privacy Risks",
+    description: "Map privacy risks in a vibe-coded website across collection, transmission, storage, use, sharing and deletion, with practical controls and explicit legal boundaries.",
+    dek: "A polished privacy notice cannot compensate for data flows the team does not understand. Start with one real user journey and follow each piece of information through the application, vendors, logs, backups and deletion path.",
+    scope: "This operational framework is not legal advice and does not establish compliance with any law. Applicable duties depend on jurisdiction, role, data, purpose and contract; obtain qualified advice for your situation.",
+    audience: "Founders and product teams adding forms, accounts, analytics or AI services to a website",
+    readingMinutes: 13,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "dataFlow", heading: "Trace one field through six stages", intro: "Use actual configuration and provider accounts. If a stage is unknown, record it as an unresolved risk rather than filling the map with an assumption.", items: [
+        { stage: "Collection", data: "Fields, files, identifiers and automatically observed device or usage data", purpose: "The exact user or operational need served", risk: "Collecting more than the product needs or surprising the user", control: "Minimize fields, separate required from optional and explain the purpose at the relevant moment" },
+        { stage: "Transmission", data: "Request bodies, query strings, headers and third-party SDK events", purpose: "Delivery to the application or a named service", risk: "Sensitive values leak through URLs, analytics, referrers or insecure transport", control: "Keep sensitive values out of URLs, constrain destinations and protect transport" },
+        { stage: "Storage", data: "Database records, files, browser storage, logs, caches and backups", purpose: "Current product and recovery requirements", risk: "Unknown copies, excessive access or indefinite retention", control: "Inventory stores, restrict access, set retention and include backups in the policy" },
+        { stage: "Use", data: "Profiles, content, behavioral events or derived attributes", purpose: "A specific feature, support task or analysis", risk: "Data is repurposed beyond the context in which it was provided", control: "Limit use to documented purposes and review material changes before activation" },
+        { stage: "Sharing", data: "Information sent to infrastructure, analytics, communication or AI providers", purpose: "A named processor function", risk: "Unreviewed sub-processors, regions, training use or broad vendor permissions", control: "Review current terms, configuration, access and necessity before sending data" },
+        { stage: "Deletion and recovery", data: "Primary records plus replicas, exports, queues and backups", purpose: "User request, retention limit or account closure", risk: "The UI says deleted while operational copies remain usable indefinitely", control: "Define effective deletion, exceptions, backup aging and a verified end-to-end procedure" }
+      ] },
+      { type: "prose", eyebrow: "The prompt can also be a data transfer", heading: "Do not paste production information into a tool by default", paragraphs: [
+        "Debugging prompts, screenshots and copied logs can contain customer content, tokens, email addresses or internal URLs. The fact that a tool is used for development does not make every production datum necessary for that purpose.",
+        "Use synthetic or minimized examples whenever possible. Define which tools are approved for which data, remove secrets before sharing and ensure the team understands current provider settings and contractual terms."
+      ], bullets: ["Treat prompts, logs and screenshots as potential data flows", "Use least privilege for builders and integrations", "Keep consent, preference and deletion behavior testable", "Review vendors again when the product purpose changes"] },
+      { type: "risks", heading: "Four privacy scenarios hidden by a working interface", intro: "These scenarios are not legal conclusions. They identify operational facts that a privacy or legal review needs.", items: [
+        { threat: "Analytics receives form values", trigger: "Automatic event capture observes input or URL state", impact: "Personal or sensitive information reaches an unintended provider", control: "Disable broad capture, allowlist low-risk events and test actual network payloads", access: "Browser network traffic and analytics configuration" },
+        { threat: "Deleted accounts persist in backups and vendors", trigger: "The primary record is removed without an end-to-end workflow", impact: "The organization cannot describe or execute effective deletion", control: "Map replicas, define backup aging and verify vendor deletion behavior", access: "Storage, backup, queue and processor procedures" },
+        { threat: "Support logs expose secrets or customer content", trigger: "Raw requests and errors are recorded for debugging", impact: "More staff and tools can access data than the product requires", control: "Minimize and redact logs, bound retention and restrict access", access: "Logging code, sample production records and permissions" },
+        { threat: "A new AI feature changes data purpose", trigger: "Existing customer content is sent to a model or used for a new analysis", impact: "User expectations, provider terms and risk profile no longer match the original flow", control: "Review necessity, disclosure, configuration and alternatives before launch", access: "Feature specification, provider terms and actual payloads" }
+      ] },
+      { type: "scenario", heading: "Privacy map example: a newsletter form with hidden reach", context: "The visible form asks only for an email address. The page also sends the URL, referrer, device identifiers and full form interaction to two analytics services, while server logs retain the request indefinitely.", observations: [
+        "The visible field list describes only part of the data journey.",
+        "Automatic collection expands the number of recipients and retention systems.",
+        "A generic privacy notice cannot determine whether each flow is necessary or correctly configured.",
+        "Network inspection, log review and vendor configuration are needed before the map is complete."
+      ], conclusion: "Minimize the flow to what the newsletter and justified measurement actually need, set retention and permissions, then align the visible explanation with the verified system." },
+      { type: "faq", heading: "Privacy questions", items: [
+        { question: "Does using an AI builder automatically violate privacy law?", answer: "No. The relevant facts include which data is processed, why, by whom, where, under which terms and controls. Obtain legal advice for applicable obligations." },
+        { question: "Is a privacy policy enough for a small website?", answer: "A notice describes practices; it does not create data minimization, access control, retention or deletion. The implementation must match the statement." },
+        { question: "Can a public scanner verify privacy compliance?", answer: "No. It may observe some delivered scripts and requests, but purposes, contracts, internal access, storage and deletion require broader evidence." }
+      ] }
+    ],
+    sources: [nistPrivacy, { label: "European Commission: data protection principles", href: "https://commission.europa.eu/law/law-topic/data-protection/rules-business-and-organisations/principles-gdpr_en", note: "Official high-level explanation of GDPR processing principles; applicability and implementation require case-specific legal analysis." }, owaspAsvs],
+    related: ["are-vibe-coded-websites-secure", "vibe-coding-for-non-technical-founders", "how-to-choose-a-vibe-coding-platform"]
+  },
+
+  "how-to-migrate-a-vibe-coded-website": {
+    slug: "how-to-migrate-a-vibe-coded-website",
+    format: "migration-runbook",
+    formatLabel: "Incremental migration runbook",
+    eyebrow: "Exit without rewriting everything at once",
+    title: "How to migrate a vibe-coded website without losing control",
+    metaTitle: "How to Migrate a Vibe-Coded Website",
+    description: "Plan an incremental migration from a vibe-coding platform or fragile prototype while preserving URLs, data, behavior, ownership and a tested rollback path.",
+    dek: "Migration is safest when you first recover the current contract, then replace one boundary at a time. Rewriting the visible interface while ignoring data, identity, domains and operations creates a new product with old users attached.",
+    scope: "This runbook is provider-neutral. Actual export capability, licenses, contracts, DNS behavior and data obligations depend on the current and target systems and must be verified before migration.",
+    audience: "Teams outgrowing a builder, transferring ownership or reducing platform dependence",
+    readingMinutes: 13,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "migration", heading: "Six phases with a rollback at every boundary", intro: "Keep the current system serving users until the replacement proves the same essential contract. Freeze only what is necessary and record every irreversible step.", items: [
+        { phase: "Inventory the live contract", keep: "Current production behavior, URLs and accounts", replace: "Assumptions with an evidence-based system and ownership map", proof: "Critical journeys, dependencies, data stores, vendors, domains and owners are recorded", rollback: "No production change yet; correct the inventory against the live system" },
+        { phase: "Secure ownership and exports", keep: "User access and service continuity", replace: "Personal accounts and undocumented provider-only state", proof: "Organization controls source, domain, data exports, billing and recovery", rollback: "Retain current provider access until exported assets are verified" },
+        { phase: "Create the target foundation", keep: "Public URLs, content model and essential product rules", replace: "Non-portable build, configuration and deployment assumptions", proof: "A clean environment builds, deploys and observes a representative thin slice", rollback: "Discard the target environment without affecting production" },
+        { phase: "Move data and identity", keep: "Stable identifiers, permissions and user expectations", replace: "Provider-specific storage or authentication only after parity tests", proof: "Counts, relationships, role boundaries and recovery flows reconcile", rollback: "Rehearse reverse or repeatable migration before the final cutover" },
+        { phase: "Run parallel acceptance", keep: "Current system as the authoritative fallback", replace: "Journeys incrementally behind controlled routing or release scope", proof: "Critical outcomes, accessibility, performance and failure behavior meet acceptance criteria", rollback: "Route users back and preserve writes according to the planned data strategy" },
+        { phase: "Cut over and retire", keep: "Monitoring, support, redirects and recoverable archives", replace: "Traffic, integrations and operational ownership", proof: "DNS, redirects, events, email, jobs and alerts work under real traffic", rollback: "Use the time-bounded cutback procedure before old systems are removed" }
+      ] },
+      { type: "prose", eyebrow: "Preserve the interfaces users depend on", heading: "The migration unit is a contract, not a file", paragraphs: [
+        "Exported components can be useful, but users depend on URLs, identities, data relationships, messages, permissions and recovery behavior. Search engines depend on stable canonical URLs and redirects. Operations depend on secrets, schedules, webhooks and alerts that may never appear in the source export.",
+        "Write characterization tests around critical behavior before changing architecture. If the existing behavior is wrong, document the intended correction separately so migration parity does not silently become product redesign."
+      ], bullets: ["Separate migration, redesign and feature work", "Verify exports before announcing a cutover", "Lower DNS TTL only as part of a documented plan", "Do not delete the old system until recovery and retention duties are resolved"] },
+      { type: "matrix", heading: "What commonly gets lost in a code-only migration", intro: "Use this as a discovery list, then remove items that demonstrably do not apply to the product.", columns: ["Surface", "Often missed", "Failure after cutover", "Verification"], rows: [
+        ["URLs and SEO", "Canonicals, redirects, metadata and sitemap behavior", "Traffic lands on errors or duplicate pages", "Crawl old and new URL sets and test redirect targets"],
+        ["Identity", "Password reset, sessions, roles and external login settings", "Users lose access or gain incorrect permissions", "Role matrix and account recovery rehearsal"],
+        ["Data", "Relationships, files, queues, timestamps and deleted states", "Records are incomplete or inconsistent", "Reconciliation queries and sampled journey checks"],
+        ["Integrations", "Webhooks, allowlists, schedules and signing secrets", "Payments, email or background work silently stop", "Provider-by-provider event test"],
+        ["Operations", "Logs, alerts, backups, support and billing ownership", "The new system fails without diagnosis or recovery", "Incident and restore exercise"],
+        ["Licenses", "Fonts, images, packages and builder-specific components", "Use is restricted or assets disappear", "Asset and dependency inventory with terms"]
+      ] },
+      { type: "scenario", heading: "Migration failure: the homepage moved, the product did not", context: "A team exports the generated frontend and deploys it independently. The old platform still owns authentication, scheduled jobs, file storage and webhook secrets, but the cutover plan treats the repository as complete.", observations: [
+        "The visible pages load, creating false confidence.",
+        "Account recovery and background workflows fail only after users act.",
+        "The team cannot retire the old subscription because critical state remains there.",
+        "A system inventory and thin-slice deployment would have exposed the incomplete boundary."
+      ], conclusion: "Return to a parallel phase, map the remaining services and migrate one complete journey—including operations—before switching more traffic." },
+      { type: "faq", heading: "Migration questions", items: [
+        { question: "Should we rewrite the website during migration?", answer: "Avoid combining the projects unless a requirement makes it necessary. Parity, redesign and new features create different failure modes and are easier to verify separately." },
+        { question: "Can we migrate if the platform has no source export?", answer: "Possibly, but treat it as rebuilding behavior and migrating data rather than moving code. Verify contractual rights and prioritize portable content, data, domains and user journeys." },
+        { question: "When can the old system be deleted?", answer: "After cutover stability, rollback expiry, data reconciliation, retention obligations, billing and recovery evidence are explicitly resolved—not immediately after the new homepage loads." }
+      ] }
+    ],
+    sources: [twelveFactor, googleCanonical, nextProduction],
+    related: ["how-to-choose-a-vibe-coding-platform", "vibe-coding-client-handoff-checklist", "vibe-coding-technical-debt"]
   }
 };
 

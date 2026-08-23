@@ -118,6 +118,60 @@ function TestLabBlock({ block }: { block: Extract<EditorialBlock, { type: "testL
   </section>;
 }
 
+function ControlsBlock({ block }: { block: Extract<EditorialBlock, { type: "controls" }> }) {
+  return <section><SectionHeading eyebrow="Founder control map" heading={block.heading} intro={block.intro} />
+    <div className={styles.controls}>{block.items.map((item, index) => <article key={item.area}>
+      <div><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.area}</h3></div>
+      <p><strong>Ask</strong>{item.founderQuestion}</p><p><strong>If nobody knows</strong>{item.risk}</p><aside><strong>Acceptable evidence</strong>{item.evidence}</aside>
+    </article>)}</div>
+  </section>;
+}
+
+function CostModelBlock({ block }: { block: Extract<EditorialBlock, { type: "costModel" }> }) {
+  return <section><SectionHeading eyebrow="Total cost model" heading={block.heading} intro={block.intro} />
+    <div className={styles.costModel}>{block.items.map((item, index) => <article key={item.center}>
+      <header><span>Cost center {String(index + 1).padStart(2, "0")}</span><h3>{item.center}</h3></header>
+      <div><p><strong>Initial</strong>{item.initial}</p><p><strong>Recurring</strong>{item.recurring}</p><p><strong>Cost trigger</strong>{item.trigger}</p><aside><strong>Budget decision</strong>{item.decision}</aside></div>
+    </article>)}</div>
+  </section>;
+}
+
+function AccessJourneysBlock({ block }: { block: Extract<EditorialBlock, { type: "accessJourneys" }> }) {
+  return <section><SectionHeading eyebrow="Accessibility journey lab" heading={block.heading} intro={block.intro} />
+    <div className={styles.accessJourneys}>{block.items.map((item, index) => <article key={item.journey}>
+      <header><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.journey}</h3></header>
+      <dl><div><dt>Likely barrier</dt><dd>{item.barrier}</dd></div><div><dt>Test</dt><dd>{item.test}</dd></div><div><dt>Repair</dt><dd>{item.repair}</dd></div></dl>
+    </article>)}</div>
+  </section>;
+}
+
+function ToolScoreBlock({ block }: { block: Extract<EditorialBlock, { type: "toolScore" }> }) {
+  return <section><SectionHeading eyebrow="Selection scorecard" heading={block.heading} intro={block.intro} />
+    <div className={styles.toolScore}>{block.items.map((item) => <article key={item.dimension}>
+      <div><h3>{item.dimension}</h3><p>{item.ask}</p></div>
+      <p><strong>Strong answer</strong>{item.strong}</p><p><strong>Weak answer</strong>{item.weak}</p><aside><strong>Exit test</strong>{item.exit}</aside>
+    </article>)}</div>
+  </section>;
+}
+
+function DataFlowBlock({ block }: { block: Extract<EditorialBlock, { type: "dataFlow" }> }) {
+  return <section><SectionHeading eyebrow="Data journey" heading={block.heading} intro={block.intro} />
+    <ol className={styles.dataFlow}>{block.items.map((item, index) => <li key={item.stage}>
+      <div><b>{String(index + 1).padStart(2, "0")}</b><h3>{item.stage}</h3></div>
+      <dl><div><dt>Data</dt><dd>{item.data}</dd></div><div><dt>Purpose</dt><dd>{item.purpose}</dd></div><div><dt>Privacy risk</dt><dd>{item.risk}</dd></div><div><dt>Control</dt><dd>{item.control}</dd></div></dl>
+    </li>)}</ol>
+  </section>;
+}
+
+function MigrationBlock({ block }: { block: Extract<EditorialBlock, { type: "migration" }> }) {
+  return <section><SectionHeading eyebrow="Incremental migration" heading={block.heading} intro={block.intro} />
+    <div className={styles.migration}>{block.items.map((item, index) => <article key={item.phase}>
+      <header><span>Phase {String(index + 1).padStart(2, "0")}</span><h3>{item.phase}</h3></header>
+      <div><p><strong>Keep stable</strong>{item.keep}</p><p><strong>Replace</strong>{item.replace}</p><p><strong>Proof</strong>{item.proof}</p><aside><strong>Rollback</strong>{item.rollback}</aside></div>
+    </article>)}</div>
+  </section>;
+}
+
 function FaqBlock({ block }: { block: Extract<EditorialBlock, { type: "faq" }> }) {
   return <section className={styles.faq}><SectionHeading eyebrow="Plain answers" heading={block.heading} />{block.items.map((item) => <details key={item.question}><summary>{item.question}<b aria-hidden="true">+</b></summary><p>{item.answer}</p></details>)}</section>;
 }
@@ -143,6 +197,12 @@ function Block({ block }: { block: EditorialBlock }) {
     case "ledger": return <LedgerBlock block={block} />;
     case "handoff": return <HandoffBlock block={block} />;
     case "testLab": return <TestLabBlock block={block} />;
+    case "controls": return <ControlsBlock block={block} />;
+    case "costModel": return <CostModelBlock block={block} />;
+    case "accessJourneys": return <AccessJourneysBlock block={block} />;
+    case "toolScore": return <ToolScoreBlock block={block} />;
+    case "dataFlow": return <DataFlowBlock block={block} />;
+    case "migration": return <MigrationBlock block={block} />;
     case "faq": return <FaqBlock block={block} />;
   }
 }

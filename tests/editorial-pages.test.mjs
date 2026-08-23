@@ -12,9 +12,9 @@ async function loadRegistry() {
 const registry = await loadRegistry();
 const pages = registry.allEditorialPages;
 
-test("publishes twelve differentiated editorial pages", () => {
-  assert.equal(pages.length, 12);
-  assert.equal(new Set(pages.map((page) => page.format)).size, 12);
+test("publishes eighteen differentiated editorial pages", () => {
+  assert.equal(pages.length, 18);
+  assert.equal(new Set(pages.map((page) => page.format)).size, 18);
 });
 
 test("editorial pages pass substantive content and source gates", () => {
@@ -35,7 +35,9 @@ test("each editorial page contains a format-specific working block", () => {
     ["field-guide", "ladder"], ["comparison", "matrix"], ["audit", "scorecard"], ["playbook", "phases"],
     ["code-review", "gates"], ["evidence-brief", "claims"], ["threat-model", "risks"],
     ["decision-guide", "decisions"], ["seo-clinic", "seoClinic"], ["debt-ledger", "ledger"],
-    ["handoff-kit", "handoff"], ["test-lab", "testLab"]
+    ["handoff-kit", "handoff"], ["test-lab", "testLab"], ["founder-brief", "controls"],
+    ["cost-model", "costModel"], ["accessibility-lab", "accessJourneys"], ["tool-selection", "toolScore"],
+    ["privacy-map", "dataFlow"], ["migration-runbook", "migration"]
   ]);
   for (const page of pages) assert.ok(page.blocks.some((block) => block.type === expected.get(page.format)), page.slug);
 });
