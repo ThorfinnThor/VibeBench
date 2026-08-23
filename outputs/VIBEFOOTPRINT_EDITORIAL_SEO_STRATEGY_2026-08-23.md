@@ -47,8 +47,14 @@ Primary guidance:
 | How should I choose a vibe-coding platform? | `/how-to-choose-a-vibe-coding-platform` | Platform selection scorecard | Evaluates ownership, data, deployment, security, review, operations and a real exit test |
 | What privacy risks does vibe coding introduce? | `/vibe-coding-privacy-risks` | Privacy data-journey map | Follows data through six operational stages and states a clear non-legal boundary |
 | How do I migrate away from a builder or fragile prototype? | `/how-to-migrate-a-vibe-coded-website` | Migration runbook | Moves contracts and journeys through six reversible phases instead of proposing a blind rewrite |
+| When should I use vibe coding instead of traditional development? | `/vibe-coding-vs-traditional-development` | Delivery trade-off map | Compares delivery modes by uncertainty, consequence, evidence and reversibility instead of declaring one universal winner |
+| Who owns vibe-coded code and which licenses apply? | `/vibe-coding-code-ownership-and-licenses` | Provenance ledger | Turns ownership questions into an asset-by-asset evidence ledger with explicit legal boundaries |
+| What must pass before a vibe-coded site goes live? | `/vibe-coding-deployment-checklist` | Launch control board | Assigns release checks, evidence, owners and stop conditions across four launch windows |
+| How should I monitor a vibe-coded website? | `/vibe-coding-monitoring-guide` | User-journey observability map | Connects user journeys to thresholds, context and action rather than collecting unowned telemetry |
+| How do I write a better vibe-coding prompt? | `/how-to-write-a-vibe-coding-prompt` | Prompt-to-spec workshop | Rewrites vague requests as constraints, evidence, states and acceptance conditions |
+| How do I assess a vibe-coded website before buying it? | `/vibe-coding-due-diligence-checklist` | Acquisition evidence room | Organizes ownership, revenue, data, security, operations and transfer evidence without making an investment claim |
 
-The `/insights` hub explains the editorial model and links to all eighteen pages. Each
+The `/insights` hub explains the editorial model and links to all twenty-four pages. Each
 article links to three genuinely adjacent decisions and to first-party standards
 or primary documentation.
 

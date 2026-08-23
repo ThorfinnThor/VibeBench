@@ -1,4 +1,4 @@
-export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook";
+export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook" | "tradeoff-map" | "provenance-ledger" | "launch-board" | "observability-map" | "prompt-workshop" | "due-diligence";
 
 export type EditorialSource = {
   label: string;
@@ -28,6 +28,12 @@ export type EditorialBlock =
   | { type: "toolScore"; heading: string; intro: string; items: { dimension: string; ask: string; strong: string; weak: string; exit: string }[] }
   | { type: "dataFlow"; heading: string; intro: string; items: { stage: string; data: string; purpose: string; risk: string; control: string }[] }
   | { type: "migration"; heading: string; intro: string; items: { phase: string; keep: string; replace: string; proof: string; rollback: string }[] }
+  | { type: "tradeoffs"; heading: string; intro: string; items: { dimension: string; vibeStrength: string; traditionalStrength: string; decidingEvidence: string }[] }
+  | { type: "provenance"; heading: string; intro: string; items: { asset: string; origin: string; permission: string; verify: string; failure: string }[] }
+  | { type: "launchChecks"; heading: string; intro: string; items: { window: string; check: string; owner: string; evidence: string; stop: string }[] }
+  | { type: "signals"; heading: string; intro: string; items: { journey: string; signal: string; threshold: string; context: string; action: string }[] }
+  | { type: "promptSpecs"; heading: string; intro: string; items: { layer: string; question: string; constraint: string; example: string; acceptance: string }[] }
+  | { type: "diligence"; heading: string; intro: string; items: { area: string; request: string; redFlag: string; verify: string; decision: string }[] }
   | { type: "faq"; heading: string; items: { question: string; answer: string }[] };
 
 export type EditorialPage = {
@@ -64,6 +70,10 @@ const ariaPractices = { label: "WAI-ARIA Authoring Practices Guide", href: "http
 const nistPrivacy = { label: "NIST Privacy Framework", href: "https://www.nist.gov/privacy-framework", note: "A voluntary framework for identifying and managing privacy risk through organizational systems and data processing." };
 const nistSsdf = { label: "NIST Secure Software Development Framework", href: "https://csrc.nist.gov/Projects/ssdf", note: "A risk-based set of secure software-development practices that can be integrated into different development lifecycles." };
 const twelveFactor = { label: "The Twelve-Factor App", href: "https://12factor.net/", note: "A methodology covering portable configuration, dependencies, processes, logs and disposability for web applications." };
+const spdx = { label: "SPDX specification", href: "https://spdx.dev/specifications/", note: "An open standard for communicating software-component, license, copyright and security information." };
+const cisaSbom = { label: "CISA Software Bill of Materials guidance", href: "https://www.cisa.gov/sbom", note: "Official resources for software-component transparency and SBOM adoption." };
+const googleSreMonitoring = { label: "Google SRE: Monitoring Distributed Systems", href: "https://sre.google/sre-book/monitoring-distributed-systems/", note: "Primary reliability guidance for choosing actionable signals around latency, traffic, errors and saturation." };
+const openTelemetry = { label: "OpenTelemetry concepts and signals", href: "https://opentelemetry.io/docs/concepts/signals/", note: "Primary documentation for traces, metrics, logs and contextual telemetry." };
 
 export const editorialPages: Record<string, EditorialPage> = {
   "how-to-tell-if-a-website-was-vibe-coded": {
@@ -973,6 +983,305 @@ export const editorialPages: Record<string, EditorialPage> = {
     ],
     sources: [twelveFactor, googleCanonical, nextProduction],
     related: ["how-to-choose-a-vibe-coding-platform", "vibe-coding-client-handoff-checklist", "vibe-coding-technical-debt"]
+  },
+
+  "vibe-coding-vs-traditional-development": {
+    slug: "vibe-coding-vs-traditional-development",
+    format: "tradeoff-map",
+    formatLabel: "Delivery trade-off map",
+    eyebrow: "Compare operating systems, not stereotypes",
+    title: "Vibe coding vs traditional development: choose by evidence",
+    metaTitle: "Vibe Coding vs Traditional Development",
+    description: "Compare vibe coding and traditional software development across discovery, speed, review, ownership, risk and maintenance without treating either label as a quality guarantee.",
+    dek: "The useful comparison is not AI speed versus human quality. Both approaches combine tools, libraries and judgment. The decision is which delivery system produces enough learning, control and evidence for this product at this stage.",
+    scope: "This comparison describes delivery trade-offs rather than universal outcomes. Team experience, application risk, platform constraints and review discipline often matter more than the label applied to the workflow.",
+    audience: "Founders and product teams deciding how to deliver a website or application",
+    readingMinutes: 11,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "tradeoffs", heading: "Where each approach can create leverage", intro: "A strength becomes useful only when the project can retain it. Compare the evidence your actual team can produce, not the best possible version of either method.", items: [
+        { dimension: "Problem discovery", vibeStrength: "Cheap interactive drafts expose unclear requirements quickly", traditionalStrength: "Deliberate discovery can model complex domains before implementation", decidingEvidence: "Time to a user-tested assumption and cost of learning that it was wrong" },
+        { dimension: "Initial delivery", vibeStrength: "Common interfaces and integrations can be assembled rapidly", traditionalStrength: "Architecture and constraints can be designed around known scale or regulation", decidingEvidence: "A thin slice that includes real data, failure and permission boundaries" },
+        { dimension: "Change review", vibeStrength: "Small generated alternatives can accelerate iteration", traditionalStrength: "Experienced maintainers may produce smaller, more intentional diffs", decidingEvidence: "Diff size, explanation quality, tests and reviewer confidence" },
+        { dimension: "Specialized risk", vibeStrength: "Tools can surface checklists and implementation options", traditionalStrength: "Domain experts recognize non-obvious failure and compliance conditions", decidingEvidence: "Independent negative tests and qualified review for high-consequence boundaries" },
+        { dimension: "Ownership", vibeStrength: "A founder can participate directly in visible product decisions", traditionalStrength: "Established repositories, standards and teams may support continuity", decidingEvidence: "Organization control, shared knowledge and practiced recovery" },
+        { dimension: "Maintenance", vibeStrength: "Agents can accelerate bounded diagnostics and mechanical changes", traditionalStrength: "Stable abstractions and history can reduce repeated rediscovery", decidingEvidence: "Change lead time, regression rate, dependency cost and number of qualified owners" }
+      ] },
+      { type: "prose", eyebrow: "Hybrid is normal", heading: "Choose a workflow per risk, not one identity for the company", paragraphs: [
+        "A team can vibe-code a disposable marketing experiment, use reviewed generated components in its product and assign specialists to authorization or payment logic. Calling the entire company ‘AI-built’ or ‘traditional’ hides the allocation decision that actually matters.",
+        "Define which outputs may be generated freely, which require ordinary peer review and which need domain-qualified approval. The boundary should follow consequence and reversibility."
+      ], bullets: ["Use fast generation where errors are cheap to discover", "Increase review before data, money or permissions cross boundaries", "Keep acceptance criteria independent from the production method", "Measure learning and operating cost after launch"] },
+      { type: "matrix", heading: "Choose the next experiment from the product stage", intro: "The answer can change as the same product moves from concept to public service.", columns: ["Situation", "Best next move", "Evidence to collect", "Avoid"], rows: [
+        ["Unclear customer problem", "Build the smallest testable interaction", "Observed comprehension and behavior", "Polishing a complete system before learning"],
+        ["Known workflow, low-risk data", "Generate a thin slice and review the assembled journey", "Failure, accessibility and ownership checks", "Assuming a working happy path is production evidence"],
+        ["Complex permissions or transactions", "Model boundaries with experienced engineering review", "Negative role, idempotency and recovery tests", "Delegating trust decisions to the browser"],
+        ["Regulated or safety-relevant use", "Start with applicable domain requirements and accountable expertise", "Formal scope and qualified verification", "Letting delivery speed define acceptable risk"],
+        ["Mature product with slow change", "Use agents for bounded analysis and incremental improvements", "Lead time, regression and maintainability outcomes", "Large rewrites justified only by generation speed"]
+      ] },
+      { type: "scenario", heading: "Comparison example: two teams deliver the same pilot", context: "Team A generates the first version in two days, then spends a week on tests, permissions and handoff. Team B codes for two weeks but documents no recovery path and relies on one senior developer.", observations: [
+        "The production label does not predict which team created stronger ownership.",
+        "Team A used generation speed to buy verification time rather than skip it.",
+        "Team B may have higher-quality individual code but still concentrates operational risk.",
+        "A buyer should compare the evidence packet and operating capability, not hours typed."
+      ], conclusion: "Select and improve the delivery system that turns speed into verified learning while retaining the controls the product’s consequence requires." },
+      { type: "faq", heading: "Development comparison questions", items: [
+        { question: "Is vibe coding always faster?", answer: "It can be faster for familiar first versions. Review, debugging, integration and maintenance can reverse the advantage when the output is large or poorly understood." },
+        { question: "Is traditional development automatically more secure?", answer: "No. Security depends on threat modeling, implementation, configuration, verification and operations—not whether code was generated or typed manually." },
+        { question: "Should teams disclose their use of AI?", answer: "Follow applicable contracts, policies and laws. If provenance is material to a buyer, define evidence explicitly rather than inferring it from the public result." }
+      ] }
+    ],
+    sources: [nistSsdf, owaspAsvs, webTesting],
+    related: ["is-vibe-coding-ready-for-production", "vibe-coding-for-non-technical-founders", "how-to-review-ai-generated-frontend-code"]
+  },
+
+  "vibe-coding-code-ownership-and-licenses": {
+    slug: "vibe-coding-code-ownership-and-licenses",
+    format: "provenance-ledger",
+    formatLabel: "Code provenance and license ledger",
+    eyebrow: "A repository is not automatically a clean title",
+    title: "Vibe-coding code ownership and licenses: what to verify",
+    metaTitle: "Vibe-Coding Code Ownership and Licenses",
+    description: "Build a practical provenance and license ledger for AI-assisted website code, dependencies, assets, fonts, content and accounts before client delivery or acquisition.",
+    dek: "Having a copy of the source does not answer who may use every dependency, image, font or generated asset—or whether the buyer controls the services required to operate it. Ownership needs evidence by asset class.",
+    scope: "This operational checklist is not legal advice and does not determine copyright ownership or license compliance. Rights depend on contracts, jurisdictions, source material and current terms; obtain qualified legal review where material.",
+    audience: "Agencies, founders and buyers reviewing the provenance of an AI-assisted website",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "provenance", heading: "Create one ledger across six asset classes", intro: "Unknown is an acceptable temporary status; invented certainty is not. Record the artifact, source, applicable permission and verification evidence.", items: [
+        { asset: "Application source", origin: "Repository history, exports, contractors and generated changes", permission: "Contractual and applicable rights to use, modify, deliver and sublicense where required", verify: "Repository ownership, contributor agreements or contracts and a reviewed change history", failure: "A source archive exists but transfer rights and contributors are unclear" },
+        { asset: "Packages and copied code", origin: "Package managers, snippets, templates and vendor SDKs", permission: "Each applicable open-source or commercial license and notice obligation", verify: "Locked dependency inventory, notices and review of non-registry code", failure: "Generated imports are assumed safe because the build installs them" },
+        { asset: "Images, icons and illustrations", origin: "Client files, stock libraries, generators, screenshots and scraped references", permission: "Rights for the intended channels, territories, edits and client transfer", verify: "Source link, receipt or license record connected to the final asset", failure: "A visually similar generated or downloaded image has no provenance record" },
+        { asset: "Fonts", origin: "Hosted service, local files, theme or design tool", permission: "Web embedding, traffic, domain and distribution terms", verify: "Font file source, active license and deployment method", failure: "A desktop font file is copied into the web build without checking embedding rights" },
+        { asset: "Content and data", origin: "Client, model output, public sources, users and datasets", permission: "Rights and lawful basis appropriate to publication and processing", verify: "Attribution, approval, source notes and data-use documentation", failure: "Generated copy repeats unsupported claims or protected source material" },
+        { asset: "Operational accounts", origin: "Domain, hosting, email, analytics, database and AI providers", permission: "Organization ownership, authorized use and transferable administration", verify: "Account register, current terms, billing owner and recovery access", failure: "The buyer owns code but the seller controls the accounts required to run it" }
+      ] },
+      { type: "prose", eyebrow: "Generation does not erase provenance", heading: "Treat unknown inputs as a diligence question", paragraphs: [
+        "A model may produce commonplace code, imitate a familiar pattern or suggest a package. The output alone does not reliably document where every element originated or which obligations apply. That is why the delivery process should preserve dependency, asset and contract evidence instead of attempting forensic certainty at the end.",
+        "Use standard identifiers and machine-readable inventories where practical, then attach human decisions for custom assets and commercial terms. A software bill of materials improves transparency but does not itself grant permission."
+      ], bullets: ["Record source and license when the asset enters the project", "Keep notices and license files with the delivered product", "Review copied snippets outside the package inventory", "Separate account ownership from intellectual-property rights"] },
+      { type: "gates", heading: "A delivery gate for provenance", intro: "The gate protects a client from receiving an attractive product that cannot be lawfully or independently operated.", gates: [
+        { name: "Inventory", pass: "Material code, packages, fonts, images, content and vendors are listed.", fail: "Only direct package dependencies are recorded.", evidence: "Versioned component and asset ledger." },
+        { name: "Permission", pass: "Each material item has an applicable permission or an explicit unresolved status.", fail: "Unknown origin is silently treated as owned.", evidence: "Contracts, licenses, receipts, notices or client approval." },
+        { name: "Transfer", pass: "The delivered rights and accounts match the client’s intended use and operating model.", fail: "Personal or non-transferable access is required after handoff.", evidence: "Signed scope and client-controlled account access." },
+        { name: "Reproducibility", pass: "The client can rebuild the version from the recorded source and dependencies.", fail: "Critical output exists only inside an unavailable workspace.", evidence: "Clean build and deployment exercise." }
+      ] },
+      { type: "scenario", heading: "Provenance failure: the redesign uses a mystery font", context: "A generated landing page includes a local font file copied from a designer’s laptop. The client receives the repository and launches a large campaign, but no one can identify the web license.", observations: [
+        "Possession of the file does not document web-embedding permission.",
+        "The dependency scanner does not cover the font asset.",
+        "The uncertainty should have appeared in the asset ledger before handoff.",
+        "The team can replace the font or obtain the appropriate rights before distribution expands."
+      ], conclusion: "Do not claim clean ownership from repository access alone. Resolve material unknowns with evidence or remove the asset before delivery." },
+      { type: "faq", heading: "Ownership and license questions", items: [
+        { question: "Do I own code produced by an AI coding tool?", answer: "That depends on applicable law, provider terms, contracts and the inputs and output involved. Review current terms and obtain legal advice for material decisions." },
+        { question: "Does open source mean no obligations?", answer: "No. Open-source licenses grant permissions subject to their terms, which can include notices, source or other conditions." },
+        { question: "Is an SBOM proof that every component is licensed correctly?", answer: "No. It improves component transparency. Permission and compliance still require accurate inventory and license analysis." }
+      ] }
+    ],
+    sources: [spdx, cisaSbom, githubCodeOwners],
+    related: ["vibe-coding-client-handoff-checklist", "vibe-coding-due-diligence-checklist", "how-to-migrate-a-vibe-coded-website"]
+  },
+
+  "vibe-coding-deployment-checklist": {
+    slug: "vibe-coding-deployment-checklist",
+    format: "launch-board",
+    formatLabel: "Deployment control board",
+    eyebrow: "Launch with stop conditions",
+    title: "A deployment checklist for vibe-coded websites",
+    metaTitle: "Vibe-Coding Deployment Checklist",
+    description: "Deploy a vibe-coded website with an owner, evidence and stop condition for domains, configuration, data, critical journeys, monitoring and rollback.",
+    dek: "A successful build proves that artifacts were produced. A safe launch proves the intended version reached the intended environment, critical journeys still work and accountable owners can observe and reverse the change.",
+    scope: "This checklist is a provider-neutral launch workflow. High-risk systems need application-specific release controls, change management and specialist review beyond these public web foundations.",
+    audience: "Builders and product owners preparing an AI-assisted website for production",
+    readingMinutes: 11,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "launchChecks", heading: "A launch sequence that can actually stop", intro: "Assign the owner before the release window. Evidence must be available to the person making the go/no-go decision.", items: [
+        { window: "T−24 hours", check: "Freeze scope and name the release", owner: "Release owner", evidence: "Exact commit, included changes, known limitations and approved acceptance criteria", stop: "Unreviewed changes are still entering the release" },
+        { window: "T−4 hours", check: "Verify domains, configuration and vendor capacity", owner: "Deployment owner", evidence: "Environment variables, DNS, certificates, quotas, billing and external status reviewed", stop: "Production requires an unknown secret or personal account" },
+        { window: "T−1 hour", check: "Protect data and rehearse rollback", owner: "Data or operations owner", evidence: "Recent backup where applicable, restore path and previous deploy available", stop: "No tested recovery exists for a destructive migration" },
+        { window: "T−15 minutes", check: "Run critical journeys on the candidate", owner: "Product acceptance owner", evidence: "Primary, invalid, denied and failed paths pass in a production-like environment", stop: "A critical outcome or trust boundary fails" },
+        { window: "T+5 minutes", check: "Verify the production artifact", owner: "Release owner", evidence: "Expected version, canonical domain, headers, assets, jobs and integrations observed", stop: "Production differs from the approved candidate" },
+        { window: "T+30 minutes", check: "Read user-outcome and system signals", owner: "On-call owner", evidence: "Traffic, latency, errors and one real or synthetic critical journey are healthy", stop: "Error, latency or outcome signal crosses the agreed threshold" },
+        { window: "T+24 hours", check: "Close or roll back the release", owner: "Product and operations owners", evidence: "Incidents, support, cost, analytics and known limitations reviewed", stop: "Unexplained regression remains open without containment" }
+      ] },
+      { type: "prose", eyebrow: "Green CI is one input", heading: "Deploy the version you reviewed, then verify the environment", paragraphs: [
+        "Generated projects often accumulate dashboard configuration, preview-only assumptions and copied environment variables. Pin the release to a commit and verify the deployed version instead of trusting that the newest build corresponds to the accepted change.",
+        "A rollback is not ‘redeploy later’. Define which version, data compatibility and routing action can restore service, who may trigger it and when forward-fixing is no longer justified."
+      ], bullets: ["Use organization-owned production access", "Keep secrets out of source and client bundles", "Make database changes backward-compatible where possible", "Announce and record the final go/no-go decision"] },
+      { type: "matrix", heading: "Distinguish build, deploy and launch evidence", intro: "These stages answer different questions and should not collapse into one green indicator.", columns: ["Stage", "Question", "Evidence", "Common false confidence"], rows: [
+        ["Build", "Can the source produce an artifact?", "Locked dependencies, tests and build output", "Compilation is treated as product correctness"],
+        ["Deploy", "Did the artifact reach the intended environment?", "Deployment ID, configuration and health", "Preview and production are assumed identical"],
+        ["Launch", "Can intended users complete critical outcomes?", "Production journey and observable signals", "Homepage availability represents the whole service"],
+        ["Operate", "Can owners detect and recover failure?", "Alerts, runbook, backup and rollback exercise", "A provider dashboard replaces application ownership"]
+      ] },
+      { type: "scenario", heading: "Launch failure: the preview passed with the wrong environment", context: "The candidate works in preview because it uses a test database and permissive authentication callback. Production deploys successfully but login loops on the canonical domain.", observations: [
+        "The build and deployment are technically green.",
+        "The production configuration violates the real user journey.",
+        "A production-domain smoke test would catch the issue before broad announcement.",
+        "The stop condition should trigger rollback rather than prompting changes directly in production."
+      ], conclusion: "Separate candidate acceptance from production verification and require both before declaring launch complete." },
+      { type: "faq", heading: "Deployment questions", items: [
+        { question: "Should every small update use this entire checklist?", answer: "Scale ceremony with risk, but retain version identity, critical evidence, an owner and a recovery decision for every production change." },
+        { question: "Is automatic deployment unsafe?", answer: "No. Automation can improve consistency. The pipeline still needs protected inputs, acceptance gates, production verification and a rollback path." },
+        { question: "How long should we monitor after launch?", answer: "Choose a window that covers the likely traffic and background jobs. Some failures appear immediately; billing cycles, scheduled work or low-volume journeys may require longer observation." }
+      ] }
+    ],
+    sources: [nextProduction, twelveFactor, googleSreMonitoring],
+    related: ["is-vibe-coding-ready-for-production", "how-to-test-a-vibe-coded-website", "vibe-coding-monitoring-guide"]
+  },
+
+  "vibe-coding-monitoring-guide": {
+    slug: "vibe-coding-monitoring-guide",
+    format: "observability-map",
+    formatLabel: "User-journey observability map",
+    eyebrow: "Monitor promises, not dashboard decoration",
+    title: "Vibe-coding monitoring: know when the product is broken",
+    metaTitle: "Vibe-Coding Monitoring Guide",
+    description: "Design monitoring for a vibe-coded web application around critical user outcomes, latency, errors, dependencies and owned response instead of collecting logs without decisions.",
+    dek: "Monitoring earns its cost when it tells an accountable person that a user promise is failing and provides enough context to choose an action. More events without thresholds or ownership create an archive, not an operating system.",
+    scope: "This guide covers product-level observability design. Provider availability, client telemetry and public checks reveal different parts of the system; sensitive data must be minimized in every signal.",
+    audience: "Founders and maintainers operating an AI-assisted website or application",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "signals", heading: "Start with five user promises", intro: "Replace the examples with your real journeys. A threshold should reflect user harm or an agreed reliability target, not a visually pleasing chart.", items: [
+        { journey: "The public page is usable", signal: "Successful page responses, browser errors and meaningful performance", threshold: "Availability or latency deviates enough to block or materially delay use", context: "Version, route, region, device class and dependency status", action: "Confirm impact, contain the release or route and communicate status" },
+        { journey: "A user can sign in", signal: "Completed authentication journeys by method, not only endpoint status", threshold: "Failure or loop rate exceeds the normal baseline", context: "Provider response, callback domain, cookie behavior and version", action: "Disable the failing path, roll back configuration or escalate to the provider" },
+        { journey: "A submitted action happens once", signal: "Accepted, completed, duplicated and failed mutations", threshold: "Completion drops or duplicates appear", context: "Request ID, idempotency key, user-safe category and downstream status", action: "Stop repeated processing, reconcile state and restore safe retry" },
+        { journey: "Background work completes", signal: "Queue age, scheduled execution and terminal outcome", threshold: "Work exceeds the user expectation or retry budget", context: "Job type, attempt, dependency and owning version", action: "Recover the backlog, pause producers or repair the dependency" },
+        { journey: "Support can diagnose a report", signal: "Correlated user-safe request or event identifier", threshold: "A customer impact cannot be located within the support target", context: "Trace across browser, API, job and vendor without raw sensitive payloads", action: "Identify the failing boundary and record the incident outcome" }
+      ] },
+      { type: "prose", eyebrow: "Instrument the assembled system", heading: "A health endpoint can be green while every user is stuck", paragraphs: [
+        "Process availability says the server can answer one request. It does not show that authentication callbacks, database permissions, email delivery or background jobs fulfill the product promise. Add a small number of synthetic or real outcome signals around the critical journey.",
+        "Generated logging often records whole objects because it is convenient. That can leak secrets and customer data while making diagnosis harder. Prefer structured, low-cardinality fields, safe identifiers and explicit error categories."
+      ], bullets: ["Name an owner and action for every alert", "Keep telemetry free of raw secrets and unnecessary content", "Correlate signals across the critical path", "Delete dashboards and alerts that do not change a decision"] },
+      { type: "matrix", heading: "Use each signal for the question it answers", intro: "Logs, metrics and traces complement one another; none is automatically the source of truth for user success.", columns: ["Signal", "Best question", "Design caution", "Operational output"], rows: [
+        ["Metric", "Is the rate or distribution changing?", "High-cardinality labels can create cost and instability", "Threshold and trend"],
+        ["Log", "What categorized event happened?", "Raw payloads create privacy and search problems", "Structured event with safe context"],
+        ["Trace", "Where did one request spend time or fail?", "Sampling and missing propagation can hide paths", "Cross-service timeline"],
+        ["Synthetic journey", "Can a controlled user complete the promise now?", "One path may not represent all users", "End-to-end outcome"],
+        ["Support signal", "What harm are real users reporting?", "Volume may be low or delayed", "Impact narrative and reproduction" ]
+      ] },
+      { type: "scenario", heading: "Monitoring failure: thousands of logs, no answer", context: "A checkout flow fails after a payment callback. Each service logs messages, but request identifiers change and the callback log contains the full customer payload.", observations: [
+        "The system creates privacy risk without providing reliable correlation.",
+        "A simple payment-completion metric would reveal the user outcome regression.",
+        "A propagated safe identifier would connect the callback to the application action.",
+        "The alert needs an owner and reconciliation procedure, not another dashboard."
+      ], conclusion: "Minimize and structure the data, add outcome measurement and make the response procedure part of the signal design." },
+      { type: "faq", heading: "Monitoring questions", items: [
+        { question: "What should a new product monitor first?", answer: "Its most important user journey, production errors, latency, critical dependencies and the signals required to recover data or service." },
+        { question: "Do I need a large observability platform?", answer: "No. Start with the smallest system that produces actionable, retained evidence and can grow with the product’s risk and traffic." },
+        { question: "Can analytics replace monitoring?", answer: "Product analytics can show behavior trends, but it may be delayed, sampled or designed for different decisions. Critical operational outcomes need owned reliability signals." }
+      ] }
+    ],
+    sources: [googleSreMonitoring, openTelemetry, nextProduction],
+    related: ["vibe-coding-deployment-checklist", "is-vibe-coding-ready-for-production", "how-to-test-a-vibe-coded-website"]
+  },
+
+  "how-to-write-a-vibe-coding-prompt": {
+    slug: "how-to-write-a-vibe-coding-prompt",
+    format: "prompt-workshop",
+    formatLabel: "Prompt-to-spec workshop",
+    eyebrow: "Give the builder decisions it can verify",
+    title: "How to write a better vibe-coding prompt",
+    metaTitle: "How to Write a Better Vibe-Coding Prompt",
+    description: "Write a useful vibe-coding prompt by defining the user journey, evidence, constraints, states, boundaries and acceptance checks instead of requesting a vague polished website.",
+    dek: "The strongest prompt is not the longest or most technical. It gives the builder concrete product evidence, constrains decisions that matter and defines observable conditions that separate a convincing draft from a usable result.",
+    scope: "A prompt improves shared context; it does not replace product discovery, code review, testing or specialist judgment. Never paste secrets, private customer data or unapproved proprietary material into a tool.",
+    audience: "Founders, designers and builders creating an AI-assisted website or feature",
+    readingMinutes: 11,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "promptSpecs", heading: "Build the prompt in six layers", intro: "Complete each layer with facts from the product. Ask the tool to identify missing information rather than inventing business claims.", items: [
+        { layer: "Outcome", question: "Who is trying to do what, and why now?", constraint: "One primary audience and one observable job", example: "A clinic manager compares three staffing scenarios before approving next month’s rota", acceptance: "A new user can explain the page’s purpose and next action" },
+        { layer: "Evidence", question: "What real material should shape the result?", constraint: "No invented customers, metrics, testimonials or capabilities", example: "Use these product screenshots, approved claims, terminology and known limitations", acceptance: "Every material claim maps to an approved source or is visibly marked as placeholder" },
+        { layer: "Journey", question: "Which steps, decisions and recovery states exist?", constraint: "Include loading, empty, invalid, denied, failed and successful states", example: "Compare, select, confirm, then recover from an unavailable data source", acceptance: "The journey works with keyboard input and preserves user state on recoverable failure" },
+        { layer: "System", question: "Which technical and ownership boundaries are fixed?", constraint: "Use the existing stack and keep privileged decisions server-side", example: "No new dependency without justification; organization-owned environment variables only", acceptance: "The change map lists routes, data, packages and configuration touched" },
+        { layer: "Design", question: "Which hierarchy and brand decisions are intentional?", constraint: "Use cards only for comparable items and avoid decorative effects without a role", example: "Lead with a real output, use this type scale and these approved assets", acceptance: "The layout remains comprehensible at mobile width, zoom and reduced motion" },
+        { layer: "Verification", question: "How will another person decide the result is acceptable?", constraint: "Provide focused tests and a manual journey; do not self-certify security or compliance", example: "Run named commands, record limitations and show one negative-path result", acceptance: "The reviewer can reproduce the evidence from a bounded diff" }
+      ] },
+      { type: "prose", eyebrow: "Prompts should reduce invention", heading: "Replace style adjectives with product constraints", paragraphs: [
+        "‘Make it premium, modern and high-converting’ gives no stable acceptance condition. Describe the decision the visitor faces, the proof they need, the content hierarchy and what the interface must never imply. Then provide references for function and information—not screenshots to imitate without understanding.",
+        "Prompt in stages when the unknowns are large: ask for a plan and open questions, review the proposed data and component boundaries, then authorize a small implementation. This keeps mistaken assumptions visible before they become a large diff."
+      ], bullets: ["Ask the tool to list assumptions before coding", "Use real content early enough to shape layout", "Define non-goals and prohibited data", "Require a change summary and unresolved risks"] },
+      { type: "matrix", heading: "Rewrite vague instructions into testable ones", intro: "The right column does not prescribe every implementation detail; it makes the product decision observable.", columns: ["Vague request", "Hidden ambiguity", "Better instruction", "Acceptance evidence"], rows: [
+        ["Make it look less AI", "No definition of distinctiveness or audience", "Use the supplied product artifact as the main visual and vary structure by content role", "Competitor comparison and comprehension test"],
+        ["Add secure login", "Roles, recovery and enforcement are undefined", "Use the approved provider; enforce organization membership server-side and test two tenants", "Negative cross-tenant request fails"],
+        ["Make it responsive", "No journeys, widths or content extremes", "Preserve navigation, form use and reading order at narrow width and enlarged text", "Named viewport and zoom checks"],
+        ["Improve SEO", "Intent, canonical and content value are unspecified", "Target this decision, render the answer, use one canonical and link from the hub", "Rendered HTML, metadata and internal crawl path"],
+        ["Handle errors", "Failure classes and recovery are unknown", "Separate invalid input, denied access, temporary dependency failure and unknown server error", "Each state has safe copy, logging and retry behavior"]
+      ] },
+      { type: "scenario", heading: "Prompt example: from generic dashboard to reviewable slice", context: "The original prompt says: ‘Build a modern analytics dashboard with charts, login and a database.’ It produces a polished page, invented metrics and client-side role hiding.", observations: [
+        "The audience, decision and authoritative data are missing.",
+        "‘Login’ does not define authorization or organization boundaries.",
+        "The tool fills absent evidence with plausible content and familiar components.",
+        "A layered prompt could first implement one real metric, two roles and empty, loading, denied and failed states."
+      ], conclusion: "Reduce the first task to a thin, evidence-backed journey with explicit trust boundaries and acceptance tests; expand only after it passes review." },
+      { type: "faq", heading: "Prompt questions", items: [
+        { question: "Is there one perfect vibe-coding prompt template?", answer: "No. A reusable structure helps, but the valuable content is product-specific evidence, boundaries, states and acceptance conditions." },
+        { question: "Should I tell the tool which framework to use?", answer: "Specify the existing stack or a justified constraint when it matters. Avoid choosing technology only because a generated example used it." },
+        { question: "Can a detailed prompt replace code review?", answer: "No. The implementation can misunderstand, omit or violate the prompt. Review and testing evaluate the delivered behavior." }
+      ] }
+    ],
+    sources: [nistSsdf, webTesting, w3cAccessibility],
+    related: ["how-to-make-a-vibe-coded-website-look-less-generic", "how-to-review-ai-generated-frontend-code", "vibe-coding-for-non-technical-founders"]
+  },
+
+  "vibe-coding-due-diligence-checklist": {
+    slug: "vibe-coding-due-diligence-checklist",
+    format: "due-diligence",
+    formatLabel: "Website acquisition evidence room",
+    eyebrow: "Buy the operating reality, not the demo",
+    title: "A due-diligence checklist for buying a vibe-coded website",
+    metaTitle: "Vibe-Coding Due-Diligence Checklist",
+    description: "Review a vibe-coded website or small web product before purchase across ownership, revenue, data, security, technology, operations and transferability.",
+    dek: "A public scan can orient the first conversation, but acquisition diligence needs private evidence: who owns the assets, how value is produced, where customer data lives and whether another team can operate the product after transfer.",
+    scope: "This checklist is an operational starting point, not legal, financial, tax, security or investment advice. Material acquisitions require qualified advisers and a scope appropriate to the transaction and jurisdiction.",
+    audience: "Buyers and founders evaluating a website, micro-SaaS or AI-assisted web product",
+    readingMinutes: 14,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "diligence", heading: "Build the evidence room around seven decisions", intro: "Request raw, scoped evidence and reconcile it across systems. A seller’s summary is useful context but should not be the only source for a material claim.", items: [
+        { area: "Ownership and authority", request: "Entity, contracts, contributors, source, domain, assets, licenses and account register", redFlag: "Critical rights or accounts remain personal, informal or non-transferable", verify: "Match agreements and administrator access to the actual assets", decision: "Can the seller transfer what the buyer believes it is buying?" },
+        { area: "Revenue and customer reality", request: "Processor exports, invoices, refunds, concentration, churn and active-customer definitions", redFlag: "Screenshots replace source records or revenue depends on one related customer", verify: "Reconcile representative transactions and definitions across systems", decision: "Is the economic claim repeatable after transfer?" },
+        { area: "Product and data", request: "Critical journeys, data model, providers, retention, deletion and backup procedures", redFlag: "The team cannot trace customer data or restore a representative backup", verify: "Walk one record through creation, use, export, deletion and recovery", decision: "Can the buyer responsibly continue the service?" },
+        { area: "Security and access", request: "Role model, incidents, vulnerability process, secrets, dependencies and recent assessment scope", redFlag: "Authorization is described by hidden buttons or one shared administrator account", verify: "Run bounded negative role tests and review authoritative controls", decision: "Which risks must be remediated before or priced into transfer?" },
+        { area: "Technology and maintainability", request: "Architecture, dependency inventory, test evidence, deployment and known debt ledger", redFlag: "Only the seller or a closed builder workspace can change production", verify: "Have an independent maintainer build and change a representative path", decision: "What is the realistic post-close maintenance capacity?" },
+        { area: "Operations and vendors", request: "Monitoring, incidents, support, quotas, costs, jobs, email and third-party terms", redFlag: "Users report outages before the team detects them", verify: "Trace one alert and recovery; reconcile current vendor usage and ownership", decision: "What operating cost and concentration transfer with the product?" },
+        { area: "Transfer and separation", request: "Detailed cutover plan, seller dependencies, credentials, support period and rollback", redFlag: "The plan is ‘send the repository and change DNS’", verify: "Rehearse account transfer, clean deployment and a reversible thin-slice migration", decision: "Can control move without interrupting customers or losing evidence?" }
+      ] },
+      { type: "prose", eyebrow: "Treat public signals as triage", heading: "A high Vibe-Footprint is not an acquisition verdict", paragraphs: [
+        "Public pattern similarity may suggest questions about distinctiveness or implementation conventions, while the separate security baseline may show visible header gaps. Neither establishes source ownership, revenue quality, authorization, maintainability or private data handling.",
+        "Use public observations to target diligence, then base the transaction decision on verified private evidence and qualified advice. A low score must not shorten the evidence room, and a high score must not substitute for it."
+      ], bullets: ["Preserve evidence before accounts begin transferring", "Use read-only and least-privilege access during review", "Record unresolved facts separately from confirmed defects", "Tie every remediation promise to owner, date and closing condition"] },
+      { type: "matrix", heading: "Translate findings into transaction decisions", intro: "Severity alone does not determine the deal response. Consider consequence, uncertainty, remediation cost and whether the seller must act before transfer.", columns: ["Finding class", "Possible response", "Evidence before decision", "Do not do"], rows: [
+        ["Ownership gap", "Condition closing on transfer or remove the asset", "Executed rights and tested access", "Assume possession equals permission"],
+        ["Security boundary failure", "Remediate before exposure or isolate affected scope", "Reproducible test and verified control", "Price a critical unknown without containment"],
+        ["Maintainability concentration", "Secure transition support and reduce key-person paths", "Independent build/change exercise", "Rely on a generated architecture summary"],
+        ["Vendor or cost concentration", "Renegotiate, migrate or adjust economics", "Usage, terms and exit plan", "Model current free allowances as permanent"],
+        ["Uncertain low-impact detail", "Track post-close with a bounded owner", "Clear uncertainty and maximum consequence", "Treat every unknown as equally urgent"]
+      ] },
+      { type: "scenario", heading: "Diligence example: profitable site, non-transferable operations", context: "A small subscription product shows consistent processor revenue. During technical review, the buyer learns that authentication, email and the production database are tied to the seller’s personal accounts and one builder workspace.", observations: [
+        "Revenue evidence does not establish operational transferability.",
+        "A repository export may omit identity configuration and live data ownership.",
+        "The seller can transfer accounts where supported or help execute a staged migration before closing.",
+        "The purchase agreement and cutover plan need to reflect unresolved dependencies."
+      ], conclusion: "Treat independent operation as a closing capability with verified evidence, not a post-close assumption." },
+      { type: "faq", heading: "Due-diligence questions", items: [
+        { question: "Can VibeFootprint tell me whether to buy a website?", answer: "No. It provides bounded public observations. Purchase decisions need financial, legal, technical, security and operational evidence appropriate to the transaction." },
+        { question: "Should the seller provide production credentials during diligence?", answer: "Use controlled, least-privilege and auditable access designed by the parties and advisers. Do not broadly share secrets or customer data." },
+        { question: "Does AI-assisted development reduce valuation?", answer: "The production method alone does not determine value. Ownership, customer outcomes, economics, risk, maintainability and transferability are more decision-relevant." }
+      ] }
+    ],
+    sources: [spdx, cisaSbom, nistSsdf, owaspAsvs],
+    related: ["vibe-coding-code-ownership-and-licenses", "vibe-coding-client-handoff-checklist", "how-to-migrate-a-vibe-coded-website"]
   }
 };
 

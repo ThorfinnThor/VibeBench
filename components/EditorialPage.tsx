@@ -172,6 +172,56 @@ function MigrationBlock({ block }: { block: Extract<EditorialBlock, { type: "mig
   </section>;
 }
 
+function TradeoffsBlock({ block }: { block: Extract<EditorialBlock, { type: "tradeoffs" }> }) {
+  return <section><SectionHeading eyebrow="Delivery trade-offs" heading={block.heading} intro={block.intro} />
+    <div className={styles.tradeoffs}>{block.items.map((item) => <article key={item.dimension}>
+      <h3>{item.dimension}</h3><div><p><strong>Vibe-coding strength</strong>{item.vibeStrength}</p><p><strong>Traditional strength</strong>{item.traditionalStrength}</p></div><aside><strong>Decide with</strong>{item.decidingEvidence}</aside>
+    </article>)}</div>
+  </section>;
+}
+
+function ProvenanceBlock({ block }: { block: Extract<EditorialBlock, { type: "provenance" }> }) {
+  return <section><SectionHeading eyebrow="Ownership and license ledger" heading={block.heading} intro={block.intro} />
+    <div className={styles.provenance}>{block.items.map((item, index) => <article key={item.asset}>
+      <header><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.asset}</h3></header>
+      <dl><div><dt>Origin</dt><dd>{item.origin}</dd></div><div><dt>Permission needed</dt><dd>{item.permission}</dd></div><div><dt>Verify</dt><dd>{item.verify}</dd></div><div><dt>Failure</dt><dd>{item.failure}</dd></div></dl>
+    </article>)}</div>
+  </section>;
+}
+
+function LaunchChecksBlock({ block }: { block: Extract<EditorialBlock, { type: "launchChecks" }> }) {
+  return <section><SectionHeading eyebrow="Launch control room" heading={block.heading} intro={block.intro} />
+    <ol className={styles.launchChecks}>{block.items.map((item, index) => <li key={`${item.window}-${item.check}`}>
+      <div><span>{item.window}</span><b>{String(index + 1).padStart(2, "0")}</b></div><h3>{item.check}</h3><p><strong>Owner</strong>{item.owner}</p><p><strong>Evidence</strong>{item.evidence}</p><aside><strong>Stop condition</strong>{item.stop}</aside>
+    </li>)}</ol>
+  </section>;
+}
+
+function SignalsBlock({ block }: { block: Extract<EditorialBlock, { type: "signals" }> }) {
+  return <section><SectionHeading eyebrow="Observable user promises" heading={block.heading} intro={block.intro} />
+    <div className={styles.signals}>{block.items.map((item) => <article key={item.journey}>
+      <div><h3>{item.journey}</h3><p>{item.signal}</p></div><p><strong>Investigate when</strong>{item.threshold}</p><p><strong>Context required</strong>{item.context}</p><aside><strong>Owned action</strong>{item.action}</aside>
+    </article>)}</div>
+  </section>;
+}
+
+function PromptSpecsBlock({ block }: { block: Extract<EditorialBlock, { type: "promptSpecs" }> }) {
+  return <section><SectionHeading eyebrow="Prompt specification" heading={block.heading} intro={block.intro} />
+    <div className={styles.promptSpecs}>{block.items.map((item, index) => <article key={item.layer}>
+      <header><span>Layer {String(index + 1).padStart(2, "0")}</span><h3>{item.layer}</h3><p>{item.question}</p></header>
+      <div><p><strong>Constraint</strong>{item.constraint}</p><p><strong>Useful input</strong>{item.example}</p><aside><strong>Acceptance check</strong>{item.acceptance}</aside></div>
+    </article>)}</div>
+  </section>;
+}
+
+function DiligenceBlock({ block }: { block: Extract<EditorialBlock, { type: "diligence" }> }) {
+  return <section><SectionHeading eyebrow="Buyer evidence room" heading={block.heading} intro={block.intro} />
+    <div className={styles.diligence}>{block.items.map((item, index) => <article key={item.area}>
+      <header><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.area}</h3></header><p><strong>Request</strong>{item.request}</p><p><strong>Red flag</strong>{item.redFlag}</p><p><strong>Verify</strong>{item.verify}</p><aside><strong>Decision use</strong>{item.decision}</aside>
+    </article>)}</div>
+  </section>;
+}
+
 function FaqBlock({ block }: { block: Extract<EditorialBlock, { type: "faq" }> }) {
   return <section className={styles.faq}><SectionHeading eyebrow="Plain answers" heading={block.heading} />{block.items.map((item) => <details key={item.question}><summary>{item.question}<b aria-hidden="true">+</b></summary><p>{item.answer}</p></details>)}</section>;
 }
@@ -203,6 +253,12 @@ function Block({ block }: { block: EditorialBlock }) {
     case "toolScore": return <ToolScoreBlock block={block} />;
     case "dataFlow": return <DataFlowBlock block={block} />;
     case "migration": return <MigrationBlock block={block} />;
+    case "tradeoffs": return <TradeoffsBlock block={block} />;
+    case "provenance": return <ProvenanceBlock block={block} />;
+    case "launchChecks": return <LaunchChecksBlock block={block} />;
+    case "signals": return <SignalsBlock block={block} />;
+    case "promptSpecs": return <PromptSpecsBlock block={block} />;
+    case "diligence": return <DiligenceBlock block={block} />;
     case "faq": return <FaqBlock block={block} />;
   }
 }
