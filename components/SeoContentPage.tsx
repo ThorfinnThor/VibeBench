@@ -7,6 +7,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
     { href: "/vibe-coding-website-checker", label: "Website checker" },
     { href: "/how-to-tell-if-a-website-was-vibe-coded", label: "Recognize patterns" },
     { href: "/vibe-coding-security-checklist", label: "Security checklist" },
+    { href: "/insights", label: "Editorial insights" },
     { href: "/guides", label: "All guides" }
   ];
 
@@ -14,7 +15,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
     <a className="skip-link" href="#article">Skip to content</a>
     <header className={styles.header}>
       <Link className="brand" href="/" aria-label="VibeFootprint home"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link>
-      <nav aria-label="Primary navigation"><Link href="/#scanner">Run a scan</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
+      <nav aria-label="Primary navigation"><Link href="/#scanner">Run a scan</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
     </header>
 
     <article id="article">

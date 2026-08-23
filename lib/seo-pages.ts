@@ -82,26 +82,5 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
       { question: "What does the security score measure?", answer: "It summarizes selected publicly visible header protections on the main document. It remains independent from the Vibe-Footprint." },
       { question: "What still needs manual testing?", answer: "Authentication, authorization, forms, payments, backend logic, dependencies, secrets, runtime behavior and accessibility require additional testing." }
     ]
-  },
-  "how-to-tell-if-a-website-was-vibe-coded": {
-    locale: "en",
-    slug: "how-to-tell-if-a-website-was-vibe-coded",
-    eyebrow: "Interpret patterns carefully",
-    title: "How to tell if a website shows vibe-coding patterns",
-    metaTitle: "How to Tell If a Website Was Vibe Coded",
-    description: "Learn which public design and technical patterns may resemble vibe-coded websites—and why no public scan can prove authorship.",
-    intro: "There is no single reliable visual marker that proves a website was vibe coded. A useful review looks for combinations of repeated design, structure and implementation signals, then keeps those observations separate from conclusions about authorship.",
-    boundary: "Similar patterns can come from templates, design systems, libraries, deadlines or human preference. Pattern similarity is evidence for review, not a verdict.",
-    sections: [
-      { heading: "Recurring design patterns", paragraphs: ["Highly interchangeable hero sections, repeated rounded cards, decorative gradients, large blur effects and weakly differentiated sections may create a generic impression. None of these is conclusive on its own; many established design systems use the same conventions."], bullets: ["Repeated card compositions with little content hierarchy", "Generic marketing copy that does not explain the product", "Decorative effects used without a functional role", "Inconsistent typography, spacing or interaction states"] },
-      { heading: "Public technical and structural signals", paragraphs: ["Delivered HTML and same-origin assets can expose framework conventions, class-token patterns, inline code volume and repeated component structure. Some builders may also leave direct public markers, but absence of a marker does not rule out a tool and presence should be interpreted in context."] },
-      { heading: "Quality and security are different questions", paragraphs: ["A website can strongly resemble common vibe-coding patterns and still be functional and secure. It can also look completely custom while exposing serious vulnerabilities. That is why VibeFootprint reports similarity, concrete quality findings and public header protection separately."] },
-      { heading: "A responsible assessment process", paragraphs: ["Use multiple observable signals, disclose the limitations, avoid accusations and focus the conversation on improvements. The most useful outcome is not a label; it is a prioritized plan for stronger design decisions, safer engineering and clearer product communication."] }
-    ],
-    faq: [
-      { question: "What is the biggest giveaway of a vibe-coded website?", answer: "There is no universal giveaway. Repeated generic patterns across design, content and implementation are more informative than any single visual feature." },
-      { question: "Can builder fingerprints prove which tool was used?", answer: "A direct public marker may support a narrow observation, but markers can be removed, inherited or introduced indirectly. They should not be treated as complete authorship evidence." },
-      { question: "Why use a score at all?", answer: "The score compresses many public signals into an orientation value. The evidence and limitations beside it are necessary for responsible interpretation." }
-    ]
   }
 };

@@ -521,7 +521,7 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
     <p className="sr-only" role="status" aria-live="polite">{loading ? copy.scanning : errorResult ? technicalOutcome?.title : result ? copy.results : ""}</p>
     <header className="topbar">
       <a className="brand" href="#top" aria-label={copy.home}><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a>
-      <nav aria-label="Primary navigation"><a href="#scanner">{copy.scan}</a><Link href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
+      <nav aria-label="Primary navigation"><a href="#scanner">{copy.scan}</a><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
     </header>
 
     <section className="hero" id="scanner" tabIndex={-1}>
@@ -767,6 +767,6 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
       </nav>
     </section>
 
-    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link></nav></footer>
+    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link></nav></footer>
   </main>;
 }

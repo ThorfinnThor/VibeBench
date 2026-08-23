@@ -1,14 +1,28 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import EditorialPage from "../../components/EditorialPage";
 import SeoContentPage from "../../components/SeoContentPage";
+import { editorialPages } from "../../lib/editorial-pages";
 import { englishSeoPages } from "../../lib/seo-pages";
 
 export function generateStaticParams() {
-  return Object.keys(englishSeoPages).map((slug) => ({ slug }));
+  return [...new Set([...Object.keys(englishSeoPages), ...Object.keys(editorialPages)])].map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const editorial = editorialPages[slug];
+  if (editorial) {
+    const path = `/${editorial.slug}`;
+    return {
+      title: editorial.metaTitle,
+      description: editorial.description,
+      authors: [{ name: "VibeFootprint Editorial", url: "/insights" }],
+      alternates: { canonical: path },
+      openGraph: { type: "article", title: `${editorial.metaTitle} | VibeFootprint`, description: editorial.description, url: path, locale: "en_US", publishedTime: `${editorial.publishedAt}T00:00:00.000Z`, modifiedTime: `${editorial.updatedAt}T00:00:00.000Z`, images: [{ url: "/og.png", width: 1731, height: 909, alt: editorial.title }] },
+      twitter: { card: "summary_large_image", title: `${editorial.metaTitle} | VibeFootprint`, description: editorial.description, images: ["/og.png"] }
+    };
+  }
   const page = englishSeoPages[slug];
   if (!page) return {};
   return {
@@ -22,6 +36,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function EnglishSeoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const editorial = editorialPages[slug];
+  if (editorial) return <EditorialPage page={editorial} />;
   const page = englishSeoPages[slug];
   if (!page) notFound();
   return <SeoContentPage page={page} />;

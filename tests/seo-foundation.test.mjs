@@ -8,6 +8,7 @@ const sitemap = readFileSync(new URL("../app/sitemap.ts", import.meta.url), "utf
 const robots = readFileSync(new URL("../app/robots.ts", import.meta.url), "utf8");
 const content = readFileSync(new URL("../lib/seo-pages.ts", import.meta.url), "utf8");
 const scanner = readFileSync(new URL("../components/VibeFootprintHome.tsx", import.meta.url), "utf8");
+const editorial = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8");
 
 test("SEO foundation exposes canonical metadata and structured identity", () => {
   assert.match(layout, /metadataBase/);
@@ -28,10 +29,22 @@ test("the public website is English-only", () => {
 
 test("sitemap includes core pages, guide hubs and published guides", () => {
   assert.match(sitemap, /englishSeoPages/);
+  assert.match(sitemap, /allEditorialPages/);
+  assert.match(sitemap, /editorialHub/);
   assert.match(sitemap, /allGuidePages/);
   assert.match(sitemap, /guideClusters/);
   assert.match(sitemap, /status === "published"/);
   assert.match(sitemap, /absoluteUrl/);
+});
+
+test("editorial SEO pages cover distinct intents with explicit evidence boundaries", () => {
+  assert.match(editorial, /how-to-tell-if-a-website-was-vibe-coded/);
+  assert.match(editorial, /vibe-coded-vs-template-website/);
+  assert.match(editorial, /vibe-coding-website-audit-framework/);
+  assert.match(editorial, /how-to-make-a-vibe-coded-website-look-less-generic/);
+  assert.match(editorial, /how-to-review-ai-generated-frontend-code/);
+  assert.match(editorial, /can-you-detect-ai-generated-website-code/);
+  assert.match(editorial, /Evidence boundary|evidence boundary/);
 });
 
 test("robots permits public pages and keeps the scan API out of the crawl surface", () => {
