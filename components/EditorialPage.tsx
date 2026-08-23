@@ -63,6 +63,61 @@ function ClaimsBlock({ block }: { block: Extract<EditorialBlock, { type: "claims
   </section>;
 }
 
+function RisksBlock({ block }: { block: Extract<EditorialBlock, { type: "risks" }> }) {
+  return <section><SectionHeading eyebrow="Threat model" heading={block.heading} intro={block.intro} />
+    <div className={styles.risks}>{block.items.map((item, index) => <article key={item.threat}>
+      <header><span>Scenario {String(index + 1).padStart(2, "0")}</span><h3>{item.threat}</h3></header>
+      <dl><div><dt>Trigger</dt><dd>{item.trigger}</dd></div><div><dt>Potential impact</dt><dd>{item.impact}</dd></div><div><dt>Control</dt><dd>{item.control}</dd></div><div><dt>Access needed</dt><dd>{item.access}</dd></div></dl>
+    </article>)}</div>
+  </section>;
+}
+
+function DecisionsBlock({ block }: { block: Extract<EditorialBlock, { type: "decisions" }> }) {
+  return <section><SectionHeading eyebrow="Decision path" heading={block.heading} intro={block.intro} />
+    <ol className={styles.decisions}>{block.items.map((item, index) => <li key={item.question}>
+      <b>{String(index + 1).padStart(2, "0")}</b><h3>{item.question}</h3>
+      <div><p><strong>If yes</strong>{item.yes}</p><p><strong>If no</strong>{item.no}</p></div>
+      <aside><strong>Evidence</strong>{item.evidence}</aside>
+    </li>)}</ol>
+  </section>;
+}
+
+function SeoClinicBlock({ block }: { block: Extract<EditorialBlock, { type: "seoClinic" }> }) {
+  return <section><SectionHeading eyebrow="Diagnosis before treatment" heading={block.heading} intro={block.intro} />
+    <div className={styles.seoClinic}>{block.items.map((item, index) => <article key={item.symptom}>
+      <div><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.symptom}</h3></div>
+      <dl><div><dt>Likely cause</dt><dd>{item.cause}</dd></div><div><dt>Repair</dt><dd>{item.repair}</dd></div><div><dt>Verify</dt><dd>{item.verify}</dd></div></dl>
+    </article>)}</div>
+  </section>;
+}
+
+function LedgerBlock({ block }: { block: Extract<EditorialBlock, { type: "ledger" }> }) {
+  return <section><SectionHeading eyebrow="Maintenance economics" heading={block.heading} intro={block.intro} />
+    <div className={styles.ledger}>{block.items.map((item, index) => <article key={item.debt}>
+      <header><span>Debt {String(index + 1).padStart(2, "0")}</span><h3>{item.debt}</h3></header>
+      <p><strong>Interest paid</strong>{item.interest}</p><p><strong>Visible signal</strong>{item.signal}</p><aside><strong>Smallest useful action</strong>{item.action}</aside>
+    </article>)}</div>
+  </section>;
+}
+
+function HandoffBlock({ block }: { block: Extract<EditorialBlock, { type: "handoff" }> }) {
+  return <section><SectionHeading eyebrow="Transfer of capability" heading={block.heading} intro={block.intro} />
+    <div className={styles.handoff}>{block.items.map((item, index) => <article key={item.artifact}>
+      <div><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.artifact}</h3><p>{item.owner}</p></div>
+      <p><strong>Accepted when</strong>{item.acceptance}</p><p><strong>Handoff failure</strong>{item.failure}</p>
+    </article>)}</div>
+  </section>;
+}
+
+function TestLabBlock({ block }: { block: Extract<EditorialBlock, { type: "testLab" }> }) {
+  return <section><SectionHeading eyebrow="Test protocol" heading={block.heading} intro={block.intro} />
+    <div className={styles.testLab}>{block.items.map((item, index) => <article key={item.experiment}>
+      <header><span>Experiment {String(index + 1).padStart(2, "0")}</span><h3>{item.experiment}</h3></header>
+      <div><p><strong>Setup</strong>{item.setup}</p><p><strong>Assertions</strong>{item.assertions}</p><aside><strong>Negative case</strong>{item.negative}</aside></div>
+    </article>)}</div>
+  </section>;
+}
+
 function FaqBlock({ block }: { block: Extract<EditorialBlock, { type: "faq" }> }) {
   return <section className={styles.faq}><SectionHeading eyebrow="Plain answers" heading={block.heading} />{block.items.map((item) => <details key={item.question}><summary>{item.question}<b aria-hidden="true">+</b></summary><p>{item.answer}</p></details>)}</section>;
 }
@@ -82,6 +137,12 @@ function Block({ block }: { block: EditorialBlock }) {
     case "phases": return <PhasesBlock block={block} />;
     case "gates": return <GatesBlock block={block} />;
     case "claims": return <ClaimsBlock block={block} />;
+    case "risks": return <RisksBlock block={block} />;
+    case "decisions": return <DecisionsBlock block={block} />;
+    case "seoClinic": return <SeoClinicBlock block={block} />;
+    case "ledger": return <LedgerBlock block={block} />;
+    case "handoff": return <HandoffBlock block={block} />;
+    case "testLab": return <TestLabBlock block={block} />;
     case "faq": return <FaqBlock block={block} />;
   }
 }

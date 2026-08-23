@@ -35,8 +35,14 @@ Primary guidance:
 | How do I make the design less generic? | `/how-to-make-a-vibe-coded-website-look-less-generic` | Transformation playbook | Originality scorecard, ordered design moves and structural before/after edits |
 | How do I review generated frontend code? | `/how-to-review-ai-generated-frontend-code` | Engineering gates | Five production gates, failure-mode matrix and a review packet |
 | Can AI-generated website code actually be detected? | `/can-you-detect-ai-generated-website-code` | Evidence brief | Separates observable claims, inferences and facts a public URL cannot establish |
+| Are vibe-coded websites secure? | `/are-vibe-coded-websites-secure` | Scenario-based threat model | Models assets, trust boundaries, abuse scenarios, controls and the access needed to verify them |
+| Is vibe coding ready for production? | `/is-vibe-coding-ready-for-production` | Production decision guide | Routes six readiness decisions into bounded release stages with required evidence |
+| Why is my AI-assisted site not ranking? | `/vibe-coding-seo-mistakes` | Technical SEO clinic | Diagnoses six different symptoms before prescribing rendering, canonical, discovery or content repairs |
+| How do I reduce technical debt after a fast build? | `/vibe-coding-technical-debt` | Technical-debt ledger | Prioritizes recurring interest and product consequence instead of code aesthetics |
+| What must an agency transfer to its client? | `/vibe-coding-client-handoff-checklist` | Client handoff kit | Defines seven owned artifacts and a client-operated acceptance session |
+| How should I test a vibe-coded website? | `/how-to-test-a-vibe-coded-website` | Website testing lab | Provides six experiments with setup, assertions and negative cases plus a release evidence packet |
 
-The `/insights` hub explains the editorial model and links to every page. Each
+The `/insights` hub explains the editorial model and links to all twelve pages. Each
 article links to three genuinely adjacent decisions and to first-party standards
 or primary documentation.
 

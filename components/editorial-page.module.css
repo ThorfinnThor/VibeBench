@@ -6,6 +6,12 @@
 .playbook .hero::after { border-color: rgba(229,101,79,.1); }
 .code-review .hero::after { border-radius: 22px; transform: rotate(-13deg); }
 .evidence-brief .hero::after { border: 1px solid rgba(141,211,196,.16); box-shadow: 0 0 0 70px rgba(141,211,196,.035); }
+.threat-model .hero::after { border-color: rgba(229,101,79,.12); border-radius: 50% 12% 50% 12%; transform: rotate(11deg); }
+.decision-guide .hero::after { border-width: 1px; border-radius: 0; transform: rotate(45deg); box-shadow: 0 0 0 70px rgba(141,211,196,.035), 0 0 0 140px rgba(141,211,196,.02); }
+.seo-clinic .hero::after { width: 460px; height: 240px; border-width: 55px; border-radius: 50%; transform: rotate(-18deg); }
+.debt-ledger .hero::after { border-width: 1px; border-radius: 18px; box-shadow: inset 0 0 0 62px rgba(229,101,79,.04); transform: rotate(9deg); }
+.handoff-kit .hero::after { width: 430px; height: 300px; border-width: 1px; border-radius: 32px; box-shadow: -70px 70px 0 rgba(141,211,196,.025); }
+.test-lab .hero::after { width: 400px; height: 400px; border-width: 55px 1px 1px 55px; border-radius: 50%; transform: rotate(-20deg); }
 .breadcrumb { margin-bottom: 52px; display: flex; flex-wrap: wrap; gap: 9px; color: #9eb0a9; font-size: 12px; }
 .breadcrumb a { color: #9fdacc; text-decoration: none; }
 .heroGrid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(330px, .72fr); gap: clamp(50px, 8vw, 112px); align-items: end; position: relative; z-index: 1; }
@@ -117,6 +123,65 @@
 .claims aside { margin-top: 18px; padding: 13px; border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 12px; }
 .claims aside strong { margin-bottom: 4px; display: block; color: var(--ink); }
 
+.risks { display: grid; gap: 14px; counter-reset: risk; }
+.risks article { display: grid; grid-template-columns: minmax(220px, .62fr) 1fr; border: 1px solid var(--line); border-radius: 16px; background: white; overflow: hidden; }
+.risks header { padding: 27px; background: #fff1ed; }
+.risks header span, .testLab header span { color: #9b3d2d; font-size: 10px; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+.risks h3, .testLab h3 { margin: 16px 0 0; font-size: 22px; }
+.risks dl { margin: 0; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+.risks dl div { padding: 12px 14px; border-radius: 8px; background: var(--surface-soft); }
+.risks dt, .seoClinic dt { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.risks dd, .seoClinic dd { margin: 5px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+.decisions { margin: 0; padding: 0; display: grid; gap: 12px; list-style: none; }
+.decisions li { padding: 25px; display: grid; grid-template-columns: 46px minmax(220px, .7fr) 1fr; gap: 20px; align-items: start; border: 1px solid var(--line); border-left: 5px solid var(--green); border-radius: 14px; background: white; }
+.decisions li > b { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--ink); color: white; font-size: 11px; }
+.decisions h3 { margin: 5px 0 0; font-size: 20px; }
+.decisions li > div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.decisions p, .decisions aside { margin: 0; padding: 12px; border-radius: 8px; background: #eff7f4; color: var(--muted); font-size: 12px; }
+.decisions p:nth-child(2) { background: #fff1ed; }
+.decisions strong { margin-bottom: 4px; display: block; color: var(--green); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.decisions p:nth-child(2) strong { color: #9b3d2d; }
+.decisions aside { grid-column: 3; background: var(--surface-soft); }
+
+.seoClinic { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.seoClinic article { border: 1px solid var(--line); border-radius: 16px; background: white; overflow: hidden; }
+.seoClinic article > div { min-height: 135px; padding: 25px; background: var(--ink); color: white; }
+.seoClinic article > div span { color: #9fdacc; font-size: 11px; font-weight: 900; }
+.seoClinic h3 { margin: 20px 0 0; font-size: 21px; }
+.seoClinic dl { margin: 0; padding: 22px; display: grid; gap: 12px; }
+.seoClinic dl div { padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.seoClinic dl div:last-child { padding: 12px; border: 0; border-radius: 8px; background: #eff7f4; }
+
+.ledger { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
+.ledger article { min-height: 350px; padding: 24px; display: flex; flex-direction: column; border: 1px solid var(--line); border-top: 5px solid var(--amber); border-radius: 14px; background: white; }
+.ledger header span { color: #79510f; font-size: 10px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.ledger h3 { min-height: 52px; margin: 20px 0 25px; font-size: 21px; }
+.ledger p { margin: 0; padding: 13px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.ledger p strong, .ledger aside strong { display: block; margin-bottom: 4px; color: var(--ink); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.ledger aside { margin-top: auto; padding: 14px; border-radius: 8px; background: #fff4d9; color: #66470e; font-size: 12px; }
+
+.handoff { border: 1px solid var(--line); border-radius: 18px; background: white; overflow: hidden; }
+.handoff article { padding: 24px 27px; display: grid; grid-template-columns: .72fr 1fr 1fr; gap: 27px; border-bottom: 1px solid var(--line); }
+.handoff article:last-child { border-bottom: 0; }
+.handoff article > div span { color: var(--green); font-size: 10px; font-weight: 900; }
+.handoff h3 { margin: 8px 0; font-size: 20px; }
+.handoff article > div p { margin: 0; color: var(--muted); font-size: 11px; }
+.handoff article > p { margin: 0; padding: 13px; border-radius: 8px; background: #eff7f4; color: var(--muted); font-size: 13px; }
+.handoff article > p:last-child { background: #fff1ed; }
+.handoff article > p strong { margin-bottom: 5px; display: block; color: var(--green); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.handoff article > p:last-child strong { color: #9b3d2d; }
+
+.testLab { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+.testLab article { border: 1px solid var(--line); border-radius: 18px; background: white; overflow: hidden; }
+.testLab header { padding: 25px; border-bottom: 1px solid var(--line); background: #f7fbf9; }
+.testLab header span { color: var(--green); }
+.testLab article > div { padding: 22px; }
+.testLab p, .testLab aside { margin: 0 0 10px; padding: 13px; border-radius: 8px; background: var(--surface-soft); color: var(--muted); font-size: 13px; }
+.testLab aside { margin-bottom: 0; background: #fff1ed; }
+.testLab p strong, .testLab aside strong { margin-bottom: 4px; display: block; color: var(--green); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.testLab aside strong { color: #9b3d2d; }
+
 .faq details { border-top: 1px solid var(--line); }
 .faq details:last-child { border-bottom: 1px solid var(--line); }
 .faq summary { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: "Manrope", sans-serif; font-size: 18px; font-weight: 700; cursor: pointer; list-style: none; }
@@ -151,11 +216,16 @@
 @media (max-width: 900px) {
   .heroGrid, .sectionHeading { grid-template-columns: 1fr; gap: 32px; }
   .heroGrid { align-items: start; }
-  .ladder, .scorecard, .claims { grid-template-columns: 1fr; }
+  .ladder, .scorecard, .claims, .seoClinic, .ledger, .testLab { grid-template-columns: 1fr; }
   .ladder article:first-child { grid-column: auto; }
   .phases article { grid-template-columns: 130px 1fr; }
   .phases article ul { grid-column: 1 / -1; }
   .gates article { grid-template-columns: 1fr; gap: 20px; }
+  .risks article { grid-template-columns: 1fr; }
+  .decisions li { grid-template-columns: 46px 1fr; }
+  .decisions li > div, .decisions aside { grid-column: 2; }
+  .handoff article { grid-template-columns: 1fr 1fr; }
+  .handoff article > div { grid-column: 1 / -1; }
   .sources > div:last-child, .related > div:nth-child(2) { grid-template-columns: 1fr 1fr; }
 }
 
@@ -172,6 +242,9 @@
   .phases article { padding: 23px 0; grid-template-columns: 1fr; gap: 14px; }
   .phases article ul { grid-column: auto; }
   .gates aside { grid-column: auto; }
+  .risks dl, .decisions li > div, .handoff article { grid-template-columns: 1fr; }
+  .decisions li > div, .decisions aside { grid-column: 1 / -1; }
+  .handoff article > div { grid-column: auto; }
   .sources > div:last-child, .related > div:nth-child(2) { grid-template-columns: 1fr; }
   .scanCta { grid-template-columns: 1fr; gap: 27px; }
   .scanCta > a { min-width: 0; }

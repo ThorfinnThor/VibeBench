@@ -1,4 +1,4 @@
-export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief";
+export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab";
 
 export type EditorialSource = {
   label: string;
@@ -16,6 +16,12 @@ export type EditorialBlock =
   | { type: "phases"; heading: string; intro: string; phases: { label: string; title: string; outcome: string; actions: string[] }[] }
   | { type: "gates"; heading: string; intro: string; gates: { name: string; pass: string; fail: string; evidence: string }[] }
   | { type: "claims"; heading: string; intro: string; claims: { status: "observable" | "inference" | "unknown"; claim: string; reason: string; wording: string }[] }
+  | { type: "risks"; heading: string; intro: string; items: { threat: string; trigger: string; impact: string; control: string; access: string }[] }
+  | { type: "decisions"; heading: string; intro: string; items: { question: string; yes: string; no: string; evidence: string }[] }
+  | { type: "seoClinic"; heading: string; intro: string; items: { symptom: string; cause: string; repair: string; verify: string }[] }
+  | { type: "ledger"; heading: string; intro: string; items: { debt: string; interest: string; signal: string; action: string }[] }
+  | { type: "handoff"; heading: string; intro: string; items: { artifact: string; owner: string; acceptance: string; failure: string }[] }
+  | { type: "testLab"; heading: string; intro: string; items: { experiment: string; setup: string; assertions: string; negative: string }[] }
   | { type: "faq"; heading: string; items: { question: string; answer: string }[] };
 
 export type EditorialPage = {
@@ -41,6 +47,12 @@ const methodology = { label: "VibeFootprint methodology", href: "/methodology", 
 const w3cAccessibility = { label: "W3C Web Accessibility Initiative", href: "https://www.w3.org/WAI/fundamentals/", note: "Primary guidance for treating accessibility as a user requirement rather than a visual preference." };
 const owaspTesting = { label: "OWASP Web Security Testing Guide", href: "https://owasp.org/www-project-web-security-testing-guide/", note: "A structured reference for security testing beyond what a public URL scan can establish." };
 const webPerformance = { label: "web.dev performance guidance", href: "https://web.dev/learn/performance/", note: "Practical browser-performance guidance and measurement concepts." };
+const owaspAsvs = { label: "OWASP Application Security Verification Standard", href: "https://owasp.org/www-project-application-security-verification-standard/", note: "A requirements-based reference for defining and verifying application security controls." };
+const nextProduction = { label: "Next.js production checklist", href: "https://nextjs.org/docs/app/guides/production-checklist", note: "Primary framework guidance for production readiness, performance, security and observability." };
+const googleJavaScriptSeo = { label: "Google Search: JavaScript SEO basics", href: "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics", note: "Primary guidance on how Google processes JavaScript pages and which rendering patterns can affect discovery." };
+const googleCanonical = { label: "Google Search: canonical URL guidance", href: "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls", note: "Primary guidance for consolidating duplicate URLs and keeping indexing signals aligned." };
+const githubCodeOwners = { label: "GitHub CODEOWNERS documentation", href: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners", note: "Primary documentation for making repository review ownership explicit." };
+const webTesting = { label: "web.dev Learn Testing", href: "https://web.dev/learn/testing/", note: "A practical introduction to automated testing levels, assertions and test design for web applications." };
 
 export const editorialPages: Record<string, EditorialPage> = {
   "how-to-tell-if-a-website-was-vibe-coded": {
@@ -351,6 +363,306 @@ export const editorialPages: Record<string, EditorialPage> = {
     ],
     sources: [methodology, { label: "NIST guidance on measurement uncertainty", href: "https://www.nist.gov/pml/nist-technical-note-1297", note: "Background on stating measurement results with an explicit uncertainty framework." }, { label: "Google guidance on generative AI content", href: "https://developers.google.com/search/docs/fundamentals/using-gen-ai-content", note: "An example of evaluating usefulness and policy compliance rather than assuming one production method determines quality." }],
     related: ["how-to-tell-if-a-website-was-vibe-coded", "vibe-coded-vs-template-website", "how-to-review-ai-generated-frontend-code"]
+  },
+
+  "are-vibe-coded-websites-secure": {
+    slug: "are-vibe-coded-websites-secure",
+    format: "threat-model",
+    formatLabel: "Scenario-based threat model",
+    eyebrow: "Security depends on controls, not origin",
+    title: "Are vibe-coded websites secure? A practical threat model",
+    metaTitle: "Are Vibe-Coded Websites Secure?",
+    description: "Assess the security of a vibe-coded or AI-assisted website through concrete threat scenarios, trust boundaries and verification evidence instead of judging its production method.",
+    dek: "A vibe-coded website can be secure, and a traditionally coded website can be dangerous. The useful question is whether the deployed system has identified its assets, trust boundaries, abuse paths and tested controls.",
+    scope: "A public URL can reveal some headers, delivered scripts and exposed behavior. Authentication, authorization, secret handling, storage, internal APIs and deployment controls require repository, configuration or runtime access.",
+    audience: "Founders and technical owners deciding how deeply an AI-assisted website needs to be security-tested",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "prose", eyebrow: "The direct answer", heading: "Vibe coding changes the review pressure, not the security laws", paragraphs: [
+        "Fast generation can create more code than a small team can explain, and plausible happy paths can hide missing authorization, unsafe defaults or unbounded inputs. Those are process risks. They do not make every generated component vulnerable, nor do they disappear when a human types the same code manually.",
+        "Begin with what the system protects: accounts, payments, private content, uploaded files, administrative actions and operational secrets. Then draw where data crosses from browser to server, from one user role to another and from your application to a third party. Threats become reviewable when tied to a boundary and an impact."
+      ], bullets: ["Security headers are a baseline, not an application penetration test", "Client-side hiding is never authorization", "A working demo does not establish safe failure behavior", "Every external integration creates a separate trust decision"] },
+      { type: "risks", heading: "Five scenarios that deserve explicit evidence", intro: "Read each row as a miniature threat model. If the scenario is impossible, record why. If it is possible, identify a control and a test before launch.", items: [
+        { threat: "A user changes an object ID", trigger: "The browser sends a project, invoice or account identifier", impact: "Another customer’s data or action becomes accessible", control: "Authorize every object on the server against the authenticated principal", access: "API tests, authorization code and representative role accounts" },
+        { threat: "Untrusted text reaches an executable context", trigger: "Rich text, search, URL parameters or generated HTML is rendered", impact: "Script execution, data theft or unwanted actions", control: "Context-aware output handling, safe rendering APIs and a restrictive CSP", access: "Rendering code, payload tests and deployed policy" },
+        { threat: "A secret moves into the client bundle", trigger: "An SDK key or environment variable is used in client code", impact: "Unauthorized API use or access to privileged data", control: "Keep privileged credentials server-side and rotate exposed values", access: "Built assets, environment configuration and provider permissions" },
+        { threat: "An automation repeats a sensitive action", trigger: "Retries, double clicks or replayed requests reach a payment or mutation endpoint", impact: "Duplicate charges, records or messages", control: "Idempotency, transaction boundaries and clear client state", access: "Endpoint behavior, persistence layer and failure tests" },
+        { threat: "A third-party script becomes the weakest boundary", trigger: "Analytics, chat, widgets or tag managers execute on every page", impact: "Supply-chain exposure or unnecessary data collection", control: "Minimize vendors, constrain permissions and review data flows", access: "Delivered scripts, vendor settings, contracts and consent behavior" }
+      ] },
+      { type: "matrix", heading: "What different reviews can and cannot establish", intro: "Use more access only when the risk justifies it. A green public header check should never be presented as complete application security.", columns: ["Review layer", "Useful for", "Blind spot", "Evidence produced"], rows: [
+        ["Public surface", "TLS, headers, exposed scripts and observable flows", "Private code, data access and secrets", "Timestamped observations and reproducible requests"],
+        ["Repository review", "Authorization paths, validation, dependencies and configuration", "Production drift and live infrastructure", "Reviewed code paths, dependency record and findings"],
+        ["Authenticated testing", "Role boundaries, business logic and account behavior", "Untested integrations and unseen roles", "Reproducible abuse cases with scoped impact"],
+        ["Deployment review", "Secrets, permissions, logs, backups and isolation", "Unknown application behavior", "Configuration evidence and recovery tests"],
+        ["Continuous monitoring", "Unexpected traffic, failures and regression signals", "Vulnerabilities that do not create a visible event", "Alerts, owners and response records"]
+      ] },
+      { type: "scenario", heading: "Worked threat model: a generated customer portal", context: "A portal uses a hosted authentication provider and a generated dashboard. A user can edit the account ID in a request; the API fetches the record by ID but does not also constrain it to the authenticated organization.", observations: [
+        "The login flow is functioning and the visual UI hides other account IDs.",
+        "The broken boundary exists in the server query, so a screenshot or header scan cannot see it.",
+        "The root issue is missing object-level authorization, not the fact that a generator produced the dashboard.",
+        "A negative API test using two organizations would expose the failure and remain valuable after the code is rewritten."
+      ], conclusion: "Treat the portal as not ready until the server enforces organization ownership and the cross-account test passes. Record the control as a permanent acceptance condition." },
+      { type: "faq", heading: "Security questions without false reassurance", items: [
+        { question: "Does a high security-baseline score mean the website is secure?", answer: "No. It summarizes selected publicly visible header protections. Authorization, business logic, secrets, data handling and many runtime risks need deeper access and testing." },
+        { question: "Should every small marketing site receive a penetration test?", answer: "Depth should follow the assets and attack surface. A static marketing site still needs safe deployment and dependencies, while accounts, payments, uploads or private data justify substantially deeper review." },
+        { question: "Can I fix security by asking an AI coding tool to harden the app?", answer: "It may help implement controls, but the team must define the threat, verify the control independently and retain ownership of the result." }
+      ] }
+    ],
+    sources: [owaspAsvs, owaspTesting, { label: "OWASP Top 10", href: "https://owasp.org/www-project-top-ten/", note: "A high-level awareness document for common web-application risk categories, not a substitute for a system-specific threat model." }],
+    related: ["vibe-coding-website-audit-framework", "how-to-review-ai-generated-frontend-code", "is-vibe-coding-ready-for-production"]
+  },
+
+  "is-vibe-coding-ready-for-production": {
+    slug: "is-vibe-coding-ready-for-production",
+    format: "decision-guide",
+    formatLabel: "Production decision guide",
+    eyebrow: "A prototype is evidence, not a release",
+    title: "Is vibe coding ready for production? A decision guide",
+    metaTitle: "Is Vibe Coding Ready for Production?",
+    description: "Decide whether a vibe-coded or AI-assisted web application is ready for production using explicit ownership, data, recovery, security and operability evidence.",
+    dek: "Production readiness is not a property of the tool that created the first version. It is the point at which a team can explain the system, operate it under failure and accept responsibility for what users entrust to it.",
+    scope: "This guide sets a decision process, not a universal release certificate. Regulated data, payments, healthcare, safety-critical use and complex permissions require domain-specific standards and independent review.",
+    audience: "Founders and engineering leads moving an AI-assisted prototype toward real customers",
+    readingMinutes: 11,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "decisions", heading: "The six-question production decision", intro: "Answer in order. A ‘no’ does not mean abandon the product; it identifies the next kind of work. Evidence should be inspectable by someone other than the original builder.", items: [
+        { question: "Can a named owner explain the critical data flow?", yes: "Continue to failure behavior.", no: "Map inputs, storage, third parties and privilege boundaries before adding features.", evidence: "A current architecture note and owner for each critical path." },
+        { question: "Do failures preserve user data and allow recovery?", yes: "Continue to security and privacy.", no: "Design timeouts, retries, idempotency, backups and user-visible recovery.", evidence: "Negative-path tests and a completed restore exercise." },
+        { question: "Are trust decisions enforced outside the browser?", yes: "Continue to operational visibility.", no: "Move authorization and privileged actions to controlled server boundaries.", evidence: "Role tests and reviewed server-side enforcement." },
+        { question: "Can the team detect a broken critical journey?", yes: "Continue to change safety.", no: "Add meaningful logs, health signals and owned alerts.", evidence: "A staged incident that produces the expected alert and diagnosis." },
+        { question: "Can a change be reviewed, tested and rolled back?", yes: "Continue to legal and product obligations.", no: "Create release criteria, versioned changes and a rehearsed rollback path.", evidence: "A release record with test results and rollback condition." },
+        { question: "Are user promises, consent and data obligations accurate?", yes: "A controlled production pilot may be justified.", no: "Resolve policy, retention, accessibility and contractual gaps first.", evidence: "Approved product copy, data map and acceptance criteria." }
+      ] },
+      { type: "prose", eyebrow: "Choose exposure deliberately", heading: "Production is a series of scopes, not one dramatic switch", paragraphs: [
+        "A private prototype can tolerate manual recovery and limited observability because the team controls every user. A public pilot cannot. The responsible move is often to constrain users, data types, permissions and transaction value while the operating evidence grows.",
+        "Avoid using ‘beta’ as a substitute for safeguards. A beta label can set expectations about polish, but it does not excuse losing customer data, exposing another account or making a claim the product cannot support."
+      ], bullets: ["Define who may enter the pilot", "Exclude data the system is not ready to protect", "Publish the supported journeys and known limitations", "Name the condition that pauses or rolls back the release"] },
+      { type: "phases", heading: "A safer path from demo to dependable service", intro: "Each stage changes exposure only after its own evidence exists. The dates may move; the gates should not disappear.", phases: [
+        { label: "Stage 01", title: "Internal proof", outcome: "The team understands the system", actions: ["Map critical flows and dependencies", "Remove secrets and mock assumptions", "Create repeatable local and preview builds"] },
+        { label: "Stage 02", title: "Controlled pilot", outcome: "Real use inside bounded risk", actions: ["Limit users, data and permissions", "Monitor every critical journey", "Provide a direct support and recovery path"] },
+        { label: "Stage 03", title: "Public release", outcome: "Predictable service with accountable ownership", actions: ["Meet security, accessibility and legal criteria", "Operate alerts, backups and incident response", "Measure user outcomes and failure rates"] },
+        { label: "Stage 04", title: "Scale", outcome: "Growth without silent fragility", actions: ["Load-test likely bottlenecks", "Review cost and vendor limits", "Assign long-term component and service owners"] }
+      ] },
+      { type: "scenario", heading: "Decision example: a feedback tool with real customers", context: "The app authenticates users, stores private customer feedback and sends email. The happy path works, but no restore has been attempted, delivery failures are not visible and only the creator understands the database schema.", observations: [
+        "The feature set is complete enough for a demo but the operating contract is incomplete.",
+        "Private customer content raises the consequence of accidental exposure or loss.",
+        "A small invite-only pilot could become reasonable after access tests, backup restoration, delivery monitoring and shared documentation pass.",
+        "Opening unrestricted signup now would expand risk faster than operational knowledge."
+      ], conclusion: "The correct answer is not ‘vibe coding is production-ready’ or ‘never use it’. This particular service is not yet ready for an unrestricted public release, and its missing evidence defines the next sprint." },
+      { type: "faq", heading: "Production-readiness questions", items: [
+        { question: "How much human review is enough?", answer: "Enough that accountable owners can explain critical behavior, verify negative paths, operate failures and change the system safely. A fixed percentage of reviewed code does not establish that." },
+        { question: "Can a low-risk landing page ship faster than an application?", answer: "Yes. Exposure should follow assets and consequences. A brochure site and a multi-tenant portal need very different evidence." },
+        { question: "Does using a mature framework make the app production-ready?", answer: "It supplies useful primitives and guidance, but the application’s data flow, configuration, integrations and operations still determine readiness." }
+      ] }
+    ],
+    sources: [nextProduction, owaspAsvs, { label: "Google SRE Workbook", href: "https://sre.google/workbook/table-of-contents/", note: "Primary operational guidance for reliability practices such as monitoring, incident response and managing risk." }],
+    related: ["are-vibe-coded-websites-secure", "how-to-review-ai-generated-frontend-code", "how-to-test-a-vibe-coded-website"]
+  },
+
+  "vibe-coding-seo-mistakes": {
+    slug: "vibe-coding-seo-mistakes",
+    format: "seo-clinic",
+    formatLabel: "Technical SEO clinic",
+    eyebrow: "Diagnose the rendered result",
+    title: "Vibe-coding SEO mistakes: a diagnosis and repair clinic",
+    metaTitle: "Vibe-Coding SEO Mistakes and Fixes",
+    description: "Diagnose common SEO failures in vibe-coded and AI-assisted websites, from empty rendered content and duplicate canonicals to thin pages and broken internal discovery.",
+    dek: "Most SEO failures are not caused by AI itself. They happen when a convincing interface is shipped without checking what search engines can discover, render, consolidate and understand—and whether the page deserves to rank.",
+    scope: "This clinic focuses on crawlable public pages and on-page signals. Rankings also depend on competition, reputation, links, user demand and search-engine systems that no page-level audit can control.",
+    audience: "Founders and marketers troubleshooting why a polished AI-assisted website is not being discovered",
+    readingMinutes: 13,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "seoClinic", heading: "Six symptoms, six different diagnoses", intro: "Do not prescribe more copy until the failure is named. Inspect the final URL and rendered HTML, then repair the narrowest cause and verify it independently.", items: [
+        { symptom: "Google sees a nearly empty page", cause: "Critical content depends on client-side code, blocked resources or a failed fetch", repair: "Render indexable content in the initial or server-generated response and handle data failures visibly", verify: "Inspect the rendered HTML and URL Inspection result, not only the browser screenshot" },
+        { symptom: "Several URLs compete for the same query", cause: "Generated routes differ only by wording, parameters or trailing variants", repair: "Keep one useful canonical page, redirect true duplicates and consolidate internal links", verify: "Check the declared and Google-selected canonical after recrawl" },
+        { symptom: "Pages are discovered but rarely indexed", cause: "The content adds little beyond a repeated template or targets no distinct decision", repair: "Merge overlaps and add original examples, evidence or tools that justify a separate URL", verify: "Review each page beside its nearest sibling and explain the unique user outcome" },
+        { symptom: "Important pages stay undiscovered", cause: "Navigation is visual but not built from crawlable links, or pages are isolated", repair: "Use real anchor links from hubs and related content with descriptive context", verify: "Crawl from the home page and confirm the route is reachable without a search box" },
+        { symptom: "Search snippets are confusing", cause: "Titles and descriptions are duplicated, generic or disconnected from visible content", repair: "Write a unique promise that the page immediately fulfils and keep headings aligned", verify: "Compare metadata, H1, introduction and actual search intent side by side" },
+        { symptom: "Traffic arrives but does not use the product", cause: "The article answers a keyword while hiding the next useful action", repair: "Connect the explanation to a relevant scan, checklist or adjacent decision without interrupting the answer", verify: "Track the path from landing page to meaningful product action, not just page views" }
+      ] },
+      { type: "prose", eyebrow: "Content quality is part of technical SEO", heading: "Indexable is not the same as worth indexing", paragraphs: [
+        "A generator can produce dozens of grammatically clean pages from a spreadsheet. If they repeat the same framework and differ mainly by keywords, they create no new reason for a searcher—or a search engine—to prefer them. Technical correctness cannot manufacture information gain.",
+        "Give every page a distinct decision, evidence set and working format. A comparison, threat model, clinic and test protocol should not share the same body with nouns swapped. Merge pages when the reader would take the same action after either one."
+      ], bullets: ["One canonical page per primary decision", "Original examples over abstract volume", "Visible authorship and evidence boundaries", "Updates only when the material actually changes"] },
+      { type: "matrix", heading: "A compact pre-indexing review", intro: "This is a release check for a page, not a promise of ranking. The final column gives the artifact a reviewer should be able to inspect.", columns: ["Layer", "Question", "Common failure", "Evidence"], rows: [
+        ["Discovery", "Can a crawler reach the URL through a normal link?", "Orphan page or click handler without an anchor", "Crawl path and sitemap entry"],
+        ["Rendering", "Is the main answer present and stable?", "Loading shell, blocked fetch or client-only failure", "Rendered HTML and failure state"],
+        ["Consolidation", "Is one URL clearly canonical?", "Parameters and duplicate routes split signals", "Canonical, redirects and consistent links"],
+        ["Intent", "Does the page solve a distinct task?", "Keyword variant of an existing article", "One-sentence user outcome and comparison"],
+        ["Evidence", "Are factual claims supported and bounded?", "Confident synthesis without primary sources", "Source notes and visible limitations"],
+        ["Experience", "Can mobile and assistive users consume it?", "Overflow, blocked zoom or poor semantics", "Responsive and accessibility review"]
+      ] },
+      { type: "scenario", heading: "Clinic case: 100 pages, almost no impressions", context: "A site publishes a page for every variation of ‘AI website checker’, ‘AI website detector’ and ‘vibe-code checker’. The introductions and cards are nearly identical, and all pages point to the same scanner.", observations: [
+        "The routes are technically crawlable and included in the sitemap.",
+        "The pages do not answer materially different decisions or contribute original evidence.",
+        "Internal links distribute attention across competing URLs instead of establishing one strong canonical resource.",
+        "Keeping one transactional checker and a smaller set of distinct editorial articles creates clearer intent coverage."
+      ], conclusion: "The repair is consolidation, not another content wave: redirect duplicates, improve the strongest page and publish a new URL only when it delivers a genuinely different outcome." },
+      { type: "faq", heading: "SEO clinic questions", items: [
+        { question: "Do AI-written pages automatically rank worse?", answer: "Search systems evaluate usefulness and policy compliance, not a simple production label. Scaled low-value pages remain a risk whether written manually or generated." },
+        { question: "Should every article be server-rendered?", answer: "Critical indexable content should be available reliably to crawlers. The right rendering method depends on the framework and content, but a loading shell that requires fragile client execution is avoidable risk." },
+        { question: "Will submitting a sitemap index every page?", answer: "No. A sitemap helps discovery; it does not guarantee indexing or ranking. Page quality, canonicalization and crawl accessibility still matter." }
+      ] }
+    ],
+    sources: [googleJavaScriptSeo, googleCanonical, { label: "Google Search: helpful, reliable content", href: "https://developers.google.com/search/docs/fundamentals/creating-helpful-content", note: "Primary guidance for evaluating whether content is people-first, original and useful." }, { label: "Google Search spam policies", href: "https://developers.google.com/search/docs/essentials/spam-policies", note: "Defines scaled content abuse and other practices that can harm search visibility." }],
+    related: ["how-to-tell-if-a-website-was-vibe-coded", "can-you-detect-ai-generated-website-code", "vibe-coding-website-audit-framework"]
+  },
+
+  "vibe-coding-technical-debt": {
+    slug: "vibe-coding-technical-debt",
+    format: "debt-ledger",
+    formatLabel: "Technical-debt ledger",
+    eyebrow: "Make maintenance cost visible",
+    title: "Vibe-coding technical debt: how to find and reduce it",
+    metaTitle: "Vibe-Coding Technical Debt Guide",
+    description: "Create a practical technical-debt ledger for an AI-assisted web application, prioritize by recurring cost and reduce risk without pausing all product delivery.",
+    dek: "The most expensive debt is rarely ugly code in isolation. It is uncertainty that charges interest every time the team changes, diagnoses or operates the product—and nobody can say which behavior is safe to preserve.",
+    scope: "Technical debt is contextual. Duplication, dependencies or limited tests become debt when they impose recurring cost or unacceptable risk, not simply because they violate a preferred style.",
+    audience: "Founders and engineering teams inheriting a fast-built web application",
+    readingMinutes: 12,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "ledger", heading: "A ledger based on interest, not embarrassment", intro: "Record where the cost appears and what would reduce it. This turns ‘the codebase is messy’ into a portfolio of decisions that can compete fairly with feature work.", items: [
+        { debt: "Unknown critical behavior", interest: "Every change requires rediscovery and broad manual checking", signal: "Only one person can explain payments, permissions or data mutation", action: "Document the flow and add characterization tests before refactoring" },
+        { debt: "Duplicated business rules", interest: "Fixes land in one path while another silently diverges", signal: "The same validation or price logic appears in several components or routes", action: "Choose one owner and contract, then migrate callers incrementally" },
+        { debt: "Oversized generated components", interest: "Unrelated UI, data and effects change together", signal: "Small features produce large diffs and surprising regressions", action: "Extract boundaries around behavior, not arbitrary line counts" },
+        { debt: "Unowned dependency growth", interest: "Updates, bundle cost and supply-chain review compound", signal: "Multiple packages solve overlapping jobs or have no known reason", action: "Record purpose, owner and removal path; eliminate redundant packages" },
+        { debt: "Missing negative-path evidence", interest: "Incidents reveal requirements for the first time", signal: "Only successful demos and snapshot tests exist", action: "Add tests for invalid input, latency, partial failure and denied access" },
+        { debt: "Deployment knowledge outside the repository", interest: "Recovery depends on memory and manual dashboard state", signal: "Nobody can reproduce production or list required secrets", action: "Version the configuration contract and rehearse recovery" }
+      ] },
+      { type: "prose", eyebrow: "Do not start with a rewrite", heading: "First stabilize what users already depend on", paragraphs: [
+        "A rewrite removes visible mess but also removes years of discovered edge cases. The safer first move is to observe current behavior, identify critical journeys and place tests around the parts you intend to change. Refactoring becomes valuable when it shortens a known feedback loop or removes a measured failure mode.",
+        "AI-assisted cleanup can accelerate mechanical work, but large diffs recreate the review-volume problem that caused the debt. Keep migrations reversible, compare behavior and stop when the promised cost reduction does not appear."
+      ], bullets: ["Tie every debt item to a recurring cost or material risk", "Name a smallest useful reduction", "Preserve behavior before improving structure", "Close ledger items only after verifying the expected benefit"] },
+      { type: "matrix", heading: "Prioritize debt by product consequence", intro: "Style consistency matters, but it should not outrank a fragile permission boundary or unrecoverable data path.", columns: ["Debt class", "User consequence", "Business consequence", "First intervention"], rows: [
+        ["Security boundary", "Exposure or unauthorized action", "Breach, loss of trust or regulatory impact", "Enforce and test the boundary now"],
+        ["Data integrity", "Lost, duplicated or inconsistent records", "Support load and irreversible correction", "Add invariants, backups and recovery tests"],
+        ["Operational opacity", "Longer outages and unclear errors", "Slow response and concentrated knowledge", "Instrument critical journeys and assign alerts"],
+        ["Change friction", "Features and fixes arrive slowly", "Engineering time compounds", "Characterize behavior and isolate one seam"],
+        ["Cosmetic inconsistency", "Uneven experience", "Brand and conversion cost", "Fold cleanup into related product work"]
+      ] },
+      { type: "phases", heading: "A four-week debt reduction rhythm", intro: "This is intentionally compatible with product work. Each week produces an operational asset, not only cleaner code.", phases: [
+        { label: "Week 01", title: "Inventory", outcome: "A bounded ledger", actions: ["Map critical journeys and owners", "Record repeated delays and incidents", "Rank cost, consequence and confidence separately"] },
+        { label: "Week 02", title: "Stabilize", outcome: "Behavior can be changed safely", actions: ["Add characterization and negative-path tests", "Document deployment and recovery", "Remove exposed secrets and urgent boundary failures"] },
+        { label: "Week 03", title: "Create seams", outcome: "Critical changes become smaller", actions: ["Separate policy from presentation", "Consolidate one duplicated rule", "Reduce one oversized dependency or component"] },
+        { label: "Week 04", title: "Measure", outcome: "Evidence of lower interest", actions: ["Compare change time and regression rate", "Verify build, bundle and incident signals", "Keep, revise or stop each intervention"] }
+      ] },
+      { type: "faq", heading: "Technical-debt questions", items: [
+        { question: "Is all generated code technical debt?", answer: "No. Debt describes future cost and risk. Clear, tested and owned generated code may be easier to maintain than poorly understood hand-written code." },
+        { question: "Should we measure debt by lines of code?", answer: "Line count can describe size but not interest. Track change time, regressions, incident recovery, duplicated decisions and ownership gaps instead." },
+        { question: "When is a rewrite justified?", answer: "When the current architecture cannot meet essential requirements and an incremental path has been tested and found inadequate. The rewrite still needs migration, parity and rollback evidence." }
+      ] }
+    ],
+    sources: [{ label: "Martin Fowler: Technical Debt", href: "https://martinfowler.com/bliki/TechnicalDebt.html", note: "The original debt metaphor framed as a trade-off whose interest becomes visible during future change." }, nextProduction, githubCodeOwners],
+    related: ["how-to-review-ai-generated-frontend-code", "is-vibe-coding-ready-for-production", "how-to-test-a-vibe-coded-website"]
+  },
+
+  "vibe-coding-client-handoff-checklist": {
+    slug: "vibe-coding-client-handoff-checklist",
+    format: "handoff-kit",
+    formatLabel: "Client handoff kit",
+    eyebrow: "Transfer capability, not just files",
+    title: "Vibe-coding client handoff checklist for agencies and freelancers",
+    metaTitle: "Vibe-Coding Client Handoff Checklist",
+    description: "Hand over an AI-assisted website with clear ownership, access, deployment, design, dependency and acceptance evidence so the client can operate it without the original builder.",
+    dek: "A successful handoff leaves the client able to access, explain, change, deploy and recover the product. A repository link and a screen recording are useful artifacts, but they are not operational independence.",
+    scope: "This checklist is a delivery framework, not legal advice. Contracts, intellectual-property terms, licenses, privacy duties and regulated work should be reviewed by qualified professionals in the relevant jurisdiction.",
+    audience: "Agencies, freelancers and clients completing delivery of an AI-assisted website",
+    readingMinutes: 10,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "handoff", heading: "The seven artifacts that make a handoff usable", intro: "Every artifact needs an owner and an acceptance check. A document that exists but cannot be used by the receiving team has not completed the transfer.", items: [
+        { artifact: "Ownership and access register", owner: "Client account owner", acceptance: "The client controls source, hosting, domain, analytics and critical vendor accounts with recovery access", failure: "The builder remains the only administrator or uses a personal account" },
+        { artifact: "System map", owner: "Technical maintainer", acceptance: "A new maintainer can trace requests, storage, integrations and trust boundaries", failure: "Architecture exists only in chat history or the creator’s memory" },
+        { artifact: "Configuration contract", owner: "Deployment owner", acceptance: "Required variables, scopes and environment differences are documented without exposing secret values", failure: "Production relies on unnamed dashboard settings" },
+        { artifact: "Release and rollback runbook", owner: "Release owner", acceptance: "The client can deploy a safe change and restore the last known version", failure: "Only automatic deployment is understood; rollback has never been tried" },
+        { artifact: "Design and content source", owner: "Product or brand owner", acceptance: "Fonts, assets, licenses, tokens and editable source are available and linked to the implementation", failure: "The client receives compressed assets or unlicensed placeholders" },
+        { artifact: "Quality evidence packet", owner: "Delivery lead", acceptance: "Acceptance journeys, accessibility, performance and security scope are recorded with known limitations", failure: "Approval depends on a visual demo of the happy path" },
+        { artifact: "Support boundary", owner: "Commercial owner", acceptance: "Warranty, response path, maintenance scope and end date are explicit", failure: "Both parties assume the other will handle future incidents" }
+      ] },
+      { type: "prose", eyebrow: "AI-assisted delivery needs ordinary accountability", heading: "Do not hand the client a production mystery", paragraphs: [
+        "Prompts can be useful context, but they do not replace requirements, design decisions or a current operating model. Generated explanations can also sound complete while describing code that no longer exists. The receiving team should verify every critical artifact against the actual repository and deployment.",
+        "Record material third-party code, assets and licenses regardless of how they entered the project. If production origin matters contractually, define the required evidence before work starts; a public detector cannot reconstruct it at handoff."
+      ], bullets: ["Transfer accounts before the final invoice milestone", "Use organization-owned identities and recovery methods", "Remove demo data and personal credentials", "Name known limitations in the acceptance record"] },
+      { type: "steps", heading: "Run a 60-minute acceptance session", intro: "The client performs the work while the builder observes. This exposes missing capability more reliably than another presentation.", items: [
+        { title: "Recover access", action: "The client signs in through its own identities and confirms account recovery for source, hosting and domain.", record: "Named account owners and recovery methods." },
+        { title: "Trace one journey", action: "Follow a real user action through UI, API, storage and third parties.", record: "A corrected system map and unresolved questions." },
+        { title: "Change and preview", action: "Make one harmless content or configuration change and inspect it outside production.", record: "The commands, approval path and preview URL." },
+        { title: "Release and observe", action: "Deploy the approved change and locate logs or monitoring for the journey.", record: "Release identifier, success signal and responsible owner." },
+        { title: "Recover", action: "Revert or roll back the exercise and verify expected behavior.", record: "Recovery time, gaps and final acceptance decision." }
+      ] },
+      { type: "scenario", heading: "Handoff failure: the site works until the domain expires", context: "A freelancer delivers a live site and repository. Six months later the domain renewal and transactional email provider are still attached to the freelancer’s personal accounts, and the client cannot recover them.", observations: [
+        "The code delivery was complete but operational ownership was not.",
+        "A repository cannot recover domain control or vendor billing access.",
+        "An ownership register tested during acceptance would have exposed the dependency.",
+        "The handoff should not be accepted until the client controls the accounts and recovery path."
+      ], conclusion: "Define completion as independent operation, not a successful launch. Account transfer is a product requirement when the client is expected to own the service." },
+      { type: "faq", heading: "Handoff questions", items: [
+        { question: "Should clients receive the prompts?", answer: "Provide material working notes when they help maintain the product or when the contract requires them. Prompts do not replace source, decisions, licenses, tests or operational documentation." },
+        { question: "Who should own the Vercel or hosting project?", answer: "The arrangement should match the contract, but a client purchasing an independently operated product usually needs organization-controlled ownership and recovery—not permanent dependence on a personal builder account." },
+        { question: "Can a README be the complete handoff?", answer: "It can be the entry point. Acceptance still needs working access, deploy and rollback practice, system ownership and evidence that the instructions match reality." }
+      ] }
+    ],
+    sources: [githubCodeOwners, nextProduction, { label: "GitHub: About README files", href: "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes", note: "Primary guidance for repository-level orientation and documentation discoverability." }],
+    related: ["is-vibe-coding-ready-for-production", "vibe-coding-technical-debt", "how-to-review-ai-generated-frontend-code"]
+  },
+
+  "how-to-test-a-vibe-coded-website": {
+    slug: "how-to-test-a-vibe-coded-website",
+    format: "test-lab",
+    formatLabel: "Website testing lab",
+    eyebrow: "Test the contract beyond the demo",
+    title: "How to test a vibe-coded website before users do",
+    metaTitle: "How to Test a Vibe-Coded Website",
+    description: "Build a focused testing plan for a vibe-coded or AI-assisted website across critical journeys, failure states, accessibility, security boundaries and deployment recovery.",
+    dek: "The fastest useful test plan does not try to cover every component. It identifies the few promises the product cannot break, then attacks their inputs, timing, permissions and recovery paths with repeatable evidence.",
+    scope: "This lab provides a risk-based testing method. It does not prescribe one test runner or replace specialist accessibility, security, privacy, load or compliance assessment where those risks are material.",
+    audience: "Builders and product owners preparing an AI-assisted website for external feedback or launch",
+    readingMinutes: 13,
+    publishedAt: "2026-08-23",
+    updatedAt: "2026-08-23",
+    blocks: [
+      { type: "testLab", heading: "Six experiments for the first test lab", intro: "Each experiment begins with a user promise and includes a negative case. Automate the stable assertions; keep exploratory review for behavior that still needs human judgment.", items: [
+        { experiment: "Critical journey", setup: "Start from a clean account and complete the product’s primary job", assertions: "The intended outcome occurs once, persists and is visible after reload", negative: "Interrupt the flow, repeat the action and use stale state" },
+        { experiment: "Input boundary", setup: "Use empty, long, malformed, duplicated and unexpected values", assertions: "Validation is specific, safe and consistent at the server boundary", negative: "Bypass the visible form and call the endpoint directly" },
+        { experiment: "Permission boundary", setup: "Create at least two users or organizations with different roles", assertions: "Every read and mutation enforces the expected principal and scope", negative: "Swap identifiers, reuse links and call hidden actions" },
+        { experiment: "Slow and failed dependency", setup: "Delay or fail data, email, payment or other external requests", assertions: "The interface preserves state, communicates status and supports safe retry", negative: "Return partial success, timeout after submission or send the same callback twice" },
+        { experiment: "Alternative interaction", setup: "Complete the journey with keyboard, zoom and a narrow viewport", assertions: "Names, focus, reading order, status and layout remain usable", negative: "Open menus near edges, enlarge text and trigger validation without a pointer" },
+        { experiment: "Release recovery", setup: "Deploy a known harmless change to a production-like environment", assertions: "Owners can observe the release, detect the success signal and restore the prior version", negative: "Assume the build succeeds while the critical API or environment variable is broken" }
+      ] },
+      { type: "prose", eyebrow: "A screenshot is one observation", heading: "Generated interfaces need state coverage more than visual applause", paragraphs: [
+        "A polished default state can hide an empty list that collapses, a form that submits twice, a permission check that exists only in the client or a loading state that never recovers. Write down the states before choosing tools: initial, loading, empty, partial, success, invalid, denied, failed and recovered.",
+        "Do not make every test end-to-end. Small tests are fast and precise for pure rules; integration tests verify important boundaries; browser journeys prove that the assembled product fulfills its promises. The useful portfolio follows risk rather than a fashionable pyramid drawn without context."
+      ], bullets: ["Test behavior users depend on, not implementation details", "Include at least one negative assertion per material boundary", "Use production-like configuration without production secrets", "Store commands and evidence beside the change"] },
+      { type: "gates", heading: "A release evidence packet", intro: "A test run becomes operational evidence when another person can reproduce it and knows which failure blocks the release.", gates: [
+        { name: "Journey", pass: "Critical user outcomes work from a clean state and after recovery.", fail: "The demo requires hidden setup or manual database correction.", evidence: "Named journeys, environment and test results." },
+        { name: "Boundary", pass: "Invalid input and unauthorized actions fail safely at controlled boundaries.", fail: "Only the interface prevents an action or errors expose internals.", evidence: "Negative requests and expected status or state." },
+        { name: "Accessibility", pass: "Essential flows have usable semantics, keyboard behavior and status communication.", fail: "A user is blocked by custom controls, focus loss or layout overflow.", evidence: "Automated checks plus documented manual interaction." },
+        { name: "Resilience", pass: "Retries, partial failures and timeouts preserve consistency.", fail: "Users create duplicate work or cannot tell whether an action succeeded.", evidence: "Fault simulation and recorded recovery behavior." },
+        { name: "Release", pass: "The deployed version is observable and recoverable by a named owner.", fail: "Green CI is the only production signal and rollback is theoretical.", evidence: "Release identifier, monitoring link and rollback exercise." }
+      ] },
+      { type: "scenario", heading: "Testing example: the form that passes every happy-path test", context: "A contact form displays a success state in the browser immediately. The API then calls an email service, which times out. The user retries and creates three records while no email is sent.", observations: [
+        "A visual test of the success screen passes even though the product promise fails.",
+        "The client treats submission as complete before the authoritative result is known.",
+        "Retry behavior is not idempotent and the partial failure is invisible to operators.",
+        "A delayed-dependency experiment would expose all three gaps before launch."
+      ], conclusion: "Define when the action is actually complete, make retries safe, communicate recoverable failure and alert on the missing downstream result. Then automate the scenario as a regression test." },
+      { type: "faq", heading: "Testing questions", items: [
+        { question: "How many tests does a small vibe-coded website need?", answer: "There is no meaningful universal count. Cover critical promises, high-consequence boundaries and previously observed failures; avoid inflating numbers with assertions that do not protect behavior." },
+        { question: "Can an AI agent test the website it created?", answer: "It can generate and execute useful tests, but independent acceptance criteria and human review remain important because the same assumptions can shape both implementation and tests." },
+        { question: "What should be tested manually?", answer: "Exploratory behavior, content comprehension, assistive-technology use, visual hierarchy and unexpected interactions benefit from human judgment, while stable rules and journeys should be automated where practical." }
+      ] }
+    ],
+    sources: [webTesting, w3cAccessibility, owaspTesting, nextProduction],
+    related: ["is-vibe-coding-ready-for-production", "how-to-review-ai-generated-frontend-code", "are-vibe-coded-websites-secure"]
   }
 };
 

@@ -12,9 +12,9 @@ async function loadRegistry() {
 const registry = await loadRegistry();
 const pages = registry.allEditorialPages;
 
-test("publishes six differentiated editorial pages", () => {
-  assert.equal(pages.length, 6);
-  assert.equal(new Set(pages.map((page) => page.format)).size, 6);
+test("publishes twelve differentiated editorial pages", () => {
+  assert.equal(pages.length, 12);
+  assert.equal(new Set(pages.map((page) => page.format)).size, 12);
 });
 
 test("editorial pages pass substantive content and source gates", () => {
@@ -28,6 +28,16 @@ test("editorial pages pass substantive content and source gates", () => {
     assert.ok(page.related.length >= 3, page.slug);
     assert.equal(page.publishedAt, "2026-08-23", page.slug);
   }
+});
+
+test("each editorial page contains a format-specific working block", () => {
+  const expected = new Map([
+    ["field-guide", "ladder"], ["comparison", "matrix"], ["audit", "scorecard"], ["playbook", "phases"],
+    ["code-review", "gates"], ["evidence-brief", "claims"], ["threat-model", "risks"],
+    ["decision-guide", "decisions"], ["seo-clinic", "seoClinic"], ["debt-ledger", "ledger"],
+    ["handoff-kit", "handoff"], ["test-lab", "testLab"]
+  ]);
+  for (const page of pages) assert.ok(page.blocks.some((block) => block.type === expected.get(page.format)), page.slug);
 });
 
 test("editorial titles, descriptions and slugs are unique", () => {
