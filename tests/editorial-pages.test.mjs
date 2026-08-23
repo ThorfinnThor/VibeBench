@@ -4,17 +4,22 @@ import test from "node:test";
 import ts from "typescript";
 
 async function loadRegistry() {
-  const source = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8");
-  const output = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText;
+  const compilerOptions = { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 };
+  const expansionSource = readFileSync(new URL("../lib/editorial-expansion-pages.ts", import.meta.url), "utf8");
+  const expansionOutput = ts.transpileModule(expansionSource, { compilerOptions }).outputText;
+  const expansionUrl = `data:text/javascript;base64,${Buffer.from(expansionOutput).toString("base64")}`;
+  const source = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8").replace('"./editorial-expansion-pages"', `"${expansionUrl}"`);
+  const output = ts.transpileModule(source, { compilerOptions }).outputText;
   return import(`data:text/javascript;base64,${Buffer.from(output).toString("base64")}`);
 }
 
 const registry = await loadRegistry();
 const pages = registry.allEditorialPages;
 
-test("publishes twenty-four differentiated editorial pages", () => {
-  assert.equal(pages.length, 24);
-  assert.equal(new Set(pages.map((page) => page.format)).size, 24);
+test("publishes fifty differentiated editorial pages", () => {
+  assert.equal(pages.length, 50);
+  assert.equal(new Set(pages.map((page) => page.format)).size, 50);
+  assert.equal(new Set(pages.map((page) => page.formatLabel)).size, 50);
 });
 
 test("editorial pages pass substantive content and source gates", () => {
@@ -40,9 +45,26 @@ test("each editorial page contains a format-specific working block", () => {
     ["privacy-map", "dataFlow"], ["migration-runbook", "migration"],
     ["tradeoff-map", "tradeoffs"], ["provenance-ledger", "provenance"],
     ["launch-board", "launchChecks"], ["observability-map", "signals"],
-    ["prompt-workshop", "promptSpecs"], ["due-diligence", "diligence"]
+    ["prompt-workshop", "promptSpecs"], ["due-diligence", "diligence"],
+    ["identity-boundary", "workbench"], ["schema-review", "workbench"],
+    ["integration-contract", "workbench"], ["secret-lifecycle", "workbench"],
+    ["dependency-triage", "workbench"], ["failure-design", "workbench"],
+    ["recovery-drill", "workbench"], ["performance-budget", "workbench"],
+    ["form-defense", "workbench"], ["tenant-boundary", "workbench"],
+    ["payment-boundary", "workbench"], ["deliverability-lab", "workbench"],
+    ["measurement-plan", "workbench"], ["domain-control", "workbench"],
+    ["transfer-runbook", "workbench"], ["incident-command", "workbench"],
+    ["collaboration-loop", "workbench"], ["documentation-map", "workbench"],
+    ["change-control", "workbench"], ["rewrite-decision", "workbench"],
+    ["activation-journey", "workbench"], ["system-cleanup", "workbench"],
+    ["trust-evidence", "workbench"], ["ethical-conversion", "workbench"],
+    ["localization-readiness", "workbench"], ["mobile-lab", "workbench"]
   ]);
-  for (const page of pages) assert.ok(page.blocks.some((block) => block.type === expected.get(page.format)), page.slug);
+  for (const page of pages) {
+    const block = page.blocks.find((candidate) => candidate.type === expected.get(page.format));
+    assert.ok(block, page.slug);
+    if (block.type === "workbench") assert.equal(block.variant, page.format, page.slug);
+  }
 });
 
 test("editorial titles, descriptions and slugs are unique", () => {
@@ -50,4 +72,16 @@ test("editorial titles, descriptions and slugs are unique", () => {
   assert.equal(unique(pages.map((page) => page.slug)), true);
   assert.equal(unique(pages.map((page) => page.title)), true);
   assert.equal(unique(pages.map((page) => page.description)), true);
+});
+
+test("editorial related links resolve to other published decisions", () => {
+  const publishedSlugs = new Set(pages.map((page) => page.slug));
+
+  for (const page of pages) {
+    assert.equal(new Set(page.related).size, page.related.length, `${page.slug}: duplicate related links`);
+    for (const relatedSlug of page.related) {
+      assert.notEqual(relatedSlug, page.slug, `${page.slug}: links to itself`);
+      assert.ok(publishedSlugs.has(relatedSlug), `${page.slug}: missing related page ${relatedSlug}`);
+    }
+  }
 });

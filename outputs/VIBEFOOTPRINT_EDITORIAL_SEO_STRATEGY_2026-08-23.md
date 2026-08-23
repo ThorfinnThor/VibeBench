@@ -53,8 +53,34 @@ Primary guidance:
 | How should I monitor a vibe-coded website? | `/vibe-coding-monitoring-guide` | User-journey observability map | Connects user journeys to thresholds, context and action rather than collecting unowned telemetry |
 | How do I write a better vibe-coding prompt? | `/how-to-write-a-vibe-coding-prompt` | Prompt-to-spec workshop | Rewrites vague requests as constraints, evidence, states and acceptance conditions |
 | How do I assess a vibe-coded website before buying it? | `/vibe-coding-due-diligence-checklist` | Acquisition evidence room | Organizes ownership, revenue, data, security, operations and transfer evidence without making an investment claim |
+| How do I separate login from permission enforcement? | `/vibe-coding-authentication-authorization` | Identity boundary map | Tests enrollment, authentication, sessions, authorization and recovery as five independently evidenced controls |
+| How do I review a generated database schema? | `/vibe-coding-database-design` | Database invariant review | Converts product rules into keys, constraints, tenancy, migration and restore evidence |
+| How do I make a third-party API integration production-safe? | `/vibe-coding-api-integration-checklist` | External integration contract | Specifies contracts, trust, timeouts, duplicate delivery, observability and exit behavior around an independent provider |
+| How should secrets be stored, rotated and revoked? | `/vibe-coding-secrets-management` | Secret lifecycle register | Follows each credential from creation through scope, delivery, use, rotation, audit and revocation |
+| How do I triage dependency risk without blindly upgrading? | `/vibe-coding-dependency-audit` | Dependency exposure triage | Combines inventory, reachability, supported upgrade paths, change proof and ongoing ownership |
+| How should a generated application fail safely? | `/vibe-coding-error-handling` | Failure-state architecture | Gives invalid, denied, temporary, ambiguous and unknown failures different user and operator responses |
+| Can the product actually recover from backup? | `/vibe-coding-backup-restore-guide` | Restore capability drill | Replaces backup-status assumptions with recovery objectives, timed restoration and integrity verification |
+| Which performance work improves a real journey? | `/vibe-coding-performance-optimization` | User-journey performance budget | Connects loading, interaction, stability and dependency budgets to a representative user journey |
+| How should forms validate data across the trust boundary? | `/vibe-coding-form-validation` | Form trust-boundary lab | Separates helpful client feedback from authoritative server validation, normalization and abuse controls |
+| How do I prove tenant isolation? | `/vibe-coding-multi-tenant-security` | Tenant-isolation proof map | Tracks identity, storage, queries, jobs and operational access across tenant boundaries with negative tests |
+| How do I integrate payments without trusting the browser? | `/vibe-coding-payment-integration-checklist` | Payment state reconciliation | Reconciles intent, provider confirmation, webhooks, fulfillment, refunds and disputes against authoritative state |
+| Why does email say sent but never arrive? | `/vibe-coding-email-deliverability` | Email delivery evidence lab | Diagnoses identity, reputation, message, list, provider and feedback-loop evidence rather than treating delivery as one event |
+| What should the product measure and why? | `/vibe-coding-analytics-measurement-plan` | Decision-first measurement plan | Starts from decisions and event semantics before tools, dashboards, consent and retention |
+| Who controls the domain and how can it be recovered? | `/vibe-coding-domain-dns-checklist` | Domain control register | Maps registrar, DNS, email, verification, renewal and emergency access as separate operating assets |
+| How do I transfer hosting without an outage? | `/vibe-coding-hosting-transfer-checklist` | Hosting transfer runbook | Sequences inventory, destination proof, data movement, DNS cutover, observation and rollback |
+| What should happen during a real incident? | `/vibe-coding-incident-response-plan` | Incident command sheet | Assigns severity, command, containment, evidence, communication, recovery and learning before an emergency |
+| How should a team review AI-assisted changes? | `/vibe-coding-team-workflow` | Human-AI collaboration loop | Defines intent, bounded generation, review, verification, ownership and feedback as one accountable loop |
+| Which codebase documentation prevents operational guesswork? | `/vibe-coding-codebase-documentation` | Operational documentation map | Documents architecture, data, environments, runbooks, decisions and ownership without duplicating the code |
+| Which version-control rules keep fast changes reversible? | `/vibe-coding-version-control-workflow` | Repository change-control system | Connects branch protection, review ownership, scoped commits, automated gates and rollback evidence |
+| Should this fragile application be refactored or rewritten? | `/refactor-or-rewrite-vibe-coded-app` | Refactor-or-rewrite evidence board | Compares business continuity, testability, architecture, data migration and reversibility instead of reacting to frustration |
+| Why do new users fail to reach value? | `/vibe-coding-user-onboarding` | First-value journey map | Measures the route from promise through setup, first success, recovery, guidance and return value |
+| How do I consolidate an inconsistent generated interface? | `/vibe-coding-design-system-cleanup` | Interface-system consolidation | Audits primitives, tokens, patterns, states and governance while preserving purposeful product character |
+| Which website claims are credible? | `/vibe-coding-content-credibility` | Claim-to-proof credibility audit | Connects identity, claims, evidence, freshness, limitations and corrections in a transparent trust model |
+| How can conversion improve without manipulating users? | `/vibe-coding-ethical-conversion-design` | Choice-integrity review | Tests comprehension, symmetry, consent, cancellation, urgency and downstream expectation rather than celebrating clicks alone |
+| Is the product structurally ready for localization? | `/vibe-coding-internationalization-readiness` | Localization readiness test | Stress-tests message architecture, layout, pluralization, formatting, routing and operational ownership before translation |
+| Does the mobile journey work beyond a narrow screenshot? | `/vibe-coding-mobile-testing-checklist` | Mobile journey stress lab | Exercises reflow, touch, keyboards, network, interruption, device and accessibility conditions on real journeys |
 
-The `/insights` hub explains the editorial model and links to all twenty-four pages. Each
+The `/insights` hub explains the editorial model and links to all fifty pages. Each
 article links to three genuinely adjacent decisions and to first-party standards
 or primary documentation.
 

@@ -15,7 +15,7 @@ export default function EditorialDirectory() {
     </header>
 
     <section id="editorial-guides" className={styles.library}>
-      <div className={styles.sectionHeading}><div><p className="eyebrow">Start with the real question</p><h2>Twenty-four guides. Twenty-four different jobs.</h2></div><p>From pattern diagnosis and production safety to ownership, deployment, monitoring, prompting and acquisition due diligence—each guide ends in a different practical decision.</p></div>
+      <div className={styles.sectionHeading}><div><p className="eyebrow">Start with the real question</p><h2>Fifty guides. Fifty different jobs.</h2></div><p>From pattern diagnosis and production safety to identity, data, operations, design, trustworthy growth and product transfer—each guide ends in a different practical decision.</p></div>
       <Link className={styles.featured} href={`/${featured.slug}`}>
         <div><span>{featured.formatLabel}</span><small>{featured.readingMinutes} minute read</small></div><h3>{featured.title}</h3><p>{featured.dek}</p><b>Open the field guide →</b>
       </Link>

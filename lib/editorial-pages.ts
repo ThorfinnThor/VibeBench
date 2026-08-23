@@ -1,4 +1,6 @@
-export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook" | "tradeoff-map" | "provenance-ledger" | "launch-board" | "observability-map" | "prompt-workshop" | "due-diligence";
+import { editorialExpansionPages } from "./editorial-expansion-pages";
+
+export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook" | "tradeoff-map" | "provenance-ledger" | "launch-board" | "observability-map" | "prompt-workshop" | "due-diligence" | "identity-boundary" | "schema-review" | "integration-contract" | "secret-lifecycle" | "dependency-triage" | "failure-design" | "recovery-drill" | "performance-budget" | "form-defense" | "tenant-boundary" | "payment-boundary" | "deliverability-lab" | "measurement-plan" | "domain-control" | "transfer-runbook" | "incident-command" | "collaboration-loop" | "documentation-map" | "change-control" | "rewrite-decision" | "activation-journey" | "system-cleanup" | "trust-evidence" | "ethical-conversion" | "localization-readiness" | "mobile-lab";
 
 export type EditorialSource = {
   label: string;
@@ -34,6 +36,7 @@ export type EditorialBlock =
   | { type: "signals"; heading: string; intro: string; items: { journey: string; signal: string; threshold: string; context: string; action: string }[] }
   | { type: "promptSpecs"; heading: string; intro: string; items: { layer: string; question: string; constraint: string; example: string; acceptance: string }[] }
   | { type: "diligence"; heading: string; intro: string; items: { area: string; request: string; redFlag: string; verify: string; decision: string }[] }
+  | { type: "workbench"; variant: EditorialFormat; eyebrow: string; heading: string; intro: string; items: { title: string; subtitle: string; fields: { label: string; value: string; tone?: "neutral" | "good" | "warn" }[]; decision: string }[] }
   | { type: "faq"; heading: string; items: { question: string; answer: string }[] };
 
 export type EditorialPage = {
@@ -75,7 +78,7 @@ const cisaSbom = { label: "CISA Software Bill of Materials guidance", href: "htt
 const googleSreMonitoring = { label: "Google SRE: Monitoring Distributed Systems", href: "https://sre.google/sre-book/monitoring-distributed-systems/", note: "Primary reliability guidance for choosing actionable signals around latency, traffic, errors and saturation." };
 const openTelemetry = { label: "OpenTelemetry concepts and signals", href: "https://opentelemetry.io/docs/concepts/signals/", note: "Primary documentation for traces, metrics, logs and contextual telemetry." };
 
-export const editorialPages: Record<string, EditorialPage> = {
+const coreEditorialPages: Record<string, EditorialPage> = {
   "how-to-tell-if-a-website-was-vibe-coded": {
     slug: "how-to-tell-if-a-website-was-vibe-coded",
     format: "field-guide",
@@ -1283,6 +1286,11 @@ export const editorialPages: Record<string, EditorialPage> = {
     sources: [spdx, cisaSbom, nistSsdf, owaspAsvs],
     related: ["vibe-coding-code-ownership-and-licenses", "vibe-coding-client-handoff-checklist", "how-to-migrate-a-vibe-coded-website"]
   }
+};
+
+export const editorialPages: Record<string, EditorialPage> = {
+  ...coreEditorialPages,
+  ...editorialExpansionPages
 };
 
 export const allEditorialPages = Object.values(editorialPages);

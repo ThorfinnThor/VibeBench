@@ -222,6 +222,16 @@ function DiligenceBlock({ block }: { block: Extract<EditorialBlock, { type: "dil
   </section>;
 }
 
+function WorkbenchBlock({ block }: { block: Extract<EditorialBlock, { type: "workbench" }> }) {
+  return <section><SectionHeading eyebrow={block.eyebrow} heading={block.heading} intro={block.intro} />
+    <div className={styles.workbench} data-variant={block.variant}>{block.items.map((item, index) => <article key={item.title}>
+      <header><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{item.title}</h3><p>{item.subtitle}</p></div></header>
+      <dl>{item.fields.map((field) => <div key={field.label} data-tone={field.tone ?? "neutral"}><dt>{field.label}</dt><dd>{field.value}</dd></div>)}</dl>
+      <aside><strong>Decision</strong>{item.decision}</aside>
+    </article>)}</div>
+  </section>;
+}
+
 function FaqBlock({ block }: { block: Extract<EditorialBlock, { type: "faq" }> }) {
   return <section className={styles.faq}><SectionHeading eyebrow="Plain answers" heading={block.heading} />{block.items.map((item) => <details key={item.question}><summary>{item.question}<b aria-hidden="true">+</b></summary><p>{item.answer}</p></details>)}</section>;
 }
@@ -259,6 +269,7 @@ function Block({ block }: { block: EditorialBlock }) {
     case "signals": return <SignalsBlock block={block} />;
     case "promptSpecs": return <PromptSpecsBlock block={block} />;
     case "diligence": return <DiligenceBlock block={block} />;
+    case "workbench": return <WorkbenchBlock block={block} />;
     case "faq": return <FaqBlock block={block} />;
   }
 }
