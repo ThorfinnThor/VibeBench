@@ -240,6 +240,12 @@ function SectionHeading({ eyebrow, heading, intro }: { eyebrow: string; heading:
   return <div className={styles.sectionHeading}><div><p className="eyebrow">{eyebrow}</p><h2>{heading}</h2></div>{intro && <p>{intro}</p>}</div>;
 }
 
+function visibleDate(value: string) {
+  const [year, month, day] = value.split("-").map(Number);
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return `${day} ${months[month - 1]} ${year}`;
+}
+
 function Block({ block }: { block: EditorialBlock }) {
   switch (block.type) {
     case "prose": return <ProseBlock block={block} />;
@@ -277,16 +283,23 @@ function Block({ block }: { block: EditorialBlock }) {
 export default function EditorialPage({ page }: { page: EditorialPageData }) {
   const url = `/${page.slug}`;
   const related = page.related.map((slug) => editorialPages[slug]).filter(Boolean);
+  const faq = page.blocks.find((block): block is Extract<EditorialBlock, { type: "faq" }> => block.type === "faq");
+  const structuredGraph: object[] = [
+    { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: "VibeFootprint Editorial", url: absoluteUrl("/about") }, publisher: { "@id": absoluteUrl("/#organization") }, isPartOf: { "@id": absoluteUrl("/#website") }, mainEntityOfPage: absoluteUrl(url), articleSection: page.formatLabel },
+    { "@type": "BreadcrumbList", itemListElement: [
+      { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Insights", item: absoluteUrl("/insights") },
+      { "@type": "ListItem", position: 3, name: page.title, item: absoluteUrl(url) }
+    ] }
+  ];
+  if (faq) structuredGraph.push({
+    "@type": "FAQPage",
+    "@id": `${absoluteUrl(url)}#questions`,
+    mainEntity: faq.items.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } }))
+  });
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: "VibeFootprint Editorial", url: absoluteUrl("/insights") }, publisher: { "@id": absoluteUrl("/#organization") }, mainEntityOfPage: absoluteUrl(url), articleSection: page.formatLabel },
-      { "@type": "BreadcrumbList", itemListElement: [
-        { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
-        { "@type": "ListItem", position: 2, name: "Insights", item: absoluteUrl("/insights") },
-        { "@type": "ListItem", position: 3, name: page.title, item: absoluteUrl(url) }
-      ] }
-    ]
+    "@graph": structuredGraph
   };
 
   return <main className={`${styles.page} ${styles[page.format]}`}>
@@ -295,7 +308,7 @@ export default function EditorialPage({ page }: { page: EditorialPageData }) {
     <article id="editorial-content">
       <header className={styles.hero}>
         <nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href="/">VibeFootprint</Link><span>/</span><Link href="/insights">Insights</Link><span>/</span><span>{page.formatLabel}</span></nav>
-        <div className={styles.heroGrid}><div><p className="eyebrow">{page.eyebrow}</p><h1>{page.title}</h1></div><div><p className={styles.dek}>{page.dek}</p><dl className={styles.meta}><div><dt>Format</dt><dd>{page.formatLabel}</dd></div><div><dt>For</dt><dd>{page.audience}</dd></div><div><dt>Reading time</dt><dd>{page.readingMinutes} minutes</dd></div></dl></div></div>
+        <div className={styles.heroGrid}><div><p className="eyebrow">{page.eyebrow}</p><h1>{page.title}</h1></div><div><p className={styles.dek}>{page.dek}</p><dl className={styles.meta}><div><dt>Format</dt><dd>{page.formatLabel}</dd></div><div><dt>For</dt><dd>{page.audience}</dd></div><div><dt>Reading time</dt><dd>{page.readingMinutes} minutes</dd></div></dl><p className={styles.responsibility}>Published by <Link href="/about">VibeFootprint Editorial</Link><span>Published <time dateTime={page.publishedAt}>{visibleDate(page.publishedAt)}</time> · Last reviewed <time dateTime={page.updatedAt}>{visibleDate(page.updatedAt)}</time></span></p></div></div>
         <aside className={styles.scope}><strong>Evidence boundary</strong><p>{page.scope}</p></aside>
       </header>
 

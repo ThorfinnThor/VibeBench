@@ -38,7 +38,18 @@ const structuredData = {
       "@type": "Organization",
       "@id": absoluteUrl("/#organization"),
       name: "VibeFootprint",
-      url: absoluteUrl("/")
+      url: absoluteUrl("/"),
+      description: "VibeFootprint publishes evidence-led website intelligence, a bounded public-surface scanner and practical guidance for reviewing AI-assisted websites.",
+      knowsAbout: ["Website design patterns", "Public website security headers", "AI-assisted web development", "Website quality assurance"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": absoluteUrl("/#website"),
+      name: "VibeFootprint",
+      url: absoluteUrl("/"),
+      inLanguage: "en",
+      publisher: { "@id": absoluteUrl("/#organization") },
+      about: { "@id": absoluteUrl("/#application") }
     },
     {
       "@type": "WebApplication",
@@ -50,7 +61,8 @@ const structuredData = {
       description,
       inLanguage: "en",
       isAccessibleForFree: true,
-      publisher: { "@id": absoluteUrl("/#organization") }
+      publisher: { "@id": absoluteUrl("/#organization") },
+      isPartOf: { "@id": absoluteUrl("/#website") }
     }
   ]
 };

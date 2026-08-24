@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: editorial.metaTitle,
       description: editorial.description,
-      authors: [{ name: "VibeFootprint Editorial", url: "/insights" }],
+      authors: [{ name: "VibeFootprint Editorial", url: "/about" }],
       alternates: { canonical: path },
       openGraph: { type: "article", title: `${editorial.metaTitle} | VibeFootprint`, description: editorial.description, url: path, locale: "en_US", publishedTime: `${editorial.publishedAt}T00:00:00.000Z`, modifiedTime: `${editorial.updatedAt}T00:00:00.000Z`, images: [{ url: "/og.png", width: 1731, height: 909, alt: editorial.title }] },
       twitter: { card: "summary_large_image", title: `${editorial.metaTitle} | VibeFootprint`, description: editorial.description, images: ["/og.png"] }
@@ -28,9 +28,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: page.metaTitle,
     description: page.description,
+    authors: [{ name: "VibeFootprint", url: "/about" }],
     alternates: { canonical: `/${page.slug}` },
     openGraph: { title: `${page.metaTitle} | VibeFootprint`, description: page.description, url: `/${page.slug}`, locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint website intelligence" }] },
-    twitter: { title: `${page.metaTitle} | VibeFootprint`, description: page.description, images: [] }
+    twitter: { card: "summary_large_image", title: `${page.metaTitle} | VibeFootprint`, description: page.description, images: ["/og.png"] }
   };
 }
 

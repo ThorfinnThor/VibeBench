@@ -15,6 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cluster: 
   return {
     title: page.metaTitle,
     description: page.description,
+    authors: [{ name: page.author, url: "/about" }],
     alternates: { canonical: path },
     openGraph: { type: "article", title: `${page.metaTitle} | VibeFootprint`, description: page.description, url: path, locale: "en_US", modifiedTime: `${page.updatedAt}T00:00:00.000Z`, images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint website review guides" }] },
     twitter: { card: "summary_large_image", title: `${page.metaTitle} | VibeFootprint`, description: page.description, images: ["/og.png"] }

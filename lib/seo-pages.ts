@@ -13,6 +13,7 @@ export type SeoPageContent = {
   title: string;
   metaTitle: string;
   description: string;
+  updatedAt?: string;
   intro: string;
   boundary: string;
   sections: SeoSection[];
@@ -20,6 +21,31 @@ export type SeoPageContent = {
 };
 
 export const englishSeoPages: Record<string, SeoPageContent> = {
+  about: {
+    locale: "en",
+    slug: "about",
+    eyebrow: "Product identity and responsibility",
+    title: "What is VibeFootprint?",
+    metaTitle: "About VibeFootprint",
+    description: "Learn what VibeFootprint is, who publishes its website intelligence, what its public scan measures and where the product deliberately limits its claims.",
+    updatedAt: "2026-08-24",
+    intro: "VibeFootprint is a website-intelligence product and editorial publisher for teams reviewing websites built at AI speed. It combines a bounded public-surface scan with practical guidance while keeping pattern similarity, security and private implementation claims separate.",
+    boundary: "VibeFootprint does not identify an author, calculate generated-code share, certify security or replace repository, accessibility and application testing.",
+    sections: [
+      { heading: "A direct definition", paragraphs: ["VibeFootprint reviews publicly delivered website evidence. Its scanner reports a qualitative 0–100 pattern-similarity index, a separate baseline for selected public security headers, evidence breadth and bounded recommendations.", "The product is designed for interpretation rather than attribution. Similarity can identify useful review questions, but it cannot prove how a website was created or who wrote its code."] },
+      { heading: "Who the product is for", paragraphs: ["Founders can use VibeFootprint to turn an unfamiliar technical surface into concrete questions. Agencies can use the report to structure a client review. Designers and developers can use the evidence and implementation guidance as inputs to normal product, code and release work."], bullets: ["Founders evaluating a fast-built website", "Agencies preparing launches and handoffs", "Designers reviewing interface distinctiveness", "Developers hardening public delivery and implementation quality"] },
+      { heading: "Who publishes and maintains the information", paragraphs: ["VibeFootprint is the named product, website publisher and organization responsible for the public methodology, scan experience, editorial articles and practical guide library on this domain.", "Editorial pages identify VibeFootprint Editorial as the responsible author and show publication information. Technical guidance links to primary standards or first-party documentation where appropriate, and every article states the evidence boundary for its claims."] },
+      { heading: "What the scan can and cannot observe", paragraphs: ["The standard scanner requests a public HTML document, selected response headers and a bounded set of same-origin resources over validated connections. It does not request a login, repository or private source code.", "That boundary is why VibeFootprint reports observable public evidence separately from tasks that require application access, specialist testing or business context."], bullets: ["Public HTML and document metadata", "Selected public response-header values", "A bounded selection of same-origin assets", "No private code, account or backend access"] },
+      { heading: "Availability and pricing status", paragraphs: ["As of 24 August 2026, the public scan and complete report are available without checkout during product testing. Commercial pricing has not been announced. This status should be treated as time-sensitive product information rather than a permanent pricing promise."] },
+      { heading: "How to evaluate VibeFootprint responsibly", paragraphs: ["Read the methodology before treating a score as evidence. Use observed findings to prioritize work, keep the Vibe-Footprint separate from the security baseline and verify important changes through the appropriate repository, browser, application or specialist test.", "No implementation on this website guarantees search rankings, AI citations or inclusion in a particular answer system. The editorial library is written to be useful to people first and structured so its factual boundaries can be extracted accurately."] }
+    ],
+    faq: [
+      { question: "Is VibeFootprint an AI-authorship detector?", answer: "No. It measures public-pattern similarity and reports bounded evidence. It does not establish authorship, causality or generated-code share." },
+      { question: "Who is responsible for the content?", answer: "VibeFootprint is the responsible website publisher. Editorial articles identify VibeFootprint Editorial as the organizational author and link to primary guidance where appropriate." },
+      { question: "Is VibeFootprint free?", answer: "As of 24 August 2026, the public scan and complete report are available without checkout during product testing. Commercial pricing has not been announced." },
+      { question: "Does VibeFootprint guarantee search or AI visibility?", answer: "No. Crawlability, useful content and accurate structure improve readiness, but no page or markup can guarantee ranking, citation or inclusion in a specific search or answer system." }
+    ]
+  },
   methodology: {
     locale: "en",
     slug: "methodology",

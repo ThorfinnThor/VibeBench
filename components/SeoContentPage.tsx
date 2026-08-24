@@ -1,15 +1,51 @@
 import Link from "next/link";
 import type { SeoPageContent } from "../lib/seo-pages";
+import { absoluteUrl } from "../lib/site";
 import styles from "./seo-content-page.module.css";
 
 export default function SeoContentPage({ page }: { page: SeoPageContent }) {
+  const url = `/${page.slug}`;
   const related = [
     { href: "/vibe-coding-website-checker", label: "Website checker" },
     { href: "/how-to-tell-if-a-website-was-vibe-coded", label: "Recognize patterns" },
     { href: "/vibe-coding-security-checklist", label: "Security checklist" },
     { href: "/insights", label: "Editorial insights" },
-    { href: "/guides", label: "All guides" }
-  ];
+    { href: "/guides", label: "All guides" },
+    { href: "/about", label: "About VibeFootprint" }
+  ].filter((item) => item.href !== url).slice(0, 5);
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${absoluteUrl(url)}#webpage`,
+        url: absoluteUrl(url),
+        name: page.title,
+        description: page.description,
+        dateModified: page.updatedAt,
+        inLanguage: "en",
+        isPartOf: { "@id": absoluteUrl("/#website") },
+        about: { "@id": absoluteUrl("/#application") },
+        publisher: { "@id": absoluteUrl("/#organization") }
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: page.title, item: absoluteUrl(url) }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${absoluteUrl(url)}#questions`,
+        mainEntity: page.faq.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: { "@type": "Answer", text: item.answer }
+        }))
+      }
+    ]
+  };
 
   return <main className={styles.page}>
     <a className="skip-link" href="#article">Skip to content</a>
@@ -39,6 +75,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
 
     <section className={styles.scanCta}><div><p className="eyebrow">Next step</p><h2>Check the public website now.</h2><p>Get pattern similarity, a separate security baseline and practical next steps.</p></div><Link href="/#scanner">Start the free scan<span>→</span></Link></section>
     <nav className={styles.related} aria-label="Related guides">{related.map((item) => <Link key={item.href} href={item.href}>{item.label}<span>↗</span></Link>)}</nav>
-    <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p></footer>
+    <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/methodology">Methodology</Link></nav></footer>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }

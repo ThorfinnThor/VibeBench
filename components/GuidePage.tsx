@@ -11,7 +11,7 @@ export function GuideSiteHeader() {
 }
 
 export function GuideSiteFooter() {
-  return <footer className={styles.siteFooter}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav><Link href="/insights">Editorial insights</Link><Link href="/guides">All guides</Link><Link href="/methodology">Methodology</Link></nav></footer>;
+  return <footer className={styles.siteFooter}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav><Link href="/about">About</Link><Link href="/insights">Editorial insights</Link><Link href="/guides">All guides</Link><Link href="/methodology">Methodology</Link></nav></footer>;
 }
 
 export default function GuidePage({ page }: { page: GuidePageData }) {
@@ -21,7 +21,7 @@ export default function GuidePage({ page }: { page: GuidePageData }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, dateModified: page.updatedAt, datePublished: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: page.author }, publisher: { "@id": absoluteUrl("/#organization") }, mainEntityOfPage: absoluteUrl(url) },
+      { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, dateModified: page.updatedAt, datePublished: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: page.author, url: absoluteUrl("/about") }, publisher: { "@id": absoluteUrl("/#organization") }, isPartOf: { "@id": absoluteUrl("/#website") }, mainEntityOfPage: absoluteUrl(url), articleSection: cluster.name },
       { "@type": "BreadcrumbList", itemListElement: [
         { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
         { "@type": "ListItem", position: 2, name: "Guides", item: absoluteUrl("/guides") },

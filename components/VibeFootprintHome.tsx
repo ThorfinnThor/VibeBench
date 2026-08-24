@@ -767,6 +767,6 @@ export default function VibeFootprintHome({ initialLanguage = "en" }: { initialL
       </nav>
     </section>
 
-    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link></nav></footer>
+    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link></nav></footer>
   </main>;
 }
