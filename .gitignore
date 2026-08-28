@@ -8,6 +8,7 @@ node_modules/
 .playwright-browsers/
 .next/
 out/
+*.tsbuildinfo
 npm-debug.log*
 
 # Temporary analysis and smoke-test artifacts

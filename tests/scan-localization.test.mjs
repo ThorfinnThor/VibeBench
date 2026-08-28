@@ -24,3 +24,9 @@ test("keeps German output unchanged and translates technical errors", () => {
   assert.equal(localizeTechnicalOutcome(outcome, "de"), outcome);
   assert.equal(localizeTechnicalOutcome(outcome, "en").title, "Invalid URL");
 });
+
+test("translates the generic server failure for the English launch surface", () => {
+  const translated = localizeTechnicalOutcome({ code: "scan_failed", title: "Technischer Scan fehlgeschlagen", summary: "Deutsch", action: "Deutsch", retryable: true }, "en");
+  assert.equal(translated.title, "Technical scan failed");
+  assert.match(translated.summary, /No score was created/);
+});

@@ -23,7 +23,7 @@ test("SEO foundation exposes canonical metadata and structured identity", () => 
 });
 
 test("the public website is English-only", () => {
-  assert.match(layout, /<html lang="en">/);
+  assert.match(layout, /<html lang="en"/);
   assert.doesNotMatch(layout, /de_DE|alternateLocale|x-vibefootprint-locale/);
   assert.doesNotMatch(sitemap, /\/de|x-default|alternates/);
   assert.doesNotMatch(scanner, /language-switcher|href="\/de"/);
@@ -70,7 +70,9 @@ test("GEO entity and responsibility information is visible and internally linked
   assert.match(content, /slug: "about"/);
   assert.match(content, /What is VibeFootprint\?/);
   assert.match(content, /Who publishes and maintains the information/);
-  assert.match(content, /Commercial pricing has not been announced/);
+  assert.match(content, /SeitenHafen361/);
+  assert.match(content, /Schayan Yousefian/);
+  assert.match(content, /individual B2B offer/);
   assert.match(scanner, /href="\/about"/);
   assert.match(guideComponent, /href="\/about"/);
 });

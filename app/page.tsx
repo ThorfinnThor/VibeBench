@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <VibeFootprintHome initialLanguage="en" />;
+  return <VibeFootprintHome initialLanguage="en" enableAdminPreview={process.env.VIBEFOOTPRINT_ADMIN_UI === "true"} />;
 }

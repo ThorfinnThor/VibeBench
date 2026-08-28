@@ -371,7 +371,7 @@
 
 .faq details { border-top: 1px solid var(--line); }
 .faq details:last-child { border-bottom: 1px solid var(--line); }
-.faq summary { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: "Manrope", sans-serif; font-size: 18px; font-weight: 700; cursor: pointer; list-style: none; }
+.faq summary { padding: 22px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: var(--font-heading), sans-serif; font-size: 18px; font-weight: 700; cursor: pointer; list-style: none; }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary b { color: var(--green); font-size: 24px; }
 .faq details[open] summary b { transform: rotate(45deg); }
