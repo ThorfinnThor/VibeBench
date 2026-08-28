@@ -72,7 +72,7 @@ test("GEO entity and responsibility information is visible and internally linked
   assert.match(content, /Who publishes and maintains the information/);
   assert.match(content, /SeitenHafen361/);
   assert.match(content, /Schayan Yousefian/);
-  assert.match(content, /individual B2B offer/);
+  assert.match(content, /one-time €4\.99 launch price/);
   assert.match(scanner, /href="\/about"/);
   assert.match(guideComponent, /href="\/about"/);
 });

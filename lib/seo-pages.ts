@@ -36,13 +36,13 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
       { heading: "Who the product is for", paragraphs: ["Founders can use VibeFootprint to turn an unfamiliar technical surface into concrete questions. Agencies can use the report to structure a client review. Designers and developers can use the evidence and implementation guidance as inputs to normal product, code and release work."], bullets: ["Founders evaluating a fast-built website", "Agencies preparing launches and handoffs", "Designers reviewing interface distinctiveness", "Developers hardening public delivery and implementation quality"] },
       { heading: "Who publishes and maintains the information", paragraphs: ["VibeFootprint is a product of SeitenHafen361, a sole proprietorship owned by Schayan Yousefian in Berlin. SeitenHafen361 is responsible for the public methodology, scan experience, editorial articles and practical guide library on this domain.", "Editorial pages identify VibeFootprint Editorial as the organizational author and show publication information. Technical guidance links to primary standards or first-party documentation where appropriate, and every article states the evidence boundary for its claims."] },
       { heading: "What the scan can and cannot observe", paragraphs: ["The standard scanner requests a public HTML document, selected response headers and a bounded set of same-origin resources over validated connections. It does not request a login, repository or private source code.", "That boundary is why VibeFootprint reports observable public evidence separately from tasks that require application access, specialist testing or business context."], bullets: ["Public HTML and document metadata", "Selected public response-header values", "A bounded selection of same-origin assets", "No private code, account or backend access"] },
-      { heading: "Availability and commercial status", paragraphs: ["As of 28 August 2026, the public scan summary is available without checkout. Client-ready diagnostic reports are offered to businesses and self-employed professionals through a limited customer beta; scope, timing and price are confirmed in an individual B2B offer before paid work begins."] },
+      { heading: "Availability and commercial status", paragraphs: ["As of 28 August 2026, VibeFootprint offers one complete website scan for a one-time €4.99 launch price instead of the intended regular €49.99 price. Payment is handled through Stripe Checkout and the scan is bound to the public URL entered at checkout."] },
       { heading: "How to evaluate VibeFootprint responsibly", paragraphs: ["Read the methodology before treating a score as evidence. Use observed findings to prioritize work, keep the Vibe-Footprint separate from the security baseline and verify important changes through the appropriate repository, browser, application or specialist test.", "No implementation on this website guarantees search rankings, AI citations or inclusion in a particular answer system. The editorial library is written to be useful to people first and structured so its factual boundaries can be extracted accurately."] }
     ],
     faq: [
       { question: "Is VibeFootprint an AI-authorship detector?", answer: "No. It measures public-pattern similarity and reports bounded evidence. It does not establish authorship, causality or generated-code share." },
       { question: "Who is responsible for the content?", answer: "VibeFootprint is published by SeitenHafen361, a sole proprietorship owned by Schayan Yousefian in Berlin. Editorial articles identify VibeFootprint Editorial as the organizational author." },
-      { question: "Is VibeFootprint free?", answer: "The public scan summary is available without checkout. Client-ready diagnostic reports are scoped and priced individually for business customers during the limited customer beta." },
+      { question: "How much does VibeFootprint cost?", answer: "During launch, one complete website scan costs €4.99 instead of the intended regular €49.99 price. It is a one-time Stripe payment with no subscription." },
       { question: "Does VibeFootprint guarantee search or AI visibility?", answer: "No. Crawlability, useful content and accurate structure improve readiness, but no page or markup can guarantee ranking, citation or inclusion in a specific search or answer system." }
     ]
   },
@@ -71,7 +71,7 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
   "vibe-coding-website-checker": {
     locale: "en",
     slug: "vibe-coding-website-checker",
-    eyebrow: "Free public website scan",
+    eyebrow: "Paid public website scan",
     title: "Vibe-coding website checker with actionable results",
     metaTitle: "Vibe Coding Website Checker",
     description: "Check a public website for vibe-coding pattern similarity, security headers and practical improvement opportunities.",

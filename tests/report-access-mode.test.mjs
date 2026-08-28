@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  paidReportAccess,
   publicReportAccess,
   REPORT_ACCESS_MODE,
   resolveReportAccessMode
 } from "../lib/report-access-mode.mjs";
 
-test("commercial access is the safe default while founding beta access stays explicit", () => {
+test("commercial access is the safe default while internal test access stays explicit", () => {
   assert.equal(resolveReportAccessMode(undefined), REPORT_ACCESS_MODE.COMMERCIAL);
   assert.equal(resolveReportAccessMode("free-test"), REPORT_ACCESS_MODE.FREE_TEST);
   assert.equal(resolveReportAccessMode("commercial"), REPORT_ACCESS_MODE.COMMERCIAL);
@@ -19,5 +20,10 @@ test("commercial access is the safe default while founding beta access stays exp
     status: "locked",
     previewOnly: true,
     entitlementRequired: true
+  });
+  assert.deepEqual(paidReportAccess(), {
+    status: "paid",
+    previewOnly: false,
+    entitlementRequired: false
   });
 });

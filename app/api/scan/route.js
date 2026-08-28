@@ -16,7 +16,7 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
-import { publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
+import { paidReportAccess, publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
 import { acquireRedirectTargetAdmission, acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
@@ -26,6 +26,7 @@ import {
   parseMediaType
 } from "../../../lib/scan-response-policy.mjs";
 import { SCAN_API_VERSION } from "../../../lib/scan-contract.mjs";
+import { verifyScanCheckout } from "../../../lib/stripe-scan-payment.mjs";
 import candidateModel from "../../../outputs/development_v0_4/vibebench_development_v0_4_candidate_model.json";
 import release from "../../../release/v0.4.json";
 
@@ -154,7 +155,32 @@ export async function POST(request) {
     } catch {
       throw new Error("Ungültige JSON-Anfrage.");
     }
-    const inputUrl = normalizePublicUrl(assertScanRequestBody(body));
+    const scanRequest = assertScanRequestBody(body);
+    const inputUrl = normalizePublicUrl(scanRequest.url);
+    let paidAccess = false;
+    if (reportMode === REPORT_ACCESS_MODE.COMMERCIAL && !adminAuthorization.authorized) {
+      try {
+        await verifyScanCheckout({
+          sessionId: scanRequest.checkoutSessionId,
+          targetUrl: inputUrl.toString(),
+          secret: process.env.STRIPE_SECRET_KEY
+        });
+        paidAccess = true;
+      } catch {
+        return Response.json({
+          apiVersion: SCAN_API_VERSION,
+          ok: false,
+          requestId,
+          technicalOutcome: {
+            code: "payment_required",
+            title: "Zahlung erforderlich",
+            summary: "Für diese Website wurde keine gültige Scan-Zahlung bestätigt.",
+            action: "Öffne den Stripe-Checkout für diese URL oder bestätige die abgeschlossene Zahlung erneut.",
+            retryable: false
+          }
+        }, { status: 402, headers: responseHeaders });
+      }
+    }
     const initialTargetId = scanTargetIdentity(inputUrl);
     const reservedTargetIds = new Set([initialTargetId]);
     releaseAdmission = acquireScanAdmission({ clientId: scanAdmissionIdentity(request), targetId: initialTargetId });
@@ -239,9 +265,9 @@ export async function POST(request) {
       evidenceCoverage,
       security: { score: security.score, counts: summarizeSecurityChecks(security.checks) },
       categoryOverview,
-      reportAccess: publicReportAccess(reportMode)
+      reportAccess: paidAccess ? paidReportAccess() : publicReportAccess(reportMode)
     };
-    const fullReportEnabled = reportMode === REPORT_ACCESS_MODE.FREE_TEST || adminAuthorization.authorized;
+    const fullReportEnabled = paidAccess || reportMode === REPORT_ACCESS_MODE.FREE_TEST || adminAuthorization.authorized;
     if (fullReportEnabled) {
       payload.adminReport = buildAdminReport({
         model: candidateModel,
@@ -266,7 +292,7 @@ export async function POST(request) {
       });
     }
     const durationMs = Date.now() - startedAt;
-    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, adminPreview: adminAuthorization.authorized }));
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, paidAccess, adminPreview: adminAuthorization.authorized }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);

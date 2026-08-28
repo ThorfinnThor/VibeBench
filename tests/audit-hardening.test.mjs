@@ -154,8 +154,9 @@ test("scan response policy fails closed on ambiguous or ineligible documents", (
   assert.doesNotThrow(() => assertV04DocumentSemantics('<script src="/app.js?x=1&amp;y=2"></script>'));
 });
 
-test("scan requests accept exactly one string URL field", () => {
-  assert.equal(assertScanRequestBody({ url: "https://example.com" }), "https://example.com");
+test("scan requests accept a URL and optional Stripe checkout session only", () => {
+  assert.deepEqual(assertScanRequestBody({ url: "https://example.com" }), { url: "https://example.com", checkoutSessionId: undefined });
+  assert.deepEqual(assertScanRequestBody({ url: "https://example.com", checkoutSessionId: "cs_test_abc" }), { url: "https://example.com", checkoutSessionId: "cs_test_abc" });
   for (const value of [null, [], {}, { url: 1 }, { url: "https://example.com", debug: true }]) {
     assert.throws(() => assertScanRequestBody(value), /JSON-Anfrage/);
   }

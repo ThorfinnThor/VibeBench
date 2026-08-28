@@ -33,23 +33,29 @@ export default function PrivacyPage() {
       <p>Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse ist die datensparsame Messung von Nutzung, technischer Zuverlässigkeit und Produktqualität. Sollten künftig einwilligungspflichtige Analyse-, Marketing- oder Endgerätezugriffe ergänzt werden, werden diese erst nach einer entsprechenden Einwilligung aktiviert.</p>
     </section>
     <section>
-      <h2>5. Kontaktaufnahme und Kundenanfragen</h2>
-      <p>Der Anfrage-Assistent auf der Kontaktseite übermittelt keine Formulardaten an VibeFootprint und speichert sie nicht auf unserem Server. Er erstellt ausschließlich lokal im Browser einen <code>mailto:</code>-Link. Erst wenn du die vorbereitete Nachricht bewusst über dein eigenes E-Mail-Programm versendest, werden die enthaltenen Angaben an uns und die beteiligten E-Mail-Anbieter übermittelt.</p>
+      <h2>5. Zahlungsabwicklung mit Stripe</h2>
+      <p>Für einmalige Zahlungen verwenden wir Stripe Checkout. Zahlungsdienstleister für Kunden im Europäischen Wirtschaftsraum ist regelmäßig Stripe Payments Europe, Limited, Irland. Stripe verarbeitet die für Zahlung, Betrugsprävention und gesetzliche Pflichten erforderlichen Daten, insbesondere Name, E-Mail-Adresse, Zahlungs- und Rechnungsdaten, Betrag sowie technische Verbindungs- und Geräteinformationen.</p>
+      <p>Die von dir eingegebene öffentliche Scan-URL wird als Bestellmetadatum an Stripe übermittelt. So können wir die Zahlung ausschließlich dieser URL zuordnen und den bezahlten Scan freischalten. Bitte verwende keine URL mit personenbezogenen Informationen, Zugangsdaten oder geheimen Abfrageparametern. VibeFootprint erhält keine vollständigen Kartendaten.</p>
+      <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO für Vertragsabschluss und Zahlung. Soweit Daten zur Betrugsabwehr, Sicherheit oder Erfüllung gesetzlicher Pflichten verarbeitet werden, gelten zusätzlich Art. 6 Abs. 1 lit. f beziehungsweise lit. c DSGVO. Stripe kann Daten als Auftragsverarbeiter und für eigene gesetzlich bestimmte Zwecke als selbst Verantwortlicher verarbeiten. Informationen zu Rollen, Unterauftragnehmern und Drittlandtransfers findest du in der <a href="https://stripe.com/legal/dpa">Stripe-Datenverarbeitungsvereinbarung</a> und im <a href="https://stripe.com/privacy">Stripe-Datenschutzhinweis</a>. Übermittlungen in Drittländer werden insbesondere durch Standardvertragsklauseln abgesichert.</p>
+      <p>Zahlungs- und Vertragsdaten werden entsprechend den gesetzlichen handels- und steuerrechtlichen Aufbewahrungsfristen gespeichert. Zusätzliche Aufbewahrungsfristen bei Stripe richten sich nach dessen gesetzlichen Pflichten und Einstellungen.</p>
+    </section>
+    <section>
+      <h2>6. Kontaktaufnahme</h2>
       <p>Bei einer Kontaktaufnahme per E-Mail verarbeiten wir deine Kontaktdaten, Nachricht und die für die Bearbeitung erforderlichen Geschäftsinformationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Kommunikation der Vertragsanbahnung oder Vertragserfüllung dient, ansonsten Art. 6 Abs. 1 lit. f DSGVO.</p>
       <p>Anfragen werden gelöscht, wenn sie abschließend bearbeitet sind und keine gesetzlichen Aufbewahrungsfristen oder berechtigten Nachweisinteressen entgegenstehen. Vertrags- und Rechnungsunterlagen werden entsprechend den gesetzlichen handels- und steuerrechtlichen Fristen aufbewahrt.</p>
     </section>
     <section>
-      <h2>6. Empfänger und keine automatisierte Personenentscheidung</h2>
-      <p>Empfänger können Hosting-, Infrastruktur-, Kommunikations- und – nach gesonderter Einführung – Zahlungsdienstleister sein. Eine Weitergabe zu Werbezwecken findet nicht statt.</p>
+      <h2>7. Empfänger und keine automatisierte Personenentscheidung</h2>
+      <p>Empfänger können Hosting-, Infrastruktur-, Kommunikations- und Zahlungsdienstleister sein. Eine Weitergabe zu Werbezwecken findet nicht statt.</p>
       <p>Der Vibe-Footprint bewertet die öffentlich ausgelieferte technische Oberfläche einer Website. Er ist keine Entscheidung über eine natürliche Person und entfaltet keine rechtliche oder vergleichbar erhebliche Wirkung im Sinne von Art. 22 DSGVO.</p>
     </section>
     <section>
-      <h2>7. Deine Rechte</h2>
+      <h2>8. Deine Rechte</h2>
       <p>Du hast im Rahmen der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Eine erteilte Einwilligung kann jederzeit mit Wirkung für die Zukunft widerrufen werden.</p>
       <p>Zur Ausübung deiner Rechte genügt eine E-Mail an <a href="mailto:info@vibefootprint.com">info@vibefootprint.com</a>. Außerdem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde, insbesondere bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit.</p>
     </section>
     <section>
-      <h2>8. Sicherheit und Aktualisierung</h2>
+      <h2>9. Sicherheit und Aktualisierung</h2>
       <p>Wir setzen technische und organisatorische Maßnahmen ein, darunter HTTPS, restriktive Security-Header, begrenzte Antwortgrößen, IP-Prüfungen, Rate Limits und minimierte Diagnoseereignisse. Diese Erklärung wird angepasst, wenn sich Anbieter, Datenflüsse oder Produktfunktionen wesentlich ändern.</p>
     </section>
   </LegalPageShell>;

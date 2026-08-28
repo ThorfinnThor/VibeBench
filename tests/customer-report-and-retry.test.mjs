@@ -24,19 +24,19 @@ test("customer report keeps footprint and security assessments explicitly separa
   assert.match(report, /two scores are independent/);
   assert.match(report, /Category overview/);
   assert.match(report, /security:\*\* 3 observed issues/);
-  assert.match(report, /require an unlocked full report/);
+  assert.match(report, /complete detailed report includes/);
   assert.doesNotMatch(report, /Content Security Policy/);
   assert.doesNotMatch(report, /AI probability/i);
   assert.equal(customerReportFilename(result, "en"), "vibefootprint-summary-example.com-2026-08-19-en.md");
 });
 
-test("free testing summaries disclose that the full report is included", () => {
+test("included scan summaries disclose that the full report is available", () => {
   const report = buildCustomerReport({
     ...result,
     reportAccess: { status: "testing", previewOnly: false, entitlementRequired: false }
   }, "en");
   assert.match(report, /complete detailed report is included/i);
-  assert.doesNotMatch(report, /require an unlocked full report/i);
+  assert.doesNotMatch(report, /unlocked full report/i);
 });
 
 test("customer report redacts query parameters and fragments", () => {
