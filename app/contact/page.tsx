@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactIntake from "../../components/ContactIntake";
 import LegalPageShell from "../../components/LegalPageShell";
 import styles from "../../components/legal-page.module.css";
 
@@ -9,10 +10,8 @@ export const metadata: Metadata = {
   openGraph: { title: "VibeFootprint Customer Beta", description: "A decision-ready public-surface website audit for agencies, freelancers and founders.", url: "/contact" }
 };
 
-const mailto = "mailto:info@vibefootprint.com?subject=VibeFootprint%20Customer%20Beta&body=Name%20and%20company%3A%0AWebsite%20URL%3A%0ANumber%20of%20websites%3A%0AMain%20launch%20or%20handoff%20question%3A%0A";
-
 export default function ContactPage() {
-  const cta = <section className={styles.cta}><div><h2>Request your founding-customer audit.</h2><p>Send the public website URL and the decision you need to make. We will reply with scope, timing and a clear B2B offer.</p></div><a href={mailto}>Email VibeFootprint</a></section>;
+  const cta = <><ContactIntake /><section className={styles.cta}><div><h2>Prefer a direct email?</h2><p>Write to us without the assistant. Include the public URL and the business decision you need to make.</p></div><a href="mailto:info@vibefootprint.com?subject=VibeFootprint%20Customer%20Beta">Email VibeFootprint</a></section></>;
   return <LegalPageShell eyebrow="Limited B2B customer beta" title="Turn a public scan into a launch decision." intro="For agencies, freelancers and founders who need a defensible website review before launch, handoff or client presentation." updatedAt="2026-08-28" cta={cta} notice={<><strong>No public leaderboard. No authorship accusation.</strong><p>Your review stays private and separates observable quality findings from the qualitative pattern-similarity score.</p></>}>
     <section>
       <h2>What the beta audit includes</h2>
