@@ -34,6 +34,7 @@ export default function PrivacyPage() {
     </section>
     <section>
       <h2>5. Kontaktaufnahme und Kundenanfragen</h2>
+      <p>Der Anfrage-Assistent auf der Kontaktseite übermittelt keine Formulardaten an VibeFootprint und speichert sie nicht auf unserem Server. Er erstellt ausschließlich lokal im Browser einen <code>mailto:</code>-Link. Erst wenn du die vorbereitete Nachricht bewusst über dein eigenes E-Mail-Programm versendest, werden die enthaltenen Angaben an uns und die beteiligten E-Mail-Anbieter übermittelt.</p>
       <p>Bei einer Kontaktaufnahme per E-Mail verarbeiten wir deine Kontaktdaten, Nachricht und die für die Bearbeitung erforderlichen Geschäftsinformationen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, soweit die Kommunikation der Vertragsanbahnung oder Vertragserfüllung dient, ansonsten Art. 6 Abs. 1 lit. f DSGVO.</p>
       <p>Anfragen werden gelöscht, wenn sie abschließend bearbeitet sind und keine gesetzlichen Aufbewahrungsfristen oder berechtigten Nachweisinteressen entgegenstehen. Vertrags- und Rechnungsunterlagen werden entsprechend den gesetzlichen handels- und steuerrechtlichen Fristen aufbewahrt.</p>
     </section>

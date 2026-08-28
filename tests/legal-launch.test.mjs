@@ -7,6 +7,7 @@ const imprint = read("../app/imprint/page.tsx");
 const privacy = read("../app/privacy/page.tsx");
 const terms = read("../app/terms/page.tsx");
 const contact = read("../app/contact/page.tsx");
+const contactIntake = read("../components/ContactIntake.tsx");
 const home = read("../components/VibeFootprintHome.tsx");
 const legalLinks = read("../components/LegalFooterLinks.tsx");
 const layout = read("../app/layout.tsx");
@@ -26,6 +27,8 @@ test("privacy notice documents the actual scan, hosting, analytics and retention
   assert.match(privacy, /Arbeitsspeicher/);
   assert.match(privacy, /Ziel-URL, Domain, IP-Adresse, Request-ID/);
   assert.match(privacy, /Art\. 22 DSGVO/);
+  assert.match(privacy, /übermittelt keine Formulardaten/);
+  assert.match(privacy, /mailto:/);
   assert.doesNotMatch(home, /window\.localStorage/);
 });
 
@@ -41,6 +44,12 @@ test("terms establish a B2B-only individual offer and preserve mandatory liabili
 test("the customer path is actionable and legal links are globally reusable", () => {
   assert.match(contact, /mailto:info@vibefootprint.com/);
   assert.match(contact, /exclusively to businesses and self-employed professionals/);
+  assert.match(contact, /ContactIntake/);
+  assert.match(contactIntake, /Prepare email request/);
+  assert.match(contactIntake, /Nothing is sent by this form/);
+  assert.match(contactIntake, /business or self-employed capacity/);
+  assert.match(contactIntake, /authorized to have (?:this|the) public URL reviewed/);
+  assert.doesNotMatch(contactIntake, /fetch\(|localStorage|sessionStorage/);
   for (const route of ["/contact", "/imprint", "/privacy", "/terms"]) assert.match(legalLinks, new RegExp(route));
 });
 
