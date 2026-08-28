@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import localFont from "next/font/local";
 import { absoluteUrl, siteOrigin } from "../lib/site";
 import "./globals.css";
+
+const dmSans = localFont({ src: "./fonts/dm-sans-latin.woff2", display: "swap", variable: "--font-dm-sans", weight: "400 700" });
+const manrope = localFont({ src: "./fonts/manrope-latin.woff2", display: "swap", variable: "--font-manrope", weight: "500 800" });
 
 const title = "VibeFootprint — Vibe Coding Website Checker";
 const description = "A clear 0–100 website footprint, public evidence and practical security improvements.";
@@ -38,7 +42,11 @@ const structuredData = {
       "@type": "Organization",
       "@id": absoluteUrl("/#organization"),
       name: "VibeFootprint",
+      legalName: "SeitenHafen361",
       url: absoluteUrl("/"),
+      email: "info@vibefootprint.com",
+      founder: { "@type": "Person", name: "Schayan Yousefian" },
+      address: { "@type": "PostalAddress", streetAddress: "Freienwalder Str. 34", postalCode: "13359", addressLocality: "Berlin", addressCountry: "DE" },
       description: "VibeFootprint publishes evidence-led website intelligence, a bounded public-surface scanner and practical guidance for reviewing AI-assisted websites.",
       knowsAbout: ["Website design patterns", "Public website security headers", "AI-assisted web development", "Website quality assurance"]
     },
@@ -68,5 +76,5 @@ const structuredData = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><Analytics /></body></html>;
+  return <html lang="en" className={`${dmSans.variable} ${manrope.variable}`}><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><Analytics /></body></html>;
 }

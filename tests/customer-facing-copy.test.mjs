@@ -14,3 +14,10 @@ test("full report design sample is visible on request without exposing protected
   assert.match(page, /not protected findings from this scan/);
   assert.match(page, /sampleReportOpen/);
 });
+
+test("customer conversion uses a real B2B contact route instead of a placeholder checkout", () => {
+  assert.match(page, /Request full report/);
+  assert.match(page, /href="\/contact"/);
+  assert.doesNotMatch(page, /Checkout is not connected yet/);
+  assert.doesNotMatch(page, /window\.localStorage/);
+});

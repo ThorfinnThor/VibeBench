@@ -1,6 +1,6 @@
 .page { min-width: 320px; overflow: hidden; }
 .siteHeader { width: min(1180px, calc(100% - 48px)); min-height: 78px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.siteHeader nav, .siteFooter nav { display: flex; align-items: center; gap: 26px; }
+.siteHeader nav, .siteFooter nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 10px 24px; }
 .siteHeader nav a, .siteFooter nav a { color: var(--muted); font-size: 14px; font-weight: 750; text-decoration: none; }
 .siteHeader nav a:hover, .siteFooter nav a:hover { color: var(--green); }
 .hero { padding: 68px max(24px, calc((100vw - 1180px) / 2)) 52px; background: var(--ink); color: white; }
