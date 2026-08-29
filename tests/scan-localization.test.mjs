@@ -7,7 +7,11 @@ test("localizes dynamic scan output for the English default", () => {
     vibeScore: { band: { id: "medium", label: "Mittlerer Vibe-Footprint", shortLabel: "Mittel", summary: "Deutsch" }, meaning: "Deutsch", caveat: "Deutsch" },
     evidenceCoverage: { level: "broad", label: "Breit", summary: "Deutsch", scope: { assetsFetched: 3, assetCandidates: 3, assetsDiscovered: 8 } },
     scoreDrivers: { raises: [{ feature: "metric:buttons", featureType: "continuous", state: "measured", direction: "raises", rawValue: 4, trainingBaseline: 2, label: "Strukturwert", description: "Deutsch" }], lowers: [] },
-    recommendations: [{ id: "security-1", category: "security", priority: "high", title: "Content Security Policy", why: "Deutsch", action: "Deutsch", basis: "observed" }],
+    recommendations: [
+      { id: "security-1", category: "security", priority: "high", title: "Content Security Policy", why: "Deutsch", action: "Deutsch", basis: "observed" },
+      { id: "design-1", category: "design", priority: "medium", title: "Generische AI-UI-Muster reduzieren", why: "Deutsch", action: "Deutsch", basis: "observed" }
+    ],
+    fixPacks: { en: [{ id: "design-1", title: "Generische AI-UI-Muster reduzieren", prompt: "English prompt" }], de: [{ id: "design-1", title: "Generische AI-UI-Muster reduzieren", prompt: "Deutscher Prompt" }] },
     security: { checks: [{ id: "csp", title: "Content Security Policy", status: "fail", detail: "Deutsch", action: "Deutsch" }] },
     warning: "Deutsch"
   });
@@ -15,6 +19,9 @@ test("localizes dynamic scan output for the English default", () => {
   assert.equal(payload.evidenceCoverage.label, "Broad");
   assert.match(payload.scoreDrivers.raises[0].description, /above the training average/);
   assert.match(payload.recommendations[0].action, /Report-Only/);
+  assert.equal(payload.recommendations[1].title, "Reduce generic AI UI patterns");
+  assert.equal(payload.fixPacks.en[0].title, "Reduce generic AI UI patterns");
+  assert.equal(payload.fixPacks.de[0].title, "Generische AI-UI-Muster reduzieren");
   assert.match(payload.security.checks[0].detail, /Content-Security-Policy/);
   assert.match(payload.warning, /uncalibrated similarity/);
 });
