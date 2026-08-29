@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  return <LegalPageShell eyebrow="B2B-Nutzungsrahmen" title="Nutzungsbedingungen" intro="Regeln für den einmalig bezahlten VibeFootprint Website-Scan." notice={<><strong>Ausschließlich für Unternehmer</strong><p>VibeFootprint richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB. Mit dem Checkout bestätigst du die Nutzung in unternehmerischer oder selbstständiger Tätigkeit.</p></>}>
+  return <LegalPageShell eyebrow="B2B-Nutzungsrahmen" title="Nutzungsbedingungen" intro="Regeln für die kostenlose Scan-Vorschau und die einmalig bezahlte Freischaltung des vollständigen VibeFootprint Audits." notice={<><strong>Ausschließlich für Unternehmer</strong><p>VibeFootprint richtet sich ausschließlich an Unternehmer im Sinne des § 14 BGB. Mit dem Checkout bestätigst du die Nutzung in unternehmerischer oder selbstständiger Tätigkeit.</p></>}>
     <section>
       <h2>1. Anbieter und Geltungsbereich</h2>
-      <p>Anbieter ist SeitenHafen361, Inhaber Schayan Yousefian, Freienwalder Str. 34, 13359 Berlin. Diese Bedingungen gelten für den über die Website gekauften VibeFootprint-Scan.</p>
+      <p>Anbieter ist SeitenHafen361, Inhaber Schayan Yousefian, Freienwalder Str. 34, 13359 Berlin. Diese Bedingungen gelten für die Nutzung der Scan-Vorschau und die über die Website gekaufte Freischaltung des vollständigen Audits.</p>
     </section>
     <section>
       <h2>2. Leistungsgegenstand</h2>
       <p>VibeFootprint untersucht eine öffentlich erreichbare Website-Oberfläche in einem begrenzten technischen Umfang. Der Dienst kann einen qualitativen Ähnlichkeitsindex, eine separate Bewertung ausgewählter öffentlicher Security-Header, beobachtete Hinweise und priorisierte Handlungsvorschläge bereitstellen.</p>
-      <p>Der konkrete Funktionsumfang richtet sich nach der beim Kauf angezeigten Produkt- und Modellversion. Ein Kauf umfasst die Analyse der im Stripe-Checkout bezeichneten öffentlichen URL sowie die Anzeige des daraus erzeugten vollständigen Scan-Reports.</p>
+      <p>Die kostenlose Vorschau zeigt ausgewählte Scan-Ergebnisse. Der konkrete Funktionsumfang des vollständigen Audits richtet sich nach der beim Kauf angezeigten Produkt- und Modellversion. Ein Kauf schaltet den vollständigen Report für die im Stripe-Checkout bezeichnete, zuvor gescannte öffentliche URL frei.</p>
     </section>
     <section>
       <h2>3. Vertragsschluss, Preis und Zahlung</h2>
-      <p>Der Vertrag kommt zustande, wenn du im Stripe-Checkout die Zahlung für den bezeichneten Website-Scan abschließt. Während der Launch-Aktion kostet ein Scan einmalig 4,99 € statt des vorgesehenen regulären Preises von 49,99 €. Maßgeblich ist stets der im Checkout angezeigte Gesamtbetrag.</p>
-      <p>Die Zahlung wird über Stripe abgewickelt. Der Scan ist an die beim Checkout angegebene öffentliche URL gebunden und kann nicht auf eine andere URL übertragen werden. Wiederholungsversuche für dieselbe URL sind zulässig, wenn dies zur technischen Durchführung des bezahlten Scans erforderlich ist.</p>
+      <p>Der Vertrag kommt zustande, wenn du im Stripe-Checkout die Zahlung zur Freischaltung des vollständigen Audits abschließt. Während der Launch-Aktion kostet die Freischaltung einmalig 4,99 € statt des vorgesehenen regulären Preises von 49,99 €. Maßgeblich ist stets der im Checkout angezeigte Gesamtbetrag.</p>
+      <p>Die Zahlung wird über Stripe abgewickelt. Die Freischaltung ist an die beim Checkout angegebene öffentliche URL gebunden und kann nicht auf eine andere URL übertragen werden. Wiederholungsversuche für dieselbe URL sind zulässig, wenn dies zur technischen Erstellung des bezahlten Audits erforderlich ist.</p>
     </section>
     <section>
       <h2>4. Aussagegrenzen</h2>

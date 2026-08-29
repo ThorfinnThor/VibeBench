@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   const cta = <section className={styles.cta}><div><h2>Wir helfen direkt.</h2><p>Schreib uns bei Fragen zu einem Scan oder einer Zahlung.</p></div><a href="mailto:info@vibefootprint.com?subject=VibeFootprint%20Scan-Support">E-Mail senden</a></section>;
-  return <LegalPageShell eyebrow="Kontakt" title="Scan- und Zahlungs-Support" intro="VibeFootprint verkauft genau einen Website-Scan pro Bestellung. Bei technischen oder Zahlungsfragen erreichst du uns direkt per E-Mail." updatedAt="2026-08-28" cta={cta}>
+  return <LegalPageShell eyebrow="Kontakt" title="Scan- und Zahlungs-Support" intro="Die Scan-Vorschau ist kostenlos; pro Bestellung wird der vollständige Audit für genau eine Website-URL freigeschaltet. Bei technischen oder Zahlungsfragen erreichst du uns direkt per E-Mail." updatedAt="2026-08-29" cta={cta}>
     <section>
       <h2>Kontakt</h2>
       <p><a href="mailto:info@vibefootprint.com">info@vibefootprint.com</a></p>

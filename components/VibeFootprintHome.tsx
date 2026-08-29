@@ -136,7 +136,7 @@ const copyByLanguage = {
     heroEyebrow: "Evidence-led website review", heroTitle: <>How much <span>vibe</span> is in your website?</>,
     heroLede: "Get a clear 0–100 footprint, understand the public patterns behind it, and turn the findings into practical security, quality and originality improvements.",
     heroTrust: "Transparent model · qualitative orientation with an explicit uncertainty boundary",
-    scanTitle: "Scan a website", scanDescription: "Enter a public URL, pay once via Stripe, then receive the complete scan in about 10 seconds.", urlLabel: "Website URL", placeholder: "https://your-website.com", startScan: "Buy launch scan — €4.99", scanning: "Scanning website …", cancel: "Cancel",
+    scanTitle: "Scan a website", scanDescription: "Enter a public URL and receive a genuine website scan preview in about 10 seconds. Unlock the full audit only if it is useful to you.", urlLabel: "Website URL", placeholder: "https://your-website.com", startScan: "Run free website scan", scanning: "Scanning website …", cancel: "Cancel",
     privacy: "Bounded, peer-pinned GET requests for public HTML and same-origin assets. The target site may log these requests. No login or private source code.",
     low: "Low", light: "Light", medium: "Medium", high: "High", veryHigh: "Very high",
     scaleNote: <>This qualitative index compares public website patterns with the reference corpus. It does not estimate code origin, generated-code share or authorship. <a href="#method">Read the methodology</a></>,
@@ -151,6 +151,43 @@ const copyByLanguage = {
   },
   de: {
     home: "VibeFootprint Startseite", subtitle: "Website-Intelligenz", scan: "Scan", methodology: "Methodik", heroEyebrow: "Evidenzbasierte Website-Prüfung", heroTitle: <>Wie viel <span>Vibe</span> steckt in deiner Website?</>, heroLede: "Erhalte einen verständlichen Score von 0 bis 100, erkenne öffentlich sichtbare Muster und finde konkrete Schritte für mehr Sicherheit, Qualität und Eigenständigkeit.", heroTrust: "Transparentes Modell · qualitative Orientierung mit klarer Unsicherheitsgrenze", scanTitle: "Website scannen", scanDescription: "Öffentliche URL eingeben, einmalig über Stripe zahlen und den vollständigen Scan in etwa 10 Sekunden erhalten.", urlLabel: "Website-URL", placeholder: "https://deine-website.de", startScan: "Launch-Scan kaufen — 4,99 €", scanning: "Website wird untersucht …", cancel: "Abbrechen", privacy: "Begrenzte, IP-gepinnte GET-Abrufe von öffentlichem HTML und gleich-originigen Assets. Die Zielseite kann diese Abrufe protokollieren. Keine Anmeldung, kein privater Quellcode.", low: "Niedrig", light: "Leicht", medium: "Mittel", high: "Hoch", veryHigh: "Sehr hoch", scaleNote: <>Der qualitative Index vergleicht öffentliche Website-Muster mit dem Referenzkorpus. Er misst weder Codeherkunft, Anteil generierten Codes noch Autorenschaft. <a href="#method">Methodik und Grenzen</a></>, results: "Scan-Ergebnisse", previous: "Vorheriges Ergebnis für", newScan: "Neue Analyse für", noResult: "Kein neues Ergebnis erzeugt", previousKept: "Vorheriges Ergebnis bleibt erhalten", yourFootprint: "Dein Vibe-Footprint", analyzed: "Analysiert", whatItMeans: "Was das bedeutet", seeMethod: "Methodik ansehen", scanOverview: "Footprint-Evidenz", breadth: "Auswertungsbreite", securityBaseline: "Sicherheits-Baseline", directMarkers: "Direkte Marker", uniqueBuilders: "Eindeutige Builder", noBonus: "Kein separater Bonus oder Abzug", footprintScoreType: "Ähnlichkeit öffentlicher Muster", footprintSeparate: "Security-Findings verändern diesen Score nicht.", securityScoreType: "Öffentlicher Headerschutz", securitySeparate: "Diese Bewertung ist unabhängig vom Vibe-Footprint.", indexExplained: "Index verständlich gemacht", driversTitle: "Was beeinflusst das Ergebnis?", driversDescription: "Nur tatsächlich erkannte Signale erscheinen hier. Die Reihenfolge zeigt relative Modellwirkung, keine Punkte auf der 0–100-Skala.", raises: "Erhöht den Score", strongerSimilarity: "stärkere Ähnlichkeit", lowers: "Senkt den Score", lowerSimilarity: "geringere Ähnlichkeit", noPositive: "Keine einzelnen positiven Treiber sichtbar.", noNegative: "Keine einzelnen negativen Treiber sichtbar.", improvementEyebrow: "Konkreter Verbesserungsplan", improvementTitle: "Was du jetzt verbessern solltest", improvementDescription: "Priorisiert nach Wirkung. Arbeite die ersten Punkte ab und scanne die Website danach erneut.", observed: "Beobachtete Hinweise", guidance: "Optionale manuelle Prüfungen", doFirst: "Zuerst lösen", doNext: "Danach", optimize: "Optimierung", implement: "So setzt du es um", manualCheck: "Manuell prüfen", healthy: "Keine hochkonfidenten Probleme in diesem Bereich erkannt.", noFilter: "Für diesen Filter gibt es weder ein beobachtetes Finding noch allgemeine Guidance.", security: "Security-Baseline", headerProtection: "Öffentlich sichtbarer Headerschutz", securityDescription: "Wertbezogene Prüfung ausgewählter Hauptdokument-Header – kein vollständiger Penetrationstest.", limits: "Grenzen ansehen", effective: "Wirksam", review: "Prüfen", missing: "Fehlt/Unwirksam", recommendationLabel: "Empfehlung:", reportEyebrow: "Bezahlte Scan-Zusammenfassung", reportTitle: "Deine klare Entscheidungsübersicht", reportDescription: "Der bezahlte Scan enthält beide unabhängigen Scores, Beobachtungen und den vollständigen Detailreport.", reportFootprint: "Musterähnlichkeit", reportSecurity: "Headerschutz", reportIndependent: "Unabhängige Bewertungen – kein Score verändert den anderen.", shareReport: "Zusammenfassung teilen", copyReport: "Zusammenfassung kopieren", downloadReport: "Zusammenfassung laden", printReport: "Zusammenfassung drucken", reportShared: "Zusammenfassung geteilt", reportCopied: "Zusammenfassung kopiert", reportDownloaded: "Zusammenfassung heruntergeladen", retrying: "Der erste Versuch war nicht vollständig. Ein automatischer Wiederholungsversuch läuft …", comparisonEyebrow: "Scan-Vergleich dieser Sitzung", comparisonTitle: "Was sich seit dem letzten Scan verändert hat", comparisonDescription: "Nur im Arbeitsspeicher dieses geöffneten Browser-Tabs; beim Neuladen oder Schließen wird der Vergleich verworfen.", comparisonEmpty: "Scanne diesen Hostnamen in diesem Tab erneut, um hier einen beschreibenden Vorher-Nachher-Vergleich zu sehen.", comparisonFootprint: "Footprint-Veränderung", comparisonSecurity: "Security-Veränderung", comparisonIssues: "Veränderung beobachteter Hinweise", comparisonCaveat: "Die Unterschiede vergleichen zwei Beobachtungen der öffentlichen Oberfläche. Sie beweisen weder Kausalität noch Autorenschaft und sind keine kalibrierte Verbesserung.", comparisonBreadthChanged: "Die Auswertungsbreite unterschied sich zwischen den Scans; Veränderungen daher vorsichtig interpretieren.", previousScanAt: "Vorheriger Scan", clearHistory: "Sitzungsvergleich löschen", historyCleared: "Sitzungsvergleich gelöscht.", categoriesEyebrow: "Kategorieübersicht", categoriesTitle: "Wo Handlungsbedarf besteht", categoriesDescription: "Die Zahlen fassen beobachtete Hinweise zusammen. Der Detailreport ergänzt Evidenz, Begründung und Umsetzungsschritte.", attention: "Handlungsbedarf", reviewCategory: "Prüfen", clearCategory: "Kein Problem beobachtet", issue: "beobachteter Hinweis", issues: "beobachtete Hinweise", lockedEyebrow: "Vollständiger Diagnosebericht", lockedTitle: "Diesen Scan in eine sichere Launch-Entscheidung übersetzen", lockedDescription: "Erhalte exakte Score-Treiber, priorisierte Findings, Sicherheitsprüfungen und Umsetzungsschritte in einem kundenfertigen Report.", unlock: "Neuen Scan kaufen", lockedBadge: "Detailreport gesperrt", lockedIncludes: "Im vollständigen Report enthalten", lockedItems: ["Score-Treiber und Signal-Evidenz", "Priorisierte Design- und Engineering-Findings", "Security-Header-Details und Maßnahmen", "Drei kopierfertige Coding-Agent-Fix-Prompts", "Öffentlicher Launch-Check und technischer Anhang"], previewReport: "Vollständiges Report-Design ansehen", sampleLabel: "Muster des Report-Designs", sampleNotice: "Nur beispielhafte Inhalte – diese Vorschau zeigt das vollständige Report-Format, nicht die geschützten Findings dieses Scans.", closePreview: "Report-Vorschau schließen", sampleExecutive: "Der Report beginnt mit einer kompakten Entscheidungsübersicht und trennt Musterähnlichkeit klar vom öffentlichen Headerschutz.", sampleDriverUp: "Beispiel: Wiederholte Komponenten-Muster erhöhen die visuelle Ähnlichkeit.", sampleDriverDown: "Beispiel: Eine eigenständige Inhaltsstruktur reduziert generische Wirkung.", sampleFindingOne: "Beispiel für ein priorisiertes Finding", sampleFindingOneText: "Der Report erklärt die beobachtete öffentliche Evidenz, ihre Bedeutung und die kleinste sichere Verbesserungsrichtung.", sampleFindingTwo: "Beispiel für ein Security-Finding", sampleFindingTwoText: "Header-Findings enthalten Status, Wirkung und Umsetzungshinweise, ohne den Vibe-Footprint zu verändern.", samplePlan: ["Finding mit der höchsten Wirkung bearbeiten", "Änderung im Repository und Browser validieren", "Deployen, erneut scannen und öffentliche Oberfläche vergleichen"], sampleAppendix: "Der Anhang dokumentiert Umfang, Auswertungsbreite, Zeitpunkt und Interpretationsgrenzen.", adminAccess: "Admin-Testzugang", adminDescription: "Scanne das aktuelle Ziel mit dem serverseitig geschützten Testschlüssel erneut, um den echten vollständigen Report zu sehen.", adminKey: "Admin-Vorschau-Schlüssel", adminPlaceholder: "Temporären Admin-Schlüssel eingeben", adminRun: "Geschützten Admin-Scan starten", adminRunning: "Echter Admin-Report wird erstellt …", adminPrivacy: "Der Schlüssel bleibt in diesem Browser-Tab, wird nur an diesen Server gesendet und nie lokal gespeichert.", adminOpen: "Echten vollständigen Report öffnen", adminAuthorized: "Geschützter Admin-Report · echte Scan-Daten", adminClose: "Vollständigen Report schließen", testReportEyebrow: "Enthaltener Detailreport", testReportTitle: "Vollständiger Report für diesen Scan enthalten", testReportDescription: "Der vollständige Report ist in diesem bezahlten Scan enthalten.", testReportOpen: "Vollständigen Report öffnen", testReportNotice: "Bezahlter Scan-Report · echte Scan-Daten", reportWhy: "Warum es relevant ist", reportAction: "Empfohlene Maßnahme", reportObserved: "Beobachtet", reportGuidance: "Manuelle Guidance", reportFixPrompts: "Coding-Agent-Fix-Prompts", reportLaunch: "Öffentlicher Launch-Check", reportEvidence: "Technische Evidenz", reportNoDrivers: "In dieser Richtung überschreitet kein sichtbarer Treiber die Berichtsschwelle.", reportNoFindings: "Für diesen Scan wurde kein Finding erzeugt.", technical: "Technische Evidenz ansehen", technicalDescription: "Builder-Marker, Stack, Messwerte und Scan-Metadaten", directEvidence: "Direkte Marker", noDirect: "Keine direkten Builder-Marker gefunden.", stackContext: "Stack & Kontext", noStack: "Keine bekannten Stack- oder Kontextsignale sichtbar.", structural: "Strukturwerte", hints: "Hinweise", loaded: "Assets geladen", selected: "ausgewählt", found: "Assets gefunden", model: "Modell", time: "Zeitpunkt", viewUrl: "Aufgelöste URL öffnen", importantLimit: "Wichtige Grenze", dataProtection: "Datenschutz und Betrieb", methodEyebrow: "So funktioniert VibeFootprint", methodTitle: "Von sichtbaren Mustern zu klaren nächsten Schritten.", methodDescription: "Der Scan untersucht nur das, was eine öffentliche Website ausliefert. Kein Login, kein Repository und kein privater Quellcode werden benötigt.", methodOneTitle: "Öffentliche Oberfläche scannen", methodOneText: "HTML, Response-Header und eine begrenzte Auswahl gleich-originiger Skripte und Stylesheets über geprüfte, IP-gepinnte Verbindungen.", methodTwoTitle: "Sichtbare Muster bewerten", methodTwoText: "Das eingefrorene Modell kombiniert öffentlich sichtbare technische und strukturelle Signale zu einem unkalibrierten Ähnlichkeitsindex von 0 bis 100.", methodThreeTitle: "Evidenz und Hinweise trennen", methodThreeText: "Beobachtete Findings bleiben von optionaler manueller Guidance getrennt und werden nach Wirkung geordnet.", limitationsTitle: "Was dieser Scan nicht testet", limitationsIntro: "Der Public-Surface-Scan ist bewusst begrenzt und ersetzt keine Produkt-, Repository- oder Spezialprüfung.", limitations: ["Funktionalität, Login-Flows, Formulare, Zahlungen, Backend-Logik oder Datenbanken", "Secrets, Dependencies, Repository-Tests oder JavaScript-Laufzeitverhalten", "Core Web Vitals, vollständige Performance-Analyse oder Responsive-Screenshot-Prüfung", "Tastaturbedienung, Screenreader oder ein vollständiges Accessibility-Audit"], proofTitle: "Für klare Entscheidungen gebaut", proofText: "Nutze den Footprint, um generische Stellen, Härtungsbedarf und nächste Verbesserungen zu erkennen – ohne vorzugeben, wer die Website erstellt hat.", proofPublic: "Nur öffentliche Oberfläche", proofScore: "Qualitativer Index 0–100", proofSecurity: "Separate Security-Baseline", proofPrivacy: "Kein Quellcodezugriff nötig", footerLine: "Vibe-Footprint & Security-Baseline", backToMethod: "Methodik & Grenzen ↑"
+  }
+} as const;
+
+const funnelCopyByLanguage = {
+  en: {
+    scanDescription: "Enter a public URL and receive a genuine website scan preview in about 10 seconds. Unlock the full audit only if it is useful to you.",
+    startScan: "Run free website scan",
+    privacy: "We inspect only the public website surface. No login, payment or private source code is needed for the free preview.",
+    reportEyebrow: "Free scan preview",
+    reportTitle: "Your website scan preview",
+    reportDescription: "Your free preview includes both independent scores and a high-level summary. Exact findings and implementation steps stay protected until you unlock the full audit.",
+    lockedEyebrow: "Full website audit",
+    lockedTitle: "Unlock the full audit for this website",
+    lockedDescription: "Your preview is ready. Unlock the exact score drivers, prioritized findings, security checks and implementation steps for this website.",
+    lockedBadge: "Full audit locked",
+    lockedIncludes: "Included in the full audit",
+    unlock: "Unlock full audit — €4.99",
+    launchOffer: "Launch offer",
+    oneTime: "one-time · securely via Stripe",
+    openingCheckout: "Opening secure checkout …"
+  },
+  de: {
+    scanDescription: "Öffentliche URL eingeben und in etwa 10 Sekunden eine echte Scan-Vorschau erhalten. Den vollständigen Audit schaltest du nur frei, wenn er dir nützt.",
+    startScan: "Kostenlosen Website-Scan starten",
+    privacy: "Wir prüfen nur die öffentliche Website-Oberfläche. Für die kostenlose Vorschau sind weder Zahlung noch Anmeldung oder privater Quellcode nötig.",
+    reportEyebrow: "Kostenlose Scan-Vorschau",
+    reportTitle: "Deine Website-Scan-Vorschau",
+    reportDescription: "Die kostenlose Vorschau enthält beide unabhängigen Scores und eine Übersicht. Exakte Findings und Umsetzungsschritte bleiben bis zur Freischaltung geschützt.",
+    lockedEyebrow: "Vollständiger Website-Audit",
+    lockedTitle: "Vollständigen Audit für diese Website freischalten",
+    lockedDescription: "Deine Vorschau ist fertig. Schalte die exakten Score-Treiber, priorisierten Findings, Sicherheitsprüfungen und Umsetzungsschritte für diese Website frei.",
+    lockedBadge: "Vollständiger Audit gesperrt",
+    lockedIncludes: "Im vollständigen Audit enthalten",
+    unlock: "Vollständigen Audit freischalten — 4,99 €",
+    launchOffer: "Launch-Angebot",
+    oneTime: "einmalig · sicher über Stripe",
+    openingCheckout: "Sicherer Checkout wird geöffnet …"
   }
 } as const;
 
@@ -260,12 +297,15 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [checkoutStatus, setCheckoutStatus] = useState("");
   const [paidSessionId, setPaidSessionId] = useState<string | null>(null);
+  const [scanPurchaseUrl, setScanPurchaseUrl] = useState<string | null>(null);
   const language = initialLanguage;
   const resultsRef = useRef<HTMLElement>(null);
+  const scanFormRef = useRef<HTMLFormElement>(null);
   const controllerRef = useRef<AbortController | null>(null);
   const scanSequenceRef = useRef(0);
   const loadingRef = useRef(false);
   const copy = copyByLanguage[language];
+  const funnelCopy = funnelCopyByLanguage[language];
   const categoryLabels = categoryLabelsByLanguage[language];
   const scanProgressCopy = scanProgressCopyByLanguage[language];
   const premiumSections = premiumReportSections(language);
@@ -301,9 +341,10 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
       }).then(async (response) => {
         const payload = await response.json().catch(() => null);
         if (!response.ok || !payload?.ok || typeof payload.url !== "string" || typeof payload.sessionId !== "string") throw new Error("verification_failed");
+        setCheckoutLoading(false);
         setUrl(payload.url);
         setPaidSessionId(payload.sessionId);
-        setCheckoutStatus(language === "de" ? "Zahlung bestätigt. Dein Scan ist bereit." : "Payment confirmed. Your scan is ready.");
+        setCheckoutStatus(language === "de" ? "Zahlung bestätigt. Der vollständige Audit wird erstellt …" : "Payment confirmed. Preparing your full audit …");
       }).catch(() => {
         setCheckoutStatus(language === "de" ? "Die Zahlung konnte nicht bestätigt werden. Bitte kontaktiere den Support." : "The payment could not be confirmed. Please contact support.");
       }).finally(() => {
@@ -312,6 +353,12 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
       });
     });
   }, [language]);
+
+  useEffect(() => {
+    if (!paidSessionId) return;
+    const timer = window.setTimeout(() => scanFormRef.current?.requestSubmit(), 0);
+    return () => window.clearTimeout(timer);
+  }, [paidSessionId]);
 
   useEffect(() => {
     if ((!result && !errorResult) || !resultsRef.current) return;
@@ -389,7 +436,13 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
             setScanProgress(100);
             if (!await waitForDelay(REPORT_READY_HOLD_MS, controller.signal) || sequence !== scanSequenceRef.current) return;
             setRawResult(parsed);
-            if (!requestedAdminKey) recordSuccessfulScan(parsed);
+            if (parsed.reportAccess?.status === "paid") {
+              setCheckoutStatus(language === "de" ? "Vollständiger Audit freigeschaltet." : "Full audit unlocked.");
+            }
+            if (!requestedAdminKey) {
+              setScanPurchaseUrl(requestedUrl);
+              recordSuccessfulScan(parsed);
+            }
             if (protectedReport) {
               setRawAdminReport(protectedReport);
               setAdminReportOpen(true);
@@ -446,20 +499,25 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     }
   }
 
-  async function scan(event: FormEvent) {
+  function scan(event: FormEvent) {
     event.preventDefault();
     if (loadingRef.current || checkoutLoading) return;
     if (paidSessionId) {
       void runScan({ checkoutSessionId: paidSessionId });
       return;
     }
+    void runScan();
+  }
+
+  async function startCheckout(targetUrl: string) {
+    if (loadingRef.current || checkoutLoading || !targetUrl.trim()) return;
     setCheckoutLoading(true);
     setCheckoutStatus(language === "de" ? "Sicherer Stripe-Checkout wird geöffnet …" : "Opening secure Stripe Checkout …");
     try {
       const response = await fetch("/api/checkout", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ url: url.trim() })
+        body: JSON.stringify({ url: targetUrl.trim() })
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload?.ok || typeof payload.url !== "string") throw new Error(response.status === 503 ? "not_configured" : "checkout_failed");
@@ -567,7 +625,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     <p className="sr-only" role="status" aria-live="polite">{loading ? copy.scanning : errorResult ? technicalOutcome?.title : result ? copy.results : ""}</p>
     <header className="topbar">
       <a className="brand" href="#top" aria-label={copy.home}><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a>
-      <nav aria-label="Primary navigation"><a href="#scanner">{language === "de" ? "Launch-Preis" : "Launch price"}</a><Link href="/contact">Contact</Link><Link className="nav-secondary" href="/insights">Insights</Link><Link className="nav-secondary" href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
+      <nav aria-label="Primary navigation"><a href="#scanner">{language === "de" ? "Kostenlos scannen" : "Free scan"}</a><Link href="/contact">Contact</Link><Link className="nav-secondary" href="/insights">Insights</Link><Link className="nav-secondary" href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
     </header>
 
     <section className="hero" id="scanner" tabIndex={-1}>
@@ -578,12 +636,11 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
         <p className="hero-trust"><span aria-hidden="true">✓</span> {copy.heroTrust}</p>
       </div>
 
-      <form className="scan-panel" onSubmit={scan} aria-busy={loading || checkoutLoading}>
-        <div className="scan-heading"><span>01</span><div><h2>{copy.scanTitle}</h2><p>{language === "de" ? "Öffentliche URL eingeben, einmalig über Stripe zahlen und den vollständigen Scan in etwa 10 Sekunden erhalten." : copy.scanDescription}</p></div></div>
-        <div className="launch-price" aria-label={language === "de" ? "Launch-Preis 4,99 Euro statt 49,99 Euro" : "Launch price 4.99 euros instead of 49.99 euros"}><span>{language === "de" ? "Launch-Preis" : "Launch price"}</span><s>€49.99</s><strong>€4.99</strong><small>{language === "de" ? "einmalig · sicher über Stripe" : "one-time · securely via Stripe"}</small></div>
+      <form ref={scanFormRef} className="scan-panel" onSubmit={scan} aria-busy={loading || checkoutLoading}>
+        <div className="scan-heading"><span>01</span><div><h2>{copy.scanTitle}</h2><p>{funnelCopy.scanDescription}</p></div></div>
         <label htmlFor="url">{copy.urlLabel}</label>
         <input id="url" value={url} onChange={(event) => { setUrl(event.target.value); setPaidSessionId(null); setCheckoutStatus(""); }} placeholder={copy.placeholder} autoComplete="url" inputMode="url" required />
-        <div className="scan-actions"><button disabled={loading || checkoutLoading}><span>{loading ? retryAttempt ? copy.retrying : copy.scanning : checkoutLoading ? (language === "de" ? "Stripe wird geöffnet …" : "Opening Stripe …") : paidSessionId ? (language === "de" ? "Bezahlten Scan starten" : "Run paid scan") : language === "de" ? "Launch-Scan kaufen — 4,99 €" : copy.startScan}</span><b aria-hidden="true">→</b></button>{loading && <button className="cancel-button" type="button" onClick={cancelScan}>{copy.cancel}</button>}</div>
+        <div className="scan-actions"><button disabled={loading || checkoutLoading}><span>{loading ? retryAttempt ? copy.retrying : copy.scanning : paidSessionId ? (language === "de" ? "Vollständigen Audit erstellen" : "Prepare full audit") : funnelCopy.startScan}</span><b aria-hidden="true">→</b></button>{loading && <button className="cancel-button" type="button" onClick={cancelScan}>{copy.cancel}</button>}</div>
         {checkoutStatus && <p className="checkout-status" role="status" aria-live="polite">{checkoutStatus}</p>}
         {loading && <div className="scan-progress" role="status" aria-live="polite">
           <div className="scan-progress-heading"><strong>{scanProgressCopy.title}</strong><span>{scanProgress}%</span></div>
@@ -591,7 +648,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
           <p>{activeScanStage}</p>
           <small>{scanProgressCopy.estimated}</small>
         </div>}
-        <p className="privacy-note"><span aria-hidden="true">✓</span> {language === "de" ? "Zahlung über Stripe. Deine öffentliche Ziel-URL wird der Bestellung zugeordnet. Keine Anmeldung und kein privater Quellcode." : "Payment via Stripe. Your public target URL is attached to the order. No login or private source code."}</p>
+        <p className="privacy-note"><span aria-hidden="true">✓</span> {funnelCopy.privacy}</p>
       </form>
     </section>
 
@@ -637,7 +694,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
         </div>
 
         <section className="customer-report" aria-labelledby="customer-report-title">
-          <div className="report-heading"><div><p className="eyebrow">{language === "de" ? "Bezahlte Scan-Zusammenfassung" : copy.reportEyebrow}</p><h2 id="customer-report-title">{copy.reportTitle}</h2></div><p>{includedReport ? (language === "de" ? "Dein Scan enthält beide unabhängigen Scores, Beobachtungen und den vollständigen Detailreport." : copy.reportDescription) : copy.reportDescription}</p></div>
+          <div className="report-heading"><div><p className="eyebrow">{includedReport ? copy.reportEyebrow : funnelCopy.reportEyebrow}</p><h2 id="customer-report-title">{includedReport ? copy.reportTitle : funnelCopy.reportTitle}</h2></div><p>{includedReport ? copy.reportDescription : funnelCopy.reportDescription}</p></div>
           <div className="report-score-pair">
             <article className={footprintTone(result.vibeScore.band.id)}><span>01 · {copy.reportFootprint}</span><strong>{score}<small>/100</small></strong><p>{result.vibeScore.band.label} · {language === "en" ? "higher means more similarity" : "höher bedeutet mehr Ähnlichkeit"}</p></article>
             <div className="report-score-separator" aria-hidden="true"><span>{language === "en" ? "Separate scores" : "Getrennte Scores"}</span></div>
@@ -698,13 +755,15 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
           <button type="button" disabled={!adminReport} onClick={() => setAdminReportOpen(true)}>{language === "en" ? "Open full report" : "Vollständigen Report öffnen"}<span aria-hidden="true">↗</span></button>
         </section> : <section className="locked-report" aria-labelledby="locked-report-title">
           <div className="locked-report-copy">
-            <p className="eyebrow">{copy.lockedEyebrow}</p>
-            <span className="locked-badge"><i aria-hidden="true">!</i>{copy.lockedBadge}</span>
-            <h2 id="locked-report-title">{copy.lockedTitle}</h2>
-            <p>{copy.lockedDescription}</p>
-            <strong>{copy.lockedIncludes}</strong>
+            <p className="eyebrow">{funnelCopy.lockedEyebrow}</p>
+            <span className="locked-badge"><i aria-hidden="true">!</i>{funnelCopy.lockedBadge}</span>
+            <h2 id="locked-report-title">{funnelCopy.lockedTitle}</h2>
+            <p>{funnelCopy.lockedDescription}</p>
+            <div className="unlock-price" aria-label={language === "de" ? "Launch-Angebot 4,99 Euro statt 49,99 Euro" : "Launch offer 4.99 euros instead of 49.99 euros"}><span>{funnelCopy.launchOffer}</span><s>€49.99</s><strong>€4.99</strong><small>{funnelCopy.oneTime}</small></div>
+            <strong>{funnelCopy.lockedIncludes}</strong>
             <ul>{copy.lockedItems.map((item) => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-            <div className="locked-actions"><button className="preview-report-button" type="button" onClick={() => setSampleReportOpen(true)}>{copy.previewReport}<span aria-hidden="true">↗</span></button><a href="#scanner">{copy.unlock}<span aria-hidden="true">→</span></a></div>
+            <div className="locked-actions"><button className="unlock-report-button" type="button" onClick={() => void startCheckout(scanPurchaseUrl || result.resolvedUrl || url)} disabled={checkoutLoading}>{checkoutLoading ? funnelCopy.openingCheckout : funnelCopy.unlock}<span aria-hidden="true">→</span></button><button className="preview-report-button" type="button" onClick={() => setSampleReportOpen(true)}>{copy.previewReport}<span aria-hidden="true">↗</span></button></div>
+            {checkoutStatus && <p className="checkout-status locked-checkout-status">{checkoutStatus}</p>}
             {enableAdminPreview ? <details className="admin-report-access">
               <summary>{copy.adminAccess}<span aria-hidden="true">+</span></summary>
               <form onSubmit={runAdminScan}>
@@ -716,7 +775,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
               </form>
             </details> : null}
           </div>
-          <div className="locked-preview" aria-label={copy.lockedBadge}>
+          <div className="locked-preview" aria-label={funnelCopy.lockedBadge}>
             <div className="locked-preview-document" aria-hidden="true">
               <header className="preview-report-header"><div><span>V</span><p>VibeFootprint<strong>{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><small>{resultHost}</small></header>
               <section className="preview-report-summary">
@@ -734,7 +793,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
               </section>
               <footer className="preview-report-index">{premiumSections.slice(3).map((section) => <div key={section.id}><span>{section.number}</span><strong>{section.label}</strong></div>)}</footer>
             </div>
-            <div className="locked-preview-overlay"><span aria-hidden="true">🔒</span><strong>{copy.lockedBadge}</strong></div>
+            <div className="locked-preview-overlay"><span aria-hidden="true">🔒</span><strong>{funnelCopy.lockedBadge}</strong><small>{language === "de" ? "Für diesen Scan · 4,99 € statt 49,99 €" : "For this scan · €4.99 instead of €49.99"}</small></div>
           </div>
         </section>}
 
@@ -757,7 +816,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
 
         {adminReportOpen && adminReport && <AccessibleDialog labelledBy="admin-report-title" className="sample-report-modal admin-full-report" backdropClassName="admin-report-backdrop" onClose={() => setAdminReportOpen(false)}>
             <header className="sample-report-topbar"><div><span>V</span><p>VibeFootprint<strong id="admin-report-title">{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><button type="button" onClick={() => setAdminReportOpen(false)} aria-label={freeTestingReport ? (language === "en" ? "Close full report" : "Vollständigen Report schließen") : copy.adminClose}>×</button></header>
-            <aside className="sample-report-notice admin-report-notice"><strong>{freeTestingReport ? copy.testReportNotice : copy.adminAuthorized}</strong><span>{adminReport.target}</span></aside>
+            <aside className="sample-report-notice admin-report-notice"><strong>{includedReport ? copy.testReportNotice : copy.adminAuthorized}</strong><span>{adminReport.target}</span></aside>
             <div className="admin-report-export-bar"><div><button type="button" onClick={downloadAdminMarkdown}>{language === "en" ? "Download Markdown" : "Markdown herunterladen"}</button><button type="button" onClick={printAdminReport}>{language === "en" ? "Print / Save PDF" : "Drucken / Als PDF sichern"}</button></div><p role="status" aria-live="polite">{adminReportStatus}</p></div>
             <div className="sample-report-body">
               <section className="sample-report-block sample-report-executive">
