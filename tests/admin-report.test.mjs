@@ -44,6 +44,10 @@ test("admin report contains actual protected findings without raw source", () =>
   assert.equal(report.recommendations[0].id, "VF-SEC-CSP");
   assert.equal(report.security.checks[0].status, "fail");
   assert.equal(report.fixPacks.en.length, 1);
+  assert.deepEqual(
+    { category: report.fixPacks.en[0].category, title: report.fixPacks.en[0].title, priority: report.fixPacks.en[0].priority },
+    { category: "security", title: "Content Security Policy", priority: "high" }
+  );
   assert.equal(report.launchCheck.checks.length, 8);
   assert.equal("html" in report, false);
   assert.equal(JSON.stringify(report).includes("<html"), false);
