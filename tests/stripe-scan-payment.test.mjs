@@ -27,6 +27,7 @@ test("checkout creates exactly one 4.99 EUR website scan on Stripe", async () =>
     targetUrl,
     origin: "https://www.vibefootprint.com",
     secret: "sk_test_example_secret",
+    priceId: "price_123launch",
     fetchImpl: async (url, options) => {
       request = { url, options };
       return Response.json({ id: "cs_test_abc123", url: "https://checkout.stripe.com/c/pay/cs_test_abc123" });
@@ -36,8 +37,7 @@ test("checkout creates exactly one 4.99 EUR website scan on Stripe", async () =>
   assert.equal(request.options.headers.authorization, "Bearer sk_test_example_secret");
   const form = new URLSearchParams(request.options.body);
   assert.equal(form.get("mode"), "payment");
-  assert.equal(form.get("line_items[0][price_data][unit_amount]"), "499");
-  assert.equal(form.get("line_items[0][price_data][currency]"), "eur");
+  assert.equal(form.get("line_items[0][price]"), "price_123launch");
   assert.equal(form.get("line_items[0][quantity]"), "1");
   assert.equal(form.get("metadata[scan_target]"), targetUrl);
   assert.equal(form.get("success_url"), "https://www.vibefootprint.com/?checkout=success&session_id={CHECKOUT_SESSION_ID}#scanner");
@@ -61,5 +61,20 @@ test("server verification retrieves the session and rejects a mismatched scan", 
 });
 
 test("checkout fails closed without a server-only Stripe key", async () => {
-  await assert.rejects(createScanCheckout({ targetUrl, origin: "https://www.vibefootprint.com", secret: "", fetchImpl: async () => { throw new Error("not reached"); } }), /noch nicht konfiguriert/);
+  await assert.rejects(createScanCheckout({ targetUrl, origin: "https://www.vibefootprint.com", secret: "", priceId: "price_123launch", fetchImpl: async () => { throw new Error("not reached"); } }), /noch nicht konfiguriert/);
+});
+
+test("checkout fails closed without a configured Stripe price", async () => {
+  await assert.rejects(createScanCheckout({ targetUrl, origin: "https://www.vibefootprint.com", secret: "sk_test_example_secret", priceId: "", fetchImpl: async () => { throw new Error("not reached"); } }), /noch nicht konfiguriert/);
+});
+
+test("checkout accepts a least-privilege restricted Stripe key", async () => {
+  const checkout = await createScanCheckout({
+    targetUrl,
+    origin: "https://www.vibefootprint.com",
+    secret: "rk_live_vibefootprint_checkout",
+    priceId: "price_123launch",
+    fetchImpl: async () => Response.json({ id: "cs_live_abc123", url: "https://checkout.stripe.com/c/pay/cs_live_abc123" })
+  });
+  assert.equal(checkout.id, "cs_live_abc123");
 });

@@ -16,7 +16,12 @@ export async function POST(request) {
     }
     const targetUrl = normalizePublicUrl(body.url).toString();
     const configuredOrigin = process.env.NEXT_PUBLIC_SITE_URL || new URL(request.url).origin;
-    const checkout = await createScanCheckout({ targetUrl, origin: configuredOrigin, secret: process.env.STRIPE_SECRET_KEY });
+    const checkout = await createScanCheckout({
+      targetUrl,
+      origin: configuredOrigin,
+      secret: process.env.STRIPE_SECRET_KEY,
+      priceId: process.env.STRIPE_SCAN_PRICE_ID
+    });
     return Response.json({ ok: true, url: checkout.url }, { headers });
   } catch (error) {
     const configurationError = String(error?.message || "").includes("noch nicht konfiguriert");
