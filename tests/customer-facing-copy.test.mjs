@@ -31,3 +31,10 @@ test("customer conversion starts with a free scan and unlocks the exact audit th
   assert.doesNotMatch(page, /Checkout is not connected yet/);
   assert.doesNotMatch(page, /window\.localStorage/);
 });
+
+test("improvement prompts lead with a readable section and title while preserving the technical reference", () => {
+  assert.match(page, /categoryLabels\[item\.category\].+item\.title/);
+  assert.match(page, /Technical reference/);
+  assert.match(page, /admin-prompt-identity/);
+  assert.match(styles, /\.admin-prompt-identity strong/);
+});

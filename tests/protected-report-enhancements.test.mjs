@@ -31,6 +31,11 @@ test("top fix pack contains at most three actionable priority findings", () => {
   assert.deepEqual(pack.map((item) => item.id), ["VF-ENG-ASSET-PAYLOAD", "VF-SEC-CSP", "VF-DES-GENERIC-UI"]);
   assert.equal(pack.some((item) => item.id === "VF-CTX-BUILDER-PROVENANCE"), false);
   assert.equal(pack.every((item) => typeof item.prompt === "string"), true);
+  assert.deepEqual(pack.map(({ category, title }) => ({ category, title })), [
+    { category: "engineering", title: "Large payload" },
+    { category: "security", title: "Content Security Policy" },
+    { category: "design", title: "Generic patterns" }
+  ]);
 });
 
 test("high similarity can produce an optional anti-gaming distinctiveness review without inventing a defect", () => {
