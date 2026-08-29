@@ -158,7 +158,7 @@ export async function POST(request) {
     const scanRequest = assertScanRequestBody(body);
     const inputUrl = normalizePublicUrl(scanRequest.url);
     let paidAccess = false;
-    if (reportMode === REPORT_ACCESS_MODE.COMMERCIAL && !adminAuthorization.authorized) {
+    if (reportMode === REPORT_ACCESS_MODE.COMMERCIAL && !adminAuthorization.authorized && scanRequest.checkoutSessionId) {
       try {
         await verifyScanCheckout({
           sessionId: scanRequest.checkoutSessionId,
