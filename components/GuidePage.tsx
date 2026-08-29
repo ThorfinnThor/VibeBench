@@ -7,7 +7,7 @@ import styles from "./guide-page.module.css";
 export function GuideSiteHeader() {
   return <header className={styles.siteHeader}>
     <Link className="brand" href="/" aria-label="VibeFootprint home"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link>
-    <nav aria-label="Primary navigation"><Link href="/#scanner">Run a scan</Link><Link href="/contact">Customer beta</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
+    <nav aria-label="Primary navigation"><Link href="/#scanner">Launch scan · €4.99</Link><Link href="/contact">Contact</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
   </header>;
 }
 

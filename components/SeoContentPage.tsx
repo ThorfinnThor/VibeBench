@@ -52,7 +52,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
     <a className="skip-link" href="#article">Skip to content</a>
     <header className={styles.header}>
       <Link className="brand" href="/" aria-label="VibeFootprint home"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link>
-      <nav aria-label="Primary navigation"><Link href="/#scanner">Run a scan</Link><Link href="/contact">Customer beta</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
+      <nav aria-label="Primary navigation"><Link href="/#scanner">Launch scan · €4.99</Link><Link href="/contact">Contact</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
     </header>
 
     <article id="article">
@@ -74,7 +74,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
       </div>
     </article>
 
-    <section className={styles.scanCta}><div><p className="eyebrow">Next step</p><h2>Check the public website now.</h2><p>Get pattern similarity, a separate security baseline and practical next steps.</p></div><Link href="/#scanner">Start the free scan<span>→</span></Link></section>
+    <section className={styles.scanCta}><div><p className="eyebrow">Next step</p><h2>Check the public website now.</h2><p>Get pattern similarity, a separate security baseline and practical next steps.</p></div><Link href="/#scanner">Buy launch scan · €4.99<span>→</span></Link></section>
     <nav className={styles.related} aria-label="Related guides">{related.map((item) => <Link key={item.href} href={item.href}>{item.label}<span>↗</span></Link>)}</nav>
     <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/methodology">Methodology</Link><LegalFooterLinks /></nav></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />

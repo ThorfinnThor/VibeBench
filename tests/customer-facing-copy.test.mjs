@@ -16,7 +16,8 @@ test("full report design sample is visible on request without exposing protected
 });
 
 test("customer conversion uses a real B2B contact route instead of a placeholder checkout", () => {
-  assert.match(page, /Request full report/);
+  assert.match(page, /Buy launch scan — €4\.99/);
+  assert.match(page, /securely via Stripe/);
   assert.match(page, /href="\/contact"/);
   assert.doesNotMatch(page, /Checkout is not connected yet/);
   assert.doesNotMatch(page, /window\.localStorage/);
