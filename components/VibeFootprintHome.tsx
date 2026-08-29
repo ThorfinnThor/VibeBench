@@ -68,7 +68,8 @@ type ScanResult = {
   reportAccess?:
     | { status: "locked"; previewOnly: true; entitlementRequired: true }
     | { status: "testing"; previewOnly: false; entitlementRequired: false }
-    | { status: "paid"; previewOnly: false; entitlementRequired: false };
+    | { status: "paid"; previewOnly: false; entitlementRequired: false }
+    | { status: "promo"; previewOnly: false; entitlementRequired: false };
 };
 
 type Language = "en" | "de";
@@ -276,7 +277,7 @@ function ScoreRing({ score, language }: { score: number; language: Language }) {
   </div>;
 }
 
-export default function VibeFootprintHome({ initialLanguage = "en", enableAdminPreview = false }: { initialLanguage?: Language; enableAdminPreview?: boolean }) {
+export default function VibeFootprintHome({ initialLanguage = "en", enableAdminPreview = false, enablePromoCode = false }: { initialLanguage?: Language; enableAdminPreview?: boolean; enablePromoCode?: boolean }) {
   const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [rawResult, setRawResult] = useState<ScanResult | null>(null);
@@ -286,7 +287,6 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
   const [scanProgress, setScanProgress] = useState(0);
   const [technicalScanComplete, setTechnicalScanComplete] = useState(false);
   const [reportStatus, setReportStatus] = useState("");
-  const [sampleReportOpen, setSampleReportOpen] = useState(false);
   const [adminKey, setAdminKey] = useState("");
   const [rawAdminReport, setRawAdminReport] = useState<AdminReport | null>(null);
   const [adminReportOpen, setAdminReportOpen] = useState(false);
@@ -298,6 +298,8 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
   const [checkoutStatus, setCheckoutStatus] = useState("");
   const [paidSessionId, setPaidSessionId] = useState<string | null>(null);
   const [scanPurchaseUrl, setScanPurchaseUrl] = useState<string | null>(null);
+  const [promoCode, setPromoCode] = useState("");
+  const [promoStatus, setPromoStatus] = useState("");
   const language = initialLanguage;
   const resultsRef = useRef<HTMLElement>(null);
   const scanFormRef = useRef<HTMLFormElement>(null);
@@ -313,7 +315,8 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
   const adminReport = useMemo(() => localizeScanPayload(rawAdminReport, language) as AdminReport | null, [rawAdminReport, language]);
   const freeTestingReport = result?.reportAccess?.status === "testing";
   const paidReport = result?.reportAccess?.status === "paid";
-  const includedReport = freeTestingReport || paidReport;
+  const promoReport = result?.reportAccess?.status === "promo";
+  const includedReport = freeTestingReport || paidReport || promoReport;
   const adminReportMarkdown = useMemo(() => adminReport && result?.vibeScore ? buildAdminReportMarkdown({ report: adminReport, footprintScore: result.vibeScore.score, footprintBand: result.vibeScore.band.label, evidenceLabel: result.evidenceCoverage?.label || "Standard", locale: language }) : "", [adminReport, language, result]);
   const localComparison = useMemo(() => compareLocalScans(currentLocalScan, previousLocalResult), [currentLocalScan, previousLocalResult]);
 
@@ -377,7 +380,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     setHistoryStatus("");
   }
 
-  async function runScan(options: { adminKey?: string; requestedUrl?: string; checkoutSessionId?: string } = {}) {
+  async function runScan(options: { adminKey?: string; requestedUrl?: string; checkoutSessionId?: string; promoCode?: string } = {}) {
     const requestedUrl = (options.requestedUrl || url).trim();
     const requestedAdminKey = options.adminKey?.trim() || "";
     const sequence = ++scanSequenceRef.current;
@@ -391,7 +394,6 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     setScanProgress(0);
     setTechnicalScanComplete(false);
     setReportStatus("");
-    setSampleReportOpen(false);
     setAdminReportOpen(false);
     setAdminReportStatus("");
     setRawAdminReport(null);
@@ -408,7 +410,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
           const response = await fetch("/api/scan", {
             method: "POST",
             headers: requestHeaders,
-            body: JSON.stringify({ url: requestedUrl, ...(options.checkoutSessionId ? { checkoutSessionId: options.checkoutSessionId } : {}) }),
+            body: JSON.stringify({ url: requestedUrl, ...(options.checkoutSessionId ? { checkoutSessionId: options.checkoutSessionId } : {}), ...(options.promoCode ? { promoCode: options.promoCode } : {}) }),
             signal: controller.signal
           });
           const responseRequestId = response.headers.get("x-vibebench-request-id") || undefined;
@@ -438,6 +440,10 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
             setRawResult(parsed);
             if (parsed.reportAccess?.status === "paid") {
               setCheckoutStatus(language === "de" ? "Vollständiger Audit freigeschaltet." : "Full audit unlocked.");
+            }
+            if (parsed.reportAccess?.status === "promo") {
+              setPromoCode("");
+              setPromoStatus(language === "de" ? "Promo-Code akzeptiert. Vollständiger Audit freigeschaltet." : "Promo code accepted. Full audit unlocked.");
             }
             if (!requestedAdminKey) {
               setScanPurchaseUrl(requestedUrl);
@@ -484,6 +490,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
           }));
         }
         setErrorResult(failedResult);
+        if (failedResult.technicalOutcome.code === "promo_code_invalid") setPromoStatus(language === "de" ? "Der Promo-Code ist ungültig oder nicht mehr aktiv." : "The promo code is invalid or no longer active.");
         return;
       }
     } finally {
@@ -529,6 +536,14 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
         : language === "de" ? "Checkout konnte nicht geöffnet werden. Bitte versuche es erneut." : "Checkout could not be opened. Please try again.");
       setCheckoutLoading(false);
     }
+  }
+
+  function runPromoScan(event: FormEvent) {
+    event.preventDefault();
+    const targetUrl = scanPurchaseUrl || result?.resolvedUrl || url;
+    if (loadingRef.current || !enablePromoCode || !promoCode.trim() || !targetUrl) return;
+    setPromoStatus(language === "de" ? "Promo-Code wird geprüft …" : "Checking promo code …");
+    void runScan({ requestedUrl: targetUrl, promoCode: promoCode.trim() });
   }
 
   function runAdminScan(event: FormEvent) {
@@ -694,7 +709,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
         </div>
 
         <section className="customer-report" aria-labelledby="customer-report-title">
-          <div className="report-heading"><div><p className="eyebrow">{includedReport ? copy.reportEyebrow : funnelCopy.reportEyebrow}</p><h2 id="customer-report-title">{includedReport ? copy.reportTitle : funnelCopy.reportTitle}</h2></div><p>{includedReport ? copy.reportDescription : funnelCopy.reportDescription}</p></div>
+          <div className="report-heading"><div><p className="eyebrow">{promoReport ? (language === "de" ? "Per Promo-Code freigeschaltet" : "Unlocked with promo code") : includedReport ? copy.reportEyebrow : funnelCopy.reportEyebrow}</p><h2 id="customer-report-title">{includedReport ? copy.reportTitle : funnelCopy.reportTitle}</h2></div><p>{includedReport ? copy.reportDescription : funnelCopy.reportDescription}</p></div>
           <div className="report-score-pair">
             <article className={footprintTone(result.vibeScore.band.id)}><span>01 · {copy.reportFootprint}</span><strong>{score}<small>/100</small></strong><p>{result.vibeScore.band.label} · {language === "en" ? "higher means more similarity" : "höher bedeutet mehr Ähnlichkeit"}</p></article>
             <div className="report-score-separator" aria-hidden="true"><span>{language === "en" ? "Separate scores" : "Getrennte Scores"}</span></div>
@@ -747,7 +762,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
 
         {includedReport ? <section className="testing-report" aria-labelledby="testing-report-title">
           <div>
-            <p className="eyebrow">{paidReport ? (language === "de" ? "Bezahlter Website-Scan" : "Paid website scan") : (language === "de" ? "Interner Testzugang" : "Internal test access")}</p>
+            <p className="eyebrow">{paidReport ? (language === "de" ? "Bezahlter Website-Scan" : "Paid website scan") : promoReport ? (language === "de" ? "Promo-Audit" : "Promo audit") : (language === "de" ? "Interner Testzugang" : "Internal test access")}</p>
             <span className="testing-report-badge"><i aria-hidden="true">✓</i>{language === "en" ? "Full report included" : "Vollständiger Report enthalten"}</span>
             <h2 id="testing-report-title">{language === "de" ? "Vollständiger Report für diesen Scan" : "Complete report for this scan"}</h2>
             <p>{language === "de" ? "Öffne den vollständigen Report mit Score-Treibern, Findings, Sicherheitsprüfungen und Umsetzungsschritten." : "Open the complete report with score drivers, findings, security checks and implementation steps."}</p>
@@ -762,8 +777,17 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
             <div className="unlock-price" aria-label={language === "de" ? "Launch-Angebot 4,99 Euro statt 49,99 Euro" : "Launch offer 4.99 euros instead of 49.99 euros"}><span>{funnelCopy.launchOffer}</span><s>€49.99</s><strong>€4.99</strong><small>{funnelCopy.oneTime}</small></div>
             <strong>{funnelCopy.lockedIncludes}</strong>
             <ul>{copy.lockedItems.map((item) => <li key={item}><span aria-hidden="true">✓</span>{item}</li>)}</ul>
-            <div className="locked-actions"><button className="unlock-report-button" type="button" onClick={() => void startCheckout(scanPurchaseUrl || result.resolvedUrl || url)} disabled={checkoutLoading}>{checkoutLoading ? funnelCopy.openingCheckout : funnelCopy.unlock}<span aria-hidden="true">→</span></button><button className="preview-report-button" type="button" onClick={() => setSampleReportOpen(true)}>{copy.previewReport}<span aria-hidden="true">↗</span></button></div>
+            <div className="locked-actions"><button className="unlock-report-button" type="button" onClick={() => void startCheckout(scanPurchaseUrl || result.resolvedUrl || url)} disabled={checkoutLoading}>{checkoutLoading ? funnelCopy.openingCheckout : funnelCopy.unlock}<span aria-hidden="true">→</span></button></div>
             {checkoutStatus && <p className="checkout-status locked-checkout-status">{checkoutStatus}</p>}
+            {enablePromoCode ? <details className="promo-code-access">
+              <summary><span>{language === "de" ? "Promo-Code vorhanden?" : "Have a promo code?"}</span><b aria-hidden="true">+</b></summary>
+              <form onSubmit={runPromoScan}>
+                <label htmlFor="audit-promo-code">{language === "de" ? "Promo-Code" : "Promo code"}</label>
+                <div><input id="audit-promo-code" value={promoCode} onChange={(event) => { setPromoCode(event.target.value); setPromoStatus(""); }} placeholder={language === "de" ? "Code eingeben" : "Enter code"} autoCapitalize="characters" autoComplete="off" minLength={6} maxLength={64} required /><button type="submit" disabled={loading || !promoCode.trim()}>{loading && promoCode ? (language === "de" ? "Code wird geprüft …" : "Checking code …") : (language === "de" ? "Code anwenden" : "Apply code")}</button></div>
+                <p>{language === "de" ? "Ein gültiger Code schaltet den vollständigen Audit für genau diese gescannte URL frei – ohne Stripe-Checkout." : "A valid code unlocks the full audit for this exact scanned URL without opening Stripe Checkout."}</p>
+                {promoStatus && <small role="status" aria-live="polite">{promoStatus}</small>}
+              </form>
+            </details> : null}
             {enableAdminPreview ? <details className="admin-report-access">
               <summary>{copy.adminAccess}<span aria-hidden="true">+</span></summary>
               <form onSubmit={runAdminScan}>
@@ -797,26 +821,9 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
           </div>
         </section>}
 
-        {sampleReportOpen && <AccessibleDialog labelledBy="sample-report-title" className="sample-report-modal" onClose={() => setSampleReportOpen(false)}>
-            <header className="sample-report-topbar"><div><span>V</span><p>VibeFootprint<strong id="sample-report-title">{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><button type="button" onClick={() => setSampleReportOpen(false)} aria-label={copy.closePreview}>×</button></header>
-            <aside className="sample-report-notice"><strong>{copy.sampleLabel}</strong><span>{copy.sampleNotice}</span></aside>
-            <div className="sample-report-body">
-              <section className="sample-report-block sample-report-executive"><div className="sample-report-section-title"><span>{premiumSections[0].number}</span><h2>{premiumSections[0].label}</h2></div><p>{copy.sampleExecutive}</p><div className="sample-report-scores"><article className={footprintTone(result.vibeScore.band.id)}><small>VIBE-FOOTPRINT</small><strong>{score}<i>/100</i></strong><span>{result.vibeScore.band.label}</span></article><article className={securityTone(result.security.score)}><small>SECURITY BASELINE</small><strong>{result.security.score}<i>/100</i></strong><span>{copy.headerProtection}</span></article></div></section>
-              <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[1].number}</span><h2>{premiumSections[1].label}</h2></div><div className="sample-report-findings"><article><span>01</span><div><small>DESIGN · EXAMPLE</small><h3>{copy.sampleFindingOne}</h3><p>{copy.sampleFindingOneText}</p></div><b>{language === "en" ? "PRIORITY" : "PRIORITÄT"}</b></article><article><span>02</span><div><small>SECURITY · EXAMPLE</small><h3>{copy.sampleFindingTwo}</h3><p>{copy.sampleFindingTwoText}</p></div><b>{language === "en" ? "REVIEW" : "PRÜFEN"}</b></article></div></section>
-              <div className="sample-report-lower-grid">
-                <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[2].number}</span><h2>{premiumSections[2].label}</h2></div><p>{copy.sampleFindingTwoText}</p><div className="sample-status-row"><span>HTTPS</span><b>{language === "en" ? "Effective" : "Wirksam"}</b></div><div className="sample-status-row"><span>Content Security Policy</span><b>{language === "en" ? "Review" : "Prüfen"}</b></div></section>
-                <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[3].number}</span><h2>{premiumSections[3].label}</h2></div><ol>{copy.samplePlan.map((item) => <li key={item}>{item}</li>)}</ol></section>
-              </div>
-              <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[4].number}</span><h2>{premiumSections[4].label}</h2></div><div className="sample-report-driver-grid"><article><b>↑</b><div><strong>{language === "en" ? "Raises similarity" : "Erhöht Ähnlichkeit"}</strong><p>{copy.sampleDriverUp}</p></div></article><article><b>↓</b><div><strong>{language === "en" ? "Lowers similarity" : "Senkt Ähnlichkeit"}</strong><p>{copy.sampleDriverDown}</p></div></article></div></section>
-              <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[5].number}</span><h2>{premiumSections[5].label}</h2></div><div className="sample-status-row"><span>{language === "en" ? "Document title" : "Dokumenttitel"}</span><b>{language === "en" ? "Observed" : "Beobachtet"}</b></div><div className="sample-status-row"><span>{language === "en" ? "Open Graph metadata" : "Open-Graph-Metadaten"}</span><b>{language === "en" ? "Review" : "Prüfen"}</b></div></section>
-              <section className="sample-report-block sample-report-appendix"><div className="sample-report-section-title"><span>{premiumSections[6].number}</span><h2>{premiumSections[6].label}</h2></div><p>{copy.sampleAppendix}</p><dl><div><dt>{copy.breadth}</dt><dd>{result.evidenceCoverage?.label || "Standard"}</dd></div><div><dt>{language === "en" ? "Source" : "Quelle"}</dt><dd>{language === "en" ? "Public surface only" : "Nur öffentliche Oberfläche"}</dd></div><div><dt>{language === "en" ? "Score relationship" : "Score-Beziehung"}</dt><dd>{language === "en" ? "Independent" : "Unabhängig"}</dd></div></dl></section>
-            </div>
-            <footer className="sample-report-footer"><span>{resultHost}</span><button type="button" onClick={() => setSampleReportOpen(false)}>{copy.closePreview}</button></footer>
-        </AccessibleDialog>}
-
         {adminReportOpen && adminReport && <AccessibleDialog labelledBy="admin-report-title" className="sample-report-modal admin-full-report" backdropClassName="admin-report-backdrop" onClose={() => setAdminReportOpen(false)}>
             <header className="sample-report-topbar"><div><span>V</span><p>VibeFootprint<strong id="admin-report-title">{language === "en" ? "Full diagnostic report" : "Vollständiger Diagnosebericht"}</strong></p></div><button type="button" onClick={() => setAdminReportOpen(false)} aria-label={freeTestingReport ? (language === "en" ? "Close full report" : "Vollständigen Report schließen") : copy.adminClose}>×</button></header>
-            <aside className="sample-report-notice admin-report-notice"><strong>{includedReport ? copy.testReportNotice : copy.adminAuthorized}</strong><span>{adminReport.target}</span></aside>
+            <aside className="sample-report-notice admin-report-notice"><strong>{promoReport ? (language === "de" ? "Promo-Audit · echte Scan-Daten" : "Promo audit · actual scan data") : includedReport ? copy.testReportNotice : copy.adminAuthorized}</strong><span>{adminReport.target}</span></aside>
             <div className="admin-report-export-bar"><div><button type="button" onClick={downloadAdminMarkdown}>{language === "en" ? "Download Markdown" : "Markdown herunterladen"}</button><button type="button" onClick={printAdminReport}>{language === "en" ? "Print / Save PDF" : "Drucken / Als PDF sichern"}</button></div><p role="status" aria-live="polite">{adminReportStatus}</p></div>
             <div className="sample-report-body">
               <section className="sample-report-block sample-report-executive">
@@ -837,7 +844,18 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
 
               <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[2].number}</span><h2>{premiumSections[2].label}</h2></div><div className="admin-security-grid">{adminReport.security.checks.map((check) => <article className={`admin-security-check status-${check.status}`} key={check.id}><div><span aria-hidden="true">{check.status === "pass" ? "✓" : "!"}</span><h3>{check.title}</h3><b>{check.status === "pass" ? copy.effective : check.status === "warn" ? copy.review : copy.missing}</b></div><p>{check.detail}</p><small><strong>{copy.reportAction}:</strong> {check.action}</small></article>)}</div></section>
 
-              <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[3].number}</span><h2>{premiumSections[3].label}</h2></div><h3 className="admin-subheading">{copy.reportFixPrompts}</h3><p>{language === "en" ? `${adminReport.fixPacks[language].length} remediation prompt${adminReport.fixPacks[language].length === 1 ? " was" : "s were"} generated from ${observedFindingCount} observed actionable finding${observedFindingCount === 1 ? "" : "s"}. We do not fabricate fixes for categories without evidence.` : `${adminReport.fixPacks[language].length} Behebungs-Prompts wurden aus ${observedFindingCount} beobachteten konkreten Findings erzeugt. Für Kategorien ohne Evidenz werden keine Fixes erfunden.`}</p><div className="admin-fix-prompts">{adminReport.fixPacks[language].map((item, index) => <article className="admin-prompt-card" key={item.id}><header><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.id}</strong><button type="button" onClick={() => void copyAdminPrompt(item.prompt, item.id)}>{language === "en" ? "Copy prompt" : "Prompt kopieren"}</button></header><details><summary><span>{language === "en" ? "View full prompt" : "Vollständigen Prompt ansehen"}</span><b>+</b></summary><pre>{item.prompt}</pre></details></article>)}</div>{distinctivenessPrompt && <div className="admin-optional-review"><h3>{language === "en" ? "Optional distinctiveness review" : "Optionale Eigenständigkeitsprüfung"}</h3><p>{language === "en" ? `Because the footprint is ${score}/100, this separate review prompt turns the strongest score drivers into a brand and usability review. It is not a defect fix and must not be used to hide evidence.` : `Weil der Footprint bei ${score}/100 liegt, überführt dieser separate Prüf-Prompt die stärksten Score-Treiber in eine Brand- und Usability-Prüfung. Er ist kein Fehler-Fix und darf nicht zum Verbergen von Evidenz dienen.`}</p><article className="admin-prompt-card optional-review-card"><header><span>R</span><strong>VF-REVIEW-DISTINCTIVENESS</strong><button type="button" onClick={() => void copyAdminPrompt(distinctivenessPrompt, "VF-REVIEW-DISTINCTIVENESS")}>{language === "en" ? "Copy review prompt" : "Prüf-Prompt kopieren"}</button></header><details><summary><span>{language === "en" ? "View full review prompt" : "Vollständigen Prüf-Prompt ansehen"}</span><b>+</b></summary><pre>{distinctivenessPrompt}</pre></details></article></div>}</section>
+              <section className="sample-report-block">
+                <div className="sample-report-section-title"><span>{premiumSections[3].number}</span><h2>{premiumSections[3].label}</h2></div>
+                <h3 className="admin-subheading">{copy.reportFixPrompts}</h3>
+                <p>{language === "en" ? `${adminReport.fixPacks[language].length} professional remediation prompt${adminReport.fixPacks[language].length === 1 ? " was" : "s were"} generated from ${observedFindingCount} observed actionable finding${observedFindingCount === 1 ? "" : "s"}. Each prompt includes investigation, implementation requirements, acceptance criteria, validation and handoff expectations.` : `${adminReport.fixPacks[language].length} professionelle Behebungs-Prompts wurden aus ${observedFindingCount} beobachteten konkreten Findings erzeugt. Jeder Prompt enthält Untersuchung, Umsetzungsanforderungen, Akzeptanzkriterien, Validierung und Übergabeanforderungen.`}</p>
+                <div className="admin-fix-prompts">{adminReport.fixPacks[language].map((item, index) => <article className="admin-prompt-card" key={item.id}><header><span>{String(index + 1).padStart(2, "0")}</span><strong>{item.id}</strong><button type="button" onClick={() => void copyAdminPrompt(item.prompt, item.id)}>{language === "en" ? "Copy prompt" : "Prompt kopieren"}</button></header><details><summary><span>{language === "en" ? "View full implementation prompt" : "Vollständigen Umsetzungs-Prompt ansehen"}</span><b>+</b></summary><pre>{item.prompt}</pre></details></article>)}</div>
+                {distinctivenessPrompt && <div className="admin-optional-review">
+                  <h3>{language === "en" ? "Optional brand distinctiveness review" : "Optionale Prüfung der Marken-Eigenständigkeit"}</h3>
+                  <p>{language === "en" ? `This is a separate review brief, not another detected defect. Because the footprint is ${score}/100, it helps a designer or coding agent with repository and screen access assess whether three important screens express the product's brand and user priorities beyond common starter conventions.` : `Dies ist ein separater Prüfauftrag und kein weiteres erkanntes Problem. Weil der Footprint bei ${score}/100 liegt, hilft er einem Designer oder Coding-Agenten mit Repository- und Screen-Zugriff zu prüfen, ob drei wichtige Screens Marke und Nutzerprioritäten über verbreitete Starter-Konventionen hinaus ausdrücken.`}</p>
+                  <div className="admin-review-usage"><strong>{language === "en" ? "How to use it" : "So wird er genutzt"}</strong><span>{language === "en" ? "Copy the brief into the agent or design workflow that can inspect the real screens and components. It should return an evidence table, up to five prioritized proposals, small implementation slices and a verification matrix—not automatically redesign the site." : "Kopiere den Auftrag in den Agenten- oder Design-Workflow, der echte Screens und Komponenten prüfen kann. Erwartet werden Evidenztabelle, höchstens fünf priorisierte Vorschläge, kleine Umsetzungs-Slices und eine Prüfmatrix – kein automatisches Redesign."}</span></div>
+                  <article className="admin-prompt-card optional-review-card"><header><span>R</span><strong>VF-REVIEW-DISTINCTIVENESS</strong><button type="button" onClick={() => void copyAdminPrompt(distinctivenessPrompt, "VF-REVIEW-DISTINCTIVENESS")}>{language === "en" ? "Copy review brief" : "Prüfauftrag kopieren"}</button></header><details><summary><span>{language === "en" ? "View full review brief" : "Vollständigen Prüfauftrag ansehen"}</span><b>+</b></summary><pre>{distinctivenessPrompt}</pre></details></article>
+                </div>}
+              </section>
 
               <section className="sample-report-block"><div className="sample-report-section-title"><span>{premiumSections[4].number}</span><h2>{premiumSections[4].label}</h2></div><p>{language === "en" ? "These are relative model influences, not points on the 0–100 scale. They appear after the actionable report as an explanation of how the score was shaped." : "Dies sind relative Modelleinflüsse, keine Punkte auf der 0–100-Skala. Sie stehen nach dem handlungsorientierten Report als Erklärung dafür, wie der Score geprägt wurde."}</p><div className="admin-driver-columns"><article><h3><b aria-hidden="true">↑</b>{copy.raises}</h3>{adminReport.scoreDrivers.raises.length ? adminReport.scoreDrivers.raises.map((driver) => <div className="admin-driver" key={driver.feature}><strong>{driver.label}</strong><p>{driver.description}</p><small>{language === "en" ? "Relative model influence" : "Relative Modellwirkung"}: {Math.abs(driver.contribution).toFixed(2)}</small></div>) : <p>{copy.reportNoDrivers}</p>}</article><article><h3><b aria-hidden="true">↓</b>{copy.lowers}</h3>{adminReport.scoreDrivers.lowers.length ? adminReport.scoreDrivers.lowers.map((driver) => <div className="admin-driver" key={driver.feature}><strong>{driver.label}</strong><p>{driver.description}</p><small>{language === "en" ? "Relative model influence" : "Relative Modellwirkung"}: {Math.abs(driver.contribution).toFixed(2)}</small></div>) : <p>{copy.reportNoDrivers}</p>}</article></div></section>
 

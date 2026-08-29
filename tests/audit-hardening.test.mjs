@@ -78,6 +78,9 @@ test("accepts the summary-only access state and rejects exposed premium detail",
   const testing = validSuccess();
   testing.reportAccess = { status: "testing", previewOnly: false, entitlementRequired: false };
   assert.equal(parseScanPayload(testing), testing);
+  const promo = validSuccess();
+  promo.reportAccess = { status: "promo", previewOnly: false, entitlementRequired: false };
+  assert.equal(parseScanPayload(promo), promo);
 });
 
 test("blocks mapped, private and special IP ranges while allowing public examples", () => {
@@ -154,9 +157,11 @@ test("scan response policy fails closed on ambiguous or ineligible documents", (
   assert.doesNotThrow(() => assertV04DocumentSemantics('<script src="/app.js?x=1&amp;y=2"></script>'));
 });
 
-test("scan requests accept a URL and optional Stripe checkout session only", () => {
-  assert.deepEqual(assertScanRequestBody({ url: "https://example.com" }), { url: "https://example.com", checkoutSessionId: undefined });
-  assert.deepEqual(assertScanRequestBody({ url: "https://example.com", checkoutSessionId: "cs_test_abc" }), { url: "https://example.com", checkoutSessionId: "cs_test_abc" });
+test("scan requests accept one optional report entitlement without mixing credentials", () => {
+  assert.deepEqual(assertScanRequestBody({ url: "https://example.com" }), { url: "https://example.com", checkoutSessionId: undefined, promoCode: undefined });
+  assert.deepEqual(assertScanRequestBody({ url: "https://example.com", checkoutSessionId: "cs_test_abc" }), { url: "https://example.com", checkoutSessionId: "cs_test_abc", promoCode: undefined });
+  assert.deepEqual(assertScanRequestBody({ url: "https://example.com", promoCode: "LAUNCH-2026" }), { url: "https://example.com", checkoutSessionId: undefined, promoCode: "LAUNCH-2026" });
+  assert.throws(() => assertScanRequestBody({ url: "https://example.com", checkoutSessionId: "cs_test_abc", promoCode: "LAUNCH-2026" }), /JSON-Anfrage/);
   for (const value of [null, [], {}, { url: 1 }, { url: "https://example.com", debug: true }]) {
     assert.throws(() => assertScanRequestBody(value), /JSON-Anfrage/);
   }

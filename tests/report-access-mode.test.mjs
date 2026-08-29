@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   paidReportAccess,
+  promoReportAccess,
   publicReportAccess,
   REPORT_ACCESS_MODE,
   resolveReportAccessMode
@@ -23,6 +24,11 @@ test("commercial access is the safe default while internal test access stays exp
   });
   assert.deepEqual(paidReportAccess(), {
     status: "paid",
+    previewOnly: false,
+    entitlementRequired: false
+  });
+  assert.deepEqual(promoReportAccess(), {
+    status: "promo",
     previewOnly: false,
     entitlementRequired: false
   });

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import VibeFootprintHome from "../components/VibeFootprintHome";
+import { auditPromoConfigured } from "../lib/audit-promo-code.mjs";
 
 export const metadata: Metadata = {
   title: "Vibe Coding Website Checker & Security Scan",
@@ -8,5 +9,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <VibeFootprintHome initialLanguage="en" enableAdminPreview={process.env.VIBEFOOTPRINT_ADMIN_UI === "true"} />;
+  return <VibeFootprintHome initialLanguage="en" enableAdminPreview={process.env.VIBEFOOTPRINT_ADMIN_UI === "true"} enablePromoCode={auditPromoConfigured(process.env.VIBEFOOTPRINT_PROMO_CODE)} />;
 }
