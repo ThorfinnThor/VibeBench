@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { ADMIN_PREVIEW_HEADER, adminPreviewAuthorization, buildAdminReport } from "../../../lib/admin-report.mjs";
 import { analyzeHtml, analyzeManifest } from "../../../lib/analyze-html.mjs";
+import { verifyAuditPromoCode } from "../../../lib/audit-promo-code.mjs";
 import { readLimitedText } from "../../../lib/bounded-response.mjs";
 import { buildV03FeatureMap, scoreV03 } from "../../../lib/development-v0_3-candidate.mjs";
 import { extractSameOriginManifest, selectSameOriginAssets } from "../../../lib/extract-assets.mjs";
@@ -16,7 +17,7 @@ import {
   getScoreBand
 } from "../../../lib/production-v0_4-features.mjs";
 import { classifyScanError } from "../../../lib/result-presentation.mjs";
-import { paidReportAccess, publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
+import { paidReportAccess, promoReportAccess, publicReportAccess, REPORT_ACCESS_MODE, resolveReportAccessMode } from "../../../lib/report-access-mode.mjs";
 import { acquireRedirectTargetAdmission, acquireScanAdmission, scanAdmissionIdentity, scanTargetIdentity } from "../../../lib/scan-admission.mjs";
 import {
   assertEligibleHtmlDocument,
@@ -158,6 +159,7 @@ export async function POST(request) {
     const scanRequest = assertScanRequestBody(body);
     const inputUrl = normalizePublicUrl(scanRequest.url);
     let paidAccess = false;
+    let promoAccess = false;
     if (reportMode === REPORT_ACCESS_MODE.COMMERCIAL && !adminAuthorization.authorized && scanRequest.checkoutSessionId) {
       try {
         await verifyScanCheckout({
@@ -179,6 +181,26 @@ export async function POST(request) {
             retryable: false
           }
         }, { status: 402, headers: responseHeaders });
+      }
+    }
+    if (reportMode === REPORT_ACCESS_MODE.COMMERCIAL && !adminAuthorization.authorized && scanRequest.promoCode) {
+      promoAccess = verifyAuditPromoCode({
+        providedCode: scanRequest.promoCode,
+        configuredCode: process.env.VIBEFOOTPRINT_PROMO_CODE
+      });
+      if (!promoAccess) {
+        return Response.json({
+          apiVersion: SCAN_API_VERSION,
+          ok: false,
+          requestId,
+          technicalOutcome: {
+            code: "promo_code_invalid",
+            title: "Promo-Code ungültig",
+            summary: "Der eingegebene Promo-Code ist ungültig oder nicht mehr aktiv.",
+            action: "Prüfe den Code und versuche es erneut oder nutze den regulären Stripe-Checkout.",
+            retryable: false
+          }
+        }, { status: 403, headers: responseHeaders });
       }
     }
     const initialTargetId = scanTargetIdentity(inputUrl);
@@ -265,9 +287,9 @@ export async function POST(request) {
       evidenceCoverage,
       security: { score: security.score, counts: summarizeSecurityChecks(security.checks) },
       categoryOverview,
-      reportAccess: paidAccess ? paidReportAccess() : publicReportAccess(reportMode)
+      reportAccess: paidAccess ? paidReportAccess() : promoAccess ? promoReportAccess() : publicReportAccess(reportMode)
     };
-    const fullReportEnabled = paidAccess || reportMode === REPORT_ACCESS_MODE.FREE_TEST || adminAuthorization.authorized;
+    const fullReportEnabled = paidAccess || promoAccess || reportMode === REPORT_ACCESS_MODE.FREE_TEST || adminAuthorization.authorized;
     if (fullReportEnabled) {
       payload.adminReport = buildAdminReport({
         model: candidateModel,
@@ -292,7 +314,7 @@ export async function POST(request) {
       });
     }
     const durationMs = Date.now() - startedAt;
-    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, paidAccess, adminPreview: adminAuthorization.authorized }));
+    console.info(JSON.stringify({ event: "scan_completed", requestId, durationMs, htmlBytes: fetched.htmlBytes, assetBytes: analysis.metrics.assetBytes, redirectsAllowed: MAX_REDIRECTS, outcome: "success", modelVersion: release.model.version, reportMode, paidAccess, promoAccess, adminPreview: adminAuthorization.authorized }));
     return Response.json(payload, { headers: responseHeaders });
   } catch (error) {
     const technicalOutcome = classifyScanError(error);

@@ -10,11 +10,11 @@ test("customer-facing UI contains no research-beta or confidential-preview wordi
   assert.doesNotMatch(page, /Research[ -]?Beta|Beta-Modell|beta model|Confidential diagnostic preview|Vertrauliche Diagnosevorschau/i);
 });
 
-test("full report design sample is visible on request without exposing protected scan detail", () => {
-  assert.match(page, /Preview full report design/);
-  assert.match(page, /Illustrative content only/);
-  assert.match(page, /not protected findings from this scan/);
-  assert.match(page, /sampleReportOpen/);
+test("locked report keeps only the real blurred scan preview and no old sample-report action", () => {
+  assert.doesNotMatch(page, /setSampleReportOpen\(true\)/);
+  assert.doesNotMatch(page, /className="preview-report-button"/);
+  assert.match(page, /locked-preview-document/);
+  assert.match(page, /Have a promo code\?/);
 });
 
 test("customer conversion starts with a free scan and unlocks the exact audit through Stripe", () => {
@@ -25,6 +25,9 @@ test("customer conversion starts with a free scan and unlocks the exact audit th
   assert.match(page, /href="\/contact"/);
   assert.match(scanRoute, /!adminAuthorization\.authorized && scanRequest\.checkoutSessionId/);
   assert.match(styles, /\.locked-preview-document[^}]+filter:\s*blur/);
+  assert.match(styles, /\.admin-prompt-card pre/);
+  assert.match(styles, /white-space:\s*pre-wrap/);
+  assert.match(styles, /overflow-wrap:\s*anywhere/);
   assert.doesNotMatch(page, /Checkout is not connected yet/);
   assert.doesNotMatch(page, /window\.localStorage/);
 });

@@ -19,9 +19,11 @@ test("coding-agent prompts are deterministic, bounded and anti-gaming", () => {
   const input = { finding: findings[1], target: "https://example.com", analyzedAt: "2026-08-19T10:00:00Z", evidenceBreadth: "broad", locale: "en" };
   const prompt = buildCodingAgentPrompt(input);
   assert.equal(prompt, buildCodingAgentPrompt(input));
-  for (const heading of ["Finding ID", "Observed public finding", "Constraints", "Acceptance criteria", "Validation", "Rescan note"]) assert.match(prompt, new RegExp(heading));
+  for (const heading of ["Finding ID", "Observed public finding", "Investigation before editing", "Implementation requirements", "Constraints", "Acceptance criteria", "Validation", "Required handoff", "Rescan note"]) assert.match(prompt, new RegExp(heading));
   assert.match(prompt, /Do not optimize for the VibeFootprint score/);
   assert.match(prompt, /not as proof of causality or authorship/);
+  assert.match(prompt, /shared tokens and reusable components/);
+  assert.ok(prompt.length > 2_000, `expected a professional prompt, received ${prompt.length} characters`);
 });
 
 test("top fix pack contains at most three actionable priority findings", () => {
@@ -42,6 +44,10 @@ test("high similarity can produce an optional anti-gaming distinctiveness review
   });
   assert.match(prompt, /public-pattern similarity index, not a defect count/);
   assert.match(prompt, /Component repetition/);
+  assert.match(prompt, /When this review is useful/);
+  assert.match(prompt, /investigation clues/);
+  assert.match(prompt, /Required deliverables/);
+  assert.match(prompt, /Verification matrix/);
   assert.match(prompt, /Do not hide public evidence/);
   assert.equal(buildDistinctivenessReviewPrompt({ score: 42, scoreBand: "Light", scoreDrivers: { raises: [] }, target: "https://example.com/", analyzedAt: "2026-08-20T10:00:00Z" }), null);
 });

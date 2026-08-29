@@ -23,6 +23,7 @@ export default function TermsPage() {
       <h2>3. Vertragsschluss, Preis und Zahlung</h2>
       <p>Der Vertrag kommt zustande, wenn du im Stripe-Checkout die Zahlung zur Freischaltung des vollständigen Audits abschließt. Während der Launch-Aktion kostet die Freischaltung einmalig 4,99 € statt des vorgesehenen regulären Preises von 49,99 €. Maßgeblich ist stets der im Checkout angezeigte Gesamtbetrag.</p>
       <p>Die Zahlung wird über Stripe abgewickelt. Die Freischaltung ist an die beim Checkout angegebene öffentliche URL gebunden und kann nicht auf eine andere URL übertragen werden. Wiederholungsversuche für dieselbe URL sind zulässig, wenn dies zur technischen Erstellung des bezahlten Audits erforderlich ist.</p>
+      <p>Alternativ kann ein gültiger Promo-Code den vollständigen Audit für die konkret gescannte öffentliche URL ohne Zahlung freischalten. Promo-Codes haben keinen Barauszahlungswert, sind nicht übertragbar und können vor ihrer Einlösung zeitlich oder mengenmäßig begrenzt beziehungsweise bei Missbrauch deaktiviert werden.</p>
     </section>
     <section>
       <h2>4. Aussagegrenzen</h2>

@@ -29,6 +29,8 @@ test("privacy notice documents the scan, Stripe, hosting, analytics and retentio
   assert.match(privacy, /Stripe Checkout/);
   assert.match(privacy, /Scan-URL wird als Bestellmetadatum/);
   assert.match(privacy, /keine vollständigen Kartendaten/);
+  assert.match(privacy, /Promo-Code/);
+  assert.match(privacy, /nicht an Stripe übermittelt/);
   assert.doesNotMatch(home, /window\.localStorage/);
 });
 
@@ -37,6 +39,8 @@ test("terms establish the B2B-only Stripe scan price and preserve mandatory liab
   assert.match(terms, /4,99 €/);
   assert.match(terms, /49,99 €/);
   assert.match(terms, /Stripe-Checkout/);
+  assert.match(terms, /gültiger Promo-Code/);
+  assert.match(terms, /keinen Barauszahlungswert/);
   assert.match(terms, /Websites untersuchen, zu deren Prüfung du berechtigt bist/);
   assert.match(terms, /Vorsatz und grober Fahrlässigkeit/);
   assert.match(terms, /Leben, Körper oder Gesundheit/);
