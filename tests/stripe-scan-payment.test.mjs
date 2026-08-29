@@ -37,6 +37,7 @@ test("checkout creates exactly one 4.99 EUR website scan on Stripe", async () =>
   assert.equal(request.options.headers.authorization, "Bearer sk_test_example_secret");
   const form = new URLSearchParams(request.options.body);
   assert.equal(form.get("mode"), "payment");
+  assert.equal(form.has("payment_method_types[0]"), false);
   assert.equal(form.get("line_items[0][price]"), "price_123launch");
   assert.equal(form.get("line_items[0][quantity]"), "1");
   assert.equal(form.get("metadata[scan_target]"), targetUrl);
