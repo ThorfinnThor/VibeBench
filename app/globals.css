@@ -429,6 +429,12 @@ h1, h2, h3, .brand strong { font-family: var(--font-heading), Arial, sans-serif;
 .admin-security-check b { font-size: 9px; letter-spacing: .07em; text-transform: uppercase; }
 .admin-security-check p, .admin-security-check small { color: var(--muted); font-size: 11px; line-height: 1.5; }
 .admin-subheading { margin: 24px 0 10px; font-size: 15px; }
+.admin-copy-all-prompts { margin: 15px 0 12px; padding: 14px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; border: 1px solid #9fc9bb; border-radius: 10px; background: var(--green-light); }
+.admin-copy-all-prompts > div { min-width: 0; display: grid; gap: 4px; }
+.admin-copy-all-prompts strong { color: var(--green-dark); font-size: 13px; }
+.admin-copy-all-prompts span { color: #45665b; font-size: 11px; line-height: 1.45; }
+.admin-copy-all-prompts button { min-height: 40px; padding: 9px 13px; border: 0; border-radius: 8px; background: var(--green); color: white; font-size: 11px; font-weight: 900; cursor: pointer; white-space: nowrap; }
+.admin-copy-all-prompts button:disabled { cursor: not-allowed; opacity: .55; }
 .admin-prompt-card, .admin-technical-details { min-width: 0; max-width: 100%; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-soft); overflow: hidden; }
 .admin-prompt-card + .admin-prompt-card { margin-top: 8px; }
 .admin-prompt-card > header { padding: 10px 12px; display: grid; grid-template-columns: 28px 1fr auto; gap: 9px; align-items: center; background: white; }
@@ -696,6 +702,8 @@ footer > nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
   .locked-report-copy .promo-code-access button { width: 100%; }
   .admin-key-row, .admin-driver-columns, .admin-security-grid, .admin-launch-grid, .admin-score-explanation, .score-findings-boundary { grid-template-columns: 1fr; }
   .admin-report-export-bar { align-items: flex-start; flex-direction: column; }
+  .admin-copy-all-prompts { grid-template-columns: 1fr; }
+  .admin-copy-all-prompts button { justify-self: start; white-space: normal; }
   .admin-prompt-card > header { grid-template-columns: 28px 1fr; }
   .admin-prompt-card > header button { grid-column: 2; justify-self: start; }
   .admin-review-usage { grid-template-columns: 1fr; gap: 4px; }

@@ -10,6 +10,7 @@ import { adminReportFilename, buildAdminReportMarkdown } from "../lib/admin-repo
 import { localizeScanPayload, localizeTechnicalOutcome } from "../lib/scan-localization.mjs";
 import { automaticRetryDelayMs, MAX_CLIENT_SCAN_ATTEMPTS, shouldAutomaticallyRetry } from "../lib/client-scan-retry.mjs";
 import { buildDistinctivenessReviewPrompt } from "../lib/protected-report-enhancements.mjs";
+import { buildCombinedFixPrompt } from "../lib/combined-fix-prompt.mjs";
 import { buildCustomerReport, customerReportFilename } from "../lib/customer-report.mjs";
 import { compareLocalScans, toLocalScanSnapshot } from "../lib/local-scan-history.mjs";
 import { premiumReportSections } from "../lib/premium-report-structure.mjs";
@@ -599,6 +600,24 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     }
   }
 
+  async function copyAllAdminPrompts() {
+    if (!adminReport) return;
+    const combinedPrompt = buildCombinedFixPrompt({
+      items: adminReport.fixPacks[language],
+      target: adminReport.target,
+      generatedAt: adminReport.generatedAt,
+      locale: language
+    });
+    if (!combinedPrompt) return;
+    try {
+      await navigator.clipboard.writeText(combinedPrompt);
+      const promptCount = adminReport.fixPacks[language].length;
+      setAdminReportStatus(language === "en" ? `${promptCount} fix prompts copied as one implementation prompt.` : `${promptCount} Fix-Prompts als ein gemeinsamer Umsetzungs-Prompt kopiert.`);
+    } catch {
+      setAdminReportStatus(language === "en" ? "Copying is not available in this browser." : "Kopieren ist in diesem Browser nicht verfügbar.");
+    }
+  }
+
   function downloadAdminMarkdown() {
     if (!adminReport || !adminReportMarkdown) return;
     const link = document.createElement("a");
@@ -848,6 +867,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
                 <div className="sample-report-section-title"><span>{premiumSections[3].number}</span><h2>{premiumSections[3].label}</h2></div>
                 <h3 className="admin-subheading">{copy.reportFixPrompts}</h3>
                 <p>{language === "en" ? `${adminReport.fixPacks[language].length} professional remediation prompt${adminReport.fixPacks[language].length === 1 ? " was" : "s were"} generated from ${observedFindingCount} observed actionable finding${observedFindingCount === 1 ? "" : "s"}. Each prompt includes investigation, implementation requirements, acceptance criteria, validation and handoff expectations.` : `${adminReport.fixPacks[language].length} professionelle Behebungs-Prompts wurden aus ${observedFindingCount} beobachteten konkreten Findings erzeugt. Jeder Prompt enthält Untersuchung, Umsetzungsanforderungen, Akzeptanzkriterien, Validierung und Übergabeanforderungen.`}</p>
+                <div className="admin-copy-all-prompts"><div><strong>{language === "en" ? "One prompt for the complete fix plan" : "Ein Prompt für den vollständigen Fix-Plan"}</strong><span>{language === "en" ? "Copies every finding-specific implementation brief in priority order, plus shared execution and validation instructions." : "Kopiert alle finding-spezifischen Umsetzungsaufträge in Prioritätsreihenfolge sowie gemeinsame Umsetzungs- und Prüfhinweise."}</span></div><button type="button" onClick={() => void copyAllAdminPrompts()} disabled={adminReport.fixPacks[language].length === 0}>{language === "en" ? "Copy all fix prompts" : "Alle Fix-Prompts kopieren"}</button></div>
                 <div className="admin-fix-prompts">{adminReport.fixPacks[language].map((item, index) => <article className="admin-prompt-card" key={item.id}><header><span>{String(index + 1).padStart(2, "0")}</span><div className="admin-prompt-identity"><strong>{categoryLabels[item.category]} · {item.title}</strong><small>{language === "en" ? "Technical reference" : "Technische Referenz"}: {item.id}</small></div><button type="button" onClick={() => void copyAdminPrompt(item.prompt, item.id)}>{language === "en" ? "Copy prompt" : "Prompt kopieren"}</button></header><details><summary><span>{language === "en" ? "View full implementation prompt" : "Vollständigen Umsetzungs-Prompt ansehen"}</span><b>+</b></summary><pre>{item.prompt}</pre></details></article>)}</div>
                 {distinctivenessPrompt && <div className="admin-optional-review">
                   <h3>{language === "en" ? "Optional brand distinctiveness review" : "Optionale Prüfung der Marken-Eigenständigkeit"}</h3>
