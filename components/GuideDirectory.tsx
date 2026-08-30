@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { allGuidePages, guideClusters, guidesForCluster, type GuideClusterId } from "../lib/guide-pages";
+import { absoluteUrl } from "../lib/site";
 import { GuideSiteFooter, GuideSiteHeader } from "./GuidePage";
 import styles from "./guide-directory.module.css";
 
@@ -8,6 +9,44 @@ const clusterOrder: GuideClusterId[] = ["security", "design", "engineering", "co
 export default function GuideDirectory({ clusterId }: { clusterId?: GuideClusterId }) {
   const cluster = clusterId ? guideClusters[clusterId] : null;
   const pages = clusterId ? guidesForCluster(clusterId) : allGuidePages;
+  const directoryPath = cluster ? `/guides/${cluster.id}` : "/guides";
+  const directoryTitle = cluster?.title || "VibeFootprint website guide library";
+  const directoryDescription = cluster?.description || "Evidence-led guides for website security, distinctive design, frontend engineering, trustworthy content, launch workflows and score interpretation.";
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": absoluteUrl(`${directoryPath}#collection`),
+        url: absoluteUrl(directoryPath),
+        name: directoryTitle,
+        description: directoryDescription,
+        inLanguage: "en",
+        isPartOf: { "@id": absoluteUrl("/#website") },
+        mainEntity: { "@id": absoluteUrl(`${directoryPath}#guide-list`) }
+      },
+      {
+        "@type": "ItemList",
+        "@id": absoluteUrl(`${directoryPath}#guide-list`),
+        name: cluster ? `${cluster.name} guides` : "All VibeFootprint guides",
+        numberOfItems: pages.length,
+        itemListElement: pages.map((guide, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: guide.title,
+          url: absoluteUrl(`/guides/${guide.cluster}/${guide.slug}`)
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "Guides", item: absoluteUrl("/guides") },
+          ...(cluster ? [{ "@type": "ListItem", position: 3, name: cluster.name, item: absoluteUrl(directoryPath) }] : [])
+        ]
+      }
+    ]
+  };
   return <main className={styles.page}>
     <a className="skip-link" href="#guide-list">Skip to guides</a>
     <GuideSiteHeader />
@@ -26,5 +65,6 @@ export default function GuideDirectory({ clusterId }: { clusterId?: GuideCluster
 
     {cluster && <nav className={styles.otherClusters} aria-label="Other guide clusters"><strong>Continue with another review</strong>{clusterOrder.filter((id) => id !== clusterId).map((id) => <Link href={`/guides/${id}`} key={id}>{guideClusters[id].name}<span>→</span></Link>)}</nav>}
     <GuideSiteFooter />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }

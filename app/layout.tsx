@@ -9,6 +9,15 @@ const manrope = localFont({ src: "./fonts/manrope-latin.woff2", display: "swap",
 
 const title = "VibeFootprint — Vibe Coding Website Checker";
 const description = "A clear 0–100 website footprint, public evidence and practical security improvements.";
+const launchOffer = {
+  "@type": "Offer",
+  name: "Full VibeFootprint website audit",
+  price: "4.99",
+  priceCurrency: "EUR",
+  availability: "https://schema.org/InStock",
+  url: absoluteUrl("/#scanner"),
+  description: "One complete website audit at the launch price, including evidence-backed findings and implementation prompts."
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
@@ -31,7 +40,11 @@ export const metadata: Metadata = {
     images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint — See the public patterns. Improve what matters." }]
   },
   twitter: { card: "summary_large_image", title, description, images: ["/og.png"] },
-  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
+  verification: process.env.GOOGLE_SITE_VERIFICATION || process.env.BING_SITE_VERIFICATION ? {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: process.env.BING_SITE_VERIFICATION ? { "msvalidate.01": process.env.BING_SITE_VERIFICATION } : undefined
+  } : undefined,
+  alternates: { types: { "application/rss+xml": absoluteUrl("/feed.xml") } },
   category: "technology"
 };
 
@@ -44,6 +57,8 @@ const structuredData = {
       name: "VibeFootprint",
       legalName: "SeitenHafen361",
       url: absoluteUrl("/"),
+      logo: absoluteUrl("/icon.svg"),
+      image: absoluteUrl("/og.png"),
       email: "info@vibefootprint.com",
       founder: { "@type": "Person", name: "Schayan Yousefian" },
       address: { "@type": "PostalAddress", streetAddress: "Freienwalder Str. 34", postalCode: "13359", addressLocality: "Berlin", addressCountry: "DE" },
@@ -69,8 +84,25 @@ const structuredData = {
       description,
       inLanguage: "en",
       isAccessibleForFree: true,
+      image: absoluteUrl("/og.png"),
+      offers: [
+        { "@type": "Offer", name: "Free website scan preview", price: "0", priceCurrency: "EUR", url: absoluteUrl("/#scanner"), description: "A free public-surface scan preview with both independent scores and a high-level summary." },
+        launchOffer
+      ],
       publisher: { "@id": absoluteUrl("/#organization") },
       isPartOf: { "@id": absoluteUrl("/#website") }
+    },
+    {
+      "@type": "Service",
+      "@id": absoluteUrl("/#service"),
+      name: "VibeFootprint website audit",
+      serviceType: "Public-surface website quality and security audit",
+      provider: { "@id": absoluteUrl("/#organization") },
+      url: absoluteUrl("/"),
+      areaServed: "Worldwide",
+      audience: { "@type": "BusinessAudience", audienceType: "Founders, agencies, designers and web development teams" },
+      description: "A bounded audit of public website pattern similarity, selected security headers, quality findings and practical implementation steps.",
+      offers: launchOffer
     }
   ]
 };

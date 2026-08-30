@@ -12,6 +12,11 @@ const editorial = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.
 const editorialComponent = readFileSync(new URL("../components/EditorialPage.tsx", import.meta.url), "utf8");
 const seoContentComponent = readFileSync(new URL("../components/SeoContentPage.tsx", import.meta.url), "utf8");
 const guideComponent = readFileSync(new URL("../components/GuidePage.tsx", import.meta.url), "utf8");
+const guideDirectory = readFileSync(new URL("../components/GuideDirectory.tsx", import.meta.url), "utf8");
+const editorialDirectory = readFileSync(new URL("../components/EditorialDirectory.tsx", import.meta.url), "utf8");
+const llmsRoute = readFileSync(new URL("../app/llms.txt/route.ts", import.meta.url), "utf8");
+const feedRoute = readFileSync(new URL("../app/feed.xml/route.ts", import.meta.url), "utf8");
+const manifest = readFileSync(new URL("../app/manifest.ts", import.meta.url), "utf8");
 
 test("SEO foundation exposes canonical metadata and structured identity", () => {
   assert.match(layout, /metadataBase/);
@@ -19,6 +24,10 @@ test("SEO foundation exposes canonical metadata and structured identity", () => 
   assert.match(layout, /WebApplication/);
   assert.match(layout, /WebSite/);
   assert.match(layout, /Organization/);
+  assert.match(layout, /"@type": "Service"/);
+  assert.match(layout, /Full VibeFootprint website audit/);
+  assert.match(layout, /BING_SITE_VERIFICATION/);
+  assert.match(layout, /application\/rss\+xml/);
   assert.match(home, /canonical: "\/"/);
 });
 
@@ -55,8 +64,38 @@ test("robots permits public pages and keeps the scan API out of the crawl surfac
   assert.match(robots, /allow: "\/"/);
   assert.match(robots, /"\/api\/"/);
   assert.match(robots, /OAI-SearchBot/);
+  assert.match(robots, /Claude-SearchBot/);
+  assert.match(robots, /PerplexityBot/);
+  assert.match(robots, /Google-Extended/);
   assert.doesNotMatch(robots, /_next/);
   assert.match(robots, /sitemap/);
+});
+
+test("machine-readable discovery files state facts and boundaries", () => {
+  assert.match(llmsRoute, /VibeFootprint is a public-surface website diagnostic/);
+  assert.match(llmsRoute, /not a generated-code percentage, authorship probability or defect count/);
+  assert.match(llmsRoute, /FindYourAIScore is a separate, complementary service/);
+  assert.match(llmsRoute, /text\/plain; charset=utf-8/);
+  assert.match(feedRoute, /allEditorialPages/);
+  assert.match(feedRoute, /application\/rss\+xml; charset=utf-8/);
+  assert.match(feedRoute, /atom:link/);
+});
+
+test("directory hubs expose visible collections as structured lists", () => {
+  for (const directory of [guideDirectory, editorialDirectory]) {
+    assert.match(directory, /"@type": "CollectionPage"/);
+    assert.match(directory, /"@type": "ItemList"/);
+    assert.match(directory, /"@type": "BreadcrumbList"/);
+    assert.match(directory, /itemListElement/);
+  }
+});
+
+test("sitemap dates follow content updates and installable metadata has an icon", () => {
+  assert.match(sitemap, /latestEditorialUpdate/);
+  assert.match(sitemap, /latestGuideUpdate/);
+  assert.doesNotMatch(sitemap, /const now/);
+  assert.match(manifest, /\/icon\.svg/);
+  assert.equal(existsSync(new URL("../app/icon.svg", import.meta.url)), true);
 });
 
 test("core search content preserves the product interpretation boundary", () => {
@@ -93,4 +132,6 @@ test("visible answer structures match conservative structured data", () => {
   assert.match(editorialComponent, /Published by/);
   assert.match(editorialComponent, /Last reviewed/);
   assert.match(guideComponent, /isPartOf/);
+  assert.match(scanner, /What is VibeFootprint\?/);
+  assert.match(scanner, /"@type": "FAQPage"/);
 });

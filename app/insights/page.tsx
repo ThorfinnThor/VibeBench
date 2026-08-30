@@ -6,7 +6,8 @@ export const metadata: Metadata = {
   description: "Original field guides, comparisons and review frameworks for recognizing vibe-coding patterns and improving AI-assisted websites responsibly.",
   authors: [{ name: "VibeFootprint Editorial", url: "/about" }],
   alternates: { canonical: "/insights" },
-  openGraph: { title: "VibeFootprint editorial guides", description: "Evidence-led guidance for websites built at AI speed.", url: "/insights", locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint editorial guides" }] }
+  openGraph: { title: "VibeFootprint editorial guides", description: "Evidence-led guidance for websites built at AI speed.", url: "/insights", locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint editorial guides" }] },
+  twitter: { card: "summary_large_image", title: "VibeFootprint editorial guides", description: "Evidence-led guidance for websites built at AI speed.", images: ["/og.png"] }
 };
 
 export default function Page() { return <EditorialDirectory />; }

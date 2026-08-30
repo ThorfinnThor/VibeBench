@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ cluster: 
   const { cluster: clusterId } = await params;
   const cluster = guideClusters[clusterId as GuideClusterId];
   if (!cluster) return {};
-  return { title: cluster.title, description: cluster.description, alternates: { canonical: `/guides/${cluster.id}` }, openGraph: { title: `${cluster.title} | VibeFootprint`, description: cluster.description, url: `/guides/${cluster.id}`, locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: cluster.title }] } };
+  return { title: cluster.title, description: cluster.description, alternates: { canonical: `/guides/${cluster.id}` }, openGraph: { title: `${cluster.title} | VibeFootprint`, description: cluster.description, url: `/guides/${cluster.id}`, locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: cluster.title }] }, twitter: { card: "summary_large_image", title: `${cluster.title} | VibeFootprint`, description: cluster.description, images: ["/og.png"] } };
 }
 
 export default async function Page({ params }: { params: Promise<{ cluster: string }> }) {

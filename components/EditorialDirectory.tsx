@@ -1,10 +1,45 @@
 import Link from "next/link";
 import { allEditorialPages } from "../lib/editorial-pages";
+import { absoluteUrl } from "../lib/site";
 import { GuideSiteFooter, GuideSiteHeader } from "./GuidePage";
 import styles from "./editorial-directory.module.css";
 
 export default function EditorialDirectory() {
   const [featured, ...rest] = allEditorialPages;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": absoluteUrl("/insights#collection"),
+        url: absoluteUrl("/insights"),
+        name: "VibeFootprint editorial guides",
+        description: "Original evidence-led guidance for assessing public website patterns and improving AI-assisted websites responsibly.",
+        inLanguage: "en",
+        isPartOf: { "@id": absoluteUrl("/#website") },
+        mainEntity: { "@id": absoluteUrl("/insights#editorial-list") }
+      },
+      {
+        "@type": "ItemList",
+        "@id": absoluteUrl("/insights#editorial-list"),
+        name: "VibeFootprint editorial library",
+        numberOfItems: allEditorialPages.length,
+        itemListElement: allEditorialPages.map((page, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: page.title,
+          url: absoluteUrl(`/${page.slug}`)
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
+          { "@type": "ListItem", position: 2, name: "Insights", item: absoluteUrl("/insights") }
+        ]
+      }
+    ]
+  };
   return <main className={styles.page}>
     <a className="skip-link" href="#editorial-guides">Skip to editorial guides</a>
     <GuideSiteHeader />
@@ -24,5 +59,6 @@ export default function EditorialDirectory() {
 
     <section className={styles.method}><div><p className="eyebrow">Why this library grows deliberately</p><h2>Useful coverage beats keyword volume.</h2></div><div><p>Near-identical pages compete with one another and waste the reader’s time. Every guide targets a distinct decision, uses its own working format and links to the underlying standards or methodology.</p><Link href="/methodology">Review the scan methodology →</Link></div></section>
     <GuideSiteFooter />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }

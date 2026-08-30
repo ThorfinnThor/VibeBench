@@ -308,6 +308,26 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
   const scanSequenceRef = useRef(0);
   const loadingRef = useRef(false);
   const copy = copyByLanguage[language];
+  const quickAnswers = language === "en" ? [
+    { question: "What is VibeFootprint?", answer: "VibeFootprint is a public-surface website diagnostic. It reports a qualitative pattern-similarity index, a separate selected security-header baseline and evidence-backed improvements." },
+    { question: "Is it an AI website detector?", answer: "No. The Vibe-Footprint describes similarity to a frozen reference corpus; it does not establish authorship, an AI-generated-code percentage or the tool used to build a website." },
+    { question: "What does the full audit include?", answer: "The full audit includes exact score drivers, prioritized quality findings, selected security checks, a public launch check and copy-ready implementation prompts for the observed issues." },
+    { question: "Does a scan require source code or a login?", answer: "No. A scan uses only the public URL, delivered HTML, selected same-origin assets and response headers. Private source code, accounts and repositories stay outside the scan." }
+  ] : [
+    { question: "Was ist VibeFootprint?", answer: "VibeFootprint ist eine Diagnose der öffentlichen Website-Oberfläche. Sie liefert einen qualitativen Musterähnlichkeitsindex, eine separate Baseline ausgewählter Security-Header und evidenzbasierte Verbesserungen." },
+    { question: "Ist es ein KI-Website-Detektor?", answer: "Nein. Der Vibe-Footprint beschreibt die Ähnlichkeit mit einem eingefrorenen Referenzkorpus; er belegt weder Autorenschaft noch einen KI-Code-Anteil oder das verwendete Tool." },
+    { question: "Was enthält der vollständige Audit?", answer: "Der vollständige Audit enthält exakte Score-Treiber, priorisierte Qualitäts-Findings, ausgewählte Security-Prüfungen, einen öffentlichen Launch-Check und kopierfertige Umsetzungsprompts." },
+    { question: "Braucht ein Scan Quellcode oder Login?", answer: "Nein. Der Scan nutzt nur die öffentliche URL, ausgeliefertes HTML, ausgewählte gleich-originige Assets und Response-Header. Privater Quellcode, Accounts und Repositories bleiben außerhalb des Scans." }
+  ];
+  const quickAnswerStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: quickAnswers.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer }
+    }))
+  };
   const funnelCopy = funnelCopyByLanguage[language];
   const categoryLabels = categoryLabelsByLanguage[language];
   const scanProgressCopy = scanProgressCopyByLanguage[language];
@@ -911,6 +931,13 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
       </nav>
     </section>
 
+    <section className="quick-answers" aria-labelledby="quick-answers-title">
+      <div className="section-heading"><div><p className="eyebrow">{language === "en" ? "Quick answers" : "Kurze Antworten"}</p><h2 id="quick-answers-title">{language === "en" ? "What the scan can—and cannot—tell you." : "Was der Scan aussagen kann – und was nicht."}</h2></div><p>{language === "en" ? "The essential product facts in plain language. The methodology page documents the complete measurement boundary." : "Die wichtigsten Produktfakten in klarer Sprache. Die Methodikseite dokumentiert die vollständige Messgrenze."}</p></div>
+      <div className="quick-answer-grid">{quickAnswers.map((item) => <article key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></article>)}</div>
+      <Link href="/methodology">{language === "en" ? "Read the complete methodology and limits" : "Vollständige Methodik und Grenzen lesen"}<span aria-hidden="true">→</span></Link>
+    </section>
+
     <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link><LegalFooterLinks /></nav></footer>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(quickAnswerStructuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }
