@@ -461,6 +461,12 @@ h1, h2, h3, .brand strong { font-family: var(--font-heading), Arial, sans-serif;
 .admin-launch-grid .status-fail > b { color: var(--coral); }
 .admin-launch-grid strong { font-size: 12px; }
 .admin-launch-grid p { margin: 3px 0 0; color: var(--muted); font-size: 10px; line-height: 1.45; }
+.admin-next-diagnostic { margin-top: 14px; padding: 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; align-items: center; border: 1px solid #b8d8ce; border-radius: 10px; background: #edf6f3; }
+.admin-next-diagnostic > div { min-width: 0; display: grid; gap: 4px; }
+.admin-next-diagnostic small { color: var(--green); font-size: 9px; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.admin-next-diagnostic strong { font-size: 14px; }
+.admin-next-diagnostic p { margin: 0; color: #496158; font-size: 11px; line-height: 1.5; }
+.admin-next-diagnostic > a { min-height: 38px; padding: 9px 12px; display: inline-flex; align-items: center; gap: 9px; border-radius: 8px; background: var(--ink); color: white; font-size: 11px; font-weight: 850; text-decoration: none; white-space: nowrap; }
 .admin-technical-details { margin-top: 14px; }
 
 .drivers-section, .recommendations-section { margin-top: 76px; }
@@ -702,6 +708,8 @@ footer > nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
   .locked-report-copy .promo-code-access button { width: 100%; }
   .admin-key-row, .admin-driver-columns, .admin-security-grid, .admin-launch-grid, .admin-score-explanation, .score-findings-boundary { grid-template-columns: 1fr; }
   .admin-report-export-bar { align-items: flex-start; flex-direction: column; }
+  .admin-next-diagnostic { grid-template-columns: 1fr; }
+  .admin-next-diagnostic > a { width: fit-content; white-space: normal; }
   .admin-copy-all-prompts { grid-template-columns: 1fr; }
   .admin-copy-all-prompts button { justify-self: start; white-space: normal; }
   .admin-prompt-card > header { grid-template-columns: 28px 1fr; }

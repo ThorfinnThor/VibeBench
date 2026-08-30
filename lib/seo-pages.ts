@@ -4,6 +4,13 @@ export type SeoSection = {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
+  relatedResource?: {
+    eyebrow: string;
+    title: string;
+    description: string;
+    href: string;
+    linkLabel: string;
+  };
 };
 
 export type SeoPageContent = {
@@ -53,13 +60,14 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     title: "How the VibeFootprint website scan works",
     metaTitle: "Website Scan Methodology",
     description: "Understand the public evidence, scoring boundary, security checks and limitations behind every VibeFootprint website scan.",
+    updatedAt: "2026-08-30",
     intro: "VibeFootprint turns publicly delivered website signals into two separate assessments: a qualitative pattern-similarity index and a public security-header baseline. The method is intentionally bounded so the result remains useful without claiming to know who authored a website.",
     boundary: "A Vibe-Footprint is not a percentage of generated code, an authorship verdict or proof that a particular builder was used.",
     sections: [
       { heading: "1. What the scanner collects", paragraphs: ["The scan begins with the public HTML document and its response headers. It may then inspect a bounded selection of same-origin scripts, stylesheets and manifest information over validated, peer-pinned connections.", "No login, repository connection or private source code is requested. The target website can still record the scanner’s ordinary public requests in its server logs."], bullets: ["Public HTML and document metadata", "Selected response headers", "A limited set of same-origin assets", "Public structural and stack signals"] },
       { heading: "2. How the Vibe-Footprint is produced", paragraphs: ["The frozen reference model combines public technical and structural features into a value from 0 to 100. A higher value means that more of the observed surface resembles patterns in the reference corpus; a lower value means less observed similarity.", "The score is an uncalibrated qualitative index. Individual score drivers describe relative model influence rather than additive points, and evidence breadth is reported separately instead of silently changing the score."] },
       { heading: "3. Why security is a separate score", paragraphs: ["The security baseline evaluates selected values in public main-document headers. A strong security score does not lower the Vibe-Footprint, and a high Vibe-Footprint does not reduce the security score.", "Keeping both assessments independent prevents design similarity from being presented as a vulnerability and prevents strong headers from being presented as evidence of originality."], bullets: ["Content Security Policy", "Strict Transport Security", "Frame and content-type protection", "Referrer and permissions policies"] },
-      { heading: "4. Interpretation and limitations", paragraphs: ["The public-surface scan does not execute a complete browser, test application behavior or inspect backend systems. It cannot replace repository review, penetration testing, accessibility testing or product QA.", "Results should be used as a prioritized review aid: inspect the cited evidence, decide which changes fit the product, implement them safely and compare a fresh scan after deployment."] },
+      { heading: "4. Interpretation and limitations", paragraphs: ["The public-surface scan does not execute a complete browser, test application behavior or inspect backend systems. It cannot replace repository review, penetration testing, accessibility testing or product QA.", "Results should be used as a prioritized review aid: inspect the cited evidence, decide which changes fit the product, implement them safely and compare a fresh scan after deployment."], relatedResource: { eyebrow: "Complementary diagnostic", title: "Continue with AI-search readiness", description: "VibeFootprint stops at public pattern, quality and security evidence. If your next question is whether answer engines can identify the business, understand its offers and extract citable answers, FindYourAIScore evaluates entity clarity, offer clarity, sourceability, structured data and technical access.", href: "https://www.findyouraiscore.com/", linkLabel: "Check AI-search readiness with FindYourAIScore" } },
       { heading: "5. Automated-system transparency", paragraphs: ["VibeFootprint uses a frozen automated reference model to produce the qualitative pattern-similarity index. The product and model version are displayed with the result so material changes can be distinguished over time.", "The system evaluates a website surface, not a natural person. It does not make legal or similarly significant decisions, and users can request a correction or review by contacting info@vibefootprint.com."] }
     ],
     faq: [

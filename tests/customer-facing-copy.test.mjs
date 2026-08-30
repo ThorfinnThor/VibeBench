@@ -38,3 +38,11 @@ test("improvement prompts lead with a readable section and title while preservin
   assert.match(page, /admin-prompt-identity/);
   assert.match(styles, /\.admin-prompt-identity strong/);
 });
+
+test("full report offers AI-search readiness only as a contextual next diagnostic", () => {
+  assert.match(page, /Next diagnostic/);
+  assert.match(page, /This launch check confirms public basics/);
+  assert.match(page, /href="https:\/\/www\.findyouraiscore\.com\/"/);
+  assert.match(page, /Check with FindYourAIScore/);
+  assert.match(styles, /\.admin-next-diagnostic/);
+});
