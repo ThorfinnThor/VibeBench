@@ -22,6 +22,8 @@ test("full admin report export follows the seven-section customer order", () => 
   assert.match(markdown, /### Security — Content Security Policy/);
   assert.match(markdown, /Technical reference\*\*: VF-SEC-CSP/);
   assert.match(markdown, /Fix CSP safely/);
+  assert.match(markdown, /Next diagnostic: AI-search readiness/);
+  assert.match(markdown, /\[Check AI-search readiness with FindYourAIScore\]\(https:\/\/www\.findyouraiscore\.com\/\)/);
   assert.equal(adminReportFilename(report.target, "en"), "vibefootprint-full-report-example.com-en.md");
 });
 

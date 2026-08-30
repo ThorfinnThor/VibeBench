@@ -66,6 +66,14 @@ test("core search content preserves the product interpretation boundary", () => 
   assert.doesNotMatch(content, /germanSeoPages|locale: "de"/);
 });
 
+test("methodology links the complementary AI-search audit at the relevant measurement boundary", () => {
+  assert.match(content, /Continue with AI-search readiness/);
+  assert.match(content, /entity clarity, offer clarity, sourceability, structured data and technical access/);
+  assert.match(content, /https:\/\/www\.findyouraiscore\.com\//);
+  assert.match(seoContentComponent, /section\.relatedResource/);
+  assert.match(seoContentComponent, /target="_blank" rel="noreferrer"/);
+});
+
 test("GEO entity and responsibility information is visible and internally linked", () => {
   assert.match(content, /slug: "about"/);
   assert.match(content, /What is VibeFootprint\?/);
