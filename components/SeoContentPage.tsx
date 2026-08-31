@@ -6,17 +6,17 @@ import styles from "./seo-content-page.module.css";
 
 export default function SeoContentPage({ page }: { page: SeoPageContent }) {
   const url = `/${page.slug}`;
+  const isPricingPage = page.slug === "pricing";
   const related = [
     { href: "/vibe-coding-website-checker", label: "Website checker" },
+    { href: "/pricing", label: "Pricing" },
     { href: "/how-to-tell-if-a-website-was-vibe-coded", label: "Recognize patterns" },
     { href: "/vibe-coding-security-checklist", label: "Security checklist" },
     { href: "/insights", label: "Editorial insights" },
     { href: "/guides", label: "All guides" },
     { href: "/about", label: "About VibeFootprint" }
   ].filter((item) => item.href !== url).slice(0, 5);
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@graph": [
+  const structuredGraph: object[] = [
       {
         "@type": "WebPage",
         "@id": `${absoluteUrl(url)}#webpage`,
@@ -27,7 +27,8 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
         inLanguage: "en",
         isPartOf: { "@id": absoluteUrl("/#website") },
         about: { "@id": absoluteUrl("/#application") },
-        publisher: { "@id": absoluteUrl("/#organization") }
+        publisher: { "@id": absoluteUrl("/#organization") },
+        ...(isPricingPage ? { mainEntity: { "@id": absoluteUrl("/#service") } } : {})
       },
       {
         "@type": "BreadcrumbList",
@@ -45,14 +46,33 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
           acceptedAnswer: { "@type": "Answer", text: item.answer }
         }))
       }
-    ]
+  ];
+  if (isPricingPage) structuredGraph.push({
+    "@type": "Service",
+    "@id": absoluteUrl("/#service"),
+    name: "VibeFootprint website audit",
+    url: absoluteUrl("/pricing"),
+    provider: { "@id": absoluteUrl("/#organization") },
+    description: page.description,
+    offers: {
+      "@type": "Offer",
+      name: "Full VibeFootprint website audit",
+      price: "4.99",
+      priceCurrency: "EUR",
+      availability: "https://schema.org/InStock",
+      url: absoluteUrl("/#scanner")
+    }
+  });
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": structuredGraph
   };
 
   return <main className={styles.page}>
     <a className="skip-link" href="#article">Skip to content</a>
     <header className={styles.header}>
       <Link className="brand" href="/" aria-label="VibeFootprint home"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link>
-      <nav aria-label="Primary navigation"><Link href="/#scanner">Launch scan · €4.99</Link><Link href="/contact">Contact</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
+      <nav aria-label="Primary navigation"><Link href="/#scanner">Launch scan · €4.99</Link><Link href="/pricing">Pricing</Link><Link href="/contact">Contact</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology</Link></nav>
     </header>
 
     <article id="article">
@@ -76,7 +96,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
 
     <section className={styles.scanCta}><div><p className="eyebrow">Next step</p><h2>Check the public website now.</h2><p>Get pattern similarity, a separate security baseline and practical next steps.</p></div><Link href="/#scanner">Buy launch scan · €4.99<span>→</span></Link></section>
     <nav className={styles.related} aria-label="Related guides">{related.map((item) => <Link key={item.href} href={item.href}>{item.label}<span>↗</span></Link>)}</nav>
-    <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/methodology">Methodology</Link><LegalFooterLinks /></nav></footer>
+    <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav aria-label="Footer navigation"><Link href="/pricing">Pricing</Link><Link href="/about">About</Link><Link href="/methodology">Methodology</Link><LegalFooterLinks /></nav></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }

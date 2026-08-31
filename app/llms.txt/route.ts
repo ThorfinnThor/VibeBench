@@ -16,6 +16,7 @@ Contact: info@vibefootprint.com
 - Scan a public website: ${absoluteUrl("/#scanner")}
 - Methodology and interpretation limits: ${absoluteUrl("/methodology")}
 - Product, publisher and pricing facts: ${absoluteUrl("/about")}
+- Current pricing and full-audit contents: ${absoluteUrl("/pricing")}
 - Original editorial insights: ${absoluteUrl("/insights")}
 - Practical guide library: ${absoluteUrl("/guides")}
 

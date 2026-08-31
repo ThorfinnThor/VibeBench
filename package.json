@@ -12,6 +12,7 @@
     "lint": "eslint . --ignore-pattern .next",
     "test": "node --test tests/*.test.mjs",
     "seo:indexnow": "node scripts/submit-indexnow.mjs",
+    "seo:audit": "node scripts/audit-public-seo.mjs",
     "eval:production": "node scripts/evaluate-production.mjs",
     "eval:compare": "node scripts/compare-production-captures.mjs",
     "research:v0.2-readiness": "node scripts/analyze-development-v0_2-readiness.mjs",
