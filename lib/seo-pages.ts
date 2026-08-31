@@ -35,7 +35,7 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     title: "What is VibeFootprint?",
     metaTitle: "About VibeFootprint",
     description: "Learn what VibeFootprint is, who publishes its website intelligence, what its public scan measures and where the product deliberately limits its claims.",
-    updatedAt: "2026-08-28",
+    updatedAt: "2026-08-31",
     intro: "VibeFootprint is a website-intelligence product and editorial publisher for teams reviewing websites built at AI speed. It combines a bounded public-surface scan with practical guidance while keeping pattern similarity, security and private implementation claims separate.",
     boundary: "VibeFootprint does not identify an author, calculate generated-code share, certify security or replace repository, accessibility and application testing.",
     sections: [
@@ -51,6 +51,31 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
       { question: "Who is responsible for the content?", answer: "VibeFootprint is published by SeitenHafen361, a sole proprietorship owned by Schayan Yousefian in Berlin. Editorial articles identify VibeFootprint Editorial as the organizational author." },
       { question: "How much does VibeFootprint cost?", answer: "During launch, one complete website scan costs €4.99 instead of the intended regular €49.99 price. It is a one-time Stripe payment with no subscription." },
       { question: "Does VibeFootprint guarantee search or AI visibility?", answer: "No. Crawlability, useful content and accurate structure improve readiness, but no page or markup can guarantee ranking, citation or inclusion in a specific search or answer system." }
+    ]
+  },
+  pricing: {
+    locale: "en",
+    slug: "pricing",
+    eyebrow: "Simple launch pricing",
+    title: "One website audit. One clear launch price.",
+    metaTitle: "VibeFootprint Pricing — Website Audit for €4.99",
+    description: "Run a free VibeFootprint website scan preview, then unlock the complete audit for a one-time €4.99 launch price with no subscription.",
+    updatedAt: "2026-08-31",
+    intro: "Start with a genuine public-surface scan preview for free. If the result is useful, unlock the complete audit for that website for a one-time €4.99 launch price instead of the intended regular €49.99 price.",
+    boundary: "The purchase covers one complete audit for the public website URL entered at checkout. It is not a subscription, monitoring plan, penetration test or guarantee of a particular score.",
+    sections: [
+      { heading: "What you can see before paying", paragraphs: ["The free preview runs the real public-surface scan before checkout. It shows the website’s qualitative Vibe-Footprint, the separate selected security-header baseline, evidence breadth and a high-level issue overview so you can decide whether the detailed report is useful."], bullets: ["Real public website scan preview", "Qualitative 0–100 pattern-similarity index", "Separate selected security-header score", "High-level quality and security issue counts"] },
+      { heading: "What the €4.99 full audit unlocks", paragraphs: ["The paid audit reveals the evidence and implementation detail behind the preview. Findings remain separate from score drivers so a similarity signal is not presented as a defect, and public security observations remain independent from the Vibe-Footprint."], bullets: ["Exact upward and downward score drivers", "Prioritized evidence-backed quality findings", "Selected security-header checks and remediation", "Public launch checks and technical evidence", "Individual copy-ready fix prompts", "One combined prompt covering all reported fixes"] },
+      { heading: "One-time payment, no subscription", paragraphs: ["The launch price is a single €4.99 payment processed through Stripe Checkout. There is no recurring charge. The checkout identifies the exact public website URL being purchased, and a successful payment unlocks the complete report for that URL.", "The intended regular price is €49.99. The current launch offer may end or change in the future; the amount displayed in Stripe Checkout is the authoritative total before payment."] },
+      { heading: "What the purchase does not include", paragraphs: ["VibeFootprint examines a bounded public website surface. Buying the full audit does not expand the scan into private systems or turn the report into a certification."], bullets: ["No repository, account or private source-code access", "No penetration test or compliance certification", "No verification of authentication, databases or backend authorization", "No promise of search ranking, AI citation or business outcome"] },
+      { heading: "How to use the audit", paragraphs: ["Run the preview, unlock the report only if its scope matches your decision, then work through the highest-priority observed findings. Apply changes in the normal repository and release process, test the intended behavior and scan the same public URL again after deployment."] }
+    ],
+    faq: [
+      { question: "How much does a VibeFootprint audit cost?", answer: "During the launch offer, one complete website audit costs €4.99 instead of the intended regular €49.99 price." },
+      { question: "Is VibeFootprint a subscription?", answer: "No. The €4.99 launch price is a one-time payment for one complete audit of the website URL entered at checkout." },
+      { question: "Can I run a scan before paying?", answer: "Yes. The free preview runs the real public-surface scan and shows both independent scores plus a high-level issue overview before checkout." },
+      { question: "What happens if the paid scan fails technically?", answer: "The payment remains bound to the same website URL so the scan can be retried. If it cannot be completed, contact info@vibefootprint.com with the Stripe confirmation for support." },
+      { question: "Does the audit prove that a website was made with AI?", answer: "No. It reports public-pattern similarity and bounded evidence, not authorship, causality or generated-code share." }
     ]
   },
   methodology: {

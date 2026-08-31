@@ -679,7 +679,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
     <p className="sr-only" role="status" aria-live="polite">{loading ? copy.scanning : errorResult ? technicalOutcome?.title : result ? copy.results : ""}</p>
     <header className="topbar">
       <a className="brand" href="#top" aria-label={copy.home}><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></a>
-      <nav aria-label="Primary navigation"><a href="#scanner">{language === "de" ? "Kostenlos scannen" : "Free scan"}</a><Link href="/contact">Contact</Link><Link className="nav-secondary" href="/insights">Insights</Link><Link className="nav-secondary" href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
+      <nav aria-label="Primary navigation"><a href="#scanner">{language === "de" ? "Kostenlos scannen" : "Free scan"}</a><Link href="/pricing">Pricing</Link><Link href="/contact">Contact</Link><Link className="nav-secondary" href="/insights">Insights</Link><Link className="nav-secondary" href="/guides">Guides</Link><Link className="method-link" href="/methodology">{copy.methodology}</Link></nav>
     </header>
 
     <section className="hero" id="scanner" tabIndex={-1}>
@@ -937,7 +937,7 @@ export default function VibeFootprintHome({ initialLanguage = "en", enableAdminP
       <Link href="/methodology">{language === "en" ? "Read the complete methodology and limits" : "Vollständige Methodik und Grenzen lesen"}<span aria-hidden="true">→</span></Link>
     </section>
 
-    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link><LegalFooterLinks /></nav></footer>
+    <footer><Link className="brand footer-brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>{copy.subtitle}</small></span></Link><p>{copy.footerLine} · Product {release.productVersion} · Model {release.displayVersion}</p><nav aria-label="Footer navigation"><Link href="/pricing">Pricing</Link><Link href="/about">About</Link><Link href="/insights">Insights</Link><Link href="/guides">Guides</Link><Link href="/methodology">Methodology & limits</Link><LegalFooterLinks /></nav></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(quickAnswerStructuredData).replace(/</g, "\\u003c") }} />
   </main>;
 }
