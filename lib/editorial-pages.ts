@@ -1,6 +1,7 @@
 import { editorialExpansionPages } from "./editorial-expansion-pages";
+import { editorialDataBriefs } from "./editorial-data-briefs";
 
-export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook" | "tradeoff-map" | "provenance-ledger" | "launch-board" | "observability-map" | "prompt-workshop" | "due-diligence" | "identity-boundary" | "schema-review" | "integration-contract" | "secret-lifecycle" | "dependency-triage" | "failure-design" | "recovery-drill" | "performance-budget" | "form-defense" | "tenant-boundary" | "payment-boundary" | "deliverability-lab" | "measurement-plan" | "domain-control" | "transfer-runbook" | "incident-command" | "collaboration-loop" | "documentation-map" | "change-control" | "rewrite-decision" | "activation-journey" | "system-cleanup" | "trust-evidence" | "ethical-conversion" | "localization-readiness" | "mobile-lab";
+export type EditorialFormat = "field-guide" | "comparison" | "audit" | "playbook" | "code-review" | "evidence-brief" | "threat-model" | "decision-guide" | "seo-clinic" | "debt-ledger" | "handoff-kit" | "test-lab" | "founder-brief" | "cost-model" | "accessibility-lab" | "tool-selection" | "privacy-map" | "migration-runbook" | "tradeoff-map" | "provenance-ledger" | "launch-board" | "observability-map" | "prompt-workshop" | "due-diligence" | "identity-boundary" | "schema-review" | "integration-contract" | "secret-lifecycle" | "dependency-triage" | "failure-design" | "recovery-drill" | "performance-budget" | "form-defense" | "tenant-boundary" | "payment-boundary" | "deliverability-lab" | "measurement-plan" | "domain-control" | "transfer-runbook" | "incident-command" | "collaboration-loop" | "documentation-map" | "change-control" | "rewrite-decision" | "activation-journey" | "system-cleanup" | "trust-evidence" | "ethical-conversion" | "localization-readiness" | "mobile-lab" | "data-brief";
 
 export type EditorialSource = {
   label: string;
@@ -53,6 +54,14 @@ export type EditorialPage = {
   readingMinutes: number;
   publishedAt: string;
   updatedAt: string;
+  dataset?: {
+    name: string;
+    description: string;
+    temporalCoverage: string;
+    measurementTechnique: string;
+    variablesMeasured: string[];
+    url: string;
+  };
   blocks: EditorialBlock[];
   sources: EditorialSource[];
   related: string[];
@@ -1290,7 +1299,8 @@ const coreEditorialPages: Record<string, EditorialPage> = {
 
 export const editorialPages: Record<string, EditorialPage> = {
   ...coreEditorialPages,
-  ...editorialExpansionPages
+  ...editorialExpansionPages,
+  ...editorialDataBriefs
 };
 
 export const allEditorialPages = Object.values(editorialPages);

@@ -5,7 +5,9 @@ import { GuideSiteFooter, GuideSiteHeader } from "./GuidePage";
 import styles from "./editorial-directory.module.css";
 
 export default function EditorialDirectory() {
-  const [featured, ...rest] = allEditorialPages;
+  const dataBriefs = allEditorialPages.filter((page) => page.format === "data-brief");
+  const editorialGuides = allEditorialPages.filter((page) => page.format !== "data-brief");
+  const [featured, ...rest] = editorialGuides;
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -45,12 +47,19 @@ export default function EditorialDirectory() {
     <GuideSiteHeader />
     <header className={styles.hero}>
       <nav aria-label="Breadcrumb"><Link href="/">VibeFootprint</Link><span>/</span><span>Insights</span></nav>
-      <div className={styles.heroGrid}><div><p className="eyebrow">VibeFootprint editorial</p><h1>Clear thinking for websites built at AI speed.</h1></div><p>Original field guides, decision systems and working protocols for assessing public evidence, shipping responsibly and improving the product after the first fast build.</p></div>
-      <aside><strong>Editorial approach</strong><p>Each guide answers a different decision with its own structure and evidence. We do not create near-duplicate pages for every wording of the same search.</p></aside>
+      <div className={styles.heroGrid}><div><p className="eyebrow">VibeFootprint insights</p><h1>Clear thinking for websites built at AI speed.</h1></div><p>Original data briefs, field guides and decision systems for interpreting website evidence, shipping responsibly and improving the product after the first fast build.</p></div>
+      <aside><strong>Evidence approach</strong><p>Data briefs publish samples, methods and limitations. Practical guides answer a distinct decision with their own working structure instead of repeating the same claim for different keywords.</p></aside>
     </header>
 
     <section id="editorial-guides" className={styles.library}>
-      <div className={styles.sectionHeading}><div><p className="eyebrow">Start with the real question</p><h2>Fifty guides. Fifty different jobs.</h2></div><p>From pattern diagnosis and production safety to identity, data, operations, design, trustworthy growth and product transfer—each guide ends in a different practical decision.</p></div>
+      <div className={styles.sectionHeading}><div><p className="eyebrow">New · VibeFootprint research data</p><h2>Three datasets. Three results worth showing.</h2></div><p>These briefs use frozen aggregate VibeFootprint research artifacts. Each one publishes its denominator, protocol, result and evidence boundary—with no customer domains or individual scan results.</p></div>
+      <div className={styles.dataBriefGrid}>{dataBriefs.map((page, index) => <article key={page.slug}>
+        <div><span>Data brief {String(index + 1).padStart(2, "0")}</span><small>{page.readingMinutes} min</small></div>
+        <h3><Link href={`/${page.slug}`}>{page.title}</Link></h3>
+        <p>{page.dek}</p>
+        <footer><span>{page.eyebrow.replace("VibeFootprint research data · ", "Sample ")}</span><Link href={`/${page.slug}`}>View data and method →</Link></footer>
+      </article>)}</div>
+      <div className={styles.guideHeading}><div><p className="eyebrow">Practical editorial library</p><h2>Fifty guides. Fifty different jobs.</h2></div><p>From pattern diagnosis and production safety to identity, data, operations, design, trustworthy growth and product transfer—each guide ends in a different practical decision.</p></div>
       <Link className={styles.featured} href={`/${featured.slug}`}>
         <div><span>{featured.formatLabel}</span><small>{featured.readingMinutes} minute read</small></div><h3>{featured.title}</h3><p>{featured.dek}</p><b>Open the field guide →</b>
       </Link>

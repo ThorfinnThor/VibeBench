@@ -47,6 +47,13 @@ Contact: info@vibefootprint.com
 - Make an AI-assisted website less generic: ${absoluteUrl("/how-to-make-a-vibe-coded-website-look-less-generic")}
 - Review AI-generated frontend code: ${absoluteUrl("/how-to-review-ai-generated-frontend-code")}
 
+## Data briefs from VibeFootprint research artifacts
+- Technical outcomes across 169 historical website retrieval attempts: ${absoluteUrl("/website-scan-technical-yield-169-sites")}
+- Uncertainty-band effects across 81 usable website evaluations: ${absoluteUrl("/website-score-uncertainty-81-sites")}
+- Why a 100-case blind confirmation did not pass the integrity gate: ${absoluteUrl("/blind-confirmation-integrity-100-sites")}
+
+Each data brief links to a domain-free public aggregate JSON file, its frozen source-artifact hash and the evaluation script. Historical Development results are not current production-performance claims, calibrated authorship probabilities or evidence about an individual website.
+
 ## Related service
 FindYourAIScore is a separate, complementary service for AI-search readiness: whether answer engines can identify a business, understand its offers and use its public pages as sources. It is not part of the VibeFootprint score or audit. ${"https://www.findyouraiscore.com/"}
 

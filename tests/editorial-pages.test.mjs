@@ -8,7 +8,12 @@ async function loadRegistry() {
   const expansionSource = readFileSync(new URL("../lib/editorial-expansion-pages.ts", import.meta.url), "utf8");
   const expansionOutput = ts.transpileModule(expansionSource, { compilerOptions }).outputText;
   const expansionUrl = `data:text/javascript;base64,${Buffer.from(expansionOutput).toString("base64")}`;
-  const source = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8").replace('"./editorial-expansion-pages"', `"${expansionUrl}"`);
+  const dataBriefSource = readFileSync(new URL("../lib/editorial-data-briefs.ts", import.meta.url), "utf8");
+  const dataBriefOutput = ts.transpileModule(dataBriefSource, { compilerOptions }).outputText;
+  const dataBriefUrl = `data:text/javascript;base64,${Buffer.from(dataBriefOutput).toString("base64")}`;
+  const source = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8")
+    .replace('"./editorial-expansion-pages"', `"${expansionUrl}"`)
+    .replace('"./editorial-data-briefs"', `"${dataBriefUrl}"`);
   const output = ts.transpileModule(source, { compilerOptions }).outputText;
   return import(`data:text/javascript;base64,${Buffer.from(output).toString("base64")}`);
 }
@@ -16,10 +21,10 @@ async function loadRegistry() {
 const registry = await loadRegistry();
 const pages = registry.allEditorialPages;
 
-test("publishes fifty differentiated editorial pages", () => {
-  assert.equal(pages.length, 50);
-  assert.equal(new Set(pages.map((page) => page.format)).size, 50);
-  assert.equal(new Set(pages.map((page) => page.formatLabel)).size, 50);
+test("publishes fifty practical guides and three differentiated data briefs", () => {
+  assert.equal(pages.length, 53);
+  assert.equal(new Set(pages.map((page) => page.format)).size, 51);
+  assert.equal(new Set(pages.map((page) => page.formatLabel)).size, 53);
 });
 
 test("editorial pages pass substantive content and source gates", () => {
@@ -31,7 +36,8 @@ test("editorial pages pass substantive content and source gates", () => {
     assert.ok(page.blocks.length >= 4, page.slug);
     assert.ok(page.sources.length >= 3, page.slug);
     assert.ok(page.related.length >= 3, page.slug);
-    assert.equal(page.publishedAt, "2026-08-23", page.slug);
+    assert.match(page.publishedAt, /^2026-\d{2}-\d{2}$/, page.slug);
+    assert.ok(page.updatedAt >= page.publishedAt, page.slug);
   }
 });
 
@@ -58,13 +64,32 @@ test("each editorial page contains a format-specific working block", () => {
     ["change-control", "workbench"], ["rewrite-decision", "workbench"],
     ["activation-journey", "workbench"], ["system-cleanup", "workbench"],
     ["trust-evidence", "workbench"], ["ethical-conversion", "workbench"],
-    ["localization-readiness", "workbench"], ["mobile-lab", "workbench"]
+    ["localization-readiness", "workbench"], ["mobile-lab", "workbench"],
+    ["data-brief", "matrix"]
   ]);
   for (const page of pages) {
     const block = page.blocks.find((candidate) => candidate.type === expected.get(page.format));
     assert.ok(block, page.slug);
     if (block.type === "workbench") assert.equal(block.variant, page.format, page.slug);
   }
+});
+
+test("data briefs expose reproducible aggregate evidence and strict interpretation boundaries", () => {
+  const dataBriefs = pages.filter((page) => page.format === "data-brief");
+  assert.equal(dataBriefs.length, 3);
+
+  for (const page of dataBriefs) {
+    assert.ok(page.dataset, page.slug);
+    assert.match(page.dataset.url, /^\/data\/insights\/.+\.json$/, page.slug);
+    assert.ok(page.dataset.variablesMeasured.length >= 5, page.slug);
+    assert.ok(page.sources.some((source) => /\/data\/insights\//.test(source.href)), page.slug);
+    assert.ok(page.sources.some((source) => /scripts\//.test(source.href)), page.slug);
+    assert.match(page.scope, /historical|Development|frozen/i, page.slug);
+  }
+
+  assert.match(dataBriefs.find((page) => page.slug === "website-scan-technical-yield-169-sites").dek, /81 of 169/);
+  assert.match(dataBriefs.find((page) => page.slug === "website-score-uncertainty-81-sites").dek, /13\.6%/);
+  assert.match(dataBriefs.find((page) => page.slug === "blind-confirmation-integrity-100-sites").dek, /82\.4% precision/);
 });
 
 test("editorial titles, descriptions and slugs are unique", () => {

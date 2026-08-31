@@ -285,13 +285,25 @@ export default function EditorialPage({ page }: { page: EditorialPageData }) {
   const related = page.related.map((slug) => editorialPages[slug]).filter(Boolean);
   const faq = page.blocks.find((block): block is Extract<EditorialBlock, { type: "faq" }> => block.type === "faq");
   const structuredGraph: object[] = [
-    { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: "VibeFootprint Editorial", url: absoluteUrl("/about") }, publisher: { "@id": absoluteUrl("/#organization") }, isPartOf: { "@id": absoluteUrl("/#website") }, mainEntityOfPage: absoluteUrl(url), articleSection: page.formatLabel },
+    { "@type": "Article", "@id": `${absoluteUrl(url)}#article`, headline: page.title, description: page.description, datePublished: page.publishedAt, dateModified: page.updatedAt, inLanguage: "en", author: { "@type": "Organization", name: "VibeFootprint Editorial", url: absoluteUrl("/about") }, publisher: { "@id": absoluteUrl("/#organization") }, isPartOf: { "@id": absoluteUrl("/#website") }, mainEntityOfPage: absoluteUrl(url), articleSection: page.formatLabel, ...(page.dataset ? { about: { "@id": `${absoluteUrl(url)}#dataset` } } : {}) },
     { "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: "VibeFootprint", item: absoluteUrl("/") },
       { "@type": "ListItem", position: 2, name: "Insights", item: absoluteUrl("/insights") },
       { "@type": "ListItem", position: 3, name: page.title, item: absoluteUrl(url) }
     ] }
   ];
+  if (page.dataset) structuredGraph.push({
+    "@type": "Dataset",
+    "@id": `${absoluteUrl(url)}#dataset`,
+    name: page.dataset.name,
+    description: page.dataset.description,
+    url: absoluteUrl(url),
+    temporalCoverage: page.dataset.temporalCoverage,
+    measurementTechnique: page.dataset.measurementTechnique,
+    variableMeasured: page.dataset.variablesMeasured,
+    creator: { "@id": absoluteUrl("/#organization") },
+    distribution: { "@type": "DataDownload", contentUrl: page.dataset.url.startsWith("/") ? absoluteUrl(page.dataset.url) : page.dataset.url, encodingFormat: "application/json" }
+  });
   if (faq) structuredGraph.push({
     "@type": "FAQPage",
     "@id": `${absoluteUrl(url)}#questions`,
