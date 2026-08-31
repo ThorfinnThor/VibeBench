@@ -9,6 +9,7 @@ const robots = readFileSync(new URL("../app/robots.ts", import.meta.url), "utf8"
 const content = readFileSync(new URL("../lib/seo-pages.ts", import.meta.url), "utf8");
 const scanner = readFileSync(new URL("../components/VibeFootprintHome.tsx", import.meta.url), "utf8");
 const editorial = readFileSync(new URL("../lib/editorial-pages.ts", import.meta.url), "utf8");
+const dataBriefs = readFileSync(new URL("../lib/editorial-data-briefs.ts", import.meta.url), "utf8");
 const editorialComponent = readFileSync(new URL("../components/EditorialPage.tsx", import.meta.url), "utf8");
 const seoContentComponent = readFileSync(new URL("../components/SeoContentPage.tsx", import.meta.url), "utf8");
 const guideComponent = readFileSync(new URL("../components/GuidePage.tsx", import.meta.url), "utf8");
@@ -75,10 +76,23 @@ test("machine-readable discovery files state facts and boundaries", () => {
   assert.match(llmsRoute, /VibeFootprint is a public-surface website diagnostic/);
   assert.match(llmsRoute, /not a generated-code percentage, authorship probability or defect count/);
   assert.match(llmsRoute, /FindYourAIScore is a separate, complementary service/);
+  assert.match(llmsRoute, /Data briefs from VibeFootprint research artifacts/);
+  assert.match(llmsRoute, /website-scan-technical-yield-169-sites/);
   assert.match(llmsRoute, /text\/plain; charset=utf-8/);
   assert.match(feedRoute, /allEditorialPages/);
   assert.match(feedRoute, /application\/rss\+xml; charset=utf-8/);
   assert.match(feedRoute, /atom:link/);
+});
+
+test("aggregate research insights expose datasets without turning Development results into product claims", () => {
+  assert.match(dataBriefs, /website-scan-technical-yield-169-sites/);
+  assert.match(dataBriefs, /website-score-uncertainty-81-sites/);
+  assert.match(dataBriefs, /blind-confirmation-integrity-100-sites/);
+  assert.match(dataBriefs, /No domains or individual website scores are disclosed/);
+  assert.match(dataBriefs, /not a claim about current production performance/i);
+  assert.match(editorialComponent, /"@type": "Dataset"/);
+  assert.match(editorialComponent, /measurementTechnique/);
+  assert.match(editorialComponent, /DataDownload/);
 });
 
 test("directory hubs expose visible collections as structured lists", () => {

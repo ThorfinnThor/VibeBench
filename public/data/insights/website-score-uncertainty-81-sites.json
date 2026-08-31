@@ -1,0 +1,48 @@
+{
+  "schema_version": "vibefootprint.public_data_brief.v1",
+  "slug": "website-score-uncertainty-81-sites",
+  "published_at": "2026-08-31",
+  "privacy": "Aggregate statistics only. Domain names, sample identifiers and individual scores are excluded.",
+  "source": {
+    "artifact": "outputs/development_v0_5_option_b/option_b_visible_evaluation_v2.json",
+    "sha256": "16d6a1595daa9c933c7ddb6d158eaba59d889e45b9c6c52e87fcbdf3ca39bad7",
+    "generated_at": "2026-08-13T02:02:39.416Z",
+    "status": "DEVELOPMENT_RESEARCH_ONLY"
+  },
+  "rows": { "originally_attempted": 169, "technically_usable": 81, "technical_failures": 88, "strong_ai": 28, "stable_human": 53 },
+  "protocol": {
+    "assignments": 20,
+    "folds": 5,
+    "split": "deterministic class-stratified",
+    "training_balance": "deterministic minority oversampling inside each training fold only",
+    "model": "logistic",
+    "l2": 10,
+    "threshold": 0.5,
+    "indeterminate_range_inclusive": [0.38, 0.62],
+    "count_perturbation": "two deterministic inverse jitters of each non-binary source count, each within ±5%"
+  },
+  "repeated_development_metrics": {
+    "precision": { "p10": 0.7096774193548387, "median": 0.7666666666666667, "p90": 0.8148148148148148 },
+    "recall": { "p10": 0.7857142857142857, "median": 0.7857142857142857, "p90": 0.8214285714285714 },
+    "specificity": { "p10": 0.8301886792452831, "median": 0.8679245283018868, "p90": 0.9056603773584906 },
+    "accuracy": { "p10": 0.8148148148148148, "median": 0.8518518518518519, "p90": 0.8641975308641975 },
+    "roc_auc": { "p10": 0.871967654986523, "median": 0.8820754716981132, "p90": 0.9002695417789758 }
+  },
+  "indeterminate_analysis": {
+    "coverage_median": 0.8518518518518519,
+    "abstention_rate_median": 0.13580246913580246,
+    "decided_precision_median": 0.875,
+    "decided_recall_median": 0.8076923076923077,
+    "decided_specificity_median": 0.9302325581395349,
+    "overall_positive_recall_with_abstentions_as_unresolved_median": 0.75,
+    "websites_indeterminate_by_mean_score": 10
+  },
+  "perturbation_stability": {
+    "simulation_only": true,
+    "comparisons": 3240,
+    "absolute_score_delta": { "median": 0.0032463633337525277, "p90": 0.011240880744639886, "maximum": 0.056947103110394526 },
+    "threshold_flip_rate": 0.005246913580246914,
+    "qualitative_band_change_rate": 0.019135802469135803
+  },
+  "interpretation": "Development benchmark orientation only; not independent validation, a calibrated authorship probability or current production performance."
+}

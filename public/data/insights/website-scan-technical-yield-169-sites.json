@@ -1,0 +1,39 @@
+{
+  "schema_version": "vibefootprint.public_data_brief.v1",
+  "slug": "website-scan-technical-yield-169-sites",
+  "published_at": "2026-08-31",
+  "privacy": "Aggregate counts only. Domain names, sample identifiers and individual scan results are excluded.",
+  "source": {
+    "artifact": "outputs/development_v0_5_option_b/option_b_technical_yield_audit_v1.json",
+    "sha256": "230db96b5ced6980d310c440f6577a64b256300d1ef6c2bfe3a1f1bc14ead3f4",
+    "generated_at": "2026-08-13T02:23:58.753Z",
+    "status": "FROZEN_HISTORICAL_AUDIT_NO_RESCAN"
+  },
+  "overall": {
+    "attempted": 169,
+    "successful": 81,
+    "failed": 88,
+    "technical_yield": 0.47928994082840237,
+    "technical_yield_wilson_95": { "lower": 0.40527196149650424, "upper": 0.5542284960455616 },
+    "outcomes": [
+      { "code": "success", "count": 81, "share": 0.47928994082840237 },
+      { "code": "navigation_timeout_unresolved", "count": 81, "share": 0.47928994082840237 },
+      { "code": "client_blocked", "count": 3, "share": 0.01775147928994083 },
+      { "code": "dns_unresolved", "count": 3, "share": 0.01775147928994083 },
+      { "code": "certificate_error", "count": 1, "share": 0.005917159763313609 }
+    ]
+  },
+  "by_label": {
+    "STABLE_HUMAN": { "attempted": 86, "successful": 53, "failed": 33, "technical_yield": 0.6162790697674418, "technical_yield_wilson_95": { "lower": 0.5106287727439646, "upper": 0.7119855999802814 } },
+    "STRONG_AI": { "attempted": 83, "successful": 28, "failed": 55, "technical_yield": 0.3373493975903614, "technical_yield_wilson_95": { "lower": 0.24484304754653, "upper": 0.44424554715628084 } }
+  },
+  "by_cohort": {
+    "existing": { "attempted": 38, "successful": 37, "failed": 1, "technical_yield": 0.9736842105263158, "technical_yield_wilson_95": { "lower": 0.8650512388404787, "upper": 0.9953394123142312 } },
+    "expansion": { "attempted": 131, "successful": 44, "failed": 87, "technical_yield": 0.33587786259541985, "technical_yield_wilson_95": { "lower": 0.2606994715277561, "upper": 0.4204075086542116 } }
+  },
+  "interpretation": {
+    "navigation_timeout": "Historical collection retained no lower-level reason. These failures remain unresolved timeouts.",
+    "selection_warning": "Technical yield differs by benchmark label, exposing complete-case metrics to label-dependent selection bias.",
+    "not_current_uptime": true
+  }
+}
