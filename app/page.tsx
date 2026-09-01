@@ -3,8 +3,8 @@ import VibeFootprintHome from "../components/VibeFootprintHome";
 import { auditPromoConfigured } from "../lib/audit-promo-code.mjs";
 
 export const metadata: Metadata = {
-  title: "Vibe Coding Website Checker & Security Scan",
-  description: "Scan a public website for vibe-coding pattern similarity, security headers and actionable improvements. No login or source-code access required.",
+  title: "AI Website Audit & Vibe Coding Checker",
+  description: "Scan a public website for AI-assisted patterns, security headers and launch-ready improvements. Free preview, no login or source-code access.",
   alternates: { canonical: "/" }
 };
 

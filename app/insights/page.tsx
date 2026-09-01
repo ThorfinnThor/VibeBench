@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import EditorialDirectory from "../../components/EditorialDirectory";
 
 export const metadata: Metadata = {
-  title: "Vibe Coding Website Insights and Audit Guides",
-  description: "Original field guides, comparisons and review frameworks for recognizing vibe-coding patterns and improving AI-assisted websites responsibly.",
+  title: "AI Website Audit Insights & Data Briefs",
+  description: "Read evidence-led insights, data briefs and review frameworks for AI-assisted websites, public scan interpretation and safer product launches.",
   authors: [{ name: "VibeFootprint Editorial", url: "/about" }],
   alternates: { canonical: "/insights" },
-  openGraph: { title: "VibeFootprint editorial guides", description: "Evidence-led guidance for websites built at AI speed.", url: "/insights", locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint editorial guides" }] },
-  twitter: { card: "summary_large_image", title: "VibeFootprint editorial guides", description: "Evidence-led guidance for websites built at AI speed.", images: ["/og.png"] }
+  openGraph: { title: "AI website audit insights and data briefs", description: "Evidence-led insights for AI-assisted websites, public scan interpretation and safer launches.", url: "/insights", locale: "en_US", images: [{ url: "/og.png", width: 1731, height: 909, alt: "VibeFootprint AI website audit insights" }] },
+  twitter: { card: "summary_large_image", title: "AI website audit insights and data briefs", description: "Evidence-led insights for AI-assisted websites, public scan interpretation and safer launches.", images: ["/og.png"] }
 };
 
 export default function Page() { return <EditorialDirectory />; }

@@ -52,7 +52,7 @@ export default function GuideDirectory({ clusterId }: { clusterId?: GuideCluster
     <GuideSiteHeader />
     <header className={styles.hero}>
       <nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href="/">VibeFootprint</Link>{cluster && <><span>/</span><Link href="/guides">Guides</Link></>}</nav>
-      <div className={styles.heroGrid}><div><p className="eyebrow">{cluster?.eyebrow || "VibeFootprint knowledge base"}</p><h1>{cluster?.title || "Build a more distinctive, secure and reliable website."}</h1></div><div><p>{cluster?.introduction || "Ninety-five evidence-led guides help founders, designers and developers inspect the public website, make a bounded improvement and verify the result. Start with a topic cluster or run a scan to identify the most relevant path."}</p><Link href="/#scanner">Scan a website first<span>→</span></Link></div></div>
+      <div className={styles.heroGrid}><div><p className="eyebrow">{cluster?.eyebrow || "VibeFootprint knowledge base"}</p><h1>{cluster?.title || "Build a more distinctive, secure and reliable website."}</h1></div><div><p>{cluster?.introduction || "Ninety-five evidence-led guides help founders, designers and developers inspect the public website, make a bounded improvement and verify the result. Start with a topic cluster or run a scan to identify the most relevant path."}</p><div className={styles.heroActions}><Link href="/#scanner">Scan a website first<span>→</span></Link>{cluster && <Link className={styles.heroSecondaryLink} href={cluster.commercialPath}>{cluster.commercialLabel}<span>↗</span></Link>}</div></div></div>
       {cluster && <aside><strong>Interpretation boundary</strong><p>{cluster.boundary}</p></aside>}
     </header>
 
