@@ -28,6 +28,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
         isPartOf: { "@id": absoluteUrl("/#website") },
         about: { "@id": absoluteUrl("/#application") },
         publisher: { "@id": absoluteUrl("/#organization") },
+        ...(page.relatedLinks?.length ? { relatedLink: page.relatedLinks.map((item) => absoluteUrl(item.href)) } : {}),
         ...(isPricingPage ? { mainEntity: { "@id": absoluteUrl("/#service") } } : {})
       },
       {
@@ -95,6 +96,7 @@ export default function SeoContentPage({ page }: { page: SeoPageContent }) {
     </article>
 
     <section className={styles.scanCta}><div><p className="eyebrow">Next step</p><h2>Check the public website now.</h2><p>Get pattern similarity, a separate security baseline and practical next steps.</p></div><Link href="/#scanner">Buy launch scan · €4.99<span>→</span></Link></section>
+    {page.relatedLinks?.length ? <section className={styles.relatedTopics} aria-labelledby="related-topics-heading"><p className="eyebrow">Choose the next review</p><h2 id="related-topics-heading">Go deeper where the decision needs it.</h2><div>{page.relatedLinks.map((item) => <Link href={item.href} key={item.href}><strong>{item.label}<span>→</span></strong><p>{item.description}</p></Link>)}</div></section> : null}
     <nav className={styles.related} aria-label="Related guides">{related.map((item) => <Link key={item.href} href={item.href}>{item.label}<span>↗</span></Link>)}</nav>
     <footer className={styles.footer}><Link className="brand" href="/"><span className="brand-mark">V</span><span><strong>VibeFootprint</strong><small>Website intelligence</small></span></Link><p>Public patterns. Separate security. Clear next steps.</p><nav aria-label="Footer navigation"><Link href="/pricing">Pricing</Link><Link href="/about">About</Link><Link href="/methodology">Methodology</Link><LegalFooterLinks /></nav></footer>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />

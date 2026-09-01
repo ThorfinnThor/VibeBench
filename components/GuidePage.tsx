@@ -57,7 +57,7 @@ export default function GuidePage({ page }: { page: GuidePageData }) {
       </div>
     </article>
 
-    <section className={styles.scanCta}><div><p className="eyebrow">Apply the guide to a real website</p><h2>Start with the public evidence.</h2><p>Run a free VibeFootprint scan, separate pattern similarity from security, then use the detailed findings to decide what deserves work.</p></div><Link href="/#scanner">Scan a website<span>→</span></Link></section>
+    <section className={styles.scanCta}><div><p className="eyebrow">Apply the guide to a real website</p><h2>Start with the public evidence.</h2><p>Run a free VibeFootprint scan, separate pattern similarity from security, then use the detailed findings to decide what deserves work.</p></div><div className={styles.ctaLinks}><Link className={styles.ctaPrimary} href="/#scanner">Scan a website<span>→</span></Link><Link className={styles.ctaSecondary} href={cluster.commercialPath}>{cluster.commercialLabel}<span>↗</span></Link></div></section>
     <section className={styles.related}><div><p className="eyebrow">Continue the review</p><h2>Related {cluster.name.toLowerCase()} guides</h2></div><div className={styles.relatedGrid}>{related.map((guide) => <Link href={`/guides/${guide.cluster}/${guide.slug}`} key={guide.slug}><span>{guideClusters[guide.cluster].name}</span><strong>{guide.title}</strong><b>Read guide →</b></Link>)}</div><Link className={styles.clusterLink} href={`/guides/${cluster.id}`}>View all {cluster.name.toLowerCase()} guides →</Link></section>
     <GuideSiteFooter />
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} />

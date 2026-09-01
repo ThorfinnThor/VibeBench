@@ -25,6 +25,7 @@ export type SeoPageContent = {
   boundary: string;
   sections: SeoSection[];
   faq: { question: string; answer: string }[];
+  relatedLinks?: { href: string; label: string; description: string }[];
 };
 
 export const englishSeoPages: Record<string, SeoPageContent> = {
@@ -58,9 +59,9 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     slug: "pricing",
     eyebrow: "Simple launch pricing",
     title: "One website audit. One clear launch price.",
-    metaTitle: "VibeFootprint Pricing — Website Audit for €4.99",
-    description: "Run a free VibeFootprint website scan preview, then unlock the complete audit for a one-time €4.99 launch price with no subscription.",
-    updatedAt: "2026-08-31",
+    metaTitle: "Website Audit Pricing: €4.99 Launch Offer",
+    description: "Run a free website scan preview, then unlock one complete VibeFootprint audit for €4.99 during launch. No subscription or source-code access.",
+    updatedAt: "2026-09-01",
     intro: "Start with a genuine public-surface scan preview for free. If the result is useful, unlock the complete audit for that website for a one-time €4.99 launch price instead of the intended regular €49.99 price.",
     boundary: "The purchase covers one complete audit for the public website URL entered at checkout. It is not a subscription, monitoring plan, penetration test or guarantee of a particular score.",
     sections: [
@@ -83,9 +84,9 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     slug: "methodology",
     eyebrow: "Transparent methodology",
     title: "How the VibeFootprint website scan works",
-    metaTitle: "Website Scan Methodology",
-    description: "Understand the public evidence, scoring boundary, security checks and limitations behind every VibeFootprint website scan.",
-    updatedAt: "2026-08-30",
+    metaTitle: "How the VibeFootprint Website Scan Works",
+    description: "See what the website scan measures, how pattern similarity and security stay separate, and why the result cannot prove authorship or generated code.",
+    updatedAt: "2026-09-01",
     intro: "VibeFootprint turns publicly delivered website signals into two separate assessments: a qualitative pattern-similarity index and a public security-header baseline. The method is intentionally bounded so the result remains useful without claiming to know who authored a website.",
     boundary: "A Vibe-Footprint is not a percentage of generated code, an authorship verdict or proof that a particular builder was used.",
     sections: [
@@ -106,8 +107,9 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     slug: "vibe-coding-website-checker",
     eyebrow: "Paid public website scan",
     title: "Vibe-coding website checker with actionable results",
-    metaTitle: "Vibe Coding Website Checker",
-    description: "Check a public website for vibe-coding pattern similarity, security headers and practical improvement opportunities.",
+    metaTitle: "AI Website Checker for Public Websites",
+    description: "Check a public website for recurring AI-assisted patterns, visible security-header gaps and practical fixes. Start with a free VibeFootprint scan.",
+    updatedAt: "2026-09-01",
     intro: "VibeFootprint analyzes the public surface of a website and returns a 0–100 pattern-similarity index, a separate security baseline and a report that explains what to review next.",
     boundary: "The checker identifies observable similarities and risks. It does not claim to identify the author or calculate an AI-generated-code percentage.",
     sections: [
@@ -127,8 +129,9 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
     slug: "vibe-coding-security-checklist",
     eyebrow: "Safer public launches",
     title: "A practical security checklist for vibe-coded websites",
-    metaTitle: "Vibe Coding Security Checklist",
-    description: "Use this practical checklist to review public security headers, application behavior and repository safeguards before launching an AI-assisted website.",
+    metaTitle: "Website Security Audit Checklist",
+    description: "Review security headers, application boundaries and launch safeguards for an AI-assisted website. Know what a public scan can and cannot prove.",
+    updatedAt: "2026-09-01",
     intro: "Fast AI-assisted development can shorten the path from idea to deployment, but it does not remove the need for normal security engineering. This checklist separates what VibeFootprint can observe publicly from checks that still require repository and application access.",
     boundary: "The VibeFootprint security baseline covers selected public headers only. Passing it does not certify the application as secure.",
     sections: [
@@ -141,6 +144,146 @@ export const englishSeoPages: Record<string, SeoPageContent> = {
       { question: "Does vibe coding make a website insecure?", answer: "Not by definition. Risk depends on the architecture, implementation, review process and deployment controls—not on the tool used to write code." },
       { question: "What does the security score measure?", answer: "It summarizes selected publicly visible header protections on the main document. It remains independent from the Vibe-Footprint." },
       { question: "What still needs manual testing?", answer: "Authentication, authorization, forms, payments, backend logic, dependencies, secrets, runtime behavior and accessibility require additional testing." }
+    ]
+  },
+  "ai-website-audit": {
+    locale: "en",
+    slug: "ai-website-audit",
+    eyebrow: "AI-assisted website review",
+    title: "A practical AI website audit for launch-ready decisions",
+    metaTitle: "AI Website Audit for Launch Readiness",
+    description: "Audit an AI-assisted website across public evidence, design, content and security boundaries before you invest in launch or growth.",
+    updatedAt: "2026-09-01",
+    intro: "An AI website can look finished while still leaving important questions unanswered. VibeFootprint gives founders, agencies and product teams a bounded first review of the delivered website, then points to the checks that need deeper access.",
+    boundary: "A public website audit can prioritize visible evidence, but it cannot prove private application security, code authorship, business claims or production readiness on its own.",
+    sections: [
+      { heading: "What the audit reviews", paragraphs: ["The audit connects public signals to decisions a team can act on: whether the interface feels intentionally designed, whether key content is clear, whether selected browser protections are present and whether the launch surface exposes avoidable quality gaps."], bullets: ["Pattern similarity and evidence breadth", "Visible metadata, structure and content signals", "Selected public security headers", "Prioritized findings with copy-ready implementation prompts"] },
+      { heading: "Why the evidence stays separated", paragraphs: ["A recurring interface pattern is not automatically a defect, and a missing header is not evidence about who wrote the code. The report keeps the qualitative Vibe-Footprint, security baseline and practical findings distinct so the next action is easier to judge." ] },
+      { heading: "A useful first review for fast-built products", paragraphs: ["Use the audit before a public launch, client handoff or redesign decision. It helps a non-specialist identify the highest-value questions, while giving designers and developers a focused set of changes to inspect in the actual codebase and deployment environment." ] },
+      { heading: "What happens after the report", paragraphs: ["Validate every recommendation against the product, make changes through the normal review process, test important user journeys and run a fresh scan after deployment. The goal is a better website and clearer evidence—not a lower score by itself." ] }
+    ],
+    faq: [
+      { question: "What does an AI website audit tell me?", answer: "It summarizes observable public patterns, selected security-header protections and practical website findings, while clearly marking what needs repository or application access." },
+      { question: "Does this audit prove a website was made with AI?", answer: "No. The Vibe-Footprint is a qualitative similarity index, not an authorship verdict or generated-code percentage." },
+      { question: "Can I try the audit before paying?", answer: "Yes. The real public scan starts with a free preview. The complete report can then be unlocked for the one-time launch price shown at checkout." }
+    ],
+    relatedLinks: [
+      { href: "/vibe-coding-website-checker", label: "See the public website checker", description: "Understand the evidence and boundaries of the free scan before you buy." },
+      { href: "/pricing", label: "View the €4.99 launch offer", description: "See exactly what the complete one-time audit includes." },
+      { href: "/vibe-coding-website-audit-framework", label: "Read the audit framework", description: "Use the editorial 90-minute framework for deeper review work." },
+      { href: "/methodology", label: "Read the scan methodology", description: "Review how similarity, security and limitations are handled." }
+    ]
+  },
+  "website-security-audit": {
+    locale: "en",
+    slug: "website-security-audit",
+    eyebrow: "Public security review",
+    title: "Website security audit for AI-assisted launches",
+    metaTitle: "Website Security Audit for AI-Assisted Sites",
+    description: "Review public security headers and launch safeguards on an AI-assisted website, with clear limits on what a URL scan cannot verify.",
+    updatedAt: "2026-09-01",
+    intro: "Fast delivery does not remove ordinary security work. This focused audit starts with the public response surface and turns visible gaps into a checklist for the repository, application and deployment team.",
+    boundary: "The public baseline is not a penetration test, compliance audit or certification. Authentication, authorization, data handling and backend logic require authorized manual testing.",
+    sections: [
+      { heading: "What a public security audit can observe", paragraphs: ["A URL-based review can inspect selected response headers and delivered document signals that influence browser behavior. These checks are useful first evidence, not a complete security assessment."], bullets: ["Content Security Policy", "Strict Transport Security", "Frame and MIME-type protections", "Referrer and permissions policies"] },
+      { heading: "What still requires access", paragraphs: ["The highest-impact application questions live behind the public surface. Review them in the codebase and runtime with explicit authorization before launch."], bullets: ["Authentication and authorization paths", "Secrets, dependencies and server actions", "Input validation, uploads and payment flows", "Logging, rate limits, backups and recovery"] },
+      { heading: "Turn findings into an owned plan", paragraphs: ["Give each finding an owner, evidence target and verification step. Treat generated prompts as reviewable starting points, then test expected and adversarial behavior before deployment." ] },
+      { heading: "Use the result responsibly", paragraphs: ["A stronger public baseline reduces some browser-side exposure; it does not certify the application. Rescan after changes and combine the result with threat modeling, code review and appropriate specialist testing." ] }
+    ],
+    faq: [
+      { question: "Is this a penetration test?", answer: "No. It is a bounded public review of selected security headers and launch signals, not an exploit attempt or certification." },
+      { question: "Can a public scan find backend vulnerabilities?", answer: "No. Private application logic, authorization, databases, secrets and dependency risk require authorized access and specialized testing." },
+      { question: "Who is this useful for?", answer: "Founders, agencies and development teams can use it as a pre-launch evidence pass and as a way to scope the deeper security work that follows." }
+    ],
+    relatedLinks: [
+      { href: "/vibe-coding-security-checklist", label: "Open the security checklist", description: "Work through public, repository and workflow checks before launch." },
+      { href: "/guides/security", label: "Browse security guides", description: "Find focused guidance for headers, secrets, abuse controls and recovery." },
+      { href: "/vibe-coding-website-checker", label: "Run the public checker", description: "Start with a free scan of the website surface." },
+      { href: "/pricing", label: "See the full-audit price", description: "Unlock the complete report for the one-time launch offer." }
+    ]
+  },
+  "ai-generated-frontend-code-review": {
+    locale: "en",
+    slug: "ai-generated-frontend-code-review",
+    eyebrow: "Frontend quality review",
+    title: "Review AI-generated frontend code before it reaches production",
+    metaTitle: "AI-Generated Frontend Code Review",
+    description: "Review AI-generated frontend code for behavior, accessibility, performance, security boundaries and maintainability before production release.",
+    updatedAt: "2026-09-01",
+    intro: "Generated interfaces often look convincing before their edge cases are exercised. This audit path helps teams connect visible delivery evidence to the repository and browser checks needed for a reliable frontend.",
+    boundary: "A public scan can suggest review questions, but it cannot inspect private source code, test every interaction or establish code origin.",
+    sections: [
+      { heading: "Start with the user journey", paragraphs: ["Review the delivered experience before opening the code. Record the critical path, loading states, errors, keyboard behavior and responsive transitions so implementation findings stay connected to user outcomes." ] },
+      { heading: "Inspect the code boundaries", paragraphs: ["In the repository, trace data flow and responsibility boundaries instead of judging code by whether it was generated. Look for duplicated logic, unsafe assumptions, hidden side effects and components that make unrelated changes travel together."], bullets: ["Stable types and explicit data states", "Server and client responsibilities", "Input validation and safe rendering", "Tests for critical journeys and failure states"] },
+      { heading: "Check accessibility and performance", paragraphs: ["Exercise the interface with keyboard navigation, zoom, assistive technology and slow networks. Confirm that semantics, focus, status messages, loading behavior and asset delivery support the actual audience." ] },
+      { heading: "Make the smallest coherent repair", paragraphs: ["Prioritize changes that improve user outcomes and reduce future change cost. Review generated patches, test regressions and verify the production result rather than optimizing for a diagnostic label." ] }
+    ],
+    faq: [
+      { question: "Can VibeFootprint review my private repository?", answer: "No. The standard product reviews the public website only. Use the report to scope an authorized repository and application review." },
+      { question: "Does code quality prove whether AI was used?", answer: "No. Code origin cannot be reliably established from a public pattern score or a visual impression." },
+      { question: "What should I review first?", answer: "Start with critical user journeys, data boundaries, accessibility, error handling, security-sensitive actions and the tests that protect them." }
+    ],
+    relatedLinks: [
+      { href: "/how-to-review-ai-generated-frontend-code", label: "Read the frontend review guide", description: "Follow a production-focused review process for generated frontend code." },
+      { href: "/guides/engineering", label: "Browse engineering guides", description: "Find practical checks for semantics, performance and maintainability." },
+      { href: "/vibe-coding-website-checker", label: "Run a public scan first", description: "Use delivered evidence to choose the next engineering questions." },
+      { href: "/pricing", label: "View the complete audit", description: "See the one-time launch price and report contents." }
+    ]
+  },
+  "ai-website-content-audit": {
+    locale: "en",
+    slug: "ai-website-content-audit",
+    eyebrow: "Content clarity and trust",
+    title: "AI website content audit for clearer, more credible pages",
+    metaTitle: "AI Website Content Audit",
+    description: "Audit AI-assisted website copy for clarity, evidence, search intent, trust and calls to action without manufacturing certainty.",
+    updatedAt: "2026-09-01",
+    intro: "AI-assisted copy can be fluent while remaining vague. This audit helps teams identify where the public page fails to explain the product, support a claim or guide a real visitor toward a useful next step.",
+    boundary: "A content audit can assess delivered claims and structure, but it cannot verify business legitimacy, customer relationships, legal compliance or private analytics.",
+    sections: [
+      { heading: "Make the offer easy to understand", paragraphs: ["A visitor should be able to identify who the product is for, what it does, what happens next and why the claim is credible. Replace broad promises with concrete outcomes, boundaries and evidence that match the actual service." ] },
+      { heading: "Review content as evidence", paragraphs: ["Inspect headings, page purpose, metadata, internal links, FAQs and calls to action as one system. Remove filler that sounds authoritative but does not help a visitor decide, compare or complete a task."], bullets: ["One clear search and user intent per page", "Specific claims tied to product behavior", "Visible proof with accurate context", "Descriptive links between related pages"] },
+      { heading: "Protect trust in AI-assisted writing", paragraphs: ["Edit for audience, accuracy and accountability. Do not invent customer numbers, expertise, citations or certainty, and keep legal, medical, financial or security claims within the review required for their risk." ] },
+      { heading: "Verify discovery and conversion", paragraphs: ["Read the page as a new visitor, follow every important link and test the primary action on mobile. Check rendered content, canonical URLs, structured data and indexability after publishing." ] }
+    ],
+    faq: [
+      { question: "Does this audit generate replacement copy automatically?", answer: "The report provides scoped observations and copy-ready implementation prompts. The business owner remains responsible for factual claims and final editorial approval." },
+      { question: "Can a content audit guarantee SEO rankings?", answer: "No. Clear, useful content supports search readiness, but rankings and AI citations depend on many changing systems and cannot be guaranteed." },
+      { question: "What pages should I review first?", answer: "Start with the homepage, primary offer or service page, pricing, proof, contact and any page that receives qualified search traffic." }
+    ],
+    relatedLinks: [
+      { href: "/guides/content", label: "Browse content and trust guides", description: "Improve claims, proof, calls to action and policy clarity." },
+      { href: "/vibe-coding-seo-mistakes", label: "Read the SEO mistakes guide", description: "Diagnose thin content, metadata and internal discovery failures." },
+      { href: "/guides", label: "Explore the full guide library", description: "Connect content work to design, engineering and launch checks." },
+      { href: "/vibe-coding-website-checker", label: "Run a public scan", description: "Check the delivered page before and after your content changes." }
+    ]
+  },
+  "website-launch-readiness-audit": {
+    locale: "en",
+    slug: "website-launch-readiness-audit",
+    eyebrow: "Pre-launch decision support",
+    title: "Website launch-readiness audit for fast-moving teams",
+    metaTitle: "Website Launch Readiness Audit",
+    description: "Check whether an AI-assisted website has the public evidence, content, security and release safeguards needed for a responsible launch.",
+    updatedAt: "2026-09-01",
+    intro: "Launch speed is valuable when the team can explain what was checked and how to recover. This audit gives founders and delivery teams a practical public-surface starting point, with explicit handoffs for deeper verification.",
+    boundary: "Launch readiness is a decision supported by evidence, not a certificate. A public scan cannot verify private data flows, backend behavior, ownership or operational resilience.",
+    sections: [
+      { heading: "Check the public release surface", paragraphs: ["Confirm that the live domain, HTTPS, redirects, metadata, primary heading, visible offer and key calls to action work as one coherent experience. Record the production URL and release version before changes."], bullets: ["Canonical domain and redirect behavior", "Rendered content and mobile layout", "Primary journey, forms and contact path", "Indexability and basic metadata"] },
+      { heading: "Assign the deeper checks", paragraphs: ["Repository and runtime owners must verify secrets, dependencies, authorization, backups, monitoring, rate limits, payment behavior and rollback. A checklist is useful only when each item has evidence and an owner." ] },
+      { heading: "Use a clear go or no-go decision", paragraphs: ["Define stop conditions for broken critical journeys, unresolved security exposure, missing ownership or an inability to recover. Separate launch blockers from improvements that can be scheduled after release." ] },
+      { heading: "Rescan after deployment", paragraphs: ["The production surface is the source of truth for headers, rendering, caching and third-party delivery. Run the public scan again after launch and keep the before-and-after evidence with the release record." ] }
+    ],
+    faq: [
+      { question: "Does a launch audit guarantee a safe release?", answer: "No. It prioritizes public evidence and clarifies deeper checks, but the team remains responsible for application security, operations and the final release decision." },
+      { question: "When should I run it?", answer: "Run the preview before launch, after major changes and again on the production domain once the release is live." },
+      { question: "What is included in the complete report?", answer: "The full audit adds detailed score drivers, prioritized findings, selected security checks, launch evidence and copy-ready prompts for the reported fixes." }
+    ],
+    relatedLinks: [
+      { href: "/guides/launch", label: "Browse launch workflow guides", description: "Coordinate owners, evidence, stop conditions and rollback." },
+      { href: "/vibe-coding-security-checklist", label: "Review the security checklist", description: "Separate public header checks from repository and application work." },
+      { href: "/guides/diagnostics", label: "Understand scan interpretation", description: "Keep scores, evidence breadth and limitations in context." },
+      { href: "/pricing", label: "See the launch offer", description: "Unlock one complete audit for €4.99 during launch." }
     ]
   }
 };

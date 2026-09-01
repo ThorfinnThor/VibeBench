@@ -26,6 +26,13 @@ Contact: info@vibefootprint.com
 - A scan requires a public URL. It does not require a login, repository access or private source code.
 - VibeFootprint is useful for founders, agencies, designers and web development teams reviewing an existing public website.
 
+## Commercial audit paths
+- AI website audit for launch decisions: ${absoluteUrl("/ai-website-audit")}
+- Public website security audit: ${absoluteUrl("/website-security-audit")}
+- AI-generated frontend code review: ${absoluteUrl("/ai-generated-frontend-code-review")}
+- AI-assisted website content audit: ${absoluteUrl("/ai-website-content-audit")}
+- Website launch-readiness audit: ${absoluteUrl("/website-launch-readiness-audit")}
+
 ## Important boundaries
 - The Vibe-Footprint is a qualitative public-pattern similarity index. It is not a generated-code percentage, authorship probability or defect count.
 - The security score covers selected publicly observable response-header protections. It is not a penetration test, compliance audit or security certification.
